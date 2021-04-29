@@ -161,7 +161,6 @@ var menu=[
 {id:`Decider`,category:`Media`,description:`Decider finds the best movies and shows on Netflix, Hulu, Amazon Prime, HBO Now, and more.`,uri:`https://decider.com/feed`,image:`Decider`,hash:`Dc`,media:!0},
 {id:`Demotix`,category:`Media`,description:`Demotix Celebrity articles with all the gossip in celebrity stories.`,uri:`https://demotix.com/category/celebrities/feed`,image:`Demotix`,hash:`dX`,media:!0},
 {id:`Digital Trends Media`,category:`Media`,description:`Digital Trends Movie reviews, TV Show recaps, Previews, and News.`,uri:`https://www.digitaltrends.com/movies/feed/`,image:`DigitalTrends`,hash:`mT`,media:!0},
-{id:`Elle`,category:`Media`,description:`Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.`,uri:`https://www.elle.com/rss/culture.xml`,image:`ELLE`,hash:`lE`,media:!0},
 {id:`Esquire`,category:`Media`,description:`Esquire is your destination for Entertainment Headlines.`,uri:`https://www.esquire.com/rss/entertainment.xml`,image:`Esquire`,hash:`qI`,media:!0},
 {id:`ET Canada`,category:`Media`,description:`Entertainment Tonight Canada a Canadian entertainment television series.`,uri:`https://etcanada.com/feed`,image:`ET`,hash:`tE`,media:!0},
 {id:`Glamour`,category:`Media`,description:`Glamour UK an online women's magazine founded in 1939.`,uri:`https://www.glamourmagazine.co.uk/rss/article`,image:`Glamour`,hash:`Rg`,media:!0},
