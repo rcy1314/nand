@@ -765,6 +765,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             itemPending.style.display = `none`;
           });
       } else { //safeSearch false
+        console.log(`false`)
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);
         request.responseType = "blob";
@@ -825,7 +826,7 @@ var xmlAppendPublication = function (id) {
       images.push({ element: pub[i].element, src: pub[i].src });
     }
   }
-  if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+  if (safeSearch == true || safeSearchIDs.includes(menu[id].id)) {
     for (i = 0; i <= images.length - 1; i++) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
