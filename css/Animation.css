@@ -212,8 +212,8 @@ The loaders use CSS custom properties (variables) to control the attributes of t
 */
 
 :root{
-	--loader-width: 30px;
-	--loader-height: 30px;
+	--loader-width: 20px;
+	--loader-height: 20px;
 	--line-width: 2px;
 	--animation-duration: 7s;
 	--loader-initial-scale: 0.1;
@@ -233,10 +233,10 @@ The loaders use CSS custom properties (variables) to control the attributes of t
     transform: rotate(0);
   }
   50% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
   100% {
-    transform: rotate(720deg);
+    transform: rotate(-720deg);
   }
 }
 
@@ -263,7 +263,7 @@ The loaders use CSS custom properties (variables) to control the attributes of t
     filter: contrast(1.75);
     border: var(--line-width, 4px) solid transparent;
     border-bottom-color: var(--loader-color);
-    animation: circle-outer var(--animation-duration, 8s) infinite linear ;
+    animation: circle-outer 3s infinite linear ;
 }
 
 .double-circle::before{
