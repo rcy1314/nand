@@ -346,7 +346,20 @@ let quickFeedsTranslations = true;
 let scrollIntoView = true;
 
 /*
-    centerImages [boolean/integer]
+    imageLoader [boolean/integer]
+
+      Applications
+        xmlHTMLBuild
+
+      Result
+        loader double-circle pending image
+
+*/
+
+let imageLoader = false;
+
+/*
+    cropImages [boolean/integer]
 
       Applications
         xmlImageDimensions, sidebar
@@ -697,6 +710,7 @@ const settings = [
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },
+  { name: `Image Loader`, class: `imageLoader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Crop Images`, class: `cropImages` },

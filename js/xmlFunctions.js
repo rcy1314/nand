@@ -693,6 +693,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 ) {
                   var request = new XMLHttpRequest();
                   request.open("GET", cors + src, true);
+                  request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+                  request.setRequestHeader(`X-Requested-With`, `*`);
                   request.responseType = "blob";
                   request.onload = function () {
                     var read = new FileReader();
@@ -736,6 +738,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               ) {
               var request = new XMLHttpRequest();
               request.open("GET", cors + src, true);
+              request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+              request.setRequestHeader(`X-Requested-With`, `*`);
               request.responseType = "blob";
               request.onload = function () {
                 var read = new FileReader();
@@ -768,6 +772,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         console.log(`false`)
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);
+        request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+        request.setRequestHeader(`X-Requested-With`, `*`);
         request.responseType = "blob";
         request.onload = function () {
           var read = new FileReader();
@@ -1086,6 +1092,7 @@ var xmlRequestParsing = function (search, string, index) {
   httpRequest.open(`GET`, uri);
   httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
   httpRequest.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
-  httpRequest.setRequestHeader(`X-Requested-With`, `XMLHttpRequest`);
+  httpRequest.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+  httpRequest.setRequestHeader(`X-Requested-With`, `*`);
   httpRequest.send();
 };

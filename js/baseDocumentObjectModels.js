@@ -639,6 +639,7 @@ let xmlHTMLBuild = function (htmlArray) {
   ago.innerHTML = htmlArray.dst;
   head.append(htmlArray.courtesy);
   item.append(head);
+  if (imageLoader == false) loader.style.display = `none`;
   pending.append(loader);
   image.append(pending);
   image.append(sideBarThemeBuild(`fa-heart`));
