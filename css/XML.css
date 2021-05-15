@@ -298,6 +298,7 @@
   position: fixed;
   font-size: 10px;
   width: 300px;
+  z-index: -1;
   top: 60px;
 }
 
