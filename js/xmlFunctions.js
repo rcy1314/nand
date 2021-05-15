@@ -863,6 +863,7 @@ var xmlRequestParsing = function (search, string, index) {
   let inline = [];
   imageDuplicate = [];
   console.log(menu[index]);
+  _toggle.style.display = `none`
   if (readPrevious == false) random = [];
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());

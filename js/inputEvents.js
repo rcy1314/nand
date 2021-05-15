@@ -3,6 +3,7 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`buttonSearch`) ||
       event.target.classList.contains(`button`)
     ) {
+      _toggle.style.display = `none`
       if (_guest.value.length > 0) {
         filterInputResponse(_guest.value);
         topMenuBarDisplay(topBar);
@@ -62,6 +63,7 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`buffer`) ||
       event.target.classList.contains(`input`)
   ) {
+    _toggle.style.display = `none`
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -105,6 +107,7 @@ document.addEventListener('keyup', (evt) => {
   false
 );
 document.addEventListener('submit', (evt) => {
+  _toggle.style.display = `none`
     if (event.target.classList.contains(`min`)) {
       if (document.querySelector(`.excludeInput`).value.length) {
         exclude.push(document.querySelector(`.excludeInput`).value);
