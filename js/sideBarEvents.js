@@ -186,6 +186,25 @@ document.addEventListener('click', (evt) => {
       }
       sideBarStar(event.target, cropImages);
     }
+    if (event.target.classList.contains(`roundedEdge`)) {
+      roundedEdge = roundedEdge != true;
+      if (roundedEdge == true) {
+        _main
+          .querySelectorAll(`.img`)
+          .forEach((a) => a.style.borderRadius = `12px`);
+        _main
+          .querySelectorAll(`.img`)
+          .forEach((a) => a.closest(`.image`).style.borderRadius = `12px`);
+      } else if (roundedEdge == false) {
+        _main
+          .querySelectorAll(`.img`)
+          .forEach((a) => a.style.borderRadius = `0`);
+        _main
+          .querySelectorAll(`.img`)
+          .forEach((a) => a.closest(`.image`).style.borderRadius = `0`);
+      }
+      sideBarStar(event.target, roundedEdge);
+    }
     if (event.target.classList.contains(`sideBarCenter`)) {
       sideBarCenter = sideBarCenter != true;
       if (sideBarCenter == false) {

@@ -700,6 +700,7 @@ const settings = [
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Crop Images`, class: `cropImages` },
+  { name: `Round Edges`, class: `roundedEdge` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Toggle Borders`, class: `toggleBorders` },
