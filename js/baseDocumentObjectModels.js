@@ -630,6 +630,10 @@ let xmlHTMLBuild = function (htmlArray) {
   head.classList.add(`header`);
   image.classList.add(`image`);
   object.classList.add(`img`);
+  if (roundedEdge == true) {
+    object.style.borderRadius = `12px`;
+    image.style.borderRadius = `12px`;
+  }
   item.classList.add(`item`);
   wrap.classList.add(`wrap`);
   ago.innerHTML = htmlArray.dst;

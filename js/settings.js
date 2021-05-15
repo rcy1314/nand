@@ -417,6 +417,19 @@ let titleTruncate = 125;
 let category = `Reddit`;
 
 /*
+    roundedEdge [boolean/integer]
+
+      Applications
+        xmlHTMLBuild
+
+      Result
+        round image edges
+
+*/
+
+let roundedEdge = true;
+
+/*
     onlyImages [boolean/integer]
 
       Applications
