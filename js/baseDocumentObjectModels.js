@@ -629,6 +629,7 @@ let xmlHTMLBuild = function (htmlArray) {
   publish.classList.add(`pub`);
   head.classList.add(`header`);
   image.classList.add(`image`);
+  if (feedImages == false) image.style.display = `none`
   object.classList.add(`img`);
   if (roundedEdge == true) {
     object.style.borderRadius = `12px`;

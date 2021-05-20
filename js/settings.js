@@ -456,6 +456,19 @@ let roundedEdge = true;
 let onlyImages = false;
 
 /*
+    feedImages [boolean/integer]
+
+      Applications
+        xmlAppendPublication
+
+      Result
+        display images
+
+*/
+
+let feedImages = true;
+
+/*
     youtubeMedia [boolean/integer]
 
       Applications
@@ -710,7 +723,8 @@ const settings = [
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },
-  { name: `Image Loader`, class: `imageLoader` },
+  { name: `Feed Images`, class: `feedImages` },
+  { name: `Image Circle Loader`, class: `imageLoader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Crop Images`, class: `cropImages` },

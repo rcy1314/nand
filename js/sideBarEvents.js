@@ -509,6 +509,21 @@ document.addEventListener('click', (evt) => {
       displayExpand(expand);
       unloading();
     }
+    if (
+      event.target.classList.contains(`feedImages`)
+    ) {
+      feedImages = feedImages != true;
+      sideBarStar(document.querySelector(`.feedImages`), onlyImages);
+      if (feedImages == true) {
+        document
+          .querySelectorAll(`.image`)
+          .forEach((a) => a.style.display = `block`);
+      } else if (feedImages == false) {
+        document
+          .querySelectorAll(`.image`)
+          .forEach((a) => a.style.display = `none`);
+      }
+    }
     if (event.target.classList.contains(`Percent`)) {
       loading = `percent`;
       sideBarStar(event.target, document.querySelector(`.Percent`));
