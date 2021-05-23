@@ -104,7 +104,7 @@ window.onload = function () {
               onScreen = true;
               setTimeout(function () {
                 sideBarDisplay(onScreen);
-              }, 350)
+              }, 1250)
             }
             else if (
               event.pageX >= 280 &&
