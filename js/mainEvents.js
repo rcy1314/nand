@@ -59,8 +59,10 @@ window.onload = function () {
             _main.clientWidth >= 769 &&
             Math.sign(evt.deltaY) == -1
           ) {
-            onScreen = true;
-            sideBarDisplay(onScreen);
+            setTimeout(function() {
+              onScreen = true;
+              sideBarDisplay(onScreen);
+            }, 1250)
           }
         }
         { passive: true }
@@ -114,7 +116,7 @@ window.onload = function () {
               onScreen = false;
               setTimeout(function() {
                 sideBarDisplay(onScreen);
-              }, 1250)
+              }, 750)
             }
           },
           true
@@ -262,7 +264,7 @@ document.addEventListener('click', (evt) => {
       xhr.send();
     }
     if (
-      evt.target.classList.contains(`fa-long-arrow-alt-left`)
+      evt.target.classList.contains(`fa-grip-lines`)
     ) {
       if (Reader == false) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();

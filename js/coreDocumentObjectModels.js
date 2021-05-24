@@ -46,6 +46,8 @@ const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);
 
+const _grip = document.querySelector(`.fa-grip-lines`);
+
 const _container = document.getElementById(`container`);
 
 const _progress = document.getElementById(`progressBar`);

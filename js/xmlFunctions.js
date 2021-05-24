@@ -868,6 +868,7 @@ var xmlAppendPublication = function (id) {
     document.querySelector(`.channel`).append(footerBuild());
   }
   contentStatusDisplay(id, recent, oldest, posts);
+  _grip.style.display = `none`;
   topMenuBarDisplay(topBar);
   xmlStatusSuggestions();
   stop = false;
