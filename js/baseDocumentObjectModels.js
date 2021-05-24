@@ -629,7 +629,6 @@ let xmlHTMLBuild = function (htmlArray) {
   publish.classList.add(`pub`);
   head.classList.add(`header`);
   image.classList.add(`image`);
-  if (feedImages == false) image.style.display = `none`
   object.classList.add(`img`);
   if (roundedEdge == true) {
     object.style.borderRadius = `12px`;
@@ -646,7 +645,7 @@ let xmlHTMLBuild = function (htmlArray) {
   image.append(sideBarThemeBuild(`fa-heart`));
   if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);
   image.append(object);
-  classic.append(image);
+  if (feedImages == true) classic.append(image);
   wrap.append(publish);
   wrap.append(ago);
   classic.append(wrap);

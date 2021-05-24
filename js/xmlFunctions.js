@@ -642,12 +642,20 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src == `null` ||
     src.match(/\.webm|\.mp4/g)
   ) {
-    itemContainer.style.height = `0px`;
-    copyPicture.style.display = `none`;
-    attribute.style.height = `74px`;
-    itemPending.remove();
-    itemImage.remove();
-    count.shift();
+    if (
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      )
+    ) {
+      itemContainer.style.height = `0px`;
+      copyPicture.style.display = `none`;
+      attribute.style.height = `74px`;
+      itemPending.remove();
+      itemImage.remove();
+      count.shift();
+    }
   }
   imageDuplicate.push(src);
   if (
@@ -768,7 +776,14 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             itemContainer.remove();
             itemPending.style.display = `none`;
           });
-      } else { //safeSearch false
+      } else if (
+            document.body.contains(
+              document.querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+              )
+            )
+          )
+        { //safeSearch false
         console.log(`false`)
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);

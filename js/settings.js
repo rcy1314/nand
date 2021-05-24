@@ -440,7 +440,7 @@ let category = `Reddit`;
 
 */
 
-let roundedEdge = true;
+let roundedEdge = false;
 
 /*
     onlyImages [boolean/integer]

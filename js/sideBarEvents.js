@@ -513,15 +513,16 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`feedImages`)
     ) {
       feedImages = feedImages != true;
-      sideBarStar(document.querySelector(`.feedImages`), onlyImages);
-      if (feedImages == true) {
-        document
-          .querySelectorAll(`.image`)
-          .forEach((a) => a.style.display = `block`);
+      sideBarStar(document.querySelector(`.feedImages`), feedImages);
+      if (feedImages == true && id) {
+        init();
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
+        xmlRequestParsing(null, null, id);
       } else if (feedImages == false) {
         document
           .querySelectorAll(`.image`)
-          .forEach((a) => a.style.display = `none`);
+          .forEach((a) => a.remove());
       }
     }
     if (event.target.classList.contains(`Percent`)) {
