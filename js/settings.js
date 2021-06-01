@@ -358,7 +358,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `v-bars`;
+let imageLoader = false;
 
 /*
     cropImages [boolean/integer]
@@ -668,6 +668,7 @@ const translations = [
 
 let verticalbars
 let doublecircle
+let loaderfalse
 let ringcircle
 let Dots;
 let Percent;
@@ -678,18 +679,19 @@ if (imageLoader == `v-bars`) {
   circleloader = false;
   ringloader = false;
   verticalbars = true;
-} else if (imageLoader = `double-circle`){
+} else if (imageLoader == `double-circle`){
   verticalbars = false;
   ringloader = false;
   circleloader = true;
-} else if (imageLoader = `ring-circle`){
+} else if (imageLoader == `ring-circle`){
   circleloader = false;
   verticalbars = false;
   ringloader = true;
-} else if (imageLoader = false){
+} else if (imageLoader == false){
   circleloader = false;
   verticalbars = false;
   ringloader = false;
+  loaderfalse = true;
 }
 
 if (loading == `percent`) {
@@ -740,14 +742,15 @@ const selections = [
 ];
 
 const settings = [
+  { name: `Image Loader Vertical Bars`, class: `verticalbars` },
+  { name: `Image Loader Double Circle`, class: `circleloader` },
+  { name: `Image Loader Ring Circle`, class: `ringloader` },
+  { name: `Image Loader False`, class: `loaderfalse` },
   { name: `List`, class: `List` },
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
   { name: `Percent`, class: `Percent` },
-  { name: `Image Loader Vertical Bars`, class: `verticalbars` },
-  { name: `Image Loader Double Circle`, class: `circleloader` },
-  { name: `Image Loader Ring Circle`, class: `ringloader` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },

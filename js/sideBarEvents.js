@@ -508,6 +508,22 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, true);
       sideBarStar(document.querySelector(`.Percent`), false);
     }
+    if (event.target.classList.contains(`loaderfalse`)) {
+      imageLoader = false;
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach((a) => a.style.display = `none`);
+      _main
+        .querySelectorAll(`.orig`)
+        .forEach((a) => a.style.display = `none`);
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach((a) => a.style.display = `none`);
+      sideBarStar(event.target, true);
+      sideBarStar(document.querySelector(`.verticalbars`), false);
+      sideBarStar(document.querySelector(`.circleloader`), false);
+      sideBarStar(document.querySelector(`.ringloader`), false);
+    }
     if (event.target.classList.contains(`verticalbars`)) {
       imageLoader = `v-bars`;
       _main
@@ -522,6 +538,7 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, true);
       sideBarStar(document.querySelector(`.circleloader`), false);
       sideBarStar(document.querySelector(`.ringloader`), false);
+      sideBarStar(document.querySelector(`.loaderfalse`), false);
     }
     if (event.target.classList.contains(`circleloader`)) {
       imageLoader = `double-circle`;
@@ -537,6 +554,7 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, true);
       sideBarStar(document.querySelector(`.verticalbars`), false);
       sideBarStar(document.querySelector(`.ringloader`), false);
+      sideBarStar(document.querySelector(`.loaderfalse`), false);
     }
     if (event.target.classList.contains(`ringloader`)) {
       imageLoader = `ring-circle`;
@@ -552,6 +570,7 @@ document.addEventListener('click', (evt) => {
       sideBarStar(event.target, true);
       sideBarStar(document.querySelector(`.verticalbars`), false);
       sideBarStar(document.querySelector(`.circleloader`), false);
+      sideBarStar(document.querySelector(`.loaderfalse`), false);
     }
     if (
       event.target.classList.contains(`fa-camera-retro`) ||
