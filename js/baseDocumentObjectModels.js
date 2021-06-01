@@ -602,16 +602,34 @@ let youtubeHTMLBuild = function (htmlArray) {
 
 let xmlHTMLBuild = function (htmlArray) {
   let filterBlur = document.createElement(`div`);
+  let original = document.createElement(`div`);
   let publish = document.createElement(`div`);
   let classic = document.createElement(`div`);
   let pending = document.createElement(`div`);
   let loader = document.createElement(`div`);
   let object = document.createElement(`img`);
+  let three = document.createElement(`div`);
   let image = document.createElement(`div`);
   let wrap = document.createElement(`div`);
   let item = document.createElement(`div`);
   let head = document.createElement(`div`);
+  let four = document.createElement(`div`);
+  let one = document.createElement(`div`);
+  let two = document.createElement(`div`);
   let ago = document.createElement(`div`);
+  original.classList.add(`orig`);
+  three.classList.add(`dot`, `orig`, `three`);
+  four.classList.add(`dot`, `orig`, `four`);
+  two.classList.add(`dot`, `orig`, `two`);
+  one.classList.add(`dot`, `orig`, `one`);
+  one.append(`.`);
+  two.append(`.`);
+  three.append(`.`);
+  four.append(`.`);
+  original.append(one);
+  original.append(two);
+  original.append(three);
+  original.append(four);
   if (toggleBorders == false) item.style.border = `none`
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
@@ -639,7 +657,13 @@ let xmlHTMLBuild = function (htmlArray) {
   ago.innerHTML = htmlArray.dst;
   head.append(htmlArray.courtesy);
   item.append(head);
-  if (imageLoader == false) loader.style.display = `none`;
+  if (imageLoader == `double-circle`) original.style.display = `none`;
+  if (imageLoader == `ring-circle`) loader.style.display = `none`;
+  if (imageLoader == false) {
+    original.style.display = `none`;
+    loader.style.display = `none`;
+  }
+  pending.append(original);
   pending.append(loader);
   image.append(pending);
   image.append(sideBarThemeBuild(`fa-heart`));

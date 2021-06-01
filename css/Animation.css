@@ -1,3 +1,40 @@
+.orig {
+  position: absolute;
+  animation: rot_orig 1.5s infinite ease-in-out;
+  width: 50px;
+  height: 50px;
+}
+
+.dot {
+	position: absolute;
+  border-radius: 50%;
+	font-size: 25px;
+}
+
+.one {
+  animation-delay: 0s;
+  border-radius: 50%;
+  color: var(--loader-color);
+}
+
+.two {
+  animation-delay: 100ms;
+  border-radius: 50%;
+  color: var(--loader-color);
+}
+
+.three {
+  animation-delay: 200ms;
+  border-radius: 50%;
+  color: var(--loader-color);
+}
+
+.four {
+  animation-delay: 300ms;
+  border-radius: 50%;
+  color: var(--loader-color);
+}
+
 .mainTransition {
   transition: 300ms;
 }
@@ -173,6 +210,15 @@
   100% {
     background-position: right bottom;
   }
+}
+
+@-webkit-keyframes rot_orig {
+	from {
+		transform: rotate(0deg) translate(0, -.5em) rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg) translate(0, -.5em) rotate(-360deg);
+	}
 }
 
 @keyframes scale {

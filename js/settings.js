@@ -1,6 +1,5 @@
 // initial theme
-
-let set = `Light`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
@@ -252,7 +251,7 @@ let sideBarBackdrop = false;
 
 */
 
-let sideBarMousewheel = true;
+let sideBarMousewheel = false;
 
 /*
     topBarBackdrop [boolean/integer]
@@ -265,7 +264,7 @@ let sideBarMousewheel = true;
 
 */
 
-let topBarBackdrop = false;
+let topBarBackdrop = true;
 
 /*
     toggleBorders [boolean/integer]
@@ -352,7 +351,9 @@ let scrollIntoView = true;
         xmlHTMLBuild
 
       Result
-        loader double-circle pending image
+        `double-circle`
+        `ring-circle`
+        false
 
 */
 
@@ -399,7 +400,7 @@ let fadeIntoView = false;
 
 */
 
-let loading = `dots`;
+let loading = `percent`;
 
 /*
     titleTruncate [integer]
@@ -480,7 +481,7 @@ let feedImages = true;
 
 */
 
-let youtubeMedia = false;
+let youtubeMedia = true;
 
 /*
     suggestionBuffer [integer]
@@ -591,6 +592,8 @@ let safeSearchIDs = [
   `Reddit/Celebhub`,
   `Reddit/Goddesses`,
   `Reddit/Internet Stars`,
+  `Reddit/High Res Celebs`,
+  `Reddit/UHQ Celebs`,
   `4Chan/Sports`,
   `4Chan/Technology`,
   `4Chan/Wallpapers`,
