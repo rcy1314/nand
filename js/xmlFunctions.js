@@ -868,7 +868,6 @@ var xmlAppendPublication = function (id) {
     document.querySelector(`.channel`).append(footerBuild());
   }
   contentStatusDisplay(id, recent, oldest, posts);
-  _grip.style.display = `none`;
   topMenuBarDisplay(topBar);
   xmlStatusSuggestions();
   stop = false;
@@ -897,6 +896,7 @@ var xmlRequestParsing = function (search, string, index) {
     category = menu[index].category;
   }
   _visit.style.display = `none`;
+  _back.style.display = `block`
   document.title = menu[index].id.space().capitalize();
   if (
     justRead == true && first == true && showSplash == true ||

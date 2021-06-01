@@ -6,6 +6,7 @@ const _html = document.querySelector(`html`);
 
 const _body = document.querySelector(`body`);
 
+
 const _dots = document.querySelector(`.fill`);
 
 const _just = document.getElementById(`just`);
@@ -46,7 +47,7 @@ const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);
 
-const _grip = document.querySelector(`.fa-grip-lines`);
+const _back = document.querySelector(`.fa-grip-lines`);
 
 const _container = document.getElementById(`container`);
 

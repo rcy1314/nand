@@ -25,9 +25,10 @@
   cursor: pointer;
   font-size: 14px;
   padding: 10px;
+  right: -10px;
   float: left;
   z-index: 1;
-  top: 15px;
+  top: 17px;
 }
 
 #main #xml .center .item .header .courtesy .copy .attribute .fa,
