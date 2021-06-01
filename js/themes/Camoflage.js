@@ -28,6 +28,7 @@ var Camoflage = function () {
     `--borderless-color`,
     `rgba(7,7,7,.3)`
   );
+  if (set == `Camoflage`) _sidebar.style.backgroundColor = `rgba(0, 0, 0, 0)`;
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
   if (backgroundImage[0].path != `images/c453ae624e3d5e58b9890a998ec441b9.jpg`)
     backgroundImage[0].path = `images/c453ae624e3d5e58b9890a998ec441b9.jpg`

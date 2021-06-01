@@ -10,7 +10,10 @@ window.onload = function () {
     _sidebar.querySelector(`#content`).style.position = `absolute`;
 
   if (sideBarBackdrop == true)
-    _sidebar.style.cssText = `backdrop-filter: blur(10px)`
+    _sidebar.style.cssText = `backdrop-filter: blur(10px) !important`;
+
+  if (topBarBackdrop == true)
+    _top.style.cssText = `backdrop-filter: blur(10px)`
 
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
