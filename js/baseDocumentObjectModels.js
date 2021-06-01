@@ -673,16 +673,16 @@ let xmlHTMLBuild = function (htmlArray) {
   item.append(head);
   if (imageLoader == `double-circle`) {
     original.style.display = `none`;
-    wrapper.style.display = `none`;
+    bars.style.display = `none`;
   } else if (imageLoader == `ring-circle`) {
-    wrapper.style.display = `none`;
+    bars.style.display = `none`;
     loader.style.display = `none`;
   } else if (imageLoader == `v-bars`) {
     original.style.display = `none`;
     loader.style.display = `none`;
   } else if (imageLoader == false) {
     original.style.display = `none`;
-    wrapper.style.display = `none`;
+    bars.style.display = `none`;
     loader.style.display = `none`;
   }
   pending.append(original);
