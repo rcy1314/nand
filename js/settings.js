@@ -1,5 +1,5 @@
 // initial theme
-let set = `Night`;
+let set = `Camoflage`;
 
 /*
     backgroundImage [array]
@@ -31,6 +31,7 @@ let backgroundImage = [
 let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
+  { obFn: `Camoflage`, class: `Night`, icon: `fa-angle-double-up` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
 ];
 
@@ -750,7 +751,6 @@ const settings = [
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
-  { name: `Percent`, class: `Percent` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },

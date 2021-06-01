@@ -75,6 +75,7 @@
 #sidebar #content .fa-layer-group,
 #sidebar #content .fa-certificate,
 #sidebar #content .fa-paint-brush,
+#sidebar #content .fa-angle-double-up,
 #sidebar #content .fa-digital-tachograph {
   color: var(--fill-color);
   position: relative;
@@ -231,6 +232,15 @@
 #main #option .fa-code,
 #sidebar #content .fa-code {
   font-family: "Font Awesome 5 Pro";
+  content: "\f121";
+  font-weight: 50;
+}
+
+#main #option .fa-angle-double-up,
+#sidebar #content .fa-angle-double-up {
+  font-family: "Font Awesome 5 Pro";
+  font-size: 16px !important;
+  left: 1px !important;
   content: "\f121";
   font-weight: 50;
 }
