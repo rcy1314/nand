@@ -353,11 +353,12 @@ let scrollIntoView = true;
       Result
         `double-circle`
         `ring-circle`
+        `v-bars`
         false
 
 */
 
-let imageLoader = false;
+let imageLoader = `v-bars`;
 
 /*
     cropImages [boolean/integer]
@@ -665,10 +666,31 @@ const translations = [
 
 /* Feel free to edit the above. */
 
+let verticalbars
+let doublecircle
+let ringcircle
 let Dots;
 let Percent;
 let Blocks;
 let List;
+
+if (imageLoader == `v-bars`) {
+  circleloader = false;
+  ringloader = false;
+  verticalbars = true;
+} else if (imageLoader = `double-circle`){
+  verticalbars = false;
+  ringloader = false;
+  circleloader = true;
+} else if (imageLoader = `ring-circle`){
+  circleloader = false;
+  verticalbars = false;
+  ringloader = true;
+} else if (imageLoader = false){
+  circleloader = false;
+  verticalbars = false;
+  ringloader = false;
+}
 
 if (loading == `percent`) {
   Dots = false;
@@ -722,12 +744,14 @@ const settings = [
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Dots`, class: `Dots` },
-  { name: `Reader`, class: `Reader` },
+  { name: `Percent`, class: `Percent` },
+  { name: `Image Loader Vertical Bars`, class: `verticalbars` },
+  { name: `Image Loader Double Circle`, class: `circleloader` },
+  { name: `Image Loader Ring Circle`, class: `ringloader` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
   { name: `Images`, class: `onlyImages` },
   { name: `Feed Images`, class: `feedImages` },
-  { name: `Image Circle Loader`, class: `imageLoader` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Crop Images`, class: `cropImages` },

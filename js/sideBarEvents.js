@@ -189,15 +189,22 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`imageLoader`)) {
       imageLoader = imageLoader != true;
       if (imageLoader == true) {
-        if (imageLoader = `double-circle`)
+        if (imageLoader = `double-circle`) {
         _main
           .querySelectorAll(`.loader`)
           .forEach((a) => a.style.display = `block`);
-        else if (imageLoader = `ring-circle`)
+        } else if (imageLoader = `bars`) {
+         _main
+           .querySelectorAll(`.wrapper`)
+           .forEach((a) => a.style.display = `block`);
+       } else if (imageLoader = `ring-circle`)
         _main
           .querySelectorAll(`.original`)
           .forEach((a) => a.style.display = `block`);
       } else if (imageLoader == false) {
+        _main
+          .querySelectorAll(`.wrapper`)
+          .forEach((a) => a.style.display = `none`);
         _main
           .querySelectorAll(`.loader`)
           .forEach((a) => a.style.display = `none`);
@@ -500,6 +507,51 @@ document.addEventListener('click', (evt) => {
       loading = `dots`;
       sideBarStar(event.target, true);
       sideBarStar(document.querySelector(`.Percent`), false);
+    }
+    if (event.target.classList.contains(`verticalbars`)) {
+      imageLoader = `v-bars`;
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach((a) => a.style.display = `block`);
+      _main
+        .querySelectorAll(`.orig`)
+        .forEach((a) => a.style.display = `none`);
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach((a) => a.style.display = `none`);
+      sideBarStar(event.target, true);
+      sideBarStar(document.querySelector(`.circleloader`), false);
+      sideBarStar(document.querySelector(`.ringloader`), false);
+    }
+    if (event.target.classList.contains(`circleloader`)) {
+      imageLoader = `double-circle`;
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach((a) => a.style.display = `block`);
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach((a) => a.style.display = `none`);
+      _main
+        .querySelectorAll(`.orig`)
+        .forEach((a) => a.style.display = `none`);
+      sideBarStar(event.target, true);
+      sideBarStar(document.querySelector(`.verticalbars`), false);
+      sideBarStar(document.querySelector(`.ringloader`), false);
+    }
+    if (event.target.classList.contains(`ringloader`)) {
+      imageLoader = `ring-circle`;
+      _main
+        .querySelectorAll(`.orig`)
+        .forEach((a) => a.style.display = `block`);
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach((a) => a.style.display = `none`);
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach((a) => a.style.display = `none`);
+      sideBarStar(event.target, true);
+      sideBarStar(document.querySelector(`.verticalbars`), false);
+      sideBarStar(document.querySelector(`.circleloader`), false);
     }
     if (
       event.target.classList.contains(`fa-camera-retro`) ||

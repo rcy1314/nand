@@ -605,6 +605,7 @@ let xmlHTMLBuild = function (htmlArray) {
   let original = document.createElement(`div`);
   let publish = document.createElement(`div`);
   let classic = document.createElement(`div`);
+  let wrapper = document.createElement(`div`);
   let pending = document.createElement(`div`);
   let loader = document.createElement(`div`);
   let object = document.createElement(`img`);
@@ -614,14 +615,27 @@ let xmlHTMLBuild = function (htmlArray) {
   let item = document.createElement(`div`);
   let head = document.createElement(`div`);
   let four = document.createElement(`div`);
+  let bars = document.createElement(`div`);
   let one = document.createElement(`div`);
   let two = document.createElement(`div`);
+  let second = document.createElement(`div`);
+  let single = document.createElement(`div`);
+  let third = document.createElement(`div`);
   let ago = document.createElement(`div`);
   original.classList.add(`orig`);
+  wrapper.classList.add(`wrapper`);
+  bars.classList.add(`bars`);
+  second.classList.add(`v-bar`, `second`)
+  single.classList.add(`v-bar`, `first`)
+  third.classList.add(`v-bar`, `third`)
   three.classList.add(`dot`, `orig`, `three`);
   four.classList.add(`dot`, `orig`, `four`);
   two.classList.add(`dot`, `orig`, `two`);
   one.classList.add(`dot`, `orig`, `one`);
+  bars.append(single);
+  bars.append(second);
+  bars.append(third);
+  wrapper.append(bars);
   one.append(`.`);
   two.append(`.`);
   three.append(`.`);
@@ -657,14 +671,23 @@ let xmlHTMLBuild = function (htmlArray) {
   ago.innerHTML = htmlArray.dst;
   head.append(htmlArray.courtesy);
   item.append(head);
-  if (imageLoader == `double-circle`) original.style.display = `none`;
-  if (imageLoader == `ring-circle`) loader.style.display = `none`;
-  if (imageLoader == false) {
+  if (imageLoader == `double-circle`) {
     original.style.display = `none`;
+    wrapper.style.display = `none`;
+  } else if (imageLoader == `ring-circle`) {
+    wrapper.style.display = `none`;
+    loader.style.display = `none`;
+  } else if (imageLoader == `v-bars`) {
+    original.style.display = `none`;
+    loader.style.display = `none`;
+  } else if (imageLoader == false) {
+    original.style.display = `none`;
+    wrapper.style.display = `none`;
     loader.style.display = `none`;
   }
   pending.append(original);
   pending.append(loader);
+  pending.append(bars)
   image.append(pending);
   image.append(sideBarThemeBuild(`fa-heart`));
   if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);

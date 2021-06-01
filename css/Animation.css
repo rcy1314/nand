@@ -1,3 +1,54 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bars {
+  position: relative;
+}
+
+.bars .v-bar {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  margin: 2px;
+  display: inline-block;
+  -webkit-animation: v-bar-grow 1.2s infinite linear;
+}
+
+@-webkit-keyframes v-bar-grow {
+  0%  {height:30px;}
+  20%  {height:15px;}
+  40%  {height:0px;}
+  60%  {height:5px;}
+  80%  {height:15px;}
+  100% {height:30px;}
+}
+
+.v-bar.first {
+  background-color: var(--loader-color);
+  animation-delay: .3s;
+  left: 0;
+}
+
+.v-bar.second {
+  background-color: var(--loader-color);
+  left: 12px;
+}
+
+.v-bar.third {
+  background-color: var(--loader-color);
+  animation-delay: .5s;
+  left: 24px;
+}
+
+.bars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .orig {
   position: absolute;
   animation: rot_orig 1.5s infinite ease-in-out;
