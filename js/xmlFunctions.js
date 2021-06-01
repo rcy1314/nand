@@ -967,7 +967,7 @@ var xmlRequestParsing = function (search, string, index) {
           if (src && src.match(/youtube\.com/g) && youtubeMedia == true) {
             if (data.getElementsByTagName(`media:statistics`).length > 0)
               var views =
-                `<div class='ago views'> views` +
+                `<div class='ago views'> views ` +
                 data
                   .getElementsByTagName(`media:statistics`)[0]
                   .getAttribute(`views`)
@@ -1057,6 +1057,7 @@ var xmlRequestParsing = function (search, string, index) {
             pubIndex: local,
           });
           guideDisplayYoutube(sticky);
+          document.querySelector(`.sticky`).style.display = `flex`;
           unloading();
         } else if (!isNaN(parseFloat(local)) && isFinite(local)) {
           if (pub[local].src == null) {

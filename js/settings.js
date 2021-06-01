@@ -1,5 +1,5 @@
 // initial theme
-let set = `Camoflage`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
