@@ -149,7 +149,7 @@ window.onload = function () {
       .forEach((a) => a.style.display = `none`);
    } else if (imageLoader == `ring-circle`) {
     _main
-      .querySelectorAll(`.original`)
+      .querySelectorAll(`.orig`)
       .forEach((a) => a.style.display = `block`);
     _main
       .querySelectorAll(`.loader`)
