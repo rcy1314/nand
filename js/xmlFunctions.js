@@ -1038,6 +1038,7 @@ var xmlRequestParsing = function (search, string, index) {
             pub[i].uri == post) local = i;
         }
         if (
+          menu[index].id.match(/Youtube/g) &&
           !isNaN(parseFloat(local)) &&
           youtubeMedia == true &&
           isFinite(local)
