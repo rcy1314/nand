@@ -186,34 +186,6 @@ document.addEventListener('click', (evt) => {
       }
       sideBarStar(event.target, cropImages);
     }
-    if (event.target.classList.contains(`imageLoader`)) {
-      imageLoader = imageLoader != true;
-      if (imageLoader == true) {
-        if (imageLoader = `double-circle`) {
-        _main
-          .querySelectorAll(`.loader`)
-          .forEach((a) => a.style.display = `block`);
-        } else if (imageLoader = `bars`) {
-         _main
-           .querySelectorAll(`.wrapper`)
-           .forEach((a) => a.style.display = `block`);
-       } else if (imageLoader = `ring-circle`)
-        _main
-          .querySelectorAll(`.original`)
-          .forEach((a) => a.style.display = `block`);
-      } else if (imageLoader == false) {
-        _main
-          .querySelectorAll(`.wrapper`)
-          .forEach((a) => a.style.display = `none`);
-        _main
-          .querySelectorAll(`.loader`)
-          .forEach((a) => a.style.display = `none`);
-        _main
-          .querySelectorAll(`.original`)
-          .forEach((a) => a.style.display = `none`);
-      }
-      sideBarStar(event.target, imageLoader);
-    }
     if (event.target.classList.contains(`roundedEdge`)) {
       roundedEdge = roundedEdge != true;
       if (roundedEdge == true) {

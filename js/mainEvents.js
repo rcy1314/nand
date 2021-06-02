@@ -127,6 +127,47 @@ window.onload = function () {
       }
     }, 250)
 
+    if (imageLoader == `double-circle`) {
+    _main
+      .querySelectorAll(`.loader`)
+      .forEach((a) => a.style.display = `block`);
+    _main
+      .querySelectorAll(`.bars`)
+      .forEach((a) => a.style.display = `none`);
+    _main
+      .querySelectorAll(`.orig`)
+      .forEach((a) => a.style.display = `none`);
+    } else if (imageLoader == `v-bars`) {
+    _main
+      .querySelectorAll(`.bars`)
+      .forEach((a) => a.style.display = `block`);
+    _main
+      .querySelectorAll(`.orig`)
+      .forEach((a) => a.style.display = `none`);
+    _main
+      .querySelectorAll(`.loader`)
+      .forEach((a) => a.style.display = `none`);
+   } else if (imageLoader == `ring-circle`) {
+    _main
+      .querySelectorAll(`.original`)
+      .forEach((a) => a.style.display = `block`);
+    _main
+      .querySelectorAll(`.loader`)
+      .forEach((a) => a.style.display = `none`);
+    _main
+      .querySelectorAll(`.wrapper`)
+      .forEach((a) => a.style.display = `none`);
+  } else if (imageLoader == false) {
+    _main
+      .querySelectorAll(`.bars`)
+      .forEach((a) => a.style.display = `none`);
+    _main
+      .querySelectorAll(`.loader`)
+      .forEach((a) => a.style.display = `none`);
+    _main
+      .querySelectorAll(`.orig`)
+      .forEach((a) => a.style.display = `none`);
+  }
   _container.style.display = `block`;
 
 };

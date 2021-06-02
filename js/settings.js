@@ -31,7 +31,7 @@ let backgroundImage = [
 let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
-  { obFn: `Camoflage`, class: `Night`, icon: `fa-angle-double-up` },
+  { obFn: `Camoflage`, class: `Camoflage`, icon: `fa-angle-double-up` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
 ];
 
@@ -743,10 +743,10 @@ const selections = [
 ];
 
 const settings = [
-  { name: `Image Loader Vertical Bars`, class: `verticalbars` },
-  { name: `Image Loader Double Circle`, class: `circleloader` },
-  { name: `Image Loader Ring Circle`, class: `ringloader` },
-  { name: `Image Loader False`, class: `loaderfalse` },
+  { name: `Loading Double Circle`, class: `circleloader` },
+  { name: `Loading Vertical Bars`, class: `verticalbars` },
+  { name: `Loading Ring Circle`, class: `ringloader` },
+  { name: `Loading False`, class: `loaderfalse` },
   { name: `List`, class: `List` },
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
