@@ -221,7 +221,8 @@
 
 #main #xml .center .item .header .courtesy .copy .attribute .site,
 #main #xml .center .item .header .courtesy .copy .attribute .post,
-#main #xml .center .item .header .courtesy .copy .attribute .picture {
+#main #xml .center .item .header .courtesy .copy .attribute .picture,
+#main #xml .center .item .header .courtesy .copy .attribute .download {
   color: var(--fill-color);
   background-color: transparent;
   cursor: pointer;
@@ -232,7 +233,8 @@
 
 #main #xml .center .item .header .courtesy .copy .attribute .site:hover,
 #main #xml .center .item .header .courtesy .copy .attribute .post:hover,
-#main #xml .center .item .header .courtesy .copy .attribute .picture:hover {
+#main #xml .center .item .header .courtesy .copy .attribute .picture:hover,
+#main #xml .center .item .header .courtesy .copy .attribute .download:hover {
   background-color: var(--hover-background-color);
 }
 
