@@ -68,8 +68,8 @@
   position: relative;
   margin: 0 auto;
   animation: rot_orig 1.5s infinite ease-in-out;
-  width: 50px;
   height: 50px;
+  width: 0;
 }
 
 .dot {
