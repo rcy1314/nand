@@ -116,6 +116,10 @@ String.prototype.space = function () {
   return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
 };
 
+String.prototype.hyphen = function () {
+  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, `-`);
+};
+
 String.prototype.image = function () {
   return `images/webp/${this}.webp`;
 };

@@ -234,6 +234,7 @@ let progressBackDrop = function (done) {
 let populateCategoryGroup = function (translation) {
   let media;
   _back.style.display = `none`;
+  location.href.split(`?`)[0].state();
   if (scrollIntoView === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
   let result = document.querySelector(`.result`);
