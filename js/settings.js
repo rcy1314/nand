@@ -1,5 +1,5 @@
 // initial theme
-let set = `Informative`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
