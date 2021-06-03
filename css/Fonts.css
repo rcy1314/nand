@@ -63,8 +63,9 @@
   padding: 0;
 }
 
-#sidebar #content .fa-star,
+#sidebar #content .fa-splotch,
 #sidebar #content .fa-user,
+#sidebar #content .fa-info,
 #sidebar #content .fa-code,
 #sidebar #content .fa-cloud,
 #sidebar #content .fa-expand,
@@ -234,6 +235,14 @@
   font-family: "Font Awesome 5 Pro";
   content: "\f121";
   font-weight: 50;
+}
+
+#main #option .fa-info,
+#sidebar #content .fa-info {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f129";
+  font-weight: 50;
+  left: 3px;
 }
 
 #main #option .fa-angle-double-up,

@@ -1,9 +1,9 @@
 let sideBarStar = function (Elem, Value) {
   if (Value) {
     Elem.nextElementSibling.classList.remove(`fa-minus`)
-    Elem.nextElementSibling.classList.add(`fa-star`)
+    Elem.nextElementSibling.classList.add(`fa-splotch`)
   } else if (Value == false) {
-    Elem.nextElementSibling.classList.remove(`fa-star`)
+    Elem.nextElementSibling.classList.remove(`fa-splotch`)
     Elem.nextElementSibling.classList.add(`fa-minus`)
   }
 }
@@ -100,7 +100,7 @@ let appendSettings = function (Elem, Class, Arrays) {
       document
         .querySelector(`.` + Arrays[i].class)
         .parentNode.insertBefore(
-          sideBarThemeBuild(`fa-star`),
+          sideBarThemeBuild(`fa-splotch`),
           document.querySelector(`.` + Arrays[i].class).nextSibling
         );
     } else {
@@ -169,6 +169,9 @@ let topMenuBarDisplay = function (Value) {
 
 let quickFeedDisplay = function (Value) {
   if (Value == true) {
+    _main
+      .querySelectorAll(`.feed`)
+      .forEach((a) => a.style.display = `block`);
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
     _front.classList.remove(`toggle`);
@@ -179,6 +182,9 @@ let quickFeedDisplay = function (Value) {
     _just.classList.add(`toggleHidden`);
     _just.classList.add(`invisible`);
   } else if (Value == false) {
+    _main
+      .querySelectorAll(`.feed`)
+      .forEach((a) => a.style.display = `none`);
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
     _front.classList.remove(`toggleHidden`);

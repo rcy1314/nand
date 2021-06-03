@@ -6,6 +6,8 @@ window.onload = function () {
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
+  if (_main.clientWidth <= 425) expand = false;
+
   if (sideBarCenter == true)
     _sidebar.querySelector(`#content`).style.position = `absolute`;
 

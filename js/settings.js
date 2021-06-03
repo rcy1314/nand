@@ -1,5 +1,5 @@
 // initial theme
-let set = `Night`;
+let set = `Informative`;
 
 /*
     backgroundImage [array]
@@ -31,6 +31,7 @@ let backgroundImage = [
 let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
+  { obFn: `Informative`, class: `Informative`, icon: `fa-info` },
   { obFn: `Camoflage`, class: `Camoflage`, icon: `fa-angle-double-up` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
 ];
