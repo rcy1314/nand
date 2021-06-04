@@ -195,7 +195,10 @@ document.addEventListener('scroll', (evt) => {
         stop == false
       ) {
         first = false;
-        if (showSplash == true) _check.style.display = `block`;
+        if (showSplash == true) {
+          _check.style.display = `block`;
+          document.querySelector(`#xml`).style.cssText = `backdrop-filter: blur(10px)`;
+        }
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
@@ -399,7 +402,6 @@ document.addEventListener('click', (evt) => {
         .querySelectorAll(`.joi`)
         .forEach((a) => (a.classList.add(`luv`)));
       if (showSplash == true) _check.style.display = `block`;
-      sideBarStar(document.querySelector(`.Reader`), Reader);
       sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
       xmlRequestParsing(null, null, anyRandomMenuObject());
     }
