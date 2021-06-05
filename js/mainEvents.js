@@ -2,11 +2,11 @@ window.onload = function () {
   quickFeedDisplay(quickFeeds);
   if (sideBarCenter == false) _content.style.position = `relative`;
   else _content.style.position = `absolute`;
-  if (_main.clientWidth <= 425 || quickFeedsTranslations == true)
+  if (window.clientWidth <= 425 || quickFeedsTranslations == true)
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
-  if (_main.clientWidth <= 425) expand = false;
+  if (window.clientWidth <= 425) expand = false;
 
   if (sideBarCenter == true)
     _sidebar.querySelector(`#content`).style.position = `absolute`;
