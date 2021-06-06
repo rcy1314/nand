@@ -337,7 +337,7 @@ let guideBuildYoutube = function (pubArray) {
   wrap.setAttribute(`ext`, pubArray.externalURI);
   sticky.classList.add(`yt`, `item`, `sticky`);
   youtube.setAttribute(`ext`, pubArray.re);
-  publish.innerHTML = pubArray.title;
+  publish.innerHTML = pubArray.publish;
   sticky.style.display = `none`;
   ago.innerHTML = pubArray.dst;
   youtube.style.width = `60vw`;
@@ -513,6 +513,33 @@ let categoryBuild = function (
 
 let attributeBuild = function () {
   let attribute = document.createElement(`div`);
+  let download = document.createElement(`div`);
+  let object = document.createElement(`div`);
+  let attr = document.createElement(`div`);
+  let site = document.createElement(`div`);
+  let copy = document.createElement(`div`);
+  attr.classList.add(`attr`, `fa-ellipsis-h`);
+  attribute.classList.add(`attribute`);
+  download.classList.add(`download`);
+  object.classList.add(`copy`);
+  site.classList.add(`site`);
+  copy.classList.add(`post`);
+  site.innerHTML = `Copy URL`;
+  copy.innerHTML = `Copy Post`;
+  download.innerHTML = `Download Image`;
+  object.append(attr);
+  attr.append(attribute);
+  site.append(sideBarThemeBuild(`fa-at`));
+  attribute.append(site);
+  copy.append(sideBarThemeBuild(`fa-share`));
+  attribute.append(copy);
+  download.append(sideBarThemeBuild(`fa-camera`));
+  attribute.append(download);
+  return object;
+};
+
+let youtubeAttributeBuild = function () {
+  let attribute = document.createElement(`div`);
   let picture = document.createElement(`div`);
   let object = document.createElement(`div`);
   let attr = document.createElement(`div`);
@@ -552,7 +579,9 @@ let courtesyBuild = function (objectId, objectImage, objectExternal) {
   ahref.append(bold);
   courtesy.append(object);
   courtesy.append(ahref);
-  courtesy.append(attributeBuild());
+  if (menu[id].id.match(/Youtube/g) && youtubeMedia == true)
+    courtesy.append(youtubeAttributeBuild());
+  else courtesy.append(attributeBuild());
   return courtesy;
 };
 

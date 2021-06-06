@@ -278,6 +278,7 @@
 
   #guide .sticky .wrap {
     width: 100%;
+    position: absolute
   }
   #guide .sticky #yt {
     display: block !important;
@@ -287,6 +288,14 @@
   #guide .yt {
     display: block !important;
     width: 100% !important;
+  }
+
+  #guide .yt .src {
+    height: 22vh !important;
+  }
+
+  #guide .sticky .wrap {
+    width: 100vw !important;
   }
 
 }

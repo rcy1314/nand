@@ -799,8 +799,13 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`fa-camera`) ||
       evt.target.classList.contains(`picture`)
     ) {
-      evt.target.closest(`.item`).querySelector(`.source`).select();
-      document.execCommand(`copy`);
+      if (youtubeMedia == true && menu[id].id.match(/Youtube/g)) {
+        evt.target.closest(`.item`).querySelector(`.url`).select();
+        document.execCommand(`copy`);
+      } else {
+        evt.target.closest(`.item`).querySelector(`.source`).select();
+        document.execCommand(`copy`);
+      }
     }
     if (
       evt.target.classList.contains(`fa-plus`) ||

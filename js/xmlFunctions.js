@@ -537,7 +537,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
   let copyPicture = document.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
   let copyPost = document.querySelector(
     `[aria-item='${pubIndex}'] .post`
@@ -624,7 +624,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
   let copyPicture = document.querySelector(
-    `[aria-item='${pubIndex}'] .picture`
+    `[aria-item='${pubIndex}'] .download`
   );
   let copyPost = document.querySelector(
     `[aria-item='${pubIndex}'] .post`
@@ -712,10 +712,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.style.transform = `scale(4)`
                       itemFilter.classList.add(`blur`);
                       itemImage.setAttribute(`src`, e.target.result);
-                      copyPicture.innerHTML = `Download Image`;
-                      copyPicture.append(sideBarThemeBuild(`fa-camera`));
-                      copyPicture.classList.remove(`picture`);
-                      copyPicture.classList.add(`download`);
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                     };
@@ -726,9 +722,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   if (!src.match(/4cdn/g)) request.send();
                   else {
                     xmlImageDimensions(menuObject, pubIndex, newImg)
-                    copyPicture.innerHTML = `Download Image`;
-                    copyPicture.append(sideBarThemeBuild(`fa-camera`));
-                    copyPicture.classList.remove(`picture`);
                     copyPicture.classList.add(`download`);
                     itemFilter.style.transform = `scale(4)`
                     itemFilter.classList.add(`blur`);
@@ -1055,6 +1048,7 @@ var xmlRequestParsing = function (search, string, index) {
             dst: pub[local].dst,
             src: pub[local].src,
             externalURI: pub[local].re,
+            publish: title,
             views: views,
             menuObject: index,
             pubIndex: local,

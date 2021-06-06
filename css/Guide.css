@@ -11,6 +11,26 @@
   top: 0;
 }
 
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .picture,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .download {
+  color: var(--fill-color);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+}
+
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .download:hover {
+  background-color: var(--hover-background-color);
+}
+
+
 #container #guide .sticky {
   background-color: var(--color-primary);
   box-shadow: var(--box-shadow);
@@ -97,7 +117,6 @@
 #container #guide .sticky .header .courtesy {
   text-transform: capitalize;
   align-items: center;
-  position: relative;
   width: fit-content;
   margin-top: 5px;
   font-size: 10px;
@@ -158,7 +177,7 @@
 
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .picture {
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .download {
   color: var(--fill-color);
   background-color: transparent;
   cursor: pointer;
@@ -169,7 +188,7 @@
 
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover {
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .download:hover {
   background-color: var(--hover-background-color);
 }
 
