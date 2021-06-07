@@ -437,7 +437,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
     parse.push({
       since: since,
       dst: dst[0],
-      cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
+      cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
       base36: gen,
       externalURI: re.trim(),
     });
@@ -468,7 +468,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
+        cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -492,7 +492,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
+        cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -512,7 +512,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${menu[id].hash}${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}`,
+        cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -932,15 +932,15 @@ var xmlRequestParsing = function (search, string, index) {
 
           else var uri = trun.toLowerCase()
 
-          let share = menu[index].hash;
+          let share = menu[index].title;
 
           if (hash == `long`)
             share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
           else if (hash == `short`)
-            share = `${location.href.split(`?`)[0]}?${share}${parse.base36}`;
+            share = `${location.href.split(`?`)[0]}?${parse.base36}-${share}`;
           else if (hash == `title`)
             share =
-            `${location.href.split(`?`)[0]}?${share}-${uri}`;
+            `${location.href.split(`?`)[0]}?${uri}-${share}`;
 
           let src = xmlImageSource(data);
 

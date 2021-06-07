@@ -24,17 +24,15 @@ setTimeout(function() {
     let i;
     let id;
     var uri = location.href.split(`?`)[1];
-    if (uri.match(/^[a-zA-Z0-9\-]+$/g)) {
-      id = uri.slice(0, 2);
-      if (hash == `long`) post = uri.slice(2, 64);
-      else if (hash == `short`) post = parseInt(uri.slice(2), 36);
-      else if (hash == `title`)
+    id = uri.slice(uri.length - 9, uri.length);
+    console.log(id)
+    if (id.match(/[0-9]/g)) {
         post =
-          uri.slice(3, titleTruncate);
+          uri.slice(0, uri.length - 10);
       console.log(post)
       setTimeout(function () {
-        if (menu.findIndex((item) => item.hash === id))
-          i = menu.findIndex((item) => item.hash === id);
+        if (menu.findIndex((item) => item.title === id))
+          i = menu.findIndex((item) => item.title === id);
         if (i !== -1)
           xmlRequestParsing(null, null, i);
         else if (i === -1)
