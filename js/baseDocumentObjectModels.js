@@ -394,8 +394,6 @@ let contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
   des.innerHTML += `<br>Most Recent<div style='float:right'>${recentPost}</div>`;
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
-  if (id !== 0) des.innerHTML +=
-    `<br>Hash<div style='float:right'>${menu[menuIndex].hash}</div>`;
   if (showDescription == false) des.style.display = `none`;
   filter.append(object);
   filter.append(ahref);
@@ -748,7 +746,6 @@ let listingIndexBuild = function (
   detail.classList.add(`detail`);
   buffer.classList.add(`buffer`);
   if (suggested == true) contentText = `suggested...`;
-  else contentText = `?${indexHash}`;
   buffer.innerHTML = contentText;
   object.classList.add(`input`);
   key.classList.add(`index`);

@@ -25,8 +25,15 @@ setTimeout(function() {
     let id;
     var uri = location.href.split(`?`)[1];
     id = uri.slice(uri.length - 9, uri.length);
-    console.log(id)
-    if (id.match(/[0-9]/g)) {
+    if (uri.match(/^[a-zA-Z0-9]+$/g)) {
+      id = uri.slice(0, 2);
+      post = parseInt(uri.slice(2), 36);
+      setTimeout(function () {
+        if (menu.findIndex((item) => item.hash === id))
+          i = menu.findIndex((item) => item.hash === id);
+        if (i !== -1) xmlRequestParsing(null, null, i);
+      }, 250);
+    } else if (id.match(/[0-9]/g)) {
         post =
           uri.slice(0, uri.length - 10);
       console.log(post)

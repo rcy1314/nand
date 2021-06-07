@@ -62,7 +62,6 @@ var xmlStatusSuggestions = function () {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
       );
-      console.log(randomMenuObject)
       if (
         menu[randomMenuObject] &&
         randomMenuObject !== 0 &&
@@ -437,7 +436,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
     parse.push({
       since: since,
       dst: dst[0],
-      cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+      cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
       base36: gen,
       externalURI: re.trim(),
     });
@@ -468,7 +467,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -492,7 +491,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -512,7 +511,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${cyrb53(menu[id].hash.toString())}-${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
@@ -937,7 +936,7 @@ var xmlRequestParsing = function (search, string, index) {
           if (hash == `long`)
             share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
           else if (hash == `short`)
-            share = `${location.href.split(`?`)[0]}?${parse.base36}-${share}`;
+            share = `${location.href.split(`?`)[0]}?${menu[index].hash}${parse.base36}`;
           else if (hash == `title`)
             share =
             `${location.href.split(`?`)[0]}?${uri}-${share}`;
@@ -1012,7 +1011,7 @@ var xmlRequestParsing = function (search, string, index) {
             since: parse.since,
             dst: parse.dst,
             gen: parse.base36,
-            enc: parse.cyrb53,
+            enc: parse.cyrb53.slice(0, parse.cyrb53.length - 10),
             re: parse.externalURI,
             share: share,
             more: more,
@@ -1026,7 +1025,7 @@ var xmlRequestParsing = function (search, string, index) {
           });
         }
         for (i = 0; i < pub.length; i++) {
-          if (hash == `long` && pub[i].enc.slice(2, 64) == post) local = i;
+          if (hash == `long` && pub[i].enc == post) local = i;
           else if (hash == `short` && parseInt(pub[i].gen, 36) == post) local = i;
           else if (
             hash == `title` &&
