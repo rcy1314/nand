@@ -4,7 +4,7 @@
   min-height: 100%;
   display: block;
   width: 100%;
-  right: 95px;
+  left: 60px;
   z-index: 1;
   top: 0;
 }
@@ -297,10 +297,9 @@
   height: fit-content;
   vertical-align: top;
   text-align: center;
-  position: fixed;
+  position: sticky;
   font-size: 10px;
   width: 300px;
-  z-index: -1;
   top: 60px;
 }
 
