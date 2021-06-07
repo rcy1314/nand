@@ -776,7 +776,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             )
           )
         { //safeSearch false
-        console.log(`false`)
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);
         request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
@@ -862,7 +861,9 @@ var xmlAppendPublication = function (id) {
   contentStatusDisplay(id, recent, oldest, posts);
   topMenuBarDisplay(topBar);
   xmlStatusSuggestions();
+  local = null;
   stop = false;
+  post = null;
 }
 
 var xmlRequestParsing = function (search, string, index) {
