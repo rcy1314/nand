@@ -81,6 +81,8 @@ html body,
   position: absolute;
   text-align: center;
   overflow-y: scroll;
+  scroll-behavior: smooth;
+  min-height: 100%;
   display: flex;
 }
 

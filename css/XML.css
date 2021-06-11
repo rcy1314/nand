@@ -285,10 +285,12 @@
   display: inline-block;
   position: relative;
   text-align: left;
+  min-height: 100%;
 }
 
 #main #xml .center .channel {
   background-color: transparent;
+  min-height: 100%;
 }
 
 #main #xml .content {
