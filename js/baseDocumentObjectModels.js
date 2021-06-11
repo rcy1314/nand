@@ -746,6 +746,7 @@ let listingIndexBuild = function (
   detail.classList.add(`detail`);
   buffer.classList.add(`buffer`);
   if (suggested == true) contentText = `suggested...`;
+  else contentText = ``;
   buffer.innerHTML = contentText;
   object.classList.add(`input`);
   key.classList.add(`index`);
