@@ -11,7 +11,7 @@
 * Dynamic Loading file might timeout due to Remote Host.
 * Heroku offloading intial response ~7s safeSearch double.
 * File Size ~4.5MB uncompressed 415 assets 3 Background.
-* `Just Read` endless scrolling not to smooth in non-mobile.
+* `Just Read` endless scrolling not to smooth in nonmobile.
 
 ### Configurations in settings.js
 
