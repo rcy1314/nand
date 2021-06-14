@@ -1,9 +1,12 @@
 <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
+<h1>ACKTIC</h1>
+
 ### About
 
   - Really Simple Syndicate.
   - Rich Site Summary.
+  - [Homepage](https://acktic.github.io "Homepage")
 
 ### Known Issues
 
