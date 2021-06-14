@@ -3,9 +3,6 @@
   * Translation Example
   > /?q=[translation]
 
-  * Hash Example
-  > /?[hash] fails to search.
-
   * Feed Example
   > /?q=[unique+id] fails to search.
 
