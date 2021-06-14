@@ -329,7 +329,6 @@ var menu=[
 {id:`MMAJunkie`,category:`Sports`,title:`053234806`,description:`MMAJunkie Radio is a weekly Internet radio show broadcast from Las Vegas, Nevada.`,uri:`https://mmajunkie.com/news/feed`,image:`MMAJunkie`,hash:`jM`,media:!0},
 {id:`MMA News`,category:`Sports`,title:`006600732`,description:`MMA News offers coverage of the MMA world with original content.`,uri:`https://www.mmanews.com/feed`,image:`MMANews`,hash:`sM`,media:!1},
 {id:`The Score MMA`,category:`Sports`,title:`893829304`,description:`The Score MMA headlines, coverage, and analysis.`,uri:`https://feeds.thescore.com/mma.rss`,image:`TheScore`,hash:`Am`,media:!0},
-{id:`Sportzet`,category:`Sports`,title:`584259679`,description:`Sportzet international Sports and World Headlines.`,uri:`https://www.sportzet.com/feed`,image:`Sportzet`,hash:`zP`,media:!1},
 {id:`Telegraph.co.uk Sports`,category:`Sports`,title:`415057775`,description:`Telegraph.co.uk Sports from around the world.`,uri:`https://www.telegraph.co.uk/sport/rss.xml`,image:`Telegraph`,hash:`tK`,media:!0},
 {id:`TheSun.co.uk Sports`,category:`Sports`,title:`497456490`,description:`TheSun.co.uk up to date on sports from the UK and the World.`,uri:`https://www.thesun.co.uk/sport/feed`,image:`TheSun`,hash:`sO`,media:!0},
 {id:`The Score Sports`,category:`Sports`,title:`292971682`,description:`The Score Trending Topics, Announcements, Highlights, and Analysis.`,uri:`https://feeds.thescore.com/trending.rss`,image:`TheScore`,hash:`tR`,media:!0},
