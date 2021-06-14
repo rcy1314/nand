@@ -831,10 +831,18 @@ var xmlAppendPublication = function (id) {
     )
       continue;
     if (omitGuide == true && i != local) {
-      document.querySelector(`.channel`).append(pub[i].post);
+      let channel = document.createElement(`div`);
+      channel.classList.add(`channel`);
+      channel.setAttribute(`style`, `position:fixed`);
+      let append = document.querySelectorAll(`.channel`);
+      append[append.length - 1].append(pub[i].post)
       images.push({ element: pub[i].element, src: pub[i].src });
     } else if (omitGuide == false) {
-      document.querySelector(`.channel`).append(pub[i].post);
+      let channel = document.createElement(`div`);
+      channel.classList.add(`channel`);
+      channel.setAttribute(`style`, `position:fixed`);
+      let append = document.querySelectorAll(`.channel`);
+      append[append.length - 1].append(pub[i].post)
       images.push({ element: pub[i].element, src: pub[i].src });
     }
   }
