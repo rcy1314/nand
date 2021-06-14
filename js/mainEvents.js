@@ -363,7 +363,6 @@ document.addEventListener('click', (evt) => {
       _visit.style.display = `none`;
       Reader = Reader != true;
       if (Reader == false) {
-        sideBarStar(document.querySelector(`.Reader`), Reader);
         justRead = false;
         first = true;
         id = 0;
@@ -376,7 +375,6 @@ document.addEventListener('click', (evt) => {
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         if (showSplash == true) _check.style.display = `block`;
-        sideBarStar(document.querySelector(`.Reader`), Reader);
         xmlRequestParsing(null, null, anyRandomMenuObject());
         event.target.classList.add(`luv`);
       }
