@@ -744,9 +744,9 @@ const selections = [
 ];
 
 const settings = [
-  { name: `Loading Double Circle`, class: `circleloader` },
-  { name: `Loading Vertical Bars`, class: `verticalbars` },
-  { name: `Loading Ring Circle`, class: `ringloader` },
+  { name: `Loading Circles`, class: `circleloader` },
+  { name: `Loading Ring`, class: `ringloader` },
+  { name: `Loading Bars`, class: `verticalbars` },
   { name: `Loading False`, class: `loaderfalse` },
   { name: `List`, class: `List` },
   { name: `Blocks`, class: `Blocks` },
