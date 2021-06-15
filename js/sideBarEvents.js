@@ -216,10 +216,12 @@ document.addEventListener('click', (evt) => {
     }
     if (event.target.classList.contains(`sideBarBackdrop`)) {
       sideBarBackdrop = sideBarBackdrop != true;
-      if (sideBarBackdrop == false) {
+      if (sideBarBackdrop == true) {
         _sidebar.classList.add(`blur`);
-      } else {
+        _sidebar.style.backgroundColor = `transparent`;
+      } else if (sideBarBackdrop == false) {
         _sidebar.classList.remove(`blur`);
+        _sidebar.style.backgroundColor = `var(--color-secondary)`;
       }
       sideBarStar(event.target, sideBarBackdrop);
     }

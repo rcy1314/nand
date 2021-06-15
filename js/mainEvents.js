@@ -11,9 +11,9 @@ window.onload = function () {
   if (sideBarCenter == true)
     _sidebar.querySelector(`#content`).style.position = `absolute`;
 
-  if (sideBarBackdrop == true)
-    _sidebar.style.cssText = `backdrop-filter: blur(10px) !important`;
-
+  if (sideBarBackdrop == true) {
+    _sidebar.style.cssText = `background-color:transparent; backdrop-filter: blur(10px) !important`;
+  }
   if (topBarBackdrop == true)
     _top.style.cssText = `backdrop-filter: blur(10px)`
 
