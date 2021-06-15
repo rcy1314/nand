@@ -833,14 +833,14 @@ var xmlAppendPublication = function (id) {
     if (omitGuide == true && i != local) {
       let channel = document.createElement(`div`);
       channel.classList.add(`channel`);
-      channel.setAttribute(`style`, `position:fixed`);
+      channel.style.position = `fixed`;
       let append = document.querySelectorAll(`.channel`);
       append[append.length - 1].append(pub[i].post)
       images.push({ element: pub[i].element, src: pub[i].src });
     } else if (omitGuide == false) {
       let channel = document.createElement(`div`);
       channel.classList.add(`channel`);
-      channel.setAttribute(`style`, `position:fixed`);
+      channel.style.position = `fixed`;
       let append = document.querySelectorAll(`.channel`);
       append[append.length - 1].append(pub[i].post)
       images.push({ element: pub[i].element, src: pub[i].src });
