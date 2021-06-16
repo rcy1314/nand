@@ -360,7 +360,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `ring-circle`;
+let imageLoader = `double-circle`;
 
 /*
     cropImages [boolean/integer]

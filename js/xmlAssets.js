@@ -362,7 +362,6 @@ var menu=[
 {id:`Gamespot`,category:`Tech`,title:`470038309`,description:`Gamespot's Everything Feed! All the latest from GameSpot.`,uri:`https://www.gamespot.com/feeds/mashup/`,image:`GameSpot`,hash:`mS`,media:!0},
 {id:`GeekWire`,category:`Tech`,title:`777866947`,description:`GeekWire is an American Technology site that covers Startups and Established Technology Companies.`,uri:`https://www.geekwire.com/feed`,image:`GeekWire`,hash:`gI`,media:!0},
 {id:`Gizmodo`,category:`Tech`,title:`496001559`,description:`Gizmodo is a Design, Technology, Science and Science Fiction website.`,uri:`https://gizmodo.com/rss`,image:`Gizmodo`,hash:`zO`,media:!0},
-{id:`The Gadget Flow`,category:`Tech`,title:`150320899`,description:`The Gadget Flow Stay up to date with the tech, gear, and most incredible crowdfunding campaigns.`,uri:`http://feeds.feedburner.com/thegadgetflow`,image:`TheGadgetFlow`,hash:`aH`,media:!0},
 {id:`gHacks`,category:`Tech`,title:`245657324`,description:`gHacks the Independent Technology blog.`,uri:`https://www.ghacks.net/feed`,image:`gHacks`,hash:`Ga`,media:!0},
 {id:`HackADay`,category:`Tech`,title:`587764507`,description:`HackADay serves up Fresh Hacks Every Day from around the Internet.`,uri:`https://hackaday.com/feed`,image:`HackADay`,hash:`yH`,media:!0},
 {id:`Heavy Technology`,category:`Tech`,title:`178309265`,description:`Heavy Technology stories and related articles.`,uri:`https://heavy.com/tech/feed`,image:`Heavy`,hash:`hY`,media:!0},

@@ -665,7 +665,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     var newImg = new Image();
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
-      itemContainer.style.height = `0px`;
       itemPending.remove();
       itemImage.remove();
     };
