@@ -255,7 +255,7 @@ var xmlImageSource = function (xhr) {
         xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
-            /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
+            /https:\/\/external-preview\.redd.it\/.+?(gif|png|jpg)/g
           )
       );
     else if (xhr.getElementsByTagName(`content`))
@@ -389,6 +389,7 @@ var xmlImageSource = function (xhr) {
         .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0]
     );
   else src = null;
+  console.log(src);
   return src;
 };
 
