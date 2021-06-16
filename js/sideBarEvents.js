@@ -285,10 +285,8 @@ document.addEventListener('click', (evt) => {
       id = 0;
       first = true;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (_main.clientWidth <= 425) {
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
-      }
       category = event.target.closest(`.cat`).getAttribute(`aria-item`);
       if (Reader == true) {
         randomDuplicate = [];
