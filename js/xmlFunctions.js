@@ -805,6 +805,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         }
       };
     };
+    newImg.onerror = function () {
+      itemContainer.remove();
+    };
   }
 };
 
