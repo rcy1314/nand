@@ -83,8 +83,12 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
     if (Class == `option` || Class == `feed`)
 			option.innerHTML = Arrays[i].space().capitalize();
     if (Class == `theme`) option.innerHTML = Arrays[i].obFn;
-    list.append(option);
-    if (Class != `option` && Class != `feed`)
+      list.append(option);
+    if (translations.includes(Arrays[i])) {
+      option.innerHTML = Arrays[i];
+      option.setAttribute(`aria-item`, Arrays[i])
+      list.append(option);
+    } if (!translations.includes(Arrays[i]) || Class != `option` && Class != `feed`)
 			list.append(sideBarThemeBuild(Arrays[i].icon));
   }
 };
@@ -119,9 +123,7 @@ let sideBarDisplay = function (Value) {
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.sel`))) {
     if (sideBarTranslations == true && _main.clientWidth >= 426) {
-      for (i = 0; i <= translations.length - 1; i++) {
-        content.append(sideBarTranslationBuild(translations[i]));
-      }
+        appendSideBarLists(`#content`, `cat`, translations);
     }
     appendSideBarLists(`#content`, `sel`, selections);
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);

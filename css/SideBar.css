@@ -91,16 +91,19 @@
   border-top: .3px solid transparent !important;
   background-color: transparent !important;
   color: var(--fill-color);
+  display: inline-flex;
   letter-spacing: .5px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
   position: relative;
-  padding-top: 20px;
+  text-align: center;
+  padding-top: 10px;
   overflow: hidden;
   cursor: default;
   font-size: 12px;
   height: 15px;
+  right: 5px;
 }
 
 #container #sidebar #content .sel {

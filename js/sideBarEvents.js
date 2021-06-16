@@ -284,8 +284,6 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`cat`)) {
       id = 0;
       first = true;
-      if (showParticles == true) explode(event);
-      if (showRipple == true) rippleBuild(event, event.target);
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (_main.clientWidth <= 425) {
         onScreen = onScreen != true;
