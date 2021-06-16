@@ -214,7 +214,7 @@ let expandBackground = false;
 
 */
 
-let showSplash = true;
+let showSplash = false;
 
 /*
     sideBarCenter [boolean/integer]
@@ -240,7 +240,7 @@ let sideBarCenter = true;
 
 */
 
-let sideBarBackdrop = true;
+let sideBarBackdrop = false;
 
 /*
     sideBarMousewheel [boolean/integer]
@@ -279,7 +279,7 @@ let topBarBackdrop = true;
 
 */
 
-let toggleBorders = false;
+let toggleBorders = true;
 
 /*
     showDescription [boolean/integer]
@@ -305,7 +305,7 @@ let showDescription = true;
 
 */
 
-let sideBarTranslations = false;
+let sideBarTranslations = true;
 
 /*
     quickFeeds [boolean/integer]
@@ -386,7 +386,7 @@ let cropImages = true;
 
 */
 
-let fadeIntoView = false;
+let fadeIntoView = true;
 
 /*
     loading [string]
@@ -403,7 +403,7 @@ let fadeIntoView = false;
 
 */
 
-let loading = `percent`;
+let loading = `dots`;
 
 /*
     titleTruncate [integer]
@@ -444,7 +444,7 @@ let category = `Reddit`;
 
 */
 
-let roundedEdge = false;
+let roundedEdge = true;
 
 /*
     onlyImages [boolean/integer]
@@ -484,7 +484,7 @@ let feedImages = true;
 
 */
 
-let youtubeMedia = true;
+let youtubeMedia = false;
 
 /*
     suggestionBuffer [integer]

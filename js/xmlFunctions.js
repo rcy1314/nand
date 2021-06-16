@@ -537,6 +537,9 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
   let copyPicture = document.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
+  );
+  let copyDownload = document.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
   let copyPost = document.querySelector(
@@ -554,6 +557,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     itemImage.closest(`.classic`).style.display = `flex`;
     itemContainer.style.height = `fit-content`;
     copyPicture.style.display = `none`;
+    copyDownload.style.display = `none`;
     if (
       document.body.contains(
         document.querySelector(
@@ -624,6 +628,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
   let copyPicture = document.querySelector(
+    `[aria-item='${pubIndex}'] .picture`
+  );
+  let copyDownload = document.querySelector(
     `[aria-item='${pubIndex}'] .download`
   );
   let copyPost = document.querySelector(
@@ -650,6 +657,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       )
     ) {
       itemContainer.style.height = `0px`;
+      copyDownload.style.display = `none`;
       copyPicture.style.display = `none`;
       attribute.style.height = `74px`;
       itemPending.remove();
@@ -721,6 +729,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   if (!src.match(/4cdn/g)) request.send();
                   else {
                     xmlImageDimensions(menuObject, pubIndex, newImg)
+                    copyDownload.classList.add(`picture`);
                     copyPicture.classList.add(`download`);
                     itemFilter.style.transform = `scale(4)`
                     itemFilter.classList.add(`blur`);
@@ -806,6 +815,10 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       };
     };
     newImg.onerror = function () {
+      itemContainer.style.height = `0px`;
+      copyDownload.style.display = `none`;
+      copyPicture.style.display = `none`;
+      attribute.style.height = `74px`;
       itemContainer.remove();
     };
   }

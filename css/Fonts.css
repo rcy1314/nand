@@ -63,6 +63,15 @@
   padding: 0;
 }
 
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-copy,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-copy {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f0c5";
+  font-weight: 50;
+  padding: 0;
+}
+
 #sidebar #content .fa-splotch,
 #sidebar #content .fa-user,
 #sidebar #content .fa-info,
