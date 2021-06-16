@@ -360,7 +360,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `double-circle`;
+let imageLoader = `v-bars`;
 
 /*
     cropImages [boolean/integer]
