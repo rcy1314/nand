@@ -2,7 +2,7 @@
   "name": "acktic",
   "version": "3.4.9726",
   "description": "Just Read",
-  "main": "",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
