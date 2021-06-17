@@ -7,6 +7,7 @@
   - Really Simple Syndicate.
   - Rich Site Summary.
   - [Homepage](https://acktic.github.io "Homepage")
+  - [Heroku](https://acktic.herokuapp.com "Heroku")
 
 ### Known Issues
 
