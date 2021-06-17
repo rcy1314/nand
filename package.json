@@ -1,0 +1,14 @@
+{
+  "name": "acktic",
+  "version": "3.4.9726",
+  "description": "Just Read",
+  "main": "index.html",
+
+},
+{
+  "author": "acktic",
+  "license": "MIT",
+  "dependencies": {
+
+  }
+}
