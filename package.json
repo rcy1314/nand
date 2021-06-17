@@ -1,14 +1,10 @@
-{
+"main": {
   "name": "acktic",
   "version": "3.4.9726",
   "description": "Just Read",
   "main": "index.html",
-  "language": "English"
-},
-{
+  "language": "English",
   "author": "acktic",
   "license": "MIT",
   "dependencies": {
-
-  }
 }
