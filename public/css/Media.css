@@ -1,0 +1,589 @@
+@media screen and (max-height: 500px) {
+
+  #main #page,
+  #main #visit {
+    background-color: transparent !important;
+    height: 100%;
+    width: 100%;
+  }
+
+  #main #visit #page #front .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 300px;
+    left: -30px;
+    padding: 0;
+    top: -10px;
+  }
+
+  #main #visit #page #quick {
+    width: 680px;
+    left: 40px;
+  }
+
+  #main #visit #page #quick #feed {
+    width: 640px;
+  }
+
+  #main #xml {
+    width: 340px;
+    left: 45px;
+  }
+
+  #main #xml .content {
+    margin-left: 15px;
+    top: 0;
+  }
+
+  #main #xml .content .status .construct .info {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 426px) {
+
+  .dots {
+    animation: move 3s infinite cubic-bezier(.1,.75,1,.3) !important;
+  }
+  .dots:nth-of-type(2){
+    animation: move 3s 150ms infinite cubic-bezier(.1,.75,1,.3) !important;
+  }
+  .dots:nth-of-type(3) {
+    animation: move 3s 300ms infinite cubic-bezier(.1,.75,1,.3) !important;
+  }
+  .dots:nth-of-type(4) {
+    animation: move 3s 450ms infinite cubic-bezier(.1,.75,1,.3) !important;
+  }
+  .dots:nth-of-type(5) {
+    animation: move 3s 600ms infinite cubic-bezier(.1,.75,1,.3) !important;
+  }
+
+  #main #xml {
+    right: 0 !important;
+  }
+
+  #main #xml .center {
+    position: relative !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    right: 60px !important;
+  }
+
+  #main #group .air .populate:hover,
+  #main #group .result .populate:hover {
+    background-color: none !important;
+  }
+
+  .expand {
+    margin-left: 0 !important;
+  }
+
+  .expand .title {
+    flex-basis: 60% !important;
+  }
+
+  .expand .display {
+    width: 100% !important;
+  }
+
+  .btn .flip-back {
+    transform: rotateX(0deg) translateZ(25px) !important;
+  }
+
+  .populate {
+    width: 130px;
+    margin: 1em;
+  }
+
+  #sidebar #content {
+    position: relative !important;
+  }
+
+  #main #top #arm .fa-grip {
+    left: 15px;
+  }
+
+  #main #xml .center .item {
+    border: none;
+  }
+
+  #main #xml .center .item,
+  #main #group .air .populate,
+  #main #group .result .populate {
+  }
+
+  #main
+  #main #xml {
+    width: 100% !important
+  }
+
+  #main #visit #page #just {
+    top: 35px !important;
+  }
+
+  #main #visit #page #quick {
+    background-color: transparent !important;
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    top: 62px;
+  }
+
+  #main #visit #page #quick #feed {
+    justify-content: center;
+    display: inline-flex;
+    position: absolute;
+    margin-right: 0%;
+    flex-wrap: wrap;
+    margin-left: 0%;
+    height: 400px;
+    right: 0;
+    left: 0;
+  }
+
+  #main #visit #page #front #label {
+    position: absolute;
+    margin: auto;
+    top: 40px;
+    right: 0;
+    left: 0;
+  }
+
+  #toggle,
+  .expand .des,
+  .btn .flip-front,
+  #main #xml .content,
+  #main #top #arm #option,
+  #main #xml .center #quick,
+  #main #visit #page #quick .left,
+  #main #visit #page #quick .right,
+  #main #top #arm #search #input .icon,
+  #main #visit #page #front .focus .button {
+    display: none !important;
+  }
+
+  #main #page,
+  #main #visit {
+    background-color: transparent !important;
+    height: 100%;
+    width: 100%;
+  }
+
+  #main #top,
+  #main #top #arm,
+  #main #top #arm #search {
+    background: transparent !important;
+    width: 100vw !important;
+  }
+
+  #main #xml {
+    background-color: transparent !important;
+  }
+
+
+  #guide .sticky .img,
+  #main #xml .center .item .img,
+  #main #xml .center .item .image,
+  #main #xml .center .item .pending {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #main #xml .center .item {
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #main #xml .center #bottom {
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
+  }
+
+  #main #option {
+    width: calc(100% - 20px);
+    top: calc(100% - 50px);
+    position: fixed;
+    display: flex;
+    height: 50px;
+    right: 11px;
+  }
+
+  #main #group {
+    position: absolute !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 95vw !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  #main #top #arm #search #match {
+    height: 264px;
+    width: 280px;
+    top: 25px;
+  }
+
+  #main #visit #page #front #first {
+    background-color: transparent !important;
+    height: 264px;
+    width: 280px;
+    top: 2px;
+  }
+
+  #main #visit #page #front #first .listing,
+  #main #top #arm #search #match .listing {
+    height: 264px !important;
+    width: 280px !important;
+    top: 0 !important;
+  }
+
+  #main #visit #page #front .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 280px;
+    padding: 0;
+    top: -40px;
+  }
+
+  #main #visit #page #front .focus input[type=text] {
+    border-radius: 8px;
+    padding-left: 35px;
+    width: 280px;
+    top: 0px;
+  }
+
+  #guide .sticky {
+    max-width: 300px !important;
+    border-top: none !important;
+  }
+
+  #guide .sticky .header {
+    border-right: var(--border-color) !important;
+    border-left: var(--border-color) !important;
+    border-top: var(--border-color) !important;
+  }
+
+  #guide .sticky .src {
+    width: 100% !important;
+    display: block;
+  }
+
+  #guide .sticky .img
+  #guide .sticky .image {
+    max-width: 100vw !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #guide .sticky .wrap {
+    width: 100%;
+    position: absolute
+  }
+  #guide .sticky #yt {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #guide .yt {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #guide .yt .src {
+    height: 22vh !important;
+  }
+
+  #guide .sticky .wrap {
+    width: 100vw !important;
+  }
+
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+
+  #main #xml {
+    height: fit-content;
+    position: absolute;
+    min-height: 100%;
+    display: block;
+    width: 75%;
+    right: 50px;
+    z-index: 1;
+    top: 0;
+  }
+
+  #main #xml .content {
+    display: none;
+  }
+
+  #main #visit #page #front .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 340px;
+    right: 37px;
+    padding: 0;
+    top: -25px;
+  }
+
+  #main #visit #page #front .focus input[type=text] {
+    border-radius: 8px;
+    padding-left: 35px;
+    width: 340px;
+    top: 0px;
+  }
+
+  #main #visit #page #front .focus .button {
+    top: 16.3px;
+  }
+
+  #main #visit #page #front .focus .icon,
+  #top #arm #search #input .icon .fa-search {
+    top: 28px;
+  }
+
+  #main #visit #page #quick #feed {
+    width: 480px;
+  }
+
+  #main #top #arm #search #match {
+    height: 264px;
+    width: 415px;
+    top: 25px;
+  }
+
+  #main #visit #page #front #first {
+    background-color: transparent !important;
+    height: 264px;
+    width: 405px;
+    top: 35px;
+  }
+
+  #main #visit #page #front #first .listing,
+  #main #top #arm #search #match .listing {
+    height: 264px !important;
+    width: 405px !important;
+    top: 0 !important;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .dots {
+      animation: move 3s infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(2){
+      animation: move 3s 150ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(3) {
+      animation: move 3s 300ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(4) {
+      animation: move 3s 450ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(5) {
+      animation: move 3s 600ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+
+  .expand {
+    margin: 0 auto !important;
+    width: 720px !important;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 760px !important;
+  }
+
+	#main #visit #page {
+		top: 0;
+	}
+
+  #main #visit #page #quick #feed .asset,
+  #main #visit #page #quick #feed .translation {
+    padding: 10px;
+    width: 82px;
+  }
+
+  #main #option {
+    display: none;
+  }
+
+  #main #top #arm #option {
+    display: block;
+  }
+
+  #main #top #arm {
+    width: 100%;
+  }
+
+  #main #top #arm #option {
+    position: absolute;
+    right: 0px;
+  }
+
+  #main #top #arm #search #home {
+	  left: 10px;
+  }
+
+  #main #xml .center {
+	  margin-right: 30px;
+    width: 420px;
+  }
+
+  #main #xml .content {
+	  display: none;
+  }
+
+  #main #visit #page #quick {
+  	width: 720px;
+    top: 15px;
+    right: 0;
+  }
+
+  #guide .sticky .header {
+    position: relative !important;
+    top: 0 !important;
+  }
+
+
+}
+
+@media screen and (min-width: 769px) {
+
+  #main #visit #page #just {
+    margin-left: 15px !important;
+  }
+
+  #main #visit #page #quick #feed .asset,
+  #main #visit #page #quick #feed .translation {
+    padding: 10px;
+    width: 98px;
+  }
+
+  #main #option {
+    display: none;
+  }
+
+  #main #top #arm {
+    width: 100%;
+  }
+
+  #main #top #arm #option {
+    position: absolute;
+    display: block;
+    right: 0px;
+  }
+
+  #main #xml .center {
+    width: 420px;
+	  left: -20px;
+  }
+
+  #main #xml .content {
+	  display: inline-block;
+  }
+
+  #main #visit #page #quick {
+	  width: 686px;
+	  left: -15px;
+  }
+
+  #main #visit #page #front #label #show {
+    left: 7px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .expand {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  #main #top #arm {
+    width: 670px;
+  }
+
+  #main #top #arm #search #input {
+    margin: 0 auto;
+  }
+
+  #main #top #arm #option {
+    right: -30px;
+  }
+
+  #main #xml .center {
+    width: 410px;
+    left: 10px;
+  }
+
+  #main #group .air .populate,
+  #main #group .result .populate {
+    height: 140px;
+    width: 180px;
+    margin: 2em;
+  }
+
+  #main #group .air,
+  #main #group .result {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  #main #visit #page #front {
+    width: 940px;
+  }
+
+  #main #visit #page #quick {
+    position: relative;
+    width: 848px;
+    top: 15px;
+    left: 0;
+  }
+
+  #main #xml .content {
+    margin-left: 10px;
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  .expand {
+    width: 100% !important;
+  }
+
+  .minimum {
+    width: 100% !important;
+  }
+
+  #main #top #arm {
+    width: 940px;
+  }
+
+  #main #top #arm .fa-long-arrow-alt-left {
+    right: 15px;
+  }
+
+  #main #group .air,
+  #main #group .result {
+    width: 1080px;
+  }
+
+  #main #xml .center {
+    margin-right: 115px;
+    width: 600px;
+    left: 0;
+  }
+
+}

@@ -1,0 +1,206 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
+    <script type='text/javascript' src='js/settings.js'></script>
+</head>
+<body>
+  <div id='container' style='display:none'>
+      <div id='sidebar' class='mainTransition invertScrollbar'>
+          <div id='content'></div>
+      </div>
+      <div id='guide'></div>
+      <div id='main' class='mainTransition'>
+        <div id='check'>
+          <img src='images/webp/Octocat.webp'></br>
+          <div class='loader double-circle' style='display:none;'></div>
+          <div class="orig" style='display:none;'>
+            <div class="dot orig four ">.</div>
+            <div class="dot orig three ">.</div>
+            <div class="dot orig two ">.</div>
+            <div class="dot orig one ">.</div>
+          </div>
+          <div class="bars" style='display:none;'></div>
+        </div>
+          <div id='toggle' class='fa fa-sun' title='Visual'></div>
+          <div id='dots'>
+              <div class="fill"></div>
+              <div class="fill"></div>
+              <div class="fill"></div>
+              <div class="fill"></div>
+              <div class="fill"></div>
+          </div>
+          <div id='progressBar'></div>
+          <div id='option'>
+              <div id='mobileHome' class='fa fa-home' title='Home'></div>
+              <div class='fa fa-heart joi' title='Read Category'></div>
+              <div class='fa fa-sun' title='Visual'></div>
+              <div class='fa fa-camera-retro' title='Only Images'></div>
+              <div class='fa fa-expand-alt' title='Expand'></div>
+          </div>
+          <div id='top'>
+              <div id='arm'>
+                <div class='fa fa-grip-lines' title='Search'></div>
+                  <form id='search' class='hold' action='#'>
+                      <div id='home'></div>
+                      <div id='input'>
+                          <div class='icon'>
+                              <div class='fa fa-search'></div>
+                          </div>
+                          <input id='view' type='text' value='Search' style='display:none'>
+                      </div>
+                      <div id='match'>
+                          <div class='listing invertScrollbar'></div>
+                      </div>
+                  </form>
+                  <div id='option'>
+                      <div id='home' class='fa fa-home' title='Home'></div>
+                      <div class='fa fa-heart joi' title='Read Category'></div>
+                      <div class='fa fa-sun' title='Visual'></div>
+                      <div class='fa fa-camera-retro' title='Only Images'></div>
+                      <div class='fa fa-expand-alt' title='Expand'></div>
+                  </div>
+              </div>
+          </div>
+          <div id='visit' style='display:none'>
+              <div id='page'>
+                  <form id='front' action='#'>
+                      <div class='focus'>
+                          <div class='icon fa fa-search'></div>
+                          <input id='guest' type='text' placeholder='Search'>
+                          <div class='button'>
+                              <div class='buttonSearch fas fa-search'></div>
+                          </div>
+                      </div>
+                      <div id='label'>
+                          <div id='show'>Quick feeds</div>
+                          <div id='link'>
+                              <div class='fa-angle-up'></div>
+                          </div>
+                      </div>
+                      <div id='first'>
+                          <div class='listing invertScrollbar'></div>
+                      </div>
+                  </form>
+                  <div id='quick' class='invisible'>
+                      <div class='left fa-minus' style='display:none'></div>
+                      <div class='right fa-plus'></div>
+                      <div id='feed'></div>
+                  </div>
+                  <div id='just'>Just Read</div>
+              </div>
+          </div>
+      </div>
+      <script>
+      let dir = "css/";
+      let ext = ".css";
+      let obj = [
+        "Group",
+        "Guide",
+        "Input",
+        "Feed",
+        "XML",
+        "Content",
+        "Animation",
+        "SideBar",
+        "Class",
+        "Media",
+        "Fonts",
+      ];
+      for (var file of obj) {
+        let path = dir + file + ext;
+        let script = document.createElement("link");
+        script.type = "text/css";
+        script.rel = "stylesheet";
+        script.href = path;
+        document.styleSheet = script;
+        document.getElementsByTagName("head")[0].appendChild(script);
+      }
+
+      let directory = "js/";
+      let extension = ".js";
+      let files = [
+        "coreDocumentObjectModels",
+        "xmlFunctions",
+        "coreHelpers",
+        "baseDocumentObjectModels",
+        "baseFunctions",
+        "sideBarEvents",
+        "inputEvents",
+        "FileSaver",
+        "mainEvents",
+        "xmlAssets",
+        "init",
+      ];
+
+      for (var file of files) {
+        let path = directory + file + extension;
+        let script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = path;
+        document.getElementsByTagName("head")[0].appendChild(script);
+        if (file === `xmlAssets`)
+          script.onload = (function () {
+            let startup = setInterval(function () {
+              setTimeout(function () {
+                if (typeof menu === `array`) {
+                  clearInterval(startup);
+                }
+              }, 25);
+            }, 25);
+          })();
+      }
+      let place = `js/themes/`;
+      let type = `.js`;
+      for (i = 0; i <= themes.length - 1; i++) {
+        theme = themes[i].obFn;
+        let path = place + theme + type;
+        let script = document.createElement(`script`);
+        script.type = `text/javascript`;
+        script.src = path;
+        document.getElementsByTagName(`head`)[0].appendChild(script);
+        if (set === theme)
+          script.onload = (function () {
+            let startup = setInterval(function () {
+              setTimeout(function () {
+                if (typeof eval(set) === `function`) {
+                  window[set]();
+                  clearInterval(startup);
+                }
+              }, 250);
+            }, 350);
+          })();
+      }
+      for (i = 0; i <= themes.length - 1; i++) {
+        (function (i) {
+          document.addEventListener(
+            `click`,
+            function (event) {
+              if (event.target.classList.contains(themes[i].class)) {
+                window[themes[i].class]();
+                document.querySelector(`.border`).innerHTML = themes[i].class
+              }
+            },
+            false
+          );
+        })(i);
+      }
+      let source = document.createElement("link");
+      source.type = "text/css";
+      source.rel = "stylesheet";
+      source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
+      document.styleSheet = source;
+      document.getElementsByTagName("head")[0].appendChild(source);
+
+      if (window.clientWidth <= 768) {
+        groupType = `blocks`;
+        onScreen = false;
+        expand = false;
+        Blocks = true;
+        List = false;
+      }
+      </script>
+</body>
+</html>

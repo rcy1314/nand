@@ -1,0 +1,451 @@
+#main #xml {
+  height: fit-content;
+  position: absolute;
+  min-height: 100%;
+  display: block;
+  width: 100%;
+  left: 60px;
+  z-index: 1;
+  top: 0;
+}
+
+#main #xml .status .filter .tag {
+  background-color: transparent;
+  border-radius: 10px;
+  display: block;
+  padding: 10px;
+}
+
+#main #xml .content .status .filter img {
+  background-color: transparent;
+  border-radius: 36px;
+  position: relative;
+  margin: 0 auto;
+  padding: 1px;
+  margin: 10px;
+  height: 60px;
+  width: 60px;
+}
+
+#main #xml .content .status .filter .ext {
+  position: relative;
+  margin: 0 auto;
+}
+
+#main #xml .center .channel .item .classic .fill .loader,
+#main #xml .center .channel .item .classic .fill .loader:after,
+#main #xml .center .channel .item .classic .fill .loader:before {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#main #xml .content .status .filter {
+  margin-bottom: 10px;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  flex-wrap: wrap;
+  cursor: pointer;
+  font-size: 9px;
+  display: flex;
+  height: 75px;
+  width: 257px;
+  z-index: -1;
+}
+
+#main #xml .content .status .filter a {
+  color: var(--fill-color);
+  background-color: transparent;
+  position: relative;
+  font-size: 12px;
+}
+
+#main #xml .center .item .header {
+  background-color: transparent;
+  height: 60px;
+  width: 100%;
+}
+
+#main #xml .center .item .header .courtesy {
+  text-transform: capitalize;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin-top: 5px;
+  font-size: 10px;
+  display: flex;
+  height: 50px;
+  float: left;
+  width: 100%;
+  left: 0;
+}
+
+#main #xml .center .channel .item .header .courtesy img {
+  border-radius: 24px;
+  padding: 10px;
+  left: 1.75px;
+  height: 24px;
+  width: 24px;
+}
+
+#main #xml .center .item .header .courtesy a {
+  color: var(--fill-color);
+  background-color: transparent;
+}
+
+#main #xml .center .item .pending {
+  position: absolute;
+  width: 100%;
+}
+
+#main #xml .center .yt .image,
+#main #xml .center .item .image,
+#main #xml .center .item .pending {
+  background-color: var(--hover-background-color);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  height: 270px;
+  margin: 12px;
+}
+
+#main #xml .center .item {
+  background-color: var(--color-primary);
+  box-shadow: var(--box-shadow);
+  border: var(--border-color);
+  margin-bottom: 70px;
+}
+
+#main #xml .center .item:hover {
+  background-color: var(--hover-background-color);
+  border: var(--border-color);
+}
+
+#main #xml .center .item .pub,
+#main #xml .center .item .add {
+  background-color: transparent;
+  max-width: 100% !important;
+  justify-content: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 13px;
+  left: 0;
+}
+
+#main #xml .center .item .pub {
+  color: var(--fill-color);
+  word-break: keep-all;
+  margin-bottom: 10px;
+  margin-right: 30px;
+  margin-top: 20px;
+  cursor: default;
+}
+
+#main #xml .center .item .add {
+  margin-left: 15px !important;
+  margin-bottom: 10px;
+  font-size: 12px;
+  width: 85%;
+}
+
+#main #xml .center .item .img,
+#main #xml .center .item .image {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-height: 65vh;
+  overflow: hidden;
+  max-width: 100%;
+  display: flex;
+  right: 0;
+  left: 0;
+}
+
+#main #xml .center .item .image {
+  margin: 12px;
+}
+
+#main #xml .center .item .img {
+  display: none;
+  width: 100%;
+}
+
+#main #xml .center .item .pub .more {
+  background-color: transparent;
+  display: inline-block;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  font-size: 13px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+#main #xml .center .item .url,
+#main #xml .center .item .share,
+#main #xml .center .item .source {
+  display: inline-block;
+  position: relative;
+  z-index: -2;
+  width: 10px;
+  opacity: 0;
+  height: 0;
+}
+
+#main #xml .center .item .header .courtesy .copy {
+  color: var(--fill-color);
+  pointer-events: auto;
+  position: absolute;
+  font-size: 12px;
+  padding: 23px;
+  right: 0;
+}
+
+#main #xml .center .item .header .courtesy .copy .attribute {
+  background-color: var(--color-secondary);
+  border: var(--border-color);
+  position: absolute;
+  display: none;
+  height: 145px;
+  width: 200px;
+  padding: 1px;
+  right: 0px;
+  z-index: 12;
+  top: 59px;
+}
+
+#main #xml .center .item .header .courtesy .copy .attribute .site,
+#main #xml .center .item .header .courtesy .copy .attribute .post,
+#main #xml .center .item .header .courtesy .copy .attribute .picture,
+#main #xml .center .item .header .courtesy .copy .attribute .download {
+  color: var(--fill-color);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+}
+
+#main #xml .center .item .header .courtesy .copy .attribute .site:hover,
+#main #xml .center .item .header .courtesy .copy .attribute .post:hover,
+#main #xml .center .item .header .courtesy .copy .attribute .picture:hover,
+#main #xml .center .item .header .courtesy .copy .attribute .download:hover {
+  background-color: var(--hover-background-color);
+}
+
+#main #xml .center .item .external {
+  color: var(--fill-color);
+  text-transform: lowercase;
+  padding-bottom: 10px;
+  position: relative;
+  font-size: 10;
+  width: 98%;
+  left: 12px;
+}
+
+#main #xml .center .item .ago {
+  color: var(--fill-color);
+  background-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  position: relative;
+  width: fit-content;
+  margin-left: 12px;
+  font-size: 9px;
+}
+
+#main #xml .center #bottom {
+  background-color: transparent;
+  justify-content: center;
+  padding-bottom: 40px;
+  align-items: center;
+  position: relative;
+  font-size: 12px;
+  display: flex;
+  height: 5em;
+  width: 100%;
+  bottom: 3px;
+}
+
+#main #xml .center #bottom .previous {
+  float: left !important;
+}
+
+#main #xml .center #bottom .next {
+  float: right !important;
+}
+
+#main #xml .center {
+  background-color: transparent;
+  display: inline-block;
+  text-align: left;
+  height: fit-content;
+}
+
+#main #xml .center .channel {
+  background-color: transparent;
+  height: fit-content;
+}
+
+#main #xml .content {
+  background: transparent;
+  display: inline-block;
+  height: fit-content;
+  vertical-align: top;
+  text-align: center;
+  position: sticky;
+  font-size: 10px;
+  width: 300px;
+  top: 60px;
+}
+
+#main #xml .content .status {
+  background: transparent;
+  position: relative;
+  font-size: 10px;
+}
+
+#main #xml .content .status img {
+  border-radius: 26px;
+}
+
+#main #xml .content .status .info {
+  color: var(--fill-color);
+  margin-left: 5px;
+  text-align: left;
+  z-index: -1;
+}
+
+#main #xml .content .status .info .about {
+  background-color: transparent;
+  text-justify: inter-word;
+  text-align: justify;
+  position: relative;
+  width: 275px;
+}
+
+#main #xml .content .status .info,
+#main #xml .content .status .asset {
+  background-color: transparent;
+  position: relative;
+  top: -5px;
+}
+
+#main #xml .content .suggestions {
+  background-color: transparent;
+  position: relative;
+  padding-top: 15px;
+  text-align: left;
+  font-size: 10px;
+  width: 280px;
+}
+
+#main #xml .content .suggestions img {
+  border-radius: 20px;
+  position: relative;
+  height: 24.5px;
+  width: 24.5px;
+  left: 2.5px;
+}
+
+#main #xml .content .suggestions .combine {
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: flex;
+  width: 100%;
+}
+
+#main #xml .content .suggestions .combine .suggest {
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  font-size: 12px;
+  width: 100%;
+}
+
+#main #xml .content .suggestions .combine .suggest .random {
+  font-style: italic !important;
+  text-transform: capitalize;
+  font-size: 9px;
+  float: left;
+}
+
+#main #xml .content .suggestions .combine a {
+  font-size: 11px;
+}
+
+#main #xml .content .suggestions .combine div {
+  color: var(--fill-color);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#main #xml .center .item .views {
+  position: relative;
+}
+
+#main #xml .center .yt .image {
+  width: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+#main #xml .center .yt .image img {
+  position: absolute !important;
+  top: -16.75% !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+#main #xml .center #yt {
+    padding-bottom: 30px;
+}
+
+#main #xml .center #yt .yt {
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 54.25%;
+  margin-bottom: 5px;
+  position: relative;
+  width: 100%;
+}
+
+#main #xml .center #yt .yt iframe {
+  position: absolute;
+  border: none !important;
+  height: 100%;
+  width: 100% !important;
+  top: 5px;
+  left: 0;
+}
+
+#main #xml .center .item .views {
+  position: absolute;
+  bottom: -110px;
+}
+
+#main #xml .center #bottom .bottom {
+  color: var(--fill-color);
+  border: var(--border-color);
+  background-color: transparent;
+  position: relative !important;
+  margin: 0 auto !important;
+  display: inline-block;
+  border-radius: 50px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 18px;
+  letter-spacing: 0;
+  font-size: 10px;
+  cursor: pointer;
+  height: 30px;
+}

@@ -1,0 +1,356 @@
+.luv {
+  font-weight: 600 !important;
+}
+
+#main #top .fa,
+#main #option .fa,
+#main #option .fas {
+  font-variant: all-small-caps !important;
+}
+
+#main #option .fa-home,
+#main #option .fa-camera-retro,
+#main #option .fa-heart,
+#main #option .fa-sun,
+#main #option .fa-expand-alt {
+  padding-right: 13px;
+  padding-left: 13px;
+  padding-top: 17px;
+  font-size: 17px;
+}
+
+#main #top #arm .fa-grip-lines {
+  color: var(--fill-color);
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  right: -10px;
+  float: left;
+  z-index: 1;
+  top: 7px;
+}
+
+#main #xml .center .item .header .courtesy .copy .attribute .fa,
+#guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+  float: right;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-camera,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-camera {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f030";
+  font-weight: 50;
+  padding: 0;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-share,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-share {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f064";
+  font-weight: 50;
+  padding: 0;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-at,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-at {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f1fa";
+  font-weight: 50;
+  padding: 0;
+}
+
+#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-copy,
+#main #xml .center .item .header .courtesy .copy .attribute .site .fa-copy {
+  font-family: "Font Awesome 5 Pro";
+  background-color: transparent !important;
+  content: "\f0c5";
+  font-weight: 50;
+  padding: 0;
+}
+
+#sidebar #content .fa-splotch,
+#sidebar #content .fa-user,
+#sidebar #content .fa-info,
+#sidebar #content .fa-code,
+#sidebar #content .fa-cloud,
+#sidebar #content .fa-expand,
+#sidebar #content .fa-terminal,
+#sidebar #content .fa-crop-alt,
+#sidebar #content .fa-download,
+#sidebar #content .fa-book-open,
+#sidebar #content .fa-layer-group,
+#sidebar #content .fa-certificate,
+#sidebar #content .fa-paint-brush,
+#sidebar #content .fa-angle-double-up,
+#sidebar #content .fa-digital-tachograph {
+  color: var(--fill-color);
+  position: relative;
+  margin-top: -18px !important;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  height: 15px;
+  width: 15px;
+  z-index: -1;
+  right: 1px;
+}
+
+#sidebar #content .fa-home,
+#sidebar #content .fa-sliders-h,
+#sidebar #content .fa-chart-pie,
+#sidebar #content .fa-tablet-alt,
+#sidebar #content .fa-exclamation-circle {
+  color: var(--fill-color);
+  position: relative;
+  margin-top: -22px !important;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  height: 15px;
+  right: 5px;
+  width: 15px;
+  z-index: -1;
+}
+
+#sidebar #content .fa-lock,
+#sidebar #content .fa-unlock {
+  color: var(--fill-color);
+  margin-top: -18px !important;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  position: relative;
+  font-size: 11px;
+  font-weight: 50;
+  cursor: pointer;
+  float: right;
+  height: 15px;
+  width: 15px;
+  right: 3px;
+}
+
+#sidebar #content .fa-minus {
+  color: var(--fill-color);
+  margin-top: -18px !important;
+  position: relative;
+  font-size: 11px;
+  font-weight: 50;
+  float: right;
+  height: 15px;
+  width: 15px;
+  z-index: -1;
+  right: 0;
+}
+
+#sidebar #content .parse .fa-tint {
+  position: relative;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  z-index: -1;
+  right: 8px;
+  top: 3px;
+}
+
+#sidebar #content .set .fa-cube {
+  position: relative;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  z-index: -1;
+  right: 6px;
+  top: 3px;
+}
+
+#sidebar #content .fav .fa-hashtag {
+  position: relative;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  z-index: -1;
+  right: 8px;
+  top: 3px;
+}
+
+#sidebar #content .themes .fa-braille {
+  position: relative;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  z-index: -1;
+  right: 6px;
+  top: 3px;
+}
+
+#sidebar #content .bg .fa-adjust {
+  position: relative;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  z-index: -1;
+  right: 7px;
+  top: 3px;
+}
+
+#guide .sticky .fa-heart,
+#main #xml .center .item .image .fa-heart {
+  color: white !important;
+  position: absolute;
+  font-size: 50px;
+  display: none;
+}
+
+#main #option .fa-expand-alt {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f424";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-home,
+#main #top #arm #option .fa-home,
+#main #option .fa-home {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f015";
+  font-weight: 50;
+}
+
+#main #option .fa-camera-retro {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f083";
+  font-weight: 50;
+}
+
+#main #toggle,
+#main #option .fa-sun {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f185";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-terminal,
+#main #option .fa-terminal {
+  font-family: "Font Awesome 5 Pro";
+  padding-left: 5px;
+  content: "\f120";
+  font-size: 10px;
+  font-weight: 50;
+}
+
+#main #option .fa-code,
+#sidebar #content .fa-code {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f121";
+  font-weight: 50;
+}
+
+#main #option .fa-info,
+#sidebar #content .fa-info {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f129";
+  font-weight: 50;
+  left: 3px;
+}
+
+#main #option .fa-angle-double-up,
+#sidebar #content .fa-angle-double-up {
+  font-family: "Font Awesome 5 Pro";
+  font-size: 16px !important;
+  left: 1px !important;
+  content: "\f121";
+  font-weight: 50;
+}
+
+#main #option .fa-heart,
+#sidebar #content .fa-heart {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f004";
+  font-weight: 50;
+}
+
+#main #visit #page #quick .fa-minus {
+  font-family: "Font Awesome 5 Pro";
+  pointer-events: auto;
+  content: "\f068";
+}
+
+#main #visit #page #quick .fa-plus {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f067";
+  font-size: 11px;
+  font-weight: 50;
+}
+
+#main #visit #page #front .focus .icon,
+#top #arm #search #input .icon .fa-search,
+#main #visit #page #front .focus .button .fa-search {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f002";
+  font-weight: 50;
+}
+
+#guide .sticky .header .fa-ellipsis-h,
+#main #xml .center .channel .item .header .fa-ellipsis-h {
+  font-family: "Font Awesome 5 Pro";
+  pointer-events: auto;
+  content: "\f141";
+  font-weight: 50;
+  left: -6px;
+}
+
+#guide .sticky .header .fa-ellipsis-v,
+#main #xml .center .channel .item .header .fa-ellipsis-v {
+  font-family: "Font Awesome 5 Pro";
+  pointer-events: auto;
+  content: "\f142";
+  font-weight: 50;
+  left: -6px;
+}
+
+#main #option .fa-heart {
+  color: lightcoral !important;
+}
+
+#sidebar #content .fa-exclamation-circle {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f06a";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-signal {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f012";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-adjust {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f042";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-chart-pie {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f200";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-tablet-alt {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f3fa";
+  font-weight: 50;
+}
+
+#sidebar #content .fa-braille {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f2a1";
+  font-weight: 50;
+}
+
+#main #page .fa-angle-up {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f106";
+  font-weight: 50;
+}

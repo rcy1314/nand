@@ -1,0 +1,105 @@
+.des,
+.hash,
+.blank,
+.media,
+.title,
+.display {
+  color: var(--fill-color);
+  z-index: -1;
+}
+
+#main #group {
+  height: fit-content;
+  position: absolute;
+  padding-top: 57px;
+  display: none;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+#main #group .air {
+  padding-top: 60px;
+}
+
+#main #group .result {
+  position: relative;
+}
+
+#main #group .air,
+#main #group .result {
+  justify-content: center;
+  padding-bottom: 60px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+#main #group .air .populate,
+#main #group .result .populate {
+  display: inline-flex;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+  cursor: pointer;
+  font-size: 9px;
+  height: 130px;
+  margin: 1em;
+  width: 110px;
+  z-index: 0;
+}
+
+#main #group .air .populate .select,
+#main #group .result .populate .select {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+#main #group .air .populate:hover,
+#main #group .result .populate:hover {
+  background-color: var(--hover-background-color) !important;
+  border: var(--borderless-color) !important;
+}
+
+#main #group .air .populate:not(:hover),
+#main #group .result .populate:not(:hover) {
+  border: var(--borderless-color) !important;
+}
+
+#main #group .air .populate a,
+#main #group .result .populate a {
+  color: var(--fill-color);
+  background-color: transparent;
+  position: relative;
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+#main #group .air .populate .display,
+#main #group .result .populate .display {
+  position: relative;
+  margin: 0 auto;
+}
+
+#main #group .air .populate .display img,
+#main #group .result .populate .display img {
+  background-color: transparent;
+  border-radius: 36px;
+  position: relative;
+  margin: 0 auto;
+  padding: 1px;
+  margin: 10px;
+  height: 60px;
+  width: 60px;
+}
+
+#main #group .air .populate .title,
+#main #group .result .populate .title {
+  background-color: transparent;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
