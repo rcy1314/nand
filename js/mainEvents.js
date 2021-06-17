@@ -105,7 +105,7 @@ window.onload = function () {
         );
         _main.addEventListener('mousemove', (evt) => {
             if (
-              event.pageX <= 200 &&
+              event.pageX <= 100 &&
               onScreen == false
             ) {
               onScreen = true;
@@ -114,7 +114,7 @@ window.onload = function () {
               }, 1250)
             }
             else if (
-              event.pageX >= 280 &&
+              event.pageX >= 180 &&
               sideBarLock == false &&
               onScreen == true
             ){
