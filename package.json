@@ -4,30 +4,16 @@
   "description": "Just Read",
   "main": "index.html",
   "scripts": {
-    "Camoflage": "js/themes/Camoflage.js",
-    "Example": "js/themes/Example.js",
-    "Informative": "js/themes/Informative.js",
-    "Light": "js/themes/Light.js",
-    "Night": "js/themes/Night.js",
-    "Solarized": "js/themes/Solarized.js",
-    "baseDOM": "js/baseDocumentObjectModels.js",
-    "baseFN": "js/baseFunctions.js",
-    "coreDOM": "js/coreDocumentObjectModels.js",
-    "coreHelpers.js": "js/coreHelpers.js",
-    "FileSaver": "js/FileSaver.js",
-    "init": "js/init.js",
-    "inputEvents": "js/inputEvents.js",
-    "mainEvents": "js/mainEvents.js",
-    "settings": "js/settings.js",
-    "sideBarEvents": "js/sideBarEvents.js",
-    "xmlAssets": "js/xmlAssets.js",
-    "xmlFunctions": "js/xmlFunctions.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "language": "English",
+  "repository": {
+    "type": "git",
+    "url": "git+https://acktic@github.com/acktic/acktic.github.io.git"
+  },
   "author": "acktic",
   "license": "MIT",
-  "dependencies": { }
+  "bugs": {
+    "url": "https://github.com/acktic/acktic.github.io/issues"
+  },
+  "homepage": "https://github.com/acktic/acktic.github.io#readme"
 }
