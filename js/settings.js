@@ -711,6 +711,7 @@ if (expand == true) {
   List = true;
 }
 
+let quit;
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images

@@ -389,7 +389,6 @@ var xmlImageSource = function (xhr) {
         .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0]
     );
   else src = null;
-  console.log(src);
   return src;
 };
 
@@ -702,7 +701,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         })
           .then((response) => {
             response.json().then((jsonResponse) => {
-              console.log(`${pubIndex} ${jsonResponse.score}`)
               if (
                 jsonResponse.score >= safeSearchScore
                 ) {
@@ -900,7 +898,7 @@ var xmlRequestParsing = function (search, string, index) {
   images = [];
   let inline = [];
   imageDuplicate = [];
-  console.log(menu[index]);
+  console.log(menu[index].id);
   _toggle.style.display = `none`
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
@@ -934,8 +932,8 @@ var xmlRequestParsing = function (search, string, index) {
         if (xhr.getElementsByTagName(`entry`).length > 0) var channel = `entry`;
         else var channel = `item`;
 
-        var quit = 30;
-
+        if (Reader == false) quit = 30;
+        else quit = 12;
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
