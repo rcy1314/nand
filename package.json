@@ -2,7 +2,7 @@
   "name": "acktic",
   "version": "3.4.9726",
   "description": "Just Read",
-  "main": "index.html",
+  "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/acktic/acktic.github.io/issues"
   },
-  "homepage": "https://github.com/acktic/acktic.github.io#readme"
+  "homepage": "https://github.com/acktic/acktic.github.io#readme",
+  "dependencies": {
+    "web": "^0.0.2"
+  }
 }
