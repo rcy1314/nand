@@ -60,9 +60,11 @@ setTimeout(function() {
     }, 250);
   } else if (isNaN(parseFloat(post)) && !isFinite(post)) {
     setTimeout(function () {
-      _visit.style.display = `flex`;
-      guideOnScreen = true;
-      _guest.focus();
+      if (Reader == false) {
+        _visit.style.display = `flex`;
+        guideOnScreen = true;
+        _guest.focus();
+      } else xmlRequestParsing(null, null, anyRandomMenuObject());
     }, 250);
   }
   if (
@@ -71,7 +73,7 @@ setTimeout(function() {
   ) {
     sideBarDisplay(onScreen);
   } else if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
-    _check.style.visibility = `visible`;
+    if (showSplash == true) _check.style.visibility = `visible`;
 
   if (_main.clientWidth <= 425) {
     setTimeout(function () {
