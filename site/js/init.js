@@ -64,7 +64,11 @@ setTimeout(function() {
         _visit.style.display = `flex`;
         guideOnScreen = true;
         _guest.focus();
-      } else xmlRequestParsing(null, null, anyRandomMenuObject());
+      } else if (Reader == true) {
+        justRead = true;
+        onlyImages = true;
+        xmlRequestParsing(null, null, anyRandomMenuObject());
+      }
     }, 250);
   }
   if (

@@ -190,14 +190,13 @@ document.addEventListener('touchend', (evt) => {
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 1 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 100 &&
         Reader == true &&
         stop == false
       ) {
         first = false;
         if (showSplash == true) {
           _check.style.display = `block`;
-          document.querySelector(`#xml`).style.cssText = `backdrop-filter: blur(10px)`;
         }
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
@@ -209,7 +208,7 @@ document.addEventListener('scroll', (evt) => {
 document.addEventListener('ontouchmove', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 1 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 100 &&
         Reader == true &&
         stop == false
       ) {

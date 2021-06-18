@@ -1,8 +1,9 @@
 #main #xml {
   height: fit-content;
-  position: absolute;
+  position: fixed;
   min-height: 100%;
   display: block;
+  height: 100%;
   width: 100%;
   left: 60px;
   z-index: 1;
