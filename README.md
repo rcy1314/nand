@@ -34,7 +34,7 @@ File Issues!<br>
 Copyright Notice
 ----
 
-Images and information retrieved and or displayed in project<br> are not owned by the developers, and are only non - consent.
+Images and information retrieved and or displayed in project<br> are not owned by the developers, and are only non - consent
 
 License
 ----
