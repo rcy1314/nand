@@ -224,7 +224,9 @@ document.addEventListener('ontouchmove', (evt) => {
 document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`construct`) ||
+      evt.target.classList.contains(`download`) ||
       evt.target.classList.contains(`picture`) ||
+      evt.target.classList.contains(`source`) ||
       evt.target.classList.contains(`bottom`) ||
       evt.target.classList.contains(`header`) ||
       evt.target.classList.contains(`result`) ||
@@ -395,7 +397,6 @@ document.addEventListener('click', (evt) => {
       justRead = true;
       onlyImages = true;
       randomDuplicate = [];
-      if (showSplash == true) _check.style.display = `block`;
       document
         .querySelectorAll(`.joi`)
         .forEach((a) => (a.classList.add(`luv`)));

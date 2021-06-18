@@ -171,6 +171,7 @@ let topMenuBarDisplay = function (Value) {
 
 let quickFeedDisplay = function (Value) {
   if (Value == true) {
+    _quick.style.zIndex = `1`;
     _main
       .querySelectorAll(`.feed`)
       .forEach((a) => a.style.display = `block`);
@@ -184,6 +185,7 @@ let quickFeedDisplay = function (Value) {
     _just.classList.add(`toggleHidden`);
     _just.classList.add(`invisible`);
   } else if (Value == false) {
+    _quick.style.zIndex = `-1`;
     _main
       .querySelectorAll(`.feed`)
       .forEach((a) => a.style.display = `none`);
