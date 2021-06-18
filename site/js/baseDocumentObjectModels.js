@@ -430,7 +430,7 @@ let assetBuild = function (assetIndex, assetImage, assetId) {
   ahref.classList.add(`query`);
   img.classList.add(`entity`);
   img.src = assetImage;
-  ahref.innerHTML = `${String(assetId.match(/[^\/]+$/g)).substring(0, 9)}...`;
+  ahref.innerHTML = `${truncate(String(assetId.match(/[^\/]+$/g)), 12, true)}...`;
   object.append(img);
   object.append(ahref);
   return object;

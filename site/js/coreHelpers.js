@@ -135,7 +135,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.state = function () {
-  history.replaceState(null, null, this);
+  history.replaceState({}, '', '');
 };
 
 String.prototype.blank = function () {
