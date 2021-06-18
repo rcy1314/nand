@@ -121,7 +121,7 @@ String.prototype.hyphen = function () {
 };
 
 String.prototype.image = function () {
-  return `images/webp/${this}.webp`;
+  return `site/images/webp/${this}.webp`;
 };
 
 String.prototype.domain = function () {

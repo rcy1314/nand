@@ -4,7 +4,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-    <script type='text/javascript' src='js/settings.js'></script>
+    <script type='text/javascript' src='site/js/settings.js'></script>
 </head>
 <body>
   <div id='container' style='display:none'>
@@ -94,7 +94,7 @@
           </div>
       </div>
       <script>
-      let dir = "css/";
+      let dir = "site/css/";
       let ext = ".css";
       let obj = [
         "Group",
@@ -119,7 +119,7 @@
         document.getElementsByTagName("head")[0].appendChild(script);
       }
 
-      let directory = "js/";
+      let directory = "site/js/";
       let extension = ".js";
       let files = [
         "coreDocumentObjectModels",
@@ -152,7 +152,7 @@
             }, 25);
           })();
       }
-      let place = `js/themes/`;
+      let place = `site/js/themes/`;
       let type = `.js`;
       for (i = 0; i <= themes.length - 1; i++) {
         theme = themes[i].obFn;

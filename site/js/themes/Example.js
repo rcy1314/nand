@@ -29,8 +29,8 @@ var Example = function () {
     `rgba(63, 92, 136, .4)`
   ); // Main, TopBar Input, Left Right (feed)
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `images/ffe869c642be33cbb2c3e609e27beb29.webp`)
-    backgroundImage[0].path = `images/ffe869c642be33cbb2c3e609e27beb29.webp`
+  if (backgroundImage[0].path != `site/images/ffe869c642be33cbb2c3e609e27beb29.webp`)
+    backgroundImage[0].path = `site/images/ffe869c642be33cbb2c3e609e27beb29.webp`
   document.querySelector(`#${backgroundImage[0].element}`)
     .style.backgroundImage = `url(${backgroundImage[0].path})`
 };
