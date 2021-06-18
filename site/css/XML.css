@@ -1,6 +1,6 @@
 #main #xml {
   height: fit-content;
-  position: fixed;
+  position: absolute;
   min-height: 100%;
   display: block;
   height: 100%;
