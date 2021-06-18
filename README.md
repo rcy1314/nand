@@ -1,7 +1,4 @@
 <img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
-<br>
-<br>
-<img src='https://raw.githubusercontent.com/acktic/acktic.github.io/master/favicon.ico' style='display:inline;height:45px;width:45px;'><div style='display:inline;font-size:48px;font-weight:bold;position:relative;top:13px;margin-left:25px'>ACKTIC</div>
 
 ### About
 
@@ -10,7 +7,7 @@
   - [Homepage](https://acktic.github.io "Homepage")
   - [Heroku](https://acktic.herokuapp.com "Heroku")
 
-### use
+### Use
 
   - Navigate index.html in your browser locally.
   - `node app.js` web server @ localhost:3000.
