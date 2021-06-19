@@ -17,7 +17,7 @@
 ### Settings
 
 <em>Located in</em> `site/js/settings.js` <em> edit everything !</em><br>
-<em>backgroundImage path is overwritten in theme file</em>
+-<em>backgroundImage path is overwritten in theme fn</em>
 
 Want to Contribute?
 ----
