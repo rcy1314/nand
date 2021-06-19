@@ -941,7 +941,7 @@ var xmlRequestParsing = function (search, string, index) {
         else var channel = `item`;
 
         if (Reader == false) quit = 30;
-        else quit = 12;
+        else quit = 16;
         for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
           if (i === quit) break;
 
