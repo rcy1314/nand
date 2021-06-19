@@ -88,6 +88,7 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
       option.innerHTML = Arrays[i];
       option.setAttribute(`aria-item`, Arrays[i])
       list.append(option);
+      list.append(sideBarThemeBuild(`fa-dice-one`))
     } if (!translations.includes(Arrays[i]) || Class != `option` && Class != `feed`)
 			list.append(sideBarThemeBuild(Arrays[i].icon));
   }
@@ -122,7 +123,7 @@ let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (!document.body.contains(document.querySelector(`.sel`))) {
-    if (sideBarTranslations == true && _main.clientWidth >= 426) {
+    if (sideBarTranslations == true) {
         appendSideBarLists(`#content`, `cat`, translations);
     }
     appendSideBarLists(`#content`, `sel`, selections);

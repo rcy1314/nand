@@ -19,8 +19,6 @@ setTimeout(function() {
     location.href.split(`?`)[1]
   ) {
     let i;
-    let id;
-    var uri = location.href.split(`?`)[1];
     id = uri.slice(uri.length - 9, uri.length);
     if (uri.match(/^[a-zA-Z0-9]+$/g)) {
       id = uri.slice(0, 2);

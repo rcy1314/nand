@@ -314,46 +314,10 @@ document.addEventListener('click', (evt) => {
       xhr.send();
     }
     if (
-      evt.target.classList.contains(`fa-grip-lines`)
+      evt.target.classList.contains(`show`)
     ) {
-      if (Reader == false) {
-        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove();
-        if (id === 0) populateCategoryGroup(category);
-        else {
-          if (location.href.match(`\\?q=`)) {
-            var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
-            let description = menu.filter(function (item) {
-              return item.description.space().toLowerCase()
-                .match(uri.toString().toLowerCase().space());
-            })
-            groupBuild();
-            for (i = 0; i <= description.length - 1; i++)
-              writeFilterResponse(menu.indexOf(description[i]));
-            displayDescription(showDescription);
-            displayExpand(expand);
-            populateCategoryGroup(category)
-            unloading();
-          } else populateCategoryGroup(category);
-          document.title = category;
-          displayExpand(expand);
-        }
-      } else {
-        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove();
-        document.title = `index.html`;
-        quickFeeds = quickFeeds != true;
-        _toggle.style.display = `block`;
-        _visit.style.display = `flex`;
-        _top.style.display = `none`;
-        quickFeedDisplay(quickFeeds);
-      }
+      onScreen = true;
+      sideBarDisplay(onScreen);
     }
     if (
       evt.target.classList.contains(`joi`)

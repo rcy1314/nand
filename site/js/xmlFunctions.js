@@ -869,6 +869,13 @@ var xmlAppendPublication = function (id) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
   }
+  if (Reader == true) {
+    _main.scrollTo({
+      top: document.querySelector(`[aria-object='${id}']`)
+        .offsetTop - 60,
+      behavior: `smooth`,
+    })
+  }
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
   let recent = pub[0].dst;
@@ -889,6 +896,7 @@ var xmlAppendPublication = function (id) {
 }
 
 var xmlRequestParsing = function (search, string, index) {
+  console.log(index)
   init();
   pub = [];
   let html;

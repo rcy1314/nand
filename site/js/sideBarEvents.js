@@ -45,6 +45,10 @@ document.addEventListener('mouseout', (evt) => {
   false
 );
 document.addEventListener('click', (evt) => {
+    if (event.target.classList.contains(`hide`)) {
+      onScreen = false;
+      sideBarDisplay(onScreen);
+    }
     if (event.target.classList.contains(`feed`)) {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
@@ -282,14 +286,14 @@ document.addEventListener('click', (evt) => {
       _main.style.backgroundImage = `none`;
     }
     if (event.target.classList.contains(`cat`)) {
-      id = 0;
       first = true;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
-      category = event.target.closest(`.cat`).getAttribute(`aria-item`);
+      category = event.target.getAttribute(`aria-item`);
+      console.log(category)
       if (Reader == true) {
-        randomDuplicate = [];
+        justRead = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       } else {
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -300,7 +304,7 @@ document.addEventListener('click', (evt) => {
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         populateCategoryGroup(
-          event.target.closest(`.cat`).getAttribute(`aria-item`)
+          event.target.getAttribute(`aria-item`)
         );
         topMenuBarDisplay(topBar);
         displayExpand(expand);

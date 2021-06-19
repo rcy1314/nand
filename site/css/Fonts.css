@@ -19,7 +19,7 @@
   font-size: 17px;
 }
 
-#main #top #arm .fa-grip-lines {
+#main #top #arm .fa-sliders-h {
   color: var(--fill-color);
   position: relative;
   cursor: pointer;
@@ -29,6 +29,16 @@
   float: left;
   z-index: 1;
   top: 7px;
+}
+
+#sidebar .fa-sliders-h {
+  color: var(--fill-color);
+  position: relative;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 15px;
+  float: right;
+  z-index: 1;
 }
 
 #main #xml .center .item .header .courtesy .copy .attribute .fa,
@@ -100,7 +110,8 @@
 }
 
 #sidebar #content .fa-home,
-#sidebar #content .fa-sliders-h,
+#sidebar #content .fa-dice-one,
+#sidebar #content .fa-infinity,
 #sidebar #content .fa-chart-pie,
 #sidebar #content .fa-tablet-alt,
 #sidebar #content .fa-exclamation-circle {
@@ -114,6 +125,10 @@
   right: 5px;
   width: 15px;
   z-index: -1;
+}
+
+#sidebar #content .fa-infinity {
+  right: 7px;
 }
 
 #sidebar #content .fa-lock,

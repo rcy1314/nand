@@ -266,7 +266,7 @@ let sideBarMousewheel = false;
 
 */
 
-let topBarBackdrop = true;
+let topBarBackdrop = false;
 
 /*
     toggleBorders [boolean/integer]
@@ -740,7 +740,7 @@ const selections = [
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
   { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
-  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-sliders-h` },
+  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-infinity` },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
