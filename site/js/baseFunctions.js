@@ -4,7 +4,7 @@ let handleSwipe = function () {
     sideBarDisplay(onScreen);
   } else if (touchendX + 50 < touchstartX) {
     onScreen = false;
-    sideBarDisplay(onScreen);
+    if (sideBarLock == false) sideBarDisplay(onScreen);
   }
 }
 
