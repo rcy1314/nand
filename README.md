@@ -14,7 +14,7 @@
 
 ### Known Issues
 
-* safeSearch couple header errors from heroku offloading.
+* safeSearch header errors from heroku offloading (fixed).
 * Dynamic Loading could timeout for Remote Host  (fixed).
 * Heroku cors / api intial response ~7s safeSearch double.
 * File Size 230mb uncompressed 415 asset 3 Background.
