@@ -260,6 +260,7 @@ var menu=[
 {id:`Reddit/Los Angeles`,category:`Reddit`,title:`686741033`,description:`Los Angeles subreddit The international epicenter of entertainment.`,uri:`https://www.reddit.com/r/LosAngeles/.rss`,image:`LosAngeles`,hash:`ge`,media:!0},
 {id:`Reddit/Machine Learning`,category:`Reddit`,title:`133767819`,description:`Machine Learning subreddit Welcome to MachineLearning.`,uri:`https://www.reddit.com/r/machinelearning/.rss`,image:`MachineLearning`,hash:`me`,media:!1},
 {id:`Reddit/MacOS`,category:`Reddit`,title:`405341335`,description:`MacOs subreddit Home to Apple's Operating System.`,uri:`https://www.reddit.com/r/MacOs/.rss`,image:`MacOs`,hash:`mX`,media:!1},
+{id:`Reddit/Memes`,category:`Reddit`,title:`405341336`,description:`Memes! A way of describing cultural information being shared.`,uri:`https://www.reddit.com/r/Memes/.rss`,image:`Memes`,hash:`Mm`,media:!0},
 {id:`Reddit/Microsoft`,category:`Reddit`,title:`577014019`,description:`Microsoft subreddit Microsoft's suite of services, products and games which we publish.`,uri:`https://www.reddit.com/r/microsoft/.rss`,image:`Microsoft`,hash:`mi`,media:!1},
 {id:`Reddit/Movies`,category:`Reddit`,title:`019101548`,description:`Movies subreddit Media and Discussion about Major Motion Pictures.`,uri:`https://www.reddit.com/r/movies/.rss`,image:`Movies`,hash:`mo`,media:!0},
 {id:`Reddit/NetFlix`,category:`Reddit`,title:`096812547`,description:`Netflix Subreddit Unofficial Netflix discussion, and all things Netflix related.`,uri:`https://www.reddit.com/r/netflix/.rss`,image:`RNetflix`,hash:`iX`,media:!1},
