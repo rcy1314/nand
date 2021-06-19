@@ -67,7 +67,7 @@ setTimeout(function() {
       } else if (Reader == true) {
         justRead = true;
         onlyImages = true;
-        _top.querySelector(`.joi`).classList.add(`luv`)
+        document.querySelector(`.joi`).classList.add(`luv`)
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }, 250);
