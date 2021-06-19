@@ -873,7 +873,6 @@ var xmlAppendPublication = function (id) {
     _main.scrollTo({
       top: document.querySelector(`[aria-object='${id}']`)
         .offsetTop - 60,
-      behavior: `smooth`,
     })
   }
   let oldest = pub[pub.length - 1].dst;
