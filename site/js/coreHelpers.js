@@ -68,9 +68,11 @@ var anyRandomMenuObject = function () {
     randomObject = randomObject;
   if (justRead == false) {
     randomObject = random[Math.floor(Math.random() * random.length - 1)];
+    category = menu[randomObject].category;
     return randomObject
   } else if (justRead == true) {
     randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
+    category = menu[menu.indexOf(randomObject)].category;
     return menu.indexOf(randomObject);
   }
 };
