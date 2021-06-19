@@ -2,15 +2,16 @@
 
 ### About
 
-  - Really Simple Syndicate.
-  - Rich Site Summary.
-  - [Homepage](https://acktic.github.io "Homepage")
-  - [Heroku](https://acktic.herokuapp.com "Heroku")
+  - <em>A Really Simple Syndicate.</em>
+  - <em>A Enriched Site Summary.</em>
+  - [Homepage](https://acktic.github.io "Homepage") Github Pages.
+  - [Heroku](https://acktic.herokuapp.com "Heroku") Node.js Instance.
+  - [Sadayuki](https://ack.sadayuki.jp "Sadayuki") <em>[Freedns domain.](https://freedns.afraid.org/)</em>
 
 ### Use
 
-  - Navigate index.html in your browser locally.
-  - `node app.js` web server @ localhost:3000.
+  <em>Navigate index.html in your browser locally.</em><br>
+  `node app.js` <em>web server @ localhost:3000.</em>
 
 ### Known Issues
 

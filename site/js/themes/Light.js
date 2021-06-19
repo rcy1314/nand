@@ -29,8 +29,8 @@ var Light = function () {
     `rgba(255, 255, 255, .4)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `site/images/b453ae624e3d5e58b9890a998ec441b8.jpg`)
-    backgroundImage[0].path = `site/images/b453ae624e3d5e58b9890a998ec441b8.jpg`
+  if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/b453ae624e3d5e58b9890a998ec441b8.jpg`)
+    backgroundImage[0].path = `https://raw.githubusercontent.com/acktic/.dotfiles/main/b453ae624e3d5e58b9890a998ec441b8.jpg`
   document.querySelector(`#${backgroundImage[0].element}`)
     .style.backgroundImage = `url(${backgroundImage[0].path})`
 };

@@ -122,7 +122,7 @@ String.prototype.hyphen = function () {
 };
 
 String.prototype.image = function () {
-  return `site/images/webp/${this}.webp`;
+  return `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${this}.webp`;
 };
 
 String.prototype.domain = function () {
