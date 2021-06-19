@@ -625,7 +625,8 @@ document.addEventListener('click', (evt) => {
               evt.target
                 .closest(`.item`)
                 .querySelector(`.img`)
-                .classList.contains(`default`)
+                .classList.contains(`default`) &&
+              category == `Reddit`
             ) {
               count = [];
               let sticky = [];
