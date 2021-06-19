@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`Google`,category:`World`,title:`718911891`,description:`Google is a multinational technology company that specializes in Internet-related services and products.`,uri:`https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en`,image:`Google`,hash:`gG`,media:!1},
 #{id:`Sportzet`,category:`Sports`,title:`584259679`,description:`Sportzet international Sports and World Headlines.`,uri:`https://www.sportzet.com/feed`,image:`Sportzet`,hash:`zP`,media:!1},
 #{id:`The Gadget Flow`,category:`Tech`,title:`150320899`,description:`The Gadget Flow Stay up to date with the tech, gear, and most incredible crowdfunding campaigns.`,uri:`http://feeds.feedburner.com/thegadgetflow`,image:`TheGadgetFlow`,hash:`aH`,media:!0},
 #{id:`Elle`,category:`Media`,description:`Elle Magazine is a lifestyle magazine that focuses on fashion, beauty, health, and entertainment.`,uri:`https://www.elle.com/rss/culture.xml`,image:`ELLE`,hash:`lE`,media:!0},
