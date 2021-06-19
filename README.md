@@ -17,7 +17,7 @@
 * safeSearch couple header errors from heroku offloading.
 * Dynamic Loading could timeout for Remote Host  (fixed).
 * Heroku cors / api intial response ~7s safeSearch double.
-* File Size ~5MB uncompressed 415 assets 3 Background.
+* File Size 230mb uncompressed 415 asset 3 Background.
 * Reader keep scrolling smoothness in non-mobile (fixed).
 
 ### Configurations in settings.js
