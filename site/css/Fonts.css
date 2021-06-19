@@ -19,21 +19,29 @@
   font-size: 17px;
 }
 
+
 #main #top #arm .fa-sliders-h {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f1de";
+  font-weight: 50;
   color: var(--fill-color);
   position: relative;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 24px;
   padding: 10px;
   right: -10px;
   float: left;
   z-index: 1;
-  top: 7px;
+  top: 12px;
 }
 
 #sidebar .fa-sliders-h {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f1de";
+  font-weight: 50;
   color: var(--fill-color);
   position: relative;
+  font-size: 16px;
   cursor: pointer;
   margin-right: 8px;
   margin-top: 15px;

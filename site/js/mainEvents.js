@@ -110,6 +110,7 @@ window.onload = function () {
               onScreen == false
             ) {
               onScreen = true;
+              _min.style.display = `block`;
               setTimeout(function () {
                 sideBarDisplay(onScreen);
               }, 1250)
