@@ -249,6 +249,19 @@ let sideBarBackdrop = false;
         sideBar, sideBarEvents
 
       Result
+        display sideBar with Mouse.
+
+*/
+
+let sideBarMouse = true;
+
+/*
+    sideBarMousewheel [boolean/integer]
+
+      Applications
+        sideBar, sideBarEvents
+
+      Result
         display sideBar with Mousewheel.
 
 */

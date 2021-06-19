@@ -69,7 +69,19 @@ html body,
   padding: 15px;
   right: 2px;
   z-index: 12;
-  top: 7px;
+  top: 20px;
+}
+
+#container .sb {
+  color: var(--fill-color);
+  background-color: transparent;
+  position: absolute;
+  cursor: pointer;
+  padding: 16px;
+  display: none;
+  left: 2px;
+  z-index: 1;
+  top: 20px;
 }
 
 #main {

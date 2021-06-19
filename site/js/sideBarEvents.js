@@ -46,6 +46,7 @@ document.addEventListener('mouseout', (evt) => {
 );
 document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`hide`)) {
+      _sb.style.display = `block`;
       onScreen = false;
       sideBarDisplay(onScreen);
     }
@@ -316,6 +317,7 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`sideHome`) ||
       event.target.classList.contains(`side`)
     ) {
+      _sb.style.display = `block`;
       id = 0;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))

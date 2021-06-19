@@ -19,6 +19,7 @@ setTimeout(function() {
     location.href.split(`?`)[1]
   ) {
     let i;
+    let uri = location.href.split(`?`)[1];
     id = uri.slice(uri.length - 9, uri.length);
     if (uri.match(/^[a-zA-Z0-9]+$/g)) {
       id = uri.slice(0, 2);
@@ -59,6 +60,7 @@ setTimeout(function() {
   } else if (isNaN(parseFloat(post)) && !isFinite(post)) {
     setTimeout(function () {
       if (Reader == false) {
+        _sb.style.display = `block`;
         _visit.style.display = `flex`;
         guideOnScreen = true;
         _guest.focus();

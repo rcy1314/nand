@@ -87,7 +87,8 @@ window.onload = function () {
         { passive: true }
       );
       if (
-        _main.clientWidth >= 769
+        _main.clientWidth >= 769 &&
+        sideBarMouse == true
       ) {
         _sidebar.addEventListener('mousemove', (evt) => {
             onScreen = true;
@@ -316,6 +317,7 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`show`)
     ) {
+      _min.style.display = `block`;
       onScreen = true;
       sideBarDisplay(onScreen);
     }
@@ -383,6 +385,7 @@ document.addEventListener('click', (evt) => {
     }
     if (evt.target.id == `home`) {
       id = 0;
+      _sb.style.display = `block`;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
@@ -410,6 +413,7 @@ document.addEventListener('click', (evt) => {
     }
     if (evt.target.classList.contains(`fa-expand-alt`)) {
       expand = expand != true;
+      _sb.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))
