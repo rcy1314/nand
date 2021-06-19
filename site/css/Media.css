@@ -66,7 +66,6 @@
 
   #main #xml .center {
     position: relative !important;
-    max-width: 300px !important;
     margin: 0 auto !important;
     width: 100% !important;
     right: 60px !important;
@@ -107,12 +106,10 @@
   }
 
   #main #xml .center .item {
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
     border: none;
-  }
-
-  #main #xml .center .item,
-  #main #group .air .populate,
-  #main #group .result .populate {
   }
 
   #main
@@ -191,11 +188,6 @@
   #main #xml .center .item .pending {
     width: 100% !important;
     margin: 0 !important;
-  }
-
-  #main #xml .center .item {
-    margin-bottom: 0 !important;
-    box-shadow: none !important;
   }
 
   #main #xml .center #bottom {
