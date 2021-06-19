@@ -318,8 +318,9 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`show`)
     ) {
+
       _min.style.display = `block`;
-      onScreen = true;
+      onScreen = onScreen != true;
       sideBarDisplay(onScreen);
     }
     if (
@@ -674,7 +675,7 @@ document.addEventListener('click', (evt) => {
                 .classList.contains(`default`)
             )
               evt.target.closest(`.item`).getAttribute(`ext`).blank();
-            else if (category != `Social`)
+            else if (category != `Reddit`)
               evt.target.closest(`.item`).getAttribute(`ext`).blank();
           tap = 0;
         }, 350);
