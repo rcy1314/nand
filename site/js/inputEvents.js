@@ -3,7 +3,6 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`buttonSearch`) ||
       event.target.classList.contains(`button`)
     ) {
-      _toggle.style.display = `none`
       if (_guest.value.length > 0) {
         filterInputResponse(_guest.value);
         topMenuBarDisplay(topBar);

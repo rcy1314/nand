@@ -234,6 +234,7 @@ let progressBackDrop = function (done) {
 let populateCategoryGroup = function (translation) {
   let media;
   _sb.style.display = `none`;
+  _toggle.style.display = `none`
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
