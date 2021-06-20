@@ -63,18 +63,19 @@ var anyRandomMenuObject = function () {
       if (menu[i].category == category) random.push(menu[i]);
     }
   }
-  var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
+  var randomObject = random[Math.floor(Math.random() * random.length - 1)];
   if (menu[randomObject] && randomObject != 0 && !randomDuplicate.includes(randomObject))
     randomObject = randomObject;
   else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
-    randomObject = random[Math.floor(Math.random() * random.length - 1)];
-    category = menu[randomObject].category;
+    category = random[randomObject].category;
+    randomDuplicate.push(randomObject);
     return randomObject
   } else if (justRead == true) {
-    randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
-    category = menu[menu.indexOf(randomObject)].category;
-    return menu.indexOf(randomObject);
+    var randomObject = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]);
+    category = menu[randomObject].category;
+    randomDuplicate.push(randomObject);
+    return randomObject;
   }
 };
 

@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/site/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`People`,category:`Media`,title:`388531224`,description:`People is an American Weekly Magazine of Celebrity and Human-Interest Stories.`,uri:`https://people.com/tag/news/feed`,image:`People`,hash:`lP`,media:!0},
 #{id:`Computer Weekly`,category:`Tech`,title:`740057785`,description:`Computer Weekly stands out from the many Technology Websites.`,uri:`https://www.computerweekly.com/rss/RSS-Feed.xml`,image:`ComputerWeekly`,hash:`Wc`,media:!1},
 #{id:`Boston`,category:`World`,title:`012497635`,description:`Boston is a regional website that offers information about Boston, Massachusetts.`,uri:`https://www.boston.com/tag/world-news/feed`,image:`Boston`,hash:`wB`,media:!0},
 #{id:`Perez Hilton`,category:`Media`,title:`542267130`,description:`PerezHilton is known for posts covering Gossip Items about Celebrities.`,uri:`https://perezhilton.com/feed`,image:`PerezHilton`,hash:`nZ`,media:!1},
