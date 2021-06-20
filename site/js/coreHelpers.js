@@ -87,9 +87,10 @@ var anyRandomMenuObject = function () {
     randomObject = randomObject;
   else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
-    category = menu[randomObject].category;
+    console.log(randomObject);
+    category = menu[menu.indexOf(randomObject)].category;
     randomDuplicate.push(randomObject);
-    return randomObject
+    return menu.indexOf(randomObject)
   } else if (
     justRead == true &&
     onlyImages == false
