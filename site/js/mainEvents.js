@@ -344,8 +344,10 @@ document.addEventListener('click', (evt) => {
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         if (showSplash == true) _check.style.display = `block`;
+        justRead = true;
+        onlyImages = true;
+        document.querySelector(`.joi`).classList.add(`luv`)
         xmlRequestParsing(null, null, anyRandomMenuObject());
-        event.target.classList.add(`luv`);
       }
     }
     if (
