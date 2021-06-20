@@ -338,18 +338,22 @@ document.addEventListener('click', (evt) => {
         first = true;
         id = 0;
         xmlChannelFooter();
-        event.target.classList.remove(`luv`);
+        _main
+          .querySelectorAll(`.joi`)
+          .forEach((a) => a.classList.remove(`luv`));
       } else if (Reader == true) {
         if (showSplash == true) _check.style.display = `Block`;
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
+        if (document.body.contains(document.querySelector(`#bottom`)))
+          document.querySelector(`#bottom`).remove();
         if (showSplash == true) _check.style.display = `block`;
         justRead = true;
         onlyImages = true;
         _sb.style.display = `none`;
-        document.querySelector(`.joi`).classList.add(`luv`)
+        _main
+          .querySelectorAll(`.joi`)
+          .forEach((a) => a.classList.add(`luv`));
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }
