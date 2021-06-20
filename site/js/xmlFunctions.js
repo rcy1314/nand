@@ -858,6 +858,9 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (Reader == true) {
+    _main
+      .querySelectorAll(`.joi`)
+      .forEach((a) => a.classList.add(`luv`));
     scrollToElm(
       _main,
       document.querySelector(`[aria-object='${id}']`),

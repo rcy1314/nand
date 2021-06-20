@@ -70,9 +70,6 @@ setTimeout(function() {
       } else if (Reader == true) {
         justRead = true;
         onlyImages = true;
-        _main
-          .querySelectorAll(`.joi`)
-          .forEach((a) => a.classList.add(`luv`));
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }, 250);
