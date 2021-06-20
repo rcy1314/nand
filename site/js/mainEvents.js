@@ -197,7 +197,7 @@ document.addEventListener('touchend', (evt) => {
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 100 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 200 &&
         Reader == true &&
         stop == false
       ) {
@@ -215,7 +215,7 @@ document.addEventListener('scroll', (evt) => {
 document.addEventListener('ontouchmove', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 100 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 200 &&
         Reader == true &&
         stop == false
       ) {
