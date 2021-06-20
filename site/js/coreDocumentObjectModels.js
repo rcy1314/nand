@@ -50,7 +50,6 @@ const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);
 
-const _back = document.querySelector(`.fa-sliders-h`);
 
 const _container = document.getElementById(`container`);
 
