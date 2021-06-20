@@ -63,9 +63,10 @@ var anyRandomMenuObject = function () {
       if (menu[i].category == category) random.push(menu[i]);
     }
   }
-  let randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
-  if (menu[randomObject] && !randomDuplicate.includes(randomObject))
+  var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
+  if (menu[randomObject] && randomObject != 0 && !randomDuplicate.includes(randomObject))
     randomObject = randomObject;
+  else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
     randomObject = random[Math.floor(Math.random() * random.length - 1)];
     category = menu[randomObject].category;

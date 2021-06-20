@@ -110,6 +110,7 @@ window.onload = function () {
               onScreen == false
             ) {
               onScreen = true;
+              _sb.style.display = `none`;
               _min.style.display = `block`;
               setTimeout(function () {
                 sideBarDisplay(onScreen);
@@ -120,6 +121,7 @@ window.onload = function () {
               sideBarLock == false &&
               onScreen == true
             ){
+              _sb.style.display = `block`;
               onScreen = false;
               setTimeout(function() {
                 sideBarDisplay(onScreen);
@@ -346,6 +348,7 @@ document.addEventListener('click', (evt) => {
         if (showSplash == true) _check.style.display = `block`;
         justRead = true;
         onlyImages = true;
+        _sb.style.display = `none`;
         document.querySelector(`.joi`).classList.add(`luv`)
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
