@@ -121,7 +121,10 @@ window.onload = function () {
               sideBarLock == false &&
               onScreen == true
             ){
-              _sb.style.display = `block`;
+              if (
+                !document.body.contains(document.querySelector(`#group`)) &&
+                !document.body.contains(document.querySelector(`#xml`))
+              ) _sb.style.display = `block`;
               onScreen = false;
               setTimeout(function() {
                 sideBarDisplay(onScreen);
