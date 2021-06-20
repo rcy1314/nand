@@ -101,10 +101,6 @@
     position: relative !important;
   }
 
-  #main #top #arm .fa-grip {
-    left: 15px;
-  }
-
   #main #xml .center .item {
     margin-bottom: 55px !important;
     box-shadow: none !important;
@@ -118,8 +114,7 @@
   }
 
   #main #visit #page #just {
-    padding-right: 15px !important;
-    top: 35px !important;
+    display: none !important;
   }
 
   #main #visit #page #quick {
