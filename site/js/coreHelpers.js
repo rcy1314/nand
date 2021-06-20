@@ -111,7 +111,7 @@ var anyRandomMenuObject = function () {
 
 function scrollToElm(container, elm, duration){
   var pos = getRelativePos(elm);
-  scrollTo( container, pos.top , 150);  // duration in seconds
+  scrollTo( container, pos.top , 1000);  // duration in seconds
 }
 
 function getRelativePos(elm){
