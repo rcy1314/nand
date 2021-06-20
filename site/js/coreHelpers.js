@@ -71,7 +71,6 @@ var anyRandomMenuObject = function () {
     ) {
       if (
         menu[i] &&
-        menu[i].category == category &&
         menu[i].media == true
       )
         random.push(menu.indexOf(menu[i]));
