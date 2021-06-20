@@ -6,6 +6,9 @@
   * Feed Example
   > /?q=[unique+id] fails to search.
 
+  * Hash Example
+  > /?[hash] fails to search.
+
 */
 
 setTimeout(function() {

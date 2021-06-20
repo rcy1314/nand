@@ -80,6 +80,7 @@ let inputListingIndex = function (inputFilter, listingWrapper) {
             menu.indexOf(menu[i]),
             menu[i].image.image(),
             menu[i].category,
+            menu[i].hash,
             false,
             false,
             i
