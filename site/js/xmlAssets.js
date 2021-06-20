@@ -344,7 +344,6 @@ var menu=[
 {id:`BBC Technology`,category:`Tech`,title:`817824669`,description:`BBC Technology Headlines, Articles, and more.`,uri:`http://feeds.bbci.co.uk/news/technology/rss.xml`,image:`BBC`,hash:`Bt`,media:!1},
 {id:`BetaNews`,category:`Tech`,title:`962356265`,description:`BetaNews is a leading source of Technology and Analysis.`,uri:`http://feeds.betanews.com/bn`,image:`BetaNews`,hash:`Wb`,media:!1},
 {id:`Bleeping Computer`,category:`Tech`,title:`413911142`,description:`Bleeping Computer is a information security and technology publication.`,uri:`https://www.bleepingcomputer.com/feed/`,image:`BleepingComputer`,hash:`Cb`},
-{id:`Computer Weekly`,category:`Tech`,title:`740057785`,description:`Computer Weekly stands out from the many Technology Websites.`,uri:`https://www.computerweekly.com/rss/RSS-Feed.xml`,image:`ComputerWeekly`,hash:`Wc`,media:!1},
 {id:`Boy Genius Report`,category:`Tech`,title:`279766611`,description:`BGR is a destination for focus on the Consumer Electronics Market.`,uri:`https://bgr.com/tech/feed`,image:`BGR`,hash:`gB`,media:!0},
 {id:`Business Insider`,category:`Tech`,title:`004945324`,description:`Business Insider is a Growing Business site with Financial, Media, and Tech.`,uri:`https://www.businessinsider.com/rss`,image:`BusinessInsider`,hash:`Ie`,media:!0},
 {id:`CBS Technology`,category:`Tech`,title:`094639032`,description:`CBS Technology on Social Media, Artificial Intelligence, Computers and more.`,uri:`https://www.cbsnews.com/latest/rss/technology`,image:`CBS`,hash:`gC`,media:!1},

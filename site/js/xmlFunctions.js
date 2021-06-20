@@ -870,11 +870,11 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (Reader == true) {
-    _main.scrollTo({
-      top: document.querySelector(`[aria-object='${id}']`)
-        .offsetTop - 60,
-      behavior: `smooth`
-    })
+    scrollToElm(
+      _main,
+      document.querySelector(`[aria-object='${id}']`),
+      300
+    );
   }
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
