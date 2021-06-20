@@ -910,6 +910,7 @@ var xmlRequestParsing = function (search, string, index) {
   _toggle.style.display = `none`
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
+  _sb.style.display = `none`;
   if (readPrevious == false) random = [];
   if (!document.body.contains(document.querySelector(`#xml`)))
     _main.append(stageBuild());
