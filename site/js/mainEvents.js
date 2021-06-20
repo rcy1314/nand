@@ -621,6 +621,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`filterBlur`) ||
       evt.target.classList.contains(`img`)
     ) {
+      let cid = evt.target.closest(`.item`).getAttribute(`aria-object`)
       if (loading == `percent`) _progress.style.width = `100%`;
       if (tap == 0) {
         tap = new Date().getTime();
@@ -638,7 +639,7 @@ document.addEventListener('click', (evt) => {
                 .closest(`.item`)
                 .querySelector(`.img`)
                 .classList.contains(`default`) &&
-              category == `Reddit`
+              menu[cid].category == `Reddit`
             ) {
               count = [];
               let sticky = [];
