@@ -887,7 +887,6 @@ var xmlAppendPublication = function (id) {
 }
 
 var xmlRequestParsing = function (search, string, index) {
-  console.log(index)
   init();
   pub = [];
   let html;

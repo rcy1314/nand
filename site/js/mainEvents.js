@@ -427,8 +427,6 @@ document.addEventListener('click', (evt) => {
     }
     if (evt.target.classList.contains(`fa-expand-alt`)) {
       expand = expand != true;
-      Reader = false;
-      justRead = false;
       _sb.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
