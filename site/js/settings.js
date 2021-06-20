@@ -82,7 +82,7 @@ let showOption = true;
 
 */
 
-let Reader = true;
+let Reader = false;
 
 /*
     Reader [boolean/integer]
