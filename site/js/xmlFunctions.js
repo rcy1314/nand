@@ -149,10 +149,7 @@ var guideImageAttributes = function (pubArray) {
           .forEach((a) => (a.style.maxWidth = `100vw`));
         if (guideSafeSearch == true)
           _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
-        _guide.querySelector(`.wrap`).style.display = `block`;
-        _guide.querySelector(`.wrap`).style.height = `fit-content`;
-        _guide.querySelector(`.pub`).style.height = `fit-content`;
-        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
+          _guide.querySelector(`.wrap`).style.display = `none`;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
@@ -160,22 +157,13 @@ var guideImageAttributes = function (pubArray) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
-        _guide.querySelector(`.wrap`).style.maxWidth = `100vw`;
-        _guide.querySelector(`.sticky`).style.top = `40px`;
+          _guide.querySelector(`.wrap`).style.display = `none`;
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
       if (guideSafeSearch == true) {
         _guide.querySelector(`.filterBlur`).style.top = `0`;
         _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
       }
-      _guide
-        .querySelectorAll(`.img, .sticky .header`)
-        .forEach(
-          (a) =>
-            (a.style.top = ~_guide.querySelector(`.img`).style.height - `60`)
-        );
-      _guide.querySelector(`.sticky .header`).style.width = `calc(100% - .5px)`;
-      _guide.querySelector(`.sticky`).style.right = `0`;
     } else {
       _main.classList.add(`guide`);
       if (newImg.naturalWidth >= newImg.naturalHeight) {

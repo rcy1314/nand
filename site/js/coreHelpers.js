@@ -56,32 +56,63 @@ var truncate = function (i, n, useWordBoundary) {
 
 var anyRandomMenuObject = function () {
   for (i = 1; i <= menu.length - 1; i++) {
-    if (onlyImages == true) {
-      if (menu[i] && menu[i].category == category && menu[i].media == true)
+    if (
+      onlyImages == true &&
+      justRead == false
+    ) {
+      if (
+        menu[i] &&
+        menu[i].category == category
+      )
+        random.push(menu.indexOf(menu[i]));
+    } else if (
+      onlyImages == true &&
+      justRead == true
+    ) {
+      if (
+        menu[i] &&
+        menu[i].category == category &&
+        menu[i].media == true
+      )
         random.push(menu.indexOf(menu[i]));
     } else if (onlyImages == false) {
       if (menu[i].category == category) random.push(menu[i]);
     }
   }
   var randomObject = random[Math.floor(Math.random() * random.length - 1)];
-  if (menu[randomObject] && randomObject != 0 && !randomDuplicate.includes(randomObject))
+  if (
+    menu[randomObject] &&
+    randomObject != 0 &&
+    !randomDuplicate.includes(randomObject)
+  )
     randomObject = randomObject;
   else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
-    category = random[randomObject].category;
+    category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
     return randomObject
-  } else if (justRead == true) {
-    var randomObject = menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]);
+  } else if (
+    justRead == true &&
+    onlyImages == false
+  ) {
+    var randomObject =
+      menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]);
     category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
     return randomObject;
-  }
+  } else if (
+    justRead == true &&
+    onlyImages == true
+  ) {
+    category = menu[randomObject].category;
+    randomDuplicate.push(randomObject);
+    return randomObject;
+}
 };
 
 function scrollToElm(container, elm, duration){
   var pos = getRelativePos(elm);
-  scrollTo( container, pos.top , 15);  // duration in seconds
+  scrollTo( container, pos.top , 25);  // duration in seconds
 }
 
 function getRelativePos(elm){
