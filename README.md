@@ -1,4 +1,4 @@
-<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>  as in Freemium ✔️
+<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>  ✔️
 
 
 ### About
