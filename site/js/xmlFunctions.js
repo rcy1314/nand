@@ -132,10 +132,6 @@ var guideImageAttributes = function (pubArray) {
         });
     }
     if (_main.clientWidth <= 425) {
-      if (category == `Youtube` && youtubeMedia == false)
-      document.querySelector(
-        `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
-      ).style.height = `179px`;
       _main.classList.add(`guide`);
       _guide.querySelector(`.sticky .header`).style.position = `absolute`;
       _guide.querySelector(`.sticky .src`).style.display = `block`;
@@ -147,9 +143,9 @@ var guideImageAttributes = function (pubArray) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
+        _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
         if (guideSafeSearch == true)
           _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
-          _guide.querySelector(`.wrap`).style.display = `none`;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
@@ -157,7 +153,6 @@ var guideImageAttributes = function (pubArray) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
-          _guide.querySelector(`.wrap`).style.display = `none`;
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
       if (guideSafeSearch == true) {
@@ -181,16 +176,13 @@ var guideImageAttributes = function (pubArray) {
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `calc(55vw - 220px)`));
       }
-      if (category == `Youtube` && youtubeMedia == false)
+      if (category == `Youtube` && youtubeMedia == false) {
       _guide
         .querySelectorAll(
-          `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image,
-          [aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
+          `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
         )
         .forEach((a) => (a.style.height = `269px`));
-      document.querySelector(
-        `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
-      ).style.overflow = `hidden`;
+      }
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);

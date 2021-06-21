@@ -255,7 +255,7 @@
   }
 
   #guide .sticky .src {
-    width: 100% !important;
+    width: 300px !important;
     display: block;
   }
 
@@ -266,13 +266,21 @@
     margin: 0 !important;
   }
 
-  #guide .sticky .wrap {
-    width: 100%;
-    position: absolute
-  }
-  #guide .sticky #yt {
-    display: block !important;
+  #guide .sticky #yt .wrap {
+    display: none !important;
     width: 100% !important;
+  }
+
+  #guide .sticky #yt .wrap .header {
+    display: none !important;
+  }
+
+  #guide .sticky #yt .wrap .pub {
+    display: none !important;
+  }
+
+  #guide .sticky #yt .wrap .ago {
+    display: none !important;
   }
 
   #guide .yt {
@@ -282,10 +290,6 @@
 
   #guide .yt .src {
     height: 22vh !important;
-  }
-
-  #guide .sticky .wrap {
-    width: 100vw !important;
   }
 
 }

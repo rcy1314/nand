@@ -96,14 +96,14 @@
   position: relative;
   padding-left: 14px;
   font-size: 12px;
-  width: 210px;
+  width: 190px;
 }
 
 #container #guide .sticky .ago {
   color: var(--fill-color);
   position: absolute;
   font-size: 10px;
-  width: 300px;
+  width: 220px;
   margin: 15px;
   bottom: 0;
 }
