@@ -55,6 +55,7 @@ var truncate = function (i, n, useWordBoundary) {
 };
 
 var anyRandomMenuObject = function () {
+  let random = []
   for (i = 1; i <= menu.length - 1; i++) {
     if (
       onlyImages == true &&
@@ -87,10 +88,9 @@ var anyRandomMenuObject = function () {
     randomObject = randomObject;
   else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
-    console.log(randomObject);
-    category = menu[menu.indexOf(randomObject)].category;
+    category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
-    return menu.indexOf(randomObject)
+    return randomObject
   } else if (
     justRead == true &&
     onlyImages == false
@@ -112,7 +112,7 @@ var anyRandomMenuObject = function () {
 
 function scrollToElm(container, elm, duration){
   var pos = getRelativePos(elm);
-  scrollTo( container, pos.top , 1000);  // duration in seconds
+  scrollTo( container, pos.top , 1);  // duration in seconds
 }
 
 function getRelativePos(elm){
@@ -136,7 +136,7 @@ function scrollTo(element, to, duration, onDone) {
 
     function animateScroll(){
         now = performance.now();
-        elapsed = (now - startTime)/2;
+        elapsed = (now - startTime)/50;
         t = (elapsed/duration);
 
         element.scrollTop = start + change * easeInOutQuad(t);
@@ -191,7 +191,7 @@ String.prototype.moment = function () {
 };
 
 String.prototype.space = function () {
-  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
+  return this.replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
 };
 
 String.prototype.hyphen = function () {
@@ -213,7 +213,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.state = function () {
-  history.replaceState({}, '', '');
+  history.replaceState({}, '', 'index.html');
 };
 
 String.prototype.blank = function () {
