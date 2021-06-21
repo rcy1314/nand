@@ -202,6 +202,7 @@ document.addEventListener('scroll', (evt) => {
         stop == false
       ) {
         first = false;
+        justRead = true;
         if (showSplash == true) {
           _check.style.display = `block`;
         }
@@ -220,6 +221,7 @@ document.addEventListener('ontouchmove', (evt) => {
         stop == false
       ) {
         first = false;
+        justRead = true;
         if (showSplash == true) _check.style.display = `block`;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }

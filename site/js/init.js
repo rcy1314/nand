@@ -25,6 +25,10 @@ setTimeout(function() {
     let uri = location.href.split(`?`)[1];
     id = uri.slice(uri.length - 9, uri.length);
     if (uri.match(/^[a-zA-Z0-9]+$/g)) {
+      if (Reader == true) {
+        justRead = true;
+        onlyImages = true;
+      }
       id = uri.slice(0, 2);
       post = parseInt(uri.slice(2), 36);
       setTimeout(function () {

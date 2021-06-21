@@ -244,7 +244,7 @@
   }
 
   #guide .sticky {
-    max-width: 300px !important;
+    max-width: 100vw !important;
     border-top: none !important;
   }
 
@@ -255,7 +255,7 @@
   }
 
   #guide .sticky .src {
-    width: 300px !important;
+    width: 100vw !important;
     display: block;
   }
 

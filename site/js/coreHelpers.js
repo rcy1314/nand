@@ -55,6 +55,7 @@ var truncate = function (i, n, useWordBoundary) {
 };
 
 var anyRandomMenuObject = function () {
+  let random = []
   for (i = 1; i <= menu.length - 1; i++) {
     if (
       onlyImages == true &&
@@ -87,10 +88,9 @@ var anyRandomMenuObject = function () {
     randomObject = randomObject;
   else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
-    console.log(randomObject);
-    category = menu[menu.indexOf(randomObject)].category;
+    category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
-    return menu.indexOf(randomObject)
+    return randomObject
   } else if (
     justRead == true &&
     onlyImages == false

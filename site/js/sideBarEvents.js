@@ -292,7 +292,6 @@ document.addEventListener('click', (evt) => {
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       category = event.target.getAttribute(`aria-item`);
-      console.log(category)
       if (Reader == true) {
         justRead = false;
         xmlRequestParsing(null, null, anyRandomMenuObject());
