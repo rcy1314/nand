@@ -563,6 +563,7 @@ let youtubeAttributeBuild = function () {
   site.innerHTML = `Copy URL`;
   copy.innerHTML = `Copy Post`;
   picture.innerHTML = `Copy Source`;
+  attribute.style.height = `115px`
   object.append(attr);
   attr.append(attribute);
   site.append(sideBarThemeBuild(`fa-at`));

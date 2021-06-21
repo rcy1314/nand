@@ -238,6 +238,9 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`result`) ||
       evt.target.classList.contains(`post`) ||
       evt.target.classList.contains(`site`) ||
+      evt.target.classList.contains(`wrap`) ||
+      evt.target.classList.contains(`pub`) ||
+      evt.target.classList.contains(`ago`) ||
       evt.target.classList.contains(`cat`) ||
       evt.target.classList.contains(`sel`) ||
       evt.target.classList.contains(`btn`) ||
