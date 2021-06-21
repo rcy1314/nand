@@ -905,7 +905,7 @@ var xmlRequestParsing = function (search, string, index) {
   }
   _visit.style.display = `none`;
   _sb.style.display = `none`
-  document.title = menu[index].id.space().capitalize();
+  document.title = menu[index].id.space();
   if (
     justRead == true && first == true && showSplash == true ||
     Reader == false && first == true && showSplash == true

@@ -191,7 +191,7 @@ String.prototype.moment = function () {
 };
 
 String.prototype.space = function () {
-  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
+  return this.replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
 };
 
 String.prototype.hyphen = function () {
@@ -213,7 +213,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.state = function () {
-  history.replaceState({}, '', '');
+  history.replaceState({}, '', 'index.html');
 };
 
 String.prototype.blank = function () {
