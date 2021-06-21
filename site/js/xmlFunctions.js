@@ -857,7 +857,7 @@ var xmlAppendPublication = function (id) {
     scrollToElm(
       _main,
       document.querySelector(`[aria-object='${id}']`),
-      1
+      250
     );
   }
   let oldest = pub[pub.length - 1].dst;
