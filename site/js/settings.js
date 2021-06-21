@@ -751,9 +751,9 @@ let guideOnScreen; //temporarly store onScreen for guide
 
 const selections = [
   { name: `Home`, class: `sideHome`, icon: `fa-home` },
-  { name: `Random`, class: `Random`, icon: `fa-chart-pie` },
+  { name: `Random`, class: `Random`, icon: `fa-infinity` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
-  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-infinity` },
+  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-chart-pie` },
   { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
