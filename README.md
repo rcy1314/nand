@@ -1,4 +1,4 @@
-<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>  ✔️
+<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
 
 
 ### About
@@ -18,6 +18,24 @@
 
 <em>Located in</em> `site/js/settings.js` <em> edit everything !</em><br>
 -<em>backgroundImage path is overwritten in theme fn</em>
+
+### Optional
+
+<em>presuming `git`, `heroku-cli`, `npm` are installed
+
+<em>deploy your own cors-anywhere on heroku</em><br>
+`git clone https://github.com/Rob--W/cors-anywhere.git`<br>
+`cd cors-anywhere/`<br>
+`npm install`<br>
+`heroku create`<br>
+`git push heroku master`<br>
+
+<em>deploy your own nsfw-api on heroku</em><br>
+`git clone https://github.com/EugenCepoi/nsfw_api`<br>
+`heroku container:login`<br>
+`heroku create YOUR_APP_NAME`<br>
+`heroku container:push web --app YOUR_APP_NAME`<br>
+`heroku container:release web --app YOUR_APP_NAME`<br>
 
 Want to Contribute?
 ----
