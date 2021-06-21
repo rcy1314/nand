@@ -336,16 +336,14 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`joi`)
     ) {
-      id = 0;
       first = true;
-      randomDuplicate = [];
       _visit.style.display = `none`;
       Reader = Reader != true;
       if (Reader == false) {
+        console.log(id);
+        xmlChannelFooter(id);
         justRead = false;
         first = true;
-        id = 0;
-        xmlChannelFooter();
         _main
           .querySelectorAll(`.joi`)
           .forEach((a) => a.classList.remove(`luv`));

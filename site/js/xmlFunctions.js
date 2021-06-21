@@ -19,19 +19,20 @@ var guideDisplayYoutube = function (pubArray) {
   _guide.style.zIndex = `11`;
 };
 
-var xmlChannelFooter = function () {
+var xmlChannelFooter = function (id) {
   if (document.body.contains(document.querySelector(`.center`)))
-    document.querySelector(`.channel`).append(footerBuild());
+    document.querySelector(`.channel`).append(footerBuild(id));
 };
 
-var forward = function () {
+var forward = function (id) {
+  console.log(id);
   let next = parseInt(id) + +1
   if (menu[next])
     return parseInt(next);
   else return 1
 };
 
-var back = function () {
+var back = function (id) {
   let back = parseInt(id) - +1
   if (menu[back])
     return parseInt(back);
@@ -868,7 +869,7 @@ var xmlAppendPublication = function (id) {
   while (suggestions.firstChild)
     suggestions.removeChild(suggestions.lastChild);
   if (Reader == false){
-    document.querySelector(`.channel`).append(footerBuild());
+    document.querySelector(`.channel`).append(footerBuild(id));
   }
   contentStatusDisplay(id, recent, oldest, posts);
   topMenuBarDisplay(topBar);
@@ -1098,7 +1099,6 @@ var xmlRequestParsing = function (search, string, index) {
           pub = null;
         }
       } else {
-        id = 0;
         document.title = category.capitalize();
         if (showSplash == true) _check.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
