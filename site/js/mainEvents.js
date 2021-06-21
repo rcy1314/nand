@@ -198,6 +198,7 @@ document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 200 &&
+        !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false
       ) {
@@ -217,6 +218,7 @@ document.addEventListener('ontouchmove', (evt) => {
     if (evt.target.id == `main`) {
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 200 &&
+        !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false
       ) {
