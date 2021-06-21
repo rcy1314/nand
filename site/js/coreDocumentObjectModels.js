@@ -50,6 +50,7 @@ const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);
 
+const _social = document.getElementById(`social`);
 
 const _container = document.getElementById(`container`);
 

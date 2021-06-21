@@ -234,6 +234,7 @@ document.addEventListener('submit', (evt) => {
       }
       _label.style.visibility = `visible`;
       _quick.style.visibility = `visible`;
+      _social.style.visibility = `visible`;
       _show.style.visibility = `visible`;
       _link.style.visibility = `visible`;
       _just.style.visibility = `visible`;
@@ -247,6 +248,7 @@ document.addEventListener('submit', (evt) => {
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
   if (event.target.value.length > 2) {
+    _social.style.visibility = `hidden`;
     _label.style.visibility = `hidden`;
     _quick.style.visibility = `hidden`;
     _show.style.visibility = `hidden`;
@@ -266,6 +268,7 @@ var inputListingKeyup = function (Elem, keycode) {
     inputListingIndex(event.target.value.toLowerCase(), Elem);
   else if (event.target.value.length < 2 && keycode === 8) {
     document.querySelector(Elem).style.display = `none`;
+    _social.style.visibility = `visible`;
     _label.style.visibility = `visible`;
     _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;
@@ -405,6 +408,7 @@ var inputListingKeyup = function (Elem, keycode) {
     }
   } else if (keycode === 27) {
     document.querySelector(Elem).style.display = `none`;
+    _social.style.visibility = `visible`;
     _label.style.visibility = `visible`;
     _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;

@@ -59,6 +59,11 @@
     animation: move 3s 600ms infinite cubic-bezier(.1,.75,1,.3) !important;
   }
 
+  #main #visit #page #social {
+    top: -30px !important;
+    position: relative;
+  }
+
   #main #xml {
     right: 0 !important;
     height: 100% !important;
