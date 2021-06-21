@@ -112,7 +112,7 @@ var anyRandomMenuObject = function () {
 
 function scrollToElm(container, elm, duration){
   var pos = getRelativePos(elm);
-  scrollTo( container, pos.top , 1000);  // duration in seconds
+  scrollTo( container, pos.top , 1);  // duration in seconds
 }
 
 function getRelativePos(elm){
@@ -136,7 +136,7 @@ function scrollTo(element, to, duration, onDone) {
 
     function animateScroll(){
         now = performance.now();
-        elapsed = (now - startTime)/2;
+        elapsed = (now - startTime)/50;
         t = (elapsed/duration);
 
         element.scrollTop = start + change * easeInOutQuad(t);
