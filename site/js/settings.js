@@ -82,7 +82,7 @@ let showOption = true;
 
 */
 
-let Reader = true;
+let Reader = false;
 
 /*
     Reader [boolean/integer]
@@ -796,3 +796,10 @@ const background = [
 ];
 
 const repository = `https://github.com/acktic/acktic.github.io`;
+const facebook = `https://www.facebook.com/acktic`;
+const twitter = `https://www.twitter.com/acktic`;
+const pinterest = `https://www.pinterest.com/acktic8098`;
+const instagram = `https://www.instagram.com/acktic`;
+const youtube = `https://www.youtube.com/channel/UCwac2_RyHP2UneqETNLM6_Q`;
+const amazon = `https://www.amazon.com/hz/wishlist/ls/P2LFJ8HSNVBG?ref_=wl_share`;
+const wordpress = `https://ackti.wordpress.com`;

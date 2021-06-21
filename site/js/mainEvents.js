@@ -328,9 +328,43 @@ document.addEventListener('click', (evt) => {
       xhr.send();
     }
     if (
+      evt.target.classList.contains(`fa-amazon`)
+    ) {
+      amazon.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-twitter`)
+    ) {
+      twitter.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-pinterest`)
+    ) {
+      pinterest.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-instagram`)
+    ) {
+      instagram.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-facebook-f`)
+    ) {
+      facebook.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-youtube`)
+    ) {
+      youtube.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-wordpress`)
+    ) {
+      wordpress.blank();
+    }
+    if (
       evt.target.classList.contains(`show`)
     ) {
-
       _min.style.display = `block`;
       onScreen = onScreen != true;
       sideBarDisplay(onScreen);

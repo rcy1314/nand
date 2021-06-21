@@ -19,6 +19,32 @@
   font-size: 17px;
 }
 
+.fa-facebook-f,
+.fa-twitter,
+.fa-instagram,
+.fa-pinterest,
+.fa-amazon,
+.fa-wordpress,
+.fa-youtube {
+  margin: 12px;
+  color: var(--loader-color);
+  font-weight: 50;
+  display: flex;
+  transition: all 500ms ease-in-out;
+}
+
+.fa-facebook-f:hover,
+.fa-twitter:hover,
+.fa-instagram:hover,
+.fa-pinterest:hover,
+.fa-amazon:hover,
+.fa-wordpress:hover,
+.fa-youtube:hover {
+  color: var(--fill-color);
+  transition: all 500ms ease-in-out;
+  transform: scale(1.5)
+}
+
 
 #main #top #arm .fa-sliders-h {
   font-family: "Font Awesome 5 Pro";
