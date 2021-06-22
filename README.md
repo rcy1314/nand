@@ -1,6 +1,3 @@
-<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'>
-
-
 ### About
 
   - <em>A Really Simple Syndicate</em>
