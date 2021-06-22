@@ -363,6 +363,11 @@ document.addEventListener('click', (evt) => {
       wordpress.blank();
     }
     if (
+      evt.target.classList.contains(`fa-github`)
+    ) {
+      repository.blank();
+    }
+    if (
       evt.target.classList.contains(`show`)
     ) {
       _min.style.display = `block`;

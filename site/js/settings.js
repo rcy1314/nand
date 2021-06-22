@@ -754,7 +754,7 @@ const selections = [
   { name: `Random`, class: `Random`, icon: `fa-infinity` },
   { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
   { name: `Random in Category`, class: `RandomCategory`, icon: `fa-chart-pie` },
-  { name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
+//{ name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
 const settings = [

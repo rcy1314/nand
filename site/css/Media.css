@@ -102,10 +102,6 @@
     margin: 1em;
   }
 
-  #sidebar #content {
-    position: relative !important;
-  }
-
   #main #xml .center .item {
     margin-bottom: 55px !important;
     box-shadow: none !important;
