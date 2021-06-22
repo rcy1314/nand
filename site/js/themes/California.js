@@ -18,11 +18,11 @@ var California = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(26,26,26, .4)`
+    `rgba(158, 123, 167, 1)`
   );
   document.documentElement.style.setProperty(
     `--border-color`,
-    `.3px solid #262626`
+    `.3px solid rgba(158, 123, 167, 1)`
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
