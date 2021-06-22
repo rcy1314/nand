@@ -10,7 +10,7 @@ var California = function () {
   document.documentElement.style.setProperty(`--fill-color`, `#aaaaaa`);
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `rgba(0, 0, 0, .6)`
+    `rgba(158, 123, 167, .6)`
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
@@ -18,7 +18,7 @@ var California = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(158, 123, 167, 1)`
+    `rgba(158, 123, 167, .6)`
   );
   document.documentElement.style.setProperty(
     `--border-color`,
