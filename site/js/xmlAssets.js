@@ -379,7 +379,6 @@ var menu=[
 {id:`PC World`,category:`Tech`,title:`413366527`,description:`PC World is one of the United Kingdom's largest retail chains of Mass Market Computer Megastores.`,uri:`https://www.pcworld.com/index.rss`,image:`PCWorld`,hash:`cO`,media:!0},
 {id:`Popular Mechanics`,category:`Tech`,title:`963015576`,description:`Popular Mechanics is a magazine of Popular Science and Technology.`,uri:`https://www.popularmechanics.com/rss/all.xml`,image:`PopularMechanics`,hash:`mP`,media:!0},
 {id:`Phoronix`,category:`Tech`,title:`469361445`,description:`Phoronix Linux Hardware Reviews and Technology.`,uri:`https://www.phoronix.com/rss.php`,image:`Phoronix`,hash:`xP`,media:!1},
-{id:`ReadWrite`,category:`Tech`,title:`828387011`,description:`ReadWrite was founded on April 20, 2003 as ReadWriteWeb.`,uri:`https://readwrite.com/feed`,image:`ReadWrite`,hash:`rR`,media:!0},
 {id:`Security Affairs`,category:`Tech`,title:`011417834`,description:`Security Affairs Every security issue is our affair.`,uri:`http://securityaffairs.co/wordpress/feed`,image:`SecurityAffairs`,hash:`iF`,media:!1},
 {id:`Sky News`,category:`Tech`,title:`105716691`,description:`Sky News Technology is a British organisation, which operates a TV network.`,uri:`http://feeds.skynews.com/feeds/rss/technology.xml`,image:`SkyNews`,hash:`kS`,media:!0},
 {id:`Slashdot`,category:`Tech`,title:`589799976`,description:`Slashdot is a social News website that originally billed itself as News for Nerds.`,uri:`http://rss.slashdot.org/Slashdot/slashdot`,image:`Slashdot`,hash:`lT`,media:!1},
