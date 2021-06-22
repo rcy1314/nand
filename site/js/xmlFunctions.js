@@ -150,12 +150,13 @@ var guideImageAttributes = function (pubArray) {
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `65vh`));
+          .forEach((a) => (a.style.maxHeight = `55vh`));
         _guide
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
+      _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
       if (guideSafeSearch == true) {
         _guide.querySelector(`.filterBlur`).style.top = `0`;
         _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
@@ -858,7 +859,7 @@ var xmlAppendPublication = function (id) {
     scrollToElm(touchmove,
       _main,
       document.querySelector(`[aria-object='${id}']`),
-      250
+      100
     );
   }
   let oldest = pub[pub.length - 1].dst;
