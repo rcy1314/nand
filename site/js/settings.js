@@ -739,6 +739,7 @@ let local; //copy of post in base36
 let index; //copy of id used in guide
 let complete; //progressBar interval
 let images = []; //array of images in request
+let touchmove = false;
 let touchendY = 0;
 let touchstartY = 0;
 let touchendX = 0; //

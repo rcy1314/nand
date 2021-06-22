@@ -95,6 +95,8 @@ window.onload = function () {
       _guide.addEventListener('touchstart', (evt) => {
           touchstartX = evt.changedTouches[0].screenX
           touchstartY = evt.changedTouches[0].screenY;
+          touchmove = true;
+          handleTouch();
         },
         { passive: true }
       );
@@ -103,6 +105,7 @@ window.onload = function () {
           touchendX = evt.changedTouches[0].screenX;
           touchendY = evt.changedTouches[0].screenY;
           handleGuide();
+          handleTouch();
         },
         { passive: true }
       );
@@ -202,12 +205,14 @@ window.onload = function () {
 };
 
 document.addEventListener('touchstart', (evt) => {
+    touchmove = false;
     touchstartX = evt.changedTouches[0].screenX;
   },
   { passive: true }
 );
 
 document.addEventListener('touchend', (evt) => {
+    touchmove = true;
     touchendX = evt.changedTouches[0].screenX;
     if (_guide.style.display != `flex`) handleSwipe();
   },
@@ -216,8 +221,19 @@ document.addEventListener('touchend', (evt) => {
 
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
+      let isScrolling;
+      // Clear our timeout throughout the scroll
+    	window.clearTimeout( isScrolling );
+
+    	// Set a timeout to run after scrolling ends
+    	isScrolling = setTimeout(function() {
+
+    		// Run the callback
+        touchmove = true;
+
+    	}, 75);
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 200 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
         !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false
@@ -237,7 +253,7 @@ document.addEventListener('scroll', (evt) => {
 document.addEventListener('ontouchmove', (evt) => {
     if (evt.target.id == `main`) {
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 200 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
         !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false

@@ -110,9 +110,9 @@ var anyRandomMenuObject = function () {
 }
 };
 
-function scrollToElm(container, elm, duration){
+function scrollToElm(touch, container, elm, duration){
   var pos = getRelativePos(elm);
-  scrollTo( container, pos.top , 10);  // duration in seconds
+  scrollTo( touch, container, pos.top , 10);  // duration in seconds
 }
 
 function getRelativePos(elm){
@@ -128,7 +128,9 @@ function getRelativePos(elm){
   return pos;
 }
 
-function scrollTo(element, to, duration, onDone) {
+function scrollTo(touch, element, to, duration, onDone) {
+  if (touch == true) {
+
     var start = element.scrollTop,
         change = to - start,
         startTime = performance.now(),
@@ -148,6 +150,7 @@ function scrollTo(element, to, duration, onDone) {
     };
 
     animateScroll();
+  }
 }
 
 function easeInOutQuad(t){ return t<.5 ? 2*t*t : -1+(4-2*t)*t };

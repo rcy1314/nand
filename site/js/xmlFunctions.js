@@ -851,10 +851,11 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (Reader == true && id !== 0) {
+    console.log(touchmove);
     _main
       .querySelectorAll(`.joi`)
       .forEach((a) => a.classList.add(`luv`));
-    scrollToElm(
+    scrollToElm(touchmove,
       _main,
       document.querySelector(`[aria-object='${id}']`),
       250
