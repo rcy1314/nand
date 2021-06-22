@@ -325,16 +325,20 @@
     border-radius: 8px;
     padding-left: 35px;
     width: 340px;
-    top: 0px;
+    top: -17px;
   }
 
   #main #visit #page #front .focus .button {
-    top: 16.3px;
+    top: -1px;
+  }
+
+  #main #visit #page #social {
+    top: 15px;
   }
 
   #main #visit #page #front .focus .icon,
   #top #arm #search #input .icon .fa-search {
-    top: 28px;
+    top: 10px;
   }
 
   #main #visit #page #quick #feed {

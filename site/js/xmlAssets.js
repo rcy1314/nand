@@ -250,6 +250,7 @@ var menu=[
 {id:`Reddit/Intel`,category:`Reddit`,title:`111024965`,description:`Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.`,uri:`https://www.reddit.com/r/intel/.rss`,image:`Intel`,hash:`tN`,media:!1},
 {id:`Reddit/Internet Stars`,category:`Reddit`,title:`815332313`,description:`Internet Stars subreddit Instagram women with links so you never need to ask for sources.`,uri:`https://www.reddit.com/r/internetstars/.rss`,image:`InternetStars`,hash:`iS`,media:!0},
 {id:`Reddit/iOS`,category:`Reddit`,title:`358173594`,description:`iOS subreddit for everything Apple iOS.`,uri:`https://www.reddit.com/r/ios/.rss`,image:`iOS`,hash:`Si`,media:!1},
+{id:`Reddit/Javascript`,category:`Reddit`,title:`127515101`,description:`Javascript subreddit All about the 𝚓𝚊𝚟𝚊𝚜𝚌𝚛𝚒𝚙𝚝 programming language.`,uri:`https://www.reddit.com/r/javascript/.rss`,image:`Javascript`,hash:`Sj`,media:!1},
 {id:`Reddit/Laptops`,category:`Reddit`,title:`027515101`,description:`Laptop subreddit place to discuss anything laptop.`,uri:`https://www.reddit.com/r/laptop/.rss`,image:`Reddit`,hash:`lR`,media:!1},
 {id:`Reddit/Linux`,category:`Reddit`,title:`703093482`,description:`Linux subreddit discusses topics evolving around Linux.`,uri:`https://www.reddit.com/r/linux/.rss`,image:`Linux`,hash:`lX`,media:!1},
 {id:`Reddit/Los Angeles`,category:`Reddit`,title:`686741033`,description:`Los Angeles subreddit The international epicenter of entertainment.`,uri:`https://www.reddit.com/r/LosAngeles/.rss`,image:`LosAngeles`,hash:`ge`,media:!0},
