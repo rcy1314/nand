@@ -32,7 +32,6 @@ html body,
 #container,
 #main #visit {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  scroll-behavior: smooth;
   border:none !important;
   overflow: hidden;
   height: 100%;

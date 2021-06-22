@@ -222,6 +222,7 @@ document.addEventListener('touchend', (evt) => {
 document.addEventListener('scroll', (evt) => {
     if (evt.target.id == `main`) {
       let isScrolling;
+      touchmove = false;
       // Clear our timeout throughout the scroll
     	window.clearTimeout( isScrolling );
 
@@ -231,7 +232,7 @@ document.addEventListener('scroll', (evt) => {
     		// Run the callback
         touchmove = true;
 
-    	}, 75);
+    	}, 2500);
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
         !document.body.contains(document.querySelector(`#group`)) &&
