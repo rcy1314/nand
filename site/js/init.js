@@ -51,7 +51,6 @@ setTimeout(function() {
         _visit.style.display = `none`;
         guideOnScreen = onScreen;
         onScreen = false;
-        sideBarDisplay(onScreen);
       }, 250);
     }
   } else if (location.search.split(`?q=`)[1]) {
@@ -78,12 +77,7 @@ setTimeout(function() {
       }
     }, 250);
   }
-  if (
-    isNaN(parseFloat(post)) && !isFinite(post) &&
-    _main.clientWidth >= 426
-  ) {
-    sideBarDisplay(onScreen);
-  } else if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
+  if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
     if (showSplash == true) _check.style.visibility = `visible`;
 
   if (_main.clientWidth <= 425) {
