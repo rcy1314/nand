@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/site/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`CBS/Boston`,category:`News`,title:`792032756`,description:`WBZ Boston Local Breaking News From Boston, Massachusetts.`,uri:`https://boston.cbslocal.com/feed`,image:`WBZTV4`,hash:`bC`,media:!0},
 #{id:`ReadWrite`,category:`Tech`,title:`828387011`,description:`ReadWrite was founded on April 20, 2003 as ReadWriteWeb.`,uri:`https://readwrite.com/feed`,image:`ReadWrite`,hash:`rR`,media:!0},
 #{id:`FOX Sports Golf`,category:`Sports`,title:`136930289`,description:`Fox Sports Golf Unique perspectives on the daily sports topics that matter most.`,uri:`https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU&tag=golf`,image:`FoxSports`,hash:`sF`,media:!0},
 #{id:`Inquisitr`,category:`Media`,title:`624070116`,description:`Inquisitr offers a constantly updated mix of the stories to hit the web.`,uri:`https://www.inquisitr.com/feed`,image:`Inquisitr`,hash:`qI`,media:!0},

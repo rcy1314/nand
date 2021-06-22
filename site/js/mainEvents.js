@@ -210,7 +210,18 @@ document.addEventListener('touchstart', (evt) => {
 );
 
 document.addEventListener('touchend', (evt) => {
+  let isScrolling;
+  // Clear our timeout throughout the scroll
+  window.clearTimeout( isScrolling );
+
+  console.log(touchmove)
+  // Set a timeout to run after scrolling ends
+  isScrolling = setTimeout(function() {
+
+    // Run the callback
     touchmove = true;
+
+  }, 2600);
     touchendX = evt.changedTouches[0].screenX;
     if (_guide.style.display != `flex`) handleSwipe();
   },

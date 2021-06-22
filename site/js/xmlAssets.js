@@ -121,7 +121,6 @@ var menu=[
 {id:`NBC/Seattle`,category:`News`,title:`958424666`,description:`KING Washington Seattle licensed to Seattle, Washington, United States and also serving Tacoma.`,uri:`http://rssfeeds.king5.com/king5/home&x=1`,image:`KING`,hash:`kG`,media:!0},
 {id:`CBS/Green Bay`,category:`News`,title:`066564573`,description:`WFRV Wisconsin Green Bay Updates in Local brought to you by the team at WFRV.`,uri:`https://www.wearegreenbay.com/feed`,image:`WFRV`,hash:`wV`,media:!0},
 {id:`CBS/Milwaukee`,category:`News`,title:`128231494`,description:`WDJT Wisconsin Milwaukee your local source for Milwaukee, Milwaukee weather, and Milwaukee sports.`,uri:`https://www.cbs58.com/rss`,image:`WDJT`,hash:`jT`,media:!0},
-{id:`CBS/Boston`,category:`News`,title:`792032756`,description:`WBZ Boston Local Breaking News From Boston, Massachusetts.`,uri:`https://boston.cbslocal.com/feed`,image:`WBZTV4`,hash:`bC`,media:!0},
 {id:`ABC/Boston`,category:`News`,title:`107249379`,description:`WCVB Boston News, Weather, and Traffic online, anytime.`,uri:`https://www.wcvb.com/topstories-rss`,image:`WCVB5`,hash:`tA`,media:!0},
 {id:`ABC/Miami`,category:`News`,title:`839631486`,description:`WPLG Florida Miami Breaking News and Headlines.`,uri:`https://www.local10.com/arcio/rss/category/news/?size=10`,image:`WPLG10`,hash:`Mb`,media:!0},
 {id:`CBS/Miami`,category:`News`,title:`856016500`,description:`WFOR Florida Miami a Full Service Television Station serving Miami.`,uri:`https://miami.cbslocal.com/feed`,image:`WFOR4`,hash:`sI`,media:!0},
