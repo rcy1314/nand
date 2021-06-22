@@ -859,7 +859,7 @@ var xmlAppendPublication = function (id) {
     scrollToElm(touchmove,
       _main,
       document.querySelector(`[aria-object='${id}']`),
-      100
+      250
     );
   }
   let oldest = pub[pub.length - 1].dst;
