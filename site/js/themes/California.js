@@ -1,11 +1,11 @@
-var Camoflage = function () {
+var California = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `8px 8px 16px rgba(10, 10, 10, 1)`
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `rgba(140, 140, 140, 1)`
+    `rgba(158, 123, 167, 1)`
   );
   document.documentElement.style.setProperty(`--fill-color`, `#aaaaaa`);
   document.documentElement.style.setProperty(
@@ -14,7 +14,7 @@ var Camoflage = function () {
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(26, 26, 26, 1)`
+    `rgba(93, 98, 145, 1)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
@@ -29,8 +29,8 @@ var Camoflage = function () {
     `rgba(7,7,7,.3)`
   );
   document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/c453ae624e3d5e58b9890a998ec441b9.jpg`)
-    backgroundImage[0].path = `https://raw.githubusercontent.com/acktic/.dotfiles/main/c453ae624e3d5e58b9890a998ec441b9.jpg`
+  if (backgroundImage[0].path != `https://ackti.files.wordpress.com/2020/02/wallhaven-vmkyp5.jpg`)
+    backgroundImage[0].path = `https://ackti.files.wordpress.com/2020/02/wallhaven-vmkyp5.jpg`
   document.querySelector(`#${backgroundImage[0].element}`)
     .style.backgroundImage = `url(${backgroundImage[0].path})`
 };

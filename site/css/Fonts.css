@@ -44,7 +44,7 @@
 .fa-youtube:hover {
   color: var(--fill-color);
   transition: all 500ms ease-in-out;
-  transform: scale(1.25)
+  transform: scale(1.25);
 }
 
 

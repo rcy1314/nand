@@ -115,7 +115,7 @@
   }
 
   #main #visit #page #just {
-    display: none !important;
+    top: 125px !important;
   }
 
   #main #visit #page #quick {

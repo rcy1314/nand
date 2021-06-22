@@ -1,7 +1,5 @@
 window.onload = function () {
   quickFeedDisplay(quickFeeds);
-  if (sideBarCenter == false) _content.style.position = `relative`;
-  else _content.style.position = `absolute`;
   if (window.clientWidth <= 425 || quickFeedsTranslations == true)
     quickFeedAsset(7);
   else if (quickFeedsTranslations == false) quickFeedAsset(8);
@@ -9,7 +7,8 @@ window.onload = function () {
   if (window.clientWidth <= 425) expand = false;
 
   if (sideBarCenter == true)
-    _sidebar.querySelector(`#content`).style.position = `absolute`;
+    _content.style.position = `absolute`;
+  else _content.style.position = `relative`;
 
   if (sideBarBackdrop == true) {
     _sidebar.style.cssText = `background-color:transparent; backdrop-filter: blur(10px) !important`;
@@ -412,7 +411,6 @@ document.addEventListener('click', (evt) => {
       if (iteration == themes.length - 1) iteration = -1;
       iteration = iteration + 1;
       set = themes[iteration].obFn;
-      console.log(set);
       window[set]();
     }
     if (evt.target.id == `just`) {

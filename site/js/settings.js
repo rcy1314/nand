@@ -32,7 +32,7 @@ let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Informative`, class: `Informative`, icon: `fa-info` },
-  { obFn: `Camoflage`, class: `Camoflage`, icon: `fa-angle-double-up` },
+  { obFn: `California`, class: `California`, icon: `fa-angle-double-up` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
 ];
 
@@ -750,10 +750,10 @@ let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 
 const selections = [
-  { name: `Home`, class: `sideHome`, icon: `fa-home` },
-  { name: `Random`, class: `Random`, icon: `fa-infinity` },
-  { name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
-  { name: `Random in Category`, class: `RandomCategory`, icon: `fa-chart-pie` },
+//{ name: `Home`, class: `sideHome`, icon: `fa-home` },
+//{ name: `Random`, class: `Random`, icon: `fa-infinity` },
+//{ name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
+//{ name: `Random in Category`, class: `RandomCategory`, icon: `fa-chart-pie` },
 //{ name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
 ];
 
@@ -801,5 +801,5 @@ const twitter = `https://www.twitter.com/acktic`;
 const pinterest = `https://www.pinterest.com/acktic8098`;
 const instagram = `https://www.instagram.com/acktic`;
 const youtube = `https://www.youtube.com/channel/UCwac2_RyHP2UneqETNLM6_Q`;
-const amazon = `https://www.amazon.com/hz/wishlist/ls/P2LFJ8HSNVBG?ref_=wl_share`;
+const amazon = `https://www.amazon.com/hz/wishlist/ls/3KMRCG63QLYAC`;
 const wordpress = `https://ackti.wordpress.com`;
