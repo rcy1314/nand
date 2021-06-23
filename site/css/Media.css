@@ -62,6 +62,7 @@
   #main #visit #page #social {
     top: -30px !important;
     position: relative;
+    left: -20px;
   }
 
   #main #xml {
@@ -504,6 +505,11 @@
   .minimum {
     margin: 0 auto !important;
     width: 990px !important;
+  }
+
+  #main #visit #page #social {
+    position: absolute;
+    left: 145px;
   }
 
   #main #top #arm {
