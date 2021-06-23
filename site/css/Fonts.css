@@ -2,6 +2,12 @@
   font-weight: 600 !important;
 }
 
+#container .sbIcon {
+  position: absolute;
+  font-weight: 50;
+  right: 25px;
+}
+
 #main #top .fa,
 #main #option .fa,
 #main #option .fas {
@@ -182,7 +188,7 @@
   height: 15px;
   width: 15px;
   right: 3px;
-  top: -5px;
+  top: 10px;
 }
 
 #sidebar #content .fa-minus {

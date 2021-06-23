@@ -46,6 +46,8 @@ const _quick = document.getElementById(`quick`);
 
 const _toggle = document.getElementById(`toggle`);
 
+const _notify = document.getElementById(`notify`);
+
 const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);

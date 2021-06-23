@@ -1,3 +1,7 @@
+.notify {
+  animation: notify 4s infinite ease-in-out;
+}
+
 .bars,
 .bars:before,
 .bars:after {
@@ -36,6 +40,20 @@
 
 .bars:after {
   left: .7em;
+}
+
+@-webkit-keyframes notify {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 100;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes load1 {

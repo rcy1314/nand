@@ -336,6 +336,7 @@ document.addEventListener('click', (evt) => {
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
       document.title = ``;
+      notifyOption(`Welcome Home`, `fa-check-circle`);
     }
     if (
       event.target.classList.contains(`fa-lock`) ||
@@ -361,6 +362,7 @@ document.addEventListener('click', (evt) => {
       if (showSplash == true) _check.style.display = `block`;
       Reader = Reader != true;
       if (Reader == false) {
+        notifyOption(`Reading`, `fa-times-circle`);
         justRead = false;
         first = true;
         id = 0;
@@ -369,6 +371,7 @@ document.addEventListener('click', (evt) => {
           .querySelectorAll(`.joi`)
           .forEach((a) => (a.classList.remove(`luv`)));
       } else if (Reader == true) {
+        notifyOption(`Reading`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -552,6 +555,8 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`onlyImages`)
     ) {
       onlyImages = onlyImages != true;
+      if (onlyImages == true) notifyOption(`Images`, `fa-check-circle`);
+      if (onlyImages == false) notifyOption(`Images`, `fa-times-circle`);
       sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
       _visit.style.display = `none`;
       if (document.body.contains(document.querySelector(`#xml`)))

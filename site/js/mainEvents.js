@@ -357,6 +357,11 @@ document.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     if (
+      evt.target.classList.contains(`notify`)
+    ) {
+      _notify.classList.remove(`notify`);
+    }
+    if (
       evt.target.classList.contains(`download`)
     ) {
       var menuObject = evt.target.closest(`.item`).getAttribute(`aria-object`);
@@ -471,6 +476,7 @@ document.addEventListener('click', (evt) => {
       iteration = iteration + 1;
       set = themes[iteration].obFn;
       window[set]();
+      notifyOption(themes[iteration].obFn, `fa-check-circle`);
     }
     if (evt.target.id == `just`) {
       Reader = true;
@@ -519,7 +525,8 @@ document.addEventListener('click', (evt) => {
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
       document.title = ``;
-    }
+      notifyOption(`Welcome Home`, `fa-check-circle`);
+  }
     if (evt.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(
         /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
@@ -536,9 +543,11 @@ document.addEventListener('click', (evt) => {
       if (expand == false) {
         sideBarStar(document.querySelector(`.Blocks`), true);
         sideBarStar(document.querySelector(`.List`), false);
+        notifyOption(`Icons`, `fa-check-circle`);
       } else if (expand == true) {
         sideBarStar(document.querySelector(`.Blocks`), false);
         sideBarStar(document.querySelector(`.List`), true);
+        notifyOption(`List`, `fa-check-circle`);
       }
       setTimeout(function () {
         populateCategoryGroup(category);

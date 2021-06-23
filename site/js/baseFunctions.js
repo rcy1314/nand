@@ -1,3 +1,8 @@
+let notifyOption = function (String, Icon) {
+  _notify.innerHTML = `${String} <div class='sbIcon fa ${Icon}'></div>`;
+  _notify.classList.add(`notify`);
+}
+
 let handleSwipe = function () {
   if (touchendX - 75 > touchstartX) {
     onScreen = true;
