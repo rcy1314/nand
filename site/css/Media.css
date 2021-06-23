@@ -7,7 +7,6 @@
     width: 100%;
   }
 
-  #main #visit #page #social,
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
@@ -231,7 +230,6 @@
     top: 0 !important;
   }
 
-  #main #visit #page #social,
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
@@ -315,7 +313,6 @@
     display: none;
   }
 
-  #main #visit #page #social,
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
@@ -342,7 +339,6 @@
 
   #main #visit #page #front .focus .icon,
   #top #arm #search #input .icon .fa-search {
-    top: 10px;
   }
 
   #main #visit #page #quick #feed {

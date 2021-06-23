@@ -102,11 +102,9 @@ input[type=submit] {
   right: 0;
 }
 
-#main #visit #page #social,
 #main #visit #page #front .focus {
   background-color: transparent;
   white-space: nowrap;
-  padding-right: 75px;
   position: relative;
   display: flex;
   justify-content: left;
@@ -114,6 +112,7 @@ input[type=submit] {
   height: 38px;
   margin: 0 auto;
   width: 640px;
+  top: -2px;
 }
 
 #main #visit #page #front .focus:hover {
@@ -140,6 +139,7 @@ input[type=submit] {
   bottom: 15px;
   width: 100%;
   margin: 0;
+  top: -2px;
 }
 
 #main #top #arm #search #input .icon {
@@ -155,7 +155,7 @@ input[type=submit] {
   font-size: 14px !important;
   color: var(--fill-color);
   position: absolute;
-  margin-top: 1px;
+  margin-top: 12px;
   left: 15px;
   z-index: 2;
 }
@@ -167,9 +167,8 @@ input[type=submit] {
   position: relative;
   border-radius: 3px;
   height: 39px;
-  width: 77px;
-  right: 4px;
-  bottom: 15.3px;
+  width: 80px;
+  bottom: 1.3px;
 }
 
 #main #visit #page #front .focus .button:active {
@@ -181,7 +180,7 @@ input[type=submit] {
   transform: rotate(90deg);
   color: var(--fill-color) !important;
   position: absolute;
-  right: 22px;
+  right: 25px;
   z-index: 1;
   top: 11px;
 }
