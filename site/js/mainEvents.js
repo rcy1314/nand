@@ -221,7 +221,7 @@ document.addEventListener('touchend', (evt) => {
     // Run the callback
     touchmove = true;
 
-  }, 2600);
+  }, 4600);
     touchendX = evt.changedTouches[0].screenX;
     if (_guide.style.display != `flex`) handleSwipe();
   },
@@ -241,7 +241,7 @@ document.addEventListener('scroll', (evt) => {
     		// Run the callback
         touchmove = true;
 
-    	}, 2600);
+    	}, 4600);
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
         !document.body.contains(document.querySelector(`#group`)) &&
