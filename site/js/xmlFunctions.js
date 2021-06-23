@@ -855,7 +855,6 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (Reader == true && id !== 0) {
-    console.log(touchmove);
     _main
       .querySelectorAll(`.joi`)
       .forEach((a) => a.classList.add(`luv`));
@@ -868,9 +867,9 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (pub.length > 1) {
-    let oldest = pub[pub.length - 1].dst;
-    let posts = pub.length - 1;
-    let recent = pub[0].dst;
+    if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
+    if (pub[pub.length - 1]) var posts = pub.length - 1;
+    if (pub[0]) var recent = pub[0].dst;
     if (document.body.contains(document.querySelector(`.content`))) {
       var status = document.querySelector(`.status`);
       while (status.firstChild) status.removeChild(status.lastChild);
@@ -879,6 +878,9 @@ var xmlAppendPublication = function (id) {
         suggestions.removeChild(suggestions.lastChild);
     }
   } else {
+    if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
+    if (pub[pub.length - 1]) var posts = pub.length - 1;
+    if (pub[0]) var recent = pub[0].dst;
     if (showSplash == true) _check.style.display = `none`;
     if (document.body.contains(document.querySelector(`#xml`)))
       document.querySelector(`#xml`).remove()
