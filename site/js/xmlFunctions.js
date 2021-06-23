@@ -25,7 +25,6 @@ var xmlChannelFooter = function (id) {
 };
 
 var forward = function (id) {
-  console.log(id);
   let next = parseInt(id) + +1
   if (menu[next])
     return parseInt(next);
@@ -868,25 +867,41 @@ var xmlAppendPublication = function (id) {
       );
     }
   }
-  let oldest = pub[pub.length - 1].dst;
-  let posts = pub.length - 1;
-  let recent = pub[0].dst;
-  if (document.body.contains(document.querySelector(`.content`))) {
-    var status = document.querySelector(`.status`);
-    while (status.firstChild) status.removeChild(status.lastChild);
-    var suggestions = document.querySelector(`.suggestions`);
-    while (suggestions.firstChild)
-      suggestions.removeChild(suggestions.lastChild);
+  if (pub.length > 1) {
+    let oldest = pub[pub.length - 1].dst;
+    let posts = pub.length - 1;
+    let recent = pub[0].dst;
+    if (document.body.contains(document.querySelector(`.content`))) {
+      var status = document.querySelector(`.status`);
+      while (status.firstChild) status.removeChild(status.lastChild);
+      var suggestions = document.querySelector(`.suggestions`);
+      while (suggestions.firstChild)
+        suggestions.removeChild(suggestions.lastChild);
+    }
+  } else {
+    if (showSplash == true) _check.style.display = `none`;
+    if (document.body.contains(document.querySelector(`#xml`)))
+      document.querySelector(`#xml`).remove()
+    if (document.body.contains(document.querySelector(`#group`)))
+      document.querySelector(`#group`).remove()
+    populateCategoryGroup(category);
+    displayDescription(showDescription);
+    topMenuBarDisplay(topBar);
+    displayExpand(expand);
+    unloading();
   }
-  if (Reader == false){
+  if (
+    document.body.contains(document.querySelector(`#xml`)) &&
+    Reader == false
+  ) {
     document.querySelector(`.channel`).append(footerBuild(id));
+    contentStatusDisplay(id, recent, oldest, posts);
+    topMenuBarDisplay(topBar);
+    xmlStatusSuggestions();
+    local = null;
+    stop = false;
+    post = null;
   }
-  contentStatusDisplay(id, recent, oldest, posts);
-  topMenuBarDisplay(topBar);
-  xmlStatusSuggestions();
-  local = null;
-  stop = false;
-  post = null;
 }
 
 var xmlRequestParsing = function (search, string, index) {
@@ -910,7 +925,8 @@ var xmlRequestParsing = function (search, string, index) {
   )
     _main.append(stageBuild());
   if (search == `search`) {
-    uri = `${cors}${menu[index].uri}${string}&format=RSS`;
+    uri = `${cors}${menu[index].uri}${string.add()}&format=RSS`;
+    console.log(uri);
     category = category;
   } else {
     uri = `${cors}${menu[index].uri}`;
@@ -1113,7 +1129,6 @@ var xmlRequestParsing = function (search, string, index) {
           pub = null;
         }
       } else {
-        document.title = category.capitalize();
         if (showSplash == true) _check.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove()

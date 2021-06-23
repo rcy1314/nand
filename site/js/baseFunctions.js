@@ -77,7 +77,7 @@ let inputListingIndex = function (inputFilter, listingWrapper) {
   document.querySelector(listingWrapper).style.display = `block`;
   if (inputFilter != ``)
     for (var i = menu.length - 1; i >= 1; i--) {
-      if (menu[i].description.toLowerCase().match(inputFilter)) {
+      if (menu[i].description.toString().toLowerCase().match(inputFilter)) {
         if (suggest.length - 1 === suggestionBuffer) return false;
         listing.append(
           listingIndexBuild(

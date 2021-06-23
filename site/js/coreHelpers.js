@@ -197,6 +197,10 @@ String.prototype.space = function () {
   return this.replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
 };
 
+String.prototype.add = function () {
+  return this.replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ``);
+};
+
 String.prototype.hyphen = function () {
   return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, `-`);
 };
