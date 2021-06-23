@@ -7,6 +7,7 @@
     width: 100%;
   }
 
+  #main #visit #page #social,
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
@@ -155,6 +156,7 @@
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
   #main #top #arm #search #input .icon,
+  #main #visit #page #front .focus .icon,
   #main #visit #page #front .focus .button {
     display: none !important;
   }
@@ -229,6 +231,7 @@
     top: 0 !important;
   }
 
+  #main #visit #page #social,
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
@@ -312,6 +315,7 @@
     display: none;
   }
 
+  #main #visit #page #social,
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
@@ -325,11 +329,11 @@
     border-radius: 8px;
     padding-left: 35px;
     width: 340px;
-    top: -17px;
+    top: -4px;
   }
 
   #main #visit #page #front .focus .button {
-    top: -1px;
+    top: -3px;
   }
 
   #main #visit #page #social {

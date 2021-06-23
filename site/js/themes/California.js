@@ -1,7 +1,7 @@
 var California = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(10, 10, 10, 1)`
+    `8px 8px 16px rgba(158, 123, 167, .4)`
   );
   document.documentElement.style.setProperty(
     `--loader-color`,

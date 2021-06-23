@@ -102,11 +102,15 @@ input[type=submit] {
   right: 0;
 }
 
+#main #visit #page #social,
 #main #visit #page #front .focus {
   background-color: transparent;
   white-space: nowrap;
   padding-right: 75px;
   position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: left;
   height: 38px;
   margin: 0 auto;
   width: 640px;
@@ -154,7 +158,6 @@ input[type=submit] {
   margin-top: 1px;
   left: 15px;
   z-index: 2;
-  top: 12px;
 }
 
 #main #visit #page #front .focus .button {
@@ -166,7 +169,7 @@ input[type=submit] {
   height: 39px;
   width: 77px;
   right: 4px;
-  bottom: 1.3px;
+  bottom: 15.3px;
 }
 
 #main #visit #page #front .focus .button:active {
@@ -178,7 +181,7 @@ input[type=submit] {
   transform: rotate(90deg);
   color: var(--fill-color) !important;
   position: absolute;
-  right: 30px;
+  right: 22px;
   z-index: 1;
   top: 11px;
 }
