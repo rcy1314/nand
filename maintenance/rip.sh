@@ -6,6 +6,9 @@
 curl -q -s "https://acktic.github.io/site/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`OAN Technology`,category:`Tech`,title:`062680848`,description:`OAN Technology One America News Network Technology.`,uri:`https://www.oann.com/category/tech/feed`,image:`OANN`,hash:`nL`,media:!0},
+#{id:`OAN Entertainment`,category:`Media`,title:`744695655`,description:`OAN Entertainment One America News Network Entertainment.`,uri:`https://www.oann.com/category/entertainment/feed`,image:`OANN`,hash:`nO`,media:!0},
+#{id:`OAN World`,category:`World`,title:`974000186`,description:`OAN World One America News Network World.`,uri:`https://www.oann.com/feed`,image:`OANN`,hash:`oA`,media:!0},
 #{id:`Extra`,category:`Media`,title:`603701318`,description:`Extra TV current events in the mass-entertainment business such as movies, TV, music, etc.`,uri:`https://feeds.extratv.com/atom`,image:`Extra`,hash:`xA`,media:!0},
 #{id:`DZone`,category:`Tech`,title:`383977764`,description:`DZone Technology News giving developers a voice, with the goal of providing them with useful and valuable resources at no cost.`,uri:`http://feeds.dzone.com/home`,image:`DZone`,hash:`zD`,media:!0},
 #{id:`CBS/Boston`,category:`News`,title:`792032756`,description:`WBZ Boston Local Breaking News From Boston, Massachusetts.`,uri:`https://boston.cbslocal.com/feed`,image:`WBZTV4`,hash:`bC`,media:!0},

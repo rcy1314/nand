@@ -192,24 +192,26 @@ let groupBuild = function () {
 };
 
 let stageBuild = function () {
-  let suggestions = document.createElement(`div`);
-  let channel = document.createElement(`div`);
-  let content = document.createElement(`div`);
-  let center = document.createElement(`div`);
-  let status = document.createElement(`div`);
-  let xml = document.createElement(`div`);
-  xml.id = `xml`;
-  channel.classList.add(`channel`);
-  center.classList.add(`center`);
-  center.append(channel);
-  xml.append(center);
-  suggestions.classList.add(`suggestions`);
-  content.classList.add(`content`);
-  status.classList.add(`status`);
-  content.append(status);
-  content.append(suggestions);
-  xml.append(content);
-  return xml;
+  if (!document.body.contains(document.querySelector(`#group`))) {
+    let suggestions = document.createElement(`div`);
+    let channel = document.createElement(`div`);
+    let content = document.createElement(`div`);
+    let center = document.createElement(`div`);
+    let status = document.createElement(`div`);
+    let xml = document.createElement(`div`);
+    xml.id = `xml`;
+    channel.classList.add(`channel`);
+    center.classList.add(`center`);
+    center.append(channel);
+    xml.append(center);
+    suggestions.classList.add(`suggestions`);
+    content.classList.add(`content`);
+    status.classList.add(`status`);
+    content.append(status);
+    content.append(suggestions);
+    xml.append(content);
+    return xml;
+  }
 };
 
 let footerBuild = function (id) {

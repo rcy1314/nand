@@ -214,14 +214,13 @@ document.addEventListener('touchend', (evt) => {
   // Clear our timeout throughout the scroll
   window.clearTimeout( isScrolling );
 
-  console.log(touchmove)
   // Set a timeout to run after scrolling ends
   isScrolling = setTimeout(function() {
 
     // Run the callback
     touchmove = true;
 
-  }, 4600);
+  }, 4000);
     touchendX = evt.changedTouches[0].screenX;
     if (_guide.style.display != `flex`) handleSwipe();
   },
@@ -234,16 +233,15 @@ document.addEventListener('scroll', (evt) => {
       // Clear our timeout throughout the scroll
     	window.clearTimeout( isScrolling );
       touchmove = false;
-      console.log(touchmove)
     	// Set a timeout to run after scrolling ends
     	isScrolling = setTimeout(function() {
 
     		// Run the callback
         touchmove = true;
 
-    	}, 4600);
+    	}, 4000);
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
         !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false
@@ -275,7 +273,7 @@ document.addEventListener('ontouchmove', (evt) => {
 
     	}, 2600);
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 450 &&
+        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
         !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false
@@ -444,7 +442,7 @@ document.addEventListener('click', (evt) => {
       _visit.style.display = `none`;
       Reader = Reader != true;
       if (Reader == false) {
-        console.log(id);
+        notifyOption(`Reading`, `fa-times-circle`);
         xmlChannelFooter(id);
         justRead = false;
         first = true;
@@ -452,6 +450,7 @@ document.addEventListener('click', (evt) => {
           .querySelectorAll(`.joi`)
           .forEach((a) => a.classList.remove(`luv`));
       } else if (Reader == true) {
+        notifyOption(`Reading`, `fa-check-circle`);
         if (showSplash == true) _check.style.display = `Block`;
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
@@ -487,8 +486,10 @@ document.addEventListener('click', (evt) => {
         .querySelectorAll(`.joi`)
         .forEach((a) => (a.classList.add(`luv`)));
       if (showSplash == true) _check.style.display = `block`;
+      notifyOption(`Reading`, `fa-check-circle`);
       sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
       xmlRequestParsing(null, null, anyRandomMenuObject());
+
     }
     if (
       evt.target.classList.contains(`exit`) ||

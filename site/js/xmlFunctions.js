@@ -830,16 +830,20 @@ var xmlAppendPublication = function (id) {
       let channel = document.createElement(`div`);
       channel.classList.add(`channel`);
       channel.style.position = `fixed`;
-      let append = document.querySelectorAll(`.channel`);
-      append[append.length - 1].append(pub[i].post)
-      images.push({ element: pub[i].element, src: pub[i].src });
+      if (document.body.contains(document.querySelector(`#xml`))) {
+        let append = document.querySelectorAll(`.channel`);
+        append[append.length - 1].append(pub[i].post)
+        images.push({ element: pub[i].element, src: pub[i].src });
+      }
     } else if (omitGuide == false) {
       let channel = document.createElement(`div`);
       channel.classList.add(`channel`);
       channel.style.position = `fixed`;
-      let append = document.querySelectorAll(`.channel`);
-      append[append.length - 1].append(pub[i].post)
-      images.push({ element: pub[i].element, src: pub[i].src });
+      if (document.body.contains(document.querySelector(`#xml`))) {
+        let append = document.querySelectorAll(`.channel`);
+        append[append.length - 1].append(pub[i].post)
+        images.push({ element: pub[i].element, src: pub[i].src });
+      }
     }
   }
   if (safeSearch == true || safeSearchIDs.includes(menu[id].id)) {
@@ -856,20 +860,24 @@ var xmlAppendPublication = function (id) {
     _main
       .querySelectorAll(`.joi`)
       .forEach((a) => a.classList.add(`luv`));
-    scrollToElm(touchmove,
-      _main,
-      document.querySelector(`[aria-object='${id}']`),
-      250
-    );
+    if (document.body.contains(document.querySelector(`#xml`))) {
+      scrollToElm(touchmove,
+        _main,
+        document.querySelector(`[aria-object='${id}']`),
+        250
+      );
+    }
   }
   let oldest = pub[pub.length - 1].dst;
   let posts = pub.length - 1;
   let recent = pub[0].dst;
-  var status = document.querySelector(`.status`);
-  while (status.firstChild) status.removeChild(status.lastChild);
-  var suggestions = document.querySelector(`.suggestions`);
-  while (suggestions.firstChild)
-    suggestions.removeChild(suggestions.lastChild);
+  if (document.body.contains(document.querySelector(`.content`))) {
+    var status = document.querySelector(`.status`);
+    while (status.firstChild) status.removeChild(status.lastChild);
+    var suggestions = document.querySelector(`.suggestions`);
+    while (suggestions.firstChild)
+      suggestions.removeChild(suggestions.lastChild);
+  }
   if (Reader == false){
     document.querySelector(`.channel`).append(footerBuild(id));
   }
@@ -896,7 +904,10 @@ var xmlRequestParsing = function (search, string, index) {
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
   if (readPrevious == false) random = [];
-  if (!document.body.contains(document.querySelector(`#xml`)))
+  if (
+    !document.body.contains(document.querySelector(`#group`)) &&
+    !document.body.contains(document.querySelector(`#xml`))
+  )
     _main.append(stageBuild());
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string}&format=RSS`;
@@ -913,8 +924,9 @@ var xmlRequestParsing = function (search, string, index) {
     Reader == false && first == true && showSplash == true
   )
     _check.style.display = `block`;
-
-  httpRequest = new XMLHttpRequest();
+    if (
+      !document.body.contains(document.querySelector(`#group`))
+    ) httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
     if (httpRequest.readyState == 4) {
       // 4 = `loaded`

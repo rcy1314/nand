@@ -218,6 +218,7 @@ html body,
   border: var(--border-color);
   color: var(--fill-color);
   display: inline-block;
+  padding-bottom: 2px;
   border-radius: 12px;
   padding-right: 20px;
   padding-left: 20px;
@@ -243,6 +244,7 @@ html body,
   height: 50px;
   width: 200px;
   bottom: 50px;
+  z-index: 15;
   right: 25px;
   opacity: 0;
 }

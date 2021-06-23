@@ -351,38 +351,6 @@ document.addEventListener('click', (evt) => {
         event.target.classList.add(`fa-unlock`);
       }
     }
-    if (
-      !event.target.classList.contains(`fa-heart`) &&
-      event.target.classList.contains(`Reader`)
-    ) {
-      id = 0;
-      first = true;
-      randomDuplicate = [];
-      _visit.style.display = `none`;
-      if (showSplash == true) _check.style.display = `block`;
-      Reader = Reader != true;
-      if (Reader == false) {
-        notifyOption(`Reading`, `fa-times-circle`);
-        justRead = false;
-        first = true;
-        id = 0;
-        xmlChannelFooter();
-        document
-          .querySelectorAll(`.joi`)
-          .forEach((a) => (a.classList.remove(`luv`)));
-      } else if (Reader == true) {
-        notifyOption(`Reading`, `fa-check-circle`);
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove();
-        xmlRequestParsing(null, null, anyRandomMenuObject());
-        document
-          .querySelectorAll(`.joi`)
-          .forEach((a) => (a.classList.add(`luv`)));
-      }
-      sideBarStar(event.target, Reader);
-    }
     if (event.target.classList.contains(`parse`)) {
       expandFilter = expandFilter != true
       if (expandFilter == false) {
@@ -558,15 +526,21 @@ document.addEventListener('click', (evt) => {
       if (onlyImages == true) notifyOption(`Images`, `fa-check-circle`);
       if (onlyImages == false) notifyOption(`Images`, `fa-times-circle`);
       sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
-      _visit.style.display = `none`;
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`#xml`).remove();
-      if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove();
-      if (Reader == false) populateCategoryGroup(category);
-      topMenuBarDisplay(topBar);
-      displayExpand(expand);
-      unloading();
+      touchmove = true;
+      if (Reader == true)
+        if (document.body.contains(document.querySelector(`#xml`)))
+          xmlRequestParsing(null, null, anyRandomMenuObject());
+      if (Reader == false) {
+        _visit.style.display = `none`;
+        if (document.body.contains(document.querySelector(`#xml`)))
+          document.querySelector(`#xml`).remove();
+        if (document.body.contains(document.querySelector(`#group`)))
+          document.querySelector(`#group`).remove();
+        populateCategoryGroup(category);
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
+        unloading();
+      }
     }
     if (
       event.target.classList.contains(`feedImages`)
