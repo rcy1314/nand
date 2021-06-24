@@ -84,7 +84,7 @@
     position: relative !important;
     margin: 0 auto !important;
     width: 100% !important;
-    right: 60px !important;
+    left: -60px !important;
   }
 
   #main #group .air .populate:hover,
@@ -447,6 +447,7 @@
   #main #xml .center {
 	  margin-right: 30px;
     width: 420px;
+    right: 100px;
   }
 
   #main #xml .content {
@@ -495,7 +496,7 @@
 
   #main #xml .center {
     width: 420px;
-	  left: -20px;
+	  left: 0;
   }
 
   #main #xml .content {
@@ -548,7 +549,7 @@
 
   #main #xml .center {
     width: 410px;
-    left: 10px;
+    right: 160px;
   }
 
   #main #group .air .populate,
@@ -578,7 +579,7 @@
   }
 
   #main #xml .content {
-    margin-left: 10px;
+    right: 150px;
   }
 
 }
@@ -609,7 +610,7 @@
   #main #xml .center {
     margin-right: 115px;
     width: 600px;
-    left: 0;
+    left: -10px;
   }
 
 }

@@ -285,8 +285,10 @@
 #main #xml .center {
   background-color: transparent;
   display: inline-block;
-  text-align: left;
   height: fit-content;
+  position: relative;
+  text-align: left;
+  left: 40px;
 }
 
 #main #xml .center .channel {
