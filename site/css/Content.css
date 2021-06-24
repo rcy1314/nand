@@ -64,9 +64,10 @@ html body,
 }
 
 #container #toggle {
-  color: var(--fill-color);
   background-color: transparent;
+  color: var(--fill-color);
   position: absolute;
+  font-size: 16px;
   cursor: pointer;
   padding: 15px;
   right: 2px;
