@@ -318,7 +318,15 @@ var xmlImageSource = function (xhr) {
     typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
     Array.isArray(xhr.getElementsByTagName(`description`))
   ) {
-    if (xhr.getElementsByTagName(`description`)[0].childNodes[0])
+    if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
+      src = String(
+        xhr
+          .getElementsByTagName(`description`)[0]
+          .childNodes[0].nodeValue.match(
+            /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
+          )[0]
+    );
+    else if (xhr.getElementsByTagName(`description`)[0].childNodes[0])
       src = String(
         xhr
           .getElementsByTagName(`description`)[0]

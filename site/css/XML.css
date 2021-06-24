@@ -302,7 +302,7 @@
   height: fit-content;
   vertical-align: top;
   text-align: center;
-  position: sticky;
+  position: fixed;
   font-size: 10px;
   width: 300px;
   top: 60px;

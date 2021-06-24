@@ -452,6 +452,7 @@
 
   #main #xml .content {
 	  display: none;
+    right: 50px;
   }
 
   #main #visit #page #quick {
@@ -496,7 +497,7 @@
 
   #main #xml .center {
     width: 420px;
-	  left: 0;
+	  left: -170;
   }
 
   #main #xml .content {
@@ -579,7 +580,7 @@
   }
 
   #main #xml .content {
-    right: 150px;
+    right: 108px;
   }
 
 }
@@ -610,7 +611,11 @@
   #main #xml .center {
     margin-right: 115px;
     width: 600px;
-    left: -10px;
+    left: -160px;
+  }
+
+  #main #xml .content {
+    right: 265px;
   }
 
 }
