@@ -48,11 +48,14 @@ const _toggle = document.getElementById(`toggle`);
 
 const _notify = document.getElementById(`notify`);
 
+const _social = document.getElementById(`social`);
+
+const _options = document.getElementById(`options`);
+
 const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);
 
-const _social = document.getElementById(`social`);
 
 const _container = document.getElementById(`container`);
 

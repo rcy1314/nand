@@ -144,11 +144,12 @@ input[type=submit] {
 
 #main #top #arm #search #input .icon {
   color: var(--fill-color) !important;
+  font-variant: normal !important;
   font-size: 14px !important;
   position: absolute;
   left: 80px;
   z-index: 2;
-  top: 7px;
+  top: 11px;
 }
 
 #main #visit #page #front .focus .icon {

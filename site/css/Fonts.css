@@ -8,10 +8,9 @@
   right: 25px;
 }
 
-#main #top .fa,
 #main #option .fa,
 #main #option .fas {
-  font-variant: all-small-caps !important;
+  font-variant: all-small-caps;
 }
 
 #main #option .fa-home,
