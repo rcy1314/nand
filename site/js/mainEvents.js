@@ -242,7 +242,6 @@ document.addEventListener('scroll', (evt) => {
     	}, 4000);
       if (
         _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
-        !document.body.contains(document.querySelector(`#group`)) &&
         Reader == true &&
         stop == false
       ) {
@@ -440,6 +439,7 @@ document.addEventListener('click', (evt) => {
     ) {
       first = true;
       _visit.style.display = `none`;
+      topMenuBarDisplay(topBar);
       Reader = Reader != true;
       if (Reader == false) {
         notifyOption(`Reading`, `fa-times-circle`);
@@ -537,6 +537,14 @@ document.addEventListener('click', (evt) => {
     if (evt.target.classList.contains(`fa-expand-alt`)) {
       expand = expand != true;
       _sb.style.display = `none`;
+      notifyOption(`Reading`, `fa-times-circle`);
+      xmlChannelFooter(id);
+      justRead = false;
+      Reader = false;
+      first = true;
+      _main
+        .querySelectorAll(`.joi`)
+        .forEach((a) => a.classList.remove(`luv`));
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       if (document.body.contains(document.querySelector(`#group`)))

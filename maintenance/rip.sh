@@ -6,6 +6,9 @@
 curl -q -s "https://acktic.github.io/site/js/xmlAssets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`Telegraph.co.uk Sports`,category:`Sports`,title:`415057775`,description:`Telegraph.co.uk Sports from around the world.`,uri:`https://www.telegraph.co.uk/sport/rss.xml`,image:`Telegraph`,hash:`tK`,media:!0},
+#{id:`Telegraph.co.uk Tech`,category:`Tech`,title:`311135300`,description:`Telegraph.co.uk Technology Intelligence from the world of Technology.`,uri:`https://www.telegraph.co.uk/technology/rss.xml`,image:`Telegraph`,hash:`kT`,media:!0},
+#{id:`Telegraph.co.uk World`,category:`World`,title:`552591282`,description:`Telegraph.co.uk from the UK and around the world.`,uri:`https://www.telegraph.co.uk/rss.xml`,image:`Telegraph`,hash:`kE`,media:!0},
 #{id:`OAN Technology`,category:`Tech`,title:`062680848`,description:`OAN Technology One America News Network Technology.`,uri:`https://www.oann.com/category/tech/feed`,image:`OANN`,hash:`nL`,media:!0},
 #{id:`OAN Entertainment`,category:`Media`,title:`744695655`,description:`OAN Entertainment One America News Network Entertainment.`,uri:`https://www.oann.com/category/entertainment/feed`,image:`OANN`,hash:`nO`,media:!0},
 #{id:`OAN World`,category:`World`,title:`974000186`,description:`OAN World One America News Network World.`,uri:`https://www.oann.com/feed`,image:`OANN`,hash:`oA`,media:!0},

@@ -220,7 +220,6 @@ let footerBuild = function (id) {
   let object = document.createElement(`div`);
   let front = document.createElement(`span`);
   let span = document.createElement(`span`);
-  console.log(id);
   object.id = `bottom`;
   previous.setAttribute(`aria-item`, back(id));
   previous.classList.add(`btn`, `back`);
