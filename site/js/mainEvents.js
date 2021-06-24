@@ -489,7 +489,7 @@ document.addEventListener('click', (evt) => {
       notifyOption(`Reading`, `fa-check-circle`);
       sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
       xmlRequestParsing(null, null, anyRandomMenuObject());
-
+      topMenuBarDisplay(topBar);
     }
     if (
       evt.target.classList.contains(`exit`) ||

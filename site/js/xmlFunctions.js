@@ -904,8 +904,7 @@ var xmlAppendPublication = function (id) {
     unloading();
   }
   if (
-    document.body.contains(document.querySelector(`#xml`)) &&
-    Reader == false
+    document.body.contains(document.querySelector(`#xml`))
   ) {
     document.querySelector(`.channel`).append(footerBuild(id));
     contentStatusDisplay(id, recent, oldest, posts);
