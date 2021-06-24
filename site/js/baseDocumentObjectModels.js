@@ -88,7 +88,7 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
       option.innerHTML = Arrays[i];
       option.setAttribute(`aria-item`, Arrays[i])
       list.append(option);
-      list.append(sideBarThemeBuild(`fa-dice-one`))
+      list.append(sideBarThemeBuild(`fa-redo`))
     } if (!translations.includes(Arrays[i]) || Class != `option` && Class != `feed`)
 			list.append(sideBarThemeBuild(Arrays[i].icon));
   }
