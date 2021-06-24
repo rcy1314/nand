@@ -888,9 +888,9 @@ var xmlAppendPublication = function (id) {
         suggestions.removeChild(suggestions.lastChild);
     }
   } else if (Reader == false) {
-    if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
-    if (pub[pub.length - 1]) var posts = pub.length - 1;
-    if (pub[0]) var recent = pub[0].dst;
+    if (id !== 0 && pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
+    if (id !== 0 && pub[pub.length - 1]) var posts = pub.length - 1;
+    if (id !== 0 && pub[0]) var recent = pub[0].dst;
     if (showSplash == true) _check.style.display = `none`;
     if (document.body.contains(document.querySelector(`#xml`)))
       document.querySelector(`#xml`).remove()
@@ -938,7 +938,6 @@ var xmlRequestParsing = function (search, string, index) {
     _main.append(stageBuild());
   if (search == `search`) {
     uri = `${cors}${menu[index].uri}${string.add()}&format=RSS`;
-    console.log(uri);
     category = category;
   } else {
     uri = `${cors}${menu[index].uri}`;
@@ -961,7 +960,7 @@ var xmlRequestParsing = function (search, string, index) {
       if (httpRequest.status == 200 && this.responseXML) {
         // 200 = OK
         let xhr = this.responseXML;
-
+        console.log(xhr);
         if (xhr.getElementsByTagName(`entry`).length > 0) var channel = `entry`;
         else var channel = `item`;
 
