@@ -158,6 +158,12 @@ html body,
   left: 30px;
 }
 
+#main #visit #page #options {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+}
+
 #main #visit #page {
   background-color: transparent;
   position: relative;
@@ -231,20 +237,20 @@ html body,
 
 #container #notify {
   background-color: var(--hover-background-color);
-  box-shadow: var(--box-shadow);
   color: var(--fill-color);
   justify-content: center;
   border-radius: 10px;
   align-items: center;
   position: absolute;
+  box-shadow: none;
   font-weight: 500;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 11px;
   display: flex;
   height: 35px;
-  width: 185px;
-  bottom: 40px;
+  width: 180px;
+  bottom: 45px;
   z-index: 15;
-  right: 16px;
+  right: 20px;
   opacity: 0;
 }

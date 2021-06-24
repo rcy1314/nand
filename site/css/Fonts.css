@@ -25,6 +25,7 @@
   font-size: 17px;
 }
 
+#main #visit #page #options .fa,
 .fa-facebook-f,
 .fa-twitter,
 .fa-instagram,
@@ -37,10 +38,11 @@
   color: var(--loader-color);
   font-size: 16px;
   font-weight: 50;
-  display: flex;
+  display: inline-flex;
   transition: all 500ms ease-in-out;
 }
 
+#main #visit #page #options .fa:hover,
 .fa-facebook-f:hover,
 .fa-twitter:hover,
 .fa-instagram:hover,

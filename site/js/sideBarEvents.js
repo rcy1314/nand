@@ -567,20 +567,27 @@ document.addEventListener('click', (evt) => {
       let uri = repository;
       uri.blank();
     }
-    if (event.target.classList.contains(`safeSearch`)) {
+    if (
+      event.target.classList.contains(`fa-user-cog`) ||
+      event.target.classList.contains(`safeSearch`)
+  ) {
       safeSearch = safeSearch != true;
-      sideBarStar(event.target, safeSearch);
       if (
-        safeSearch == true &&
-        document.body.contains(document.querySelector(`#xml`))
+        safeSearch == true
       ) {
+        sideBarStar(document.querySelector(`.safeSearch`), true);
+        notifyOption(`Safe Search`, `fa-check-circle`);
+      }
+      if (document.body.contains(document.querySelector(`#xml`)))
         document
           .querySelectorAll(`.filterBlur`)
           .forEach((a) => a.classList.add(`blur`));
-      } else if (
-        safeSearch == false &&
-        document.body.contains(document.querySelector(`#xml`))
+      else if (
+        safeSearch == false
       ) {
+        sideBarStar(document.querySelector(`.safeSearch`), false);
+        notifyOption(`Safe Search`, `fa-times-circle`);
+      if (document.body.contains(document.querySelector(`#xml`)))
         document
           .querySelectorAll(`.filterBlur`)
           .forEach((a) => a.classList.remove(`blur`));
