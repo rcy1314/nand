@@ -10,8 +10,13 @@
   z-index: 12;
 }
 
+#container #sidebar #content::-webkit-scrollbar {
+  display: none;
+}
+
 #container #sidebar #content {
   background-color: transparent;
+  scrollbar-width: none;
   height: fit-content;
   overflow-x: hidden;
   overflow-y: auto;
