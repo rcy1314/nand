@@ -315,21 +315,9 @@ var xmlImageSource = function (xhr) {
   else if (xhr.getElementsByTagName(`link`)[0].attributes[`href`])
     src = String(xhr.getElementsByTagName(`link`)[0].getAttribute(`href`));
   else if (
-    (xhr.getElementsByTagName(`description`)[0]
-      .innerHTML.match(/a.href|src/g) &&
-      xhr.getElementsByTagName(`author`).length <= 0) ||
-    (xhr.getElementsByTagName(`description`)[0].length > 0 &&
-      Array.isArray(xhr.getElementsByTagName(`description`)))
+    Array.isArray(xhr.getElementsByTagName(`description`))
   ) {
-    if (
-      xhr
-        .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
-    )
-      src = xhr
-        .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
-    else if (xhr.getElementsByTagName(`description`)[0].childNodes[1])
+    if (xhr.getElementsByTagName(`description`)[0].childNodes[1])
       src = String(
         xhr
           .getElementsByTagName(`description`)[0]
@@ -345,6 +333,27 @@ var xmlImageSource = function (xhr) {
             /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
           )
       );
+  } else if (
+    typeof xhr.getElementsByTagName(`description`).innerHTML != `undefined` &&
+    !menu[id].id.match(/Telegraph/g) ||
+    menu[id].id.match(/4Chan/g)
+  ) {
+    if (
+      (xhr.getElementsByTagName(`description`)[0]
+        .innerHTML.match(/a.href|src/g) &&
+        xhr.getElementsByTagName(`author`).length <= 0) ||
+      (xhr.getElementsByTagName(`description`)[0].length > 0 &&
+        Array.isArray(xhr.getElementsByTagName(`description`)))
+  ) {
+    if (
+      xhr
+        .getElementsByTagName(`description`)[0]
+        .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
+    )
+      src = xhr
+        .getElementsByTagName(`description`)[0]
+        .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
+    }
   } else if (xhr.getElementsByTagName(`link`).length > 0)
     src = String(
       xhr
@@ -865,6 +874,7 @@ var xmlAppendPublication = function (id) {
         250
       );
     }
+    stop = false;
   }
   if (pub.length > 1) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
@@ -877,7 +887,7 @@ var xmlAppendPublication = function (id) {
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
     }
-  } else {
+  } else if (Reader == false) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
@@ -890,6 +900,7 @@ var xmlAppendPublication = function (id) {
     displayDescription(showDescription);
     topMenuBarDisplay(topBar);
     displayExpand(expand);
+    stop = false;
     unloading();
   }
   if (
