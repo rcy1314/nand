@@ -906,7 +906,7 @@ var xmlAppendPublication = function (id) {
   if (
     document.body.contains(document.querySelector(`#xml`))
   ) {
-    document.querySelector(`.channel`).append(footerBuild(id));
+    if (Reader == false) document.querySelector(`.channel`).append(footerBuild(id));
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();

@@ -709,7 +709,6 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`back`)
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      evt.target.closest(`#xml`).remove();
       xmlRequestParsing(
         null,
         null,
