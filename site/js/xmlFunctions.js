@@ -324,7 +324,7 @@ var xmlImageSource = function (xhr) {
           .getElementsByTagName(`description`)[0]
           .childNodes[0].nodeValue.match(
             /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
-          )
+          )[0]
       );
     else if (xhr.getElementsByTagName(`description`)[0].childNodes[1])
       src = String(
@@ -335,9 +335,8 @@ var xmlImageSource = function (xhr) {
           )
       );
   } else if (
-    !menu[id].id.match(/Telegraph/g) &&
-    typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
-    typeof xhr.getElementsByTagName(`description`)[0].innerHTML === `string`
+    typeof xhr.getElementsByTagName(`description`) !== `object` &&
+    typeof xhr.getElementsByTagName(`description`)[0] === `object`
   ) {
     if (
       (xhr.getElementsByTagName(`description`)[0]
@@ -349,11 +348,11 @@ var xmlImageSource = function (xhr) {
     if (
       xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
+        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)
     )
       src = xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
+        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)[0];
     }
   } else if (xhr.getElementsByTagName(`link`).length > 0)
     src = String(
