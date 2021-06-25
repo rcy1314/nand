@@ -291,9 +291,13 @@
   left: 40px;
 }
 
+#main #xml .center .channel::-webkit-scrollbar {
+  display: none;
+}
+
 #main #xml .center .channel {
   background-color: transparent;
-  height: fit-content;
+  scrollbar-width: none;
 }
 
 #main #xml .content {

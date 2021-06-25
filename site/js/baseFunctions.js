@@ -183,7 +183,11 @@ let progressBackDrop = function (done) {
               !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
               elements[i].getBoundingClientRect().top -
               _main.clientHeight <=
-              0
+              0 ||
+              elements[i].querySelector(`.img`) &&
+              elements[i].getBoundingClientRect().right -
+              document.querySelector(`.channel`).clientWidth
+              >= 0
             ) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
@@ -197,7 +201,7 @@ let progressBackDrop = function (done) {
             }
           }
         }
-        _main.addEventListener(`scroll`, checkPosition);
+        document.querySelector(`.channel`).addEventListener(`scroll`, checkPosition);
         if (scrollIntoView)
           setTimeout(function() {
             checkPosition();
@@ -205,6 +209,16 @@ let progressBackDrop = function (done) {
         else checkPosition();
       })();
     }
+    if (sideScroll == true
+    ) {
+      document.querySelector(`.channel`).classList.add(`sideChannel`);
+      document.querySelector(`.center`).classList.remove(`scroll-into-view`);
+      document.querySelector(`.center`).style.top = `60px`;
+      document.querySelector(`#xml`).style.top = 0;
+      _main
+        .querySelectorAll(`.item`)
+        .forEach((a) => (a.classList.add(`sideItem`)));
+      }
   }
   if (document.body.contains(document.getElementById(`group`))) {
     if (scrollIntoView == true) {

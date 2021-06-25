@@ -72,6 +72,19 @@ let topBar = true;
 let showOption = true;
 
 /*
+    sideScroll [boolean/integer]
+
+      Applications
+        sideBarEvents, xmlAppendPublication
+
+      Result
+        vertical / horizontal scrolling
+
+*/
+
+let sideScroll = false;
+
+/*
     Reader [boolean/integer]
 
       Applications

@@ -59,6 +59,13 @@
     animation: move 3s 600ms infinite cubic-bezier(.1,.75,1,.3) !important;
   }
 
+  .sideItem {
+    display: inline-table;
+      height: 540px;
+      margin-right: 50px;
+      width: 320px !important;
+  }
+
   #main #visit #page #options {
       display: inline-block;
       position: absolute;
@@ -116,7 +123,7 @@
   #main #xml .center .item {
     margin-bottom: 55px !important;
     box-shadow: none !important;
-    width: 100% !important;
+    width: 100%;
     border: none;
   }
 

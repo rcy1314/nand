@@ -326,7 +326,7 @@ var xmlImageSource = function (xhr) {
             /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
           )[0]
     );
-    else if (xhr.getElementsByTagName(`description`)[0].childNodes[0])
+    else if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
       src = String(
         xhr
           .getElementsByTagName(`description`)[0]
@@ -914,7 +914,8 @@ var xmlAppendPublication = function (id) {
   if (
     document.body.contains(document.querySelector(`#xml`))
   ) {
-    if (Reader == false) document.querySelector(`.channel`).append(footerBuild(id));
+    if (Reader == false && sideScroll == false)
+      document.querySelector(`.channel`).append(footerBuild(id));
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();

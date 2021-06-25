@@ -2,6 +2,18 @@
   animation: notify 4s infinite ease-in-out;
 }
 
+.sideItem {
+  display: inline-table;
+    height: 540px;
+    margin-right: 50px;
+    width: 320px !important;
+}
+
+.sideChannel {
+  display: flex;
+  overflow-x: auto;
+}
+
 .bars,
 .bars:before,
 .bars:after {

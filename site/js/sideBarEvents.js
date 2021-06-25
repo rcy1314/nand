@@ -519,7 +519,6 @@ document.addEventListener('click', (evt) => {
       sideBarStar(document.querySelector(`.loaderfalse`), false);
     }
     if (
-      event.target.classList.contains(`fa-camera-retro`) ||
       event.target.classList.contains(`onlyImages`)
     ) {
       onlyImages = onlyImages != true;
