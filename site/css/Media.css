@@ -318,11 +318,14 @@
 
 @media (min-width: 426px) and (max-width: 767px) {
 
+  .sideChannel {
+    width: 400 !important;
+  }
 
   #main #visit #page #options {
     display: inline-block;
     position: absolute;
-    right: 100px;
+    right: 50px;
     top: 15px;
   }
 
@@ -344,10 +347,10 @@
   #main #visit #page #front .focus {
     border-radius: 8px;
     margin: 0 auto;
-    width: 340px;
-    right: 37px;
+    width: 400px;
     padding: 0;
     top: -25px;
+    right: 0;
   }
 
   #main #visit #page #front .focus input[type=text] {
@@ -393,6 +396,15 @@
     top: 0 !important;
   }
 
+  #main #option {
+    width: calc(100% - 20px);
+    top: calc(100% - 50px);
+    position: fixed;
+    display: flex;
+    height: 50px;
+    right: 11px;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -433,18 +445,18 @@
     width: 82px;
   }
 
-  #main #option {
-    display: none;
+  #main #top #arm #option {
+    display: block;
   }
 
   #main #top #arm {
     width: 100%;
   }
 
-  #main #top #arm #option {
+  #main #option {
     position: absolute;
-    display: block;
-    right: 0px;
+    display: none;
+    right: -75px;
   }
 
   #main #top #arm #search #home {

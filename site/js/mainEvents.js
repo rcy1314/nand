@@ -297,6 +297,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`source`) ||
       evt.target.classList.contains(`bottom`) ||
       evt.target.classList.contains(`header`) ||
+      evt.target.classList.contains(`select`) ||
       evt.target.classList.contains(`result`) ||
       evt.target.classList.contains(`post`) ||
       evt.target.classList.contains(`site`) ||
@@ -374,7 +375,7 @@ document.addEventListener('click', (evt) => {
         scrollIntoView = false;
         if (document.body.contains(document.querySelector(`#xml`))) {
           if (document.body.contains(document.querySelector(`#bottom`)))
-          document.querySelector(`#bottom`).remove();
+          //document.querySelector(`#bottom`).remove();
           document.querySelector(`.channel`).classList.add(`sideChannel`);
           document.querySelector(`.center`).classList.remove(`scroll-into-view`);
           document.querySelector(`.center`).style.top = `60px`;
