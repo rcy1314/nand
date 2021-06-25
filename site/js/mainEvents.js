@@ -227,6 +227,7 @@ document.addEventListener('touchend', (evt) => {
   { passive: true }
 );
 document.addEventListener('wheel', (e) => {
+  if (document.body.contains(document.querySelector(`.channel`)))
     document.querySelector('.channel').scrollLeft += e.deltaY /4;
 })
 document.addEventListener('scroll', (evt) => {
@@ -376,7 +377,9 @@ document.addEventListener('click', (evt) => {
           document.querySelector(`#bottom`).remove();
           document.querySelector(`.channel`).classList.add(`sideChannel`);
           document.querySelector(`.center`).classList.remove(`scroll-into-view`);
-          _main
+          document.querySelector(`.center`).style.top = `60px`;
+          document.querySelector(`#xml`).style.top = 0;
+      _main
             .querySelectorAll(`.item`)
             .forEach((a) => (a.classList.add(`sideItem`)));
         }
