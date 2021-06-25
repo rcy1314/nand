@@ -318,7 +318,15 @@ var xmlImageSource = function (xhr) {
     typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
     Array.isArray(xhr.getElementsByTagName(`description`))
   ) {
-    if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
+    if (
+      xhr
+        .getElementsByTagName(`description`)[0]
+        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)
+    )
+      src = xhr
+        .getElementsByTagName(`description`)[0]
+        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)[0];
+    else if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
       src = String(
         xhr
           .getElementsByTagName(`description`)[0]
@@ -343,12 +351,12 @@ var xmlImageSource = function (xhr) {
           )
       );
   } else if (
-    typeof xhr.getElementsByTagName(`description`) !== `object` &&
+    typeof xhr.getElementsByTagName(`description`) !== `object` ||
     typeof xhr.getElementsByTagName(`description`)[0] === `object`
   ) {
     if (
       (xhr.getElementsByTagName(`description`)[0]
-        .innerHTML.match(/a.href|src/g) &&
+        .innerHTML.match(/a.href|src/g) ||
         xhr.getElementsByTagName(`author`).length <= 0) ||
       (xhr.getElementsByTagName(`description`)[0].length > 0 &&
         Array.isArray(xhr.getElementsByTagName(`description`)))

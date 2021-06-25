@@ -231,7 +231,12 @@ document.addEventListener('wheel', (e) => {
     document.querySelector('.channel').scrollLeft += e.deltaY /4;
 })
 document.addEventListener('scroll', (evt) => {
-    if (evt.target.id == `main`) {
+    if (
+      evt.target.id == `main` ||
+      evt.target.classList.contains(`channel`)
+    ) {
+      console.log(
+      )
       let isScrolling;
       // Clear our timeout throughout the scroll
     	window.clearTimeout( isScrolling );
@@ -244,9 +249,21 @@ document.addEventListener('scroll', (evt) => {
 
     	}, 4000);
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
-        Reader == true &&
-        stop == false
+        (
+          sideScroll == false &&
+          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
+          Reader == true &&
+          stop == false
+        ) ||
+        (
+          sideScroll == true &&
+          document.querySelector(`.channel`).scrollWidth -
+          document.querySelector(`.channel`).scrollLeft -
+          document.querySelector(`.channel`).clientWidth <=
+          document.querySelector(`.channel`).clientWidth &&
+          Reader == true &&
+          stop == false
+        )
       ) {
         first = false;
         justRead = true;
@@ -261,7 +278,10 @@ document.addEventListener('scroll', (evt) => {
 );
 
 document.addEventListener('ontouchmove', (evt) => {
-    if (evt.target.id == `main`) {
+    if (
+      evt.target.id == `main` ||
+      evt.target.classList.contains(`channel`)
+    ) {
       let isScrolling;
       // Clear our timeout throughout the scroll
     	window.clearTimeout( isScrolling );
@@ -275,15 +295,27 @@ document.addEventListener('ontouchmove', (evt) => {
 
     	}, 2600);
       if (
-        _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
-        !document.body.contains(document.querySelector(`#group`)) &&
-        Reader == true &&
-        stop == false
+        (
+          sideScroll == false &&
+          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
+          Reader == true &&
+          stop == false
+        ) ||
+        (
+          sideScroll == true &&
+          document.querySelector(`.channel`).scrollWidth -
+          document.querySelector(`.channel`).scrollLeft -
+          document.querySelector(`.channel`).clientWidth <=
+          document.querySelector(`.channel`).clientWidth &&
+          Reader == true &&
+          stop == false
+        )
       ) {
         first = false;
         justRead = true;
-        if (showSplash == true) _check.style.display = `block`;
-        xmlRequestParsing(null, null, anyRandomMenuObject());
+        if (showSplash == true) {
+          _check.style.display = `block`;
+        }
       }
     }
   },
