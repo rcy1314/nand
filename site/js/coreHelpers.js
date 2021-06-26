@@ -115,6 +115,11 @@ function scrollToElm(touch, container, elm, duration){
   scrollTo( touch, container, pos.top , 10);  // duration in seconds
 }
 
+function sideScrollToElm(touch, container, elm, duration){
+  var pos = getRelativePos(elm);
+  sideScrollTo( touch, container, pos.left , 10);  // duration in seconds
+}
+
 function getRelativePos(elm){
   var pPos = elm.parentNode.getBoundingClientRect(), // parent pos
       cPos = elm.getBoundingClientRect(), // target pos
@@ -142,6 +147,30 @@ function scrollTo(touch, element, to, duration, onDone) {
         t = (elapsed/duration);
 
         element.scrollTop = start + change * easeInOutQuad(t);
+
+        if( t < 1 )
+            window.requestAnimationFrame(animateScroll);
+        else
+            onDone && onDone();
+    };
+
+    animateScroll();
+  }
+}
+
+function sideScrollTo(touch, element, start, duration, onDone) {
+  if (touch == true) {
+
+    var to = element.scrollLeft + element.clientWidth * 8,
+        change = to - start,
+        startTime = performance.now(),
+        val, now, elapsed, t;
+    function animateScroll(){
+        now = performance.now();
+        elapsed = (now - startTime)/50;
+        t = (elapsed/duration);
+
+        element.scrollLeft = start + change * easeInOutQuad(t);
 
         if( t < 1 )
             window.requestAnimationFrame(animateScroll);

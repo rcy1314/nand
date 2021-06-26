@@ -321,17 +321,17 @@ var xmlImageSource = function (xhr) {
     if (
       xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)
+        .innerHTML.match(/\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
     )
       src = xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)[0];
+        .innerHTML.match(/\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
     else if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
       src = String(
         xhr
           .getElementsByTagName(`description`)[0]
           .childNodes[0].nodeValue.match(
-            /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
+            /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
           )[0]
     );
     else if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
@@ -339,7 +339,7 @@ var xmlImageSource = function (xhr) {
         xhr
           .getElementsByTagName(`description`)[0]
           .childNodes[0].nodeValue.match(
-            /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
+            /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
           )[0]
       );
     else if (xhr.getElementsByTagName(`description`)[0].childNodes[1])
@@ -884,13 +884,21 @@ var xmlAppendPublication = function (id) {
       .querySelectorAll(`.joi`)
       .forEach((a) => a.classList.add(`luv`));
     if (document.body.contains(document.querySelector(`#xml`))) {
-      scrollToElm(touchmove,
-        _main,
-        document.querySelector(`[aria-object='${id}']`),
-        250
-      );
+      if (sideScroll == false)
+        scrollToElm(touchmove,
+          _main,
+          document.querySelector(`[aria-object='${id}']`),
+          250
+        );
+      else if (sideScroll == true && first != true) {
+        touchmove = true;
+        sideScrollToElm(touchmove,
+          document.querySelector(`.channel`),
+          document.querySelector(`[aria-object='${id}']`),
+          250
+        );
+      }
     }
-    stop = false;
   }
   if (pub.length > 1) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;

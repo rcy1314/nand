@@ -265,6 +265,7 @@ document.addEventListener('scroll', (evt) => {
           stop == false
         )
       ) {
+        stop = true;
         first = false;
         justRead = true;
         if (showSplash == true) {
@@ -311,6 +312,7 @@ document.addEventListener('ontouchmove', (evt) => {
           stop == false
         )
       ) {
+        stop = true;
         first = false;
         justRead = true;
         if (showSplash == true) {
