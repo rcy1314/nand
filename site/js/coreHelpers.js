@@ -140,7 +140,6 @@ function scrollTo(touch, element, to, duration, onDone) {
         change = to - start,
         startTime = performance.now(),
         val, now, elapsed, t;
-
     function animateScroll(){
         now = performance.now();
         elapsed = (now - startTime)/50;
@@ -161,10 +160,12 @@ function scrollTo(touch, element, to, duration, onDone) {
 function sideScrollTo(touch, element, start, duration, onDone) {
   if (touch == true) {
 
-    var to = element.scrollLeft + element.clientWidth * 8,
+    var to = element.scrollLeft + start,
         change = to - start,
         startTime = performance.now(),
         val, now, elapsed, t;
+        console.log(start);
+        console.log(to);
     function animateScroll(){
         now = performance.now();
         elapsed = (now - startTime)/50;
