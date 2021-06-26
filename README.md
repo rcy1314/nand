@@ -11,6 +11,12 @@
   <em>Navigate index.html in your browser locally</em><br>
   `node app.js` <em>web server @ localhost:3000</em>
 
+## Init
+
+  `/?q=[unique-id]`<br>
+  `/?q=[category]`<br>
+  `/?[hash]`<br>
+
 ### Settings
 
 <em>Located in</em> `site/js/settings.js` <em> edit everything !</em><br>
