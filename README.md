@@ -44,6 +44,7 @@
   <div align='right'><em>Chron job daily live feeds</em></div><br>
   <div align='right'><em>Download images directly</em></div><br>
   <div align='right'><em>Post hashes selectable</em></div><br>
+  <div align='right'><em>Interactive background selection</em></div><br>
 
 ### Settings
 
