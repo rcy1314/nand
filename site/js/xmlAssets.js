@@ -4,9 +4,9 @@
 
       * These need to be fufilled to add an object.
 
-      > id: unique stripped to plain text [<b>indexed</b>]
+      > id: unique stripped to plain text [indexed]
 
-      > title: unique nine digit numerica [<b>indexed</b>]
+      > title: unique nine digit numerica [indexed]
 
       > des: plain text [indexed].
 
