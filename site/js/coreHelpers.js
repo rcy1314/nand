@@ -248,7 +248,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.state = function () {
-  history.replaceState({}, '', 'index.html');
+  history.replaceState({}, '', this);
 };
 
 String.prototype.blank = function () {
