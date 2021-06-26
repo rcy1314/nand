@@ -924,7 +924,9 @@ var xmlAppendPublication = function (id) {
     displayDescription(showDescription);
     topMenuBarDisplay(topBar);
     displayExpand(expand);
-    stop = false;
+    setTimeout(function () {
+      stop = false;
+    }, 1500)
     unloading();
   }
   if (
