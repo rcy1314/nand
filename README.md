@@ -47,8 +47,9 @@
   <div align='right'><em>Interactive background selection</em></div><br>
   <div align='right'><em>Notifications</em></div><br>
   <div align='right'><em>Social Badges</em></div><br>
-  <div align='right'><em>Croppable Images</em></div><br>
-  <div align='right'><em>Title Filter unwanted ads</em></div><br>
+  <div align='right'><em>Croppable images</em></div><br>
+  <div align='right'><em>Title filter unwanted ads</em></div><br>
+  <div align='right'><em>Base64 image source inspected</em></div><br>
 
 ### Settings
 
