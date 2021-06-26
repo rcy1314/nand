@@ -19,37 +19,37 @@
 
 ## Features
 
-  <div align='right'><em>Extended custom urls</em></div><br>
-  <div align='right'><em>Youtube Videos Images</em></div><br>
-  <div align='right'><em>Custom device Media Queries</em></div><br>
-  <div align='right'><em>Interactive sidebar</em></div><br>
-  <div align='right'><em>Dynamic theme engine</em></div><br>
-  <div align='right'><em>Reader with scrollTo</em></div><br>
-  <div align='right'><em>Single Post Display</em></div><br>
-  <div align='right'><em>Single Post nsfw API</em></div></br>
-  <div align='right'><em>Safe Search</em></div><br>
-  <div align='right'><em>Cors Proxy</em></div><br>
-  <div align='right'><em>nsfw API</em></div><br>
-  <div align='right'><em>Horizontal Scrolling</em></div><br>
-  <div align='right'><em>MIT License (free)</em></div><br>
-  <div align='right'><em>List Block view</em></div><br>
-  <div align='right'><em>Single word search engine</em></div><br>
-  <div align='right'><em>Extensive image parsing</em></div><br>
-  <div align='right'><em>Tap click links to articles</em></div><br>
-  <div align='right'><em>Time date timestamp formating</em></div><br>
-  <div align='right'><em>Advanced settings easy config</em></div><br>
-  <div align='right'><em>Different loading animations</em></div><br>
-  <div align='right'><em>Easily deployable node server</em></div><br>
-  <div align='right'><em>Cross browser device tested</em></div><br>
-  <div align='right'><em>Chron job daily live feeds</em></div><br>
-  <div align='right'><em>Download images directly</em></div><br>
-  <div align='right'><em>Post hashes selectable</em></div><br>
-  <div align='right'><em>Interactive background selection</em></div><br>
-  <div align='right'><em>Notifications</em></div><br>
-  <div align='right'><em>Social Badges</em></div><br>
-  <div align='right'><em>Croppable images</em></div><br>
-  <div align='right'><em>Title filter unwanted ads</em></div><br>
-  <div align='right'><em>Base64 image source inspected</em></div><br>
+  <div align='right'><em>Extended custom urls</em></div>
+  <div align='right'><em>Youtube Videos Images</em></div>
+  <div align='right'><em>Custom device Media Queries</em></div>
+  <div align='right'><em>Interactive sidebar</em></div>
+  <div align='right'><em>Dynamic theme engine</em></div>
+  <div align='right'><em>Reader with scrollTo</em></div>
+  <div align='right'><em>Single Post Display</em></div>
+  <div align='right'><em>Single Post nsfw API</em></div>
+  <div align='right'><em>Safe Search</em></div>
+  <div align='right'><em>Cors Proxy</em></div>
+  <div align='right'><em>nsfw API</em></div>
+  <div align='right'><em>Horizontal Scrolling</em></div>
+  <div align='right'><em>MIT License (free)</em></div>
+  <div align='right'><em>List Block view</em></div>
+  <div align='right'><em>Single word search engine</em></div>
+  <div align='right'><em>Extensive image parsing</em></div>
+  <div align='right'><em>Tap click links to articles</em></div>
+  <div align='right'><em>Time date timestamp formating</em></div>
+  <div align='right'><em>Advanced settings easy config</em></div>
+  <div align='right'><em>Different loading animations</em></div>
+  <div align='right'><em>Easily deployable node server</em></div>
+  <div align='right'><em>Cross browser device tested</em></div>
+  <div align='right'><em>Chron job daily live feeds</em></div>
+  <div align='right'><em>Download images directly</em></div>
+  <div align='right'><em>Post hashes selectable</em></div>
+  <div align='right'><em>Interactive background selection</em></div>
+  <div align='right'><em>Notifications</em></div>
+  <div align='right'><em>Social Badges</em></div>
+  <div align='right'><em>Croppable images</em></div>
+  <div align='right'><em>Title filter unwanted ads</em></div>
+  <div align='right'><em>Base64 image source inspected</em></div>
 
 ### Settings
 
