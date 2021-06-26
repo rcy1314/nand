@@ -160,7 +160,7 @@ function scrollTo(touch, element, to, duration, onDone) {
 function sideScrollTo(touch, element, start, duration, onDone) {
   if (touch == true) {
 
-    var to = element.scrollLeft + start,
+    var to = element.scrollLeft + element.clientWidth * 2,
         change = to - start,
         startTime = performance.now(),
         val, now, elapsed, t;

@@ -103,7 +103,7 @@ window.onload = function () {
       _guide.addEventListener('touchend', (evt) => {
           touchendX = evt.changedTouches[0].screenX;
           touchendY = evt.changedTouches[0].screenY;
-          handleGuide();
+          if (sideScroll == false) handleGuide();
         },
         { passive: true }
       );
