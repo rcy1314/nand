@@ -103,7 +103,7 @@ window.onload = function () {
       _guide.addEventListener('touchend', (evt) => {
           touchendX = evt.changedTouches[0].screenX;
           touchendY = evt.changedTouches[0].screenY;
-          if (sideScroll == false) handleGuide();
+          handleGuide();
         },
         { passive: true }
       );
@@ -222,7 +222,7 @@ document.addEventListener('touchend', (evt) => {
 
   }, 4000);
     touchendX = evt.changedTouches[0].screenX;
-    if (_guide.style.display != `flex`) handleSwipe();
+    if (_guide.style.display != `flex` && sideScroll == false) handleSwipe();
   },
   { passive: true }
 );
