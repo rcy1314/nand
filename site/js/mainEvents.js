@@ -93,7 +93,6 @@ window.onload = function () {
       _guide.addEventListener('touchstart', (evt) => {
           touchstartX = evt.changedTouches[0].screenX
           touchstartY = evt.changedTouches[0].screenY;
-          touchmove = true;
         },
         { passive: true }
       );
@@ -233,8 +232,6 @@ document.addEventListener('scroll', (evt) => {
       evt.target.id == `main` ||
       evt.target.classList.contains(`channel`)
     ) {
-      console.log(
-      )
       let isScrolling;
       // Clear our timeout throughout the scroll
     	window.clearTimeout( isScrolling );
@@ -403,8 +400,9 @@ document.addEventListener('click', (evt) => {
       if (
         sideScroll == true
       ) {
-        notifyOption(`Horizontal`, `fa-check-circle`);
         scrollIntoView = false;
+        let leaveOff = _main.scrollTop - 400;
+        notifyOption(`Horizontal`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`))) {
           if (document.body.contains(document.querySelector(`#bottom`)))
           //document.querySelector(`#bottom`).remove();
@@ -416,11 +414,14 @@ document.addEventListener('click', (evt) => {
             .querySelectorAll(`.item`)
             .forEach((a) => (a.classList.add(`sideItem`)));
         }
+        document.querySelector(`.channel`).scrollLeft = leaveOff;
       } else if (
           sideScroll == false
         ) {
+          let leaveOff = document.querySelector(`.channel`).scrollLeft + 400;
           notifyOption(`Vertical`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`))) {
+          console.log(document.querySelector(`.channel`).scrollLeft + ` ` + _main.scrollTop);
           document.querySelector(`.channel`).classList.remove(`sideChannel`);
           document.querySelector(`.center`).style.top = `60px`;
           document.querySelector(`#xml`).style.top = 0;
@@ -428,6 +429,7 @@ document.addEventListener('click', (evt) => {
             .querySelectorAll(`.item`)
             .forEach((a) => (a.classList.remove(`sideItem`)));
         }
+        _main.scrollTop = leaveOff;
       }
     }
     if (
