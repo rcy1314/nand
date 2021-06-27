@@ -733,8 +733,8 @@ if (expand == true) {
   Blocks = false;
   List = true;
 } else {
-  Blocks = false;
-  List = true;
+  Blocks = true;
+  List = false;
 }
 
 let quit;

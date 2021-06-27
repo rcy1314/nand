@@ -1,8 +1,6 @@
 window.onload = function () {
-
-  if (sideBarTranslations == true) {
-      appendSideBarLists(`#content`, `cat`, translations);
-  }
+  if (sideBarTranslations == true)
+    appendSideBarLists(`#content`, `cat`, translations);
   appendSideBarLists(`#content`, `sel`, selections);
   sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
   appendSideBarLists(`.themes`, `theme`, themes);
