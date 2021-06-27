@@ -915,31 +915,20 @@ var xmlAppendPublication = function (id) {
     if (id !== 0 && pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (id !== 0 && pub[pub.length - 1]) var posts = pub.length - 1;
     if (id !== 0 && pub[0]) var recent = pub[0].dst;
-    if (showSplash == true) _check.style.display = `none`;
-    if (document.body.contains(document.querySelector(`#xml`)))
-      document.querySelector(`#xml`).remove()
-    if (document.body.contains(document.querySelector(`#group`)))
-      document.querySelector(`#group`).remove()
-    populateCategoryGroup(category);
-    displayDescription(showDescription);
-    topMenuBarDisplay(topBar);
-    displayExpand(expand);
-    setTimeout(function () {
-      stop = false;
-    }, 1500)
-    unloading();
   }
   if (
     document.body.contains(document.querySelector(`#xml`))
   ) {
-    if (Reader == false)
-      document.querySelector(`.channel`).append(footerBuild(id));
+    document.querySelector(`.channel`).append(footerBuild(id));
+    if (showSplash == true) _check.style.display = `none`;
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
     local = null;
     stop = false;
+    images = [];
     post = null;
+    unloading();
   }
 }
 
