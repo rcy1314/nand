@@ -576,12 +576,11 @@ document.addEventListener('click', (evt) => {
       ) {
         sideBarStar(document.querySelector(`.safeSearch`), true);
         notifyOption(`Safe Search`, `fa-check-circle`);
-      }
       if (document.body.contains(document.querySelector(`#xml`)))
         document
           .querySelectorAll(`.filterBlur`)
           .forEach((a) => a.classList.add(`blur`));
-      else if (
+      } else if (
         safeSearch == false
       ) {
         sideBarStar(document.querySelector(`.safeSearch`), false);
