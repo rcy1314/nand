@@ -30,6 +30,7 @@
   display: block;
   width: 270px;
   padding: 5px;
+  top: 10px;
 }
 
 #container #sidebar #content::-webkit-scrollbar {
