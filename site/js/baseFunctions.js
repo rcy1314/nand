@@ -42,11 +42,7 @@ let handleGuide = function () {
 
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
-  if (feedAssets == 7)
-    for (var i = 0; i <= translations.length - 1; i++) {
-      _feed.append(translationBuild(translations[i]));
-    }
-  else
+  _feed.append(translationBuild(translations[0]));
     for (var i = 1; i <= menu.length - 1; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
