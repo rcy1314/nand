@@ -25,6 +25,9 @@
 }
 
 #main #visit #page #options .fa,
+.fa-font-awesome-alt,
+.fa-font-awesome-flag,
+.fa-git,
 .fa-facebook-f,
 .fa-twitter,
 .fa-instagram,
@@ -42,6 +45,9 @@
 }
 
 #main #visit #page #options .fa:hover,
+.fa-font-awesome-alt:hover,
+.fa-font-awesome-flag:hover,
+.fa-git:hover,
 .fa-facebook-f:hover,
 .fa-twitter:hover,
 .fa-instagram:hover,

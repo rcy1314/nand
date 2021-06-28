@@ -463,6 +463,21 @@ document.addEventListener('click', (evt) => {
       xhr.send();
     }
     if (
+      evt.target.classList.contains(`fa-font-awesome-alt`)
+    ) {
+      fa5.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-font-awesome-flag`)
+    ) {
+      fa4.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-git`)
+    ) {
+      project.blank();
+    }
+    if (
       evt.target.classList.contains(`fa-amazon`)
     ) {
       amazon.blank();

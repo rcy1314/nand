@@ -195,7 +195,7 @@ html body,
   margin: 0 auto;
   z-index: 0;
   left: 1px;
-  top: 25px;
+  top: 35px;
 }
 
 #main #visit #page #front #label #link {
@@ -209,7 +209,7 @@ html body,
   align-items: center;
   position: absolute;
   margin-left: 45px;
-  margin-top: 15px;
+  margin-top: 25px;
   padding: 10px;
   height: 15px;
   width: 15px;

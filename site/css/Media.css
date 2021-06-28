@@ -76,12 +76,6 @@
       margin-right: auto;
   }
 
-  #main #visit #page #social {
-    top: -30px !important;
-    position: relative;
-    left: 0;
-  }
-
   #main #xml {
     right: 0 !important;
     height: 100% !important;
@@ -173,10 +167,9 @@
   #main #xml .content,
   #main #top #arm #option,
   #main #xml .center #quick,
+  #main #visit #page #social,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
-  #main #top #arm #search #input .icon,
-  #main #visit #page #front .focus .icon,
   #main #visit #page #front .focus .button {
     display: none !important;
   }
