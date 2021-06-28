@@ -133,6 +133,40 @@
   cursor: pointer;
 }
 
+.content .filter {
+  margin-bottom: 10px;
+  align-items: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  flex-wrap: wrap;
+  cursor: pointer;
+  font-size: 9px;
+  display: flex;
+  height: 75px;
+  width: 257px;
+  z-index: -1;
+}
+
+.content .filter a {
+  color: var(--fill-color);
+  background-color: transparent;
+  position: relative;
+  font-size: 12px;
+}
+
+.content .filter img {
+  background-color: transparent;
+  border-radius: 36px;
+  position: relative;
+  margin: 0 auto;
+  padding: 1px;
+  margin: 10px;
+  height: 60px;
+  width: 60px;
+}
+
 .copy {
   color: var(--fill-color);
   pointer-events: auto;
@@ -204,40 +238,6 @@
   font-size: 10;
   width: 98%;
   left: 12px;
-}
-
-.filter {
-  margin-bottom: 10px;
-  align-items: center;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  flex-wrap: wrap;
-  cursor: pointer;
-  font-size: 9px;
-  display: flex;
-  height: 75px;
-  width: 257px;
-  z-index: -1;
-}
-
-.filter a {
-  color: var(--fill-color);
-  background-color: transparent;
-  position: relative;
-  font-size: 12px;
-}
-
-.filter img {
-  background-color: transparent;
-  border-radius: 36px;
-  position: relative;
-  margin: 0 auto;
-  padding: 1px;
-  margin: 10px;
-  height: 60px;
-  width: 60px;
 }
 
 .header {
@@ -350,7 +350,7 @@
 
 .share,
 .source,
-.url {
+.item .url {
   display: inline-block;
   position: relative;
   z-index: -2;

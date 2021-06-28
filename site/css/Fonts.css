@@ -347,6 +347,16 @@
   font-weight: 50;
 }
 
+.fa-tint {
+  position: relative;
+  font-weight: 50;
+  font-size: 10px;
+  float: right;
+  z-index: -1;
+  right: 9px;
+  top: 3px;
+}
+
 #main #top #arm .fa-sliders-h {
   font-family: "Font Awesome 5 Pro";
   content: "\f1de";

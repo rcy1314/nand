@@ -126,6 +126,7 @@
 
 #container #sidebar #content .min {
   margin: 10px;
+  width: 100%;
 }
 
 #container #sidebar #content .min input[type=text] {
