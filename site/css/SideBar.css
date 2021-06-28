@@ -10,6 +10,28 @@
   z-index: 12;
 }
 
+#container #sidebar #content #basic {
+  position: relative;
+  margin: 15px auto;
+  overflow: hidden;
+  margin-top: 0;
+  width: 280px;
+  bottom: 0;
+}
+
+#container #sidebar #content #basic input[type=text] {
+  background-color: var(--color-primary);
+  border: var(--border-color);
+  color: var(--fill-color);
+  position: relative;
+  overflow: hidden;
+  font-size: 12px;
+  margin: 0 auto;
+  display: block;
+  width: 270px;
+  padding: 5px;
+}
+
 #container #sidebar #content::-webkit-scrollbar {
   display: none;
 }
@@ -26,26 +48,96 @@
   top: 0;
 }
 
-#container #sidebar #content #basic {
-  position: relative;
-  margin: 15px auto;
+#container #sidebar #content .bg,
+#container #sidebar #content .exclude,
+#container #sidebar #content .fav,
+#container #sidebar #content .set,
+#container #sidebar #content .themes {
+  background-color: transparent !important;
+  color: var(--fill-color);
+  padding-bottom: 5px;
+  padding-left: 10px;
   overflow: hidden;
-  margin-top: 0;
-  width: 280px;
-  bottom: 0;
+  cursor: default;
+  font-size: 12px;
+  height: 31.5px;
+  width: 95%;
 }
 
-#container #sidebar #content #basic input[type=text] {
-  background-color: var(--color-primary);
+#container #sidebar #content .bg .adjust,
+#container #sidebar #content .themes .border,
+#container #sidebar #content .set .choose,
+#container #sidebar #content .fav .favorite,
+#container #sidebar #content .exclude .parse {
+  border-bottom: .3px solid transparent !important;
+  border-right: .3px solid transparent !important;
+  border-left: .3px solid transparent !important;
+  border-top: .3px solid transparent !important;
+  background-color: transparent !important;
   color: var(--fill-color);
-  border: var(--border-color);
-  position: relative;
+  padding-bottom: 9px;
+  padding-top: 9px;
   overflow: hidden;
   font-size: 12px;
-  margin: 0 auto;
-  display: block;
-  width: 270px;
+  height: 15px;
+  width: 100%;
+}
+
+#container #sidebar #content .bg .background,
+#container #sidebar #content .fav .feed,
+#container #sidebar #content .exclude .option,
+#container #sidebar #content .set .settings,
+#container #sidebar #content .themes .theme {
+  padding-left: 10px;
+  margin-top: 10px;
+  cursor: default;
   padding: 5px;
+}
+
+#container #sidebar #content .bg .background:hover:not(#url),
+#container #sidebar #content .fav .feed:hover,
+#container #sidebar #content .exclude .option:hover,
+#container #sidebar #content .set .settings:hover,
+#container #sidebar #content .theme:hover {
+  background-color: var(--hover-background-color) !important;
+}
+
+#container #sidebar #content .cat {
+  border-bottom: .3px solid transparent !important;
+  border-right: .3px solid transparent !important;
+  border-left: .3px solid transparent !important;
+  border-top: .3px solid transparent !important;
+  background-color: transparent !important;
+  color: var(--fill-color);
+  letter-spacing: .5px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+  overflow: hidden;
+  cursor: default;
+  font-size: 12px;
+  display: flex;
+  height: 15px;
+  width: 100%;
+}
+
+#container #sidebar #content .min {
+  margin: 10px;
+}
+
+#container #sidebar #content .min input[type=text] {
+  background-color: var(--color-primary);
+  border: var(--border-color);
+  color: var(--fill-color);
+  caret-color: transparent;
+  border-radius: 2px;
+  font-size: 12px;
+  outline: none;
+  height: 25px;
+  width: 100%;
 }
 
 #container #sidebar #content #url {
@@ -72,44 +164,6 @@
   width: 95%;
 }
 
-#container #sidebar #content .min {
-  margin: 10px;
-}
-
-#container #sidebar #content .min input[type=text] {
-  background-color: var(--color-primary);
-  border: var(--border-color);
-  color: var(--fill-color);
-  caret-color: transparent;
-  border-radius: 2px;
-  font-size: 12px;
-  outline: none;
-  height: 25px;
-  width: 100%;
-}
-
-#container #sidebar #content .cat {
-  border-bottom: .3px solid transparent !important;
-  border-right: .3px solid transparent !important;
-  border-left: .3px solid transparent !important;
-  border-top: .3px solid transparent !important;
-  background-color: transparent !important;
-  color: var(--fill-color);
-  letter-spacing: .5px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  position: relative;
-  text-align: center;
-  padding-top: 10px;
-  overflow: hidden;
-  cursor: default;
-  font-size: 12px;
-  display: flex;
-  height: 15px;
-  width: 100%;
-}
-
 #container #sidebar #content .sel {
   border-bottom: .3px solid transparent !important;
   border-right: .3px solid transparent !important;
@@ -122,58 +176,4 @@
   font-size: 12px;
   padding: 10px;
   height: 15px;
-}
-
-#container #sidebar #content .fav,
-#container #sidebar #content .set,
-#container #sidebar #content .themes,
-#container #sidebar #content .bg,
-#container #sidebar #content .exclude {
-  background-color: transparent !important;
-  color: var(--fill-color);
-  padding-bottom: 5px;
-  padding-left: 10px;
-  overflow: hidden;
-  cursor: default;
-  font-size: 12px;
-  height: 31.5px;
-  width: 95%;
-}
-
-#container #sidebar #content .fav .favorite,
-#container #sidebar #content .exclude .parse,
-#container #sidebar #content .set .choose,
-#container #sidebar #content .themes .border,
-#container #sidebar #content .bg .adjust {
-  border-bottom: .3px solid transparent !important;
-  border-right: .3px solid transparent !important;
-  border-left: .3px solid transparent !important;
-  border-top: .3px solid transparent !important;
-  background-color: transparent !important;
-  color: var(--fill-color);
-  padding-bottom: 9px;
-  padding-top: 9px;
-  overflow: hidden;
-  font-size: 12px;
-  height: 15px;
-  width: 100%;
-}
-
-#container #sidebar #content .fav .feed,
-#container #sidebar #content .exclude .option,
-#container #sidebar #content .set .settings,
-#container #sidebar #content .themes .theme,
-#container #sidebar #content .bg .background {
-  padding-left: 10px;
-  margin-top: 10px;
-  cursor: default;
-  padding: 5px;
-}
-
-#container #sidebar #content .fav .feed:hover,
-#container #sidebar #content .exclude .option:hover,
-#container #sidebar #content .set .settings:hover,
-#container #sidebar #content .theme:hover,
-#container #sidebar #content .bg .background:hover:not(#url) {
-  background-color: var(--hover-background-color) !important;
 }

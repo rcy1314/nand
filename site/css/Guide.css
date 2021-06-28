@@ -11,10 +11,46 @@
   top: 0;
 }
 
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .site,
+#container #guide .checkmark {
+  position: absolute;
+  cursor: pointer;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  margin: 5px;
+  stroke-miterlimit: 10;
+  z-index: 12;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+#container #guide .checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 29;
+  stroke-dashoffset: 29;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+#container #guide .checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .download,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .post,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture,
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .download {
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .site {
   color: var(--fill-color);
   background-color: transparent;
   cursor: pointer;
@@ -23,13 +59,12 @@
   border: none;
 }
 
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover,
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .download:hover,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .post:hover,
 #container #guide .sticky .wrap .header .courtesy .copy .attribute .picture:hover,
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .download:hover {
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .site:hover {
   background-color: var(--hover-background-color);
 }
-
 
 #container #guide .sticky {
   background-color: var(--color-primary);
@@ -38,6 +73,69 @@
   align-items: center;
   position: relative;
   display: block;
+}
+
+#container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+  float: right;
+}
+
+#container #guide .sticky .image {
+  background-color: var(--color-primary);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: flex;
+}
+
+#container #guide .sticky .header .courtesy a {
+  color: var(--fill-color);
+  background-color: transparent;
+}
+
+#container #guide .sticky .ago {
+  color: var(--fill-color);
+  position: absolute;
+  font-size: 10px;
+  width: 220px;
+  margin: 15px;
+  bottom: 0;
+}
+
+#container #guide .sticky .header .courtesy {
+  text-transform: capitalize;
+  align-items: center;
+  width: fit-content;
+  margin-top: 5px;
+  font-size: 10px;
+  display: flex;
+  height: 50px;
+  float: left;
+  width: 100%;
+  left: 0;
+}
+
+#container #guide .sticky .header {
+  background-color: var(--color-primary);
+  height: 60px;
+  width: 100%;
+}
+
+#container #guide .sticky .wrap .header .courtesy img {
+  border-radius: 24px;
+  padding: 10px;
+  left: 1.75px;
+  height: 24px;
+  width: 24px;
+}
+
+#container #guide .sticky .pub {
+  background-color: transparent;
+  height: calc(100% - 100px);
+  color: var(--fill-color);
+  position: relative;
+  padding-left: 14px;
+  font-size: 12px;
+  width: 190px;
 }
 
 #container #guide .sticky .src {
@@ -56,22 +154,15 @@
   margin: 0;
 }
 
-#container #guide .sticky .yt {
-  -webkit-overflow-scrolling: touch;
-  display: table-cell;
-  padding-bottom: 54.25%;
+#container #guide .url,
+#container #guide .share,
+#container #guide .source {
+  display: inline-block;
   position: relative;
-  bottom: 5px;
-  width: 100%;
-}
-
-#container #guide .sticky .yt iframe {
-  position: absolute;
-  border: none !important;
-  height: 100%;
-  width: 100% !important;
-  top: 5px;
-  left: 0;
+  z-index: -2;
+  width: 10px;
+  opacity: 0;
+  height: 0;
 }
 
 #container #guide .sticky #yt .views {
@@ -88,69 +179,6 @@
   width: 220px;
   height: 100%;
 }
-
-#container #guide .sticky .pub {
-  background-color: transparent;
-  height: calc(100% - 100px);
-  color: var(--fill-color);
-  position: relative;
-  padding-left: 14px;
-  font-size: 12px;
-  width: 190px;
-}
-
-#container #guide .sticky .ago {
-  color: var(--fill-color);
-  position: absolute;
-  font-size: 10px;
-  width: 220px;
-  margin: 15px;
-  bottom: 0;
-}
-
-#container #guide .sticky .header {
-  background-color: var(--color-primary);
-  height: 60px;
-  width: 100%;
-}
-
-#container #guide .sticky .header .courtesy {
-  text-transform: capitalize;
-  align-items: center;
-  width: fit-content;
-  margin-top: 5px;
-  font-size: 10px;
-  display: flex;
-  height: 50px;
-  float: left;
-  width: 100%;
-  left: 0;
-}
-
-#container #guide .sticky .wrap .header .courtesy img {
-  border-radius: 24px;
-  padding: 10px;
-  left: 1.75px;
-  height: 24px;
-  width: 24px;
-}
-
-#container #guide .sticky .header .courtesy a {
-  color: var(--fill-color);
-  background-color: transparent;
-}
-
-#container #guide .url,
-#container #guide .share,
-#container #guide .source {
-  display: inline-block;
-  position: relative;
-  z-index: -2;
-  width: 10px;
-  opacity: 0;
-  height: 0;
-}
-
 
 #container #guide .sticky .wrap .header .courtesy .copy {
   color: var(--fill-color);
@@ -192,50 +220,20 @@
   background-color: var(--hover-background-color);
 }
 
-#container #guide .sticky .wrap .header .courtesy .copy .attribute .fa {
-  float: right;
+#container #guide .sticky .yt {
+  -webkit-overflow-scrolling: touch;
+  display: table-cell;
+  padding-bottom: 54.25%;
+  position: relative;
+  bottom: 5px;
+  width: 100%;
 }
 
-#container #guide .sticky .image {
-  background-color: var(--color-primary);
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  display: flex;
-}
-
-#container #guide .checkmark {
+#container #guide .sticky .yt iframe {
   position: absolute;
-  cursor: pointer;
-  padding: 10px;
-  top: 0;
-  right: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: block;
-  stroke-width: 2;
-  stroke: #fff;
-  margin: 5px;
-  stroke-miterlimit: 10;
-  z-index: 12;
-  box-shadow: inset 0px 0px 0px #7ac142;
-  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-}
-
-#container #guide .checkmark__check {
-  transform-origin: 50% 50%;
-  stroke-dasharray: 29;
-  stroke-dashoffset: 29;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-}
-
-#container #guide .checkmark__circle {
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-  stroke: #7ac142;
-  fill: none;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  border: none !important;
+  height: 100%;
+  width: 100% !important;
+  top: 5px;
+  left: 0;
 }

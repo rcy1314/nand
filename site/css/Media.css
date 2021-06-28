@@ -1,13 +1,15 @@
 @media screen and (max-height: 500px) {
 
-  #main #page,
-  #main #visit {
-    background-color: transparent !important;
-    height: 100%;
-    width: 100%;
+  .content {
+    margin-left: 15px;
+    top: 0;
   }
 
-  #main #visit #page #front .focus {
+  #feed {
+    width: 640px;
+  }
+
+  .focus {
     border-radius: 8px;
     margin: 0 auto;
     width: 300px;
@@ -16,32 +18,45 @@
     top: -10px;
   }
 
-  #main #visit #page #quick {
+  .info {
+    display: none;
+  }
+
+  #page,
+  #visit {
+    background-color: transparent !important;
+    height: 100%;
+    width: 100%;
+  }
+
+  #quick {
     width: 680px;
     left: 40px;
   }
 
-  #main #visit #page #quick #feed {
-    width: 640px;
-  }
-
-  #main #xml {
+  #xml {
     width: 340px;
     left: 45px;
-  }
-
-  #main #xml .content {
-    margin-left: 15px;
-    top: 0;
-  }
-
-  #main #xml .content .status .construct .info {
-    display: none;
   }
 
 }
 
 @media screen and (max-width: 426px) {
+
+  #just,
+  #toggle,
+  .expand .des,
+  .btn .flip-front,
+  #main #xml .content,
+  #main #top #arm #option,
+  #main #xml .center #quick,
+  #main #visit #page #social,
+  #main #visit #page #quick .left,
+  #main #visit #page #quick .right,
+  #main #visit #page #front .focus .button,
+  #main #visit #page #options .fa-camera-retro {
+    display: none !important;
+  }
 
   .dots {
     animation: move 3s infinite cubic-bezier(.1,.75,1,.3) !important;
@@ -59,54 +74,57 @@
     animation: move 3s 600ms infinite cubic-bezier(.1,.75,1,.3) !important;
   }
 
-  .sideItem {
-    display: inline-table;
-      height: 540px;
-      margin-right: 50px;
-      width: 320px !important;
+  #main,
+  #xml {
+    height: 100% !important;
+    width: 100% !important
+    right: 0 !important;
   }
 
-  #main #visit #page #options {
+  #options {
       display: inline-block;
       position: absolute;
-      top: 95px;
-      left: 10px;
-      right: 0;
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
+      left: 10px;
+      top: 95px;
+      right: 0;
   }
 
-  #main #xml {
-    right: 0 !important;
-    height: 100% !important;
+  .btn .flip-back {
+    transform: rotateX(0deg) translateZ(25px) !important;
   }
 
-  #main #xml .center {
+  .center {
     position: relative !important;
     margin: 0 auto !important;
     width: 100% !important;
     left: -60px !important;
   }
 
-  #main #group .air .populate:hover,
-  #main #group .result .populate:hover {
-    background-color: none !important;
-  }
-
   .expand {
     margin-left: 0 !important;
-  }
-
-  .expand .title {
-    flex-basis: 60% !important;
   }
 
   .expand .display {
     width: 100% !important;
   }
 
-  .btn .flip-back {
-    transform: rotateX(0deg) translateZ(25px) !important;
+  .expand .title {
+    flex-basis: 60% !important;
+  }
+
+  .img,
+  .image,
+  .pending {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .listing {
+    height: 264px !important;
+    width: 280px !important;
+    top: 0 !important;
   }
 
   .populate {
@@ -114,31 +132,30 @@
     margin: 1em;
   }
 
-  #main #xml .center .item {
+  .populate:hover {
+    background-color: none !important;
+  }
+
+  .item {
     margin-bottom: 55px !important;
     box-shadow: none !important;
-    width: 100%;
     border: none;
-  }
-
-  #main
-  #main #xml {
-    width: 100% !important
-  }
-
-  #main #visit #page #just {
-    top: 110px !important;
-  }
-
-  #main #visit #page #quick {
-    background-color: transparent !important;
-    position: absolute;
-    height: 400px;
     width: 100%;
-    top: 62px;
   }
 
-  #main #visit #page #quick #feed {
+  .sideItem {
+    width: 320px !important;
+    display: inline-table;
+      margin-right: 50px;
+      height: 540px;
+  }
+
+  #bottom {
+    margin-bottom: 25px !important;
+    margin-top: 25px !important;
+  }
+
+  #feed {
     justify-content: center;
     display: inline-flex;
     position: absolute;
@@ -150,33 +167,31 @@
     left: 0;
   }
 
-  #main #visit #page #front #label {
+  #just {
+    top: 110px !important;
+  }
+
+  #label {
     position: absolute;
+    margin-right: auto;
+    margin-left: auto;
     margin: auto;
     top: 30px;
-    left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    left: 0;
   }
 
-  #just,
-  #toggle,
-  .expand .des,
-  .btn .flip-front,
-  #main #xml .content,
-  #main #top #arm #option,
-  #main #xml .center #quick,
-  #main #visit #page #social,
-  #main #visit #page #quick .left,
-  #main #visit #page #quick .right,
-  #main #visit #page #front .focus .button,
-    #main #visit #page #options .fa-camera-retro {
-    display: none !important;
+  #group {
+    position: absolute !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 95vw !important;
+    right: 0 !important;
+    left: 0 !important;
   }
 
-  #main #page,
-  #main #visit {
+  #page,
+  #visit {
     background-color: transparent !important;
     height: 100%;
     width: 100%;
@@ -189,25 +204,13 @@
     width: 100vw !important;
   }
 
-  #main #xml {
-    background-color: transparent !important;
+  #match {
+    height: 264px;
+    width: 280px;
+    top: 25px;
   }
 
-
-  #guide .sticky .img,
-  #main #xml .center .item .img,
-  #main #xml .center .item .image,
-  #main #xml .center .item .pending {
-    width: 100% !important;
-    margin: 0 !important;
-  }
-
-  #main #xml .center #bottom {
-    margin-bottom: 25px !important;
-    margin-top: 25px !important;
-  }
-
-  #main #option {
+  #option {
     width: calc(100% - 20px);
     top: calc(100% - 50px);
     position: fixed;
@@ -216,36 +219,22 @@
     right: 11px;
   }
 
-  #main #group {
-    position: absolute !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-    width: 95vw !important;
-    right: 0 !important;
-    left: 0 !important;
+  #quick {
+    background-color: transparent !important;
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    top: 62px;
   }
 
-  #main #top #arm #search #match {
-    height: 264px;
-    width: 280px;
-    top: 25px;
-  }
-
-  #main #visit #page #front #first {
+  #first {
     background-color: transparent !important;
     height: 264px;
     width: 280px;
     top: 2px;
   }
 
-  #main #visit #page #front #first .listing,
-  #main #top #arm #search #match .listing {
-    height: 264px !important;
-    width: 280px !important;
-    top: 0 !important;
-  }
-
-  #main #visit #page #front .focus {
+  .focus {
     border-radius: 8px;
     margin: 0 auto;
     width: 280px;
@@ -253,7 +242,7 @@
     top: -40px;
   }
 
-  #main #visit #page #front .focus input[type=text] {
+  .focus input[type=text] {
     border-radius: 8px;
     padding-left: 35px;
     width: 280px;
@@ -265,15 +254,14 @@
     border-top: none !important;
   }
 
+  #guide .sticky #yt .wrap .ago {
+    display: none !important;
+  }
+
   #guide .sticky .header {
     border-right: var(--border-color) !important;
     border-left: var(--border-color) !important;
     border-top: var(--border-color) !important;
-  }
-
-  #guide .sticky .src {
-    width: 100vw !important;
-    display: block;
   }
 
   #guide .sticky .img
@@ -283,48 +271,113 @@
     margin: 0 !important;
   }
 
-  #guide .sticky #yt .wrap {
+  #guide .sticky .src {
+    width: 100vw !important;
+    display: block;
+  }
+
+  #yt .wrap {
     display: none !important;
     width: 100% !important;
   }
 
-  #guide .sticky #yt .wrap .header {
+  .wrap .header {
     display: none !important;
   }
 
-  #guide .sticky #yt .wrap .pub {
+  .wrap .pub {
     display: none !important;
   }
 
-  #guide .sticky #yt .wrap .ago {
-    display: none !important;
-  }
-
-  #guide .yt {
+  .yt {
     display: block !important;
     width: 100% !important;
   }
 
-  #guide .yt .src {
+  .yt .src {
     height: 22vh !important;
+  }
+
+  #xml {
+    background-color: transparent !important;
   }
 
 }
 
 @media (min-width: 426px) and (max-width: 767px) {
 
+  .content {
+    display: none;
+  }
+
+  .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 400px;
+    padding: 0;
+    top: -25px;
+    right: 0;
+  }
+
+  .focus input[type=text] {
+    border-radius: 8px;
+    padding-left: 35px;
+    width: 340px;
+    top: -2px;
+  }
+
+  .focus .button {
+    top: -1px;
+  }
+
+  .listing {
+    height: 264px !important;
+    width: 405px !important;
+    top: 0 !important;
+  }
+
   .sideChannel {
     width: 400 !important;
   }
 
-  #main #visit #page #options {
+  #feed {
+    width: 480px;
+  }
+
+  #first {
+    background-color: transparent !important;
+    height: 264px;
+    width: 405px;
+    top: 35px;
+  }
+
+  #match {
+    height: 264px;
+    width: 415px;
+    top: 25px;
+  }
+
+  #option {
+    width: calc(100% - 20px);
+    top: calc(100% - 50px);
+    position: fixed;
+    display: flex;
+    height: 50px;
+    right: 11px;
+  }
+
+  #options {
     display: inline-block;
     position: absolute;
     right: 50px;
     top: 15px;
   }
 
-  #main #xml {
+  #social {
+    top: 15px;
+  }
+
+  #xml {
     height: fit-content;
     position: absolute;
     min-height: 100%;
@@ -335,74 +388,26 @@
     top: 0;
   }
 
-  #main #xml .content {
-    display: none;
-  }
-
-  #main #visit #page #front .focus {
-    border-radius: 8px;
-    margin: 0 auto;
-    width: 400px;
-    padding: 0;
-    top: -25px;
-    right: 0;
-  }
-
-  #main #visit #page #front .focus input[type=text] {
-    border-radius: 8px;
-    padding-left: 35px;
-    width: 340px;
-    top: -2px;
-  }
-
-  #main #visit #page #front .focus .button {
-    top: -1px;
-  }
-
-  #main #visit #page #social {
-    top: 15px;
-  }
-
-  #main #visit #page #front .focus .icon,
-  #top #arm #search #input .icon .fa-search {
-  }
-
-  #main #visit #page #quick #feed {
-    width: 480px;
-  }
-
-  #main #top #arm #search #match {
-    height: 264px;
-    width: 415px;
-    top: 25px;
-  }
-
-  #main #visit #page #front #first {
-    background-color: transparent !important;
-    height: 264px;
-    width: 405px;
-    top: 35px;
-  }
-
-  #main #visit #page #front #first .listing,
-  #main #top #arm #search #match .listing {
-    height: 264px !important;
-    width: 405px !important;
-    top: 0 !important;
-  }
-
-  #main #option {
-    width: calc(100% - 20px);
-    top: calc(100% - 50px);
-    position: fixed;
-    display: flex;
-    height: 50px;
-    right: 11px;
-  }
-
 }
 
 @media screen and (min-width: 768px) {
+
+  .asset,
+  .translation {
+    padding: 10px;
+    width: 82px;
+  }
+
+  .center {
+	  margin-right: 30px;
+    width: 420px;
+    right: 100px;
+  }
+
+  .content {
+	  display: none;
+    right: 50px;
+  }
 
     .dots {
       animation: move 3s infinite cubic-bezier(.1,.9,1,.1) !important;
@@ -425,48 +430,28 @@
     width: 720px !important;
   }
 
+  .header {
+    position: relative !important;
+    top: 0 !important;
+  }
+
   .minimum {
     margin: 0 auto !important;
     width: 760px !important;
   }
 
-	#main #visit #page {
-		top: 0;
-	}
-
-  #main #visit #page #quick #feed .asset,
-  #main #visit #page #quick #feed .translation {
-    padding: 10px;
-    width: 82px;
-  }
-
-  #main #top #arm #option {
-    display: block;
-  }
-
-  #main #top #arm {
+  #arm {
     width: 100%;
   }
+
+	#page {
+		top: 0;
+	}
 
   #main #option {
     position: absolute;
     display: none;
     right: -75px;
-  }
-
-  #main #top #arm #search #home {
-	  left: 10px;
-  }
-
-  #main #xml .center {
-	  margin-right: 30px;
-    width: 420px;
-    right: 100px;
-  }
-
-  #main #xml .content {
-	  display: none;
-    right: 50px;
   }
 
   #main #visit #page #quick {
@@ -475,32 +460,35 @@
     right: 0;
   }
 
-  #guide .sticky .header {
-    position: relative !important;
-    top: 0 !important;
-  }
-
-
 }
 
 @media screen and (min-width: 769px) {
 
-  #main #visit #page #just {
-    margin-left: 15px !important;
-  }
-
-  #main #visit #page #quick #feed .asset,
-  #main #visit #page #quick #feed .translation {
+  .asset,
+  .translation {
     padding: 10px;
     width: 98px;
   }
 
-  #main #option {
-    display: none;
+  .center {
+    width: 420px;
+	  left: -170;
   }
 
-  #main #top #arm {
+  .content {
+	  display: inline-block;
+  }
+
+  #arm {
     width: 100%;
+  }
+
+  #just {
+    margin-left: 15px !important;
+  }
+
+  #main #option {
+    display: none;
   }
 
   #main #top #arm #option {
@@ -509,97 +497,103 @@
     right: 0px;
   }
 
-  #main #xml .center {
-    width: 420px;
-	  left: -170;
+  #show {
+    left: 7px;
   }
 
-  #main #xml .content {
-	  display: inline-block;
-  }
-
-  #main #visit #page #quick {
+  #quick {
 	  width: 715px;
 	  left: -15px;
   }
 
-  #main #visit #page #front #label #show {
-    left: 7px;
-  }
 }
 
 @media screen and (min-width: 1024px) {
 
-  .expand {
-    margin: 0 auto !important;
-    width: 990px !important;
-  }
-
-  .minimum {
-    margin: 0 auto !important;
-    width: 990px !important;
-  }
-
-  #main #visit #page #options {
-    position: absolute;
-    right: 145px;
-  }
-
-  #main #visit #page #social {
-    position: absolute;
-    left: 145px;
-  }
-
-  #main #top #arm {
-    width: 670px;
-  }
-
-  #main #top #arm #search #input {
-    margin: 0 auto;
-  }
-
-  #main #top #arm #option {
-    right: -30px;
-  }
-
-  #main #xml .center {
-    width: 410px;
-    right: 160px;
-  }
-
-  #main #group .air .populate,
-  #main #group .result .populate {
-    height: 140px;
-    width: 180px;
-    margin: 2em;
-  }
-
-  #main #group .air,
-  #main #group .result {
+  .air,
+  .result {
     position: relative;
     display: block;
     margin: 0 auto;
     width: 90%;
   }
 
-  #main #visit #page #front {
+  .center {
+    width: 410px;
+    right: 160px;
+  }
+
+  .content {
+    right: 108px;
+  }
+
+  .expand {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  .populate {
+    height: 140px;
+    width: 180px;
+    margin: 2em;
+  }
+
+  #arm {
+    width: 670px;
+  }
+
+  #front {
     width: 940px;
   }
 
-  #main #visit #page #quick {
+  #input {
+    margin: 0 auto;
+  }
+
+  #options {
+    position: absolute;
+    right: 145px;
+  }
+
+  #social {
+    position: absolute;
+    left: 145px;
+  }
+
+  #main #top #arm #option {
+    right: -30px;
+  }
+
+  #quick {
     position: relative;
     width: 848px;
     top: 15px;
     left: 0;
   }
 
-  #main #xml .content {
-    right: 108px;
-  }
-
 }
 
 @media screen and (min-width: 1440px) {
+
+  .air,
+  .result {
+    width: 1080px;
+  }
+
+  .center {
+    margin-right: 115px;
+    width: 600px;
+    left: -160px;
+  }
+
+  .content {
+    right: 265px;
+  }
 
   .expand {
     width: 100% !important;
@@ -609,34 +603,16 @@
     width: 100% !important;
   }
 
-  #main #top #arm {
+  #arm {
     width: 940px;
-  }
-
-  #main #top #arm .fa-long-arrow-alt-left {
-    right: 15px;
-  }
-
-  #main #group .air,
-  #main #group .result {
-    width: 1080px;
-  }
-
-  #main #xml .center {
-    margin-right: 115px;
-    width: 600px;
-    left: -160px;
-  }
-
-  #main #xml .content {
-    right: 265px;
   }
 
   @media screen and (min-width: 2400px) {
 
-    #main #xml .content {
+    .content {
       right: 625px;
     }
 
   }
+
 }
