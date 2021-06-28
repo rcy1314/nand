@@ -74,6 +74,11 @@
 `heroku container:push web --app YOUR_APP_NAME`<br>
 `heroku container:release web --app YOUR_APP_NAME`<br>
 
+### Notice
+
+  This project makes requests to external resources<br>
+  including a cors-proxy, nsfw api, and any asset(s)
+
 Want to Contribute?
 ----
 
