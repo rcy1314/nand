@@ -465,12 +465,12 @@ document.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`fa-font-awesome-alt`)
     ) {
-      fa5.blank();
+      fa515.blank();
     }
     if (
       evt.target.classList.contains(`fa-font-awesome-flag`)
     ) {
-      fa4.blank();
+      fa5.blank();
     }
     if (
       evt.target.classList.contains(`fa-git`)
