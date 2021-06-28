@@ -170,7 +170,8 @@
   #main #visit #page #social,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
-  #main #visit #page #front .focus .button {
+  #main #visit #page #front .focus .button,
+    #main #visit #page #options .fa-camera-retro {
     display: none !important;
   }
 

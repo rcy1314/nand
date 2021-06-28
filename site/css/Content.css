@@ -247,7 +247,7 @@ html body,
   font-weight: 500;
   cursor: pointer;
   font-size: 11px;
-  display: flex;
+  display: none;
   height: 35px;
   width: 180px;
   bottom: 45px;
