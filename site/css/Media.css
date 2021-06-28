@@ -632,4 +632,11 @@
     right: 265px;
   }
 
+  @media screen and (min-width: 2400px) {
+
+    #main #xml .content {
+      right: 625px;
+    }
+
+  }
 }
