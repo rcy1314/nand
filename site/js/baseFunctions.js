@@ -42,7 +42,6 @@ let handleGuide = function () {
 
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
-  _feed.append(translationBuild(translations[0]));
     for (var i = 1; i <= menu.length - 1; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]

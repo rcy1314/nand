@@ -1,4 +1,8 @@
 window.onload = function () {
+
+  _feed.append(translationBuild(translations[0]));
+  quickFeedAsset(5);
+  quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
     appendSideBarLists(`#content`, `cat`, translations);
   appendSideBarLists(`#content`, `sel`, selections);
@@ -17,11 +21,6 @@ window.onload = function () {
   content.append(basicFormBuild());
   if (sideBarLock == true) content.append(sideBarThemeBuild(`fa-lock`))
   else if (sideBarLock == false) content.append(sideBarThemeBuild(`fa-unlock`))
-
-  quickFeedDisplay(quickFeeds);
-  if (window.clientWidth <= 425 || quickFeedsTranslations == true)
-    quickFeedAsset(7);
-  else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
   if (window.clientWidth <= 425) expand = false;
 
