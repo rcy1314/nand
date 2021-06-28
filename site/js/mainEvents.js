@@ -389,6 +389,11 @@ document.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     if (
+      evt.target.getAttribute(`aria-item`) == `Assets`
+    ) {
+      populateAssets();
+    }
+    if (
       evt.target.classList.contains(`notify`)
     ) {
       _notify.classList.remove(`notify`);
@@ -670,7 +675,10 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
     }
-    if (evt.target.classList.contains(`translation`)) {
+    if (
+      evt.target.classList.contains(`translation`) &&
+      evt.target.getAttribute(`aria-item`) != `Assets`
+    ) {
       id = 0;
       first = true;
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);

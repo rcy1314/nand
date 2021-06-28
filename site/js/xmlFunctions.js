@@ -743,7 +743,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                         }
                       };
                     }
-                  }
                   if (!src.match(/4cdn/g)) request.send();
                   else {
                     xmlImageDimensions(menuObject, pubIndex, newImg)
@@ -785,7 +784,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     } else {
                       itemPending.remove();
                       itemImage.remove();
-                    }
                   };
                 }
               }
@@ -862,8 +860,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         }
       };
     };
-  }
-};
 
 var xmlTitleParsing = function (xhr) {
   if (xhr.getElementsByTagName(`title`)[0].childNodes[1])

@@ -251,6 +251,72 @@ let progressBackDrop = function (done) {
   if (showSplash == true) _check.style.display = `none`;
 };
 
+let populateAssets = function () {
+  let media;
+  _sb.style.display = `none`;
+  _toggle.style.display = `none`
+  let adj = randomizeAssets(menu);
+  location.href.split(`?`)[0].state();
+  if (showSplash === true) _check.style.display = `block`;
+  if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
+  let result = document.querySelector(`.result`);
+  if (id && id != 0 && !location.href.match(`\\?q=`)) {
+    if (menu[id].media == true)
+      media = `<div class='media' style='display:none'>Images</div>`;
+    else media = `<div class='blank'></div>`;
+    result.append(
+      categoryBuild(
+        menu[id].id.match(/[^\/]+$/g),
+        menu.indexOf(menu[id]),
+        menu[id].image.image(),
+        menu[id].hash,
+        menu[id].description,
+        media
+      )
+    );
+  }
+  for (let i = 1; i <= adj.length - 1; i++) {
+    if (adj[i].media == true)
+      media = `<div class='media' style='display:none'>Images</div>`;
+    else media = `<div class='blank'></div>`;
+    if (onlyImages == true) {
+      if (
+        id != menu.indexOf(adj[i]) &&
+        adj[i].media == true
+      ) {
+        result.append(
+          categoryBuild(
+            adj[i].id.match(/[^\/]+$/g),
+            menu.indexOf(adj[i]),
+            adj[i].image.image(),
+            adj[i].hash,
+            adj[i].description,
+            media
+          )
+        );
+      }
+    } else if (onlyImages == false) {
+      if (id != menu.indexOf(adj[i])) {
+        result.append(
+          categoryBuild(
+            adj[i].id.match(/[^\/]+$/g),
+            adj.indexOf(adj[i]),
+            adj[i].image.image(),
+            adj[i].hash,
+            adj[i].description,
+            media
+          )
+        );
+      }
+    }
+  }
+  id = 0;
+  displayDescription(showDescription);
+  unloading();
+  main.setAttribute(`tabindex`, -1);
+  main.focus();
+};
+
 let populateCategoryGroup = function (translation) {
   let media;
   _sb.style.display = `none`;

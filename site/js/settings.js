@@ -683,6 +683,7 @@ const api = `https://acktic-github-io-api.herokuapp.com/?url=`;
 */
 
 const translations = [
+  `Assets`,
   `Reddit`,
   `News`,
   `Media`,
