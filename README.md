@@ -82,15 +82,15 @@ Create Themes!<br>
 Cleanup Code!<br>
 File Issues!<br>
 
-### Notice
-
-  This project makes requests to external resources<br>
-  including a cors-proxy, nsfw api, and any asset(s)
-
 Copyright Notice
 ----
 
 <em>Images and information retrieved and or displayed in project<br> are not owned by the developers, and are only non - consent</em>
+
+### Notice
+
+  This project makes requests to external resources<br>
+  including a cors-proxy, nsfw api, and any asset(s)
 
 License
 ----
