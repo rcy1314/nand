@@ -782,7 +782,7 @@ const settings = [
   { name: `Dots`, class: `Dots` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Read Previous`, class: `readPrevious` },
-  { name: `Images`, class: `onlyImages` },
+  { name: `Only Images`, class: `onlyImages` },
   { name: `Feed Images`, class: `feedImages` },
   { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
