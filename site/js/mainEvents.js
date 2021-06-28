@@ -392,6 +392,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`notify`)
     ) {
       _notify.classList.remove(`notify`);
+      _notify.style.display = `none`;
     }
     if (
       event.target.classList.contains(`fa-camera-retro`)
