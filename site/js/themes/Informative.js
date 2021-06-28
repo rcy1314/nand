@@ -28,9 +28,4 @@ var Informative = function () {
     `--borderless-color`,
     `rgba(220, 220, 220, .6)`
   );
-  document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/e453ae624e3d5e58b9890a998ec441b9.jpg`)
-    backgroundImage[0].path = `https://raw.githubusercontent.com/acktic/.dotfiles/main/e453ae624e3d5e58b9890a998ec441b9.jpg`
-  document.querySelector(`#${backgroundImage[0].element}`)
-    .style.backgroundImage = `url(${backgroundImage[0].path})`
 };
