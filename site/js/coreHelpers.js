@@ -55,6 +55,7 @@ var truncate = function (i, n, useWordBoundary) {
 };
 
 var randomizeAssets = function (array) {
+  let adjusted = [];
   // Fisher-Yates (aka Knuth) Shuffle
   var currentIndex = array.length,  randomIndex;
 
@@ -66,11 +67,13 @@ var randomizeAssets = function (array) {
     currentIndex--;
 
     // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+    //[array[currentIndex], array[randomIndex]] = [
+    //array[randomIndex], array[currentIndex]];
+
+    adjusted.push(array[randomIndex])
   }
 
-  return array;
+  return adjusted;
 }
 
 var anyRandomMenuObject = function () {
