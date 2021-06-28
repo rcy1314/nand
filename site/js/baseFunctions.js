@@ -312,6 +312,7 @@ let populateAssets = function () {
   }
   id = 0;
   displayDescription(showDescription);
+  topMenuBarDisplay(topBar);
   unloading();
   main.setAttribute(`tabindex`, -1);
   main.focus();
