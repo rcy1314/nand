@@ -58,7 +58,7 @@
 
 ### Optional
 
-<em>presuming `git`, `heroku-cli`, `npm` are installed
+<em>presuming `git`, `heroku-cli`, `npm` are installed</em>
 
 <em>deploy your own cors-anywhere on heroku</em><br>
 `git clone https://github.com/Rob--W/cors-anywhere.git`<br>
@@ -74,11 +74,6 @@
 `heroku container:push web --app YOUR_APP_NAME`<br>
 `heroku container:release web --app YOUR_APP_NAME`<br>
 
-### Notice
-
-  This project makes requests to external resources<br>
-  including a cors-proxy, nsfw api, and any asset(s)
-
 Want to Contribute?
 ----
 
@@ -86,6 +81,11 @@ Add some Assets!<br>
 Create Themes!<br>
 Cleanup Code!<br>
 File Issues!<br>
+
+### Notice
+
+  This project makes requests to external resources<br>
+  including a cors-proxy, nsfw api, and any asset(s)
 
 Copyright Notice
 ----
