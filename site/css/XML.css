@@ -263,6 +263,7 @@
 
 .img {
   display: none;
+  height: auto;
   width: 100%;
 }
 
