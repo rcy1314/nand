@@ -9,13 +9,11 @@
   font-variant: all-small-caps;
 }
 
-#main #xml .center .item .header .courtesy .copy .attribute .fa,
-#guide .sticky .wrap .header .courtesy .copy .attribute .fa {
+.attribute .fa {
   float: right;
 }
 
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-at,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-at {
+.attribute .site .fa-at {
   background-color: transparent !important;
   font-family: "Font Awesome 5 Pro";
   content: "\f1fa";
@@ -23,8 +21,7 @@
   padding: 0;
 }
 
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-camera,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-camera {
+.attribute .site .fa-camera {
   background-color: transparent !important;
   font-family: "Font Awesome 5 Pro";
   content: "\f030";
@@ -32,8 +29,7 @@
   padding: 0;
 }
 
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-copy,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-copy {
+.attribute .site .fa-copy {
   background-color: transparent !important;
   font-family: "Font Awesome 5 Pro";
   content: "\f0c5";
@@ -41,8 +37,7 @@
   padding: 0;
 }
 
-#guide .sticky .wrap .header .courtesy .copy .attribute .site .fa-share,
-#main #xml .center .item .header .courtesy .copy .attribute .site .fa-share {
+.attribute .site .fa-share {
   background-color: transparent !important;
   font-family: "Font Awesome 5 Pro";
   content: "\f064";
@@ -50,7 +45,7 @@
   padding: 0;
 }
 
-#main #visit #page #options .fa,
+#options .fa,
 .fa-amazon,
 .fa-facebook-f,
 .fa-font-awesome-alt,
@@ -70,7 +65,7 @@
   margin: 7px;
 }
 
-#main #visit #page #options .fa:hover,
+#options .fa:hover,
 .fa-font-awesome-alt:hover,
 .fa-font-awesome-flag:hover,
 .fa-git:hover,
@@ -87,21 +82,21 @@
   transform: scale(1.25);
 }
 
-#sidebar #content .fa-angle-double-up,
-#sidebar #content .fa-book-open,
-#sidebar #content .fa-certificate,
-#sidebar #content .fa-cloud,
-#sidebar #content .fa-code,
-#sidebar #content .fa-crop-alt,
-#sidebar #content .fa-digital-tachograph,
-#sidebar #content .fa-download,
-#sidebar #content .fa-expand,
-#sidebar #content .fa-info,
-#sidebar #content .fa-layer-group,
-#sidebar #content .fa-paint-brush,
-#sidebar #content .fa-splotch,
-#sidebar #content .fa-terminal,
-#sidebar #content .fa-user {
+.fa-angle-double-up,
+.fa-book-open,
+.fa-certificate,
+.fa-cloud,
+.fa-code,
+.fa-crop-alt,
+.fa-digital-tachograph,
+.fa-download,
+.fa-expand,
+.fa-info,
+.fa-layer-group,
+.fa-paint-brush,
+.fa-splotch,
+.fa-terminal,
+.fa-user {
   margin-top: -18px !important;
   color: var(--fill-color);
   position: relative;
@@ -114,12 +109,12 @@
   right: 1px;
 }
 
-#sidebar #content .fa-chart-pie,
-#sidebar #content .fa-exclamation-circle,
+.fa-chart-pie,
+.fa-exclamation-circle,
 #sidebar #content .fa-home,
-#sidebar #content .fa-infinity,
-#sidebar #content .fa-redo,
-#sidebar #content .fa-tablet-alt {
+.fa-infinity,
+.fa-redo,
+.fa-tablet-alt {
   margin-top: -22px !important;
   color: var(--fill-color);
   position: relative;
@@ -143,7 +138,7 @@
   font-size: 17px;
 }
 
-#sidebar #content .bg .fa-adjust {
+.fa-adjust {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -153,7 +148,7 @@
   top: 3px;
 }
 
-#sidebar #content .set .fa-cube {
+.fa-cube {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -163,7 +158,7 @@
   top: 3px;
 }
 
-#sidebar #content .fav .fa-hashtag {
+.fa-hashtag {
   position: relative;
   font-weight: 50;
   font-size: 10px;
@@ -181,49 +176,45 @@
   display: none;
 }
 
-#sidebar #content .fa-home,
-#main #top #arm #option .fa-home,
-#main #option .fa-home {
+.fa-home {
   font-family: "Font Awesome 5 Pro";
   content: "\f015";
   font-weight: 50;
 }
 
-#main #option .fa-expand-alt {
+.fa-expand-alt {
   font-family: "Font Awesome 5 Pro";
   content: "\f424";
   font-weight: 50;
 }
 
-#main #option .fa-info,
-#sidebar #content .fa-info {
+.fa-info {
   font-family: "Font Awesome 5 Pro";
   content: "\f129";
   font-weight: 50;
   left: 3px;
 }
 
-#main #visit #page #front .focus .icon,
-#top #arm #search #input .icon .fa-search,
-#main #visit #page #front .focus .button .fa-search {
+.fa-search,
+.focus .icon {
   font-family: "Font Awesome 5 Pro";
   content: "\f002";
   font-weight: 50;
 }
 
-#sidebar #content .fa-adjust {
+.fa-adjust {
   font-family: "Font Awesome 5 Pro";
   content: "\f042";
   font-weight: 50;
 }
 
-#main #page .fa-angle-up {
+.fa-angle-up {
   font-family: "Font Awesome 5 Pro";
   content: "\f106";
   font-weight: 50;
 }
 
-#sidebar #content .fa-braille {
+.fa-braille {
   font-family: "Font Awesome 5 Pro";
   position: relative;
   content: "\f2a1";
@@ -236,27 +227,25 @@
   top: 3px;
 }
 
-#main #option .fa-camera-retro {
+.fa-camera-retro {
   font-family: "Font Awesome 5 Pro";
   content: "\f083";
   font-weight: 50;
 }
 
-#sidebar #content .fa-chart-pie {
+.fa-chart-pie {
   font-family: "Font Awesome 5 Pro";
   content: "\f200";
   font-weight: 50;
 }
 
-#main #option .fa-code,
-#sidebar #content .fa-code {
+.fa-code {
   font-family: "Font Awesome 5 Pro";
   content: "\f121";
   font-weight: 50;
 }
 
-#main #option .fa-angle-double-up,
-#sidebar #content .fa-angle-double-up {
+.fa-angle-double-up {
   font-family: "Font Awesome 5 Pro";
   font-size: 16px !important;
   left: 1px !important;
@@ -264,8 +253,7 @@
   font-weight: 50;
 }
 
-#guide .sticky .header .fa-ellipsis-h,
-#main #xml .center .channel .item .header .fa-ellipsis-h {
+.fa-ellipsis-h {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f141";
@@ -273,8 +261,7 @@
   left: -6px;
 }
 
-#guide .sticky .header .fa-ellipsis-v,
-#main #xml .center .channel .item .header .fa-ellipsis-v {
+.fa-ellipsis-v {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f142";
@@ -282,26 +269,26 @@
   left: -6px;
 }
 
-#sidebar #content .fa-exclamation-circle {
+.fa-exclamation-circle {
   font-family: "Font Awesome 5 Pro";
   content: "\f06a";
   font-weight: 50;
 }
 
 #main #option .fa-heart,
-#sidebar #content .fa-heart {
+.fa-heart {
   font-family: "Font Awesome 5 Pro";
   color: lightcoral !important;
   content: "\f004";
   font-weight: 50;
 }
 
-#sidebar #content .fa-infinity {
+.fa-infinity {
   right: 7px;
 }
 
-#sidebar #content .fa-lock,
-#sidebar #content .fa-unlock {
+.fa-lock,
+.fa-unlock {
   color: var(--fill-color);
   margin-top: -18px !important;
   padding-bottom: 15px;
@@ -321,7 +308,7 @@
   font-weight: 600 !important;
 }
 
-#sidebar #content .fa-minus {
+.fa-minus {
   margin-top: -18px !important;
   color: var(--fill-color);
   position: relative;
@@ -334,13 +321,13 @@
   right: 0;
 }
 
-#main #visit #page #quick .fa-minus {
+.fa-minus {
   font-family: "Font Awesome 5 Pro";
   pointer-events: auto;
   content: "\f068";
 }
 
-#main #visit #page #quick .fa-plus {
+.fa-plus {
   font-family: "Font Awesome 5 Pro";
   content: "\f067";
   font-size: 11px;
@@ -358,21 +345,7 @@
 }
 
 #main #top #arm .fa-sliders-h {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f1de";
-  font-weight: 50;
-  color: var(--fill-color);
-  position: relative;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 10px;
-  right: -10px;
-  float: left;
-  z-index: 1;
-  top: 10px;
-}
-
-#sidebar .fa-sliders-h {
+.fa-sliders-h {
   font-family: "Font Awesome 5 Pro";
   color: var(--fill-color);
   position: relative;
@@ -393,14 +366,13 @@
   font-weight: 50;
 }
 
-#sidebar #content .fa-tablet-alt {
+.fa-tablet-alt {
   font-family: "Font Awesome 5 Pro";
   content: "\f3fa";
   font-weight: 50;
 }
 
-#sidebar #content .fa-terminal,
-#main #option .fa-terminal {
+.fa-terminal {
   font-family: "Font Awesome 5 Pro";
   padding-left: 5px;
   content: "\f120";
