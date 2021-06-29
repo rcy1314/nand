@@ -409,10 +409,7 @@ document.addEventListener('click', (evt) => {
         let leaveOff = _main.scrollTop - 400;
         notifyOption(`Horizontal`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`))) {
-          if (document.body.contains(document.querySelector(`#bottom`)))
-          //document.querySelector(`#bottom`).remove();
           document.querySelector(`.channel`).classList.add(`sideChannel`);
-          document.querySelector(`.center`).classList.remove(`scroll-into-view`);
           document.querySelector(`.center`).style.top = `60px`;
           document.querySelector(`#xml`).style.top = 0;
       _main
@@ -426,7 +423,6 @@ document.addEventListener('click', (evt) => {
           let leaveOff = document.querySelector(`.channel`).scrollLeft + 400;
           notifyOption(`Vertical`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`))) {
-          console.log(document.querySelector(`.channel`).scrollLeft + ` ` + _main.scrollTop);
           document.querySelector(`.channel`).classList.remove(`sideChannel`);
           document.querySelector(`.center`).style.top = `60px`;
           document.querySelector(`#xml`).style.top = 0;
