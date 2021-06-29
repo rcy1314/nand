@@ -6,6 +6,7 @@ var guideDisplay = function (pubArray) {
   `;
   _guide.append(guideBuild(pubArray[0]));
   guideImageAttributes(pubArray[0]);
+  _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;
 };
 
@@ -16,6 +17,7 @@ var guideDisplayYoutube = function (pubArray) {
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
   _guide.append(guideBuildYoutube(pubArray[0]));
+  _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;
 };
 

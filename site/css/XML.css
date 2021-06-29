@@ -250,9 +250,10 @@
   margin: 12px;
 }
 
-.image,
-.pending {
-  background-color: var(--hover-background-color);
+#main #xml .center .yt .image,
+#main #xml .center .item .image,
+#main #xml .center .item .pending {
+  background-color: transparent;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -261,14 +262,13 @@
   margin: 12px;
 }
 
-.img {
+#main #xml .center .item .img, {
   display: none;
-  height: auto;
   width: 100%;
 }
 
-.img,
-.image {
+#main #xml .center .item .img,
+#main #xml .center .item .image {
   background-color: transparent;
   justify-content: center;
   align-items: center;
