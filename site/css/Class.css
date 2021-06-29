@@ -1,59 +1,3 @@
-.blur {
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-}
-
-.guide {
-  scrollbar-width: none;
-}
-
-.guide::-webkit-scrollbar {
-  display: none;
-}
-
-.invertScrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-
-.invertScrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--fill-color-secondary);
-  border-radius: 2px;
-}
-
-.invertScrollbar {
-  scrollbar-color: #eeeeee transparent;
-  scrollbar-width: thin;
-}
-
-.filterBlur {
-  position: absolute;
-  height: calc(100% + 1px);
-  width: calc(100% + 1px);
-  z-index: 11;
-}
-
-.toggle {
-  top: 20px !important;
-  transition: .4s;
-}
-
-.toggleHidden {
-  top: 0 !important;
-  transition: .4s;
-}
-
-.invisible {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.visible {
-  display: block !important;
-  visibility: visible;
-  transition: .25s;
-  opacity: 100;
-}
-
 .block .hash,
 .block .des {
   display: none !important;
@@ -68,13 +12,46 @@
   flex-wrap: wrap !important;
 }
 
+.blur {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
 .expand {
-  display: flex !important;
-  font-size: 12px !important;
-  margin: 0 !important;
   border-radius: 0 !important;
-  width: 100% !important;
+  font-size: 12px !important;
+  display: flex !important;
   height: 60px !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.expand .blank {
+  position: relative !important;
+  width: 45px !important;
+}
+
+.expand .des {
+  align-items: center !important;
+  padding-right: 15px !important;
+  text-align: left !important;
+  flex-basis: 65% !important;
+  display: block;
+}
+
+.expand .display {
+  padding-right: 15px !important;
+  margin: 5px !important;
+  width: 40% !important;
+  flex-wrap: nowrap;
+}
+
+.expand img {
+  border-radius: 0 !important;
+  height: 48px !important;
+  width: 48px !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .expand .populate {
@@ -86,21 +63,6 @@
   flex-wrap: nowrap !important;
   text-align: left !important;
   display: flex !important;
-}
-
-.expand .display {
-  width: 40% !important;
-  flex-wrap: nowrap;
-  margin: 5px !important;
-  padding-right: 15px !important;
-}
-
-.expand img {
-  border-radius: 0 !important;
-  height: 48px !important;
-  width: 48px !important;
-  padding: 0 !important;
-  margin: 0 !important;
 }
 
 .expand .title {
@@ -117,38 +79,66 @@
 .expand .media {
   align-items: center !important;
   padding-right: 15px !important;
-  display: block !important;
   flex-basis: 15% !important;
+  display: block !important;
 }
 
-.expand .blank {
-  position: relative !important;
-  width: 45px !important;
+.filterBlur {
+  height: calc(100% + 1px);
+  width: calc(100% + 1px);
+  position: absolute;
+  z-index: 11;
 }
 
-.expand .des {
-  align-items: center !important;
-  padding-right: 15px !important;
-  text-align: left !important;
-  flex-basis: 65% !important;
-  display: block;
+.guide {
+  scrollbar-width: none;
+}
+
+.guide::-webkit-scrollbar {
+  display: none;
+}
+
+.invertScrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.invertScrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--fill-color-secondary);
+  border-radius: 2px;
+}
+
+.invertScrollbar {
+  scrollbar-color: #eeeeee transparent;
+  scrollbar-width: thin;
 }
 
 .minimum {
-  display: flex !important;
-  font-size: 12px !important;
-  margin: 0 !important;
   border-radius: 0 !important;
-  width: 100% !important;
+  font-size: 12px !important;
+  display: flex !important;
   height: 80px !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
-.minimum .populate {
-  padding: 5px !important;
+.minimum .des {
+  flex-basis: 0% !important;
+  display: none !important;
+  width: 0 !important;
 }
-
 .minimum .display {
   padding-right: 15px !important;
+}
+
+.minimum .hash {
+  align-items: center !important;
+  text-align: center !important;
+  flex-basis: 40% !important;
 }
 
 .minimum img {
@@ -159,15 +149,13 @@
   margin: 0 !important;
 }
 
-.minimum .hash {
-  align-items: center !important;
-  text-align: center !important;
-  flex-basis: 40% !important;
-}
-
 .minimum .media {
   text-align: left !important;
   flex-basis: 25% !important;
+}
+
+.minimum .populate {
+  padding: 5px !important;
 }
 
 .minimum .title {
@@ -175,8 +163,19 @@
   flex-basis: 52% !important;
 }
 
-.minimum .des {
-  flex-basis: 0% !important;
-  display: none !important;
-  width: 0 !important;
+.toggle {
+  top: 20px !important;
+  transition: .4s;
+}
+
+.toggleHidden {
+  top: 0 !important;
+  transition: .4s;
+}
+
+.visible {
+  display: block !important;
+  visibility: visible;
+  transition: .25s;
+  opacity: 100;
 }

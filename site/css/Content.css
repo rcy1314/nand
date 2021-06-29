@@ -1,27 +1,27 @@
 @font-face {
-  font-family: Open Sans;
   src: url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFW50bbck.woff2);
-}
-
-video {
-  position: relative;
-  width: 100%;
+  font-family: Open Sans;
 }
 
 ::placeholder {
   color: var(--fill-color);
 }
 
-div,
-input {
-  font-family: Open Sans;
-  font-size: 10px;
-  font-weight: 500;
-}
-
 a {
   color: var(--fill-color);
   text-decoration: none !important;
+}
+
+div,
+input {
+  font-family: Open Sans;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+video {
+  position: relative;
+  width: 100%;
 }
 
 *,*:focus,*:hover{
@@ -53,16 +53,6 @@ html body,
   background-size: auto 100%;
 }
 
-#main #progressBar {
-  background-color: var(--loader-color);
-  position: absolute;
-  height: 4px;
-  z-index: 12;
-  width: 0;
-  left: 0;
-  top: 0;
-}
-
 #container #toggle {
   background-color: transparent;
   color: var(--fill-color);
@@ -76,8 +66,8 @@ html body,
 }
 
 #container .sb {
-  color: var(--fill-color);
   background-color: transparent;
+  color: var(--fill-color);
   position: absolute;
   cursor: pointer;
   font-size: 16px;
@@ -93,42 +83,20 @@ html body,
   background-position: center center;
   background-repeat: no-repeat;
   justify-content: center;
+  scroll-behavior: smooth;
   align-items: center;
   position: absolute;
   text-align: center;
   overflow-y: scroll;
-  scroll-behavior: smooth;
   min-height: 100%;
   display: flex;
 }
 
-#main #top {
-  background-color: transparent;
-  width: 70% !important;
-  position: fixed;
-  display: none;
-  height: 57px;
-  z-index: 7;
-  top: 0;
-}
-
-#main #top #arm {
+#main #arm {
   position: relative;
   display: block;
   margin: 0 auto;
   height: 60px;
-}
-
-#main #option {
-  color: var(--fill-color);
-  justify-content: space-between;
-  background-color: transparent;
-  position: absolute;
-  user-select: none;
-  cursor: pointer;
-  display: none;
-  z-index: 2;
-  top: 5px;
 }
 
 #main #check {
@@ -147,79 +115,23 @@ html body,
   margin: 0 auto;
 }
 
-#main #visit {
-  justify-content: center;
-  align-items: center;
-  display: none;
-  height: 100%;
-}
-
-#main #visit #page #social {
-  position: absolute;
-  left: 40px;
-}
-
-#main #visit #page #options {
-  display: inline-block;
-  position: absolute;
-  right: 30px;
-}
-
-#main #visit #page {
-  background-color: transparent;
-  position: relative;
-  top: 45px;
-  margin: 0 auto;
-  display: block;
-}
-
-#main #dots {
+#dots {
   position: fixed;
 }
 
-#main #dots .fill {
+.fill {
   background-color: var(--fill-color) !important;
+  border-radius: 50%;
   visibility: hidden;
+  position: fixed;
   z-index: -12;
+  height: 4px;
   left: -4px;
+  width: 4px;
   top: 0;
 }
 
-#main #visit #page #front #label #show {
-  color: var(--fill-color);
-  background-color: transparent;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  font-size: 12px;
-  margin: 0 auto;
-  z-index: 0;
-  left: 1px;
-  top: 25px;
-}
-
-#main #visit #page #front #label #link {
-  background-color: var(--hover-background-color);
-  color: var(--fill-color);
-  border: var(--borderless-color);
-  transform: rotate(180deg);
-  justify-content: center;
-  display: inline-flex;
-  border-radius: 20px;
-  align-items: center;
-  position: absolute;
-  margin-left: 45px;
-  margin-top: 15px;
-  padding: 10px;
-  height: 15px;
-  width: 15px;
-}
-
-#main #visit #page #front #label #link:hover {
-  background-color: var(--borderless-color);
-}
-
-#main #visit #page #just {
+#just {
   background-color: transparent;
   position: relative !important;
   border: var(--border-color);
@@ -230,10 +142,31 @@ html body,
   padding-right: 20px;
   padding-left: 20px;
   letter-spacing: 0;
-  margin: 0 auto;
   font-size: 10px;
   cursor: pointer;
+  margin: 0 auto;
   top: -85px;
+}
+
+#link {
+  background-color: var(--hover-background-color);
+  border: var(--borderless-color);
+  transform: rotate(180deg);
+  color: var(--fill-color);
+  justify-content: center;
+  display: inline-flex;
+  border-radius: 20px;
+  align-items: center;
+  position: absolute;
+  margin-left: 45px;
+  margin-top: 25px;
+  padding: 10px;
+  height: 15px;
+  width: 15px;
+}
+
+#link:hover {
+  background-color: var(--borderless-color);
 }
 
 #container #notify {
@@ -247,11 +180,81 @@ html body,
   font-weight: 500;
   cursor: pointer;
   font-size: 11px;
-  display: flex;
+  display: none;
   height: 35px;
   width: 180px;
   bottom: 45px;
   z-index: 15;
   right: 20px;
-  opacity: 0;
+}
+
+#option {
+  justify-content: space-between;
+  background-color: transparent;
+  color: var(--fill-color);
+  position: absolute;
+  user-select: none;
+  cursor: pointer;
+  display: none;
+  z-index: 2;
+  top: 5px;
+}
+
+#options {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+}
+
+#page {
+  background-color: transparent;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  top: 45px;
+}
+
+#progressBar {
+  background-color: var(--loader-color);
+  position: absolute;
+  height: 4px;
+  z-index: 12;
+  width: 0;
+  left: 0;
+  top: 0;
+}
+
+#show {
+  background-color: transparent;
+  color: var(--fill-color);
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 0 auto;
+  z-index: 0;
+  left: 1px;
+  top: 35px;
+}
+
+#social {
+  position: absolute;
+  left: 40px;
+}
+
+#top {
+  background-color: transparent;
+  width: 70% !important;
+  position: fixed;
+  display: none;
+  height: 57px;
+  z-index: 7;
+  top: 0;
+}
+
+#visit {
+  justify-content: center;
+  align-items: center;
+  display: none;
+  height: 100%;
 }

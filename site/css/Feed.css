@@ -1,15 +1,4 @@
-
-#main #visit #page #quick {
-  background-color: transparent;
-  border-radius: 4px;
-  position: relative;
-  margin: 75px auto;
-  height: 90px;
-  z-index: 1;
-}
-
-
-#main #visit #page #quick #feed {
+#feed {
   background-color: transparent !important;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -23,12 +12,21 @@
   width: 100%;
 }
 
-#main #visit #page #quick #feed::-webkit-scrollbar {
+#feed::-webkit-scrollbar {
   display: none;
 }
 
-#main #visit #page #quick #feed .asset,
-#main #visit #page #quick #feed .translation {
+.asset a {
+  background-color: transparent;
+  color: var(--fill-color);
+  position: relative;
+  font-size: 11px;
+  display: block;
+  top: 5px;
+}
+
+.asset,
+.translation {
   position: relative;
   text-align: center;
   border-radius: 0;
@@ -39,72 +37,25 @@
   width: 90px;
 }
 
-#main #visit #page #quick #feed .asset .query,
-#main #visit #page #quick #feed .asset .entity,
-#main #visit #page #quick #feed .translation .category,
-#main #visit #page #quick #feed .translation .quickTranslation {
-  z-index: -1;
-}
-
-#main #visit #page #quick #feed .asset:hover,
-#main #visit #page #quick #feed .translation:hover {
+.asset:hover,
+.translation:hover {
   background-color: var(--hover-background-color) !important;
   border: var(--borderless-color) !important;
 }
 
-#main #visit #page #quick #feed .asset:not(:hover),
-#main #visit #page #quick #feed .translation:not(:hover) {
+.asset:not(:hover),
+.translation:not(:hover) {
   border: var(--borderless-color);
 }
 
-#main #xml .content .status img,
-#main #visit #page #quick #feed img,
-#main #visit #page #quick #feed .translation img {
-  background-color: transparent;
-  position: relative;
-  padding: 5px;
-  height: 30px;
-  width: 30px;
+.category,
+.entity,
+.query,
+.quickTranslation {
+  z-index: -1;
 }
 
-#main #visit #page #quick #feed .asset a {
-  color: var(--fill-color);
-  background-color: transparent;
-  position: relative;
-  font-size: 11px;
-  display: block;
-  top: 5px;
-}
-
-#main #visit #page #quick #feed .translation .category {
-  color: var(--fill-color);
-  background-color: transparent;
-  letter-spacing: .2px;
-  position: relative;
-  font-weight: 500;
-  font-size: 14px;
-  display: block;
-  top: 20px;
-}
-
-#main #visit #page #quick .right {
-  background-color: var(--hover-background-color);
-  color: var(--fill-color);
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  position: absolute;
-  cursor: pointer;
-  display: flex;
-  right : -20px;
-  padding: 4px;
-  height: 24px;
-  width: 24px;
-  z-index: 2;
-  top: 28px;
-}
-
-#main #visit #page #quick .left {
+.left {
   background-color: var(--hover-background-color);
   color: var(--fill-color);
   height: calc(24px - 8px);
@@ -122,7 +73,54 @@
   top: 28px;
 }
 
-#main #visit #page #quick .left:hover,
-#main #visit #page #quick .right:hover {
+.right {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color);
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  right : -20px;
+  padding: 4px;
+  height: 24px;
+  width: 24px;
+  z-index: 2;
+  top: 28px;
+}
+
+.left:hover,
+.right:hover {
   background-color: var(--borderless-color);
+}
+
+.status img,
+#feed img,
+.translation img {
+  background-color: transparent;
+  position: relative;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+.translation .category {
+  background-color: transparent;
+  color: var(--fill-color);
+  letter-spacing: .2px;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  top: 20px;
+}
+
+#quick {
+  background-color: transparent;
+  border-radius: 4px;
+  position: relative;
+  margin: 75px auto;
+  height: 90px;
+  z-index: 1;
 }

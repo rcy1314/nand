@@ -1,4 +1,8 @@
 window.onload = function () {
+
+  _feed.append(translationBuild(translations[0]));
+  quickFeedAsset(5);
+  quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
     appendSideBarLists(`#content`, `cat`, translations);
   appendSideBarLists(`#content`, `sel`, selections);
@@ -17,11 +21,6 @@ window.onload = function () {
   content.append(basicFormBuild());
   if (sideBarLock == true) content.append(sideBarThemeBuild(`fa-lock`))
   else if (sideBarLock == false) content.append(sideBarThemeBuild(`fa-unlock`))
-
-  quickFeedDisplay(quickFeeds);
-  if (window.clientWidth <= 425 || quickFeedsTranslations == true)
-    quickFeedAsset(7);
-  else if (quickFeedsTranslations == false) quickFeedAsset(8);
 
   if (window.clientWidth <= 425) expand = false;
 
@@ -389,9 +388,15 @@ document.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     if (
+      evt.target.getAttribute(`aria-item`) == `Assets`
+    ) {
+      populateAssets();
+    }
+    if (
       evt.target.classList.contains(`notify`)
     ) {
       _notify.classList.remove(`notify`);
+      _notify.style.display = `none`;
     }
     if (
       event.target.classList.contains(`fa-camera-retro`)
@@ -460,6 +465,21 @@ document.addEventListener('click', (evt) => {
       };
 
       xhr.send();
+    }
+    if (
+      evt.target.classList.contains(`fa-font-awesome-alt`)
+    ) {
+      fa515.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-font-awesome-flag`)
+    ) {
+      fa5.blank();
+    }
+    if (
+      evt.target.classList.contains(`fa-git`)
+    ) {
+      project.blank();
     }
     if (
       evt.target.classList.contains(`fa-amazon`)
@@ -654,7 +674,10 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
     }
-    if (evt.target.classList.contains(`translation`)) {
+    if (
+      evt.target.classList.contains(`translation`) &&
+      evt.target.getAttribute(`aria-item`) != `Assets`
+    ) {
       id = 0;
       first = true;
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);

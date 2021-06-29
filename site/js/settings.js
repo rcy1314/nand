@@ -683,6 +683,7 @@ const api = `https://acktic-github-io-api.herokuapp.com/?url=`;
 */
 
 const translations = [
+  `Assets`,
   `Reddit`,
   `News`,
   `Media`,
@@ -809,6 +810,9 @@ const background = [
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
 ];
 
+const fa5 = `https://fontawesome.com/cheatsheet`;
+const fa515 = `https://fontawesome.com/v5.15/icons?d=gallery&p=4&m=free`;
+const project = `https://github.com/acktic/acktic.github.io/projects`;
 const repository = `https://github.com/acktic/acktic.github.io`;
 const facebook = `https://www.facebook.com/acktic`;
 const twitter = `https://www.twitter.com/acktic`;
