@@ -230,7 +230,7 @@
 .fa-camera-retro {
   font-family: "Font Awesome 5 Pro";
   content: "\f083";
-  font-weight: 50;
+  font-weight: 50 !important;
 }
 
 .fa-chart-pie {
