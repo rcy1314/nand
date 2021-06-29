@@ -330,6 +330,7 @@ var xmlImageSource = function (xhr) {
         .getElementsByTagName(`description`)[0]
         .innerHTML.match(/\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
     }
+    else src = null;
   } else if (
     typeof xhr.getElementsByTagName(`description`) !== `object` ||
     typeof xhr.getElementsByTagName(`description`)[0] === `object`

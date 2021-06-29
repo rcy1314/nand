@@ -406,7 +406,8 @@ document.addEventListener('click', (evt) => {
         sideScroll == true
       ) {
         scrollIntoView = false;
-        let leaveOff = _main.scrollTop - 400;
+        let leaveOff = _main.scrollTop -
+          ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
         notifyOption(`Horizontal`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`))) {
           document.querySelector(`.channel`).classList.add(`sideChannel`);
@@ -416,11 +417,13 @@ document.addEventListener('click', (evt) => {
             .querySelectorAll(`.item`)
             .forEach((a) => (a.classList.add(`sideItem`)));
         }
+        console.log(leaveOff)
         document.querySelector(`.channel`).scrollLeft = leaveOff;
       } else if (
           sideScroll == false
         ) {
-          let leaveOff = document.querySelector(`.channel`).scrollLeft + 400;
+          let leaveOff = document.querySelector(`.channel`).scrollLeft +
+            ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
           notifyOption(`Vertical`, `fa-check-circle`);
         if (document.body.contains(document.querySelector(`#xml`))) {
           document.querySelector(`.channel`).classList.remove(`sideChannel`);
