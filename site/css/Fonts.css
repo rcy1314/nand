@@ -344,7 +344,21 @@
   top: 3px;
 }
 
-#main #top #arm .fa-sliders-h,
+#main #top #arm .fa-sliders-h {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f1de";
+  font-weight: 50;
+  color: var(--fill-color);
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  right: -10px;
+  float: left;
+  z-index: 1;
+  top: 10px;
+}
+
 .fa-sliders-h {
   font-family: "Font Awesome 5 Pro";
   color: var(--fill-color);
