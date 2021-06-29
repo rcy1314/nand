@@ -344,7 +344,7 @@
   top: 3px;
 }
 
-#main #top #arm .fa-sliders-h {
+#main #top #arm .fa-sliders-h,
 .fa-sliders-h {
   font-family: "Font Awesome 5 Pro";
   color: var(--fill-color);
