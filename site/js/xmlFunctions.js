@@ -317,6 +317,7 @@ var xmlImageSource = function (xhr) {
   else if (xhr.getElementsByTagName(`link`)[0].attributes[`href`])
     src = String(xhr.getElementsByTagName(`link`)[0].getAttribute(`href`));
   else if (
+    !menu[id].id.match(/4Chan/g) &&
     typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
     Array.isArray(xhr.getElementsByTagName(`description`))
   ) {
