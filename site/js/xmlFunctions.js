@@ -318,38 +318,16 @@ var xmlImageSource = function (xhr) {
     typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
     Array.isArray(xhr.getElementsByTagName(`description`))
   ) {
+    console.log(`4chan`)
     if (
       xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
-    )
+        .innerHTML.match(/\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
+    ) {
       src = xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
-    else if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
-      src = String(
-        xhr
-          .getElementsByTagName(`description`)[0]
-          .childNodes[0].nodeValue.match(
-            /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
-          )[0]
-    );
-    else if (Array.isArray(xhr.getElementsByTagName(`description`)[0].childNodes[0]))
-      src = String(
-        xhr
-          .getElementsByTagName(`description`)[0]
-          .childNodes[0].nodeValue.match(
-            /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
-          )[0]
-      );
-    else if (xhr.getElementsByTagName(`description`)[0].childNodes[1])
-      src = String(
-        xhr
-          .getElementsByTagName(`description`)[0]
-          .childNodes[1].nodeValue.match(
-            /(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
-          )
-      );
+        .innerHTML.match(/\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
+    }
   } else if (
     typeof xhr.getElementsByTagName(`description`) !== `object` ||
     typeof xhr.getElementsByTagName(`description`)[0] === `object`
