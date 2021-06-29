@@ -318,7 +318,6 @@ var xmlImageSource = function (xhr) {
     typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
     Array.isArray(xhr.getElementsByTagName(`description`))
   ) {
-    console.log(`4chan`)
     if (
       xhr
         .getElementsByTagName(`description`)[0]
@@ -923,15 +922,16 @@ var xmlAppendPublication = function (id) {
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
     }
-  } else if (Reader == false) {
+  }
+  if (Reader == false) {
     if (id !== 0 && pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (id !== 0 && pub[pub.length - 1]) var posts = pub.length - 1;
     if (id !== 0 && pub[0]) var recent = pub[0].dst;
+    document.querySelector(`.channel`).append(footerBuild(id));
   }
   if (
     document.body.contains(document.querySelector(`#xml`))
   ) {
-    document.querySelector(`.channel`).append(footerBuild(id));
     if (showSplash == true) _check.style.display = `none`;
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
