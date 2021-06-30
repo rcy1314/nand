@@ -32,7 +32,6 @@ let displayDescription = function (Value) {
         .querySelectorAll(`.populate`)
         .forEach((a) => a.classList.add(`expand`));
     }
-		displayExpand(expand);
 };
 
 let displayExpand = function (Value) {

@@ -318,7 +318,7 @@ let toggleBorders = true;
 
 */
 
-let showDescription = true;
+let showDescription = false;
 
 /*
     sideBarTranslations [boolean/integer]

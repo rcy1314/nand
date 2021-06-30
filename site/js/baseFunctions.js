@@ -42,6 +42,11 @@ let handleGuide = function () {
 
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
+  if (feedAssets == 7)
+    for (var i = 0; i <= translations.length - 1; i++) {
+      _feed.append(translationBuild(translations[i]));
+    }
+  else
     for (var i = 1; i <= menu.length - 1; i++) {
       let randomMenuObject = menu.indexOf(
         menu[Math.floor(Math.random() * menu.length - 1)]
@@ -250,7 +255,8 @@ let populateAssets = function () {
   let media;
   _sb.style.display = `none`;
   _toggle.style.display = `none`
-  let adj = randomizeAssets(menu);
+  let adj = menu.slice();
+  randomizeAssets(adj);
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
