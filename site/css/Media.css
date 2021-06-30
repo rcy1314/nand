@@ -99,7 +99,6 @@
     position: relative !important;
     margin: 0 auto !important;
     width: 100% !important;
-    left: -60px !important;
   }
 
   .expand {
@@ -395,7 +394,6 @@
   .center {
 	  margin-right: 30px;
     width: 420px;
-    right: 100px;
   }
 
   .content {
@@ -460,7 +458,6 @@
 
   .center {
     width: 420px;
-	  left: -170;
   }
 
   .content {
@@ -508,11 +505,6 @@
 
   .center {
     width: 410px;
-    right: 160px;
-  }
-
-  .content {
-    right: 108px;
   }
 
   .expand {
@@ -529,6 +521,11 @@
     height: 140px;
     width: 180px;
     margin: 2em;
+  }
+
+  #main #xml {
+    margin-left: 150px;
+    width: 740px;
   }
 
   #arm {
@@ -574,13 +571,7 @@
   }
 
   .center {
-    margin-right: 115px;
     width: 600px;
-    left: -160px;
-  }
-
-  .content {
-    right: 265px;
   }
 
   .expand {
@@ -591,16 +582,9 @@
     width: 100% !important;
   }
 
+  #main #xml,
   #arm {
     width: 940px;
-  }
-
-  @media screen and (min-width: 2400px) {
-
-    .content {
-      right: 625px;
-    }
-
   }
 
 }

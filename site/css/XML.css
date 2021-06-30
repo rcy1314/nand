@@ -78,7 +78,7 @@
   height: fit-content;
   vertical-align: top;
   text-align: center;
-  position: fixed;
+  position: sticky;
   font-size: 10px;
   width: 300px;
   top: 60px;
@@ -445,12 +445,11 @@
 
 #xml {
   height: fit-content;
+  height: fit-content;
   position: absolute;
   min-height: 100%;
   display: block;
-  height: 100%;
   width: 100%;
-  left: 60px;
   z-index: 1;
   top: 0;
 }
