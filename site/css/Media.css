@@ -280,11 +280,11 @@
     width: 100% !important;
   }
 
-  .wrap .header {
+  #yt .wrap .header {
     display: none !important;
   }
 
-  .wrap .pub {
+  #yt .wrap .pub {
     display: none !important;
   }
 
