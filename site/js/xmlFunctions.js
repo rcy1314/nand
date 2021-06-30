@@ -158,6 +158,9 @@ var guideImageAttributes = function (pubArray) {
       }
       _guide.querySelector(`.ago`).style.position = `relative`;
       _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
+      _guide.querySelector(`.header`).style.backgroundColor =
+        `var(--color-primary)`
+      _guide.style.paddingTop = `40px`;
       if (guideSafeSearch == true) {
         _guide.querySelector(`.filterBlur`).style.top = `0`;
         _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
