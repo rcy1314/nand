@@ -146,6 +146,7 @@ var guideImageAttributes = function (pubArray) {
           .querySelectorAll(`.img, .filterBlur`)
           .forEach((a) => (a.style.maxWidth = `100vw`));
         _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
+        _guide.querySelector(`.header`).style.width = `100vw`;
         if (guideSafeSearch == true)
           _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
@@ -160,6 +161,7 @@ var guideImageAttributes = function (pubArray) {
       _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
       _guide.querySelector(`.header`).style.backgroundColor =
         `var(--color-primary)`
+      _guide.querySelector(`.header`).style.width = `100vw`;
       _guide.style.paddingTop = `40px`;
       if (guideSafeSearch == true) {
         _guide.querySelector(`.filterBlur`).style.top = `0`;
@@ -1057,12 +1059,7 @@ var xmlRequestParsing = function (search, string, index) {
           if (src && src.match(/youtube\.com/g) && youtubeMedia == true) {
             if (data.getElementsByTagName(`media:statistics`).length > 0)
               var views =
-                `<div class='ago views'> views ` +
-                data
-                  .getElementsByTagName(`media:statistics`)[0]
-                  .getAttribute(`views`)
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, `,`) +
-                `</div>`;
+                `views ${data.getElementsByTagName(`media:statistics`)[0].getAttribute(`views`).replace(/\B(?=(\d{3})+(?!\d))/g, `,`)}`;
             else var views = ``;
             inline = [];
             inline.push({

@@ -599,19 +599,21 @@ let youtubeHTMLBuild = function (htmlArray) {
   let publish = document.createElement(`div`);
   let item = document.createElement(`div`);
   let head = document.createElement(`div`);
+  let view = document.createElement(`div`);
   let ago = document.createElement(`div`);
   publish.innerHTML += htmlArray.truncate + htmlArray.more;
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   item.setAttribute(`ext`, htmlArray.externalURI);
   publish.setAttribute(`text`, htmlArray.title);
-  youtube.innerHTML += htmlArray.views;
   object.src = htmlArray.videoSource;
   ago.innerHTML = htmlArray.dst;
+  view.innerHTML = htmlArray.views
   head.classList.add(`header`);
   publish.classList.add(`pub`);
   youtube.classList.add(`yt`);
   item.classList.add(`item`);
+  view.classList.add(`views`);
   ago.classList.add(`ago`);
   item.id = `yt`;
   head.append(htmlArray.courtesy);
@@ -620,6 +622,7 @@ let youtubeHTMLBuild = function (htmlArray) {
   item.append(youtube);
   item.append(publish);
   item.append(ago);
+  item.append(view);
   item.append(
     copyInputAttribute(htmlArray.src, htmlArray.share, htmlArray.externalURI)
   );

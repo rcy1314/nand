@@ -418,7 +418,7 @@
 }
 
 #yt {
-    padding-bottom: 30px;
+  padding-bottom: 2.5px;
 }
 
 #yt .yt {
@@ -439,8 +439,10 @@
 }
 
 .views {
-  position: absolute;
-  bottom: -110px;
+  text-transform: capitalize;
+  color: var(--fill-color);
+  position: relative;
+  margin-left: 12px;
 }
 
 #xml {

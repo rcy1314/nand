@@ -117,7 +117,7 @@
 #container #guide .sticky .header {
   background-color: transparent;
   height: 60px;
-  width: 100%;
+  width: 220px;
 }
 
 #container #guide .sticky .wrap .header .courtesy img {
@@ -225,7 +225,7 @@
   display: table-cell;
   padding-bottom: 54.25%;
   position: relative;
-  bottom: 5px;
+  bottom: 2.5px;
   width: 100%;
 }
 
