@@ -643,13 +643,19 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         )
       )
     ) {
-      itemContainer.style.height = `0px`;
-      copyDownload.style.display = `none`;
-      copyPicture.style.display = `none`;
-      attribute.style.height = `74px`;
-      itemPending.remove();
-      itemImage.remove();
-      count.shift();
+      if (onlyImages == true) {
+        document.querySelector(
+         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        ).remove();
+      } else {
+        itemContainer.style.height = `0px`;
+        copyDownload.style.display = `none`;
+        copyPicture.style.display = `none`;
+        attribute.style.height = `74px`;
+        itemPending.remove();
+        itemImage.remove();
+        count.shift();
+      }
     }
   }
   imageDuplicate.push(src);
