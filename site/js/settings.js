@@ -149,7 +149,7 @@ let sideBarLock = false;
 
 */
 
-let expand = true;
+let expand = false;
 
 /*
     expandVisual [boolean/integer]
@@ -318,7 +318,7 @@ let toggleBorders = true;
 
 */
 
-let showDescription = false;
+let showDescription = true;
 
 /*
     sideBarTranslations [boolean/integer]
@@ -751,6 +751,7 @@ let count = []; //progressBackdrop init calls
 let pub = []; //raw html of publication
 let local; //copy of post in base36
 let index; //copy of id used in guide
+let adj = []; //menu randomized
 let complete; //progressBar interval
 let images = []; //array of images in request
 let touchmove = false;

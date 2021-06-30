@@ -1,4 +1,6 @@
 window.onload = function () {
+  adj = menu.slice();
+  randomizeAssets(adj);
   if (quickFeedsTranslations == true)
     quickFeedAsset(7)
   quickFeedDisplay(quickFeeds);

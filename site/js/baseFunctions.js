@@ -255,8 +255,6 @@ let populateAssets = function () {
   let media;
   _sb.style.display = `none`;
   _toggle.style.display = `none`
-  let adj = menu.slice();
-  randomizeAssets(adj);
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
   if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
@@ -381,7 +379,6 @@ let populateCategoryGroup = function (translation) {
   id = 0;
   if (onlyImages == false) reverseCategoryGroup(translation);
   else if (onlyImages == true) {
-    displayDescription(showDescription);
     unloading();
   }
   main.setAttribute(`tabindex`, -1);
