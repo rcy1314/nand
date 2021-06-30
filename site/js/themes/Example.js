@@ -28,9 +28,10 @@ var Example = function () {
     `--borderless-color`,
     `rgba(63, 92, 136, .4)`
   ); // Main, TopBar Input, Left Right (feed)
-  document.querySelector(`#favicon`).setAttribute(`href`, `favicon.ico`);
-  if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/ffe869c642be33cbb2c3e609e27beb29.webp`)
-    backgroundImage[0].path = `https://raw.githubusercontent.com/acktic/.dotfiles/main/ffe869c642be33cbb2c3e609e27beb29.webp`
+  /*
+  if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)
+    backgroundImage[0].path = `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`
   document.querySelector(`#${backgroundImage[0].element}`)
     .style.backgroundImage = `url(${backgroundImage[0].path})`
+  */
 };
