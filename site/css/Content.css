@@ -145,7 +145,8 @@ html body,
   font-size: 10px;
   cursor: pointer;
   margin: 0 auto;
-  top: -85px;
+  bottom: 150px;
+  left: 160px;
 }
 
 #link {

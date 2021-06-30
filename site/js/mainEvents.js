@@ -465,19 +465,9 @@ document.addEventListener('click', (evt) => {
       xhr.send();
     }
     if (
-      evt.target.classList.contains(`fa-font-awesome-alt`)
-    ) {
-      fa515.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-font-awesome-flag`)
-    ) {
-      fa5.blank();
-    }
-    if (
       evt.target.classList.contains(`fa-git`)
     ) {
-      project.blank();
+      repository.blank();
     }
     if (
       evt.target.classList.contains(`fa-amazon`)
