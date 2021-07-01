@@ -1,3 +1,5 @@
+<img src='capture.jpg'>
+
 ### About
 
   - <em>A Really Simple Syndicate</em>
