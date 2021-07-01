@@ -194,7 +194,7 @@ let progressBackDrop = function (done) {
               elements[i].querySelector(`.img`) &&
               elements[i].getBoundingClientRect().left -
               document.querySelector(`.channel`).clientWidth
-              <= 0
+              <= document.querySelector(`.channel`).clientWidth
             ) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
