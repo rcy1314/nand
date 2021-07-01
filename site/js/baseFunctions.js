@@ -454,9 +454,9 @@ let filterInputResponse = function (filterURI) {
   } else if (match === -1 && description.length <= 0) {
     xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(exact)) && isFinite(exact)) {
-      xmlRequestParsing(null, null, match);
+      xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
-      xmlRequestParsing(null, null, match);
+      xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
   }
   document.title = filterURI.toString().space();
 };
