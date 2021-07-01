@@ -194,7 +194,7 @@
   border: var(--hover-border-color);
   position: absolute;
   display: none;
-  height: 110px;
+  height: 160px;
   width: 200px;
   padding: 1px;
   z-index: 12;
