@@ -180,15 +180,21 @@ let progressBackDrop = function (done) {
           let elements = document.querySelectorAll(`.image`);
           for (let i = 0; i < elements.length; i++) {
             if (
+              sideScroll == false &&
               elements[i].querySelector(`.img`) &&
               !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
               elements[i].getBoundingClientRect().top -
               _main.clientHeight <=
-              0 ||
+              0
+            ) {
+              elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
+              elements[i].querySelector(`.img`).classList.remove(`hidden`);
+            } else if (
+              sideScroll == true &&
               elements[i].querySelector(`.img`) &&
-              elements[i].getBoundingClientRect().right -
+              elements[i].getBoundingClientRect().left -
               document.querySelector(`.channel`).clientWidth
-              >= 0
+              <= 0
             ) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
@@ -203,6 +209,7 @@ let progressBackDrop = function (done) {
           }
         }
         document.querySelector(`.channel`).addEventListener(`scroll`, checkPosition);
+        _main.addEventListener(`scroll`, checkPosition);
         if (scrollIntoView)
           setTimeout(function() {
             checkPosition();

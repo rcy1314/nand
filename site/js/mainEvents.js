@@ -416,7 +416,6 @@ document.addEventListener('click', (evt) => {
             .querySelectorAll(`.item`)
             .forEach((a) => (a.classList.add(`sideItem`)));
         }
-        console.log(leaveOff)
         document.querySelector(`.channel`).scrollLeft = leaveOff;
       } else if (
           sideScroll == false
