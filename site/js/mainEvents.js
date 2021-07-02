@@ -531,6 +531,7 @@ document.addEventListener('click', (evt) => {
           .querySelectorAll(`.joi`)
           .forEach((a) => a.classList.remove(`luv`));
       } else if (Reader == true) {
+        randomDuplicate = [];
         notifyOption(`Reading`, `fa-check-circle`);
         if (showSplash == true) _check.style.display = `Block`;
         if (document.body.contains(document.querySelector(`#group`)))
@@ -539,7 +540,6 @@ document.addEventListener('click', (evt) => {
           document.querySelector(`#bottom`).remove();
         if (showSplash == true) _check.style.display = `block`;
         justRead = true;
-        onlyImages = true;
         _sb.style.display = `none`;
         _main
           .querySelectorAll(`.joi`)
@@ -561,7 +561,6 @@ document.addEventListener('click', (evt) => {
     if (evt.target.id == `just`) {
       Reader = true;
       justRead = true;
-      onlyImages = true;
       randomDuplicate = [];
       document
         .querySelectorAll(`.joi`)
