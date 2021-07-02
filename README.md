@@ -1,6 +1,6 @@
 <img src='capture.jpg'>
 <br><br>
-<div style='display:inline-block'><img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'><img src='https://heroku-badge.herokuapp.com/?app=acktic-github-io'><img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'></div>
+<div style='display:inline-block'><img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'>&emsp;&emsp;<img src='https://heroku-badge.herokuapp.com/?app=acktic-github-io'>&emsp;&emsp;<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'></div>
 
 ### About
 
