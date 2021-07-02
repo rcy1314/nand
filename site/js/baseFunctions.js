@@ -453,10 +453,8 @@ let filterInputResponse = function (filterURI) {
     unloading();
   } else if (match === -1 && description.length <= 0) {
     xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
-  } else if (!isNaN(parseFloat(exact)) && isFinite(exact)) {
-      xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
-  } else if (!isNaN(parseFloat(match)) && isFinite(match)) {
-      xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
+  } else {
+      xmlRequestParsing(null, null, match);
   }
   document.title = filterURI.toString().space();
 };

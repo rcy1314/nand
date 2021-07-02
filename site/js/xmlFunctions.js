@@ -949,6 +949,7 @@ var xmlAppendPublication = function (id) {
   ) {
     if (showSplash == true) _check.style.display = `none`;
     contentStatusDisplay(id, recent, oldest, posts);
+    if (flexBox == true) displayFlex(displayFlex);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
     local = null;

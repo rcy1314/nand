@@ -75,6 +75,19 @@ let showOption = true;
     sideScroll [boolean/integer]
 
       Applications
+        baseDocumentObjectModles, xmlAppendPublication
+
+      Result
+        convert xml to flex-box (override)
+
+*/
+
+let flexBox = true;
+
+/*
+    sideScroll [boolean/integer]
+
+      Applications
         sideBarEvents, xmlAppendPublication
 
       Result

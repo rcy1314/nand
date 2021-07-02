@@ -391,11 +391,6 @@
 
 @media screen and (min-width: 768px) {
 
-  .center {
-	  margin-right: 30px;
-    width: 420px;
-  }
-
   .content {
 	  display: none;
     right: 50px;
@@ -503,10 +498,6 @@
     width: 90%;
   }
 
-  .center {
-    width: 410px;
-  }
-
   .expand {
     margin: 0 auto !important;
     width: 990px !important;
@@ -521,11 +512,6 @@
     height: 140px;
     width: 180px;
     margin: 2em;
-  }
-
-  #main #xml {
-    margin-left: 150px;
-    width: 740px;
   }
 
   #arm {
@@ -571,7 +557,7 @@
   }
 
   .center {
-    width: 600px;
+    width: 100%;
   }
 
   .expand {
@@ -582,13 +568,12 @@
     width: 100% !important;
   }
 
-  #main #xml,
   #arm {
     width: 940px;
   }
 
   .yt .image img {
     height: 460px;
-    top: -22.75% 
+    top: -22.75%
   }
 }
