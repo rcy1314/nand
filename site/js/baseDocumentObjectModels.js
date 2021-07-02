@@ -9,12 +9,14 @@ let sideBarStar = function (Elem, Value) {
 }
 
 let displayFlex = function (value) {
-  document.querySelector(`.center`).style.cssText = `width: 100% !important`;
-  document.querySelector(`.channel`).style.cssText = `padding-right: 50px !important;display: flex !important;width: 100% !important;justify-content: center !important;flex-wrap: wrap !important`;
-  document
-    .querySelectorAll(`[aria-object='${id}']`)
-    .forEach((a) => a.style.cssText = `width: 250px !important;display: flex !important;flex-wrap: wrap !important;margin-right: 15px !important`);
-  document.querySelector(`.content`).style.display = `none`;
+  if (_main.clientWidth >= 426) {
+    document.querySelector(`.center`).style.cssText = `width: 100% !important`;
+    document.querySelector(`.channel`).style.cssText = `padding-right: 50px !important;display: flex !important;width: 100% !important;justify-content: center !important;flex-wrap: wrap !important`;
+    document
+      .querySelectorAll(`[aria-object='${id}']`)
+      .forEach((a) => a.style.cssText = `width: 250px !important;display: flex !important;flex-wrap: wrap !important;margin-right: 15px !important`);
+    document.querySelector(`.content`).style.display = `none`;
+  }
 }
 
 let displayDescription = function (Value) {
