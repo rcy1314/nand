@@ -1,6 +1,8 @@
+<h1>acktic.github.io</h1>
+
 <img src='capture.jpg'>
-<br><br>
-<div style='display:inline-block'><img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'>&emsp;&emsp;<img src='https://heroku-badge.herokuapp.com/?app=acktic-github-io&style=flat&svg=1'>&emsp;&emsp;<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'></div>
+<br>
+<div style='display:inline-block'><img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'>&emsp;<img src='https://heroku-badge.herokuapp.com/?app=acktic-github-io&style=flat&svg=1'>&emsp;<img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'></div>
 
 ### About
 
