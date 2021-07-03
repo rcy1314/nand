@@ -19,9 +19,9 @@
 
 ## Init
 
-  `/?q=[unique-id]`<br>
-  `/?q=[category]`<br>
-  `/?[hash]`<br>
+  `index.html/?q=[unique-id]`<br>
+  `index.html/?q=[category]`<br>
+  `index.html/?[hash]`<br>
 
 ## Features
 
