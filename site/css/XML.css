@@ -89,12 +89,13 @@
   justify-content: center;
   padding-bottom: 40px;
   align-items: center;
-  position: relative;
+  position: absolute;
   font-size: 12px;
   display: flex;
+  width: 500px;
   height: 5em;
-  width: 100%;
   bottom: 3px;
+  left: 25%;
 }
 
 .bottom {
