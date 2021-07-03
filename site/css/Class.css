@@ -1,3 +1,37 @@
+.flexbox {
+  align-content: space-between !important;
+  flex-flow: column wrap !important;
+  display: flex !important;
+  width: 283px !important;
+}
+
+.flexbox::before,
+.flexbox::after {
+  flex-basis: 100% !important;
+  content: "" !important;
+  width: 0 !important;
+  order: 2 !important;
+}
+
+.flexbox .item {
+  margin: 0 2px 2px 0;
+  position: relative;
+  width: 283px;
+  left: -283px;
+}
+
+.flexbox .item:nth-child(3n+1) {
+  order: 1;
+}
+
+.flexbox .item:nth-child(3n+2) {
+  order: 2;
+}
+
+.flexbox .item:nth-child(3n) {
+  order: 3;
+}
+
 .block .hash,
 .block .des {
   display: none !important;

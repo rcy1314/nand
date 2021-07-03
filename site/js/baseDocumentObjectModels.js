@@ -10,11 +10,11 @@ let sideBarStar = function (Elem, Value) {
 
 let displayFlex = function (value) {
   if (_main.clientWidth >= 426) {
-    document.querySelector(`.center`).style.cssText = `width: 100% !important`;
-    document.querySelector(`.channel`).style.cssText = `padding-right: 50px !important;display: flex !important;width: 100% !important;justify-content: center !important;flex-wrap: wrap !important`;
-    document
-      .querySelectorAll(`[aria-object='${id}']`)
-      .forEach((a) => a.style.cssText = `width: 250px !important;display: flex !important;flex-wrap: wrap !important;margin-right: 15px !important`);
+    let height = 0;
+    let column = document.querySelectorAll(`.item:nth-child(3n+1)`);
+    for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
+    document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
+    document.querySelector(`.channel`).style.height = `${(height + 950).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
   }
 }
@@ -211,6 +211,7 @@ let stageBuild = function () {
     let status = document.createElement(`div`);
     let xml = document.createElement(`div`);
     xml.id = `xml`;
+    if (flexBox == true) channel.classList.add(`flexbox`)
     channel.classList.add(`channel`);
     center.classList.add(`center`);
     center.append(channel);
@@ -675,6 +676,7 @@ let xmlHTMLBuild = function (htmlArray) {
   if (toggleBorders == false) item.style.border = `none`
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
+  if (flexBox == true) item.classList.add(`flexbox`);
   item.setAttribute(`ext`, htmlArray.externalURI);
   publish.innerHTML = htmlArray.truncate + htmlArray.more;
   if (fadeIntoView == true) object.classList.add(`hidden`);

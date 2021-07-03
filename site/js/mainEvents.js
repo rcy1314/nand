@@ -531,6 +531,8 @@ document.addEventListener('click', (evt) => {
           .querySelectorAll(`.joi`)
           .forEach((a) => a.classList.remove(`luv`));
       } else if (Reader == true) {
+        first = true;
+        onlyImages = true;
         randomDuplicate = [];
         notifyOption(`Reading`, `fa-check-circle`);
         if (showSplash == true) _check.style.display = `Block`;
@@ -561,6 +563,7 @@ document.addEventListener('click', (evt) => {
     if (evt.target.id == `just`) {
       Reader = true;
       justRead = true;
+      onlyImages = true;
       randomDuplicate = [];
       document
         .querySelectorAll(`.joi`)

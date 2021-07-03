@@ -72,6 +72,7 @@ setTimeout(function() {
         _guest.focus();
       } else if (Reader == true) {
         justRead = true;
+        onlyImages = true;
         xmlRequestParsing(null, null, anyRandomMenuObject());
       }
     }, 250);
