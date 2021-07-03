@@ -584,15 +584,6 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      ) && newImg.naturalHeight >= newImg.naturalWidth
-    )
-    itemContainer.style.height = `270px`;
-    else if (
-      cropImages == true &&
-      document.body.contains(
-        document.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-        )
       ) && newImg.naturalHeight <= newImg.naturalWidth
     ) itemContainer.style.height = `fit-content`;
     else if (
