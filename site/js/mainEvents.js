@@ -423,11 +423,14 @@ document.addEventListener('click', (evt) => {
             document.querySelector(`.channel`).classList.add(`sideChannel`);
             document.querySelector(`.center`).style.top = `60px`;
             document.querySelector(`#xml`).style.top = 0;
-        _main
+            _main
               .querySelectorAll(`.item`)
               .forEach((a) => (a.classList.add(`sideItem`)));
+            _main
+              .querySelectorAll(`.classic`)
+              .forEach((a) => (a.style.display = `block`));
+            document.querySelector(`.channel`).scrollLeft = leaveOff;
           }
-          document.querySelector(`.channel`).scrollLeft = leaveOff;
         } else if (
             sideScroll == false
           ) {
@@ -441,8 +444,11 @@ document.addEventListener('click', (evt) => {
             _main
               .querySelectorAll(`.item`)
               .forEach((a) => (a.classList.remove(`sideItem`)));
+            _main
+              .querySelectorAll(`.classic`)
+              .forEach((a) => (a.style.display = `flex`));
+            _main.scrollTop = leaveOff;
           }
-          _main.scrollTop = leaveOff;
         }
       }
     }

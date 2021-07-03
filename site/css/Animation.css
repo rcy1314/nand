@@ -222,18 +222,6 @@
   transition: .5s;
 }
 
-.sideItem {
-  width: 320px !important;
-  display: inline-table;
-  margin-right: 50px;
-  height: 540px;
-}
-
-.sideChannel {
-  overflow-x: auto;
-  display: flex;
-}
-
 .slide {
   left: 10px !important;
   transition: .5s;

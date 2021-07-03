@@ -72,10 +72,10 @@ let topBar = true;
 let showOption = true;
 
 /*
-    sideScroll [boolean/integer]
+    flexBox [boolean/integer]
 
       Applications
-        baseDocumentObjectModles, xmlAppendPublication
+        baseDocumentObjectModles
 
       Result
         convert xml to flex-box (override)
