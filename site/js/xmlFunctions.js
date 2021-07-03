@@ -574,10 +574,10 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) &&
-        cropImages == true ||
-        category == `Youtube`
+        cropImages == true &&
+        menu[id].id.match(/Youtube/g)
     )
-    itemContainer.style.height = `270px`;
+    itemContainer.style.height = `160px`;
     else if (
       cropImages == true &&
       document.body.contains(

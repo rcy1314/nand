@@ -1,4 +1,7 @@
 window.onload = function () {
+  if (flexBox == true)
+    offset = 1500;
+  else offset = 550;
   adj = menu.slice();
   randomizeAssets(adj);
   if (quickFeedsTranslations == true)
@@ -254,7 +257,7 @@ document.addEventListener('scroll', (evt) => {
       if (
         (
           sideScroll == false &&
-          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
+          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
           Reader == true &&
           stop == false
         ) ||
@@ -301,7 +304,7 @@ document.addEventListener('ontouchmove', (evt) => {
       if (
         (
           sideScroll == false &&
-          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= 550 &&
+          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
           Reader == true &&
           stop == false
         ) ||
