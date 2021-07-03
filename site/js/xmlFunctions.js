@@ -545,7 +545,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     )
   ) {
     itemImage.closest(`.classic`).style.alignItems = `center`;
-    if (sideScroll == false) itemImage.closest(`.classic`).style.display = `flex`;
+    //itemImage.closest(`.classic`).style.display = `flex`;
     itemContainer.style.height = `fit-content`;
     itemImage.classList.remove(`hidden`);
     copyPicture.style.display = `none`;

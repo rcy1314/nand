@@ -196,17 +196,16 @@ window.onload = function () {
   _container.style.display = `block`;
 
 };
-
-window.addEventListener('resize', (evt) => {
-    if (_main.clientWidth <= 1440 && _main.clientWidth >= 426) {
-      displayFlex(flexBox)
-    } else if (_main.clientWidth >= 1440) {
-      displayFlex(flexBox)
-    }
-  },
-  { passive: true }
-);
-
+if (flexBox == true)
+  window.addEventListener('resize', (evt) => {
+      if (_main.clientWidth <= 1440 && _main.clientWidth >= 426) {
+        displayFlex(flexBox)
+      } else if (_main.clientWidth >= 1440) {
+        displayFlex(flexBox)
+      }
+    },
+    { passive: true }
+  );
 
 document.addEventListener('touchstart', (evt) => {
     touchmove = false;
@@ -411,38 +410,40 @@ document.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(`fa-camera-retro`)
     ) {
-      sideScroll = sideScroll != true
-      if (
-        sideScroll == true
-      ) {
-        scrollIntoView = false;
-        let leaveOff = _main.scrollTop -
-          ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
-        notifyOption(`Horizontal`, `fa-check-circle`);
-        if (document.body.contains(document.querySelector(`#xml`))) {
-          document.querySelector(`.channel`).classList.add(`sideChannel`);
-          document.querySelector(`.center`).style.top = `60px`;
-          document.querySelector(`#xml`).style.top = 0;
-      _main
-            .querySelectorAll(`.item`)
-            .forEach((a) => (a.classList.add(`sideItem`)));
-        }
-        document.querySelector(`.channel`).scrollLeft = leaveOff;
-      } else if (
-          sideScroll == false
+    if (flexBox == false) {
+        sideScroll = sideScroll != true
+        if (
+          sideScroll == true
         ) {
-          let leaveOff = document.querySelector(`.channel`).scrollLeft +
+          scrollIntoView = false;
+          let leaveOff = _main.scrollTop -
             ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
-          notifyOption(`Vertical`, `fa-check-circle`);
-        if (document.body.contains(document.querySelector(`#xml`))) {
-          document.querySelector(`.channel`).classList.remove(`sideChannel`);
-          document.querySelector(`.center`).style.top = `60px`;
-          document.querySelector(`#xml`).style.top = 0;
-          _main
-            .querySelectorAll(`.item`)
-            .forEach((a) => (a.classList.remove(`sideItem`)));
+          notifyOption(`Horizontal`, `fa-check-circle`);
+          if (document.body.contains(document.querySelector(`#xml`))) {
+            document.querySelector(`.channel`).classList.add(`sideChannel`);
+            document.querySelector(`.center`).style.top = `60px`;
+            document.querySelector(`#xml`).style.top = 0;
+        _main
+              .querySelectorAll(`.item`)
+              .forEach((a) => (a.classList.add(`sideItem`)));
+          }
+          document.querySelector(`.channel`).scrollLeft = leaveOff;
+        } else if (
+            sideScroll == false
+          ) {
+            let leaveOff = document.querySelector(`.channel`).scrollLeft +
+              ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
+            notifyOption(`Vertical`, `fa-check-circle`);
+          if (document.body.contains(document.querySelector(`#xml`))) {
+            document.querySelector(`.channel`).classList.remove(`sideChannel`);
+            document.querySelector(`.center`).style.top = `60px`;
+            document.querySelector(`#xml`).style.top = 0;
+            _main
+              .querySelectorAll(`.item`)
+              .forEach((a) => (a.classList.remove(`sideItem`)));
+          }
+          _main.scrollTop = leaveOff;
         }
-        _main.scrollTop = leaveOff;
       }
     }
     if (
