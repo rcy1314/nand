@@ -9,13 +9,42 @@ let sideBarStar = function (Elem, Value) {
 }
 
 let displayFlex = function (value) {
-  if (_main.clientWidth >= 426) {
-    let height = 0;
+  if (
+    _main.clientWidth >= 426 && _main.clientWidth <= 1440 &&
+    document.body.contains(document.querySelector(`#xml`))
+  ) {
+    var height = 0;
     let column = document.querySelectorAll(`.item:nth-child(3n+1)`);
+    for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
+    document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
+    document.querySelector(`.channel`).style.height = `${(height + 1500).toString()}px`
+    document.querySelector(`.content`).style.display = `none`;
+    document.querySelector(`.channel`).classList.add(`flexbox`);
+    document.querySelector(`.channel`).classList.remove(`desktop`);
+    _main
+      .querySelectorAll(`.item`)
+      .forEach((a) => a.classList.add(`flexbox`));
+    _main
+      .querySelectorAll(`.item`)
+      .forEach((a) => a.classList.remove(`desktop`));
+  } else if (
+    document.body.contains(document.querySelector(`#xml`)) &&
+    _main.clientWidth >= 1440
+  ) {
+    var height = 0;
+    let column = document.querySelectorAll(`.item:nth-child(4n+1)`);
     for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
     document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
     document.querySelector(`.channel`).style.height = `${(height + 950).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
+    document.querySelector(`.channel`).classList.add(`desktop`);
+    document.querySelector(`.channel`).classList.remove(`flexbox`);
+    _main
+      .querySelectorAll(`.item`)
+      .forEach((a) => a.classList.add(`desktop`));
+    _main
+      .querySelectorAll(`.item`)
+      .forEach((a) => a.classList.remove(`flexbox`));
   }
 }
 
@@ -211,7 +240,14 @@ let stageBuild = function () {
     let status = document.createElement(`div`);
     let xml = document.createElement(`div`);
     xml.id = `xml`;
-    if (flexBox == true) channel.classList.add(`flexbox`)
+    if (
+      _main.clientWidth >= 426 && _main.clientWidth <= 768 &&
+      displayFlex == true
+    ) channel.classList.add(`flexbox`)
+    else if (
+      _main.clientWidth >= 769 &&
+      displayFlex == true
+    ) channel.classList.add(`desktop`)
     channel.classList.add(`channel`);
     center.classList.add(`center`);
     center.append(channel);

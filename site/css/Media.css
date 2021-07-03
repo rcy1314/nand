@@ -305,6 +305,10 @@
 
 @media (min-width: 426px) and (max-width: 767px) {
 
+  #main #option {
+    display: none !important;
+  }
+
   .content {
     display: none;
   }
