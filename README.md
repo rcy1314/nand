@@ -60,6 +60,7 @@
 ### Settings
 
 <em>Located in</em> `site/js/settings.js` <em> edit everything !</em><br>
+&emsp;-flag flexBox to false for legacy
 
 ### Optional
 
