@@ -17,7 +17,7 @@ let displayFlex = function (value) {
     let column = document.querySelectorAll(`.item:nth-child(3n+1)`);
     for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
     document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
-    document.querySelector(`.channel`).style.height = `${(height + 750).toString()}px`
+    document.querySelector(`.channel`).style.height = `${(height + 1000).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
     document.querySelector(`.channel`).classList.add(`flexbox`);
     document.querySelector(`.channel`).classList.remove(`desktop`);
@@ -35,7 +35,7 @@ let displayFlex = function (value) {
     let column = document.querySelectorAll(`.item:nth-child(4n+1)`);
     for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
     document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
-    document.querySelector(`.channel`).style.height = `${(height + 1000).toString()}px`
+    document.querySelector(`.channel`).style.height = `${(height + 1500).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
     document.querySelector(`.channel`).classList.add(`desktop`);
     document.querySelector(`.channel`).classList.remove(`flexbox`);

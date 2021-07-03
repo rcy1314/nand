@@ -568,23 +568,49 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     attribute.style.height = `74px`;
   } else {
     if (
+      newImg.naturalHeight >= newImg.naturalWidth &&
       document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) &&
-        cropImages == false ||
+        cropImages == true ||
         category == `Youtube`
     )
-    itemContainer.style.height = `auto`;
+    itemContainer.style.height = `270px`;
     else if (
+      cropImages == true &&
       document.body.contains(
         document.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      )
+      ) && newImg.naturalHeight >= newImg.naturalWidth
     )
     itemContainer.style.height = `270px`;
+    else if (
+      cropImages == true &&
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      ) && newImg.naturalHeight <= newImg.naturalWidth
+    ) itemContainer.style.height = `fit-content`;
+    else if (
+      cropImages == false &&
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      ) && newImg.naturalHeight >= newImg.naturalWidth
+    ) itemContainer.style.height = `auto`;
+    else if (
+      cropImages == false &&
+      document.body.contains(
+        document.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        )
+      ) && newImg.naturalHeight <= newImg.naturalWidth
+    ) itemContainer.style.height = `fit-content`;
     if (
       document.body.contains(
         document.querySelector(
