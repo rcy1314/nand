@@ -109,7 +109,6 @@ var anyRandomMenuObject = function () {
     randomObject = randomObject;
   else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
   if (justRead == false) {
-    category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
     return randomObject
   } else if (
@@ -118,14 +117,12 @@ var anyRandomMenuObject = function () {
   ) {
     var randomObject =
       menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]);
-    category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
     return randomObject;
   } else if (
     justRead == true &&
     onlyImages == true
   ) {
-    category = menu[randomObject].category;
     randomDuplicate.push(randomObject);
     return randomObject;
 }
