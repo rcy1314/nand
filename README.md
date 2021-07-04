@@ -39,7 +39,6 @@
   <div align='right'><em>Horizontal Scrolling</em></div>
   <div align='right'><em>MIT License (free)</em></div>
   <div align='right'><em>List Block view</em></div>
-  <div align='right'><em>Single word search engine</em></div>
   <div align='right'><em>Extensive image parsing</em></div>
   <div align='right'><em>Tap click links to articles</em></div>
   <div align='right'><em>Time date timestamp formating</em></div>
