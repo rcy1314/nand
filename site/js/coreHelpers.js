@@ -83,8 +83,7 @@ var anyRandomMenuObject = function () {
       justRead == false
     ) {
       if (
-        menu[i] &&
-        menu[i].category == category
+        menu[i]
       )
         random.push(menu.indexOf(menu[i]));
     } else if (
@@ -97,17 +96,15 @@ var anyRandomMenuObject = function () {
       )
         random.push(menu.indexOf(menu[i]));
     } else if (onlyImages == false) {
-      if (menu[i].category == category) random.push(menu[i]);
+      random.push(menu[i]);
     }
   }
   var randomObject = random[Math.floor(Math.random() * random.length - 1)];
-  if (
+  while (
     menu[randomObject] &&
-    randomObject != 0 &&
     !randomDuplicate.includes(randomObject)
   )
-    randomObject = randomObject;
-  else var randomObject = menu[Math.floor(Math.random() * menu.length - 1)];
+  randomObject = randomObject;
   if (justRead == false) {
     randomDuplicate.push(randomObject);
     return randomObject
