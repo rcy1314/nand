@@ -56,25 +56,11 @@
 .fa-wordpress,
 .fa-youtube {
   transition: all 500ms ease-in-out;
+  display: inline-flex !important;
   color: var(--loader-color);
-  display: inline-flex;
   font-size: 16px;
   font-weight: 50;
   margin: 7px;
-}
-
-#options .fa:hover,
-.fa-git:hover,
-.fa-facebook-f:hover,
-.fa-twitter:hover,
-.fa-instagram:hover,
-.fa-pinterest:hover,
-.fa-amazon:hover,
-.fa-wordpress:hover,
-.fa-youtube:hover {
-  transition: all 500ms ease-in-out;
-  color: var(--fill-color);
-  transform: scale(1.25);
 }
 
 .fa-angle-double-up,
