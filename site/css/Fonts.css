@@ -163,10 +163,17 @@
 
 #guide .sticky .fa-heart,
 #main #xml .center .item .image .fa-heart {
+  font-weight: 900 !important;
   color: white !important;
+  margin-bottom: auto;
   position: absolute;
+  margin-top: auto;
   font-size: 50px;
   display: none;
+  height: 50px;
+  width: 50px;
+  bottom: 0;
+  top: 0;
 }
 
 .fa-home {

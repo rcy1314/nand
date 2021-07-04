@@ -450,7 +450,7 @@ let filterInputResponse = function (filterURI) {
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
-  } else return false
+  } else if (exact) xmlRequestParsing(exact)
   document.title = filterURI.toString().space();
 };
 

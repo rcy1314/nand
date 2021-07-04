@@ -35,6 +35,7 @@ setTimeout(function() {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);
         if (i !== -1) xmlRequestParsing(i);
+        else filterInputResponse(uri)
       }, 250);
     } else if (id.match(/[0-9]/g)) {
         post =

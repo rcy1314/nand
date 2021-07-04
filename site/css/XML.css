@@ -61,7 +61,7 @@
   display: inline-block;
   height: fit-content;
   position: relative;
-  text-align: left;
+  text-align: justify;
 }
 
 .channel::-webkit-scrollbar {
