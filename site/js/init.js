@@ -34,7 +34,7 @@ setTimeout(function() {
       setTimeout(function () {
         if (menu.findIndex((item) => item.hash === id))
           i = menu.findIndex((item) => item.hash === id);
-        if (i !== -1) xmlRequestParsing(null, null, i);
+        if (i !== -1) xmlRequestParsing(i);
       }, 250);
     } else if (id.match(/[0-9]/g)) {
         post =
@@ -44,7 +44,7 @@ setTimeout(function() {
         if (menu.findIndex((item) => item.title === id))
           i = menu.findIndex((item) => item.title === id);
         if (i !== -1)
-          xmlRequestParsing(null, null, i);
+          xmlRequestParsing(i);
         else if (i === -1)
           filterInputResponse(location.href.split(`?`)[1]);
         _toggle.style.display = `none`;
@@ -73,7 +73,7 @@ setTimeout(function() {
       } else if (Reader == true) {
         justRead = true;
         onlyImages = true;
-        xmlRequestParsing(null, null, anyRandomMenuObject());
+        xmlRequestParsing(anyRandomMenuObject());
       }
     }, 250);
   }

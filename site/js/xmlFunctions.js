@@ -89,6 +89,7 @@ var xmlStatusSuggestions = function () {
 };
 
 var guideImageAttributes = function (pubArray) {
+  let maximum = 480;
   let newImg = new Image();
   newImg.setAttribute(`src`, pubArray.src);
   newImg.onload = function () {
@@ -169,6 +170,8 @@ var guideImageAttributes = function (pubArray) {
       }
     } else {
       _main.classList.add(`guide`);
+      if (newImg.naturalWidth <= maximum)
+      _guide.querySelector(`.sticky .image`).style.margin = `25px`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         _guide
           .querySelectorAll(`.img, .filterBlur`)
@@ -194,7 +197,6 @@ var guideImageAttributes = function (pubArray) {
     }
     if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
       _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
-      _guide.querySelector(`.sticky .image`).style.margin = `25px`;
       document.querySelector(`.sticky`).style.display = `block`;
       _guide.style.display = `flex`;
     }
@@ -906,9 +908,6 @@ var xmlAppendPublication = function (id) {
         images.push({ element: pub[i].element, src: pub[i].src });
       }
     } else if (omitGuide == false) {
-      let channel = document.createElement(`div`);
-      channel.classList.add(`channel`);
-      channel.style.position = `fixed`;
       if (document.body.contains(document.querySelector(`#xml`))) {
         let append = document.querySelectorAll(`.channel`);
         append[append.length - 1].append(pub[i].post)
@@ -925,7 +924,7 @@ var xmlAppendPublication = function (id) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
   }
-  if (Reader == true && flexBox == false && id !== 0) {
+  if (Reader == true && flexBox == false) {
     _main
       .querySelectorAll(`.joi`)
       .forEach((a) => a.classList.add(`luv`));
@@ -959,9 +958,9 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (Reader == false) {
-    if (id !== 0 && pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
-    if (id !== 0 && pub[pub.length - 1]) var posts = pub.length - 1;
-    if (id !== 0 && pub[0]) var recent = pub[0].dst;
+    if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
+    if (pub[pub.length - 1]) var posts = pub.length - 1;
+    if (pub[0]) var recent = pub[0].dst;
     //document.querySelector(`.channel`).append(footerBuild(id));
   }
   if (
@@ -980,7 +979,7 @@ var xmlAppendPublication = function (id) {
   }
 }
 
-var xmlRequestParsing = function (search, string, index) {
+var xmlRequestParsing = function (index) {
   init();
   pub = [];
   let html;
@@ -1000,13 +999,8 @@ var xmlRequestParsing = function (search, string, index) {
     !document.body.contains(document.querySelector(`#xml`))
   )
     _main.append(stageBuild());
-  if (search == `search`) {
-    uri = `${cors}${menu[index].uri}${string.add()}&format=RSS`;
-    category = category;
-  } else {
     uri = `${cors}${menu[index].uri}`;
     category = menu[index].category;
-  }
   _visit.style.display = `none`;
   _sb.style.display = `none`
   document.title = menu[index].id.space();

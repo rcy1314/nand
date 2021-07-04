@@ -268,7 +268,7 @@ document.addEventListener('scroll', (evt) => {
         if (showSplash == true) {
           _check.style.display = `block`;
         }
-        xmlRequestParsing(null, null, anyRandomMenuObject());
+        xmlRequestParsing(anyRandomMenuObject());
       }
     }
   },
@@ -330,6 +330,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`header`) ||
       evt.target.classList.contains(`select`) ||
       evt.target.classList.contains(`result`) ||
+      evt.target.classList.contains(`center`) ||
       evt.target.classList.contains(`post`) ||
       evt.target.classList.contains(`site`) ||
       evt.target.classList.contains(`wrap`) ||
@@ -557,7 +558,7 @@ document.addEventListener('click', (evt) => {
         _main
           .querySelectorAll(`.joi`)
           .forEach((a) => a.classList.add(`luv`));
-        xmlRequestParsing(null, null, anyRandomMenuObject());
+        xmlRequestParsing(anyRandomMenuObject());
       }
     }
     if (
@@ -570,20 +571,6 @@ document.addEventListener('click', (evt) => {
       set = themes[iteration].obFn;
       window[set]();
       notifyOption(themes[iteration].obFn, `fa-check-circle`);
-    }
-    if (evt.target.id == `just`) {
-      Reader = true;
-      justRead = true;
-      onlyImages = true;
-      randomDuplicate = [];
-      document
-        .querySelectorAll(`.joi`)
-        .forEach((a) => (a.classList.add(`luv`)));
-      if (showSplash == true) _check.style.display = `block`;
-      notifyOption(`Reading`, `fa-check-circle`);
-      sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
-      xmlRequestParsing(null, null, anyRandomMenuObject());
-      topMenuBarDisplay(topBar);
     }
     if (
       evt.target.classList.contains(`exit`) ||
@@ -600,7 +587,6 @@ document.addEventListener('click', (evt) => {
       quickFeedDisplay(quickFeeds);
     }
     if (evt.target.id == `home`) {
-      id = 0;
       _sb.style.display = `block`;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
@@ -619,7 +605,8 @@ document.addEventListener('click', (evt) => {
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
       document.title = ``;
-      notifyOption(`Welcome Home`, `fa-check-circle`);
+      main.setAttribute(`tabindex`, -1);
+      main.focus();
   }
     if (evt.target.classList.contains(`construct`)) {
       let url = menu[id].uri.match(
@@ -666,8 +653,6 @@ document.addEventListener('click', (evt) => {
         return false;
       }
       xmlRequestParsing(
-        null,
-        null,
         evt.target.closest(`.populate`).getAttribute(`aria-item`)
       );
       _toggle.style.display = `none`;
@@ -677,12 +662,11 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`translation`) &&
       evt.target.getAttribute(`aria-item`) != `Assets`
     ) {
-      id = 0;
       first = true;
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
       if (Reader == true) {
         randomDuplicate = [];
-        xmlRequestParsing(null, null, anyRandomMenuObject());
+        xmlRequestParsing(anyRandomMenuObject());
       } else {
         let target = event;
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -705,8 +689,6 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`query`)
     ) {
       xmlRequestParsing(
-        null,
-        null,
         evt.target.closest(`.asset`).getAttribute(`aria-item`)
       );
       topMenuBarDisplay(topBar);
@@ -738,8 +720,6 @@ document.addEventListener('click', (evt) => {
     if (evt.target.classList.contains(`bottom`)) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       evt.target.closest(`#xml`).remove();
-      if (id === 0) populateCategoryGroup(category);
-      else {
         if (location.href.match(`\\?q=`)) {
           var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
           let description = menu.filter(function (item) {
@@ -756,7 +736,6 @@ document.addEventListener('click', (evt) => {
         } else populateCategoryGroup(category);
         document.title = category;
         displayExpand(expand);
-      }
     }
     if (evt.target.classList.contains(`more`)) {
       evt.target.parentNode.innerHTML = evt.target.parentNode.getAttribute(
@@ -786,16 +765,14 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`#xml`).remove();
       first = true;
       xmlRequestParsing(
-        null,
-        null,
         evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
     if (evt.target.classList.contains(`detail`))
-      xmlRequestParsing(null, null, evt.target.closest(`.hover`)
+      xmlRequestParsing(evt.target.closest(`.hover`)
         .getAttribute(`aria-item`));
     if (evt.target.classList.contains(`asset`))
-      xmlRequestParsing(null, null, evt.target.getAttribute(`aria-item`));
+      xmlRequestParsing(evt.target.getAttribute(`aria-item`));
     if (
       evt.target.classList.contains(`flip-front`) ||
       evt.target.classList.contains(`flip-back`) ||
@@ -807,8 +784,6 @@ document.addEventListener('click', (evt) => {
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
       xmlRequestParsing(
-        null,
-        null,
         evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );
     }

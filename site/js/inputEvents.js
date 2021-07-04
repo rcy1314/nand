@@ -16,7 +16,8 @@ document.addEventListener('keyup', (evt) => {
     if (
       event.target.id == `view`
     ) {
-      if (event.target.value.length >= 1 && event.target.value != `Search`) return false
+      if (event.target.value.length >= 1 && event.target.value != `Search`)
+      return false
       else {
         _match.style.display = `none`;
         while (_match.querySelector(".listing").firstChild) {
@@ -71,8 +72,6 @@ document.addEventListener('click', (evt) => {
           menu[event.target.closest(`.index`).getAttribute(`aria-item`)]
             .category;
         xmlRequestParsing(
-          null,
-          null,
           event.target.closest(`.index`).getAttribute(`aria-item`)
         );
         _visit.style.display = `none`;
@@ -191,13 +190,9 @@ document.addEventListener('submit', (evt) => {
       } else if (document.body.contains(_match.querySelector(`.hover`))) {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
         xmlRequestParsing(
-          null,
-          null,
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         );
         _match.style.display = `none`;
@@ -218,19 +213,10 @@ document.addEventListener('submit', (evt) => {
         _show.style.visibility = `visible`;
         _link.style.visibility = `visible`;
         _first.style.display = `none`;
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove();
         xmlRequestParsing(
-          null,
-          null,
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
-      } else if (_guest.value.length > 0) {
-        filterInputResponse(_guest.value);
-        topMenuBarDisplay(topBar);
-      }
+      } else if (_guest.value.length > 0) filterInputResponse(_guest.value);
       _options.style.visibility = `visible`;
       _social.style.visibility = `visible`;
       _label.style.visibility = `visible`;
@@ -246,7 +232,7 @@ document.addEventListener('submit', (evt) => {
 
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
-  if (event.target.value.length > 2) {
+  if (event.target.value.length > 1) {
     _options.style.visibility = `hidden`;
     _social.style.visibility = `hidden`;
     _label.style.visibility = `hidden`;

@@ -316,7 +316,6 @@ let populateAssets = function () {
       }
     }
   }
-  id = 0;
   displayDescription(showDescription);
   topMenuBarDisplay(topBar);
   unloading();
@@ -383,12 +382,12 @@ let populateCategoryGroup = function (translation) {
       }
     }
   }
-  id = 0;
   if (onlyImages == false) reverseCategoryGroup(translation);
   else if (onlyImages == true) {
     unloading();
   }
   main.setAttribute(`tabindex`, -1);
+  topMenuBarDisplay(topBar);
   main.focus();
 };
 
@@ -451,11 +450,7 @@ let filterInputResponse = function (filterURI) {
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
-  } else if (match === -1 && description.length <= 0) {
-    xmlRequestParsing(`search`, filterURI.toLowerCase().space(), 0);
-  } else {
-      xmlRequestParsing(null, null, match);
-  }
+  } else return false
   document.title = filterURI.toString().space();
 };
 

@@ -18,7 +18,7 @@ document.addEventListener('click', (evt) => {
         if (menu[id].id.match(/Youtube/g)) {
           init();
           document.querySelector(`#xml`).remove();
-          xmlRequestParsing(null, null, id);
+          xmlRequestParsing(id);
         }
       }
       sideBarStar(event.target, youtubeMedia);
@@ -199,7 +199,7 @@ document.addEventListener('click', (evt) => {
       category = event.target.getAttribute(`aria-item`);
       if (Reader == true) {
         justRead = false;
-        xmlRequestParsing(null, null, anyRandomMenuObject());
+        xmlRequestParsing(anyRandomMenuObject());
       } else {
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -222,7 +222,6 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`side`)
     ) {
       _sb.style.display = `block`;
-      id = 0;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (document.body.contains(document.querySelector(`#xml`)))
         document.querySelector(`#xml`).remove();
@@ -240,7 +239,8 @@ document.addEventListener('click', (evt) => {
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
       document.title = ``;
-      notifyOption(`Welcome Home`, `fa-check-circle`);
+      main.setAttribute(`tabindex`, -1);
+      main.focus();
     }
     if (
       event.target.classList.contains(`fa-lock`) ||
@@ -428,7 +428,7 @@ document.addEventListener('click', (evt) => {
       touchmove = true;
       if (Reader == true)
         if (document.body.contains(document.querySelector(`#xml`)))
-          xmlRequestParsing(null, null, anyRandomMenuObject());
+          xmlRequestParsing(anyRandomMenuObject());
       if (Reader == false) {
         _visit.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
@@ -450,7 +450,7 @@ document.addEventListener('click', (evt) => {
         init();
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
-        xmlRequestParsing(null, null, id);
+        xmlRequestParsing(id);
       } else if (feedImages == false) {
         document
           .querySelectorAll(`.image`)

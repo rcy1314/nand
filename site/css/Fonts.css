@@ -105,9 +105,7 @@
 }
 
 .fa-chart-pie,
-.fa-exclamation-circle,
 #sidebar #content .fa-home,
-.fa-infinity,
 .fa-redo,
 .fa-tablet-alt {
   margin-top: -22px !important;
@@ -125,7 +123,8 @@
 #main #option .fa-camera-retro,
 #main #option .fa-expand-alt,
 #main #option .fa-heart,
-#main #option .fa-home {
+#main #option .fa-home,
+#main #top #option .fa-sun {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;
@@ -367,8 +366,7 @@
   z-index: 1;
 }
 
-#main #toggle,
-#main #option .fa-sun {
+.fa-sun {
   font-family: "Font Awesome 5 Pro";
   content: "\f185";
   font-weight: 50;
