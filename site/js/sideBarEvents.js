@@ -189,6 +189,7 @@ document.addEventListener('click', (evt) => {
           .querySelectorAll(`.image`)
           .forEach((a) => a.style.height = `auto`);
       }
+      if (flexBox == true) displayFlex(flexBox);
       sideBarStar(event.target, cropImages);
     }
     if (event.target.classList.contains(`roundedEdge`)) {

@@ -20,7 +20,7 @@ let displayFlex = function (value) {
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
     document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
-    document.querySelector(`.channel`).style.height = `${(max + 100).toString()}px`
+    document.querySelector(`.channel`).style.height = `${(max + 500).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
     document.querySelector(`.channel`).classList.add(`flexbox`);
     _main
