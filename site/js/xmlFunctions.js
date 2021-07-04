@@ -545,7 +545,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     )
   ) {
     itemImage.closest(`.classic`).style.alignItems = `center`;
-    if (flexBox == false && sideScroll == false)
+    if (sideScroll == false)
       itemImage.closest(`.classic`).style.display = `flex`;
     else if (flexBox == false && sideScroll == true)
       itemImage.closest(`.classic`).style.display = `block`;

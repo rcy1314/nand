@@ -199,16 +199,6 @@ window.onload = function () {
   _container.style.display = `block`;
 
 };
-if (flexBox == true)
-  window.addEventListener('resize', (evt) => {
-      if (_main.clientWidth <= 1440 && _main.clientWidth >= 426) {
-        displayFlex(flexBox)
-      } else if (_main.clientWidth >= 1440) {
-        displayFlex(flexBox)
-      }
-    },
-    { passive: true }
-  );
 
 document.addEventListener('touchstart', (evt) => {
     touchmove = false;
