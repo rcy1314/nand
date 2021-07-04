@@ -962,7 +962,7 @@ var xmlAppendPublication = function (id) {
     if (id !== 0 && pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (id !== 0 && pub[pub.length - 1]) var posts = pub.length - 1;
     if (id !== 0 && pub[0]) var recent = pub[0].dst;
-    document.querySelector(`.channel`).append(footerBuild(id));
+    //document.querySelector(`.channel`).append(footerBuild(id));
   }
   if (
     document.body.contains(document.querySelector(`#xml`))
