@@ -192,6 +192,7 @@ html body,
   display: inline-block;
   position: absolute;
   right: 30px;
+  top: -20px;
 }
 
 #page {
@@ -228,6 +229,7 @@ html body,
 #social {
   position: absolute;
   left: 40px;
+  top: -20px;
 }
 
 #top {

@@ -63,7 +63,6 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`buffer`) ||
       event.target.classList.contains(`input`)
   ) {
-    _toggle.style.display = `none`
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
@@ -166,7 +165,6 @@ document.addEventListener('submit', (evt) => {
           document.querySelector(`.sideFilter`).value.space(),
         );
         _toggle.style.display = `none`;
-        _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
       }
     } else if (event.target.id == `search`) {
@@ -232,7 +230,7 @@ document.addEventListener('submit', (evt) => {
 
 var inputListingKeyup = function (Elem, keycode) {
   if (keycode === 13) return false;
-  if (event.target.value.length > 1) {
+  if (event.target.value.length >= 0) {
     _options.style.visibility = `hidden`;
     _social.style.visibility = `hidden`;
     _label.style.visibility = `hidden`;

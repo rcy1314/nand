@@ -126,7 +126,6 @@ let progressBackDrop = function (done) {
   let width;
   let length;
   let complete;
-  _visit.style.display = `none`;
   if (done == false && loading == `percent`) {
     complete = setInterval(function () {
       if (safeSearchIDs.includes(menu[id].id))
@@ -428,7 +427,6 @@ let filterInputResponse = function (filterURI) {
     setTimeout(function() {
       populateCategoryGroup(filterURI.toString().capitalize());
     }, 200)
-    category = filterURI.toString().capitalize();
     unloading();
     return false;
   }
@@ -450,7 +448,8 @@ let filterInputResponse = function (filterURI) {
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();
-  } else if (exact) xmlRequestParsing(exact)
+  } else if (exact > -1) xmlRequestParsing(exact)
+  else return false;
   document.title = filterURI.toString().space();
 };
 

@@ -51,10 +51,10 @@
   #main #top #arm #option,
   #main #xml .center #quick,
   #main #visit #page #social,
+  #main #visit #page #options,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
-  #main #visit #page #front .focus .button,
-  #main #visit #page #options .fa-camera-retro {
+  #main #visit #page #front .focus .button {
     display: none !important;
   }
 
@@ -87,7 +87,7 @@
       margin-right: auto;
       margin-left: auto;
       left: 10px;
-      top: 95px;
+      top: 115px;
       right: 0;
   }
 

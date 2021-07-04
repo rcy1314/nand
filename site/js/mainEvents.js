@@ -6,6 +6,8 @@ window.onload = function () {
   randomizeAssets(adj);
   if (quickFeedsTranslations == true)
     quickFeedAsset(7);
+  else if (_main.clientWidth <= 425)
+    quickFeedAsset(16);
   else quickFeedAsset(8);
   quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
