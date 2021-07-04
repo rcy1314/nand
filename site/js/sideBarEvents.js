@@ -360,7 +360,7 @@ document.addEventListener('click', (evt) => {
         .querySelectorAll(`.bars`)
         .forEach((a) => a.style.display = `none`);
       _main
-        .querySelectorAll(`.orig`)
+        .querySelectorAll(`.animation`)
         .forEach((a) => a.style.display = `none`);
       _main
         .querySelectorAll(`.loader`)
@@ -376,7 +376,7 @@ document.addEventListener('click', (evt) => {
         .querySelectorAll(`.bars`)
         .forEach((a) => a.style.display = `block`);
       _main
-        .querySelectorAll(`.orig`)
+        .querySelectorAll(`.animation`)
         .forEach((a) => a.style.display = `none`);
       _main
         .querySelectorAll(`.loader`)
@@ -395,7 +395,7 @@ document.addEventListener('click', (evt) => {
         .querySelectorAll(`.bars`)
         .forEach((a) => a.style.display = `none`);
       _main
-        .querySelectorAll(`.orig`)
+        .querySelectorAll(`.animation`)
         .forEach((a) => a.style.display = `none`);
       sideBarStar(event.target, true);
       sideBarStar(document.querySelector(`.verticalbars`), false);
@@ -405,7 +405,7 @@ document.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`ringloader`)) {
       imageLoader = `ring-circle`;
       _main
-        .querySelectorAll(`.orig`)
+        .querySelectorAll(`.animation`)
         .forEach((a) => a.style.display = `block`);
       _main
         .querySelectorAll(`.bars`)

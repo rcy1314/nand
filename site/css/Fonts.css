@@ -7,6 +7,7 @@
 .fab,
 .fas {
   font-weight: 50 !important;
+  cursor: pointer;
 }
 
 .attribute .fa {
@@ -48,11 +49,8 @@
 #options .fa,
 .fa-amazon,
 .fa-facebook-f,
-.fa-font-awesome-alt,
-.fa-font-awesome-flag,
 .fa-instagram,
 .fa-git,
-.fa-github,
 .fa-pinterest,
 .fa-twitter,
 .fa-wordpress,
@@ -66,8 +64,6 @@
 }
 
 #options .fa:hover,
-.fa-font-awesome-alt:hover,
-.fa-font-awesome-flag:hover,
 .fa-git:hover,
 .fa-facebook-f:hover,
 .fa-twitter:hover,
@@ -75,7 +71,6 @@
 .fa-pinterest:hover,
 .fa-amazon:hover,
 .fa-wordpress:hover,
-.fa-github:hover,
 .fa-youtube:hover {
   transition: all 500ms ease-in-out;
   color: var(--fill-color);
@@ -130,8 +125,7 @@
 #main #option .fa-camera-retro,
 #main #option .fa-expand-alt,
 #main #option .fa-heart,
-#main #option .fa-home,
-#main #option .fa-sun {
+#main #option .fa-home {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;

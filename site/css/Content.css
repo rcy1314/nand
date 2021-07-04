@@ -53,18 +53,6 @@ html body,
   background-size: auto 100%;
 }
 
-#container #toggle {
-  background-color: transparent;
-  color: var(--fill-color);
-  position: absolute;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 15px;
-  right: 2px;
-  z-index: 12;
-  top: 20px;
-}
-
 #container .sb {
   background-color: transparent;
   color: var(--fill-color);
@@ -164,10 +152,6 @@ html body,
   padding: 10px;
   height: 15px;
   width: 15px;
-}
-
-#link:hover {
-  background-color: var(--borderless-color);
 }
 
 #container #notify {

@@ -217,7 +217,6 @@ document.addEventListener('submit', (evt) => {
         _quick.style.visibility = `visible`;
         _show.style.visibility = `visible`;
         _link.style.visibility = `visible`;
-        _just.style.visibility = `visible`;
         _first.style.display = `none`;
         if (document.body.contains(document.querySelector(`#xml`)))
           document.querySelector(`#xml`).remove();
@@ -238,7 +237,6 @@ document.addEventListener('submit', (evt) => {
       _quick.style.visibility = `visible`;
       _show.style.visibility = `visible`;
       _link.style.visibility = `visible`;
-      _just.style.visibility = `visible`;
       _first.style.display = `none`;
     }
     event.preventDefault();
@@ -255,7 +253,6 @@ var inputListingKeyup = function (Elem, keycode) {
     _quick.style.visibility = `hidden`;
     _show.style.visibility = `hidden`;
     _link.style.visibility = `hidden`;
-    _just.style.visibility = `hidden`;
   }
   if (
     event.target.value.length > 2 &&
@@ -276,7 +273,6 @@ var inputListingKeyup = function (Elem, keycode) {
     _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;
     _link.style.visibility = `visible`;
-    _just.style.visibility = `visible`;
   } else if (keycode === 40) {
     if (
       !document.body.contains(document.querySelector(`${Elem} .listing .hover`))
@@ -417,7 +413,6 @@ var inputListingKeyup = function (Elem, keycode) {
     _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;
     _link.style.visibility = `visible`;
-    _just.style.visibility = `visible`;
   }
   if (
     document.body.contains(document.querySelector(`${Elem} .listing .hover`))

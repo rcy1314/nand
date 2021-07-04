@@ -370,7 +370,6 @@ document.addEventListener('click', (evt) => {
         _label.style.visibility = `visible`;
         _quick.style.visibility = `visible`;
         _link.style.visibility = `visible`;
-        _just.style.visibility = `visible`;
         _first.style.display = `none`;
         _guest.blur();
         return false;
@@ -612,7 +611,6 @@ document.addEventListener('click', (evt) => {
       _label.style.visibility = `visible`;
       _quick.style.visibility = `visible`;
       _link.style.visibility = `visible`;
-      if (quickFeeds == false) _just.style.visibility = `visible`;
       _visit.style.visibility = `visible`;
       _toggle.style.display = `block`;
       _first.style.display = `none`;

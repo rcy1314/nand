@@ -1,7 +1,7 @@
 var California = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `8px 8px 16px rgba(158, 123, 167, .4)`
+    `0 0 0 0 rgba(0, 0, 0, 0)`
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
@@ -18,7 +18,7 @@ var California = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(158, 123, 167, .6)`
+    `rgba(158, 123, 167, .3)`
   );
   document.documentElement.style.setProperty(
     `--border-color`,

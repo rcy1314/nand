@@ -13,9 +13,10 @@
 #container #sidebar #content #basic {
   position: relative;
   margin: 15px auto;
+  margin-left: 10px;
   overflow: hidden;
   margin-top: 0;
-  width: 280px;
+  width: 270px;
   bottom: 0;
 }
 
@@ -73,13 +74,12 @@
 #container #sidebar #content .exclude .parse {
   background-color: transparent !important;
   color: var(--fill-color);
-  padding-bottom: 9px;
-  padding-top: 9px;
+  width: calc(100% - 9px);
   overflow: hidden;
   font-weight: 50;
   font-size: 12px;
+  padding: 9px;
   height: 15px;
-  width: 100%;
 }
 
 #container #sidebar #content .bg .adjust:hover,
