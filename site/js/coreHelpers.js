@@ -104,25 +104,7 @@ var anyRandomMenuObject = function () {
     menu[randomObject] &&
     !randomDuplicate.includes(randomObject)
   )
-  randomObject = randomObject;
-  if (justRead == false) {
-    randomDuplicate.push(randomObject);
-    return randomObject
-  } else if (
-    justRead == true &&
-    onlyImages == false
-  ) {
-    var randomObject =
-      menu.indexOf(menu[Math.floor(Math.random() * menu.length - 1)]);
-    randomDuplicate.push(randomObject);
     return randomObject;
-  } else if (
-    justRead == true &&
-    onlyImages == true
-  ) {
-    randomDuplicate.push(randomObject);
-    return randomObject;
-}
 };
 
 function scrollToElm(touch, container, elm, duration){
