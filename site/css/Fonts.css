@@ -124,7 +124,7 @@
 #main #option .fa-expand-alt,
 #main #option .fa-heart,
 #main #option .fa-home,
-#main #top #option .fa-sun {
+#main #option .fa-sun:not(#options .fa-sun) {
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;
