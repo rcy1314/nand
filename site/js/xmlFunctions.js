@@ -925,7 +925,7 @@ var xmlAppendPublication = function (id) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
   }
-  if (Reader == true && id !== 0) {
+  if (Reader == true && flexBox == false && id !== 0) {
     _main
       .querySelectorAll(`.joi`)
       .forEach((a) => a.classList.add(`luv`));
