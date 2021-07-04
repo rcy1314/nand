@@ -442,7 +442,7 @@ let filterInputResponse = function (filterURI) {
     return item.description.space().toLowerCase()
       .match(filterURI.toString().toLowerCase().space());
   })
-  if (description.length > 1 && exact === -1) {
+  if (description.length > 1 && match && exact === -1) {
     groupBuild();
     for (i = 0; i <= description.length - 1; i++)
       writeFilterResponse(menu.indexOf(description[i]));
