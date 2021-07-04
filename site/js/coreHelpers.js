@@ -76,35 +76,34 @@ var randomizeAssets = function (array) {
 }
 
 var anyRandomMenuObject = function () {
-  let random = []
+  let random = [];
+  let randomObject;
   for (i = 1; i <= menu.length - 1; i++) {
     if (
-      onlyImages == true &&
-      justRead == false
-    ) {
-      if (
-        menu[i]
-      )
+      menu[i] &&
+      onlyImages == true
+    )
         random.push(menu.indexOf(menu[i]));
-    } else if (
+    else if (
+      menu[i] &&
       onlyImages == true &&
-      justRead == true
-    ) {
-      if (
-        menu[i] &&
-        menu[i].media == true
-      )
-        random.push(menu.indexOf(menu[i]));
-    } else if (onlyImages == false) {
-      random.push(menu[i]);
-    }
+      menu[i].media == true
+    )
+      random.push(menu.indexOf(menu[i]));
+    else if (onlyImages == false) random.push(menu[i]);
   }
-  var randomObject = random[Math.floor(Math.random() * random.length - 1)];
-  while (
+  randomObject = random[Math.floor(Math.random() * random.length - 1)];
+  if (
     menu[randomObject] &&
     !randomDuplicate.includes(randomObject)
-  )
-    return randomObject;
+  ) {
+    do randomObject = random[Math.floor(Math.random() * random.length - 1)];
+    while (
+      menu[randomObject] &&
+      !randomDuplicate.includes(randomObject)
+    )
+  }
+  return randomObject;
 };
 
 function scrollToElm(touch, container, elm, duration){

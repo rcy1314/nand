@@ -7,7 +7,7 @@ window.onload = function () {
   if (quickFeedsTranslations == true)
     quickFeedAsset(7);
   else if (_main.clientWidth <= 425)
-    quickFeedAsset(16);
+    quickFeedAsset(20);
   else quickFeedAsset(8);
   quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
