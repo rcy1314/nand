@@ -20,7 +20,7 @@ let displayFlex = function (value) {
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
     document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
-    document.querySelector(`.channel`).style.height = `${(max + 300).toString()}px`
+    document.querySelector(`.channel`).style.height = `${(max + 1000).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
     document.querySelector(`.channel`).classList.add(`flexbox`);
     _main
@@ -182,8 +182,6 @@ let quickFeedDisplay = function (Value) {
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     _show.style.visibility = `hidden`;
-    _just.classList.add(`toggleHidden`);
-    _just.classList.add(`invisible`);
   } else if (Value == false) {
     _quick.style.zIndex = `-1`;
     _main
@@ -196,9 +194,6 @@ let quickFeedDisplay = function (Value) {
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
     _show.style.visibility = `visible`;
-    _just.classList.remove(`toggleHidden`);
-    _just.classList.remove(`invisible`);
-    _just.style.visibility = `visible`
   }
 };
 

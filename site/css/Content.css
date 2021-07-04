@@ -150,8 +150,8 @@ html body,
 }
 
 #link {
-  background-color: var(--hover-background-color);
   border: var(--borderless-color);
+  background-color: transparent;
   transform: rotate(180deg);
   color: var(--fill-color);
   justify-content: center;

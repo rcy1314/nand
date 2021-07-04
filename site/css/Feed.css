@@ -37,12 +37,6 @@
   width: 60px;
 }
 
-.asset:hover,
-.translation:hover {
-  background-color: var(--hover-background-color) !important;
-  border: var(--borderless-color) !important;
-}
-
 .asset:not(:hover),
 .translation:not(:hover) {
   border: var(--borderless-color);
@@ -88,11 +82,6 @@
   width: 24px;
   z-index: 2;
   top: 28px;
-}
-
-.left:hover,
-.right:hover {
-  background-color: var(--borderless-color);
 }
 
 .status img,

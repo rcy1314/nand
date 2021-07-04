@@ -20,7 +20,7 @@
 }
 
 #container #sidebar #content #basic input[type=text] {
-  background-color: var(--color-primary);
+  background-color: var(--hover-background-color);
   border: var(--border-color);
   color: var(--fill-color);
   position: relative;
@@ -59,6 +59,7 @@
   padding-bottom: 5px;
   padding-left: 10px;
   overflow: hidden;
+  font-weight: 600;
   cursor: default;
   font-size: 12px;
   height: 31.5px;
@@ -70,18 +71,23 @@
 #container #sidebar #content .set .choose,
 #container #sidebar #content .fav .favorite,
 #container #sidebar #content .exclude .parse {
-  border-bottom: .3px solid transparent !important;
-  border-right: .3px solid transparent !important;
-  border-left: .3px solid transparent !important;
-  border-top: .3px solid transparent !important;
   background-color: transparent !important;
   color: var(--fill-color);
   padding-bottom: 9px;
   padding-top: 9px;
   overflow: hidden;
+  font-weight: 50;
   font-size: 12px;
   height: 15px;
   width: 100%;
+}
+
+#container #sidebar #content .bg .adjust:hover,
+#container #sidebar #content .themes .border:hover,
+#container #sidebar #content .set .choose:hover,
+#container #sidebar #content .fav .favorite:hover,
+#container #sidebar #content .exclude .parse:hover {
+  background-color: var(--hover-background-color) !important;
 }
 
 #container #sidebar #content .bg .background,
@@ -104,10 +110,6 @@
 }
 
 #container #sidebar #content .cat {
-  border-bottom: .3px solid transparent !important;
-  border-right: .3px solid transparent !important;
-  border-left: .3px solid transparent !important;
-  border-top: .3px solid transparent !important;
   background-color: transparent !important;
   color: var(--fill-color);
   letter-spacing: .5px;
@@ -131,7 +133,7 @@
 }
 
 #container #sidebar #content .min input[type=text] {
-  background-color: var(--color-primary);
+  background-color: var(--hover-background-color);
   border: var(--border-color);
   color: var(--fill-color);
   caret-color: transparent;
@@ -154,7 +156,7 @@
 }
 
 #container #sidebar #content .url input[type=text] {
-  background-color: var(--color-primary);
+  background-color: var(--hover-background-color);
   border: var(--border-color);
   color: var(--fill-color);
   caret-color: transparent;
@@ -167,10 +169,6 @@
 }
 
 #container #sidebar #content .sel {
-  border-bottom: .3px solid transparent !important;
-  border-right: .3px solid transparent !important;
-  border-left: .3px solid transparent !important;
-  border-top: .3px solid transparent !important;
   background-color: transparent !important;
   color: var(--fill-color);
   overflow: hidden;

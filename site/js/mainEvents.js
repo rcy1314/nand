@@ -5,7 +5,8 @@ window.onload = function () {
   adj = menu.slice();
   randomizeAssets(adj);
   if (quickFeedsTranslations == true)
-    quickFeedAsset(7)
+    quickFeedAsset(7);
+  else quickFeedAsset(8);
   quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
     appendSideBarLists(`#content`, `cat`, translations);

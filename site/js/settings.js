@@ -1,5 +1,5 @@
 // initial theme
-let set = `Night`;
+let set = `Light`;
 
 /*
     backgroundImage [array]
@@ -41,8 +41,6 @@ const favorites = [
   `Reddit/Wallpapers`,
   `Reddit/Los Angeles`,
   `Reddit/San Francisco`,
-  `4Chan/Wallpapers`,
-  `4Chan/Technology`,
 ]
 
 /*
@@ -266,7 +264,7 @@ let sideBarCenter = true;
 
 */
 
-let sideBarBackdrop = false;
+let sideBarBackdrop = true;
 
 /*
     sideBarMousewheel [boolean/integer]
@@ -318,7 +316,7 @@ let topBarBackdrop = false;
 
 */
 
-let toggleBorders = true;
+let toggleBorders = false;
 
 /*
     showDescription [boolean/integer]
@@ -344,7 +342,7 @@ let showDescription = true;
 
 */
 
-let sideBarTranslations = true;
+let sideBarTranslations = false;
 
 /*
     quickFeeds [boolean/integer]
@@ -370,7 +368,7 @@ let quickFeeds = false;
 
 */
 
-let quickFeedsTranslations = true;
+let quickFeedsTranslations = false;
 
 /*
     scrollIntoView [boolean/integer]
@@ -788,27 +786,21 @@ const selections = [
 ];
 
 const settings = [
-  { name: `Loading Circles`, class: `circleloader` },
-  { name: `Loading Ring`, class: `ringloader` },
-  { name: `Loading Bars`, class: `verticalbars` },
-  { name: `Loading False`, class: `loaderfalse` },
+  { name: `Circles`, class: `circleloader` },
+  { name: `Ring`, class: `ringloader` },
+  { name: `Bars`, class: `verticalbars` },
+  { name: `Blink`, class: `loaderfalse` },
   { name: `List`, class: `List` },
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
-  { name: `Dots`, class: `Dots` },
+  { name: `Progress`, class: `Dots` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Only Images`, class: `onlyImages` },
   { name: `Feed Images`, class: `feedImages` },
-  { name: `Top Bar`, class: `topBar` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Crop Images`, class: `cropImages` },
-  { name: `Round Edges`, class: `roundedEdge` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
-  { name: `Toggle Borders`, class: `toggleBorders` },
-  { name: `Show Option`, class: `showOption` },
-  { name: `Show Description`, class: `showDescription` },
-  { name: `Top Bar Backdrop`, class: `topBarBackdrop` },
   { name: `Sidebar Center`, class: `sideBarCenter` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
   { name: `Sidebar Mousewheel`, class: `sideBarMousewheel` },
