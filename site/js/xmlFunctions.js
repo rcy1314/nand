@@ -21,25 +21,6 @@ var guideDisplayYoutube = function (pubArray) {
   _guide.style.zIndex = `11`;
 };
 
-var xmlChannelFooter = function (id) {
-  if (document.body.contains(document.querySelector(`.center`)))
-    document.querySelector(`.channel`).append(footerBuild(id));
-};
-
-var forward = function (id) {
-  let next = parseInt(id) + +1
-  if (menu[next])
-    return parseInt(next);
-  else return 1
-};
-
-var back = function (id) {
-  let back = parseInt(id) - +1
-  if (menu[back])
-    return parseInt(back);
-  else return menu.length - 1
-};
-
 var contentStatusDisplay = function (
   menuIndex,
   recentPost,
@@ -961,7 +942,6 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
-    //document.querySelector(`.channel`).append(footerBuild(id));
   }
   if (
     document.body.contains(document.querySelector(`#xml`))
