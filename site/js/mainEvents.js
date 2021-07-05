@@ -765,9 +765,11 @@ document.addEventListener('click', (evt) => {
         evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
-    if (evt.target.classList.contains(`detail`))
+    if (evt.target.classList.contains(`detail`)) {
       xmlRequestParsing(evt.target.closest(`.hover`)
         .getAttribute(`aria-item`));
+      _match.style.display = `none`;
+    }
     if (evt.target.classList.contains(`asset`))
       xmlRequestParsing(evt.target.getAttribute(`aria-item`));
     if (

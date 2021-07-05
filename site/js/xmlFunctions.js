@@ -905,25 +905,21 @@ var xmlAppendPublication = function (id) {
       xmlImageAttributes(false, id, images[i].element, images[i].src);
     }
   }
-  if (Reader == true && flexBox == false) {
-    _main
-      .querySelectorAll(`.joi`)
-      .forEach((a) => a.classList.add(`luv`));
-    if (document.body.contains(document.querySelector(`#xml`))) {
-      if (sideScroll == false)
-        scrollToElm(touchmove,
-          _main,
-          document.querySelector(`[aria-object='${id}']`),
-          250
-        );
-      else if (sideScroll == true && first != true) {
-        touchmove = true;
-        sideScrollToElm(touchmove,
-          document.querySelector(`.channel`),
-          document.querySelector(`[aria-object='${id}']`),
-          250
-        );
-      }
+  if (document.body.contains(document.querySelector(`#xml`))) {
+    if (sideScroll == false && Reader == false) {
+      touchmove = true;
+      scrollToElm(touchmove,
+        _main,
+        document.querySelector(`[aria-object='${id}']`),
+        250
+      );
+    } else if (sideScroll == true && first != true) {
+      touchmove = true;
+      sideScrollToElm(touchmove,
+        document.querySelector(`.channel`),
+        document.querySelector(`[aria-object='${id}']`),
+        250
+      );
     }
   }
   if (pub.length > 1) {
