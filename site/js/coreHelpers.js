@@ -96,14 +96,12 @@ var anyRandomMenuObject = function () {
   if (
     menu[randomObject] &&
     !randomDuplicate.includes(randomObject)
-  ) {
-    do randomObject = random[Math.floor(Math.random() * random.length - 1)];
-    while (
-      menu[randomObject] &&
-      !randomDuplicate.includes(randomObject)
-    )
+  )
+    return randomObject;
+  else {
+    randomObject = random[Math.floor(Math.random() * random.length - 1)];
+    return randomObject;
   }
-  return randomObject;
 };
 
 function scrollToElm(touch, container, elm, duration){
