@@ -57,8 +57,8 @@
 .fa-youtube {
   transition: all 500ms ease-in-out;
   display: inline-flex !important;
-  color: var(--loader-color);
-  font-size: 16px;
+  color: var(--fill-color);
+  font-size: 12px;
   font-weight: 50;
   margin: 7px;
 }
@@ -111,10 +111,11 @@
 #main #option .fa-heart,
 #main #option .fa-home,
 #main #option .fa-sun:not(#options .fa-sun) {
+  color: var(--fill-color);
   padding-right: 13px;
   padding-left: 13px;
   padding-top: 17px;
-  font-size: 17px;
+  font-size: 12px;
 }
 
 .fa-adjust {
