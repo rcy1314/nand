@@ -1,14 +1,23 @@
 let notifyOption = function (String, Icon) {
-  _notify.innerHTML = `${String} <div class='sbIcon fa ${Icon}'></div>`;
+  _notify.innerHTML =
+    `
+    ${String} <div class='sbIcon fa ${Icon}'></div>
+    `;
   _notify.classList.add(`notify`);
   _notify.style.display = `flex`;
 }
 
 let handleSwipe = function () {
-  if (touchendX - 75 > touchstartX) {
+  if (
+    touchendX - 75 >
+    touchstartX
+  ) {
     onScreen = true;
     sideBarDisplay(onScreen);
-  } else if (touchendX + 75 < touchstartX) {
+  } else if (
+    touchendX + 75 <
+    touchstartX
+  ) {
     onScreen = false;
     if (sideBarLock == false) sideBarDisplay(onScreen);
   }
@@ -28,11 +37,13 @@ let handleGuide = function () {
     setTimeout(function () {
       if (complete) _progress.style.width = `100%`;
       _main.classList.remove(`guide`);
-        while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+      while (_guide.lastChild)
+        _guide.removeChild(_guide.lastChild);
       _guide.style.display = `none`;
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
-      if (sideBarLock == true) onScreen = true;
+      if (sideBarLock == true)
+        onScreen = true;
       sideBarDisplay(onScreen);
       guideOnScreen = true;
       pub = null;
@@ -43,18 +54,35 @@ let handleGuide = function () {
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
   if (feedAssets == 7)
-    for (var i = 0; i <= translations.length - 1; i++) {
-      _feed.append(translationBuild(translations[i]));
+    for (
+      var i = 0;
+      i <= translations.length - 1;
+      i++
+    ) {
+      _feed.append(
+        translationBuild(
+          translations[i]
+        )
+      );
     }
   else
-    for (var i = 1; i <= menu.length - 1; i++) {
-      let randomMenuObject = menu.indexOf(
-        menu[Math.floor(Math.random() * menu.length - 1)]
+    for (
+      var i = 1;
+      i <= menu.length - 1;
+      i++
+    ) {
+      let randomMenuObject =
+        menu.indexOf(
+          menu[
+            Math.floor(
+              Math.random() * menu.length - 1
+            )
+          ]
       );
       if (
-        menu[randomMenuObject] &&
         !duplicate.includes(randomMenuObject) &&
         menu[randomMenuObject].media == true &&
+        menu[randomMenuObject] &&
         randomMenuObject != 0
       ) {
         duplicate.push(randomMenuObject);
@@ -70,15 +98,25 @@ let quickFeedAsset = function (feedAssets) {
     }
 };
 
-let inputListingIndex = function (inputFilter, listingWrapper) {
+let inputListingIndex = function (
+  inputFilter,
+  listingWrapper
+) {
   let matches = [];
   let suggest = [];
   let listing = document.querySelector(listingWrapper + ` .listing`);
-  while (listing.lastChild) listing.removeChild(listing.lastChild);
+  while (listing.lastChild)
+    listing.removeChild(listing.lastChild);
   document.querySelector(listingWrapper).style.display = `block`;
   if (inputFilter != ``)
-    for (var i = menu.length - 1; i >= 1; i--) {
-      if (menu[i].description.toString().toLowerCase().match(inputFilter)) {
+    for (
+      var i = menu.length - 1;
+      i >= 1;
+      i--
+    ) {
+      if (
+        menu[i].description.toString().toLowerCase().match(inputFilter)
+      ) {
         if (suggest.length - 1 === suggestionBuffer) return false;
         listing.append(
           listingIndexBuild(
@@ -92,20 +130,36 @@ let inputListingIndex = function (inputFilter, listingWrapper) {
             i
           )
         );
-        suggest.push(menu.indexOf(menu[i]));
+        suggest.push(
+          menu.indexOf(
+            menu[i]
+          )
+        );
       }
     }
-  for (i = 1; i <= menu.length - 1; i++) {
-    let randomMenuObject = menu.indexOf(
-      menu[Math.floor(Math.random() * menu.length - 1)]
+  for (var i = 1;
+    i <= menu.length - 1;
+    i++
+  ) {
+    let randomMenuObject =
+    menu.indexOf(
+      menu[
+        Math.floor(
+          Math.random() * menu.length - 1
+        )
+      ]
     );
     if (
-      menu[randomMenuObject] &&
+      menu[randomMenuObject].media == true &&
       !matches.includes(randomMenuObject) &&
-      menu[randomMenuObject].media == true
+      menu[randomMenuObject]
     ) {
       matches.push(randomMenuObject);
-      if (suggest.length - 1 + (matches.length - 1) === suggestionBuffer)
+      if (
+        suggest.length - 1 +
+        (matches.length - 1) ===
+        suggestionBuffer
+      )
         return false;
       listing.append(
         listingIndexBuild(
@@ -128,40 +182,62 @@ let progressBackDrop = function (done) {
   let complete;
   if (done == false && loading == `percent`) {
     complete = setInterval(function () {
-      if (safeSearchIDs.includes(menu[id].id))
+      if (
+        safeSearchIDs.includes(
+          menu[id].id
+        )
+      )
         width = _container.clientWidth / (count.length - 1);
-      else if (!width || width == `Infinity` && count.length <= 0) width = _container.clientWidth / 12;
+      else if (
+        !width ||
+        width == `Infinity` &&
+        count.length <= 0
+      )
+        width = _container.clientWidth / 12;
       if (
         _progress.clientWidth >= _container.clientWidth
       ) {
         _progress.style.transition = `0`;
         _progress.style.width = `100%`;
-        setTimeout(function() {
-          _progress.style.transition = `all 1600ms ease-in-out`;
-          _progress.style.opacity = `0`;
-        }, 350)
-        setTimeout(function () {
-          _progress.style.transition = `none`;
-          _progress.style.width = `0%`;
-        }, 1600);
+        setTimeout(
+          function() {
+            _progress.style.transition = `all 1600ms ease-in-out`;
+            _progress.style.opacity = `0`;
+          },
+        350)
+        setTimeout(
+          function () {
+            _progress.style.transition = `none`;
+            _progress.style.width = `0%`;
+          },
+        1600);
         clearInterval(complete);
       } else {
-        _progress.style.opacity = `1`;
-        _progress.style.transition = `all 750ms ease-in-out`;
         _progress.style.width = _progress.clientWidth + width;
+        _progress.style.transition = `all 750ms ease-in-out`;
+        _progress.style.opacity = `1`;
       }
     }, 500);
   }
-  if (document.body.contains(document.getElementById(`xml`))) {
+  if (
+    document.body.contains(
+      document.getElementById(`xml`)
+    )
+  ) {
     document.querySelector(`#xml`).style.display = `block`;
-      if (Reader == true && first == true) {
+      if (
+        Reader == true &&
+        first == true
+      ) {
         if (
           _main.innerHeight >=
           document.querySelector(`#xml .channel`).innerHeight
         )
           if (httpRequest.status == 200) {
             first = false;
-            xmlRequestParsing(false, null, null, anyRandomMenuObject());
+            xmlRequestParsing(
+              anyRandomMenuObject()
+            );
           }
       }
     if (
@@ -170,9 +246,8 @@ let progressBackDrop = function (done) {
     ) {
       document.querySelector(`.center`).classList.add(`scroll-into-view`)
       if (showSplash == true) _check.style.display = `none`;
-    } else if (scrollIntoView == false) {
+    } else if (scrollIntoView == false)
       document.querySelector(`#xml`).style.top = `60px`;
-    }
     if (fadeIntoView == true) {
       (function () {
         function checkPosition() {
@@ -207,52 +282,93 @@ let progressBackDrop = function (done) {
             }
           }
         }
-        document.querySelector(`.channel`).addEventListener(`scroll`, checkPosition);
-        _main.addEventListener(`scroll`, checkPosition);
+        document.querySelector(`.channel`).addEventListener(
+          `scroll`,
+          checkPosition
+        );
+        _main.addEventListener(
+          `scroll`,
+          checkPosition
+        );
         if (scrollIntoView)
-          setTimeout(function() {
-            checkPosition();
-          }, 500)
+          setTimeout(
+            function() {
+              checkPosition();
+            },
+          500)
         else checkPosition();
       })();
     }
     if (sideScroll == true
     ) {
-      document.querySelector(`.channel`).classList.add(`sideChannel`);
       document.querySelector(`.center`).classList.remove(`scroll-into-view`);
+      document.querySelector(`.channel`).classList.add(`sideChannel`);
       document.querySelector(`.center`).style.top = `60px`;
       document.querySelector(`#xml`).style.top = 0;
       _main
         .querySelectorAll(`.item`)
-        .forEach((a) => (a.classList.add(`sideItem`)));
+        .forEach(
+          (a) => (
+            a.classList.add(`sideItem`)
+          )
+        );
       }
   }
-  if (document.body.contains(document.getElementById(`group`))) {
+  if (
+    document.body.contains(
+      document.getElementById(`group`)
+    )
+  ) {
     if (scrollIntoView == true) {
       document.querySelector(`.result`).classList.add(`scroll-into-view`)
-      setTimeout(function() {
-          if (document.body.contains(document.querySelector(`.air`)))
+      setTimeout(
+        function() {
+          if (
+            document.body.contains(
+              document.querySelector(`.air`)
+            )
+          )
             _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        document.querySelector(`#group`).style.top = `-60px`;
-      }, 25)
-      setTimeout(function() {
-        document.querySelector(`#group`).style.display = `block`;
-      }, 25)
+          document.querySelector(`#group`).style.top = `-60px`;
+        },
+      25)
+      setTimeout(
+          function() {
+            document.querySelector(`#group`).style.display = `block`;
+          },
+        25
+      )
     } else if (scrollIntoView == false)
       document.querySelector(`#group`).style.display = `block`;
   }
   if (onlyImages == true)
-    if (document.body.contains(document.querySelector(`.result`)))
+    if (
+      document.body.contains(
+        document.querySelector(`.result`)
+      )
+    )
       _main.scrollTop = 0;
     if (onlyImages == false) {
-      setTimeout(function() {
-        if (document.body.contains(document.querySelector(`.air`)))
-          _main.scrollTop = document.querySelector(`.air`).clientHeight;
-      }, 25)
-      setTimeout(function() {
-        if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).style.display = `block`;
-      }, 25)
+      setTimeout(
+        function() {
+          if (
+            document.body.contains(
+              document.querySelector(`.air`)
+            )
+          )
+            _main.scrollTop = document.querySelector(`.air`).clientHeight;
+        },
+      25)
+      setTimeout(
+        function() {
+          if (
+            document.body.contains(
+              document.querySelector(`#group`)
+            )
+          )
+            document.querySelector(`#group`).style.display = `block`;
+        },
+      25)
     }
   if (showSplash == true) _check.style.display = `none`;
 };
@@ -263,9 +379,18 @@ let populateAssets = function () {
   _toggle.style.display = `none`
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
-  if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
+  if (
+    !document.body.contains(
+      _main.querySelector(`#group`)
+    )
+  )
+    groupBuild();
   let result = document.querySelector(`.result`);
-  if (id && id != 0 && !location.href.match(`\\?q=`)) {
+  if (
+    id &&
+    id != 0 &&
+    !location.href.match(`\\?q=`)
+  ) {
     if (menu[id].media == true)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
@@ -280,7 +405,11 @@ let populateAssets = function () {
       )
     );
   }
-  for (let i = 1; i <= adj.length - 1; i++) {
+  for (
+    let i = 1;
+    i <= adj.length - 1;
+    i++
+  ) {
     if (adj[i].media == true)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
@@ -301,7 +430,12 @@ let populateAssets = function () {
         );
       }
     } else if (onlyImages == false) {
-      if (id != menu.indexOf(adj[i])) {
+      if (
+        id !=
+        menu.indexOf(
+          adj[i]
+        )
+      ) {
         result.append(
           categoryBuild(
             adj[i].id.match(/[^\/]+$/g),
@@ -328,9 +462,18 @@ let populateCategoryGroup = function (translation) {
   _toggle.style.display = `none`
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
-  if (!document.body.contains(document.querySelector(`#group`))) groupBuild();
+  if (
+    !document.body.contains(
+      _main.querySelector(`#group`)
+    )
+  )
+    groupBuild();
   let result = document.querySelector(`.result`);
-  if (id && id != 0 && !location.href.match(`\\?q=`)) {
+  if (
+    id &&
+    id != 0 &&
+    !location.href.match(`\\?q=`)
+  ) {
     if (menu[id].media == true)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
@@ -345,14 +488,18 @@ let populateCategoryGroup = function (translation) {
       )
     );
   }
-  for (let i = 1; i <= menu.length - 1; i++) {
+  for (
+    let i = 1;
+    i <= menu.length - 1;
+    i++
+  ) {
     if (menu[i].media == true)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
     if (onlyImages == true) {
       if (
-        id != menu.indexOf(menu[i]) &&
         translation == menu[i].category &&
+        id != menu.indexOf(menu[i]) &&
         menu[i].media == true
       ) {
         result.append(
@@ -367,7 +514,10 @@ let populateCategoryGroup = function (translation) {
         );
       }
     } else if (onlyImages == false) {
-      if (translation == menu[i].category && id != menu.indexOf(menu[i])) {
+      if (
+        translation == menu[i].category &&
+        id != menu.indexOf(menu[i])
+      ) {
         result.append(
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
@@ -392,15 +542,22 @@ let populateCategoryGroup = function (translation) {
 
 let reverseCategoryGroup = function (translation) {
   let media;
-  let group = document.querySelector(`#group`);
-  let result = document.querySelector(`.result`);
-  if (!document.body.contains(document.querySelector(`.air`))) {
+  let group = _main.querySelector(`#group`);
+  let result = _main.querySelector(`.result`);
+  if (
+    !document.body.contains(
+      _main.querySelector(`.air`)
+    )
+  ) {
     let div = document.createElement(`div`);
     div.classList.add(`air`);
     group.prepend(div);
   }
   let air = document.querySelector(`.air`);
-  for (let i = 1; i < menu.length; i++) {
+  for (
+    let i = 1;
+    i < menu.length;
+    i++) {
     if (category == menu[i].category) {
       if (menu[i].media == true)
         media = `<div class='media' style='display:none'>Images</div>`;
@@ -423,27 +580,49 @@ let reverseCategoryGroup = function (translation) {
 };
 
 let filterInputResponse = function (filterURI) {
-  if (translations.includes(filterURI.toString().capitalize())) {
-    setTimeout(function() {
-      populateCategoryGroup(filterURI.toString().capitalize());
-    }, 200)
+  if (
+    translations.includes(
+      filterURI.toString().capitalize()
+    )
+  ) {
+    setTimeout(
+      function() {
+        populateCategoryGroup(filterURI.toString().capitalize());
+      },
+    200)
     unloading();
     return false;
   }
-  let exact = menu.findIndex(
-    (item) => item.id.toLowerCase().space() === filterURI.toString().toLowerCase().space()
+  let exact =
+    menu.findIndex(
+      (item) => item.id.toLowerCase().space() === filterURI.toString().toLowerCase().space()
   );
   let match = menu.findIndex(
     (item) => item.id.toLowerCase().space().match(filterURI.toString().toLowerCase().space())
   );
-  let description = menu.filter(function (item) {
-    return item.description.space().toLowerCase()
-      .match(filterURI.toString().toLowerCase().space());
-  })
-  if (description.length > 0 && match && exact === -1) {
+  let description =
+    menu.filter(
+      function (item) {
+        return item.description.space().toLowerCase()
+          .match(filterURI.toString().toLowerCase().space()
+        );
+      }
+    )
+  if (
+    description.length > 0 &&
+    exact === -1 &&
+    match
+  ) {
     groupBuild();
-    for (i = 0; i <= description.length - 1; i++)
-      writeFilterResponse(menu.indexOf(description[i]));
+    for (
+      let i = 0;
+      i <= description.length - 1;
+      i++)
+        writeFilterResponse(
+          menu.indexOf(
+            description[i]
+          )
+        );
     populateCategoryGroup(description[0].category);
     displayDescription(showDescription);
     displayExpand(expand);
