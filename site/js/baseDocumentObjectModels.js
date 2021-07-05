@@ -143,15 +143,18 @@ let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (Value == true) {
-    if (_main.clientWidth >= 769) {
-      setTimeout(function () {
-        _hide.style.display = `none`;
-        _sidebar.style.left = `0`;
-      }, 300);
-    } else if (
+    setTimeout(function () {
+      _sidebar.style.left = `0`;
+    }, 300);
+    if (
+      _main.clientWidth >= 769 &&
+      sideBarMouse == false
+    )
+      _hide.style.display = `none`;
+    else if (
+        sideBarMouse == false ||
         _main.clientWidth <= 425 &&
-        sideScroll == true ||
-        sideBarMouse == false
+        sideScroll == true
       )
       _min.style.cssText = `display: block !important;`
       setTimeout(function () {

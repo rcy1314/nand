@@ -574,6 +574,12 @@ document.addEventListener('click', (evt) => {
       notifyOption(themes[iteration].obFn, `fa-check-circle`);
     }
     if (
+      evt.target.classList.contains(`show`)
+    ) {
+      onScreen = true
+      sideBarDisplay(onScreen);
+    }
+    if (
       evt.target.classList.contains(`exit`) ||
       evt.target.classList.contains(`ext`)
     )

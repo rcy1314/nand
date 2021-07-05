@@ -14,8 +14,6 @@ const _body = document.querySelector(`body`);
 
 const _dots = document.querySelector(`.fill`);
 
-const _hide = document.querySelector(`.hide`);
-
 const _link = document.getElementById(`link`);
 
 const _main = document.getElementById(`main`);
