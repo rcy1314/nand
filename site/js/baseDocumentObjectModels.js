@@ -2,7 +2,7 @@ let sideBarStar = function (Elem, Value) {
   if (Value) {
     Elem.nextElementSibling.classList.remove(`fa-minus`)
     Elem.nextElementSibling.classList.add(`fa-splotch`)
-  } else if (Value == false) {
+  } else if (!Value) {
     Elem.nextElementSibling.classList.remove(`fa-splotch`)
     Elem.nextElementSibling.classList.add(`fa-minus`)
   }
@@ -19,74 +19,135 @@ let displayFlex = function (value) {
     var column = document.querySelectorAll(`.item:nth-child(3n+3)`);
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
-    document.querySelector(`.center`).style.cssText = `display: flex !important;justify-content: center !important;width: 100vw !important`;
-    document.querySelector(`.channel`).style.height = `${(max + 1000).toString()}px`
+    document.querySelector(`.center`).style.cssText =
+    `justify-content:center !important;
+     display:flex !important;
+     width:100vw !important`;
+    document.querySelector(`.channel`).style.height =
+      `${(max + 1000).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
     document.querySelector(`.channel`).classList.add(`flexbox`);
     _main
       .querySelectorAll(`.item`)
-      .forEach((a) => a.classList.add(`flexbox`));
+      .forEach(
+        (a) => a.classList.add(`flexbox`)
+      );
 }
 
 let displayDescription = function (Value) {
-  if (expand == true || document.body.contains(document.querySelector(`#xml`)))
-    if (Value == false) {
-      if (document.body.contains(document.querySelector(`#xml`)))
+  if (
+    expand == true ||
+    document.body.contains(
+      document.querySelector(`#xml`)
+    )
+  )
+    if (!Value) {
+      if (
+        document.body.contains(
+          document.querySelector(`#xml`)
+        )
+      )
         document.querySelector(`.about`).style.display = `none`;
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`expand`));
+        .forEach(
+          (a) => a.classList.remove(`expand`)
+        );
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`minimum`));
-    } else if (Value == true) {
+        .forEach(
+          (a) => a.classList.add(`minimum`)
+        );
+    } else if (Value) {
       if (
-				document.body.contains(document.querySelector(`#xml`)) &&
-				document.body.contains(document.querySelector(`.about`))
-		)
+				document.body.contains(
+          document.querySelector(`#xml`)
+        ) &&
+				document.body.contains(
+          document.querySelector(`.about`)
+        )
+		  )
         document.querySelector(`.about`).style.display = `block`;
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`minimum`));
+        .forEach(
+          (a) => a.classList.remove(`minimum`)
+        );
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`expand`));
+        .forEach(
+          (a) => a.classList.add(`expand`)
+        );
     }
 		displayExpand(expand);
 };
 
 let displayExpand = function (Value) {
-  if (Value == true) {
+  if (Value) {
     groupType = `list`;
-    if (document.body.contains(document.getElementById(`group`))) {
+    if (
+      document.body.contains(
+        document.getElementById(`group`)
+      )
+    ) {
       document.getElementById(`group`).style.backgroundColor =
         `var(--bg-color-secondary)`
       _main
         .querySelectorAll(`.air, .result`)
-        .forEach((a) => a.style.backgroundColor = `var(--bg-color-primary)`);
+        .forEach(
+          (a) => a.style.backgroundColor = `var(--bg-color-primary)`
+        );
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`expand`));
+        .forEach(
+          (a) => a.classList.add(`expand`)
+        );
 			_main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`block`));
-      if (document.body.contains(document.querySelector(`.air`)))
+        .forEach(
+          (a) => a.classList.remove(`block`)
+        );
+      if (
+        document.body.contains(
+          document.querySelector(`.air`)
+        )
+      )
         document.querySelector(`.air`).style.display = `block`;
-      if (document.body.contains(document.querySelector(`.result`)))
+      if (
+        document.body.contains(
+          document.querySelector(`.result`)
+        )
+      )
         document.querySelector(`.result`).style.display = `block`;
     }
-  } else if (Value == false) {
+  } else if (!Value) {
     groupType = `blocks`;
-    if (document.body.contains(document.getElementById(`group`))) {
+    if (
+      document.body.contains(
+        document.getElementById(`group`)
+      )
+    ) {
 			_main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.add(`block`));
+        .forEach(
+          (a) => a.classList.add(`block`)
+        );
       _main
         .querySelectorAll(`.populate`)
-        .forEach((a) => a.classList.remove(`expand`));
-      if (document.body.contains(document.querySelector(`.air`)))
+        .forEach(
+          (a) => a.classList.remove(`expand`)
+        );
+      if (
+        document.body.contains(
+          document.querySelector(`.air`)
+        )
+      )
         document.querySelector(`.air`).style.display = `inline-flex`;
-      if (document.body.contains(document.querySelector(`.result`)))
+      if (
+        document.body.contains(
+          document.querySelector(`.result`)
+        )
+      )
         document.querySelector(`.result`).style.display = `inline-flex`;
     }
   }
@@ -94,31 +155,62 @@ let displayExpand = function (Value) {
 
 let appendSideBarLists = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
-  for (i = 0; i <= Arrays.length - 1; i++) {
+  for (
+    i = 0;
+    i <= Arrays.length - 1;
+    i++
+  ) {
     let option = document.createElement(`div`);
-    if (Class == `option` || Class == `feed`) option.classList.add(Class);
-    else option.classList.add(Class, Arrays[i].class);
-    if (Class == `background` || Class == `sel`)
+    if (
+      Class == `option` ||
+      Class == `feed`
+    ) option.classList.add(Class);
+    else option.classList.add(
+      Class,
+      Arrays[i].class
+    );
+    if (
+      Class == `background` ||
+      Class == `sel`
+    )
       option.innerHTML = Arrays[i].name;
-    if (Class == `option` || Class == `feed`)
+    if (
+      Class == `option` ||
+      Class == `feed`
+    )
 			option.innerHTML = Arrays[i].space().capitalize();
     if (Class == `theme`) option.innerHTML = Arrays[i].obFn;
-      list.append(option);
-    if (translations.includes(Arrays[i])) {
+    list.append(option);
+    if (
+      translations.includes(
+        Arrays[i]
+      )
+    ) {
       option.innerHTML = Arrays[i];
       option.setAttribute(`aria-item`, Arrays[i])
       list.append(option);
       list.append(sideBarThemeBuild(`fa-redo`))
-    } if (!translations.includes(Arrays[i]) || Class != `option` && Class != `feed`)
+    } if (
+      !translations.includes(Arrays[i]) ||
+      Class != `option` &&
+      Class != `feed`
+    )
 			list.append(sideBarThemeBuild(Arrays[i].icon));
   }
 };
 
 let appendSettings = function (Elem, Class, Arrays) {
   let list = document.querySelector(Elem);
-  for (i = 0; i <= Arrays.length - 1; i++) {
+  for (
+    i = 0;
+    i <= Arrays.length - 1;
+    i++
+  ) {
     let option = document.createElement(`div`);
-    option.classList.add(Class, Arrays[i].class);
+    option.classList.add(
+      Class,
+      Arrays[i].class
+    );
     option.innerHTML = Arrays[i].name;
     list.append(option);
     if (eval(Arrays[i].class) == true) {
@@ -142,7 +234,7 @@ let appendSettings = function (Elem, Class, Arrays) {
 let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
-  if (Value == true) {
+  if (Value) {
     setTimeout(function () {
       _sidebar.style.left = `0`;
     }, 300);
@@ -158,55 +250,68 @@ let sideBarDisplay = function (Value) {
       )
       _min.style.cssText = `display: block !important;`
       setTimeout(function () {
-        document.querySelector(`.sideFilter`).style.display = `block`;
-        document.querySelector(`#basic`).style.display = `block`;
+        _sidebar.querySelector(`.sideFilter`).style.display = `block`;
+        _sidebar.querySelector(`#basic`).style.display = `block`;
         _sidebar.style.left = `0`;
       }, 300);
-  } else if (Value == false) {
-    document.querySelector(`.sideFilter`).style.display = `block`;
-    document.querySelector(`#basic`).style.display = `block`;
+  } else if (!Value) {
+    _sidebar.querySelector(`.sideFilter`).style.display = `block`;
+    _sidebar.querySelector(`#basic`).style.display = `block`;
     _sidebar.style.left = `-280px`;
   }
 };
 
 let topMenuBarDisplay = function (Value) {
-  if (Value == true) {
+  if (Value) {
     _view.style.display = `block`;
     _top.style.display = `block`;
-  } else if (Value == false) _top.style.display = `none`;
+  } else if (
+    !Value
+  )
+    _top.style.display = `none`;
 };
 
 let quickFeedDisplay = function (Value) {
-  if (Value == true) {
+  if (Value) {
     _quick.style.zIndex = `1`;
     _main
       .querySelectorAll(`.feed`)
-      .forEach((a) => a.style.display = `block`);
-    _options.classList.add(`invisible`);
-    _social.classList.add(`invisible`);
+      .forEach(
+        (a) => a.style.display = `block`
+      );
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
+    _options.classList.add(`invisible`);
+    _social.classList.add(`invisible`);
     _front.classList.remove(`toggle`);
     _quick.classList.add(`visible`);
+    _show.style.visibility=`hidden`;
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
-    _show.style.visibility = `hidden`;
-    if (_main.clientWidth <= 425) _sb.style.top = `-10px`;
-  } else if (Value == false) {
+    if (
+      _main.clientWidth <= 425
+    )
+    _sb.style.top = `-10px`;
+  } else if (!Value) {
     _options.classList.remove(`invisible`);
     _social.classList.remove(`invisible`);
     _quick.style.zIndex = `-1`;
     _main
       .querySelectorAll(`.feed`)
-      .forEach((a) => a.style.display = `none`);
-    _quick.classList.remove(`visible`);
-    _quick.classList.add(`invisible`);
-    _front.classList.remove(`toggleHidden`);
-    _front.classList.add(`toggle`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
-    _show.style.visibility = `visible`;
-    if (_main.clientWidth <= 425) _sb.style.top = `7px`;
+    _front.classList.remove(`toggleHidden`);
+    _quick.classList.remove(`visible`);
+    _quick.classList.add(`invisible`);
+    _show.style.visibility=`visible`;
+    _front.classList.add(`toggle`);
+    if (
+      _main.clientWidth <= 425
+    )
+      _sb.style.top = `7px`;
   }
 };
 
@@ -220,7 +325,11 @@ let groupBuild = function () {
 };
 
 let stageBuild = function () {
-  if (!document.body.contains(document.querySelector(`#group`))) {
+  if (
+    !document.body.contains(
+      document.querySelector(`#group`)
+    )
+  ) {
     let suggestions = document.createElement(`div`);
     let channel = document.createElement(`div`);
     let content = document.createElement(`div`);
@@ -229,24 +338,27 @@ let stageBuild = function () {
     let xml = document.createElement(`div`);
     xml.id = `xml`;
     if (
-      _main.clientWidth >= 426 && _main.clientWidth <= 768 &&
+      _main.clientWidth >= 426 &&
+      _main.clientWidth <= 768 &&
       displayFlex == true
-    ) channel.classList.add(`flexbox`)
+    )
+      channel.classList.add(`flexbox`)
     else if (
       _main.clientWidth >= 769 &&
       displayFlex == true
-    ) channel.classList.add(`desktop`)
-    channel.classList.add(`channel`);
-    center.classList.add(`center`);
-    center.append(channel);
-    xml.append(center);
-    suggestions.classList.add(`suggestions`);
-    content.classList.add(`content`);
-    status.classList.add(`status`);
-    content.append(status);
-    content.append(suggestions);
-    xml.append(content);
-    return xml;
+    )
+    channel.classList.add(`desktop`)
+  channel.classList.add(`channel`);
+  center.classList.add(`center`);
+  center.append(channel);
+  xml.append(center);
+  suggestions.classList.add(`suggestions`);
+  content.classList.add(`content`);
+  status.classList.add(`status`);
+  content.append(status);
+  content.append(suggestions);
+  xml.append(content);
+  return xml;
   }
 };
 
@@ -263,6 +375,7 @@ let guideBuild = function (pubArray) {
   let ago = document.createElement(`div`);
   sticky.setAttribute(`aria-item`, pubArray.menuObject);
   sticky.setAttribute(`aria-object`, pubArray.pubIndex);
+  sticky.setAttribute(`ext`, pubArray.externalURI);
   filterBlur.classList.add(`filterBlur`);
   sticky.classList.add(`item`, `sticky`);
   object.classList.add(`guide`, `img`);
@@ -274,9 +387,13 @@ let guideBuild = function (pubArray) {
   wrap.classList.add(`wrap`);
   src.classList.add(`src`);
   ago.classList.add(`ago`);
-  sticky.setAttribute(`ext`, pubArray.externalURI);
-  image.append(sideBarThemeBuild(`fa-heart`));
-  if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);
+  image.append(
+    sideBarThemeBuild(`fa-heart`)
+  );
+  if (
+    safeSearchIDs.includes(menu[id].id)
+  )
+    image.append(filterBlur);
   image.append(object);
   src.append(image);
   head.append(
@@ -292,7 +409,11 @@ let guideBuild = function (pubArray) {
   wrap.append(publish);
   wrap.append(ago);
   wrap.append(
-    copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
+    copyInputAttribute(
+      pubArray.src,
+      pubArray.share,
+      pubArray.externalURI
+    )
   );
   sticky.append(src);
   sticky.append(wrap);
@@ -334,7 +455,11 @@ let guideBuildYoutube = function (pubArray) {
     )
   );
   head.append(
-    copyInputAttribute(pubArray.src, pubArray.share, pubArray.externalURI)
+    copyInputAttribute(
+      pubArray.src,
+      pubArray.share,
+      pubArray.externalURI
+    )
   );
   yt.append(object);
   youtube.append(yt);
@@ -346,7 +471,12 @@ let guideBuildYoutube = function (pubArray) {
   return sticky;
 };
 
-let contentBuild = function (oldestPost, recentPost, postsCount, menuIndex) {
+let contentBuild = function (
+  oldestPost,
+  recentPost,
+  postsCount,
+  menuIndex
+) {
   let display = document.createElement(`div`);
   let filter = document.createElement(`div`);
   let select = document.createElement(`div`);
@@ -388,12 +518,15 @@ let translationBuild = function (translation) {
   ahref.setAttribute(`ext`, translation);
   ahref.classList.add(`category`);
   ahref.innerHTML = translation;
-  //object.append(img)
   object.append(ahref);
   return object;
 };
 
-let assetBuild = function (assetIndex, assetImage, assetId) {
+let assetBuild = function (
+  assetIndex,
+  assetImage,
+  assetId
+) {
   let object = document.createElement(`div`);
   let ahref = document.createElement(`a`);
   let img = document.createElement(`img`);
@@ -403,7 +536,17 @@ let assetBuild = function (assetIndex, assetImage, assetId) {
   ahref.classList.add(`query`);
   img.classList.add(`entity`);
   img.src = assetImage;
-  ahref.innerHTML = `${truncate(String(assetId.match(/[^\/]+$/g)), 12, false)}`;
+  ahref.innerHTML =
+  `${
+    truncate(
+      String(
+        assetId.match(/[^\/]+$/g
+        )
+      ),
+      12,
+      false
+    )
+  }`;
   object.append(img);
   object.append(ahref);
   return object;
@@ -420,10 +563,10 @@ let suggestBuild = function (
   let object = document.createElement(`div`);
   let circle = document.createElement(`img`);
   let define = document.createElement(`div`);
-  let bold = document.createElement(`b`);
   let category = document.createElement(`a`);
-  suggest.setAttribute(`aria-item`, objectIndex);
+  let bold = document.createElement(`b`);
   category.setAttribute(`aria-item`, objectCategory);
+  suggest.setAttribute(`aria-item`, objectIndex);
   suggest.classList.add(`suggest`);
   object.classList.add(`combine`);
   circle.classList.add(`circle`);
@@ -431,10 +574,17 @@ let suggestBuild = function (
   bold.classList.add(`bold`);
   circle.src = objectImage;
   suggest.title = objectId;
-  bold.innerHTML = `${String(objectId.match(/[^\/]+$/g)).substring(
-    0,
-    19
-  )}...<br>`;
+  bold.innerHTML =
+  `
+    ${
+      String(
+        objectId.match(/[^\/]+$/g)
+      ).substring(
+        0,
+        19
+      )
+    }...<br>
+  `;
   category.innerHTML = objectCategory;
   category.title = objectCategory;
   define.innerHTML = objectMedia;
@@ -494,26 +644,37 @@ let attributeBuild = function () {
   let attr = document.createElement(`div`);
   let site = document.createElement(`div`);
   let copy = document.createElement(`div`);
-  attr.classList.add(`attr`, `fa-ellipsis-h`);
+  attr.classList.add(
+    `attr`,
+    `fa-ellipsis-h`
+  );
   attribute.classList.add(`attribute`);
   download.classList.add(`download`);
   picture.classList.add(`picture`);
   object.classList.add(`copy`);
   site.classList.add(`site`);
   copy.classList.add(`post`);
-  site.innerHTML = `Copy URL`;
-  copy.innerHTML = `Copy Post`;
-  picture.innerHTML = `Copy Source`;
   download.innerHTML = `Download Image`;
+  picture.innerHTML = `Copy Source`;
+  copy.innerHTML = `Copy Post`;
+  site.innerHTML = `Copy URL`;
   object.append(attr);
   attr.append(attribute);
-  site.append(sideBarThemeBuild(`fa-at`));
+  site.append(
+    sideBarThemeBuild(`fa-at`)
+  );
   attribute.append(site);
-  copy.append(sideBarThemeBuild(`fa-share`));
+  copy.append(
+    sideBarThemeBuild(`fa-share`)
+  );
   attribute.append(copy);
-  picture.append(sideBarThemeBuild(`fa-copy`));
+  picture.append(
+    sideBarThemeBuild(`fa-copy`)
+  );
   attribute.append(picture);
-  download.append(sideBarThemeBuild(`fa-camera`));
+  download.append(
+    sideBarThemeBuild(`fa-camera`)
+  );
   attribute.append(download);
   return object;
 };
@@ -531,42 +692,66 @@ let youtubeAttributeBuild = function () {
   object.classList.add(`copy`);
   site.classList.add(`site`);
   copy.classList.add(`post`);
-  site.innerHTML = `Copy URL`;
-  copy.innerHTML = `Copy Post`;
   picture.innerHTML = `Copy Source`;
+  copy.innerHTML = `Copy Post`;
+  site.innerHTML = `Copy URL`;
   attribute.style.height = `115px`
   object.append(attr);
   attr.append(attribute);
-  site.append(sideBarThemeBuild(`fa-at`));
+  site.append(
+    sideBarThemeBuild(`fa-at`)
+  );
   attribute.append(site);
-  copy.append(sideBarThemeBuild(`fa-share`));
+  copy.append(
+    sideBarThemeBuild(`fa-share`)
+  );
   attribute.append(copy);
-  picture.append(sideBarThemeBuild(`fa-camera`));
+  picture.append(
+    sideBarThemeBuild(`fa-camera`)
+  );
   attribute.append(picture);
   return object;
 };
 
-let courtesyBuild = function (objectId, objectImage, objectExternal) {
+let courtesyBuild = function (
+  objectId,
+  objectImage,
+  objectExternal
+) {
   let courtesy = document.createElement(`div`);
   let object = document.createElement(`img`);
   let ahref = document.createElement(`a`);
   let bold = document.createElement(`b`);
-  courtesy.setAttribute(`ext`, objectExternal);
+  courtesy.setAttribute(
+    `ext`,
+    objectExternal
+  );
   courtesy.classList.add(`courtesy`);
   object.classList.add(`ext`);
   ahref.classList.add(`exit`);
-  object.src = objectImage;
   bold.innerHTML = objectId;
+  object.src = objectImage;
   ahref.append(bold);
   courtesy.append(object);
   courtesy.append(ahref);
-  if (menu[id].id.match(/Youtube/g) && youtubeMedia == true)
-    courtesy.append(youtubeAttributeBuild());
-  else courtesy.append(attributeBuild());
+  if (
+    menu[id].id.match(/Youtube/g) &&
+    youtubeMedia == true
+  )
+    courtesy.append(
+      youtubeAttributeBuild()
+    );
+  else courtesy.append(
+    attributeBuild()
+  );
   return courtesy;
 };
 
-let copyInputAttribute = function (src, share, externalURI) {
+let copyInputAttribute = function (
+  src,
+  share,
+  externalURI
+) {
   let construct = document.createElement(`div`);
   let sticky = document.createElement(`input`);
   let source = document.createElement(`input`);
@@ -597,13 +782,13 @@ let youtubeHTMLBuild = function (htmlArray) {
   item.setAttribute(`ext`, htmlArray.externalURI);
   publish.setAttribute(`text`, htmlArray.title);
   object.src = htmlArray.videoSource;
-  ago.innerHTML = htmlArray.dst;
   view.innerHTML = htmlArray.views
+  ago.innerHTML = htmlArray.dst;
   head.classList.add(`header`);
   publish.classList.add(`pub`);
   youtube.classList.add(`yt`);
-  item.classList.add(`item`);
   view.classList.add(`views`);
+  item.classList.add(`item`);
   ago.classList.add(`ago`);
   item.id = `yt`;
   head.append(htmlArray.courtesy);
@@ -614,7 +799,11 @@ let youtubeHTMLBuild = function (htmlArray) {
   item.append(ago);
   item.append(view);
   item.append(
-    copyInputAttribute(htmlArray.src, htmlArray.share, htmlArray.externalURI)
+    copyInputAttribute(
+      htmlArray.src,
+      htmlArray.share,
+      htmlArray.externalURI
+    )
   );
   return item;
 };
@@ -634,21 +823,21 @@ let xmlHTMLBuild = function (htmlArray) {
   let head = document.createElement(`div`);
   let bars = document.createElement(`div`);
   let ago = document.createElement(`div`);
+  original.append(circle.cloneNode(true));
+  original.append(circle.cloneNode(true));
+  original.append(circle.cloneNode(true));
+  original.append(circle.cloneNode(true));
+  original.append(circle.cloneNode(true));
   original.classList.add(`animation`);
-  bars.classList.add(`bars`);
   circle.classList.add(`circle`);
-  original.append(circle.cloneNode(true));
-  original.append(circle.cloneNode(true));
-  original.append(circle.cloneNode(true));
-  original.append(circle.cloneNode(true));
-  original.append(circle.cloneNode(true));
-  if (toggleBorders == false) item.style.border = `none`
+  bars.classList.add(`bars`);
+  if (fadeIntoView == true) object.classList.add(`hidden`);
+  publish.innerHTML = htmlArray.truncate + htmlArray.more;
   item.setAttribute(`aria-object`, htmlArray.menuObject);
+  if (toggleBorders == false) item.style.border = `none`
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   if (flexBox == true) item.classList.add(`flexbox`);
   item.setAttribute(`ext`, htmlArray.externalURI);
-  publish.innerHTML = htmlArray.truncate + htmlArray.more;
-  if (fadeIntoView == true) object.classList.add(`hidden`);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
   wrap.innerHTML += htmlArray.searchExternal;
@@ -661,7 +850,9 @@ let xmlHTMLBuild = function (htmlArray) {
   head.classList.add(`header`);
   image.classList.add(`image`);
   object.classList.add(`img`);
-  if (roundedEdge == true) {
+  if (
+    roundedEdge == true
+  ) {
     object.style.borderRadius = `12px`;
     image.style.borderRadius = `12px`;
   }
@@ -674,22 +865,26 @@ let xmlHTMLBuild = function (htmlArray) {
     original.style.display = `none`;
     bars.style.display = `none`;
   } else if (imageLoader == `ring-circle`) {
-    bars.style.display = `none`;
     loader.style.display = `none`;
+    bars.style.display = `none`;
   } else if (imageLoader == `v-bars`) {
     original.style.display = `none`;
     loader.style.display = `none`;
   } else if (imageLoader == false) {
     original.style.display = `none`;
-    bars.style.display = `none`;
     loader.style.display = `none`;
+    bars.style.display = `none`;
   }
   pending.append(original);
   pending.append(loader);
   pending.append(bars)
   image.append(pending);
   image.append(sideBarThemeBuild(`fa-heart`));
-  if (safeSearchIDs.includes(menu[id].id)) image.append(filterBlur);
+  if (
+    safeSearchIDs.includes(
+      menu[id].id)
+  )
+    image.append(filterBlur);
   image.append(object);
   if (feedImages == true) classic.append(image);
   wrap.append(publish);
@@ -697,7 +892,11 @@ let xmlHTMLBuild = function (htmlArray) {
   classic.append(wrap);
   item.append(classic);
   item.append(
-    copyInputAttribute(htmlArray.src, htmlArray.share, htmlArray.externalURI)
+    copyInputAttribute(
+      htmlArray.src,
+      htmlArray.share,
+      htmlArray.externalURI
+    )
   );
   return item;
 };
@@ -736,7 +935,12 @@ let listingIndexBuild = function (
   return key;
 };
 
-let sideBarListBuild = function (Elem, Class, Icon, Text) {
+let sideBarListBuild = function (
+  Elem,
+  Class,
+  Icon,
+  Text
+) {
   let option = document.createElement(`div`);
   option.classList.add(Elem, `mainTransition`);
   option.innerHTML = `
@@ -752,14 +956,23 @@ let excludeFormBuild = function () {
   let object = document.createElement(`input`);
   let form = document.createElement(`form`);
   let min = document.createElement(`div`);
-  object.setAttribute(`placeholder`, `filter`);
+  object.setAttribute(
+    `placeholder`,
+    `filter`
+  );
   object.classList.add("excludeInput");
-  object.setAttribute(`type`, `text`);
-  form.setAttribute(`action`, `#`);
+  object.setAttribute(
+    `type`,
+    `text`
+  );
+  form.setAttribute(
+    `action`,
+    `#`
+  );
   min.classList.add("filter");
   form.classList.add(`min`);
-  min.id = `filter`;
   form.append(object);
+  min.id = `filter`;
   min.append(form);
   return min;
 };
@@ -768,18 +981,30 @@ let urlFormBuild = function () {
   let object = document.createElement(`input`);
   let form = document.createElement(`form`);
   let url = document.createElement(`div`);
-  object.setAttribute("value", backgroundImage[0].path);
-  object.setAttribute(`placeholder`, `path`);
-  object.setAttribute(`type`, `text`);
-  form.setAttribute(`action`, `#`);
+  object.setAttribute(
+    `value`,
+    backgroundImage[0].path
+  );
+  object.setAttribute(
+    `placeholder`,
+    `path`
+  );
+  object.setAttribute(
+    `type`,
+    `text`
+  );
+  form.setAttribute(
+    `action`,
+    `#`
+  );
   object.classList.add("urlInput");
   object.classList.add(`imageURL`);
   url.classList.add("background");
   object.classList.add(`text`);
   form.classList.add(`url`);
-  url.id = `url`;
   form.append(object);
   url.append(form);
+  url.id = `url`;
   return url;
 };
 
@@ -794,13 +1019,16 @@ let basicFormBuild = function () {
   form.setAttribute(`action`, `#`);
   form.classList.add(`sideBasic`);
   object.classList.add(`text`);
-  basic.id = `basic`;
   form.append(object);
+  basic.id = `basic`;
   basic.append(form);
   return basic;
 };
 
-let sideBarOptionBuild = function (name, classes) {
+let sideBarOptionBuild = function (
+  name,
+  classes
+) {
   let sel = document.createElement(`div`);
   sel.classList.add(`sel`, classes);
   sel.innerHTML = name;
