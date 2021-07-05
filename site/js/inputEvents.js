@@ -190,18 +190,9 @@ document.addEventListener('submit', (evt) => {
           document.querySelector(`#xml`).remove();
         if (document.body.contains(document.querySelector(`#group`)))
           document.querySelector(`#group`).remove();
-        if (
-          !document.contains(
-            document.querySelector(
-              `[aria-item='${_match.querySelector(`.hover`)
-                .getAttribute(`aria-item`)}']`
-            )
+          xmlRequestParsing(
+            _match.querySelector(`.hover`).getAttribute(`aria-item`)
           )
-        ) {
-            xmlRequestParsing(
-              _match.querySelector(`.hover`).getAttribute(`aria-item`)
-            )
-          }
         _match.style.display = `none`;
       } else if (_view.value.length) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
