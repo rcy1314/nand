@@ -150,7 +150,8 @@ let sideBarDisplay = function (Value) {
       }, 300);
     } else if (
         _main.clientWidth <= 425 &&
-        sideScroll == true
+        sideScroll == true ||
+        sideBarMouse == false
       )
       _min.style.cssText = `display: block !important;`
       setTimeout(function () {
