@@ -23,69 +23,128 @@ setTimeout(function() {
   ) {
     let i;
     let uri = location.href.split(`?`)[1];
-    id = uri.slice(uri.length - 9, uri.length);
-    if (uri.match(/^[a-zA-Z0-9]+$/g)) {
-      if (Reader == true) {
-        onlyImages = true;
-      }
-      id = uri.slice(0, 2);
-      post = parseInt(uri.slice(2), 36);
-      setTimeout(function () {
-        if (menu.findIndex((item) => item.hash === id))
-          i = menu.findIndex((item) => item.hash === id);
-        if (i !== -1) xmlRequestParsing(i);
-        else filterInputResponse(uri)
-      }, 250);
-    } else if (id.match(/[0-9]/g)) {
-        post =
-          uri.slice(0, uri.length - 10);
-      console.log(post)
-      setTimeout(function () {
-        if (menu.findIndex((item) => item.title === id))
-          i = menu.findIndex((item) => item.title === id);
-        if (i !== -1)
-          xmlRequestParsing(i);
-        else if (i === -1)
-          filterInputResponse(location.href.split(`?`)[1]);
-        _toggle.style.display = `none`;
-        _visit.style.display = `none`;
-        guideOnScreen = onScreen;
-        onScreen = false;
-      }, 250);
+    id =
+      uri.slice(
+        uri.length - 9,
+        uri.length
+      );
+    if (
+      uri.match(
+        /^[a-zA-Z0-9]+$/g)
+      ) {
+      if (Reader == true) onlyImages = true;
+      id =
+        uri.slice(
+          0,
+          2
+        );
+      post =
+        parseInt(
+          uri.slice(2),
+        36
+      );
+      setTimeout(
+        function () {
+          if (
+            menu.findIndex(
+              (item) => item.hash === id
+            )
+          )
+            i = menu.findIndex(
+              (item) => item.hash === id
+            );
+            if (i !== -1) xmlRequestParsing(i);
+            else filterInputResponse(uri)
+        },
+      250);
+    } else if (
+      id.match(/[0-9]/g)
+    ) {
+      post =
+        uri.slice(
+          0,
+          uri.length - 10
+        );
+      setTimeout(
+        function () {
+          if (
+            menu.findIndex(
+              (item) => item.title === id
+            )
+          )
+            i = menu.findIndex(
+              (item) => item.title === id
+            );
+          if (i !== -1) xmlRequestParsing(i);
+          else if (i === -1)
+            filterInputResponse(
+              location.href.split(`?`)[1]
+            );
+          _toggle.style.display = `none`;
+          _visit.style.display = `none`;
+          guideOnScreen = onScreen;
+          onScreen = false;
+        },
+      250);
     }
-  } else if (location.search.split(`?q=`)[1]) {
+  } else if (
+    location.search.split(`?q=`)[1]
+  ) {
     var uri = location.search.split(`?q=`)[1];
     var uri = uri.toLowerCase().space();
     _toggle.style.display = `none`;
     guideOnScreen = true;
-    setTimeout(function () {
-      if (showSplash == true) _check.style.visibility = `visible`;
-      topMenuBarDisplay(topBar);
-      filterInputResponse(uri);
-    }, 250);
-  } else if (isNaN(parseFloat(post)) && !isFinite(post)) {
-    setTimeout(function () {
-      if (Reader == false) {
-        _sb.style.display = `block`;
-        _visit.style.display = `flex`;
-        guideOnScreen = true;
-        _guest.focus();
-      } else if (Reader == true) {
-        onlyImages = true;
-        xmlRequestParsing(anyRandomMenuObject());
-      }
-    }, 250);
+    setTimeout(
+      function () {
+        if (showSplash == true) _check.style.visibility = `visible`;
+        topMenuBarDisplay(topBar);
+        filterInputResponse(uri);
+      },
+    250);
+  } else if (
+    isNaN(
+      parseFloat(post)
+    ) &&
+    !isFinite(
+      post
+    )
+  ) {
+    setTimeout(
+      function () {
+        if (Reader == false) {
+          _visit.style.display = `flex`;
+          _sb.style.display = `block`;
+          guideOnScreen = true;
+          _guest.focus();
+        } else if (Reader == true) {
+          onlyImages = true;
+          xmlRequestParsing(anyRandomMenuObject());
+        }
+      },
+    250);
   }
-  if (!isNaN(parseFloat(post)) && isFinite(post) && showSplash == true)
-    if (showSplash == true) _check.style.visibility = `visible`;
+  if (
+    !isNaN(
+      parseFloat(
+        post
+      )
+    ) &&
+    isFinite(
+      post
+    ) &&
+    showSplash == true
+  )
+    _check.style.visibility = `visible`;
 
   if (_main.clientWidth <= 425) {
-    setTimeout(function () {
-      guideOnScreen = onScreen;
-      onScreen = false;
-      expand = false;
-      Blocks = true;
-      List = false;
-    }, 250)
+    setTimeout(
+      function () {
+        guideOnScreen = onScreen;
+        onScreen = false;
+        expand = false;
+        Blocks = true;
+        List = false;
+      },
+    250)
   }
 }, 100)
