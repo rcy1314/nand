@@ -5,7 +5,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `rgba(63, 73, 99, 1)`
+    `rgba(63, 73, 99, .3)`
   );
   document.documentElement.style.setProperty(
     `--fill-color`,

@@ -5,7 +5,7 @@ var California = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `rgba(158, 123, 167, 1)`
+    `rgba(158, 123, 167, .3)`
   );
   document.documentElement.style.setProperty(`--fill-color`, `#aaaaaa`);
   document.documentElement.style.setProperty(
