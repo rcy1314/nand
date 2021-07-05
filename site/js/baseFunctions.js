@@ -221,10 +221,10 @@ let progressBackDrop = function (done) {
   }
   if (
     document.body.contains(
-      document.getElementById(`xml`)
+      _main.querySelector(`#xml`)
     )
   ) {
-    document.querySelector(`#xml`).style.display = `block`;
+    _main.querySelector(`#xml`).style.display = `block`;
       if (
         Reader == true &&
         first == true
@@ -316,7 +316,7 @@ let progressBackDrop = function (done) {
   }
   if (
     document.body.contains(
-      document.getElementById(`group`)
+      _main.querySelector(`#group`)
     )
   ) {
     if (scrollIntoView == true) {
@@ -325,7 +325,7 @@ let progressBackDrop = function (done) {
         function() {
           if (
             document.body.contains(
-              document.querySelector(`.air`)
+              _main.querySelector(`.air`)
             )
           )
             _main.scrollTop = document.querySelector(`.air`).clientHeight;
@@ -344,7 +344,7 @@ let progressBackDrop = function (done) {
   if (onlyImages == true)
     if (
       document.body.contains(
-        document.querySelector(`.result`)
+        _main.querySelector(`.result`)
       )
     )
       _main.scrollTop = 0;
@@ -353,7 +353,7 @@ let progressBackDrop = function (done) {
         function() {
           if (
             document.body.contains(
-              document.querySelector(`.air`)
+              _main.querySelector(`.air`)
             )
           )
             _main.scrollTop = document.querySelector(`.air`).clientHeight;
@@ -363,7 +363,7 @@ let progressBackDrop = function (done) {
         function() {
           if (
             document.body.contains(
-              document.querySelector(`#group`)
+              _main.querySelector(`#group`)
             )
           )
             document.querySelector(`#group`).style.display = `block`;
