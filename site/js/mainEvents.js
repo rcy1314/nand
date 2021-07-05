@@ -136,7 +136,7 @@ window.onload = function () {
               _min.style.display = `block`;
               setTimeout(function () {
                 sideBarDisplay(onScreen);
-              }, 1250)
+              }, 300)
             }
             else if (
               event.pageX >= 180 &&
@@ -521,11 +521,13 @@ document.addEventListener('click', (evt) => {
       repository.blank();
     }
     if (
-      evt.target.classList.contains(`show`)
+      evt.target.classList.contains(`bar`)
     ) {
       _min.style.display = `block`;
       onScreen = onScreen != true;
       sideBarDisplay(onScreen);
+      if (onScreen == true)
+      _bar.style.display = `none`;
     }
     if (
       evt.target.classList.contains(`joi`)
@@ -536,7 +538,6 @@ document.addEventListener('click', (evt) => {
       Reader = Reader != true;
       if (Reader == false) {
         notifyOption(`Reading`, `fa-times-circle`);
-        xmlChannelFooter(id);
         first = true;
         _main
           .querySelectorAll(`.joi`)
@@ -616,7 +617,6 @@ document.addEventListener('click', (evt) => {
       expand = expand != true;
       _sb.style.display = `none`;
       notifyOption(`Reading`, `fa-times-circle`);
-      xmlChannelFooter(id);
       Reader = false;
       first = true;
       _main

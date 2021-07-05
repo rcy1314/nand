@@ -4,6 +4,8 @@ const _top = document.getElementById(`top`);
 
 const _joi = document.querySelector(`.joi`);
 
+const _bar = document.querySelector(`.bar`);
+
 const _min = document.querySelector(`.hide`);
 
 const _html = document.querySelector(`html`);
@@ -12,17 +14,17 @@ const _body = document.querySelector(`body`);
 
 const _dots = document.querySelector(`.fill`);
 
-const _hide = document.getElementById(`hide`);
+const _hide = document.querySelector(`.hide`);
 
 const _link = document.getElementById(`link`);
-
-const _show = document.getElementById(`show`);
 
 const _main = document.getElementById(`main`);
 
 const _feed = document.getElementById(`feed`);
 
 const _view = document.getElementById(`view`);
+
+const _show = document.getElementById(`show`);
 
 const _visit = document.getElementById(`visit`);
 
@@ -53,7 +55,6 @@ const _options = document.getElementById(`options`);
 const _content = document.getElementById(`content`);
 
 const _sidebar = document.getElementById(`sidebar`);
-
 
 const _container = document.getElementById(`container`);
 

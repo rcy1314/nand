@@ -153,6 +153,7 @@ let sideBarDisplay = function (Value) {
       setTimeout(function () {
         document.querySelector(`.sideFilter`).style.display = `block`;
         document.querySelector(`#basic`).style.display = `block`;
+        _hide.style.display = `none`;
         _sidebar.style.left = `0`;
       }, 300);
   } else if (Value == false) {
@@ -175,6 +176,8 @@ let quickFeedDisplay = function (Value) {
     _main
       .querySelectorAll(`.feed`)
       .forEach((a) => a.style.display = `block`);
+    _options.classList.add(`invisible`);
+    _social.classList.add(`invisible`);
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
     _front.classList.remove(`toggle`);
@@ -182,7 +185,10 @@ let quickFeedDisplay = function (Value) {
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     _show.style.visibility = `hidden`;
+    if (_main.clientWidth <= 425) _sb.style.top = `-10px`;
   } else if (Value == false) {
+    _options.classList.remove(`invisible`);
+    _social.classList.remove(`invisible`);
     _quick.style.zIndex = `-1`;
     _main
       .querySelectorAll(`.feed`)
@@ -194,6 +200,7 @@ let quickFeedDisplay = function (Value) {
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
     _show.style.visibility = `visible`;
+    if (_main.clientWidth <= 425) _sb.style.top = `7px`;
   }
 };
 
@@ -390,7 +397,7 @@ let assetBuild = function (assetIndex, assetImage, assetId) {
   ahref.classList.add(`query`);
   img.classList.add(`entity`);
   img.src = assetImage;
-  ahref.innerHTML = `${truncate(String(assetId.match(/[^\/]+$/g)), 12, true)}...`;
+  ahref.innerHTML = `${truncate(String(assetId.match(/[^\/]+$/g)), 12, false)}`;
   object.append(img);
   object.append(ahref);
   return object;

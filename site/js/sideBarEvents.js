@@ -3,6 +3,7 @@ document.addEventListener('click', (evt) => {
       _sb.style.display = `block`;
       onScreen = false;
       sideBarDisplay(onScreen);
+      _bar.style.display = `block`;
     }
     if (event.target.classList.contains(`feed`)) {
       if (document.body.contains(document.querySelector(`#xml`)))
