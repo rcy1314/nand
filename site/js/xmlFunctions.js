@@ -4,8 +4,14 @@ var guideDisplay = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _guide.append(guideBuild(pubArray[0]));
-  guideImageAttributes(pubArray[0]);
+  _guide.append(
+    guideBuild(
+      pubArray[0]
+    )
+  );
+  guideImageAttributes(
+    pubArray[0]
+  );
   _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;
 };
@@ -16,7 +22,11 @@ var guideDisplayYoutube = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  _guide.append(guideBuildYoutube(pubArray[0]));
+  _guide.append(
+    guideBuildYoutube(
+      pubArray[0]
+    )
+  );
   _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;
 };
@@ -27,32 +37,66 @@ var contentStatusDisplay = function (
   oldestPost,
   postsCount
 ) {
-  if (document.body.contains(document.querySelector(`#xml .status`))) {
-    var status = document.querySelector(`#xml .status`);
-    status.append(contentBuild(oldestPost, recentPost, postsCount, menuIndex));
+  if (
+    document.body.contains(
+      _main.querySelector(`#xml .status`)
+    )
+  ) {
+    let status = _main.querySelector(`#xml .status`);
+    status.append(
+      contentBuild(
+        oldestPost,
+        recentPost,
+        postsCount,
+        menuIndex)
+      );
   }
   displayDescription(showDescription);
 };
 
 var xmlStatusSuggestions = function () {
   let duplicate = [];
-  if (document.body.contains(_main.querySelector(`.suggestions`))) {
-    var suggestions = _main.querySelector(`.suggestions`);
-    if (document.body.contains(_main.querySelector(`.combine`)))
+  if (
+    document.body.contains(
+      _main.querySelector(`.suggestions`)
+    )
+  ) {
+    let suggestions = _main.querySelector(`.suggestions`);
+    if (
+      document.body.contains(
+        _main.querySelector(`.combine`)
+      )
+    )
       while (suggestions.firstChild)
         suggestions.removeChild(suggestions.lastChild);
-    for (let i = 1; i <= contentStatusBuffer; i++) {
+    for (
+      let i = 1;
+      i <= contentStatusBuffer;
+      i++
+    ) {
       let randomMenuObject = menu.indexOf(
-        menu[Math.floor(Math.random() * menu.length - 1)]
+        menu[
+          Math.floor(
+            Math.random() * menu.length - 1
+          )
+        ]
       );
       if (
+        !duplicate.includes(randomMenuObject) &&
         menu[randomMenuObject] &&
-        randomMenuObject !== 0 &&
-        !duplicate.includes(randomMenuObject)
+        randomMenuObject !== 0
       ) {
-        if (menu[randomMenuObject].media == true)
+        if (
+          menu[
+            randomMenuObject
+          ].media == true
+        )
           var media = `feed contains images`;
-        else if (menu[randomMenuObject].media == false)
+        else if (
+          menu[
+            randomMenuObject
+          ].media == false
+        )
           var media = `feed might not contain images`;
         duplicate.push(randomMenuObject);
         suggestions.append(
@@ -72,48 +116,70 @@ var xmlStatusSuggestions = function () {
 var guideImageAttributes = function (pubArray) {
   let maximum = 480;
   let newImg = new Image();
-  newImg.setAttribute(`src`, pubArray.src);
+  newImg.setAttribute(
+    `src`,
+    pubArray.src
+  );
   newImg.onload = function () {
-    if (guideSafeSearch == true && safeSearchIDs.includes(menu[id].id)) {
-      fetch(`${cors}${api}${pubArray.src}`, {
-        method: "GET",
-        headers: {
-          Origin: "*",
-          Accept: "application/json",
-          "X-Requested-With": "*",
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
+    if (
+      safeSearchIDs.includes(menu[id].id) &&
+      guideSafeSearch == true
+    ) {
+      fetch(
+        `${cors}${api}${pubArray.src}`,
+        {
+          method: "GET",
+          headers: {
+            Origin: "*",
+            Accept: "application/json",
+            "X-Requested-With": "*",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
         },
       })
-        .then((response) => {
-          response.json().then((jsonResponse) => {
-            if (jsonResponse.score >= safeSearchScore) {
-              if (
-                document.body.contains(
-                  document.querySelector(
-                    `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
+        .then(
+          (response) => {
+          response.json().then(
+            (jsonResponse) => {
+              if (jsonResponse.score >= safeSearchScore) {
+                if (
+                  document.body.contains(
+                    _main.querySelector(
+                      `[aria-item='${pubArray.menuObject}']
+                       [aria-object='${pubArray.pubIndex}']
+                       .filterBlur
+                      `
+                    )
                   )
                 )
-              )
-                document
-                  .querySelector(
-                    `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
-                  )
-                  .classList.add(`blur`);
-            }
+                  _main
+                    .querySelector(
+                      `[aria-item='${pubArray.menuObject}']
+                       [aria-object='${pubArray.pubIndex}']
+                       .filterBlur
+                      `
+                    )
+                    .classList.add(`blur`);
+              }
           });
-          _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
+          _guide
+            .querySelector(`.img`).setAttribute(
+              `src`,
+              pubArray.src
+            );
           document.querySelector(`.sticky`).style.display = `block`;
           _check.style.display = `none`;
           _guide.style.display = `flex`;
         })
-        .catch((response) => {
-          while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
-          _check.style.display = `none`;
-          _guide.style.display = `none`;
-          local = null;
-          post = null;
-        });
+        .catch(
+          (response) => {
+            while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+            _check.style.display = `none`;
+            _guide.style.display = `none`;
+            local = null;
+            post = null;
+          }
+        );
     }
     if (_main.clientWidth <= 425) {
       _main.classList.add(`guide`);
@@ -122,25 +188,29 @@ var guideImageAttributes = function (pubArray) {
       _guide.querySelector(`.sticky .image`).style.margin = `0`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `65vh`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxHeight = `65vh`
+          );
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `100vw`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxWidth = `100vw`
+          );
         _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
         _guide.querySelector(`.header`).style.width = `100vw`;
         if (guideSafeSearch == true)
           _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `55vh`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxHeight = `55vh`
+          );
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `100vw`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxWidth = `100vw`
+          );
       }
-      _guide.querySelector(`.ago`).style.position = `relative`;
       _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
+      _guide.querySelector(`.ago`).style.position = `relative`;
       _guide.querySelector(`.header`).style.backgroundColor =
         `var(--color-primary)`
       _guide.querySelector(`.header`).style.width = `100vw`;
@@ -155,29 +225,47 @@ var guideImageAttributes = function (pubArray) {
       _guide.querySelector(`.sticky .image`).style.margin = `25px`;
       if (newImg.naturalWidth >= newImg.naturalHeight) {
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `90vh`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxHeight = `90vh`
+          );
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `calc(80vw - 220px)`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxWidth = `calc(80vw - 220px)`
+          );
       } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxHeight = `90vh`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxHeight = `90vh`
+          );
         _guide
-          .querySelectorAll(`.img, .filterBlur`)
-          .forEach((a) => (a.style.maxWidth = `calc(55vw - 220px)`));
+          .querySelectorAll(`.img, .filterBlur`).forEach(
+            (a) => a.style.maxWidth = `calc(55vw - 220px)`
+          );
       }
-      if (category == `Youtube` && youtubeMedia == false) {
+      if (
+        youtubeMedia == false &&
+        category == `Youtube`
+      ) {
       _guide
         .querySelectorAll(
-          `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
-        )
-        .forEach((a) => (a.style.height = `269px`));
+          `
+            [aria-item='${pubArray.menuObject}']
+            [aria-object='${pubArray.pubIndex}']
+            .image
+            `
+        ).forEach(
+          (a) => a.style.height = `269px`
+        );
       }
     }
-    if (guideSafeSearch == false || !safeSearchIDs.includes(menu[id].id)) {
-      _guide.querySelector(`.img`).setAttribute(`src`, pubArray.src);
+    if (
+      !safeSearchIDs.includes(menu[id].id) ||
+      guideSafeSearch == false
+    ) {
+      _guide.querySelector(`.img`).setAttribute(
+        `src`,
+        pubArray.src
+      );
       document.querySelector(`.sticky`).style.display = `block`;
       _guide.style.display = `flex`;
     }
@@ -253,20 +341,26 @@ var xmlImageSource = function (xhr) {
       xhr
         .getElementsByTagName(`media:content`)[0]
         .getAttribute(`url`)
-        .match(/youtube\.com/)
+        .match(
+          /youtube\.com/
+        )
     )
       src =
         `https://www.youtube.com/embed/` +
         xhr
           .getElementsByTagName(`media:content`)[0]
           .getAttribute(`url`)
-          .match(/[a-zA-Z0-9\_\-]{11}/g);
+          .match(
+            /[a-zA-Z0-9\_\-]{11}/g
+          );
     else
       src = String(
         xhr
           .getElementsByTagName(`media:content`)[0]
           .getAttribute(`url`)
-          .match(/\b(https?:\/\/\S*?\..+)/g)
+          .match(
+            /\b(https?:\/\/\S*?\..+)/g
+          )
       );
   } else if (xhr.getElementsByTagName(`media:thumbnail`).length > 0)
     src = String(
@@ -281,11 +375,15 @@ var xmlImageSource = function (xhr) {
     if (
       xhr
         .getElementsByTagName(`content:encoded`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )
     )
       src = xhr
         .getElementsByTagName(`content:encoded`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0];
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )[0];
     else
       src = String(
         xhr
@@ -312,16 +410,20 @@ var xmlImageSource = function (xhr) {
     if (
       xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
+        )
     ) {
       src = xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g)[0];
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
+        )[0];
     }
     else src = null;
   } else if (
-    typeof xhr.getElementsByTagName(`description`) !== `object` ||
-    typeof xhr.getElementsByTagName(`description`)[0] === `object`
+    typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
+    typeof xhr.getElementsByTagName(`description`) !== `object`
   ) {
     if (
       (xhr.getElementsByTagName(`description`)[0]
@@ -333,17 +435,23 @@ var xmlImageSource = function (xhr) {
     if (
       xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
+        )
     )
       src = xhr
         .getElementsByTagName(`description`)[0]
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g)[0];
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
+        )[0];
     }
   } else if (xhr.getElementsByTagName(`link`).length > 0)
     src = String(
       xhr
         .getElementsByTagName(`link`)[0]
-        .childNodes[0].nodeValue.match(/https:\/\/.+?(gif|png|jpg)/g)
+        .childNodes[0].nodeValue.match(
+          /https:\/\/.+?(gif|png|jpg)/g
+        )
     );
   else if (xhr.getElementsByTagName(`media:content`).length > 0)
     src = String(
@@ -361,7 +469,9 @@ var xmlImageSource = function (xhr) {
     src = String(
       xhr
         .getElementsByTagName(`url`)
-        .innerHTML.match(/\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g)[0]
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )[0]
     );
   else src = null;
   return src;
@@ -371,9 +481,7 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   let parse = [];
   if (channel == `entry`) {
     let re = dateTime.getElementsByTagName(`link`)[0].getAttribute(`href`);
-    if (
-      dateTime.getElementsByTagName(`updated`).length == 1
-    ) {
+    if (dateTime.getElementsByTagName(`updated`).length == 1) {
       var dst = dateTime
         .getElementsByTagName(`updated`)[0]
         .childNodes[0].nodeValue.zulu();
@@ -495,34 +603,38 @@ var xmlTimeStampParsing = function (channel, dateTime) {
   return parse[0];
 };
 
-var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
+var xmlImageDimensions = function (
+  menuObject,
+  pubIndex,
+  newImg
+) {
   let k = 5420;
   let maximum = 480;
-  let itemContainer = document.querySelector(
+  let itemContainer = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
-  let itemImage = document.querySelector(
+  let itemImage = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
-  let itemFilter = document.querySelector(
+  let itemFilter = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
-  let attribute = document.querySelector(
+  let attribute = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
-  let copyPicture = document.querySelector(
+  let copyPicture = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
   );
-  let copyDownload = document.querySelector(
+  let copyDownload = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
-  let copyPost = document.querySelector(
+  let copyPost = _main.querySelector(
     `[aria-item='${pubIndex}'] .post`
   );
   if (
     newImg.naturalWidth < maximum &&
     document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
         )
     )
@@ -538,7 +650,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     copyDownload.style.display = `none`;
     if (
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
         )
       )
@@ -553,7 +665,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     if (
       newImg.naturalHeight >= newImg.naturalWidth &&
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) &&
@@ -564,7 +676,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     else if (
       cropImages == true &&
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && newImg.naturalHeight <= newImg.naturalWidth
@@ -572,7 +684,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     else if (
       cropImages == false &&
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && newImg.naturalHeight >= newImg.naturalWidth
@@ -580,14 +692,14 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     else if (
       cropImages == false &&
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && newImg.naturalHeight <= newImg.naturalWidth
     ) itemContainer.style.height = `fit-content`;
     if (
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
         )
       )
@@ -595,7 +707,7 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
     itemFilter.classList.add(`default`);
     if (
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
         )
       )
@@ -607,28 +719,28 @@ var xmlImageDimensions = function (menuObject, pubIndex, newImg) {
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   count.push(`null`);
   let jsonResponseScore;
-  let itemContainer = document.querySelector(
+  let itemContainer = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
-  let itemImage = document.querySelector(
+  let itemImage = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
-  let itemPending = document.querySelector(
+  let itemPending = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
   );
-  let itemFilter = document.querySelector(
+  let itemFilter = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
-  let attribute = document.querySelector(
+  let attribute = _main.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
-  let copyPicture = document.querySelector(
+  let copyPicture = _main.querySelector(
     `[aria-item='${pubIndex}'] .picture`
   );
-  let copyDownload = document.querySelector(
+  let copyDownload = _main.querySelector(
     `[aria-item='${pubIndex}'] .download`
   );
-  let copyPost = document.querySelector(
+  let copyPost = _main.querySelector(
     `[aria-item='${pubIndex}'] .post`
   );
   if (
@@ -636,7 +748,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src != `null` &&
     imageDuplicate.includes(src)
   ) {
-    document
+    _main
       .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
       .forEach((a) => a.remove());
   } else if (
@@ -646,13 +758,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   ) {
     if (
       document.body.contains(
-        document.querySelector(
+        _main.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
     ) {
       if (onlyImages == true) {
-        document.querySelector(
+        _main.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         ).remove();
       } else {
@@ -676,7 +788,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
       if (onlyImages == true) {
-        document.querySelector(
+        _main.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         ).remove();
       } else {
@@ -689,14 +801,17 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           src.match(/ytimg/g) &&
           youtubeMedia == false
         ) {
-        document
+        _main
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
           .classList.add(`yt`);
         itemPending.style.display = `none`;
       }
-      if (safeSearch == true && safeSearchIDs.includes(menu[id].id)) {
+      if (
+        safeSearchIDs.includes(menu[id].id) &&
+        safeSearch == true
+      ) {
         fetch(`${cors}${api}${src}`, {
           method: "GET",
           headers: {
@@ -721,17 +836,21 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                     var read = new FileReader();
                     read.readAsDataURL(request.response);
                     read.onload = function (e) {
-                      xmlImageDimensions(menuObject, pubIndex, newImg)
-                      itemFilter.style.transform = `scale(4)`
-                      itemFilter.classList.add(`blur`);
+                      xmlImageDimensions(
+                        menuObject,
+                        pubIndex,
+                        newImg
+                      )
                       itemImage.setAttribute(`src`, e.target.result);
+                      itemFilter.style.transform = `scale(4)`
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
+                      itemFilter.classList.add(`blur`);
                     };
                   }
                   request.onerror = function (e) {
                     if (onlyImages == true) {
-                      document.querySelector(
+                      _main.querySelector(
                        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                       ).remove();
                     } else {
@@ -741,19 +860,23 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                   };
                   if (!src.match(/4cdn/g)) request.send();
                   else {
-                    xmlImageDimensions(menuObject, pubIndex, newImg)
+                    xmlImageDimensions(
+                      menuObject,
+                      pubIndex,
+                      newImg
+                    )
+                    itemFilter.style.transform = `scale(4)`
                     copyDownload.classList.add(`picture`);
                     copyPicture.classList.add(`download`);
-                    itemFilter.style.transform = `scale(4)`
-                    itemFilter.classList.add(`blur`);
                     itemImage.setAttribute(`src`, src);
                     itemPending.style.display = `none`;
                     itemImage.style.display = `block`;
+                    itemFilter.classList.add(`blur`);
                   }
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
-                    document.querySelector(
+                    _main.querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                     )
                 )
@@ -767,7 +890,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 var read = new FileReader();
                 read.readAsDataURL(request.response);
                 read.onload = function (e) {
-                  xmlImageDimensions(menuObject, pubIndex, newImg)
+                  xmlImageDimensions(
+                    menuObject,
+                    pubIndex,
+                    newImg
+                  )
                   itemImage.setAttribute(`src`, e.target.result);
                   itemPending.style.display = `none`;
                   itemImage.style.display = `block`;
@@ -775,7 +902,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               }
               request.onerror = function (e) {
                 if (onlyImages == true) {
-                  document.querySelector(
+                  _main.querySelector(
                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                   ).remove();
                 } else {
@@ -785,7 +912,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               }
               if (!src.match(/4cdn/g)) request.send();
               else {
-                xmlImageDimensions(menuObject, pubIndex, newImg)
+                xmlImageDimensions(
+                  menuObject,
+                  pubIndex,
+                  newImg
+                )
                 itemImage.setAttribute(`src`, src);
                 itemPending.style.display = `none`;
                 itemImage.style.display = `block`;
@@ -799,7 +930,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           });
       } else if (
             document.body.contains(
-              document.querySelector(
+              _main.querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
               )
             )
@@ -814,8 +945,15 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           var read = new FileReader();
           read.readAsDataURL(request.response);
           read.onload = function (e) {
-            xmlImageDimensions(menuObject, pubIndex, newImg);
-            if (category == `Youtube` && youtubeMedia == false)
+            xmlImageDimensions(
+              menuObject,
+              pubIndex,
+              newImg
+            );
+            if (
+              youtubeMedia == false &&
+              category == `Youtube`
+            )
               itemContainer.style.paddingBottom = `56.25%`;
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.style.display = `none`;
@@ -824,7 +962,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             }
             request.onerror = function (e) {
               if (onlyImages == true) {
-                document.querySelector(
+                _main.querySelector(
                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                 ).remove();
               } else {
@@ -834,7 +972,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             };
           if (!src.match(/4cdn/g)) request.send();
           else {
-            xmlImageDimensions(menuObject, pubIndex, newImg)
+            xmlImageDimensions(
+              menuObject,
+              pubIndex,
+              newImg
+            )
             itemImage.setAttribute(`src`, src);
             itemPending.style.display = `none`;
             itemImage.style.display = `block`;
@@ -863,7 +1005,10 @@ var xmlTitleParsing = function (xhr) {
   else var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
   if ( // <[CDATA Title]> fix
     !title ||
-    (title.length == 7 && xhr.getElementsByTagName(`title`)[0].childNodes[0])
+    (
+      xhr.getElementsByTagName(`title`)[0].childNodes[0] &&
+      title.length == 7
+    )
   )
     var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
 
@@ -879,44 +1024,101 @@ var xmlAppendPublication = function (id) {
       }).length > 0
     )
       continue;
-    if (omitGuide == true && i != local) {
+    if (
+      omitGuide == true &&
+      i != local
+    ) {
       let channel = document.createElement(`div`);
       channel.classList.add(`channel`);
       channel.style.position = `fixed`;
-      if (document.body.contains(document.querySelector(`#xml`))) {
-        let append = document.querySelectorAll(`.channel`);
+      if (
+        document.body.contains(
+          _main.querySelector(`#xml`)
+        )
+      ) {
+        let append = _main.querySelectorAll(`.channel`);
         append[append.length - 1].append(pub[i].post)
-        images.push({ element: pub[i].element, src: pub[i].src });
+        images.push(
+          {
+            element: pub[i].element,
+            src: pub[i].src
+          }
+        );
       }
     } else if (omitGuide == false) {
-      if (document.body.contains(document.querySelector(`#xml`))) {
-        let append = document.querySelectorAll(`.channel`);
+      if (
+        document.body.contains(
+          _main.querySelector(`#xml`)
+        )
+      ) {
+        let append = _main.querySelectorAll(`.channel`);
         append[append.length - 1].append(pub[i].post)
-        images.push({ element: pub[i].element, src: pub[i].src });
+        images.push(
+          {
+            element: pub[i].element,
+            src: pub[i].src
+          }
+        );
       }
     }
   }
-  if (safeSearch == true || safeSearchIDs.includes(menu[id].id)) {
-    for (i = 0; i <= images.length - 1; i++) {
-      xmlImageAttributes(false, id, images[i].element, images[i].src);
+  if (
+    safeSearchIDs.includes(menu[id].id) ||
+    safeSearch == true
+  ) {
+    for (
+      let i = 0;
+      i <= images.length - 1;
+      i++
+    ) {
+      xmlImageAttributes(
+        false,
+        id,
+        images[i].element,
+        images[i].src
+      );
     }
-  } else if (!safeSearchIDs.includes(menu[id].id)) {
-    for (i = 0; i <= images.length - 1; i++) {
-      xmlImageAttributes(false, id, images[i].element, images[i].src);
+  } else if (
+    !safeSearchIDs.includes(
+      menu[id].id
+    )
+  ) {
+    for (
+      let i = 0;
+      i <= images.length - 1;
+      i++
+    ) {
+      xmlImageAttributes(
+        false,
+        id,
+        images[i].element,
+        images[i].src
+      );
     }
   }
-  if (document.body.contains(document.querySelector(`#xml`))) {
-    if (sideScroll == false && Reader == false) {
-      scrollToElm(touchmove,
+  if (
+    document.body.contains(
+      _main.querySelector(`#xml`)
+    )
+  ) {
+    if (
+      sideScroll == false &&
+      Reader == false
+    ) {
+      scrollToElm(
+        touchmove,
         _main,
-        document.querySelector(`[aria-object='${id}']`),
+        _main.querySelector(`[aria-object='${id}']`),
         250
       );
-    } else if (sideScroll == true && first != true) {
+    } else if (
+      sideScroll == true &&
+      first != true
+    ) {
       touchmove = true;
       sideScrollToElm(touchmove,
-        document.querySelector(`.channel`),
-        document.querySelector(`[aria-object='${id}']`),
+        _main.querySelector(`.channel`),
+        _main.querySelector(`[aria-object='${id}']`),
         250
       );
     }
@@ -925,7 +1127,11 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
-    if (document.body.contains(document.querySelector(`.content`))) {
+    if (
+      document.body.contains(
+        _main.querySelector(`.content`)
+      )
+    ) {
       var status = document.querySelector(`.status`);
       while (status.firstChild) status.removeChild(status.lastChild);
       var suggestions = document.querySelector(`.suggestions`);
@@ -933,17 +1139,25 @@ var xmlAppendPublication = function (id) {
         suggestions.removeChild(suggestions.lastChild);
     }
   }
-  if (Reader == false) {
+  if (
+    pub.length > 1 &&
+    Reader == false
+  ) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
   }
   if (
-    document.body.contains(document.querySelector(`#xml`))
+    document.body.contains(
+      _main.querySelector(`#xml`)
+    )
   ) {
+    if (
+      _main.clientWidth >= 426 &&
+      flexBox == true
+    ) displayFlex(displayFlex);
     if (showSplash == true) _check.style.display = `none`;
     contentStatusDisplay(id, recent, oldest, posts);
-    if (flexBox == true && _main.clientWidth >= 426) displayFlex(displayFlex);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
     local = null;
@@ -966,26 +1180,35 @@ var xmlRequestParsing = function (index) {
   imageDuplicate = [];
   console.log(menu[index].id);
   _toggle.style.display = `none`
+  document.title = menu[index].id.space();
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
   if (readPrevious == false) random = [];
   if (
-    !document.body.contains(document.querySelector(`#group`)) &&
-    !document.body.contains(document.querySelector(`#xml`))
+    !document.body.contains(
+      _main.querySelector(`#group`)
+    ) &&
+    !document.body.contains(
+      _main.querySelector(`#xml`)
+    )
   )
     _main.append(stageBuild());
-    uri = `${cors}${menu[index].uri}`;
-    category = menu[index].category;
+  uri = `${cors}${menu[index].uri}`;
+  category = menu[index].category;
   _visit.style.display = `none`;
   _sb.style.display = `none`
-  document.title = menu[index].id.space();
   if (
-    first == true && showSplash == true ||
-    Reader == false && first == true && showSplash == true
+    first == true &&
+    showSplash == true ||
+    Reader == false &&
+    first == true &&
+    showSplash == true
   )
     _check.style.display = `block`;
     if (
-      !document.body.contains(document.querySelector(`#group`))
+      !document.body.contains(
+        _main.querySelector(`#group`)
+      )
     ) httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
     if (httpRequest.readyState == 4) {
@@ -999,7 +1222,11 @@ var xmlRequestParsing = function (index) {
 
         if (Reader == false) quit = 30;
         else quit = 16;
-        for (i = 2; i <= xhr.getElementsByTagName(channel).length - 1; i++) {
+        for (
+          let i = 2;
+          i <= xhr.getElementsByTagName(channel).length - 1;
+          i++
+        ) {
           if (i === quit) break;
 
           let data = xhr.getElementsByTagName(channel)[i];
@@ -1010,11 +1237,22 @@ var xmlRequestParsing = function (index) {
 
           var postDuplicate = title;
 
-          let trun = truncate(title, titleTruncate, true);
+          let trun =
+            truncate(
+              title,
+              titleTruncate,
+              true
+            );
 
-          parse = xmlTimeStampParsing(channel, data);
+          parse =
+            xmlTimeStampParsing(
+              channel,
+              data
+            );
 
-          if (trun.match(/\w+/g))
+          if (
+            trun.match(/\w+/g)
+          )
             var uri = trun.toLowerCase().match(/\w+/g).join(`-`)
 
           else var uri = trun.toLowerCase()
@@ -1022,9 +1260,11 @@ var xmlRequestParsing = function (index) {
           let share = menu[index].title;
 
           if (hash == `long`)
-            share = `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
+            share =
+              `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
           else if (hash == `short`)
-            share = `${location.href.split(`?`)[0]}?${menu[index].hash}${parse.base36}`;
+            share =
+              `${location.href.split(`?`)[0]}?${menu[index].hash}${parse.base36}`;
           else if (hash == `title`)
             share =
             `${location.href.split(`?`)[0]}?${uri}-${share}`;
@@ -1046,43 +1286,49 @@ var xmlRequestParsing = function (index) {
           if (search == `search`)
             var cat = `<div class='external'>${parse.externalURI}</div>`;
 
-          if (src && src.match(/youtube\.com/g) && youtubeMedia == true) {
+          if (
+            src.match(/youtube\.com/g) &&
+            youtubeMedia == true &&
+            src
+          ) {
             if (data.getElementsByTagName(`media:statistics`).length > 0)
               var views =
                 `views ${data.getElementsByTagName(`media:statistics`)[0].getAttribute(`views`).replace(/\B(?=(\d{3})+(?!\d))/g, `,`)}`;
             else var views = ``;
+
             inline = [];
             inline.push({
               id: menu[index].id.match(/([^\/]+)$/g),
               image: menu[index].image.image(),
-              dst: parse.dst,
-              courtesy: courtesy,
               externalURI: parse.externalURI,
+              courtesy: courtesy,
+              menuObject: index,
+              videoSource: src,
+              dst: parse.dst,
+              truncate: trun,
               share: share,
               title: title,
               views: views,
-              truncate: trun,
               more: more,
-              videoSource: src,
               pubIndex: i,
-              menuObject: index,
               uri: uri
             });
             html = youtubeHTMLBuild(inline[0]);
           } else {
             if (!cat) cat = ``;
+
             inline = [];
             inline.push({
-              dst: parse.dst,
               externalURI: parse.externalURI,
+              searchExternal: cat,
               courtesy: courtesy,
+              menuObject: index,
+              dst: parse.dst,
+              truncate: trun,
               title: title,
               share: share,
-              truncate: trun,
               more: more,
-              searchExternal: cat,
               src: src,
-              menuObject: index,
               pubIndex: i,
               uri: uri
             });
@@ -1090,12 +1336,12 @@ var xmlRequestParsing = function (index) {
           }
           pub.push({
             title: title,
-            courtesy: courtesy,
-            since: parse.since,
-            dst: parse.dst,
-            gen: parse.base36,
             enc: parse.cyrb53.slice(0, parse.cyrb53.length - 10),
             re: parse.externalURI,
+            courtesy: courtesy,
+            since: parse.since,
+            gen: parse.base36,
+            dst: parse.dst,
             share: share,
             more: more,
             element: i,
@@ -1103,16 +1349,28 @@ var xmlRequestParsing = function (index) {
             src: src,
             uri: uri
           });
-          pub.sort(function (a, b) {
-            return b.since - a.since;
-          });
+          pub.sort(
+            function (a, b) {
+              return b.since - a.since;
+            }
+          );
         }
-        for (i = 0; i < pub.length; i++) {
-          if (hash == `long` && pub[i].enc == post) local = i;
-          else if (hash == `short` && parseInt(pub[i].gen, 36) == post) local = i;
+        for (
+          let i = 0;
+          i < pub.length;
+          i++) {
+          if (
+            pub[i].enc == post &&
+            hash == `long`
+          ) local = i;
           else if (
-            hash == `title` &&
-            pub[i].uri == post) local = i;
+            parseInt(pub[i].gen, 36) == post &&
+            hash == `short`
+          ) local = i;
+          else if (
+            pub[i].uri == post &&
+            hash == `title`
+          ) local = i;
         }
         if (
           menu[index].id.match(/Youtube/g) &&
@@ -1121,39 +1379,50 @@ var xmlRequestParsing = function (index) {
           isFinite(local)
         ) {
           _guide.style.display = `flex`;
+
           var sticky = [];
           sticky.push({
             title: menu[index].id.match(/([^\/]+)$/g),
-            element: pub[local].element,
             image: menu[index].image.image(),
+            element: pub[local].element,
+            externalURI: pub[local].re,
             share: pub[local].share,
             dst: pub[local].dst,
             src: pub[local].src,
-            externalURI: pub[local].re,
-            publish: title,
-            views: views,
             menuObject: index,
             pubIndex: local,
+            publish: title,
+            views: views,
           });
           guideDisplayYoutube(sticky);
           document.querySelector(`.sticky`).style.display = `flex`;
           unloading();
-        } else if (!isNaN(parseFloat(local)) && isFinite(local)) {
+        } else if (
+          !isNaN(
+            parseFloat(
+              local
+            )
+          ) &&
+          isFinite(
+            local
+          )
+        ) {
           if (pub[local].src == null) {
             pub[local].re.exit()
             return false;
           }
           _guide.style.display = `flex`;
+
           var sticky = [];
           sticky.push({
+            image: menu[index].image.image(),
             courtesy: pub[local].courtesy,
             element: pub[local].element,
-            image: menu[index].image.image(),
+            externalURI: pub[local].re,
             title: pub[local].title,
             share: pub[local].share,
             dst: pub[local].dst,
             src: pub[local].src,
-            externalURI: pub[local].re,
             menuObject: index,
             pubIndex: local,
           });
@@ -1169,10 +1438,18 @@ var xmlRequestParsing = function (index) {
         }
       } else {
         if (showSplash == true) _check.style.display = `none`;
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove()
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove()
+        if (
+          document.body.contains(
+            _main.querySelector(`#xml`)
+          )
+        )
+          _main.querySelector(`#xml`).remove()
+        if (
+          document.body.contains(
+            _main.querySelector(`#group`)
+          )
+        )
+          _main.querySelector(`#group`).remove()
         populateCategoryGroup(category);
         displayDescription(showDescription);
         topMenuBarDisplay(topBar);
