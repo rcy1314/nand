@@ -27,7 +27,6 @@
 
 */
 var menu=[
-{id:`Bing`,category:`Search Results`,title:`186718706`,description:`Bing Search Results.`,uri:`https://www.bing.com/search?q=`,image:`Bing`,hash:`mB`,media:!1},
 {id:`CBS/Washington D.C.`,category:`News`,title:`479574935`,description:`WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.`,uri:`http://rssfeeds.wusa9.com/wusa-news&x=1`,image:`WUSA9`,hash:`wa`,media:!1},
 {id:`ABC/Fresno`,category:`News`,title:`745182320`,description:`KFSN Local Fresno and National News.`,uri:`https://abc30.com/feed`,image:`KFSNTV30`,hash:`fA`,media:!0},
 {id:`NBC/Fresno`,category:`News`,title:`801863780`,description:`KSEE YourCentralValley in Fresno, California.`,uri:`https://yourcentralvalley.com/feed`,image:`KSEE24`,hash:`oF`,media:!0},
