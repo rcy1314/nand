@@ -18,7 +18,7 @@ var Informative = function () {
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(255, 255, 255, .4)`
+    `rgba(220, 220, 220, .6)`
   );
   document.documentElement.style.setProperty(
     `--border-color`,
