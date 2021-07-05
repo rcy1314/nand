@@ -1,18 +1,28 @@
 var init = function () {
-  if (document.body.contains(document.getElementById(`group`)))
-    document.querySelector(`#group`).remove();
+  if (
+    document.body.contains(
+      _main.querySelector(`#group`)
+    )
+  )
+    _main.querySelector(`#group`).remove();
   if (loading == `dots`) {
     _progress.style.width = `0%`;
-    document.querySelector(`#dots`).style.zIndex = `12`;
-    document
+    _container.querySelector(`#dots`).style.zIndex = `12`;
+    _container
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => (a.style.zIndex = `12`));
-    document
+      .forEach(
+        (a) => (a.style.zIndex = `12`)
+      );
+    _container
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => a.classList.add(`dots`));
-    document
+      .forEach(
+        (a) => a.classList.add(`dots`)
+      );
+    _container
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => (a.style.visibility = `visible`));
+      .forEach(
+        (a) => a.style.visibility = `visible`
+      );
   } else if (loading == `percent`) {
     progressBackDrop(false);
   }
@@ -20,16 +30,19 @@ var init = function () {
 
 var unloading = function () {
   if (loading == `dots`) {
-    document
+    _container
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => a.classList.remove(`dots`));
-    document
+      .forEach(
+        (a) => a.classList.remove(`dots`)
+      );
+    _container
       .querySelectorAll(`#dots .fill`)
-      .forEach((a) => (a.style.visibility = `hidden`));
+      .forEach(
+        (a) => a.style.visibility = `hidden`
+      );
     progressBackDrop(true);
-  } else if (loading == `percent`) {
+  } else if (loading == `percent`)
     progressBackDrop(true);
-  }
 };
 
 const cyrb53 = function(str, seed = 0) {
@@ -44,7 +57,11 @@ const cyrb53 = function(str, seed = 0) {
     return (h2>>>0).toString(16).padStart(8,0)+(h1>>>0).toString(16).padStart(8,0);
 };
 
-var truncate = function (i, n, useWordBoundary) {
+var truncate = function (
+  i,
+  n,
+  useWordBoundary
+) {
   if (i.length <= n) return i;
   let subString = i.substr(0, n - 1);
   return (
@@ -71,31 +88,46 @@ var randomizeAssets = function (array) {
     array[randomIndex], array[currentIndex]];
 
   }
-
   return array;
 }
 
 var anyRandomMenuObject = function () {
   let random = [];
   let randomObject;
-  for (i = 1; i <= menu.length - 1; i++) {
+  for (
+    i = 1;
+    i <= menu.length - 1;
+    i++
+  ) {
     if (
-      menu[i] &&
-      onlyImages == true
-    )
-        random.push(menu.indexOf(menu[i]));
-    else if (
-      menu[i] &&
       onlyImages == true &&
-      menu[i].media == true
+      menu[i]
+    )
+      random.push(
+        menu.indexOf(
+          menu[i]
+        )
+      );
+    else if (
+      menu[i].media == true &&
+      onlyImages == true &&
+      menu[i]
     )
       random.push(menu.indexOf(menu[i]));
-    else if (onlyImages == false) random.push(menu[i]);
+    else if (onlyImages == false)
+      random.push(
+        menu[i]
+      );
   }
-  randomObject = random[Math.floor(Math.random() * random.length - 1)];
+  randomObject =
+    random[
+      Math.floor(
+        Math.random() * random.length - 1
+      )
+    ];
   while (
-    menu[randomObject] &&
-    !randomDuplicate.includes(randomObject)
+    !randomDuplicate.includes(randomObject) &&
+    menu[randomObject]
   ) {
     randomDuplicate.push(randomObject);
     console.log(randomObject);
@@ -103,14 +135,33 @@ var anyRandomMenuObject = function () {
   }
 };
 
-function scrollToElm(touch, container, elm, duration){
+function scrollToElm(
+  touch,
+  container,
+  elm,
+  duration
+){
   var pos = getRelativePos(elm);
-  scrollTo( touch, container, pos.top , 10);  // duration in seconds
+  scrollTo(
+    touch,
+    container,
+    pos.top,
+    10
+  );  // duration in seconds
 }
 
-function sideScrollToElm(touch, container, elm, duration){
+function sideScrollToElm(
+  touch,
+  container,
+  elm,
+  duration
+){
   var pos = getRelativePos(elm);
-  sideScrollTo( touch, container, pos.left , 50);  // duration in seconds
+  sideScrollTo(
+    touch,
+    container,
+    pos.left,
+    50);  // duration in seconds
 }
 
 function getRelativePos(elm){
@@ -126,9 +177,14 @@ function getRelativePos(elm){
   return pos;
 }
 
-function scrollTo(touch, element, to, duration, onDone) {
+function scrollTo(
+  touch,
+  element,
+  to,
+  duration,
+  onDone
+) {
   if (touch == true) {
-
     var start = element.scrollTop,
         change = to - start,
         startTime = performance.now(),
@@ -145,14 +201,18 @@ function scrollTo(touch, element, to, duration, onDone) {
         else
             onDone && onDone();
     };
-
     animateScroll();
   }
 }
 
-function sideScrollTo(touch, element, to, duration, onDone) {
+function sideScrollTo(
+  touch,
+  element,
+  to,
+  duration,
+  onDone
+) {
   if (touch == true) {
-
     var start = element.scrollLeft,
         change = to + start,
         startTime = performance.now(),
@@ -161,36 +221,40 @@ function sideScrollTo(touch, element, to, duration, onDone) {
         now = performance.now();
         elapsed = (now - startTime)/50;
         t = (elapsed/duration);
-
         element.scrollLeft = start + change * easeInOutQuad(t);
-
         if( t < 1 )
             window.requestAnimationFrame(animateScroll);
         else
             onDone && onDone();
     };
-
     animateScroll();
   }
 }
 
-function easeInOutQuad(t){ return t<.5 ? 2*t*t : -1+(4-2*t)*t };
+function easeInOutQuad(t) {
+  return t<.5 ? 2*t*t : -1+(4-2*t)*t
+};
 
 String.prototype.zulu = function () {
   var opt = {
+    minute: `numeric`,
     weekday: `long`,
+    hour: `numeric`,
     day: `2-digit`,
     month: `short`,
-    hour: `numeric`,
-    minute: `numeric`,
     hour12: true,
   };
   let dmz = [];
   let utc = new Date(this);
-  dmz.push(this.moment());
-  let gmt = utc.toLocaleString(`en-US`, opt);
+  dmz.push(
+    this.moment()
+  );
+  let gmt =
+    utc.toLocaleString(
+      `en-US`,
+      opt
+    );
   dmz.push(gmt);
-
   return dmz;
 };
 

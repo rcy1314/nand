@@ -73,6 +73,7 @@ document.addEventListener('click', (evt) => {
         xmlRequestParsing(
           event.target.closest(`.index`).getAttribute(`aria-item`)
         );
+        touchmove = true;
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
       _match.style.display = `none`;

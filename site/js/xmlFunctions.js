@@ -907,7 +907,6 @@ var xmlAppendPublication = function (id) {
   }
   if (document.body.contains(document.querySelector(`#xml`))) {
     if (sideScroll == false && Reader == false) {
-      touchmove = true;
       scrollToElm(touchmove,
         _main,
         document.querySelector(`[aria-object='${id}']`),
