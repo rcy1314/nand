@@ -198,7 +198,6 @@ document.addEventListener('click', (evt) => {
         sideBarDisplay(onScreen);
       category = event.target.getAttribute(`aria-item`);
       if (Reader == true) {
-        justRead = false;
         xmlRequestParsing(anyRandomMenuObject());
       } else {
         if (document.body.contains(document.querySelector(`#xml`)))

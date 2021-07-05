@@ -113,6 +113,10 @@
     flex-basis: 60% !important;
   }
 
+  .flexbox {
+    width: 100% !important;
+  }
+
   .img,
   .image,
   .pending {

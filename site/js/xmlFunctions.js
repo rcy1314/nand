@@ -985,7 +985,7 @@ var xmlRequestParsing = function (index) {
   _sb.style.display = `none`
   document.title = menu[index].id.space();
   if (
-    justRead == true && first == true && showSplash == true ||
+    first == true && showSplash == true ||
     Reader == false && first == true && showSplash == true
   )
     _check.style.display = `block`;

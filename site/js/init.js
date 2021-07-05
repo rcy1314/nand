@@ -26,7 +26,6 @@ setTimeout(function() {
     id = uri.slice(uri.length - 9, uri.length);
     if (uri.match(/^[a-zA-Z0-9]+$/g)) {
       if (Reader == true) {
-        justRead = true;
         onlyImages = true;
       }
       id = uri.slice(0, 2);
@@ -72,7 +71,6 @@ setTimeout(function() {
         guideOnScreen = true;
         _guest.focus();
       } else if (Reader == true) {
-        justRead = true;
         onlyImages = true;
         xmlRequestParsing(anyRandomMenuObject());
       }

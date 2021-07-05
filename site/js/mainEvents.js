@@ -1,5 +1,5 @@
 window.onload = function () {
-  if (flexBox == true)
+  if (flexBox == true && _main.clientWidth >= 426)
     offset = 1500;
   else offset = 550;
   adj = menu.slice();
@@ -266,7 +266,6 @@ document.addEventListener('scroll', (evt) => {
       ) {
         stop = true;
         first = false;
-        justRead = true;
         if (showSplash == true) {
           _check.style.display = `block`;
         }
@@ -313,7 +312,6 @@ document.addEventListener('ontouchmove', (evt) => {
       ) {
         stop = true;
         first = false;
-        justRead = true;
         if (showSplash == true) {
           _check.style.display = `block`;
         }
@@ -539,7 +537,6 @@ document.addEventListener('click', (evt) => {
       if (Reader == false) {
         notifyOption(`Reading`, `fa-times-circle`);
         xmlChannelFooter(id);
-        justRead = false;
         first = true;
         _main
           .querySelectorAll(`.joi`)
@@ -555,7 +552,6 @@ document.addEventListener('click', (evt) => {
         if (document.body.contains(document.querySelector(`#bottom`)))
           document.querySelector(`#bottom`).remove();
         if (showSplash == true) _check.style.display = `block`;
-        justRead = true;
         _sb.style.display = `none`;
         _main
           .querySelectorAll(`.joi`)
@@ -621,7 +617,6 @@ document.addEventListener('click', (evt) => {
       _sb.style.display = `none`;
       notifyOption(`Reading`, `fa-times-circle`);
       xmlChannelFooter(id);
-      justRead = false;
       Reader = false;
       first = true;
       _main

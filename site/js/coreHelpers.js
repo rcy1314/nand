@@ -93,13 +93,12 @@ var anyRandomMenuObject = function () {
     else if (onlyImages == false) random.push(menu[i]);
   }
   randomObject = random[Math.floor(Math.random() * random.length - 1)];
-  if (
+  while (
     menu[randomObject] &&
     !randomDuplicate.includes(randomObject)
-  )
-    return randomObject;
-  else {
-    randomObject = random[Math.floor(Math.random() * random.length - 1)];
+  ) {
+    randomDuplicate.push(randomObject);
+    console.log(randomObject);
     return randomObject;
   }
 };
