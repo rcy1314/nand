@@ -211,6 +211,8 @@ document.addEventListener('touchstart', (evt) => {
 );
 
 document.addEventListener('touchend', (evt) => {
+  touchendX = evt.changedTouches[0].screenX;
+  handleSwipe();
   let isScrolling;
   // Clear our timeout throughout the scroll
   window.clearTimeout( isScrolling );

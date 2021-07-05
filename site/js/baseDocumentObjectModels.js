@@ -145,15 +145,17 @@ let sideBarDisplay = function (Value) {
   if (Value == true) {
     if (_main.clientWidth >= 769) {
       setTimeout(function () {
+        _hide.style.display = `none`;
         _sidebar.style.left = `0`;
-        setTimeout(function () {
-        }, 75);
       }, 300);
-    } else
+    } else if (
+        _main.clientWidth <= 425 &&
+        sideScroll == true
+      )
+      _min.style.cssText = `display: block !important;`
       setTimeout(function () {
         document.querySelector(`.sideFilter`).style.display = `block`;
         document.querySelector(`#basic`).style.display = `block`;
-        _hide.style.display = `none`;
         _sidebar.style.left = `0`;
       }, 300);
   } else if (Value == false) {
