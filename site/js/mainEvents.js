@@ -1,4 +1,5 @@
 window.onload = function () {
+  if (_main.clientWidth <= 768) flexBox = false;
   if (flexBox == true && _main.clientWidth >= 426)
     offset = 5550;
   else offset = 1050;
@@ -118,6 +119,12 @@ window.onload = function () {
   _container.style.display = `block`;
 
 };
+
+_feed.addEventListener('touchstart', (evt) => {
+    quickFeedAsset(8);
+  },
+  { passive: true }
+);
 
 document.addEventListener('touchstart', (evt) => {
     touchmove = false;
@@ -545,6 +552,7 @@ document.addEventListener('click', (evt) => {
     ) {
       onScreen = true
       sideBarDisplay(onScreen);
+      _sb.style.display = `none`;
     }
     else if (
       evt.target.classList.contains(`exit`) ||
