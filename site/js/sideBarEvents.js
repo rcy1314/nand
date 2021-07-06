@@ -734,15 +734,6 @@ _sidebar.addEventListener(
       if (onlyImages == false) notifyOption(`Images`, `fa-times-circle`);
       if (onlyImages == true) notifyOption(`Images`, `fa-check-circle`);
       sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
-      touchmove = true;
-      if (Reader == true)
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          xmlRequestParsing(anyRandomMenuObject());
-      if (Reader == false) {
         _visit.style.display = `none`;
         if (
           document.body.contains(
@@ -760,7 +751,6 @@ _sidebar.addEventListener(
         topMenuBarDisplay(topBar);
         displayExpand(expand);
         unloading();
-      }
     }
     else if (
       event.target.classList.contains(

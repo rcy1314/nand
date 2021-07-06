@@ -80,9 +80,9 @@ let quickFeedAsset = function (feedAssets) {
           ]
       );
       if (
+        menu[randomMenuObject] &&
         !duplicate.includes(randomMenuObject) &&
         menu[randomMenuObject].media == true &&
-        menu[randomMenuObject] &&
         randomMenuObject != 0
       ) {
         duplicate.push(randomMenuObject);
