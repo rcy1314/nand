@@ -312,7 +312,7 @@ document.addEventListener('click', (evt) => {
       }
       evt.stopPropagation();
     }
-    else if (
+    if (
       evt.target.getAttribute(`aria-item`) == `Assets`
     )
       populateAssets();
