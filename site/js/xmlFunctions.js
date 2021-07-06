@@ -1289,9 +1289,9 @@ var xmlRequestParsing = function (index) {
             var cat = `<div class='external'>${parse.externalURI}</div>`;
 
           if (
+            src &&
             src.match(/youtube\.com/g) &&
-            youtubeMedia == true &&
-            src
+            youtubeMedia == true
           ) {
             if (data.getElementsByTagName(`media:statistics`).length > 0)
               var views =
