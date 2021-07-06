@@ -1,4 +1,4 @@
-_main.addEventListener('click', (evt) => {
+document.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(`buttonSearch`) ||
       event.target.classList.contains(`button`)

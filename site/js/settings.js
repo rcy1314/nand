@@ -785,22 +785,21 @@ const selections = [
 ];
 
 const settings = [
-  { name: `Circles`, class: `circleloader` },
   { name: `Ring`, class: `ringloader` },
   { name: `Bars`, class: `verticalbars` },
   { name: `Blink`, class: `loaderfalse` },
+  { name: `Circles`, class: `circleloader` },
   { name: `List`, class: `List` },
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Progress`, class: `Dots` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Only Images`, class: `onlyImages` },
-  { name: `Feed Images`, class: `feedImages` },
+  { name: `Asset Images`, class: `feedImages` },
   { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Crop Images`, class: `cropImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
-  { name: `Sidebar Center`, class: `sideBarCenter` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
 ];
 

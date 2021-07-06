@@ -109,7 +109,7 @@ _main.addEventListener("wheel", function(evt) {
   { passive: true }
 });
 
-_sidebar.addEventListener(
+_main.addEventListener(
   'click', (evt) => {
     if (
       event.target.classList.contains(
@@ -789,6 +789,9 @@ _sidebar.addEventListener(
       sideBarStar(document.querySelector(`.Dots`), false);
     }
     else if (
+      event.target.classList.contains(
+        `fa-user-cog`
+      ) ||
       event.target.classList.contains(
         `safeSearch`
       )
