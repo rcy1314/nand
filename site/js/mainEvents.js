@@ -1,7 +1,7 @@
 window.onload = function () {
   if (flexBox == true && _main.clientWidth >= 426)
-    offset = 5500;
-  else offset = 550;
+    offset = 5550;
+  else offset = 1050;
   adj = menu.slice();
   randomizeAssets(adj);
   if (quickFeedsTranslations == true)
