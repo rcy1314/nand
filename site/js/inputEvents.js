@@ -32,7 +32,7 @@ _view.addEventListener('keyup', (evt) => {
   },
   false
 );
-_match.addEventListener('click', (evt) => {
+_top.addEventListener('click', (evt) => {
     if (event.target.id == `view`) {
       _match.style.display = `none`;
       while (

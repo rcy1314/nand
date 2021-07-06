@@ -314,6 +314,11 @@
 
 @media (min-width: 426px) and (max-width: 767px) {
 
+  #main #options,
+  #main #social {
+      display: none !important;
+  }
+
   #main #option {
     display: none !important;
   }
