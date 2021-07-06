@@ -79,7 +79,7 @@ setTimeout(function () {
     }
   }, 250)
 
-_main.addEventListener("wheel", function(evt) {
+document.addEventListener("wheel", function(evt) {
   if (
     sideBarMousewheel == true
   ) {

@@ -120,7 +120,7 @@ window.onload = function () {
 
 };
 
-_feed.addEventListener('touchstart', (evt) => {
+_quick.addEventListener('touchstart', (evt) => {
     quickFeedAsset(8);
   },
   { passive: true }
