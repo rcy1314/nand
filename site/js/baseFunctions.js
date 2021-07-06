@@ -5,6 +5,12 @@ let notifyOption = function (String, Icon) {
     `;
   _notify.classList.add(`notify`);
   _notify.style.display = `flex`;
+  setTimeout(
+    function() {
+      _notify.classList.remove(`notify`);
+      _notify.style.display = `none`;
+    }, 4250
+  )
 }
 
 let handleSwipe = function () {

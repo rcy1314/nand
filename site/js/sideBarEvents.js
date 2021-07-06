@@ -71,7 +71,7 @@ setTimeout(function () {
             if (
               !document.body.contains(document.querySelector(`#group`)) &&
               !document.body.contains(document.querySelector(`#xml`))
-            ) _sb.style.display = `block`;
+            )
             onScreen = false;
             setTimeout(function() {
               sideBarDisplay(onScreen);
@@ -109,7 +109,7 @@ _main.addEventListener("wheel", function(evt) {
   { passive: true }
 });
 
-_main.addEventListener(
+_sidebar.addEventListener(
   'click', (evt) => {
     if (
       event.target.classList.contains(
@@ -118,7 +118,7 @@ _main.addEventListener(
     ) {
       onScreen = false;
       sideBarDisplay(onScreen);
-      _sb.style.display = `block`;
+      if (_main.clientWidth <= 768) _sb.style.display = `block`;
       _bar.style.display = `block`;
     }
     else if (
@@ -481,15 +481,11 @@ _main.addEventListener(
     ) {
       expandFilter = expandFilter != true
       if (expandFilter == false) {
-        _sidebar.querySelector(`.exclude`).style.borderBottom = `none`;
-        _sidebar.querySelector(`.exclude`).style.borderTop = `none`;
         _sidebar.querySelector(`.exclude`).style.height = `31px`;
       } else if (expandFilter == true) {
         if (exclude.length == 0)
           document.querySelector(`.exclude`).style.height = `75px`;
         else {
-          _sidebar.querySelector(`.exclude`).style.borderBottom = `var(--border-color)`;
-          _sidebar.querySelector(`.exclude`).style.borderTop = `var(--border-color)`;
           _sidebar.querySelector(`.exclude`).style.height = `${
             exclude.length * 34 + 80}px`;
         }
@@ -503,12 +499,8 @@ _main.addEventListener(
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       expandFavorites = expandFavorites != true
       if (expandFavorites == false) {
-        _sidebar.querySelector(`.fav`).style.borderBottom = `none`;
-        _sidebar.querySelector(`.fav`).style.borderTop = `none`;
         _sidebar.querySelector(`.fav`).style.height = `31px`;
       } else if (expandFavorites == true) {
-        _sidebar.querySelector(`.fav`).style.borderBottom = `var(--border-color)`;
-        _sidebar.querySelector(`.fav`).style.borderTop = `var(--border-color)`;
         _sidebar.querySelector(`.fav`).style.height =
           `${(favorites.length + 1) * 36}px`;
       }
@@ -520,12 +512,8 @@ _main.addEventListener(
     ) {
       expandVisual = expandVisual != true
       if (expandVisual == false) {
-        _sidebar.querySelector(`.themes`).style.borderBottom = `none`;
-        _sidebar.querySelector(`.themes`).style.borderTop = `none`;
         _sidebar.querySelector(`.themes`).style.height = `31px`;
       } else if (expandVisual == true) {
-        _sidebar.querySelector(`.themes`).style.borderBottom = `var(--border-color)`;
-        _sidebar.querySelector(`.themes`).style.borderTop = `var(--border-color)`;
         _sidebar.querySelector(`.themes`).style.height =
           `${(themes.length + 1) * 36}px`;
       }
@@ -537,12 +525,8 @@ _main.addEventListener(
     ) {
       expandBackground = expandBackground != true
       if (expandBackground == false) {
-        _sidebar.querySelector(`.bg`).style.borderBottom = `none`;
-        _sidebar.querySelector(`.bg`).style.borderTop = `none`;
         _sidebar.querySelector(`.bg`).style.height = `31px`;
       } else if (expandBackground == true) {
-        _sidebar.querySelector(`.bg`).style.borderBottom = `var(--border-color)`;
-        _sidebar.querySelector(`.bg`).style.borderTop = `var(--border-color)`;
         _sidebar.querySelector(`.bg`).style.height =
           `${(background.length + 1) * 34 + 48}px`;
       }
@@ -554,12 +538,8 @@ _main.addEventListener(
     ) {
       expandSettings = expandSettings != true
       if (expandSettings == false) {
-        _sidebar.querySelector(`.set`).style.borderBottom = `none`;
-        _sidebar.querySelector(`.set`).style.borderTop = `none`;
         _sidebar.querySelector(`.set`).style.height = `31px`;
       } else if (expandSettings == true) {
-        _sidebar.querySelector(`.set`).style.borderBottom = `var(--border-color)`;
-        _sidebar.querySelector(`.set`).style.borderTop = `var(--border-color)`;
         _sidebar.querySelector(`.set`).style.height =
           `${(settings.length + 1) * 35}px`;
       }

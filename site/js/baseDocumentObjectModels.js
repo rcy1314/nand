@@ -250,14 +250,22 @@ let sideBarDisplay = function (Value) {
       )
       _min.style.cssText = `display: block !important;`
       setTimeout(function () {
-        _sidebar.querySelector(`.sideFilter`).style.display = `block`;
-        _sidebar.querySelector(`#basic`).style.display = `block`;
+        _sidebar.querySelector(`.sideFilter`).style.visibility = `visible`;
+        _sidebar.querySelector(`#basic`).style.visibility = `visible`;
         _sidebar.style.left = `0`;
       }, 300);
   } else if (!Value) {
-    _sidebar.querySelector(`.sideFilter`).style.display = `block`;
-    _sidebar.querySelector(`#basic`).style.display = `block`;
-    _sidebar.style.left = `-280px`;
+    if (_main.clientWidth >= 768) {
+      _sidebar.querySelector(`.bg`).style.height = `33px`;
+      _sidebar.querySelector(`.set`).style.height = `33px`;
+      _sidebar.querySelector(`.fav`).style.height = `33px`;
+      _sidebar.querySelector(`.themes`).style.height = `33px`;
+      _sidebar.querySelector(`.exclude`).style.height = `33px`;
+      _sidebar.querySelector(`.sideFilter`).style.visibility = `hidden`;
+      _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
+      _sb.style.display = `none`;
+      _sidebar.style.left = `-250px`;
+    } else _sidebar.style.left = `-280px`;
   }
 };
 
