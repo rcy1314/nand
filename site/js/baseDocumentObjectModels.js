@@ -823,13 +823,13 @@ let xmlHTMLBuild = function (htmlArray) {
   let head = document.createElement(`div`);
   let bars = document.createElement(`div`);
   let ago = document.createElement(`div`);
+  circle.classList.add(`circle`);
   original.append(circle.cloneNode(true));
   original.append(circle.cloneNode(true));
   original.append(circle.cloneNode(true));
   original.append(circle.cloneNode(true));
   original.append(circle.cloneNode(true));
   original.classList.add(`animation`);
-  circle.classList.add(`circle`);
   bars.classList.add(`bars`);
   if (fadeIntoView == true) object.classList.add(`hidden`);
   publish.innerHTML = htmlArray.truncate + htmlArray.more;

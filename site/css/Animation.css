@@ -1,15 +1,14 @@
 .animation {
-  transform: rotate(45deg);
   margin-bottom: auto;
   position: absolute;
   margin-right: auto;
   margin-left: auto;
   margin-top: auto;
   display: block;
-  bottom: 25px;
   width: 40px;
-  left: 25px;
+  bottom: 0;
   right: 0;
+  left: 0;
   top: 0;
 }
 
