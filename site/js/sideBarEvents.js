@@ -63,15 +63,11 @@ setTimeout(function () {
               sideBarDisplay(onScreen);
             }, 300)
           }
-          else if (
+          if (
             event.pageX >= 180 &&
             sideBarLock == false &&
             onScreen == true
           ){
-            if (
-              !document.body.contains(document.querySelector(`#group`)) &&
-              !document.body.contains(document.querySelector(`#xml`))
-            )
             onScreen = false;
             setTimeout(function() {
               sideBarDisplay(onScreen);
@@ -119,7 +115,7 @@ document.addEventListener(
       onScreen = false;
       sideBarDisplay(onScreen);
       if (_main.clientWidth <= 768) _sb.style.display = `block`;
-      _bar.style.display = `block`;
+      if (_main.clientWidth >= 768) _bar.style.display = `none`;
     }
     else if (
       event.target.classList.contains(

@@ -1221,7 +1221,9 @@ var xmlRequestParsing = function (index) {
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
   _visit.style.display = `none`;
-  _sb.style.display = `none`
+  if (_main.clientWidth >= 768)
+    _bar.style.display = `none`;
+  _sb.style.display = `none`;
   if (
     first == true &&
     showSplash == true ||

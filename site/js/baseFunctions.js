@@ -383,8 +383,8 @@ let progressBackDrop = function (done) {
 
 let populateAssets = function () {
   let media;
+  _toggle.style.display = `none`;
   _sb.style.display = `none`;
-  _toggle.style.display = `none`
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
   if (
@@ -543,6 +543,8 @@ let populateCategoryGroup = function (translation) {
   else if (onlyImages == true) {
     unloading();
   }
+  if (_main.clientWidth >= 768)
+    _bar.style.display = `none`;
   main.setAttribute(`tabindex`, -1);
   topMenuBarDisplay(topBar);
   main.focus();
