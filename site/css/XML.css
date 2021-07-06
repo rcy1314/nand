@@ -64,6 +64,18 @@
   text-align: justify;
 }
 
+.center #bottom {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 12px;
+  display: flex;
+  bottom: -23px;
+  height: 5em;
+  width: 100%;
+}
+
 .channel::-webkit-scrollbar {
   display: none;
 }

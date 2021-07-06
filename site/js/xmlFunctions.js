@@ -1,3 +1,22 @@
+var xmlChannelFooter = function (id) {
+  if (document.body.contains(document.querySelector(`.center`)))
+    document.querySelector(`.channel`).append(footerBuild(id));
+};
+
+var forward = function (id) {
+  let next = parseInt(id) + +1
+  if (menu[next])
+    return parseInt(next);
+  else return 1
+};
+
+var back = function (id) {
+  let back = parseInt(id) - +1
+  if (menu[back])
+    return parseInt(back);
+  else return menu.length - 1
+};
+
 var guideDisplay = function (pubArray) {
   _guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
@@ -1148,6 +1167,10 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
+    if (flexBox == false)
+      document.querySelector(`.channel`).append(
+        footerBuild(id)
+      );
   }
   if (
     document.body.contains(
