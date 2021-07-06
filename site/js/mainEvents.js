@@ -1,6 +1,6 @@
 window.onload = function () {
   if (flexBox == true && _main.clientWidth >= 426)
-    offset = 1500;
+    offset = 5500;
   else offset = 550;
   adj = menu.slice();
   randomizeAssets(adj);
@@ -500,6 +500,7 @@ document.addEventListener('click', (evt) => {
           );
       } else if (Reader == true) {
         first = true;
+        touchmove = true;
         onlyImages = true;
         randomDuplicate = [];
         notifyOption(`Reading`, `fa-check-circle`);
