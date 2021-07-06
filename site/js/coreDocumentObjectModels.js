@@ -1,59 +1,63 @@
-const _sb = document.querySelector(`.sb`);
+setTimeout(
+  function () {
+    const _sb = document.querySelector(`.sb`);
 
-const _top = document.getElementById(`top`);
+    const _top = document.getElementById(`top`);
 
-const _joi = document.querySelector(`.joi`);
+    const _joi = document.querySelector(`.joi`);
 
-const _bar = document.querySelector(`.bar`);
+    const _bar = document.querySelector(`.bar`);
 
-const _min = document.querySelector(`.hide`);
+    const _min = document.querySelector(`.hide`);
 
-const _html = document.querySelector(`html`);
+    const _html = document.querySelector(`html`);
 
-const _body = document.querySelector(`body`);
+    const _body = document.querySelector(`body`);
 
-const _dots = document.querySelector(`.fill`);
+    const _dots = document.querySelector(`.fill`);
 
-const _link = document.getElementById(`link`);
+    const _link = document.getElementById(`link`);
 
-const _main = document.getElementById(`main`);
+    const _main = document.getElementById(`main`);
 
-const _feed = document.getElementById(`feed`);
+    const _feed = document.getElementById(`feed`);
 
-const _view = document.getElementById(`view`);
+    const _view = document.getElementById(`view`);
 
-const _show = document.getElementById(`show`);
+    const _show = document.getElementById(`show`);
 
-const _visit = document.getElementById(`visit`);
+    const _visit = document.getElementById(`visit`);
 
-const _check = document.getElementById(`check`);
+    const _check = document.getElementById(`check`);
 
-const _guest = document.getElementById(`guest`);
+    const _guest = document.getElementById(`guest`);
 
-const _label = document.getElementById(`label`);
+    const _label = document.getElementById(`label`);
 
-const _match = document.getElementById(`match`);
+    const _match = document.getElementById(`match`);
 
-const _first = document.getElementById(`first`);
+    const _first = document.getElementById(`first`);
 
-const _guide = document.getElementById(`guide`);
+    const _guide = document.getElementById(`guide`);
 
-const _front = document.getElementById(`front`);
+    const _front = document.getElementById(`front`);
 
-const _quick = document.getElementById(`quick`);
+    const _quick = document.getElementById(`quick`);
 
-const _toggle = document.getElementById(`toggle`);
+    const _toggle = document.getElementById(`toggle`);
 
-const _notify = document.getElementById(`notify`);
+    const _notify = document.getElementById(`notify`);
 
-const _social = document.getElementById(`social`);
+    const _social = document.getElementById(`social`);
 
-const _options = document.getElementById(`options`);
+    const _options = document.getElementById(`options`);
 
-const _content = document.getElementById(`content`);
+    const _content = document.getElementById(`content`);
 
-const _sidebar = document.getElementById(`sidebar`);
+    const _sidebar = document.getElementById(`sidebar`);
 
-const _container = document.getElementById(`container`);
+    const _container = document.getElementById(`container`);
 
-const _progress = document.getElementById(`progressBar`);
+    const _progress = document.getElementById(`progressBar`);
+  },
+50)
