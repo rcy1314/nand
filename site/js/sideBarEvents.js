@@ -109,7 +109,7 @@ _main.addEventListener("wheel", function(evt) {
   { passive: true }
 });
 
-_sidebar.addEventListener(
+document.addEventListener(
   'click', (evt) => {
     if (
       event.target.classList.contains(
