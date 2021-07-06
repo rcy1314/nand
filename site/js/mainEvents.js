@@ -1,5 +1,5 @@
 window.onload = function () {
-  if (_main.clientWidth <= 768) flexBox = false;
+  if (window.clientWidth <= 425) flexBox = false;
   if (flexBox == true && _main.clientWidth >= 426)
     offset = 5550;
   else offset = 1050;
