@@ -802,7 +802,6 @@ const settings = [
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Sidebar Center`, class: `sideBarCenter` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
-  { name: `Sidebar Mousewheel`, class: `sideBarMousewheel` },
 ];
 
 const background = [
