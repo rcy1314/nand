@@ -231,7 +231,7 @@
 }
 
 .notify {
-  animation: notify 4s infinite ease-in-out;
+  animation: notify 4s forwards ease-in-out;
 }
 
 .orig {
@@ -344,11 +344,20 @@
     opacity: 0;
   }
 
+  25% {
+    opacity: 100;
+  }
+
   50% {
+    opacity: 0;
+  }
+
+  75% {
     opacity: 100;
   }
 
   100% {
+    display: none;
     opacity: 0;
   }
 }
