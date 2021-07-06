@@ -394,13 +394,9 @@ document.addEventListener('click', (evt) => {
       var pubIndex = evt.target.closest(`.item`).getAttribute(`aria-item`);
       var xhr = new XMLHttpRequest();
       var url =
-      _main
+      document
         .querySelector(
-          `
-            [aria-object='${menuObject}']
-            [aria-item='${pubIndex}']
-            .source
-          `
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
         ).value
       xhr.responseType = "arraybuffer";
       xhr.open("GET", cors + url, true);
@@ -410,12 +406,9 @@ document.addEventListener('click', (evt) => {
           var file = new Blob([xhr.response], { type: "image" });
           saveAs(
             file,
-            _main
+            document
               .querySelector(
-                `
-                  [aria-object='${menuObject}']
-                  [aria-item='${pubIndex}']
-                  .source`
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
               ).value
           )
         }
