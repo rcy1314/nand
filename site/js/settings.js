@@ -534,7 +534,7 @@ let youtubeMedia = false;
 
 */
 
-let suggestionBuffer = 30;
+let suggestionBuffer = 50;
 
 /*
     contentStatusBuffer [integer]
