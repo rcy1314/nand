@@ -1,5 +1,3 @@
-setTimeout(
-  function () {
     const _sb = document.querySelector(`.sb`);
 
     const _top = document.getElementById(`top`);
@@ -59,5 +57,3 @@ setTimeout(
     const _container = document.getElementById(`container`);
 
     const _progress = document.getElementById(`progressBar`);
-  },
-50)
