@@ -1,3 +1,114 @@
+setTimeout(function () {
+  if (expandBackground == true)
+    document.querySelector(`.bg`).style.height = `${
+      (background.length + 1) * 35
+    }px`;
+  if (expandSettings == true)
+    document.querySelector(`.set`).style.height = `${
+      (settings.length + 1) * 35
+    }px`;
+  if (expandFavorites == true)
+    document.querySelector(`.fav`).style.height = `${
+      (favorites.length + 1) * 35
+    }px`;
+  if (expandVisual == true)
+    document.querySelector(`.themes`).style.height = `${
+      (themes.length + 1) * 35
+    }px`;
+  if (expandFilter == true)
+    document.querySelector(`.exclude`).style.height = `${
+      exclude.length * 34.25 + 75
+    }px`;
+    _guide.addEventListener('touchstart', (evt) => {
+        touchstartX = evt.changedTouches[0].screenX
+        touchstartY = evt.changedTouches[0].screenY;
+      },
+      { passive: true }
+    );
+
+    _guide.addEventListener('touchend', (evt) => {
+        touchendX = evt.changedTouches[0].screenX;
+        touchendY = evt.changedTouches[0].screenY;
+        handleGuide();
+      },
+      { passive: true }
+    );
+    if (
+      _main.clientWidth >= 769 &&
+      sideBarMouse == true
+    ) {
+      _sidebar.addEventListener('mousemove', (evt) => {
+          onScreen = true;
+        },
+        true
+      );
+      _guide.addEventListener('mousemove', (evt) => {
+          guideOnScreen = onScreen;
+          onScreen = false;
+          setTimeout(function() {
+            sideBarDisplay(onScreen);
+          }, 1250)
+        },
+        true
+      );
+      _main.addEventListener('mousemove', (evt) => {
+          if (
+            event.pageX <= 100 &&
+            onScreen == false
+          ) {
+            onScreen = true;
+            _sb.style.display = `none`;
+            _min.style.display = `block`;
+            setTimeout(function () {
+              sideBarDisplay(onScreen);
+            }, 300)
+          }
+          else if (
+            event.pageX >= 180 &&
+            sideBarLock == false &&
+            onScreen == true
+          ){
+            if (
+              !document.body.contains(document.querySelector(`#group`)) &&
+              !document.body.contains(document.querySelector(`#xml`))
+            ) _sb.style.display = `block`;
+            onScreen = false;
+            setTimeout(function() {
+              sideBarDisplay(onScreen);
+            }, 750)
+          }
+        },
+        true
+      );
+    }
+  }, 250)
+
+_main.addEventListener("wheel", function(evt) {
+  if (
+    sideBarMousewheel == true
+  ) {
+    if (
+      onScreen == true &&
+      _main.clientWidth >= 769 &&
+      Math.sign(evt.deltaY) == 1 &&
+      sideBarLock == false
+    ) {
+      onScreen = false;
+      sideBarDisplay(onScreen);
+    } else if (
+      onScreen == false &&
+      _main.clientWidth >= 769 &&
+      Math.sign(evt.deltaY) == -1
+    ) {
+      setTimeout(function() {
+        onScreen = true;
+        sideBarDisplay(onScreen);
+      }, 1250)
+    }
+  }
+  { passive: true }
+});
+
 _sidebar.addEventListener(
   'click', (evt) => {
     if (
@@ -768,7 +879,9 @@ _sidebar.addEventListener(
                   if (fadeIntoView == false) {
                     _main
                       .querySelectorAll(`.img`)
-                      .forEach((a) => a.classList.remove(`hidden`));
+                      .forEach(
+                        (a) => a.classList.remove(`hidden`)
+                      );
                     _main.removeEventListener("scroll", startPosition);
                   }
                 }

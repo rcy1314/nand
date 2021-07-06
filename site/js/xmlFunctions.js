@@ -750,7 +750,9 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   ) {
     _main
       .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-      .forEach((a) => a.remove());
+      .forEach(
+        (a) => a.remove()
+      );
   } else if (
     !src ||
     src == `null` ||

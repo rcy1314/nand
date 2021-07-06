@@ -92,7 +92,9 @@ _main.addEventListener('mouseout', (evt) => {
     if (event.target.classList.contains(`detail`))
       _main
         .querySelectorAll(`.listing .index, .listing .index`)
-        .forEach((a) => a.classList.remove(`hover`));
+        .forEach(
+          (a) => a.classList.remove(`hover`)
+        );
   },
   false
 );
@@ -129,10 +131,10 @@ document.addEventListener('submit', (evt) => {
           _main.querySelectorAll(`.pub`).forEach(
             (a) => has.filter(
               function (obj) {
-              if (
-                a.innerHTML.toLowerCase().match(obj)
-              )
-                a.closest(`.item`).remove();
+                if (
+                  a.innerHTML.toLowerCase().match(obj)
+                )
+                  a.closest(`.item`).remove();
               }
             )
           );

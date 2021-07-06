@@ -34,7 +34,8 @@ window.onload = function () {
   else _content.style.position = `relative`;
 
   if (sideBarBackdrop == true) {
-    _sidebar.style.cssText = `background-color:transparent; backdrop-filter: blur(10px) !important`;
+    _sidebar.style.cssText =
+      `background-color:transparent; backdrop-filter: blur(10px) !important`;
   }
   if (topBarBackdrop == true)
     _top.style.cssText = `backdrop-filter: blur(10px)`
@@ -48,156 +49,71 @@ window.onload = function () {
   _main.style.backgroundPosition = `${backgroundImage[0].position}`;
   _container.style.backgroundSize = `${backgroundImage[0].size}`;
   _main.style.backgroundSize = `${backgroundImage[0].size}`;
-  setTimeout(function () {
-    if (expandBackground == true)
-      document.querySelector(`.bg`).style.height = `${
-        (background.length + 1) * 35
-      }px`;
-    if (expandSettings == true)
-      document.querySelector(`.set`).style.height = `${
-        (settings.length + 1) * 35
-      }px`;
-    if (expandFavorites == true)
-      document.querySelector(`.fav`).style.height = `${
-        (favorites.length + 1) * 35
-      }px`;
-    if (expandVisual == true)
-      document.querySelector(`.themes`).style.height = `${
-        (themes.length + 1) * 35
-      }px`;
-    if (expandFilter == true)
-      document.querySelector(`.exclude`).style.height = `${
-        exclude.length * 34.25 + 75
-      }px`;
-      _main.addEventListener("wheel", function(evt) {
-        if (
-          sideBarMousewheel == true
-        ) {
-          if (
-            onScreen == true &&
-            _main.clientWidth >= 769 &&
-            Math.sign(evt.deltaY) == 1 &&
-            sideBarLock == false
-          ) {
-            onScreen = false;
-            sideBarDisplay(onScreen);
-          } else if (
-            onScreen == false &&
-            _main.clientWidth >= 769 &&
-            Math.sign(evt.deltaY) == -1
-          ) {
-            setTimeout(function() {
-              onScreen = true;
-              sideBarDisplay(onScreen);
-            }, 1250)
-          }
-        }
-        { passive: true }
-      });
-      _guide.addEventListener('touchstart', (evt) => {
-          touchstartX = evt.changedTouches[0].screenX
-          touchstartY = evt.changedTouches[0].screenY;
-        },
-        { passive: true }
-      );
-
-      _guide.addEventListener('touchend', (evt) => {
-          touchendX = evt.changedTouches[0].screenX;
-          touchendY = evt.changedTouches[0].screenY;
-          handleGuide();
-        },
-        { passive: true }
-      );
-      if (
-        _main.clientWidth >= 769 &&
-        sideBarMouse == true
-      ) {
-        _sidebar.addEventListener('mousemove', (evt) => {
-            onScreen = true;
-          },
-          true
-        );
-        _guide.addEventListener('mousemove', (evt) => {
-            guideOnScreen = onScreen;
-            onScreen = false;
-            setTimeout(function() {
-              sideBarDisplay(onScreen);
-            }, 1250)
-          },
-          true
-        );
-        _main.addEventListener('mousemove', (evt) => {
-            if (
-              event.pageX <= 100 &&
-              onScreen == false
-            ) {
-              onScreen = true;
-              _sb.style.display = `none`;
-              _min.style.display = `block`;
-              setTimeout(function () {
-                sideBarDisplay(onScreen);
-              }, 300)
-            }
-            else if (
-              event.pageX >= 180 &&
-              sideBarLock == false &&
-              onScreen == true
-            ){
-              if (
-                !document.body.contains(document.querySelector(`#group`)) &&
-                !document.body.contains(document.querySelector(`#xml`))
-              ) _sb.style.display = `block`;
-              onScreen = false;
-              setTimeout(function() {
-                sideBarDisplay(onScreen);
-              }, 750)
-            }
-          },
-          true
-        );
-      }
-    }, 250)
 
     if (imageLoader == `double-circle`) {
     _main
       .querySelectorAll(`.loader`)
-      .forEach((a) => a.style.display = `block`);
+      .forEach(
+        (a) => a.style.display = `block`
+      );
     _main
       .querySelectorAll(`.bars`)
-      .forEach((a) => a.style.display = `none`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     _main
-      .querySelectorAll(`.orig`)
-      .forEach((a) => a.style.display = `none`);
+      .querySelectorAll(`.animation`)
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     } else if (imageLoader == `v-bars`) {
     _main
       .querySelectorAll(`.bars`)
-      .forEach((a) => a.style.display = `block`);
+      .forEach(
+        (a) => a.style.display = `block`
+      );
     _main
-      .querySelectorAll(`.orig`)
-      .forEach((a) => a.style.display = `none`);
+      .querySelectorAll(`.animation`)
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     _main
       .querySelectorAll(`.loader`)
-      .forEach((a) => a.style.display = `none`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
    } else if (imageLoader == `ring-circle`) {
     _main
-      .querySelectorAll(`.orig`)
-      .forEach((a) => a.style.display = `block`);
+      .querySelectorAll(`.animation`)
+      .forEach(
+        (a) => a.style.display = `block`
+      );
     _main
       .querySelectorAll(`.loader`)
-      .forEach((a) => a.style.display = `none`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     _main
       .querySelectorAll(`.wrapper`)
-      .forEach((a) => a.style.display = `none`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
   } else if (imageLoader == false) {
     _main
       .querySelectorAll(`.bars`)
-      .forEach((a) => a.style.display = `none`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     _main
       .querySelectorAll(`.loader`)
-      .forEach((a) => a.style.display = `none`);
+      .forEach(
+        (a) => a.style.display = `none`
+      );
     _main
-      .querySelectorAll(`.orig`)
-      .forEach((a) => a.style.display = `none`);
+      .querySelectorAll(`.animation`)
+      .forEach(
+        (a) => a.style.display = `none`
+      );
   }
   _container.style.display = `block`;
 
@@ -225,7 +141,11 @@ document.addEventListener('touchend', (evt) => {
 
   }, 4000);
     touchendX = evt.changedTouches[0].screenX;
-    if (_guide.style.display != `flex` && sideScroll == false) handleSwipe();
+    if (
+      _guide.style.display != `flex` &&
+      sideScroll == false
+    )
+      handleSwipe();
   },
   { passive: true }
 );
@@ -235,8 +155,8 @@ document.addEventListener('wheel', (e) => {
 })
 document.addEventListener('scroll', (evt) => {
     if (
-      evt.target.id == `main` ||
-      evt.target.classList.contains(`channel`)
+      evt.target.classList.contains(`channel`) ||
+      evt.target.id == `main`
     ) {
       let isScrolling;
       // Clear our timeout throughout the scroll
@@ -251,17 +171,17 @@ document.addEventListener('scroll', (evt) => {
     	}, 4000);
       if (
         (
-          sideScroll == false &&
           _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
+          sideScroll == false &&
           Reader == true &&
           stop == false
         ) ||
         (
           sideScroll == true &&
-          document.querySelector(`.channel`).scrollWidth -
-          document.querySelector(`.channel`).scrollLeft -
-          document.querySelector(`.channel`).clientWidth <=
-          document.querySelector(`.channel`).clientWidth &&
+          _main.querySelector(`.channel`).scrollWidth -
+          _main.querySelector(`.channel`).scrollLeft -
+          _main.querySelector(`.channel`).clientWidth <=
+          _main.querySelector(`.channel`).clientWidth &&
           Reader == true &&
           stop == false
         )
@@ -280,8 +200,8 @@ document.addEventListener('scroll', (evt) => {
 
 document.addEventListener('ontouchmove', (evt) => {
     if (
-      evt.target.id == `main` ||
-      evt.target.classList.contains(`channel`)
+      evt.target.classList.contains(`channel`) ||
+      evt.target.id == `main`
     ) {
       let isScrolling;
       // Clear our timeout throughout the scroll
@@ -304,10 +224,10 @@ document.addEventListener('ontouchmove', (evt) => {
         ) ||
         (
           sideScroll == true &&
-          document.querySelector(`.channel`).scrollWidth -
-          document.querySelector(`.channel`).scrollLeft -
-          document.querySelector(`.channel`).clientWidth <=
-          document.querySelector(`.channel`).clientWidth &&
+          _main.querySelector(`.channel`).scrollWidth -
+          _main.querySelector(`.channel`).scrollLeft -
+          _main.querySelector(`.channel`).clientWidth <=
+          _main.querySelector(`.channel`).clientWidth &&
           Reader == true &&
           stop == false
         )
@@ -355,10 +275,10 @@ document.addEventListener('click', (evt) => {
       evt.target.id == `arm`
     ) {
       if (
-        _match.style.display === `block` ||
-        _view.getAttribute(`placeholder`) == `Search`
+        _view.getAttribute(`placeholder`) == `Search` ||
+        _match.style.display === `block`
       ) {
-        document.querySelector(`#input .icon`).classList.remove(`slide`);
+        _main.querySelector(`#input .icon`).classList.remove(`slide`);
         _view.setAttribute(`placeholder`, ``);
         _view.style.textAlign = `center`;
         _view.style.paddingLeft = `10px`;
@@ -384,7 +304,7 @@ document.addEventListener('click', (evt) => {
         document
           .querySelectorAll(`.attribute`)
           .forEach((a) => (a.style.display = `none`));
-        var attribute = document.querySelectorAll(`.fa-ellipsis-v`);
+        var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
         for (i = 0; i < attribute.length; i++) {
           attribute[i].classList.remove(`fa-ellipsis-v`);
           attribute[i].classList.add(`fa-ellipsis-h`);
@@ -392,19 +312,22 @@ document.addEventListener('click', (evt) => {
       }
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.getAttribute(`aria-item`) == `Assets`
-    ) {
+    )
       populateAssets();
-    }
-    if (
-      evt.target.classList.contains(`notify`)
+    else if (
+      evt.target.classList.contains(
+        `notify`
+      )
     ) {
       _notify.classList.remove(`notify`);
       _notify.style.display = `none`;
     }
-    if (
-      event.target.classList.contains(`fa-camera-retro`)
+    else if (
+      event.target.classList.contains(
+        `fa-camera-retro`
+      )
     ) {
     if (flexBox == false) {
         sideScroll = sideScroll != true
@@ -413,12 +336,15 @@ document.addEventListener('click', (evt) => {
         ) {
           scrollIntoView = false;
           let leaveOff = _main.scrollTop -
-            ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
+            ((parseInt(
+              _main.querySelectorAll(`.item`).length) * parseInt(100)));
           notifyOption(`Horizontal`, `fa-check-circle`);
-          if (document.body.contains(document.querySelector(`#xml`))) {
-            document.querySelector(`.channel`).classList.add(`sideChannel`);
-            document.querySelector(`.center`).style.top = `60px`;
-            document.querySelector(`#xml`).style.top = 0;
+          if (
+            document.body.contains(
+              _main.querySelector(`#xml`))) {
+            _main.querySelector(`.channel`).classList.add(`sideChannel`);
+            _main.querySelector(`.center`).style.top = `60px`;
+            _main.querySelector(`#xml`).style.top = 0;
             _main
               .querySelectorAll(`.item`)
               .forEach((a) => (a.classList.add(`sideItem`)));
@@ -430,34 +356,51 @@ document.addEventListener('click', (evt) => {
         } else if (
             sideScroll == false
           ) {
-            let leaveOff = document.querySelector(`.channel`).scrollLeft +
-              ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
+            let leaveOff = _main.querySelector(`.channel`).scrollLeft +
+              (parseInt(
+                _main.querySelectorAll(`.item`).length) * parseInt(100)
+              );
             notifyOption(`Vertical`, `fa-check-circle`);
-          if (document.body.contains(document.querySelector(`#xml`))) {
-            document.querySelector(`.channel`).classList.remove(`sideChannel`);
-            document.querySelector(`.center`).style.top = `60px`;
-            document.querySelector(`#xml`).style.top = 0;
+          if (
+            document.body.contains(
+              _main.querySelector(`#xml`)
+            )
+          ) {
+            _main.querySelector(`.channel`).classList.remove(`sideChannel`);
+            _main.querySelector(`.center`).style.top = `60px`;
+            _main.querySelector(`#xml`).style.top = 0;
             _main
               .querySelectorAll(`.item`)
-              .forEach((a) => (a.classList.remove(`sideItem`)));
+              .forEach((a) => (
+                a.classList.remove(`sideItem`)
+              )
+            );
             _main
               .querySelectorAll(`.classic`)
-              .forEach((a) => (a.style.display = `flex`));
+              .forEach(
+                (a) => a.style.display = `flex`
+              );
             _main.scrollTop = leaveOff;
           }
         }
       }
     }
-    if (
-      evt.target.classList.contains(`download`)
+    else if (
+      evt.target.classList.contains(
+        `download`
+      )
     ) {
       var menuObject = evt.target.closest(`.item`).getAttribute(`aria-object`);
       var pubIndex = evt.target.closest(`.item`).getAttribute(`aria-item`);
       var xhr = new XMLHttpRequest();
       var url =
-      document
+      _main
         .querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+          `
+            [aria-object='${menuObject}']
+            [aria-item='${pubIndex}']
+            .source
+          `
         ).value
       xhr.responseType = "arraybuffer";
       xhr.open("GET", cors + url, true);
@@ -467,9 +410,12 @@ document.addEventListener('click', (evt) => {
           var file = new Blob([xhr.response], { type: "image" });
           saveAs(
             file,
-            document
+            _main
               .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+                `
+                  [aria-object='${menuObject}']
+                  [aria-item='${pubIndex}']
+                  .source`
               ).value
           )
         }
@@ -477,92 +423,117 @@ document.addEventListener('click', (evt) => {
 
       xhr.send();
     }
-    if (
-      evt.target.classList.contains(`fa-git`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-git`
+      )
+    )
       repository.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-amazon`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-amazon`
+      )
+    )
       amazon.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-twitter`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-twitter`
+      )
+    )
       twitter.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-pinterest`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-pinterest`
+      )
+    )
       pinterest.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-instagram`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-instagram`
+      )
+    )
       instagram.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-facebook-f`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-facebook-f`
+      )
+    )
       facebook.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-youtube`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-youtube`
+      )
+    )
       youtube.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-wordpress`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-wordpress`
+      )
+    )
       wordpress.blank();
-    }
-    if (
-      evt.target.classList.contains(`fa-github`)
-    ) {
+    else if (
+      evt.target.classList.contains(
+        `fa-github`
+      )
+    )
       repository.blank();
-    }
-    if (
-      evt.target.classList.contains(`bar`)
+    else if (
+      evt.target.classList.contains(
+        `bar`
+      )
     ) {
       _min.style.display = `block`;
       onScreen = onScreen != true;
       sideBarDisplay(onScreen);
       if (onScreen == true)
-      _bar.style.display = `none`;
+        _bar.style.display = `none`;
     }
-    if (
-      evt.target.classList.contains(`joi`)
+    else if (
+      evt.target.classList.contains(
+        `joi`
+      )
     ) {
-      first = true;
       _visit.style.display = `none`;
       topMenuBarDisplay(topBar);
+      first = true;
       Reader = Reader != true;
       if (Reader == false) {
         notifyOption(`Reading`, `fa-times-circle`);
         first = true;
         _main
           .querySelectorAll(`.joi`)
-          .forEach((a) => a.classList.remove(`luv`));
+          .forEach(
+            (a) => a.classList.remove(`luv`)
+          );
       } else if (Reader == true) {
         first = true;
         onlyImages = true;
         randomDuplicate = [];
         notifyOption(`Reading`, `fa-check-circle`);
         if (showSplash == true) _check.style.display = `Block`;
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove();
-        if (document.body.contains(document.querySelector(`#bottom`)))
-          document.querySelector(`#bottom`).remove();
+        if (
+          document.body.contains(
+            _main.querySelector(`#group`)
+          )
+        )
+          _main.querySelector(`#group`).remove();
+        if (
+          document.body.contains(
+            _main.querySelector(`#bottom`)
+          )
+        )
+          _main.querySelector(`#bottom`).remove();
         if (showSplash == true) _check.style.display = `block`;
         _sb.style.display = `none`;
         _main
           .querySelectorAll(`.joi`)
-          .forEach((a) => a.classList.add(`luv`));
+          .forEach(
+            (a) => a.classList.add(`luv`)
+          );
         xmlRequestParsing(anyRandomMenuObject());
       }
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-sun`) ||
       evt.target.id == `toggle`
     ) {
@@ -573,19 +544,24 @@ document.addEventListener('click', (evt) => {
       window[set]();
       notifyOption(themes[iteration].obFn, `fa-check-circle`);
     }
-    if (
-      evt.target.classList.contains(`show`)
+    else if (
+      evt.target.classList.contains(
+        `show`
+      )
     ) {
       onScreen = true
       sideBarDisplay(onScreen);
     }
-    if (
+    else if (
       evt.target.classList.contains(`exit`) ||
       evt.target.classList.contains(`ext`)
     )
       evt.target.closest(`.courtesy`).getAttribute(`ext`).blank();
-    if (evt.target.id == `check`) repository.blank();
-    if (
+    else if (
+      evt.target.id == `check`
+    )
+      repository.blank();
+    else if (
       evt.target.classList.contains(`fa-angle-up`) ||
       evt.target.id == `link` ||
       evt.target.id == `show`
@@ -593,47 +569,74 @@ document.addEventListener('click', (evt) => {
       quickFeeds = quickFeeds != true;
       quickFeedDisplay(quickFeeds);
     }
-    if (evt.target.id == `home`) {
-      _sb.style.display = `block`;
+    else if (
+      evt.target.id == `home`
+    ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`#xml`).remove();
-      if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove();
-      if (quickFeeds == false) _show.style.visibility = `visible`;
+      if (
+        document.body.contains(
+          _main.querySelector(`#xml`)
+        )
+      )
+        _main.querySelector(`#xml`).remove();
+      if (
+        document.body.contains(
+          _main.querySelector(`#group`)
+        )
+      )
+        _main.querySelector(`#group`).remove();
+      if (quickFeeds == false)
+        _show.style.visibility = `visible`;
       _label.style.visibility = `visible`;
       _quick.style.visibility = `visible`;
-      _link.style.visibility = `visible`;
       _visit.style.visibility = `visible`;
+      _link.style.visibility = `visible`;
       _toggle.style.display = `block`;
       _first.style.display = `none`;
       _visit.style.display = `flex`;
       quickFeedDisplay(quickFeeds);
       _top.style.display = `none`;
+      _sb.style.display = `block`;
       _feed.scrollLeft = 0;
       document.title = ``;
       main.setAttribute(`tabindex`, -1);
       main.focus();
-  }
-    if (evt.target.classList.contains(`construct`)) {
+    }
+    else if (
+      evt.target.classList.contains(
+        `construct`
+      )
+    ) {
       let url = menu[id].uri.match(
         /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
       );
       url.toString().blank();
     }
-    if (evt.target.classList.contains(`fa-expand-alt`)) {
+    else if (
+      evt.target.classList.contains(
+        `fa-expand-alt`
+      )
+    ) {
+      first = true;
       expand = expand != true;
       _sb.style.display = `none`;
-      notifyOption(`Reading`, `fa-times-circle`);
-      Reader = false;
-      first = true;
       _main
         .querySelectorAll(`.joi`)
-        .forEach((a) => a.classList.remove(`luv`));
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`#xml`).remove();
-      if (document.body.contains(document.querySelector(`#group`)))
-        document.querySelector(`#group`).remove()
+        .forEach(
+          (a) => a.classList.remove(`luv`)
+        );
+      if (
+        document.body.contains(
+          _main.querySelector(`#xml`)
+        )
+      )
+        _main.querySelector(`#xml`).remove();
+      if (
+        document.body.contains(
+          document.querySelector(`#group`)
+        )
+      )
+        _main.querySelector(`#group`).remove()
       if (expand == false) {
         sideBarStar(document.querySelector(`.Blocks`), true);
         sideBarStar(document.querySelector(`.List`), false);
@@ -651,7 +654,11 @@ document.addEventListener('click', (evt) => {
         unloading();
       }, 25)
     }
-    if (evt.target.classList.contains(`select`)) {
+    else if (
+      evt.target.classList.contains(
+        `select`
+      )
+    ) {
       if (_match.style.display === `block`) {
         _match.style.display = `none`;
         _view.blur();
@@ -663,9 +670,9 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
     }
-    if (
-      evt.target.classList.contains(`translation`) &&
-      evt.target.getAttribute(`aria-item`) != `Assets`
+    else if (
+      evt.target.getAttribute(`aria-item`) != `Assets` &&
+      evt.target.classList.contains(`translation`)
     ) {
       first = true;
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
@@ -674,21 +681,28 @@ document.addEventListener('click', (evt) => {
         xmlRequestParsing(anyRandomMenuObject());
       } else {
         let target = event;
-        if (document.body.contains(document.querySelector(`#xml`)))
-          document.querySelector(`#xml`).remove();
-        if (document.body.contains(document.querySelector(`#group`)))
-          document.querySelector(`#group`).remove();
+        if (
+          document.body.contains(
+            _main.querySelector(`#xml`)
+          )
+        )
+          _main.querySelector(`#xml`).remove();
+        if (
+          document.body.contains(
+            _main.querySelector(`#group`)
+          )
+        )
+          _main.querySelector(`#group`).remove();
         populateCategoryGroup(
           evt.target.closest(`.translation`).getAttribute(`aria-item`)
         );
-        topMenuBarDisplay(topBar);
-        displayExpand(expand);
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
+        topMenuBarDisplay(topBar);
+        displayExpand(expand);
       }
-      document.title = category;
     }
-    if (
+    else if (
       evt.target.classList.contains(`entity`) ||
       evt.target.classList.contains(`asset`) ||
       evt.target.classList.contains(`query`)
@@ -700,7 +714,7 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `none`;
       _visit.style.display = `none`;
     }
-    if (
+    else if (
       event.target.classList.contains(`checkmark__circle`) ||
       event.target.classList.contains(`checkmark__check`) ||
       event.target.classList.contains(`checkmark`) ||
@@ -713,16 +727,20 @@ document.addEventListener('click', (evt) => {
         _main.classList.remove(`guide`);
       if (loading == `percent`) _progress.style.width = `100%`;
       while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
+      if (sideBarLock == true) onScreen = true;
       _guide.style.display = `none`;
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
-      if (sideBarLock == true) onScreen = true;
       sideBarDisplay(onScreen);
       guideOnScreen = true;
       _main.focus();
       pub = null;
     }
-    if (evt.target.classList.contains(`bottom`)) {
+    else if (
+      evt.target.classList.contains(
+        `bottom`
+      )
+    ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       evt.target.closest(`#xml`).remove();
         if (location.href.match(`\\?q=`)) {
@@ -739,17 +757,20 @@ document.addEventListener('click', (evt) => {
           populateCategoryGroup(category)
           unloading();
         } else populateCategoryGroup(category);
-        document.title = category;
         displayExpand(expand);
     }
-    if (evt.target.classList.contains(`more`)) {
+    else if (
+      evt.target.classList.contains(
+        `more`
+      )
+    ) {
       evt.target.parentNode.innerHTML = evt.target.parentNode.getAttribute(
         `text`
       );
       evt.target.style.display = `none`;
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.classList.contains(`classic`) ||
       evt.target.classList.contains(`wrap`) ||
       evt.target.classList.contains(`item`) ||
@@ -758,7 +779,7 @@ document.addEventListener('click', (evt) => {
     ) {
       evt.target.closest(`.item`).getAttribute(`ext`).blank();
     }
-    if (
+    else if (
       evt.target.classList.contains(`combine`) ||
       evt.target.classList.contains(`suggest`) ||
       evt.target.classList.contains(`circle`) ||
@@ -766,21 +787,33 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`bold`)
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`#xml`).remove();
+      if (
+        document.body.contains(
+          _main.querySelector(`#xml`)
+        )
+      )
+        _main.querySelector(`#xml`).remove();
       first = true;
       xmlRequestParsing(
         evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
-    if (evt.target.classList.contains(`detail`)) {
+    else if (
+      evt.target.classList.contains(
+        `detail`
+      )
+    ) {
       xmlRequestParsing(evt.target.closest(`.hover`)
         .getAttribute(`aria-item`));
       _match.style.display = `none`;
     }
-    if (evt.target.classList.contains(`asset`))
+    else if (
+      evt.target.classList.contains(
+        `asset`
+      )
+    )
       xmlRequestParsing(evt.target.getAttribute(`aria-item`));
-    if (
+    else if (
       evt.target.classList.contains(`flip-front`) ||
       evt.target.classList.contains(`flip-back`) ||
       evt.target.classList.contains(`front`) ||
@@ -788,13 +821,21 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`back`)
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (document.body.contains(document.querySelector(`#xml`)))
-        document.querySelector(`#xml`).remove();
+      if (
+        document.body.contains(
+          _main.querySelector(`#xml`)
+        )
+      )
+        _main.querySelector(`#xml`).remove();
       xmlRequestParsing(
         evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );
     }
-    if (evt.target.classList.contains(`option`)) {
+    else if (
+      evt.target.classList.contains(
+        `option`
+      )
+    ) {
       if (tap == 0) {
         tap = new Date().getTime();
         setTimeout(function () {
@@ -816,7 +857,7 @@ document.addEventListener('click', (evt) => {
       }
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.classList.contains(`filterBlur`) ||
       evt.target.classList.contains(`img`)
     ) {
@@ -926,7 +967,7 @@ document.addEventListener('click', (evt) => {
       }
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-ellipsis-h`) ||
       evt.target.classList.contains(`fa-ellipsis-v`) ||
       evt.target.classList.contains(`copy`)
@@ -960,7 +1001,7 @@ document.addEventListener('click', (evt) => {
       }
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-at`) ||
       evt.target.classList.contains(`site`)
     ) {
@@ -968,7 +1009,7 @@ document.addEventListener('click', (evt) => {
       document.execCommand(`copy`);
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-share`) ||
       evt.target.classList.contains(`post`)
     ) {
@@ -976,7 +1017,7 @@ document.addEventListener('click', (evt) => {
       document.execCommand(`copy`);
       evt.stopPropagation();
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-camera`) ||
       evt.target.classList.contains(`picture`)
     ) {
@@ -988,7 +1029,7 @@ document.addEventListener('click', (evt) => {
         document.execCommand(`copy`);
       }
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-plus`) ||
       evt.target.classList.contains(`right`)
     ) {
@@ -998,7 +1039,7 @@ document.addEventListener('click', (evt) => {
       if (_feed.scrollLeft >= 0)
         document.querySelector(`.left`).style.display = `block`;
     }
-    if (
+    else if (
       evt.target.classList.contains(`fa-minus`) ||
       evt.target.classList.contains(`left`)
     ) {

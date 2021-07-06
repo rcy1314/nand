@@ -276,7 +276,9 @@ let progressBackDrop = function (done) {
             if (fadeIntoView == false) {
               document
                 .querySelectorAll(`.img`)
-                .forEach((a) => a.classList.remove(`hidden`));
+                .forEach(
+                  (a) => a.classList.remove(`hidden`)
+                );
               _main.removeEventListener(`scroll`, checkPosition);
               _main.removeEventListener(`resize`, init);
             }
