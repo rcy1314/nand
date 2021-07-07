@@ -11,35 +11,6 @@ window.onload = function () {
     quickFeedAsset(24);
   else quickFeedAsset(8);
   quickFeedDisplay(quickFeeds);
-  if (sideBarTranslations == true)
-    appendSideBarLists(`#content`, `cat`, translations);
-  appendSideBarLists(`#content`, `sel`, selections);
-  sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
-  appendSideBarLists(`.themes`, `theme`, themes);
-  sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
-  appendSideBarLists(`.fav`, `feed`, favorites);
-  sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
-  appendSideBarLists(`.bg`, `background`, background);
-  document.querySelector(`.bg`).append(urlFormBuild());
-  sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
-  appendSideBarLists(`.exclude`, `option`, exclude);
-  document.querySelector(`.exclude`).append(excludeFormBuild());
-  sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
-  appendSettings(`.set`, `settings`, settings);
-  content.append(basicFormBuild());
-  if (sideBarLock == true) content.append(sideBarThemeBuild(`fa-lock`))
-  else if (sideBarLock == false) content.append(sideBarThemeBuild(`fa-unlock`))
-
-  if (sideBarCenter == true)
-    _content.style.position = `absolute`;
-  else _content.style.position = `relative`;
-
-  if (sideBarBackdrop == true) {
-    _sidebar.style.cssText =
-      `background-color:transparent; backdrop-filter: blur(10px) !important`;
-  }
-  if (topBarBackdrop == true)
-    _top.style.cssText = `backdrop-filter: blur(10px)`
 
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
@@ -116,7 +87,6 @@ window.onload = function () {
         (a) => a.style.display = `none`
       );
   }
-  _container.style.display = `block`;
 
 };
 
