@@ -124,6 +124,7 @@ document.addEventListener(
     ) {
       flexBox = flexBox != true
       if (flexBox) {
+        _main.querySelector(`.channel`).classList.remove(`sideChannel`);
         displayFlex(flexBox)
         if (
           document.body.container(
