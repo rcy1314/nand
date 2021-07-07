@@ -156,9 +156,9 @@ let inputListingIndex = function (
       ]
     );
     if (
+      menu[randomMenuObject] &&
       menu[randomMenuObject].media == true &&
-      !matches.includes(randomMenuObject) &&
-      menu[randomMenuObject]
+      !matches.includes(randomMenuObject)
     ) {
       matches.push(randomMenuObject);
       if (

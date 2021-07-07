@@ -1180,9 +1180,20 @@ var xmlAppendPublication = function (id) {
     )
   ) {
     if (
-      _main.clientWidth >= 426 &&
       flexBox == true
     ) displayFlex(displayFlex);
+    else if (sideScroll == true) {
+      scrollIntoView = false;
+        _main.querySelector(`.channel`).classList.add(`sideChannel`);
+        _main.querySelector(`.center`).style.top = `60px`;
+        _main.querySelector(`#xml`).style.top = 0;
+        _main
+          .querySelectorAll(`.item`)
+          .forEach((a) => (a.classList.add(`sideItem`)));
+        _main
+          .querySelectorAll(`.classic`)
+          .forEach((a) => (a.style.display = `block`));
+    }
     if (showSplash == true) _check.style.display = `none`;
     if (flexBox == false)
       document.querySelector(`.channel`).append(
