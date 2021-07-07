@@ -58,23 +58,23 @@ document.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(`textMatch`) ||
       event.target.classList.contains(`buffer`) ||
-      event.target.classList.contains(`input`)
+      event.target.classList.contains(`detail`) ||
+      event.target.classList.contains(`input`) ||
+      event.target.classList.contains(`hover`)
   ) {
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove();
+    if (
+      document.body.contains
+      (
+        document.querySelector(`[aria-object='${_match.querySelector(`.hover`).getAttribute(`aria-item`)}']`)
+      )
+    )
+      _main.querySelector(`#xml`).remove();
         if (
           document.body.contains(
             _main.querySelector(`#group`)
           )
         )
           _main.querySelector(`#group`).remove();
-        category =
-          menu[event.target.closest(`.index`).getAttribute(`aria-item`)]
-            .category;
         xmlRequestParsing(
           event.target.closest(`.index`).getAttribute(`aria-item`)
         );
@@ -250,22 +250,23 @@ document.addEventListener('submit', (evt) => {
         )
       ) {
         if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
+          document.body.contains
+          (
+            document.querySelector(`[aria-object='${_match.querySelector(`.hover`).getAttribute(`aria-item`)}']`)
           )
-        ) {
+        )
+          _main.querySelector(`#xml`).remove();
+        else if (
+            document.body.contains(
+              _main.querySelector(`#group`)
+            )
+          )
+            _main.querySelector(`#group`).remove();
           touchmove = true;
           xmlRequestParsing(
             _match.querySelector(`.hover`).getAttribute(`aria-item`)
           )
         _match.style.display = `none`;
-        }
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove();
       } else if (_view.value.length) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         if (

@@ -187,4 +187,9 @@ setTimeout(function() {
   adj = menu.slice();
   randomizeAssets(adj);
 
+  if (_main.clientWidth <= 425) flexBox = false;
+  if (flexBox == true && _main.clientWidth >= 426)
+    offset = 5550;
+  else offset = 1050;
+
 }, 100)

@@ -1,8 +1,4 @@
 window.onload = function () {
-  if (window.clientWidth <= 425) flexBox = false;
-  if (flexBox == true && _main.clientWidth >= 426)
-    offset = 5550;
-  else offset = 1050;
 
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
@@ -776,6 +772,7 @@ document.addEventListener('click', (evt) => {
         )
       )
         _main.querySelector(`#bottom`).remove();
+      toucmove = false;
       xmlRequestParsing(
         evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );
