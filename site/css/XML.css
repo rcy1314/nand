@@ -71,9 +71,9 @@
   position: relative;
   font-size: 12px;
   display: flex;
-  bottom: -23px;
   height: 5em;
   width: 100%;
+  top: 50px;
 }
 
 .channel::-webkit-scrollbar {
@@ -452,6 +452,10 @@
   color: var(--fill-color);
   position: relative;
   margin-left: 12px;
+}
+
+.wrap {
+  height: 125px;
 }
 
 #xml {

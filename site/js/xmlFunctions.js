@@ -1037,6 +1037,12 @@ var xmlTitleParsing = function (xhr) {
 };
 
 var xmlAppendPublication = function (id) {
+  if (
+    document.body.contains(
+      document.querySelector(`#bottom`)
+    )
+  )
+  document.querySelector(`#bottom`).remove();
   const has = exclude.map((a) => a.toLowerCase());
   for (i = 0; i < pub.length - 1; i++) {
     if (
@@ -1124,12 +1130,12 @@ var xmlAppendPublication = function (id) {
   ) {
     if (
       sideScroll == false &&
-      Reader == false
+      touchmove == true
     ) {
       scrollToElm(
         touchmove,
         _main,
-        _main.querySelector(`[aria-object='${id}']`),
+        document.querySelector(`[aria-object='${id}']`),
         250
       );
     } else if (
@@ -1138,8 +1144,8 @@ var xmlAppendPublication = function (id) {
     ) {
       touchmove = true;
       sideScrollToElm(touchmove,
-        _main.querySelector(`.channel`),
-        _main.querySelector(`[aria-object='${id}']`),
+        document.querySelector(`.channel`),
+        document.querySelector(`[aria-object='${id}']`),
         250
       );
     }
@@ -1167,9 +1173,6 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
-    document.querySelector(`.channel`).append(
-      footerBuild(id)
-    );
   }
   if (
     document.body.contains(
@@ -1181,6 +1184,9 @@ var xmlAppendPublication = function (id) {
       flexBox == true
     ) displayFlex(displayFlex);
     if (showSplash == true) _check.style.display = `none`;
+    document.querySelector(`.channel`).append(
+      footerBuild(id)
+    );
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
