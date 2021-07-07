@@ -3,7 +3,6 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
     <script type='text/javascript' src='site/js/settings.js'></script>
     <script src="https://kit.fontawesome.com/1a31cd0145.js"></script>
@@ -160,7 +159,14 @@
         let script = document.createElement("script");
         script.type = "text/javascript";
         script.src = path;
-        document.getElementsByTagName("head")[0].appendChild(script);
+        if (file === `coreDocumentObjectModels`)
+          document.getElementsByTagName("head")[0].appendChild(script);
+        else
+          setTimeout(
+            function() {
+              document.getElementsByTagName("head")[0].appendChild(script);
+            }, 10
+          )
         if (file === `xmlAssets`)
           script.onload = (function () {
             let startup = setInterval(function () {
