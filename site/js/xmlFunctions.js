@@ -1184,9 +1184,10 @@ var xmlAppendPublication = function (id) {
       flexBox == true
     ) displayFlex(displayFlex);
     if (showSplash == true) _check.style.display = `none`;
-    document.querySelector(`.channel`).append(
-      footerBuild(id)
-    );
+    if (flexBox == false)
+      document.querySelector(`.channel`).append(
+        footerBuild(id)
+      );
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();

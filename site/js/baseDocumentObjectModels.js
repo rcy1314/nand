@@ -32,6 +32,10 @@ let displayFlex = function (value) {
       .forEach(
         (a) => a.classList.add(`flexbox`)
       );
+    document.querySelector(`.channel`).append(
+      footerBuild(id)
+    );
+    document.querySelector(`#bottom`).style.top = `750px`;
 }
 
 let displayDescription = function (Value) {
