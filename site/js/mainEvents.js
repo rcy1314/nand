@@ -627,6 +627,12 @@ document.addEventListener('click', (evt) => {
         )
       )
         _main.querySelector(`#xml`).remove();
+      if (
+        document.body.contains(
+          _main.querySelector(`#group`)
+        )
+      )
+        return false;
       setTimeout(function () {
         populateCategoryGroup(category);
         displayDescription(showDescription);
