@@ -14,7 +14,7 @@ input[type=submit] {
 }
 
 #first {
-  background-color: var(--color-primary);
+  background-color: transparent;
   border: var(--border-color);
   position: absolute;
   margin-right: auto;

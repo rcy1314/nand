@@ -112,10 +112,6 @@
   left: -310px;
 }
 
-.flexbox .item:nth-child(3n+1) {
-  order: 1;
-}
-
 .flexbox .item:nth-child(3n+2) {
   order: 2;
 }

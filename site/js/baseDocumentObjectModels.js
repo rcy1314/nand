@@ -27,7 +27,7 @@ let displayFlex = function (value) {
       `${(max + 1000).toString()}px`
     document.querySelector(`.content`).style.display = `none`;
     document.querySelector(`.channel`).classList.add(`flexbox`);
-    _main
+    document
       .querySelectorAll(`.item`)
       .forEach(
         (a) => a.classList.add(`flexbox`)
@@ -256,11 +256,16 @@ let sideBarDisplay = function (Value) {
       }, 300);
   } else if (!Value) {
     if (_main.clientWidth >= 768) {
-      _sidebar.querySelector(`.bg`).style.height = `33px`;
-      _sidebar.querySelector(`.set`).style.height = `33px`;
-      _sidebar.querySelector(`.fav`).style.height = `33px`;
-      _sidebar.querySelector(`.themes`).style.height = `33px`;
-      _sidebar.querySelector(`.exclude`).style.height = `33px`;
+      _sidebar.querySelector(`.bg`).style.height = `31px`;
+      expandBackground = false;
+      _sidebar.querySelector(`.set`).style.height = `31px`;
+      expandSettings = false;
+      _sidebar.querySelector(`.fav`).style.height = `31px`;
+      expandFavorites = false;
+      _sidebar.querySelector(`.themes`).style.height = `31px`;
+      expandVisual = false;
+      _sidebar.querySelector(`.exclude`).style.height = `31px`;
+      expandFilter = false;
       _sidebar.querySelector(`.sideFilter`).style.visibility = `hidden`;
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
       _sb.style.display = `none`;

@@ -119,6 +119,35 @@ document.addEventListener(
     }
     else if (
       event.target.classList.contains(
+        `flexBox`
+      )
+    ) {
+      flexBox = flexBox != true
+      if (flexBox) {
+        displayFlex(flexBox)
+        if (
+          document.body.container(
+            document.querySelector(`#bottom`)
+          )
+        )
+        document.querySelector(`#bottom`).remove();
+      } else if (!flexBox) {
+        document.querySelector(`.center`).style.cssText =
+          `display: inline-block`;
+        document.querySelector(`.channel`).style.height =
+          `fit-content`
+        document.querySelector(`.content`).style.display = `inline-block`;
+        document.querySelector(`.channel`).classList.remove(`flexbox`);
+        document
+          .querySelectorAll(`.item`)
+          .forEach(
+            (a) => a.classList.remove(`flexbox`)
+          );
+      }
+      sideBarStar(event.target, flexBox)
+    }
+    else if (
+      event.target.classList.contains(
         `feed`
       )
     ) {
@@ -537,7 +566,7 @@ document.addEventListener(
         _sidebar.querySelector(`.set`).style.height = `31px`;
       } else if (expandSettings == true) {
         _sidebar.querySelector(`.set`).style.height =
-          `${(settings.length + 1) * 35}px`;
+          `${(settings.length) * 35}px`;
       }
     }
     else if (

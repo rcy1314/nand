@@ -620,34 +620,13 @@ document.addEventListener('click', (evt) => {
       )
     ) {
       first = true;
-      expand = expand != true;
       _sb.style.display = `none`;
-      _main
-        .querySelectorAll(`.joi`)
-        .forEach(
-          (a) => a.classList.remove(`luv`)
-        );
       if (
         document.body.contains(
           _main.querySelector(`#xml`)
         )
       )
         _main.querySelector(`#xml`).remove();
-      if (
-        document.body.contains(
-          document.querySelector(`#group`)
-        )
-      )
-        _main.querySelector(`#group`).remove()
-      if (expand == false) {
-        sideBarStar(document.querySelector(`.Blocks`), true);
-        sideBarStar(document.querySelector(`.List`), false);
-        notifyOption(`Icons`, `fa-check-circle`);
-      } else if (expand == true) {
-        sideBarStar(document.querySelector(`.Blocks`), false);
-        sideBarStar(document.querySelector(`.List`), true);
-        notifyOption(`List`, `fa-check-circle`);
-      }
       setTimeout(function () {
         populateCategoryGroup(category);
         displayDescription(showDescription);

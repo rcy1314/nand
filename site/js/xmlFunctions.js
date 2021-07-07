@@ -1,6 +1,6 @@
 var xmlChannelFooter = function (id) {
-  if (document.body.contains(document.querySelector(`.center`)))
-    document.querySelector(`.channel`).append(footerBuild(id));
+  if (document.body.contains(_main.querySelector(`.center`)))
+    _main.querySelector(`.channel`).append(footerBuild(id));
 };
 
 var forward = function (id) {
@@ -1167,10 +1167,9 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
-    if (flexBox == false)
-      document.querySelector(`.channel`).append(
-        footerBuild(id)
-      );
+    document.querySelector(`.channel`).append(
+      footerBuild(id)
+    );
   }
   if (
     document.body.contains(
