@@ -810,10 +810,10 @@ document.addEventListener('click', (evt) => {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (
         document.body.contains(
-          _main.querySelector(`#xml`)
+          _main.querySelector(`#bottom`)
         )
       )
-        _main.querySelector(`#xml`).remove();
+        _main.querySelector(`#bottom`).remove();
       xmlRequestParsing(
         evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );
