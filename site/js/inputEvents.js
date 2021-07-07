@@ -253,18 +253,19 @@ document.addEventListener('submit', (evt) => {
           document.body.contains(
             _main.querySelector(`#xml`)
           )
-        )
-          _main.querySelector(`#xml`).remove();
+        ) {
+          touchmove = true;
+          xmlRequestParsing(
+            _match.querySelector(`.hover`).getAttribute(`aria-item`)
+          )
+        _match.style.display = `none`;
+        }
         if (
           document.body.contains(
             _main.querySelector(`#group`)
           )
         )
           _main.querySelector(`#group`).remove();
-          xmlRequestParsing(
-            _match.querySelector(`.hover`).getAttribute(`aria-item`)
-          )
-        _match.style.display = `none`;
       } else if (_view.value.length) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         if (
