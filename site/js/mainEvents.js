@@ -3,8 +3,6 @@ window.onload = function () {
   if (flexBox == true && _main.clientWidth >= 426)
     offset = 5550;
   else offset = 1050;
-  adj = menu.slice();
-  randomizeAssets(adj);
 
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;

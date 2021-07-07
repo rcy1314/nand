@@ -384,6 +384,7 @@ let progressBackDrop = function (done) {
 let populateAssets = function () {
   let media;
   _toggle.style.display = `none`;
+  _visit.style.display = `none`;
   _sb.style.display = `none`;
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
@@ -394,25 +395,6 @@ let populateAssets = function () {
   )
     groupBuild();
   let result = document.querySelector(`.result`);
-  if (
-    id &&
-    id != 0 &&
-    !location.href.match(`\\?q=`)
-  ) {
-    if (menu[id].media == true)
-      media = `<div class='media' style='display:none'>Images</div>`;
-    else media = `<div class='blank'></div>`;
-    result.append(
-      categoryBuild(
-        menu[id].id.match(/[^\/]+$/g),
-        menu.indexOf(menu[id]),
-        menu[id].image.image(),
-        menu[id].hash,
-        menu[id].description,
-        media
-      )
-    );
-  }
   for (
     let i = 1;
     i <= adj.length - 1;
@@ -421,7 +403,6 @@ let populateAssets = function () {
     if (adj[i].media == true)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
-    if (onlyImages == true) {
       if (
         id != menu.indexOf(adj[i]) &&
         adj[i].media == true
@@ -437,26 +418,7 @@ let populateAssets = function () {
           )
         );
       }
-    } else if (onlyImages == false) {
-      if (
-        id !=
-        menu.indexOf(
-          adj[i]
-        )
-      ) {
-        result.append(
-          categoryBuild(
-            adj[i].id.match(/[^\/]+$/g),
-            adj.indexOf(adj[i]),
-            adj[i].image.image(),
-            adj[i].hash,
-            adj[i].description,
-            media
-          )
-        );
-      }
     }
-  }
   displayDescription(showDescription);
   topMenuBarDisplay(topBar);
   unloading();
@@ -633,7 +595,7 @@ let filterInputResponse = function (filterURI) {
             description[i]
           )
         );
-    populateCategoryGroup(description[0].category);
+    populateAssets();
     displayDescription(showDescription);
     displayExpand(expand);
     unloading();

@@ -183,4 +183,8 @@ setTimeout(function() {
   if (topBarBackdrop == true)
     _top.style.cssText = `backdrop-filter: blur(10px)`
   _container.style.display = `block`;
+
+  adj = menu.slice();
+  randomizeAssets(adj);
+
 }, 100)
