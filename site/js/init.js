@@ -136,7 +136,7 @@ setTimeout(function() {
   )
     _check.style.visibility = `visible`;
 
-  if (_main.clientWidth <= 425) {
+  if (window.clientWidth <= 425) {
     setTimeout(
       function () {
         guideOnScreen = onScreen;
