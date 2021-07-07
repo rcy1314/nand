@@ -5,12 +5,6 @@ window.onload = function () {
   else offset = 1050;
   adj = menu.slice();
   randomizeAssets(adj);
-  if (quickFeedsTranslations == true)
-    quickFeedAsset(7);
-  else if (_main.clientWidth <= 425)
-    quickFeedAsset(24);
-  else quickFeedAsset(8);
-  quickFeedDisplay(quickFeeds);
 
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;

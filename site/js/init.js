@@ -147,6 +147,12 @@ setTimeout(function() {
       },
     250)
   }
+  if (quickFeedsTranslations == true)
+    quickFeedAsset(7);
+  else if (_main.clientWidth <= 425)
+    quickFeedAsset(24);
+  else quickFeedAsset(8);
+  quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
     appendSideBarLists(`#content`, `cat`, translations);
   appendSideBarLists(`#content`, `sel`, selections);
