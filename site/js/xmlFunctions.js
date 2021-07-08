@@ -973,7 +973,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             );
             if (
               youtubeMedia == false &&
-              category == `Youtube`
+              menu[id].id.match(/Youtube/g)
             )
               itemContainer.style.paddingBottom = `56.25%`;
             itemImage.setAttribute(`src`, e.target.result);
