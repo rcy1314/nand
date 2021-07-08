@@ -155,8 +155,8 @@ document.addEventListener(
       if (
         document.body.contains(
           _main.querySelector(`#xml`)
-        )
       )
+    )
         _main.querySelector(`#xml`).remove();
       if (
         document.body.contains(
@@ -164,7 +164,9 @@ document.addEventListener(
         )
       )
         _main.querySelector(`#group`).remove();
-      filterInputResponse(event.target.innerHTML)
+      if (event.target.getAttribute(`aria-item`) === -1)
+        filterInputResponse(event.target.innerHTML)
+      else xmlRequestParsing(event.target.getAttribute(`aria-item`))
       _toggle.style.display = `none`;
     }
     else if (

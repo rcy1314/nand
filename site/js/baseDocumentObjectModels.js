@@ -174,6 +174,12 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
       Arrays[i].class
     );
     if (
+      Class == `feed`
+    ) option.setAttribute(
+        `aria-item`,
+        menu.findIndex((item) => item.id === Arrays[i])
+      )
+    if (
       Class == `background` ||
       Class == `sel`
     )
