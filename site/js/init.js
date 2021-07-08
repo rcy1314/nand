@@ -199,6 +199,6 @@ setTimeout(function() {
 
   if (flexBox == true) sideScroll = false;
 
-  offset = 1500;
+  offset = 2500;
 
 }, 100)
