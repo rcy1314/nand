@@ -1316,7 +1316,6 @@ var xmlRequestParsing = function (index) {
           else if (hash == `title`)
             share =
             `${location.href.split(`?`)[0]}?${uri}-${share}`;
-
           let src = xmlImageSource(data);
 
           let courtesy = courtesyBuild(
@@ -1384,7 +1383,7 @@ var xmlRequestParsing = function (index) {
           }
           pub.push({
             title: title,
-            enc: parse.cyrb53.slice(0, parse.cyrb53.length - 10),
+            enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
             re: parse.externalURI,
             courtesy: courtesy,
             since: parse.since,

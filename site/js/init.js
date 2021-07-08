@@ -25,7 +25,7 @@ setTimeout(function() {
     let uri = location.href.split(`?`)[1];
     id =
       uri.slice(
-        uri.length - 9,
+        uri.length - 16,
         uri.length
       );
     if (
@@ -58,12 +58,20 @@ setTimeout(function() {
         },
       250);
     } else if (
-      id.match(/[0-9]/g)
+      uri.slice(
+        uri.length - 16,
+        uri.length
+      ).match(/[a-z0-9]/g)
     ) {
+      id =
+        uri.slice(
+          uri.length - 16,
+          uri.length
+        );
       post =
         uri.slice(
           0,
-          uri.length - 10
+          uri.length - 17
         );
       setTimeout(
         function () {
@@ -192,5 +200,5 @@ setTimeout(function() {
   if (flexBox == true) sideScroll = false;
 
   offset = 1500;
-  
+
 }, 100)

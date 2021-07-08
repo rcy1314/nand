@@ -171,7 +171,10 @@
           script.onload = (function () {
             let startup = setInterval(function () {
               setTimeout(function () {
-                if (typeof menu === `array`) {
+                if (typeof menu === `object`) {
+                  for (let i = 0; i <= menu.length - 1; i++) {
+                    menu[i][`title`] = cyrb53(i.toString())
+                  }
                   clearInterval(startup);
                 }
               }, 25);
