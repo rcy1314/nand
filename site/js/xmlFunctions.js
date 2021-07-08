@@ -1131,6 +1131,7 @@ var xmlAppendPublication = function (id) {
     if (
       sideScroll == false &&
       touchmove == true &&
+      Reader == false &&
       first == true
     ) {
       scrollToElm(
@@ -1141,6 +1142,7 @@ var xmlAppendPublication = function (id) {
       );
     } else if (
       sideScroll == true &&
+      Reader == false &&
       first == false
     ) {
       touchmove = true;
