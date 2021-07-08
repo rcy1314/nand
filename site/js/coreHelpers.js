@@ -110,9 +110,9 @@ var anyRandomMenuObject = function () {
         )
       );
     else if (
-      menu[i].media == true
+      menu[i].media == true &&
       onlyImages == true &&
-      menu[i] &&
+      menu[i]
     )
       random.push(menu.indexOf(menu[i]));
     else if (onlyImages == false)

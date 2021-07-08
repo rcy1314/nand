@@ -93,7 +93,7 @@ let flexBox = true;
 
 */
 
-let sideScroll = false;
+let sideScroll = true;
 
 /*
     Reader [boolean/integer]
