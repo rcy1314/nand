@@ -972,6 +972,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               newImg
             );
             if (
+              flexBox == false &&
               youtubeMedia == false &&
               menu[id].id.match(/Youtube/g)
             )
