@@ -133,7 +133,7 @@ document.addEventListener('scroll', (evt) => {
     		// Run the callback
         touchmove = true;
 
-    	}, 4000);
+    	}, 7500);
       if (
         (
           _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&

@@ -1130,7 +1130,8 @@ var xmlAppendPublication = function (id) {
   ) {
     if (
       sideScroll == false &&
-      touchmove == true
+      touchmove == true &&
+      first == true
     ) {
       scrollToElm(
         touchmove,
@@ -1140,7 +1141,7 @@ var xmlAppendPublication = function (id) {
       );
     } else if (
       sideScroll == true &&
-      first != true
+      first == false
     ) {
       touchmove = true;
       sideScrollToElm(touchmove,
