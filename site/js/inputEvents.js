@@ -253,8 +253,8 @@ document.addEventListener('submit', (evt) => {
           document.body.contains
           (
             document.querySelector(`[aria-object='${_match.querySelector(`.hover`).getAttribute(`aria-item`)}']`)
-          )
-        ) || flexBox == false
+          ) || flexBox == false
+        )
           _main.querySelector(`#xml`).remove();
         else if (
             document.body.contains(
