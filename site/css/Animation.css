@@ -149,36 +149,6 @@
 .circle:nth-child(4) {  animation-delay: 720ms; }
 .circle:nth-child(5) {  animation-delay: 960ms; }
 
-.dot {
-	position: absolute;
-  border-radius: 50%;
-	font-size: 25px;
-}
-
-.dot .one {
-  color: var(--loader-color);
-  animation-delay: 0s;
-  border-radius: 50%;
-}
-
-.dot .two {
-  color: var(--loader-color);
-  animation-delay: 100ms;
-  border-radius: 50%;
-}
-
-.dot .three {
-  color: var(--loader-color);
-  animation-delay: 200ms;
-  border-radius: 50%;
-}
-
-.dot .four {
-  color: var(--loader-color);
-  animation-delay: 300ms;
-  border-radius: 50%;
-}
-
 .double-circle::before {
   animation: circle-inner var(--animation-duration, 4s) infinite linear ;
   border: var(--line-width, 4px) solid transparent;
