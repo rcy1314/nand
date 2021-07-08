@@ -795,11 +795,11 @@ const settings = [
   { name: `Progress`, class: `Dots` },
   { name: `Flex Box`, class: `flexBox` },
   { name: `Safe Search`, class: `safeSearch` },
+  { name: `Crop Images`, class: `cropImages` },
   { name: `Only Images`, class: `onlyImages` },
   { name: `Asset Images`, class: `feedImages` },
-  { name: `Youtube Media`, class: `youtubeMedia` },
-  { name: `Crop Images`, class: `cropImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
+  { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
 ];

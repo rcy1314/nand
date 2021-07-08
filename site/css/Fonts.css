@@ -360,6 +360,25 @@
   z-index: 1;
 }
 
+.fa-splotch {
+  margin-top: -18px !important;
+  font-weight: 900 !important;
+  color: var(--fill-color);
+  position: relative;
+  font-size: 11px;
+  float: right;
+  height: 15px;
+  width: 15px;
+  z-index: -1;
+  right: 0;
+}
+
+.fa-splotch {
+  font-family: "Font Awesome 5 Pro";
+  pointer-events: auto;
+  content: "\f068";
+}
+
 .fa-sun {
   font-family: "Font Awesome 5 Pro";
   content: "\f185";
