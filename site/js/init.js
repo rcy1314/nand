@@ -188,10 +188,9 @@ setTimeout(function() {
   randomizeAssets(adj);
 
   if (_main.clientWidth <= 425) flexBox = false;
-  if (flexBox == true && _main.clientWidth >= 426)
-    offset = 3550;
-  else offset = 1050;
 
   if (flexBox == true) sideScroll = false;
 
+  offset = 1500;
+  
 }, 100)
