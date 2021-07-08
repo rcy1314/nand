@@ -296,6 +296,7 @@ document.addEventListener('submit', (evt) => {
         _show.style.visibility = `visible`;
         _link.style.visibility = `visible`;
         _first.style.display = `none`;
+        topMenuBarDisplay(topBar);
         xmlRequestParsing(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
