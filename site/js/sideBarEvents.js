@@ -456,7 +456,7 @@ document.addEventListener(
       event.target.classList.contains(`sideHome`) ||
       event.target.classList.contains(`side`)
     ) {
-      _sb.style.display = `block`;
+      if (_sidebar.style.left == 0) _sb.style.display = `block`;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (
         document.body.contains(

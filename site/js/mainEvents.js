@@ -545,7 +545,7 @@ document.addEventListener('click', (evt) => {
         )
       )
         _main.querySelector(`#group`).remove();
-      if (_sidebar.style.left = 0) _sb.style.display = `block`;
+      if (_sidebar.style.left == 0) _sb.style.display = `block`;
       if (quickFeeds == false)
         _show.style.visibility = `visible`;
       _label.style.visibility = `visible`;
@@ -558,7 +558,6 @@ document.addEventListener('click', (evt) => {
       quickFeedDisplay(quickFeeds);
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
-      document.title = ``;
       main.setAttribute(`tabindex`, -1);
       main.focus();
     }
