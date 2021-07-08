@@ -1,6 +1,6 @@
 {
-  "name": "acktic",
-  "version": "3.4.9726",
+  "name": "acktic.github.io",
+  "version": "0.7.0",
   "description": "Just Read",
   "main": "app.js",
   "scripts": {
@@ -20,5 +20,6 @@
     "express": "^4.17.1",
     "open": "^8.2.1",
     "web": "^0.0.2"
-  }
+  },
+  "devDependencies": {}
 }
