@@ -73,7 +73,7 @@
   display: flex;
   height: 5em;
   width: 100%;
-  top: 50px;
+  top: 150px;
   order: 2;
 }
 
@@ -453,10 +453,6 @@
   color: var(--fill-color);
   position: relative;
   margin-left: 12px;
-}
-
-.wrap {
-  height: 125px;
 }
 
 #xml {
