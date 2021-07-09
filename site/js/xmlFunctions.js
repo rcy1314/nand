@@ -1156,7 +1156,12 @@ var xmlRequestParsing = function (index) {
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
   if (readPrevious == false) random = [];
-  if (first == true) stageXML();
+  if (
+    !document.body.contains(
+      _channel.querySelector(`.item`)
+    ) &&
+    first == true
+  ) stageXML();
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
   _visit.style.display = `none`;

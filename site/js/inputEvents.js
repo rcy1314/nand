@@ -68,17 +68,10 @@ document.addEventListener('click', (evt) => {
         document.querySelector(`[aria-object='${_match.querySelector(`.hover`).getAttribute(`aria-item`)}']`)
       ) || flexBox == false
     )
-      _main.querySelector(`#xml`).remove();
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove();
+      touchmove = true;
         xmlRequestParsing(
           event.target.closest(`.index`).getAttribute(`aria-item`)
         );
-        touchmove = true;
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
       _match.style.display = `none`;
@@ -199,18 +192,7 @@ document.addEventListener('submit', (evt) => {
       if (
         _sidebar.querySelector(`.sideFilter`).value.length
       ) {
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        _main.querySelector(`#group`).remove();
+        stageGroup();
         filterInputResponse(
           _sidebar.querySelector(`.sideFilter`).value.space(),
         );
@@ -226,18 +208,7 @@ document.addEventListener('submit', (evt) => {
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         )
       ) {
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove();
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          document.querySelector(`#group`).remove();
+        stageGroup();
         category = _match.querySelector(`.hover`).getAttribute(`aria-item`);
         if (expand == true) var groupType = `list`;
         else var groupType = `blocks`;
@@ -249,19 +220,6 @@ document.addEventListener('submit', (evt) => {
           _match.querySelector(`.hover`)
         )
       ) {
-        if (
-          document.body.contains
-          (
-            document.querySelector(`[aria-object='${_match.querySelector(`.hover`).getAttribute(`aria-item`)}']`)
-          ) || flexBox == false
-        )
-          _main.querySelector(`#xml`).remove();
-        else if (
-            document.body.contains(
-              _main.querySelector(`#group`)
-            )
-          )
-            _main.querySelector(`#group`).remove();
           touchmove = true;
           xmlRequestParsing(
             _match.querySelector(`.hover`).getAttribute(`aria-item`)
@@ -269,18 +227,6 @@ document.addEventListener('submit', (evt) => {
         _match.style.display = `none`;
       } else if (_view.value.length) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove();
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove();
         filterInputResponse(_view.value);
       }
       _match.style.display = `none`;
