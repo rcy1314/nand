@@ -1,25 +1,16 @@
 var init = function () {
-  if (
-    document.body.contains(
-      _main.querySelector(`#group`)
-    )
-  )
-    _main.querySelector(`#group`).remove();
   if (loading == `dots`) {
     _progress.style.width = `0%`;
-    _container.querySelector(`#dots`).style.zIndex = `12`;
-    _container
-      .querySelectorAll(`#dots .fill`)
+    _dots.style.zIndex = `12`;
+    dots.querySelectorAll(`.fill`)
       .forEach(
         (a) => (a.style.zIndex = `12`)
       );
-    _container
-      .querySelectorAll(`#dots .fill`)
+    _dots.querySelectorAll(`.fill`)
       .forEach(
         (a) => a.classList.add(`dots`)
       );
-    _container
-      .querySelectorAll(`#dots .fill`)
+    _dots.querySelectorAll(`.fill`)
       .forEach(
         (a) => a.style.visibility = `visible`
       );
@@ -30,13 +21,11 @@ var init = function () {
 
 var unloading = function () {
   if (loading == `dots`) {
-    _container
-      .querySelectorAll(`#dots .fill`)
+    _dots.querySelectorAll(`.fill`)
       .forEach(
         (a) => a.classList.remove(`dots`)
       );
-    _container
-      .querySelectorAll(`#dots .fill`)
+    _dots.querySelectorAll(`.fill`)
       .forEach(
         (a) => a.style.visibility = `hidden`
       );
@@ -235,6 +224,21 @@ function sideScrollTo(
 function easeInOutQuad(t) {
   return t<.5 ? 2*t*t : -1+(4-2*t)*t
 };
+
+var forward = function (id) {
+  let next = parseInt(id) + +1
+  if (menu[next])
+    return parseInt(next);
+  else return 1
+};
+
+var back = function (id) {
+  let back = parseInt(id) - +1
+  if (menu[back])
+    return parseInt(back);
+  else return menu.length - 1
+};
+
 
 String.prototype.zulu = function () {
   var opt = {

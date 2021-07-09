@@ -6,6 +6,12 @@
 
     const _bar = document.querySelector(`.bar`);
 
+    const _air = document.querySelector(`.air`);
+
+    const _xml = document.getElementById(`xml`);
+
+    const _dot = document.getElementById(`dots`);
+
     const _min = document.querySelector(`.hide`);
 
     const _html = document.querySelector(`html`);
@@ -26,6 +32,8 @@
 
     const _visit = document.getElementById(`visit`);
 
+    const _group = document.getElementById(`group`);
+
     const _check = document.getElementById(`check`);
 
     const _guest = document.getElementById(`guest`);
@@ -42,6 +50,12 @@
 
     const _quick = document.getElementById(`quick`);
 
+    const _status = document.querySelector(`.status`);
+
+    const _result = document.querySelector(`.result`);
+
+    const _center = document.querySelector(`.center`);
+
     const _toggle = document.getElementById(`toggle`);
 
     const _notify = document.getElementById(`notify`);
@@ -50,10 +64,16 @@
 
     const _options = document.getElementById(`options`);
 
+    const _display = document.querySelector(`.content`);
+
     const _content = document.getElementById(`content`);
 
     const _sidebar = document.getElementById(`sidebar`);
 
+    const _channel = document.querySelector(`.channel`);
+
     const _container = document.getElementById(`container`);
 
     const _progress = document.getElementById(`progressBar`);
+
+    const _suggestions = document.querySelector(`.suggestions`);

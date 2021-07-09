@@ -1,22 +1,3 @@
-var xmlChannelFooter = function (id) {
-  if (document.body.contains(_main.querySelector(`.center`)))
-    _main.querySelector(`.channel`).append(footerBuild(id));
-};
-
-var forward = function (id) {
-  let next = parseInt(id) + +1
-  if (menu[next])
-    return parseInt(next);
-  else return 1
-};
-
-var back = function (id) {
-  let back = parseInt(id) - +1
-  if (menu[back])
-    return parseInt(back);
-  else return menu.length - 1
-};
-
 var guideDisplay = function (pubArray) {
   _guide.innerHTML = `
   <svg class='checkmark' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'>
@@ -56,38 +37,18 @@ var contentStatusDisplay = function (
   oldestPost,
   postsCount
 ) {
-  if (
-    document.body.contains(
-      _main.querySelector(`#xml .status`)
-    )
-  ) {
     let status = _main.querySelector(`#xml .status`);
-    status.append(
+    _status.append(
       contentBuild(
         oldestPost,
         recentPost,
         postsCount,
         menuIndex)
       );
-  }
-  displayDescription(showDescription);
 };
 
 var xmlStatusSuggestions = function () {
   let duplicate = [];
-  if (
-    document.body.contains(
-      _main.querySelector(`.suggestions`)
-    )
-  ) {
-    let suggestions = _main.querySelector(`.suggestions`);
-    if (
-      document.body.contains(
-        _main.querySelector(`.combine`)
-      )
-    )
-      while (suggestions.firstChild)
-        suggestions.removeChild(suggestions.lastChild);
     for (
       let i = 1;
       i <= contentStatusBuffer;
@@ -118,7 +79,7 @@ var xmlStatusSuggestions = function () {
         )
           var media = `feed might not contain images`;
         duplicate.push(randomMenuObject);
-        suggestions.append(
+        _suggestions.append(
           suggestBuild(
             media,
             menu.indexOf(menu[randomMenuObject]),
@@ -129,8 +90,7 @@ var xmlStatusSuggestions = function () {
         );
       }
     }
-  }
-};
+  };
 
 var guideImageAttributes = function (pubArray) {
   let maximum = 480;
@@ -263,15 +223,11 @@ var guideImageAttributes = function (pubArray) {
       }
       if (
         youtubeMedia == false &&
-        category == `Youtube`
+        menu[id].id.match(/Youtube/g)
       ) {
       _guide
         .querySelectorAll(
-          `
-            [aria-item='${pubArray.menuObject}']
-            [aria-object='${pubArray.pubIndex}']
-            .image
-            `
+          `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
         ).forEach(
           (a) => a.style.height = `269px`
         );
@@ -1011,7 +967,6 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         ).remove();
       } else {
-        itemContainer.style.height = `0px`;
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
@@ -1024,13 +979,15 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
 var xmlTitleParsing = function (xhr) {
   if (xhr.getElementsByTagName(`title`)[0].childNodes[1])
     var title = xhr.getElementsByTagName(`title`)[0].childNodes[1].nodeValue;
-  else var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
-  if ( // <[CDATA Title]> fix
-    !title ||
-    (
+  else if (xhr.getElementsByTagName(`title`)[0].childNodes[0])
+    var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
+  if (
+    !title
+    )
+    var title = ``;
+  else if  ( // <[CDATA Title]> fix
       xhr.getElementsByTagName(`title`)[0].childNodes[0] &&
       title.length == 7
-    )
   )
     var title = xhr.getElementsByTagName(`title`)[0].childNodes[0].nodeValue;
 
@@ -1057,37 +1014,22 @@ var xmlAppendPublication = function (id) {
       i != local
     ) {
       let channel = document.createElement(`div`);
-      channel.classList.add(`channel`);
-      channel.style.position = `fixed`;
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      ) {
-        let append = _main.querySelectorAll(`.channel`);
-        append[append.length - 1].append(pub[i].post)
+        _channel.append(pub[i].post)
         images.push(
           {
             element: pub[i].element,
             src: pub[i].src
           }
         );
-      }
     } else if (omitGuide == false) {
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      ) {
         let append = _main.querySelectorAll(`.channel`);
-        append[append.length - 1].append(pub[i].post)
+        _channel.append(pub[i].post)
         images.push(
           {
             element: pub[i].element,
             src: pub[i].src
           }
         );
-      }
     }
   }
   if (
@@ -1126,7 +1068,7 @@ var xmlAppendPublication = function (id) {
   }
   if (
     document.body.contains(
-      _main.querySelector(`#xml`)
+      _xml
     )
   ) {
     if (
@@ -1158,17 +1100,6 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
-    if (
-      document.body.contains(
-        _main.querySelector(`.content`)
-      )
-    ) {
-      var status = document.querySelector(`.status`);
-      while (status.firstChild) status.removeChild(status.lastChild);
-      var suggestions = document.querySelector(`.suggestions`);
-      while (suggestions.firstChild)
-        suggestions.removeChild(suggestions.lastChild);
-    }
   }
   if (
     pub.length > 1 &&
@@ -1178,11 +1109,6 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
   }
-  if (
-    document.body.contains(
-      _main.querySelector(`#xml`)
-    )
-  ) {
     if (
       flexBox == true
     ) displayFlex(displayFlex);
@@ -1200,18 +1126,18 @@ var xmlAppendPublication = function (id) {
     }
     if (showSplash == true) _check.style.display = `none`;
     if (flexBox == false)
-      document.querySelector(`.channel`).append(
+      _channel.append(
         footerBuild(id)
       );
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
+    first = true;
     local = null;
     stop = false;
     images = [];
     post = null;
     unloading();
-  }
 }
 
 var xmlRequestParsing = function (index) {
@@ -1230,15 +1156,7 @@ var xmlRequestParsing = function (index) {
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
   if (readPrevious == false) random = [];
-  if (
-    !document.body.contains(
-      _main.querySelector(`#group`)
-    ) &&
-    !document.body.contains(
-      _main.querySelector(`#xml`)
-    )
-  )
-    _main.append(stageBuild());
+  if (first == true) stageXML();
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
   _visit.style.display = `none`;
@@ -1253,11 +1171,7 @@ var xmlRequestParsing = function (index) {
     showSplash == true
   )
     _check.style.display = `block`;
-    if (
-      !document.body.contains(
-        _main.querySelector(`#group`)
-      )
-    ) httpRequest = new XMLHttpRequest();
+  httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = function () {
     if (httpRequest.readyState == 4) {
       // 4 = `loaded`
@@ -1485,20 +1399,8 @@ var xmlRequestParsing = function (index) {
         }
       } else {
         if (showSplash == true) _check.style.display = `none`;
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove()
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove()
+        stageGroup();
         populateCategoryGroup(category);
-        displayDescription(showDescription);
         topMenuBarDisplay(topBar);
         displayExpand(expand);
         unloading();

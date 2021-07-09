@@ -1,24 +1,4 @@
 setTimeout(function () {
-  if (expandBackground == true)
-    document.querySelector(`.bg`).style.height = `${
-      (background.length + 1) * 35
-    }px`;
-  if (expandSettings == true)
-    document.querySelector(`.set`).style.height = `${
-      (settings.length + 1) * 35
-    }px`;
-  if (expandFavorites == true)
-    document.querySelector(`.fav`).style.height = `${
-      (favorites.length + 1) * 35
-    }px`;
-  if (expandVisual == true)
-    document.querySelector(`.themes`).style.height = `${
-      (themes.length + 1) * 35
-    }px`;
-  if (expandFilter == true)
-    document.querySelector(`.exclude`).style.height = `${
-      exclude.length * 34.25 + 75
-    }px`;
     _guide.addEventListener('touchstart', (evt) => {
         touchstartX = evt.changedTouches[0].screenX
         touchstartY = evt.changedTouches[0].screenY;
@@ -133,13 +113,11 @@ document.addEventListener(
         )
         document.querySelector(`#bottom`).remove();
       } else if (!flexBox) {
-        document.querySelector(`.center`).style.cssText =
-          `display: inline-block`;
-        document.querySelector(`.channel`).style.height =
-          `fit-content`
-        document.querySelector(`.content`).style.display = `inline-block`;
-        document.querySelector(`.channel`).classList.remove(`flexbox`);
-        document
+        _center.style.cssText = `display: inline-block`;
+        _channel.style.height = `fit-content`
+        _xmlContent.style.display = `inline-block`;
+        _channel.classList.remove(`flexbox`);
+        _channel
           .querySelectorAll(`.item`)
           .forEach(
             (a) => a.classList.remove(`flexbox`)
@@ -152,45 +130,10 @@ document.addEventListener(
         `feed`
       )
     ) {
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-      )
-    )
-        _main.querySelector(`#xml`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        _main.querySelector(`#group`).remove();
       if (event.target.getAttribute(`aria-item`) === -1)
         filterInputResponse(event.target.innerHTML)
       else xmlRequestParsing(event.target.getAttribute(`aria-item`))
       _toggle.style.display = `none`;
-    }
-    else if (
-      event.target.classList.contains(
-        `youtubeMedia`
-      )
-    ) {
-      youtubeMedia = youtubeMedia != true;
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      ) {
-        if (
-          menu[id].id.match(
-            /Youtube/g
-          )
-        ) {
-          init();
-          _main.querySelector(`#xml`).remove();
-          xmlRequestParsing(id);
-        }
-      }
-      sideBarStar(event.target, youtubeMedia);
     }
     else if (
       event.target.classList.contains(
@@ -417,26 +360,13 @@ document.addEventListener(
       )
     ) {
       first = true;
+      stageGroup();
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       category = event.target.getAttribute(`aria-item`);
       if (Reader == true) xmlRequestParsing(anyRandomMenuObject());
       else {
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          document.querySelector(`#xml`).remove();
-        if (
-          document.body.contains(
-            _main.querySelector(
-              `#group`
-            )
-          )
-        )
-          _main.querySelector(`#group`).remove();
         _toggle.style.display = `none`;
         _visit.style.display = `none`;
         location.pathname.state();
@@ -446,7 +376,6 @@ document.addEventListener(
         topMenuBarDisplay(topBar);
         displayExpand(expand);
       }
-      document.title = category
     }
     else if (
       (
@@ -458,30 +387,19 @@ document.addEventListener(
     ) {
       if (_sidebar.style.left == 0) _sb.style.display = `block`;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        _main.querySelector(`#xml`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        _main.querySelector(`#group`).remove();
       if (quickFeeds == false) _show.style.visibility = `visible`;
       _label.style.visibility = `visible`;
       _quick.style.visibility = `visible`;
       _link.style.visibility = `visible`;
       _visit.style.visibility = `visible`;
       _toggle.style.display = `block`;
+      _group.style.display = `none`;
       _first.style.display = `none`;
       _visit.style.display = `flex`;
       quickFeedDisplay(quickFeeds);
+      _xml.style.display = `none`;
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
-      document.title = ``;
       main.setAttribute(`tabindex`, -1);
       main.focus();
     }
@@ -556,7 +474,7 @@ document.addEventListener(
         _sidebar.querySelector(`.bg`).style.height = `31px`;
       } else if (expandBackground == true) {
         _sidebar.querySelector(`.bg`).style.height =
-          `${(background.length + 1) * 34 + 48}px`;
+          `${(background.length + 1) * 35 + 35}px`;
       }
     }
     else if (
@@ -569,7 +487,7 @@ document.addEventListener(
         _sidebar.querySelector(`.set`).style.height = `31px`;
       } else if (expandSettings == true) {
         _sidebar.querySelector(`.set`).style.height =
-          `${(settings.length) * 35}px`;
+          `${(settings.length) * 36}px`;
       }
     }
     else if (
@@ -577,21 +495,10 @@ document.addEventListener(
         `List`
       )
     ) {
+      stageGroup();
       expand = true;
       groupType = `list`;
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        document.querySelector(`#group`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        _main.querySelector(`#xml`).remove();
-        sideBarStar(document.querySelector(`.Blocks`), false);
+      sideBarStar(document.querySelector(`.Blocks`), false);
       populateCategoryGroup(category);
       sideBarStar(event.target, List);
       topMenuBarDisplay(topBar);
@@ -601,20 +508,9 @@ document.addEventListener(
         `Blocks`
       )
     ) {
+      stageGroup();
       expand = false;
       groupType = `blocks`;
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        _main.querySelector(`#group`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        _main.querySelector(`#xml`).remove();
       sideBarStar(document.querySelector(`.List`), false);
       sideBarStar(event.target, true);
       populateCategoryGroup(category);
@@ -735,60 +631,6 @@ document.addEventListener(
     }
     else if (
       event.target.classList.contains(
-        `onlyImages`
-      )
-    ) {
-      onlyImages = onlyImages != true;
-      if (onlyImages == false) notifyOption(`Images`, `fa-times-circle`);
-      if (onlyImages == true) notifyOption(`Images`, `fa-check-circle`);
-      sideBarStar(document.querySelector(`.onlyImages`), onlyImages);
-        _visit.style.display = `none`;
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove();
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove();
-        populateCategoryGroup(category);
-        topMenuBarDisplay(topBar);
-        displayExpand(expand);
-        unloading();
-    }
-    else if (
-      event.target.classList.contains(
-        `feedImages`
-      )
-    ) {
-      feedImages = feedImages != true;
-      sideBarStar(document.querySelector(`.feedImages`), feedImages);
-      if (
-        feedImages == true &&
-        id
-      ) {
-        init();
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          document.querySelector(`#xml`).remove();
-        xmlRequestParsing(id);
-      } else if (feedImages == false) {
-        document
-          .querySelectorAll(`.image`)
-          .forEach(
-            (a) => a.remove()
-          );
-      }
-    }
-    else if (
-      event.target.classList.contains(
         `Percent`
       )
     ) {
@@ -799,43 +641,13 @@ document.addEventListener(
     else if (
       event.target.classList.contains(
         `fa-user-cog`
-      ) ||
-      event.target.classList.contains(
-        `safeSearch`
       )
   ) {
       safeSearch = safeSearch != true;
-      if (
-        safeSearch == true
-      ) {
-        sideBarStar(document.querySelector(`.safeSearch`), true);
+      if (safeSearch)
         notifyOption(`Safe Search`, `fa-check-circle`);
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        document
-          .querySelectorAll(`.filterBlur`)
-          .forEach(
-            (a) => a.classList.add(`blur`)
-          );
-      } else if (
-        safeSearch == false
-      ) {
-        sideBarStar(document.querySelector(`.safeSearch`), false);
+      else if (!safeSearch)
         notifyOption(`Safe Search`, `fa-times-circle`);
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-        _main
-          .querySelectorAll(`.filterBlur`)
-          .forEach(
-            (a) => a.classList.remove(`blur`)
-          );
-      }
     }
     if (
       event.target.classList.contains(
@@ -853,22 +665,22 @@ document.addEventListener(
       } else if (fadeIntoView == true) {
         if (
           document.body.contains(
-            _main.querySelector(`#xml`)
+            _channel.querySelector(`.img`)
           )
         ) {
-          _main
+          _channel
             .querySelectorAll(`.img`)
             .forEach(
               (a) => a.classList.remove(`fade-in-element`)
             );
-          _main
+          _channel
             .querySelectorAll(`.img`)
             .forEach(
               (a) => a.classList.add(`hidden`)
             );
           (function () {
             function startPosition() {
-              let elements = _main.querySelectorAll(".img");
+              let elements = _channel.querySelectorAll(".img");
               for (var i = 0; i < elements.length - 1; i++) {
                 if (
                   elements[i].getBoundingClientRect().top - _main.clientHeight <= 0

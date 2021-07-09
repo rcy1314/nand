@@ -115,8 +115,8 @@ document.addEventListener('touchend', (evt) => {
   { passive: true }
 );
 document.addEventListener('wheel', (e) => {
-  if (document.body.contains(document.querySelector(`.channel`)))
-    document.querySelector('.channel').scrollLeft += e.deltaY /4;
+  if (document.body.contains(_channel))
+    _channel.scrollLeft += e.deltaY /4;
 })
 document.addEventListener('scroll', (evt) => {
     if (
@@ -143,19 +143,17 @@ document.addEventListener('scroll', (evt) => {
         ) ||
         (
           sideScroll == true &&
-          _main.querySelector(`.channel`).scrollWidth -
-          _main.querySelector(`.channel`).scrollLeft -
-          _main.querySelector(`.channel`).clientWidth <=
-          _main.querySelector(`.channel`).clientWidth &&
+          _channel.scrollWidth -
+          _channel.scrollLeft -
+          _channel.clientWidth <=
+          _channel.clientWidth &&
           Reader == true &&
           stop == false
         )
       ) {
         stop = true;
         first = false;
-        if (showSplash == true) {
-          _check.style.display = `block`;
-        }
+        if (showSplash == true) _check.style.display = `block`;
         xmlRequestParsing(anyRandomMenuObject());
       }
     }
@@ -392,29 +390,28 @@ document.addEventListener('click', (evt) => {
     ) {
       _visit.style.display = `none`;
       topMenuBarDisplay(topBar);
-      first = true;
       Reader = Reader != true;
       if (Reader == false) {
+        onlyImages = onlyImagesBuffer;
         notifyOption(`Reading`, `fa-times-circle`);
-        first = true;
         _main
           .querySelectorAll(`.joi`)
           .forEach(
             (a) => a.classList.remove(`luv`)
           );
+        _channel.append(footerBuild(id));
       } else if (Reader == true) {
-        first = true;
+        if (
+          document.body.contains(
+            _channel.querySelector(`.item`)
+          )
+        )
+        first = false;
         touchmove = true;
         onlyImages = true;
         randomDuplicate = [];
         notifyOption(`Reading`, `fa-check-circle`);
         if (showSplash == true) _check.style.display = `Block`;
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove();
         if (
           document.body.contains(
             _main.querySelector(`#bottom`)
@@ -472,18 +469,6 @@ document.addEventListener('click', (evt) => {
       evt.target.id == `home`
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        _main.querySelector(`#xml`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        _main.querySelector(`#group`).remove();
       if (_sidebar.style.left == 0) _sb.style.display = `block`;
       if (quickFeeds == false)
         _show.style.visibility = `visible`;
@@ -494,9 +479,12 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `block`;
       _first.style.display = `none`;
       _visit.style.display = `flex`;
+      _group.style.display = `none`;
+      _xml.style.display = `none`;
       quickFeedDisplay(quickFeeds);
       _top.style.display = `none`;
       _feed.scrollLeft = 0;
+      document.title = ``;
       main.setAttribute(`tabindex`, -1);
       main.focus();
     }
@@ -515,23 +503,10 @@ document.addEventListener('click', (evt) => {
         `fa-expand-alt`
       )
     ) {
-      first = true;
       _sb.style.display = `none`;
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        _main.querySelector(`#xml`).remove();
-      if (
-        document.body.contains(
-          _main.querySelector(`#group`)
-        )
-      )
-        return false;
+      stageGroup();
       setTimeout(function () {
-        populateCategoryGroup(category);
-        displayDescription(showDescription);
+        populateAssets();
         topMenuBarDisplay(topBar);
         displayExpand(expand);
         unloading();
@@ -547,11 +522,10 @@ document.addEventListener('click', (evt) => {
         _view.blur();
         return false;
       }
+      first = true;
       xmlRequestParsing(
         evt.target.closest(`.populate`).getAttribute(`aria-item`)
       );
-      _toggle.style.display = `none`;
-      _visit.style.display = `none`;
     }
     else if (
       evt.target.getAttribute(`aria-item`) != `Assets` &&
@@ -564,18 +538,6 @@ document.addEventListener('click', (evt) => {
         xmlRequestParsing(anyRandomMenuObject());
       } else {
         let target = event;
-        if (
-          document.body.contains(
-            _main.querySelector(`#xml`)
-          )
-        )
-          _main.querySelector(`#xml`).remove();
-        if (
-          document.body.contains(
-            _main.querySelector(`#group`)
-          )
-        )
-          _main.querySelector(`#group`).remove();
         populateCategoryGroup(
           evt.target.closest(`.translation`).getAttribute(`aria-item`)
         );
@@ -625,7 +587,6 @@ document.addEventListener('click', (evt) => {
       )
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      evt.target.closest(`#xml`).remove();
         if (location.href.match(`\\?q=`)) {
           var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
           let description = menu.filter(function (item) {
@@ -635,7 +596,6 @@ document.addEventListener('click', (evt) => {
           groupBuild();
           for (i = 0; i <= description.length - 1; i++)
             writeFilterResponse(menu.indexOf(description[i]));
-          displayDescription(showDescription);
           displayExpand(expand);
           populateCategoryGroup(category)
           unloading();
@@ -670,13 +630,7 @@ document.addEventListener('click', (evt) => {
       evt.target.classList.contains(`bold`)
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-      if (
-        document.body.contains(
-          _main.querySelector(`#xml`)
-        )
-      )
-        _main.querySelector(`#xml`).remove();
-      first = true;
+      first = false;
       xmlRequestParsing(
         evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
@@ -710,7 +664,8 @@ document.addEventListener('click', (evt) => {
         )
       )
         _main.querySelector(`#bottom`).remove();
-      toucmove = false;
+      first = false;
+      touchmove = false;
       xmlRequestParsing(
         evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );

@@ -319,19 +319,6 @@ let topBarBackdrop = false;
 let toggleBorders = false;
 
 /*
-    showDescription [boolean/integer]
-
-      Applications
-        content status, list
-
-      Result
-        toggle descriptions.
-
-*/
-
-let showDescription = true;
-
-/*
     sideBarTranslations [boolean/integer]
 
       Applications
@@ -749,7 +736,7 @@ if (expand == true) {
   List = false;
 }
 
-let quit;
+let quit; // xmlRequestParsing pub length
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
@@ -765,24 +752,17 @@ let offset; //touchmove scroll reader
 let adj = []; //menu randomized
 let complete; //progressBar interval
 let images = []; //array of images in request
-let touchmove = false;
-let touchendY = 0;
-let touchstartY = 0;
-let touchendX = 0; //
+let onlyImagesBuffer = onlyImages; // used in Reader
+let touchmove = false; // scrollToElements
+let touchendY = 0; // handleSwip, handleGuide
+let touchstartY = 0; // handleSwip, handleGuide
+let touchendX = 0; // handleSwip, handleGuide
 let touchstartX = 0; // swipe variables
 let contrast = false; //opposite of op +1
 let sideBarFirst = true; //first click show
 let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
-
-const selections = [
-//{ name: `Home`, class: `sideHome`, icon: `fa-home` },
-//{ name: `Random`, class: `Random`, icon: `fa-infinity` },
-//{ name: `Random Image`, class: `RandomImages`, icon: `fa-tablet-alt` },
-//{ name: `Random in Category`, class: `RandomCategory`, icon: `fa-chart-pie` },
-//{ name: `Repository`, class: `Info`, icon: `fa-exclamation-circle` },
-];
 
 const settings = [
   { name: `Ring`, class: `ringloader` },
@@ -793,12 +773,8 @@ const settings = [
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Progress`, class: `Dots` },
-  { name: `Safe Search`, class: `safeSearch` },
   { name: `Crop Images`, class: `cropImages` },
-  { name: `Only Images`, class: `onlyImages` },
-  { name: `Asset Images`, class: `feedImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
-  { name: `Youtube Media`, class: `youtubeMedia` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
 ];

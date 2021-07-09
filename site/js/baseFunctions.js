@@ -227,37 +227,20 @@ let progressBackDrop = function (done) {
   }
   if (
     document.body.contains(
-      _main.querySelector(`#xml`)
+      _channel.querySelector(`.item`)
     )
   ) {
-    _main.querySelector(`#xml`).style.display = `block`;
-      if (
-        Reader == true &&
-        first == true
-      ) {
-        if (
-          _main.innerHeight >=
-          document.querySelector(`#xml .channel`).innerHeight
-        )
-          if (httpRequest.status == 200) {
-            first = false;
-            xmlRequestParsing(
-              anyRandomMenuObject()
-            );
-          }
-      }
     if (
       scrollIntoView == true &&
       first == true
     ) {
-      document.querySelector(`.center`).classList.add(`scroll-into-view`)
-      if (showSplash == true) _check.style.display = `none`;
-    } else if (scrollIntoView == false)
-      document.querySelector(`#xml`).style.top = `60px`;
+      _center.classList.add(`scroll-into-view`)
+    }
+    if (showSplash == true) _check.style.display = `none`;
     if (fadeIntoView == true) {
       (function () {
         function checkPosition() {
-          let elements = document.querySelectorAll(`.image`);
+          let elements = _channel.querySelectorAll(`.image`);
           for (let i = 0; i < elements.length; i++) {
             if (
               sideScroll == false &&
@@ -273,14 +256,14 @@ let progressBackDrop = function (done) {
               sideScroll == true &&
               elements[i].querySelector(`.img`) &&
               elements[i].getBoundingClientRect().left -
-              document.querySelector(`.channel`).clientWidth
-              <= document.querySelector(`.channel`).clientWidth
+              _channel.clientWidth
+              <= _channel.clientWidth
             ) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
             }
             if (fadeIntoView == false) {
-              document
+              _channel
                 .querySelectorAll(`.img`)
                 .forEach(
                   (a) => a.classList.remove(`hidden`)
@@ -290,7 +273,7 @@ let progressBackDrop = function (done) {
             }
           }
         }
-        document.querySelector(`.channel`).addEventListener(
+        _channel.addEventListener(
           `scroll`,
           checkPosition
         );
@@ -303,17 +286,16 @@ let progressBackDrop = function (done) {
             function() {
               checkPosition();
             },
-          500)
+          1000)
         else checkPosition();
       })();
     }
     if (sideScroll == true
     ) {
-      document.querySelector(`.center`).classList.remove(`scroll-into-view`);
-      document.querySelector(`.channel`).classList.add(`sideChannel`);
-      document.querySelector(`.center`).style.top = `60px`;
-      document.querySelector(`#xml`).style.top = 0;
-      _main
+      _center.classList.remove(`scroll-into-view`);
+      _channel.classList.add(`sideChannel`);
+      _center.style.top = `60px`;
+      _channel
         .querySelectorAll(`.item`)
         .forEach(
           (a) => (
@@ -324,60 +306,33 @@ let progressBackDrop = function (done) {
   }
   if (
     document.body.contains(
-      _main.querySelector(`#group`)
+      _group.querySelector(`.populate`)
     )
   ) {
-    if (scrollIntoView == true) {
-      document.querySelector(`.result`).classList.add(`scroll-into-view`)
-      setTimeout(
-        function() {
-          if (
-            document.body.contains(
-              _main.querySelector(`.air`)
-            )
-          )
-            _main.scrollTop = document.querySelector(`.air`).clientHeight;
-          document.querySelector(`#group`).style.top = `-60px`;
-        },
-      25)
-      setTimeout(
-          function() {
-            document.querySelector(`#group`).style.display = `block`;
-          },
-        25
-      )
-    } else if (scrollIntoView == false)
-      document.querySelector(`#group`).style.display = `block`;
-  }
-  if (onlyImages == true)
     if (
-      document.body.contains(
-        _main.querySelector(`.result`)
-      )
-    )
-      _main.scrollTop = 0;
-    if (onlyImages == false) {
+      scrollIntoView == true
+    ) {
+      _result.classList.add(`scroll-into-view`)
       setTimeout(
         function() {
           if (
             document.body.contains(
-              _main.querySelector(`.air`)
+              _air
             )
           )
-            _main.scrollTop = document.querySelector(`.air`).clientHeight;
-        },
-      25)
-      setTimeout(
-        function() {
-          if (
-            document.body.contains(
-              _main.querySelector(`#group`)
-            )
-          )
-            document.querySelector(`#group`).style.display = `block`;
+            _main.scrollTop = _air.clientHeight;
+          _group.style.top = `-60px`;
         },
       25)
     }
+    if (onlyImages == false) {
+      setTimeout(
+        function() {
+          _main.scrollTop = _air.clientHeight;
+        },
+      25)
+    }
+  }
   if (showSplash == true) _check.style.display = `none`;
 };
 
@@ -389,12 +344,24 @@ let populateAssets = function () {
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
   if (
-    !document.body.contains(
-      _main.querySelector(`#group`)
-    )
-  )
-    groupBuild();
-  let result = document.querySelector(`.result`);
+    id &&
+    id != 0 &&
+    !location.href.match(`\\?q=`)
+  ) {
+    if (menu[id].media == true)
+      media = `<div class='media' style='display:none'>Images</div>`;
+    else media = `<div class='blank'></div>`;
+    _result.append(
+      categoryBuild(
+        menu[id].id.match(/[^\/]+$/g),
+        menu.indexOf(menu[id]),
+        menu[id].image.image(),
+        menu[id].hash,
+        menu[id].description,
+        media
+      )
+    );
+  }
   for (
     let i = 1;
     i <= adj.length - 1;
@@ -407,7 +374,7 @@ let populateAssets = function () {
         id != menu.indexOf(adj[i]) &&
         adj[i].media == true
       ) {
-        result.append(
+        _result.append(
           categoryBuild(
             adj[i].id.match(/[^\/]+$/g),
             menu.indexOf(adj[i]),
@@ -419,7 +386,7 @@ let populateAssets = function () {
         );
       }
     }
-  displayDescription(showDescription);
+  reverseCategoryGroup(category);
   topMenuBarDisplay(topBar);
   unloading();
   main.setAttribute(`tabindex`, -1);
@@ -432,13 +399,7 @@ let populateCategoryGroup = function (translation) {
   _toggle.style.display = `none`
   location.href.split(`?`)[0].state();
   if (showSplash === true) _check.style.display = `block`;
-  if (
-    !document.body.contains(
-      _main.querySelector(`#group`)
-    )
-  )
-    groupBuild();
-  let result = document.querySelector(`.result`);
+  stageGroup()
   if (
     id &&
     id != 0 &&
@@ -447,7 +408,7 @@ let populateCategoryGroup = function (translation) {
     if (menu[id].media == true)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
-    result.append(
+    _result.append(
       categoryBuild(
         menu[id].id.match(/[^\/]+$/g),
         menu.indexOf(menu[id]),
@@ -472,7 +433,7 @@ let populateCategoryGroup = function (translation) {
         id != menu.indexOf(menu[i]) &&
         menu[i].media == true
       ) {
-        result.append(
+        _result.append(
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
@@ -488,7 +449,7 @@ let populateCategoryGroup = function (translation) {
         translation == menu[i].category &&
         id != menu.indexOf(menu[i])
       ) {
-        result.append(
+        _result.append(
           categoryBuild(
             menu[i].id.match(/[^\/]+$/g),
             menu.indexOf(menu[i]),
@@ -513,19 +474,8 @@ let populateCategoryGroup = function (translation) {
 };
 
 let reverseCategoryGroup = function (translation) {
+  _air.style.visibility = `hidden`;
   let media;
-  let group = _main.querySelector(`#group`);
-  let result = _main.querySelector(`.result`);
-  if (
-    !document.body.contains(
-      _main.querySelector(`.air`)
-    )
-  ) {
-    let div = document.createElement(`div`);
-    div.classList.add(`air`);
-    group.prepend(div);
-  }
-  let air = document.querySelector(`.air`);
   for (
     let i = 1;
     i < menu.length;
@@ -534,7 +484,7 @@ let reverseCategoryGroup = function (translation) {
       if (menu[i].media == true)
         media = `<div class='media' style='display:none'>Images</div>`;
       else media = `<div class='blank'></div>`;
-      air.append(
+      _air.append(
         categoryBuild(
           menu[i].id.match(/[^\/]+$/g),
           menu.indexOf(menu[i]),
@@ -546,7 +496,9 @@ let reverseCategoryGroup = function (translation) {
       );
     }
   }
-  displayDescription(showDescription);
+  setTimeout(function () {
+    _air.style.visibility = `visible`;
+  }, 1250)
   displayExpand(expand);
   unloading();
 };
@@ -585,7 +537,7 @@ let filterInputResponse = function (filterURI) {
     exact === -1 &&
     match
   ) {
-    groupBuild();
+    stageGroup();
     for (
       let i = 0;
       i <= description.length - 1;
@@ -596,7 +548,6 @@ let filterInputResponse = function (filterURI) {
           )
         );
     populateAssets();
-    displayDescription(showDescription);
     displayExpand(expand);
     unloading();
   } else if (exact > -1) xmlRequestParsing(exact)
@@ -606,11 +557,10 @@ let filterInputResponse = function (filterURI) {
 
 let writeFilterResponse = function (menuObject) {
   let media;
-  let result = document.querySelector(`.result`);
   if (menu[menuObject].media == true)
     media = `<div class='media' style='display:none'>Images</div>`;
   else media = `<div class='blank'></div>`;
-  result.append(
+  _result.append(
     categoryBuild(
       menu[menuObject].id.match(/[^\/]+$/g),
       menu.indexOf(menu[menuObject]),

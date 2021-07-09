@@ -8,6 +8,40 @@ let sideBarStar = function (Elem, Value) {
   }
 }
 
+let stageGroup = function () {
+  _xml.style.display = `none`;
+  _xml.style.zIndex = `-1`
+  while (_air.firstChild)
+    _air.removeChild(_air.lastChild);
+  while (_result.firstChild)
+    _result.removeChild(_result.lastChild);
+  while (_channel.firstChild)
+    _channel.removeChild(_channel.lastChild);
+  while (_status.firstChild)
+    _status.removeChild(_status.lastChild);
+  while (_suggestions.firstChild)
+    _suggestions.removeChild(_suggestions.lastChild);
+  _group.style.display = `block`;
+  _group.style.zIndex = `1`;
+}
+
+let stageXML = function () {
+  _group.style.display = `none`;
+  _group.style.zIndex = `-1`
+  while (_air.firstChild)
+    _air.removeChild(_air.lastChild);
+  while (_result.firstChild)
+    _result.removeChild(_result.lastChild);
+  while (_channel.firstChild)
+    _channel.removeChild(_channel.lastChild);
+  while (_status.firstChild)
+    _status.removeChild(_status.lastChild);
+  while (_suggestions.firstChild)
+    _suggestions.removeChild(_suggestions.lastChild);
+  _xml.style.display = `block`;
+  _xml.style.zIndex = `1`;
+}
+
 let displayFlex = function (value) {
     var height = 0;
     var second = 0;
@@ -19,88 +53,32 @@ let displayFlex = function (value) {
     var column = document.querySelectorAll(`.item:nth-child(3n+3)`);
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
-    document.querySelector(`.center`).style.cssText =
+    _center.style.cssText =
     `justify-content:center !important;
      display:flex !important;
      width:100vw !important`;
-    document.querySelector(`.channel`).style.height =
-      `${(max + 1000).toString()}px`
-    document.querySelector(`.content`).style.display = `none`;
-    document.querySelector(`.channel`).classList.add(`flexbox`);
-    document
+    _channel.style.height = `${(max + 1000).toString()}px`
+    _channel.classList.add(`flexbox`);
+    _display.style.display = `none`;
+    _channel
       .querySelectorAll(`.item`)
       .forEach(
         (a) => a.classList.add(`flexbox`)
       );
     if (Reader == false)
-      document.querySelector(`.channel`).append(
+      _channel.append(
         footerBuild(id)
       );
 }
-
-let displayDescription = function (Value) {
-  if (
-    expand == true ||
-    document.body.contains(
-      document.querySelector(`#xml`)
-    )
-  )
-    if (!Value) {
-      if (
-        document.body.contains(
-          document.querySelector(`#xml`)
-        )
-      )
-        document.querySelector(`.about`).style.display = `none`;
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach(
-          (a) => a.classList.remove(`expand`)
-        );
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach(
-          (a) => a.classList.add(`minimum`)
-        );
-    } else if (Value) {
-      if (
-				document.body.contains(
-          document.querySelector(`#xml`)
-        ) &&
-				document.body.contains(
-          document.querySelector(`.about`)
-        )
-		  )
-        document.querySelector(`.about`).style.display = `block`;
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach(
-          (a) => a.classList.remove(`minimum`)
-        );
-      _main
-        .querySelectorAll(`.populate`)
-        .forEach(
-          (a) => a.classList.add(`expand`)
-        );
-    }
-		displayExpand(expand);
-};
 
 let displayExpand = function (Value) {
   if (Value) {
     groupType = `list`;
     if (
       document.body.contains(
-        document.getElementById(`group`)
+        document.querySelector(`.populate`)
       )
     ) {
-      document.getElementById(`group`).style.backgroundColor =
-        `var(--bg-color-secondary)`
-      _main
-        .querySelectorAll(`.air, .result`)
-        .forEach(
-          (a) => a.style.backgroundColor = `var(--bg-color-primary)`
-        );
       _main
         .querySelectorAll(`.populate`)
         .forEach(
@@ -111,24 +89,12 @@ let displayExpand = function (Value) {
         .forEach(
           (a) => a.classList.remove(`block`)
         );
-      if (
-        document.body.contains(
-          document.querySelector(`.air`)
-        )
-      )
-        document.querySelector(`.air`).style.display = `block`;
-      if (
-        document.body.contains(
-          document.querySelector(`.result`)
-        )
-      )
-        document.querySelector(`.result`).style.display = `block`;
     }
   } else if (!Value) {
     groupType = `blocks`;
     if (
       document.body.contains(
-        document.getElementById(`group`)
+        document.querySelector(`.populate`)
       )
     ) {
 			_main
@@ -141,18 +107,6 @@ let displayExpand = function (Value) {
         .forEach(
           (a) => a.classList.remove(`expand`)
         );
-      if (
-        document.body.contains(
-          document.querySelector(`.air`)
-        )
-      )
-        document.querySelector(`.air`).style.display = `inline-flex`;
-      if (
-        document.body.contains(
-          document.querySelector(`.result`)
-        )
-      )
-        document.querySelector(`.result`).style.display = `inline-flex`;
     }
   }
 };
@@ -384,53 +338,6 @@ let footerBuild = function (id) {
   return object;
 };
 
-let groupBuild = function () {
-  let result = document.createElement(`div`);
-  let group = document.createElement(`div`);
-  result.classList.add(`result`);
-  group.append(result);
-  group.id = `group`;
-  _main.append(group);
-};
-
-let stageBuild = function () {
-  if (
-    !document.body.contains(
-      document.querySelector(`#group`)
-    )
-  ) {
-    let suggestions = document.createElement(`div`);
-    let channel = document.createElement(`div`);
-    let content = document.createElement(`div`);
-    let center = document.createElement(`div`);
-    let status = document.createElement(`div`);
-    let xml = document.createElement(`div`);
-    xml.id = `xml`;
-    if (
-      _main.clientWidth >= 426 &&
-      _main.clientWidth <= 768 &&
-      displayFlex == true
-    )
-      channel.classList.add(`flexbox`)
-    else if (
-      _main.clientWidth >= 769 &&
-      displayFlex == true
-    )
-    channel.classList.add(`desktop`)
-  channel.classList.add(`channel`);
-  center.classList.add(`center`);
-  center.append(channel);
-  xml.append(center);
-  suggestions.classList.add(`suggestions`);
-  content.classList.add(`content`);
-  status.classList.add(`status`);
-  content.append(status);
-  content.append(suggestions);
-  xml.append(content);
-  return xml;
-  }
-};
-
 let guideBuild = function (pubArray) {
   let filterBlur = document.createElement(`div`);
   let publish = document.createElement(`div`);
@@ -570,7 +477,6 @@ let contentBuild = function (
   des.innerHTML += `<br>Oldest post<div style='float:right'>${oldestPost}</div>`;
   des.innerHTML += `<br>Posts<div style='float:right'>${postsCount}</div>`;
   des.innerHTML += `<br>Hash<div style='float:right'>${menu[id].hash}</div>`;
-  if (showDescription == false) des.style.display = `none`;
   filter.append(object);
   filter.append(ahref);
   info.append(des);

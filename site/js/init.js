@@ -163,7 +163,6 @@ setTimeout(function() {
   quickFeedDisplay(quickFeeds);
   if (sideBarTranslations == true)
     appendSideBarLists(`#content`, `cat`, translations);
-  appendSideBarLists(`#content`, `sel`, selections);
   sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
   appendSideBarLists(`.themes`, `theme`, themes);
   sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
@@ -199,6 +198,8 @@ setTimeout(function() {
 
   if (flexBox == true) sideScroll = false;
 
-  offset = 2500;
+  if (_main.clientWidth <= 425)
+    offset = 500;
+  else offset = 2500
 
 }, 100)

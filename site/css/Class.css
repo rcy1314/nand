@@ -107,9 +107,14 @@
 
 .flexbox .item {
   margin: 0 2px 2px 0;
+  height: fit-content;
   position: relative;
-  width: 300px;
-  left: -310px;
+  width: 300px !important;
+  left: -310px !important;
+}
+
+.flexbox .item:nth-child(3n+1) {
+  order: 1;
 }
 
 .flexbox .item:nth-child(3n+2) {

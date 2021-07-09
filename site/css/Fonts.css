@@ -60,7 +60,7 @@
   color: var(--fill-color);
   font-size: 12px;
   font-weight: 50;
-  margin: 7px;
+  padding: 10px;
 }
 
 .fa-angle-double-up,

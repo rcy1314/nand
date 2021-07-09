@@ -50,10 +50,10 @@
   #main #xml .content,
   #main #top #arm #option,
   #main #xml .center #quick,
-  #main #visit #page #social,
-  #main #visit #page #options,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
+  #main #visit #page #options .fa-sun,
+  #main #visit #page #options .fa-heart,
   #main #visit #page #front .focus .button {
     display: none !important;
   }
@@ -72,6 +72,11 @@
   }
   .dots:nth-of-type(5) {
     animation: move 3s 600ms infinite cubic-bezier(.1,.75,1,.3) !important;
+  }
+
+  #main #visit #page #social {
+    left: 80px;
+    top: 200px
   }
 
   #main,

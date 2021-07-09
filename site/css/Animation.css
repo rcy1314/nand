@@ -204,14 +204,6 @@
   animation: notify 4s forwards ease-in-out;
 }
 
-.orig {
-  animation: rot_orig 1.5s infinite ease-in-out;
-  position: relative;
-  margin: 0 auto;
-  height: 50px;
-  width: 0;
-}
-
 .rotate {
   animation: rotation .25s ease-in-out 1 forwards;
   transform: rotate(180deg);
@@ -223,7 +215,7 @@
 }
 
 .scroll-into-view {
-  animation: scroll 750ms ease-in-out forwards;
+  animation: scroll 1250ms ease-in-out forwards;
 }
 
 .search {
@@ -371,15 +363,6 @@
     100% {
       opacity: 1;
     }
-}
-
-@-webkit-keyframes rot_orig {
-	from {
-		transform: rotate(0deg) translate(0, -.5em) rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg) translate(0, -.5em) rotate(-360deg);
-	}
 }
 
 @-webkit-keyframes rotation {
