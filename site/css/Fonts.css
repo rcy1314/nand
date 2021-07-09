@@ -106,7 +106,6 @@
   z-index: -1;
 }
 
-#main #option .fa-camera-retro,
 #main #option .fa-expand-alt,
 #main #option .fa-heart,
 #main #option .fa-home,
@@ -212,12 +211,6 @@
   z-index: -1;
   right: 6px;
   top: 3px;
-}
-
-.fa-camera-retro {
-  font-family: "Font Awesome 5 Pro";
-  content: "\f083";
-  font-weight: 50 !important;
 }
 
 .fa-chart-pie {

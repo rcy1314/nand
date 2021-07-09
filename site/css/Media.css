@@ -353,7 +353,7 @@
   }
 
   .sideChannel {
-    width: 400 !important;
+    width: 100vw !important;
   }
 
   #feed {

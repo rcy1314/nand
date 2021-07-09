@@ -793,7 +793,6 @@ const settings = [
   { name: `Blocks`, class: `Blocks` },
   { name: `Percent`, class: `Percent` },
   { name: `Progress`, class: `Dots` },
-  { name: `Flex Box`, class: `flexBox` },
   { name: `Safe Search`, class: `safeSearch` },
   { name: `Crop Images`, class: `cropImages` },
   { name: `Only Images`, class: `onlyImages` },

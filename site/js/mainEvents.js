@@ -290,67 +290,6 @@ document.addEventListener('click', (evt) => {
       _notify.style.display = `none`;
     }
     else if (
-      event.target.classList.contains(
-        `fa-camera-retro`
-      )
-    ) {
-    if (flexBox == false) {
-        sideScroll = sideScroll != true
-        if (
-          sideScroll == true
-        ) {
-          scrollIntoView = false;
-          let leaveOff = _main.scrollTop -
-            ((parseInt(
-              _main.querySelectorAll(`.item`).length) * parseInt(100)));
-          notifyOption(`Horizontal`, `fa-check-circle`);
-          if (
-            document.body.contains(
-              _main.querySelector(`#xml`))) {
-            _main.querySelector(`.channel`).classList.add(`sideChannel`);
-            _main.querySelector(`.center`).style.top = `60px`;
-            _main.querySelector(`#xml`).style.top = 0;
-            _main
-              .querySelectorAll(`.item`)
-              .forEach((a) => (a.classList.add(`sideItem`)));
-            _main
-              .querySelectorAll(`.classic`)
-              .forEach((a) => (a.style.display = `block`));
-            document.querySelector(`.channel`).scrollLeft = leaveOff;
-          }
-        } else if (
-            sideScroll == false
-          ) {
-            let leaveOff = _main.querySelector(`.channel`).scrollLeft +
-              (parseInt(
-                _main.querySelectorAll(`.item`).length) * parseInt(100)
-              );
-            notifyOption(`Vertical`, `fa-check-circle`);
-          if (
-            document.body.contains(
-              _main.querySelector(`#xml`)
-            )
-          ) {
-            _main.querySelector(`.channel`).classList.remove(`sideChannel`);
-            _main.querySelector(`.center`).style.top = `60px`;
-            _main.querySelector(`#xml`).style.top = 0;
-            _main
-              .querySelectorAll(`.item`)
-              .forEach((a) => (
-                a.classList.remove(`sideItem`)
-              )
-            );
-            _main
-              .querySelectorAll(`.classic`)
-              .forEach(
-                (a) => a.style.display = `flex`
-              );
-            _main.scrollTop = leaveOff;
-          }
-        }
-      }
-    }
-    else if (
       evt.target.classList.contains(
         `download`
       )
