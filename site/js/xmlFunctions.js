@@ -1125,7 +1125,7 @@ var xmlAppendPublication = function (id) {
           .forEach((a) => (a.style.display = `block`));
     }
     if (showSplash == true) _check.style.display = `none`;
-    if (flexBox == false)
+    if (Reader == false)
       _channel.append(
         footerBuild(id)
       );

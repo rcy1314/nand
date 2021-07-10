@@ -65,10 +65,6 @@ let displayFlex = function (value) {
       .forEach(
         (a) => a.classList.add(`flexbox`)
       );
-    if (Reader == false)
-      _channel.append(
-        footerBuild(id)
-      );
 }
 
 let displayExpand = function (Value) {
