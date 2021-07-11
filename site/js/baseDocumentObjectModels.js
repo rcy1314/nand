@@ -752,6 +752,7 @@ let youtubeHTMLBuild = function (htmlArray) {
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   item.setAttribute(`ext`, htmlArray.externalURI);
   publish.setAttribute(`text`, htmlArray.title);
+  object.setAttribute(`allowfullscreen`, true);
   object.src = htmlArray.videoSource;
   view.innerHTML = htmlArray.views
   ago.innerHTML = htmlArray.dst;
