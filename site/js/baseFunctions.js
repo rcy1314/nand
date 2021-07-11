@@ -235,6 +235,11 @@ let progressBackDrop = function (done) {
       first == true
     ) {
       _center.classList.add(`scroll-into-view`)
+      setTimeout(
+        function () {
+          _center.classList.remove(`scroll-into-view`);
+        }, 1500
+      )
     }
     if (showSplash == true) _check.style.display = `none`;
     if (fadeIntoView == true) {

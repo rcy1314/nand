@@ -408,7 +408,7 @@
       padding-top: 100%
     }
     to {
-      padding-top: 60px;
+      padding-top: 0;
     }
 }
 
