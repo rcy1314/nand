@@ -63,6 +63,12 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`hover`)
   ) {
     if (
+      document.body.contains(
+        _first.querySelector(`.hover`)
+      )
+    ) {
+      first = true;
+    } else if (
       flexBox == false
     )
       first = false;
@@ -237,12 +243,15 @@ document.addEventListener('submit', (evt) => {
           _first.querySelector(`.hover`)
         )
       ) {
+        first = true;
         _label.style.visibility = `visible`;
         _quick.style.visibility = `visible`;
         _show.style.visibility = `visible`;
         _link.style.visibility = `visible`;
         _first.style.display = `none`;
         topMenuBarDisplay(topBar);
+        _xml.style.display = `block`;
+        _xml.style.zIndex = `1`;
         xmlRequestParsing(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
