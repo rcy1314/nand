@@ -471,6 +471,8 @@ document.addEventListener('click', (evt) => {
       if (_sidebar.style.left == 0) _sb.style.display = `block`;
       if (quickFeeds == false)
         _show.style.visibility = `visible`;
+      _options.style.visibility = `visible`;
+      _social.style.visibility = `visible`;
       _label.style.visibility = `visible`;
       _quick.style.visibility = `visible`;
       _visit.style.visibility = `visible`;
@@ -478,8 +480,8 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `block`;
       _first.style.display = `none`;
       _visit.style.display = `flex`;
-      _group.style.display = `none`;
-      _xml.style.display = `none`;
+      stageXML();
+      stageGroup();
       quickFeedDisplay(quickFeeds);
       _top.style.display = `none`;
       _feed.scrollLeft = 0;

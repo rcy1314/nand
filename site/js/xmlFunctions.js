@@ -1074,8 +1074,11 @@ var xmlAppendPublication = function (id) {
     if (
       sideScroll == false &&
       touchmove == true &&
-      Reader == false &&
-      first == true
+      Reader == false ||
+      first == true ||
+      document.body.contains(
+        _xml.querySelector(`.item`)
+      )
     ) {
       scrollToElm(
         touchmove,
@@ -1130,7 +1133,6 @@ var xmlAppendPublication = function (id) {
         footerBuild(id)
       );
     contentStatusDisplay(id, recent, oldest, posts);
-    if (Reader == false) first = true;
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
     local = null;
@@ -1138,6 +1140,7 @@ var xmlAppendPublication = function (id) {
     images = [];
     post = null;
     unloading();
+    first = false;
 }
 
 var xmlRequestParsing = function (index) {

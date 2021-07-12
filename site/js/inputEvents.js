@@ -63,15 +63,15 @@ document.addEventListener('click', (evt) => {
       event.target.classList.contains(`hover`)
   ) {
     if (
-      document.body.contains
-      (
-        document.querySelector(`[aria-object='${_match.querySelector(`.hover`).getAttribute(`aria-item`)}']`)
-      ) || flexBox == false
+      flexBox == false
     )
+      first = false;
+      _xml.style.display = `block`;
+      _xml.style.zIndex = `1`;
       touchmove = true;
-        xmlRequestParsing(
-          event.target.closest(`.index`).getAttribute(`aria-item`)
-        );
+      xmlRequestParsing(
+        event.target.closest(`.index`).getAttribute(`aria-item`)
+      );
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
       _match.style.display = `none`;
@@ -220,10 +220,10 @@ document.addEventListener('submit', (evt) => {
           _match.querySelector(`.hover`)
         )
       ) {
-          touchmove = true;
-          xmlRequestParsing(
-            _match.querySelector(`.hover`).getAttribute(`aria-item`)
-          )
+        touchmove = true;
+        xmlRequestParsing(
+          _match.querySelector(`.hover`).getAttribute(`aria-item`)
+        )
         _match.style.display = `none`;
       } else if (_view.value.length) {
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
