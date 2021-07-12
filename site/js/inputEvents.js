@@ -1,4 +1,4 @@
-document.addEventListener('click', (evt) => {
+_page.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(`buttonSearch`) ||
       event.target.classList.contains(`button`)
@@ -52,7 +52,7 @@ _top.addEventListener('click', (evt) => {
   },
   false
 );
-document.addEventListener('click', (evt) => {
+_container.addEventListener('click', (evt) => {
     if (event.target.classList.contains(`sideFilter`))
       event.target.value = ``;
     if (
@@ -66,9 +66,9 @@ document.addEventListener('click', (evt) => {
       document.body.contains(
         _first.querySelector(`.hover`)
       )
-    ) {
+    )
       first = true;
-    } else if (
+    else if (
       flexBox == false
     )
       first = false;
@@ -124,7 +124,7 @@ document.addEventListener('submit', (evt) => {
         const has = exclude.map((a) => a.toLowerCase());
         if (
           document.body.contains(
-            _main.querySelector(`#xml`)
+            _xml
           )
         ) {
           _main.querySelectorAll(`.pub`).forEach(
@@ -216,7 +216,7 @@ document.addEventListener('submit', (evt) => {
       ) {
         stageGroup();
         category = _match.querySelector(`.hover`).getAttribute(`aria-item`);
-        if (expand == true) var groupType = `list`;
+        if (expand) var groupType = `list`;
         else var groupType = `blocks`;
         populateCategoryGroup(category);
         _match.style.display = `none`;
@@ -258,7 +258,8 @@ document.addEventListener('submit', (evt) => {
         xmlRequestParsing(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
-      } else if (_guest.value.length > 0) filterInputResponse(_guest.value);
+      } else if (_guest.value.length > 0)
+        filterInputResponse(_guest.value);
       _options.style.visibility = `visible`;
       _social.style.visibility = `visible`;
       _label.style.visibility = `visible`;

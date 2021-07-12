@@ -1,10 +1,10 @@
-var init = function () {
+let init = function () {
   if (loading == `dots`) {
     _progress.style.width = `0%`;
     _dots.style.zIndex = `12`;
     dots.querySelectorAll(`.fill`)
       .forEach(
-        (a) => (a.style.zIndex = `12`)
+        (a) => a.style.zIndex = `12`
       );
     _dots.querySelectorAll(`.fill`)
       .forEach(
@@ -14,12 +14,11 @@ var init = function () {
       .forEach(
         (a) => a.style.visibility = `visible`
       );
-  } else if (loading == `percent`) {
+  } else if (loading == `percent`)
     progressBackDrop(false);
-  }
 };
 
-var unloading = function () {
+let unloading = function () {
   if (loading == `dots`) {
     _dots.querySelectorAll(`.fill`)
       .forEach(
@@ -46,7 +45,7 @@ const cyrb53 = function(str, seed = 0) {
     return (h2>>>0).toString(16).padStart(8,0)+(h1>>>0).toString(16).padStart(8,0);
 };
 
-var truncate = function (
+let truncate = function (
   i,
   n,
   useWordBoundary
@@ -60,7 +59,7 @@ var truncate = function (
   );
 };
 
-var randomizeAssets = function (array) {
+let randomizeAssets = function (array) {
   let adjusted = [];
   // Fisher-Yates (aka Knuth) Shuffle
   var currentIndex = array.length,  randomIndex;
@@ -80,7 +79,7 @@ var randomizeAssets = function (array) {
   return array;
 }
 
-var anyRandomMenuObject = function () {
+let anyRandomMenuObject = function () {
   let random = [];
   let randomObject;
   for (
@@ -90,8 +89,8 @@ var anyRandomMenuObject = function () {
   ) {
     if (
       menu[i] &&
-      menu[i].media == true &&
-      onlyImages == true
+      onlyImages &&
+      menu[i].media
     )
       random.push(
         menu.indexOf(
@@ -99,12 +98,14 @@ var anyRandomMenuObject = function () {
         )
       );
     else if (
-      menu[i].media == true &&
-      onlyImages == true &&
-      menu[i]
+      menu[i] &&
+      onlyImages &&
+      menu[i].media
     )
       random.push(menu.indexOf(menu[i]));
-    else if (onlyImages == false)
+    else if (
+      !onlyImages
+    )
       random.push(
         menu[i]
       );
@@ -120,12 +121,11 @@ var anyRandomMenuObject = function () {
     menu[randomObject]
   ) {
     randomDuplicate.push(randomObject);
-    console.log(randomObject);
     return randomObject;
   }
 };
 
-function scrollToElm(
+let scrollToElm = function (
   touch,
   container,
   elm,
@@ -140,7 +140,7 @@ function scrollToElm(
   );  // duration in seconds
 }
 
-function sideScrollToElm(
+let sideScrollToElm = function (
   touch,
   container,
   elm,
@@ -154,7 +154,7 @@ function sideScrollToElm(
     50);  // duration in seconds
 }
 
-function getRelativePos(elm){
+let getRelativePos = function (elm){
   var pPos = elm.parentNode.getBoundingClientRect(), // parent pos
       cPos = elm.getBoundingClientRect(), // target pos
       pos = {};
@@ -162,19 +162,20 @@ function getRelativePos(elm){
   pos.top    = cPos.top    - pPos.top + elm.parentNode.scrollTop,
   pos.right  = cPos.right  - pPos.right,
   pos.bottom = cPos.bottom - pPos.bottom,
-  pos.left   = elm.scrollLeft - elm.parentNode.scrollLeft + elm.parentNode.clientWidth;
+  pos.left   =
+    elm.scrollLeft - elm.parentNode.scrollLeft + elm.parentNode.clientWidth;
 
   return pos;
 }
 
-function scrollTo(
+let scrollTo = function (
   touch,
   element,
   to,
   duration,
   onDone
 ) {
-  if (touch == true) {
+  if (touch) {
     var start = element.scrollTop,
         change = to - start,
         startTime = performance.now(),
@@ -195,14 +196,14 @@ function scrollTo(
   }
 }
 
-function sideScrollTo(
+let sideScrollTo = function (
   touch,
   element,
   to,
   duration,
   onDone
 ) {
-  if (touch == true) {
+  if (touch) {
     var start = element.scrollLeft,
         change = to + start,
         startTime = performance.now(),
@@ -221,18 +222,18 @@ function sideScrollTo(
   }
 }
 
-function easeInOutQuad(t) {
+let easeInOutQuad = function (t) {
   return t<.5 ? 2*t*t : -1+(4-2*t)*t
 };
 
-var forward = function (id) {
+let forward = function (id) {
   let next = parseInt(id) + +1
   if (menu[next])
     return parseInt(next);
   else return 1
 };
 
-var back = function (id) {
+let back = function (id) {
   let back = parseInt(id) - +1
   if (menu[back])
     return parseInt(back);

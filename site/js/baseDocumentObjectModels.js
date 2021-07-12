@@ -72,7 +72,7 @@ let displayExpand = function (Value) {
     groupType = `list`;
     if (
       document.body.contains(
-        document.querySelector(`.populate`)
+        _result.querySelector(`.populate`)
       )
     ) {
       _main
@@ -90,7 +90,7 @@ let displayExpand = function (Value) {
     groupType = `blocks`;
     if (
       document.body.contains(
-        document.querySelector(`.populate`)
+        _result.querySelector(`.populate`)
       )
     ) {
 			_main
@@ -146,8 +146,8 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
         Arrays[i]
       )
     ) {
-      option.innerHTML = Arrays[i];
       option.setAttribute(`aria-item`, Arrays[i])
+      option.innerHTML = Arrays[i];
       list.append(option);
       list.append(sideBarThemeBuild(`fa-redo`))
     } if (
@@ -195,9 +195,11 @@ let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (Value) {
-    setTimeout(function () {
-      _sidebar.style.left = `0`;
-    }, 300);
+    setTimeout(
+      function () {
+        _sidebar.style.left = `0`;
+      }, 300
+    );
     if (
       _main.clientWidth >= 769 &&
       sideBarMouse == false
@@ -209,11 +211,13 @@ let sideBarDisplay = function (Value) {
         sideScroll == true
       )
       _min.style.cssText = `display: block !important;`
-      setTimeout(function () {
-        _sidebar.querySelector(`.sideFilter`).style.visibility = `visible`;
-        _sidebar.querySelector(`#basic`).style.visibility = `visible`;
-        _sidebar.style.left = `0`;
-      }, 300);
+      setTimeout(
+        function () {
+          _sidebar.querySelector(`.sideFilter`).style.visibility = `visible`;
+          _sidebar.querySelector(`#basic`).style.visibility = `visible`;
+          _sidebar.style.left = `0`;
+        }, 300
+      );
   } else if (!Value) {
     if (_main.clientWidth >= 768) {
       _sidebar.querySelector(`.bg`).style.height = `31px`;
@@ -228,8 +232,8 @@ let sideBarDisplay = function (Value) {
       expandFilter = false;
       _sidebar.querySelector(`.sideFilter`).style.visibility = `hidden`;
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
-      _sb.style.display = `none`;
       _sidebar.style.left = `-250px`;
+      _sb.style.display = `none`;
     } else _sidebar.style.left = `-280px`;
   }
 };
@@ -247,11 +251,13 @@ let topMenuBarDisplay = function (Value) {
 let quickFeedDisplay = function (Value) {
   if (Value) {
     _quick.style.zIndex = `1`;
-    _main
+    _page
       .querySelectorAll(`.feed`)
       .forEach(
         (a) => a.style.display = `block`
       );
+    _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
+    _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
     _options.classList.add(`invisible`);
@@ -259,8 +265,6 @@ let quickFeedDisplay = function (Value) {
     _front.classList.remove(`toggle`);
     _quick.classList.add(`visible`);
     _show.style.visibility=`hidden`;
-    _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
-    _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     if (
       _main.clientWidth <= 425
     )
@@ -269,7 +273,7 @@ let quickFeedDisplay = function (Value) {
     _options.classList.remove(`invisible`);
     _social.classList.remove(`invisible`);
     _quick.style.zIndex = `-1`;
-    _main
+    _page
       .querySelectorAll(`.feed`)
       .forEach(
         (a) => a.style.display = `none`
@@ -706,8 +710,7 @@ let courtesyBuild = function (
   courtesy.append(object);
   courtesy.append(ahref);
   if (
-    menu[id].id.match(/Youtube/g) &&
-    youtubeMedia == true
+    menu[id].id.match(/Youtube/g) && youtubeMedia
   )
     courtesy.append(
       youtubeAttributeBuild()
@@ -803,12 +806,12 @@ let xmlHTMLBuild = function (htmlArray) {
   original.append(circle.cloneNode(true));
   original.classList.add(`animation`);
   bars.classList.add(`bars`);
-  if (fadeIntoView == true) object.classList.add(`hidden`);
+  if (fadeIntoView) object.classList.add(`hidden`);
   publish.innerHTML = htmlArray.truncate + htmlArray.more;
   item.setAttribute(`aria-object`, htmlArray.menuObject);
-  if (toggleBorders == false) item.style.border = `none`
+  if (!toggleBorders) item.style.border = `none`
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
-  if (flexBox == true) item.classList.add(`flexbox`);
+  if (flexBox) item.classList.add(`flexbox`);
   item.setAttribute(`ext`, htmlArray.externalURI);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
@@ -823,7 +826,7 @@ let xmlHTMLBuild = function (htmlArray) {
   image.classList.add(`image`);
   object.classList.add(`img`);
   if (
-    roundedEdge == true
+    roundedEdge
   ) {
     object.style.borderRadius = `12px`;
     image.style.borderRadius = `12px`;
@@ -842,7 +845,7 @@ let xmlHTMLBuild = function (htmlArray) {
   } else if (imageLoader == `v-bars`) {
     original.style.display = `none`;
     loader.style.display = `none`;
-  } else if (imageLoader == false) {
+  } else if (!imageLoader) {
     original.style.display = `none`;
     loader.style.display = `none`;
     bars.style.display = `none`;
@@ -858,7 +861,7 @@ let xmlHTMLBuild = function (htmlArray) {
   )
     image.append(filterBlur);
   image.append(object);
-  if (feedImages == true) classic.append(image);
+  if (feedImages) classic.append(image);
   wrap.append(publish);
   wrap.append(ago);
   classic.append(wrap);
@@ -894,7 +897,7 @@ let listingIndexBuild = function (
   match.classList.add(`textMatch`);
   detail.classList.add(`detail`);
   buffer.classList.add(`buffer`);
-  if (suggested == true) contentText = `suggested...`;
+  if (suggested) contentText = `suggested...`;
   else contentText = `${indexHash}`;
   buffer.innerHTML = contentText;
   object.classList.add(`input`);

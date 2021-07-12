@@ -48,7 +48,7 @@ let handleGuide = function () {
       _guide.style.display = `none`;
       _check.style.display = `none`;
       topMenuBarDisplay(topBar);
-      if (sideBarLock == true)
+      if (sideBarLock)
         onScreen = true;
       sideBarDisplay(onScreen);
       guideOnScreen = true;
@@ -110,10 +110,10 @@ let inputListingIndex = function (
 ) {
   let matches = [];
   let suggest = [];
-  let listing = document.querySelector(listingWrapper + ` .listing`);
+  let listing = _main.querySelector(listingWrapper + ` .listing`);
   while (listing.lastChild)
     listing.removeChild(listing.lastChild);
-  document.querySelector(listingWrapper).style.display = `block`;
+  _main.querySelector(listingWrapper).style.display = `block`;
   if (inputFilter != ``)
     for (
       var i = menu.length - 1;
@@ -186,7 +186,7 @@ let progressBackDrop = function (done) {
   let width;
   let length;
   let complete;
-  if (done == false && loading == `percent`) {
+  if (!done && loading == `percent`) {
     complete = setInterval(function () {
       if (
         safeSearchIDs.includes(
@@ -246,9 +246,12 @@ let progressBackDrop = function (done) {
       (function () {
         function checkPosition() {
           let elements = _channel.querySelectorAll(`.image`);
-          for (let i = 0; i < elements.length; i++) {
+          for (
+            let i = 0;
+            i < elements.length;
+            i++) {
             if (
-              sideScroll == false &&
+              !sideScroll &&
               elements[i].querySelector(`.img`) &&
               !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
               elements[i].getBoundingClientRect().top -
@@ -258,7 +261,7 @@ let progressBackDrop = function (done) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
             } else if (
-              sideScroll == true &&
+              sideScroll &&
               elements[i].querySelector(`.img`) &&
               elements[i].getBoundingClientRect().left -
               _channel.clientWidth
@@ -267,7 +270,7 @@ let progressBackDrop = function (done) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
             }
-            if (fadeIntoView == false) {
+            if (!fadeIntoView) {
               _channel
                 .querySelectorAll(`.img`)
                 .forEach(
@@ -278,14 +281,16 @@ let progressBackDrop = function (done) {
             }
           }
         }
-        _channel.addEventListener(
-          `scroll`,
-          checkPosition
-        );
-        _main.addEventListener(
-          `scroll`,
-          checkPosition
-        );
+        if (sideScroll)
+          _channel.addEventListener(
+            `scroll`,
+            checkPosition
+          );
+        else if (!sideScroll)
+          _main.addEventListener(
+            `scroll`,
+            checkPosition
+          );
         if (scrollIntoView)
           setTimeout(
             function() {
@@ -295,7 +300,8 @@ let progressBackDrop = function (done) {
         else checkPosition();
       })();
     }
-    if (sideScroll == true
+    if (
+      sideScroll
     ) {
       _center.classList.remove(`scroll-into-view`);
       _channel.classList.add(`sideChannel`);
@@ -311,26 +317,26 @@ let progressBackDrop = function (done) {
   }
   if (
     document.body.contains(
-      _group.querySelector(`.populate`)
+      _result.querySelector(`.populate`)
     )
   ) {
     if (
-      scrollIntoView == true
+      scrollIntoView
     ) {
       _result.classList.add(`scroll-into-view`)
-      setTimeout(
-        function() {
-          if (
-            document.body.contains(
-              _air
-            )
-          )
+      if (
+        onlyImages
+      )
+        setTimeout(
+          function() {
             _main.scrollTop = _air.clientHeight;
-          _group.style.top = `-60px`;
-        },
-      25)
+            _group.style.top = `-60px`;
+          }, 25
+        )
     }
-    if (onlyImages == false) {
+    if (
+      !onlyImages
+    ) {
       setTimeout(
         function() {
           _main.scrollTop = _air.clientHeight;
@@ -338,7 +344,7 @@ let progressBackDrop = function (done) {
       25)
     }
   }
-  if (showSplash == true) _check.style.display = `none`;
+  if (showSplash) _check.style.display = `none`;
 };
 
 let populateAssets = function () {
@@ -347,13 +353,13 @@ let populateAssets = function () {
   _visit.style.display = `none`;
   _sb.style.display = `none`;
   location.href.split(`?`)[0].state();
-  if (showSplash === true) _check.style.display = `block`;
+  if (showSplash) _check.style.display = `block`;
   if (
     id &&
     id != 0 &&
     !location.href.match(`\\?q=`)
   ) {
-    if (menu[id].media == true)
+    if (menu[id].media)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
     _result.append(
@@ -372,12 +378,12 @@ let populateAssets = function () {
     i <= adj.length - 1;
     i++
   ) {
-    if (adj[i].media == true)
+    if (adj[i].media)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
       if (
         id != menu.indexOf(adj[i]) &&
-        adj[i].media == true
+        adj[i].media
       ) {
         _result.append(
           categoryBuild(
@@ -403,14 +409,14 @@ let populateCategoryGroup = function (translation) {
   _sb.style.display = `none`;
   _toggle.style.display = `none`
   location.href.split(`?`)[0].state();
-  if (showSplash === true) _check.style.display = `block`;
+  if (showSplash) _check.style.display = `block`;
   stageGroup()
   if (
     id &&
     id != 0 &&
     !location.href.match(`\\?q=`)
   ) {
-    if (menu[id].media == true)
+    if (menu[id].media)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
     _result.append(
@@ -429,14 +435,14 @@ let populateCategoryGroup = function (translation) {
     i <= menu.length - 1;
     i++
   ) {
-    if (menu[i].media == true)
+    if (menu[i].media)
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
-    if (onlyImages == true) {
+    if (onlyImages) {
       if (
         translation == menu[i].category &&
         id != menu.indexOf(menu[i]) &&
-        menu[i].media == true
+        menu[i].media
       ) {
         _result.append(
           categoryBuild(
@@ -449,7 +455,7 @@ let populateCategoryGroup = function (translation) {
           )
         );
       }
-    } else if (onlyImages == false) {
+    } else if (onlyImages) {
       if (
         translation == menu[i].category &&
         id != menu.indexOf(menu[i])
@@ -467,14 +473,19 @@ let populateCategoryGroup = function (translation) {
       }
     }
   }
-  if (onlyImages == false) reverseCategoryGroup(translation);
-  else if (onlyImages == true) {
+  if (
+    !onlyImages
+  ) reverseCategoryGroup(translation);
+  else if (
+    onlyImages
+  )
     unloading();
-  }
-  if (_main.clientWidth >= 768)
+  if (
+    _main.clientWidth >= 768
+  )
     _bar.style.display = `none`;
-  main.setAttribute(`tabindex`, -1);
   topMenuBarDisplay(topBar);
+  main.setAttribute(`tabindex`, -1);
   main.focus();
 };
 
@@ -486,7 +497,7 @@ let reverseCategoryGroup = function (translation) {
     i < menu.length;
     i++) {
     if (category == menu[i].category) {
-      if (menu[i].media == true)
+      if (menu[i].media)
         media = `<div class='media' style='display:none'>Images</div>`;
       else media = `<div class='blank'></div>`;
       _air.append(
@@ -517,17 +528,22 @@ let filterInputResponse = function (filterURI) {
     setTimeout(
       function() {
         populateCategoryGroup(filterURI.toString().capitalize());
-      },
-    200)
+      }, 200
+    )
     unloading();
     return false;
   }
   let exact =
     menu.findIndex(
-      (item) => item.id.toLowerCase().space() === filterURI.toString().toLowerCase().space()
+      (item) =>
+        item.id.toLowerCase().space() ===
+          filterURI.toString().toLowerCase().space()
   );
   let match = menu.findIndex(
-    (item) => item.id.toLowerCase().space().match(filterURI.toString().toLowerCase().space())
+    (item) =>
+      item.id.toLowerCase().space().match(
+        filterURI.toString().toLowerCase().space()
+      )
   );
   let description =
     menu.filter(
@@ -546,23 +562,23 @@ let filterInputResponse = function (filterURI) {
     for (
       let i = 0;
       i <= description.length - 1;
-      i++)
-        writeFilterResponse(
-          menu.indexOf(
-            description[i]
-          )
-        );
+      i++
+    )
+      writeFilterResponse(
+        menu.indexOf(
+          description[i]
+        )
+      );
     populateAssets();
     displayExpand(expand);
     unloading();
   } else if (exact > -1) xmlRequestParsing(exact)
   else return false;
-  document.title = filterURI.toString().space();
 };
 
 let writeFilterResponse = function (menuObject) {
   let media;
-  if (menu[menuObject].media == true)
+  if (menu[menuObject].media)
     media = `<div class='media' style='display:none'>Images</div>`;
   else media = `<div class='blank'></div>`;
   _result.append(

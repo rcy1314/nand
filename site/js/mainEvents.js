@@ -2,6 +2,7 @@ window.onload = function () {
 
   if (backgroundImage[0].element == `container`)
     _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+
   else if (backgroundImage[0].element == `main`)
     _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
 
@@ -84,14 +85,14 @@ _quick.addEventListener('touchstart', (evt) => {
   { passive: true }
 );
 
-document.addEventListener('touchstart', (evt) => {
+_container.addEventListener('touchstart', (evt) => {
     touchmove = false;
     touchstartX = evt.changedTouches[0].screenX;
   },
   { passive: true }
 );
 
-document.addEventListener('touchend', (evt) => {
+_container.addEventListener('touchend', (evt) => {
   touchendX = evt.changedTouches[0].screenX;
   handleSwipe();
   let isScrolling;
@@ -114,11 +115,13 @@ document.addEventListener('touchend', (evt) => {
   },
   { passive: true }
 );
-document.addEventListener('wheel', (e) => {
+
+_container.addEventListener('wheel', (e) => {
   if (document.body.contains(_channel))
     _channel.scrollLeft += e.deltaY /4;
 })
-document.addEventListener('scroll', (evt) => {
+
+_main.addEventListener('scroll', (evt) => {
     if (
       evt.target.classList.contains(`channel`) ||
       evt.target.id == `main`
@@ -137,23 +140,23 @@ document.addEventListener('scroll', (evt) => {
       if (
         (
           _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
-          sideScroll == false &&
-          Reader == true &&
-          stop == false
+          !sideScroll &&
+          Reader &&
+          !stop
         ) ||
         (
-          sideScroll == true &&
+          sideScroll &&
           _channel.scrollWidth -
           _channel.scrollLeft -
           _channel.clientWidth <=
           _channel.clientWidth &&
-          Reader == true &&
-          stop == false
+          Reader &&
+          !stop
         )
       ) {
         stop = true;
         first = false;
-        if (showSplash == true) _check.style.display = `block`;
+        if (showSplash) _check.style.display = `block`;
         xmlRequestParsing(anyRandomMenuObject());
       }
     }
@@ -161,7 +164,7 @@ document.addEventListener('scroll', (evt) => {
   true
 );
 
-document.addEventListener('ontouchmove', (evt) => {
+_container.addEventListener('ontouchmove', (evt) => {
     if (
       evt.target.classList.contains(`channel`) ||
       evt.target.id == `main`
@@ -180,32 +183,31 @@ document.addEventListener('ontouchmove', (evt) => {
     	}, 2600);
       if (
         (
-          sideScroll == false &&
+          !sideScroll &&
           _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
-          Reader == true &&
-          stop == false
+          Reader &&
+          !stop
         ) ||
         (
-          sideScroll == true &&
+          sideScroll &&
           _main.querySelector(`.channel`).scrollWidth -
           _main.querySelector(`.channel`).scrollLeft -
           _main.querySelector(`.channel`).clientWidth <=
           _main.querySelector(`.channel`).clientWidth &&
-          Reader == true &&
-          stop == false
+          Reader &&
+          !stop
         )
       ) {
         stop = true;
         first = false;
-        if (showSplash == true) {
-          _check.style.display = `block`;
-        }
+        if (showSplash) _check.style.display = `block`;
       }
     }
   },
   true
 );
-document.addEventListener('click', (evt) => {
+
+_container.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`construct`) ||
       evt.target.classList.contains(`download`) ||
@@ -250,7 +252,7 @@ document.addEventListener('click', (evt) => {
         _view.blur();
         return false;
       } else if (_first.style.display === `block`) {
-        if (quickFeeds == false) _show.style.visibility = `visible`;
+        if (!quickFeeds) _show.style.visibility = `visible`;
         _options.style.visibility = `visible`;
         _social.style.visibility = `visible`;
         _label.style.visibility = `visible`;
@@ -260,11 +262,11 @@ document.addEventListener('click', (evt) => {
         _guest.blur();
         return false;
       } else if (
-        !document
+        !_container
           .querySelectorAll(`.attribute`)
           .forEach((a) => (a.style.display = `none`))
       ) {
-        document
+        _container
           .querySelectorAll(`.attribute`)
           .forEach((a) => (a.style.display = `none`));
         var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
@@ -308,7 +310,7 @@ document.addEventListener('click', (evt) => {
           var file = new Blob([xhr.response], { type: "image" });
           saveAs(
             file,
-            document
+            _container
               .querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
               ).value
@@ -380,7 +382,7 @@ document.addEventListener('click', (evt) => {
       _min.style.display = `block`;
       onScreen = onScreen != true;
       sideBarDisplay(onScreen);
-      if (onScreen == true)
+      if (onScreen)
         _bar.style.display = `none`;
     }
     else if (
@@ -390,7 +392,7 @@ document.addEventListener('click', (evt) => {
     ) {
       topMenuBarDisplay(topBar);
       Reader = Reader != true;
-      if (Reader == false) {
+      if (!Reader) {
         onlyImages = onlyImagesBuffer;
         notifyOption(`Reading`, `fa-times-circle`);
         _main
@@ -399,7 +401,7 @@ document.addEventListener('click', (evt) => {
             (a) => a.classList.remove(`luv`)
           );
         _channel.append(footerBuild(id));
-      } else if (Reader == true) {
+      } else if (Reader) {
         if (
           document.body.contains(
             _channel.querySelector(`.item`)
@@ -410,14 +412,14 @@ document.addEventListener('click', (evt) => {
         onlyImages = true;
         randomDuplicate = [];
         notifyOption(`Reading`, `fa-check-circle`);
-        if (showSplash == true) _check.style.display = `Block`;
+        if (showSplash) _check.style.display = `Block`;
         if (
           document.body.contains(
-            _main.querySelector(`#bottom`)
+            _center.querySelector(`#bottom`)
           )
         )
-          _main.querySelector(`#bottom`).remove();
-        if (showSplash == true) _check.style.display = `block`;
+          _center.querySelector(`#bottom`).remove();
+        if (showSplash) _check.style.display = `block`;
         _sb.style.display = `none`;
         _main
           .querySelectorAll(`.joi`)
@@ -469,9 +471,9 @@ document.addEventListener('click', (evt) => {
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (_sidebar.style.left == 0) _sb.style.display = `block`;
-      if (quickFeeds == false)
-        _show.style.visibility = `visible`;
       _options.style.visibility = `visible`;
+      if (!quickFeeds)
+        _show.style.visibility = `visible`;
       _social.style.visibility = `visible`;
       _label.style.visibility = `visible`;
       _quick.style.visibility = `visible`;
@@ -480,12 +482,11 @@ document.addEventListener('click', (evt) => {
       _toggle.style.display = `block`;
       _first.style.display = `none`;
       _visit.style.display = `flex`;
+      _top.style.display = `none`;
       stageXML();
       stageGroup();
       quickFeedDisplay(quickFeeds);
-      _top.style.display = `none`;
       _feed.scrollLeft = 0;
-      document.title = ``;
       main.setAttribute(`tabindex`, -1);
       main.focus();
     }
@@ -534,7 +535,7 @@ document.addEventListener('click', (evt) => {
     ) {
       first = true;
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
-      if (Reader == true) {
+      if (Reader) {
         randomDuplicate = [];
         xmlRequestParsing(anyRandomMenuObject());
       } else {
@@ -661,10 +662,10 @@ document.addEventListener('click', (evt) => {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (
         document.body.contains(
-          _main.querySelector(`#bottom`)
+          _center.querySelector(`#bottom`)
         )
       )
-        _main.querySelector(`#bottom`).remove();
+        _center.querySelector(`#bottom`).remove();
       first = false;
       touchmove = false;
       xmlRequestParsing(

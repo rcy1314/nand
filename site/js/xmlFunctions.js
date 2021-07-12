@@ -123,7 +123,7 @@ var guideImageAttributes = function (pubArray) {
               if (jsonResponse.score >= safeSearchScore) {
                 if (
                   document.body.contains(
-                    _main.querySelector(
+                    _guide.querySelector(
                       `[aria-item='${pubArray.menuObject}']
                        [aria-object='${pubArray.pubIndex}']
                        .filterBlur
@@ -131,7 +131,7 @@ var guideImageAttributes = function (pubArray) {
                     )
                   )
                 )
-                  _main
+                  _guide
                     .querySelector(
                       `[aria-item='${pubArray.menuObject}']
                        [aria-object='${pubArray.pubIndex}']
@@ -222,7 +222,7 @@ var guideImageAttributes = function (pubArray) {
           );
       }
       if (
-        youtubeMedia == false &&
+        !youtubeMedia &&
         menu[id].id.match(/Youtube/g)
       ) {
       _guide
@@ -585,31 +585,31 @@ var xmlImageDimensions = function (
 ) {
   let k = 5420;
   let maximum = 480;
-  let itemContainer = _main.querySelector(
+  let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
-  let itemImage = _main.querySelector(
+  let itemImage = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
-  let itemFilter = _main.querySelector(
+  let itemFilter = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
-  let attribute = _main.querySelector(
+  let attribute = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
-  let copyPicture = _main.querySelector(
+  let copyPicture = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
   );
-  let copyDownload = _main.querySelector(
+  let copyDownload = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
-  let copyPost = _main.querySelector(
+  let copyPost = _channel.querySelector(
     `[aria-item='${pubIndex}'] .post`
   );
   if (
     newImg.naturalWidth < maximum &&
     document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
         )
     )
@@ -625,7 +625,7 @@ var xmlImageDimensions = function (
     copyDownload.style.display = `none`;
     if (
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
         )
       )
@@ -640,41 +640,41 @@ var xmlImageDimensions = function (
     if (
       newImg.naturalHeight >= newImg.naturalWidth &&
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) &&
-        cropImages == true &&
+        cropImages &&
         menu[id].id.match(/Youtube/g)
     )
     itemContainer.style.height = `160px`;
     else if (
-      cropImages == true &&
+      cropImages &&
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && newImg.naturalHeight <= newImg.naturalWidth
     ) itemContainer.style.height = `fit-content`;
     else if (
-      cropImages == false &&
+      !cropImages &&
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && newImg.naturalHeight >= newImg.naturalWidth
     ) itemContainer.style.height = `auto`;
     else if (
-      cropImages == false &&
+      !cropImages &&
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && newImg.naturalHeight <= newImg.naturalWidth
     ) itemContainer.style.height = `fit-content`;
     if (
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
         )
       )
@@ -682,7 +682,7 @@ var xmlImageDimensions = function (
     itemFilter.classList.add(`default`);
     if (
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
         )
       )
@@ -694,28 +694,28 @@ var xmlImageDimensions = function (
 var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   count.push(`null`);
   let jsonResponseScore;
-  let itemContainer = _main.querySelector(
+  let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
-  let itemImage = _main.querySelector(
+  let itemImage = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
-  let itemPending = _main.querySelector(
+  let itemPending = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
   );
-  let itemFilter = _main.querySelector(
+  let itemFilter = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
-  let attribute = _main.querySelector(
+  let attribute = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
-  let copyPicture = _main.querySelector(
+  let copyPicture = _channel.querySelector(
     `[aria-item='${pubIndex}'] .picture`
   );
-  let copyDownload = _main.querySelector(
+  let copyDownload = _channel.querySelector(
     `[aria-item='${pubIndex}'] .download`
   );
-  let copyPost = _main.querySelector(
+  let copyPost = _channel.querySelector(
     `[aria-item='${pubIndex}'] .post`
   );
   if (
@@ -723,7 +723,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     src != `null` &&
     imageDuplicate.includes(src)
   ) {
-    _main
+    _channel
       .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
       .forEach(
         (a) => a.remove()
@@ -735,13 +735,13 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
   ) {
     if (
       document.body.contains(
-        _main.querySelector(
+        _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
     ) {
-      if (onlyImages == true) {
-        _main.querySelector(
+      if (onlyImages) {
+        _channel.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         ).remove();
       } else {
@@ -764,11 +764,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
     var newImg = new Image();
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
-      if (onlyImages == true) {
-        _main.querySelector(
+      if (onlyImages)
+        _channel.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         ).remove();
-      } else {
+      else {
         itemPending.remove();
         itemImage.remove();
       }
@@ -778,7 +778,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           src.match(/ytimg/g) &&
           youtubeMedia == false
         ) {
-        _main
+        _channel
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
@@ -786,8 +786,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
         itemPending.style.display = `none`;
       }
       if (
-        safeSearchIDs.includes(menu[id].id) &&
-        safeSearch == true
+        safeSearch &&
+        safeSearchIDs.includes(menu[id].id)
       ) {
         fetch(`${cors}${api}${src}`, {
           method: "GET",
@@ -853,7 +853,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
-                    _main.querySelector(
+                    _channel.querySelector(
                       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                     )
                 )
@@ -878,11 +878,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
                 };
               }
               request.onerror = function (e) {
-                if (onlyImages == true) {
-                  _main.querySelector(
+                if (onlyImages)
+                  _channel.querySelector(
                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                   ).remove();
-                } else {
+                else {
                   itemPending.remove();
                   itemImage.remove();
                 };
@@ -907,7 +907,7 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
           });
       } else if (
             document.body.contains(
-              _main.querySelector(
+              _channel.querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
               )
             )
@@ -928,8 +928,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
               newImg
             );
             if (
-              flexBox == false &&
-              youtubeMedia == false &&
+              !flexBox &&
+              !youtubeMedia &&
               menu[id].id.match(/Youtube/g)
             )
               itemContainer.style.paddingBottom = `56.25%`;
@@ -939,11 +939,11 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
             }
             }
             request.onerror = function (e) {
-              if (onlyImages == true) {
-                _main.querySelector(
+              if (onlyImages)
+                _channel.querySelector(
                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                 ).remove();
-              } else {
+              else {
                 itemPending.remove();
                 itemImage.remove();
               }
@@ -962,8 +962,8 @@ var xmlImageAttributes = function (empty, menuObject, pubIndex, src) {
       };
     };
     newImg.onerror = function () {
-      if (onlyImages == true) {
-        document.querySelector(
+      if (onlyImages) {
+        _channel.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
         ).remove();
       } else {
@@ -997,10 +997,10 @@ var xmlTitleParsing = function (xhr) {
 var xmlAppendPublication = function (id) {
   if (
     document.body.contains(
-      document.querySelector(`#bottom`)
+      _center.querySelector(`#bottom`)
     )
   )
-  document.querySelector(`#bottom`).remove();
+  _center.querySelector(`#bottom`).remove();
   const has = exclude.map((a) => a.toLowerCase());
   for (i = 0; i < pub.length - 1; i++) {
     if (
@@ -1013,7 +1013,6 @@ var xmlAppendPublication = function (id) {
       omitGuide == true &&
       i != local
     ) {
-      let channel = document.createElement(`div`);
         _channel.append(pub[i].post)
         images.push(
           {
@@ -1022,7 +1021,6 @@ var xmlAppendPublication = function (id) {
           }
         );
     } else if (omitGuide == false) {
-        let append = _main.querySelectorAll(`.channel`);
         _channel.append(pub[i].post)
         images.push(
           {
@@ -1033,8 +1031,8 @@ var xmlAppendPublication = function (id) {
     }
   }
   if (
-    safeSearchIDs.includes(menu[id].id) ||
-    safeSearch == true
+    safeSearch ||
+    safeSearchIDs.includes(menu[id].id)
   ) {
     for (
       let i = 0;
@@ -1072,29 +1070,29 @@ var xmlAppendPublication = function (id) {
     )
   ) {
     if (
-      sideScroll == false &&
-      touchmove == true &&
-      Reader == false ||
-      first == true ||
+      !sideScroll &&
+      touchmove &&
+      !Reader ||
+      first ||
       document.body.contains(
-        _xml.querySelector(`.item`)
+        _channel.querySelector(`.item`)
       )
     ) {
       scrollToElm(
         touchmove,
         _main,
-        document.querySelector(`[aria-object='${id}']`),
+        _channel.querySelector(`[aria-object='${id}']`),
         250
       );
     } else if (
-      sideScroll == true &&
-      Reader == false &&
-      first == false
+      sideScroll &&
+      !Reader &&
+      !first
     ) {
       touchmove = true;
       sideScrollToElm(touchmove,
-        document.querySelector(`.channel`),
-        document.querySelector(`[aria-object='${id}']`),
+        _channel,
+        _channel.querySelector(`[aria-object='${id}']`),
         250
       );
     }
@@ -1106,7 +1104,7 @@ var xmlAppendPublication = function (id) {
   }
   if (
     pub.length > 1 &&
-    Reader == false
+    !Reader
   ) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
@@ -1117,18 +1115,18 @@ var xmlAppendPublication = function (id) {
     ) displayFlex(displayFlex);
     else if (sideScroll == true) {
       scrollIntoView = false;
-        _main.querySelector(`.channel`).classList.add(`sideChannel`);
-        _main.querySelector(`.center`).style.top = `60px`;
-        _main.querySelector(`#xml`).style.top = 0;
-        _main
+        _channel.classList.add(`sideChannel`);
+        _center.style.top = `60px`;
+        _xml.style.top = 0;
+        _channel
           .querySelectorAll(`.item`)
           .forEach((a) => (a.classList.add(`sideItem`)));
-        _main
+        _channel
           .querySelectorAll(`.classic`)
           .forEach((a) => (a.style.display = `block`));
     }
-    if (showSplash == true) _check.style.display = `none`;
-    if (Reader == false)
+    if (showSplash) _check.style.display = `none`;
+    if (!Reader)
       _channel.append(
         footerBuild(id)
       );
@@ -1158,12 +1156,12 @@ var xmlRequestParsing = function (index) {
   document.title = menu[index].id.space();
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
-  if (readPrevious == false) random = [];
+  if (!readPrevious) random = [];
   if (
     !document.body.contains(
       _channel.querySelector(`.item`)
     ) &&
-    first == true
+    first
   ) stageXML();
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
@@ -1172,11 +1170,11 @@ var xmlRequestParsing = function (index) {
     _bar.style.display = `none`;
   _sb.style.display = `none`;
   if (
-    first == true &&
-    showSplash == true ||
-    Reader == false &&
-    first == true &&
-    showSplash == true
+    first &&
+    showSplash ||
+    !Reader &&
+    first &&
+    showSplash
   )
     _check.style.display = `block`;
   httpRequest = new XMLHttpRequest();
