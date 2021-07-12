@@ -1,6 +1,6 @@
 {
   "name": "acktic.github.io",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Just Read",
   "main": "app.js",
   "scripts": {
