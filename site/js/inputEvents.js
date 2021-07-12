@@ -227,6 +227,9 @@ document.addEventListener('submit', (evt) => {
         )
       ) {
         touchmove = true;
+        stageXML();
+        _xml.style.display = `block`;
+        _xml.style.zIndex = `1`;
         xmlRequestParsing(
           _match.querySelector(`.hover`).getAttribute(`aria-item`)
         )
