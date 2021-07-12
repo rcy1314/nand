@@ -1130,9 +1130,9 @@ var xmlAppendPublication = function (id) {
         footerBuild(id)
       );
     contentStatusDisplay(id, recent, oldest, posts);
+    if (Reader == false) first = true;
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
-    first = true;
     local = null;
     stop = false;
     images = [];

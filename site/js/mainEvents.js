@@ -388,7 +388,6 @@ document.addEventListener('click', (evt) => {
         `joi`
       )
     ) {
-      _visit.style.display = `none`;
       topMenuBarDisplay(topBar);
       Reader = Reader != true;
       if (Reader == false) {
