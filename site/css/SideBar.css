@@ -8,6 +8,7 @@
   width: 280px;
   left: -280px;
   z-index: 12;
+  top: .3px;
 }
 
 #container #sidebar #content #basic {

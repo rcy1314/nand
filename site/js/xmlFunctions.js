@@ -615,9 +615,9 @@ var xmlImageDimensions = function (
     )
   ) {
     itemImage.closest(`.classic`).style.alignItems = `center`;
-    if (sideScroll == false)
+    if (!sideScroll)
       itemImage.closest(`.classic`).style.display = `flex`;
-    else if (flexBox == false && sideScroll == true)
+    else if (!flexBox && sideScroll)
       itemImage.closest(`.classic`).style.display = `block`;
     itemContainer.style.height = `fit-content`;
     itemImage.classList.remove(`hidden`);
@@ -1111,20 +1111,13 @@ var xmlAppendPublication = function (id) {
     if (pub[0]) var recent = pub[0].dst;
   }
     if (
-      flexBox == true
-    ) displayFlex(displayFlex);
-    else if (sideScroll == true) {
-      scrollIntoView = false;
-        _channel.classList.add(`sideChannel`);
-        _center.style.top = `60px`;
-        _xml.style.top = 0;
-        _channel
-          .querySelectorAll(`.item`)
-          .forEach((a) => (a.classList.add(`sideItem`)));
-        _channel
-          .querySelectorAll(`.classic`)
-          .forEach((a) => (a.style.display = `block`));
-    }
+      flexBox
+    )
+      displayFlex();
+    else if (
+      sideScroll
+    )
+      displaySideScroll();
     if (showSplash) _check.style.display = `none`;
     if (!Reader)
       _channel.append(

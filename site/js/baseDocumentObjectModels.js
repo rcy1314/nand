@@ -67,6 +67,19 @@ let displayFlex = function (value) {
       );
 }
 
+let displaySideScroll = function () {
+  scrollIntoView = false;
+  _channel.classList.add(`sideChannel`);
+  _center.style.top = `60px`;
+  _xml.style.top = 0;
+  _channel
+    .querySelectorAll(`.item`)
+    .forEach((a) => (a.classList.add(`sideItem`)));
+  _channel
+    .querySelectorAll(`.classic`)
+    .forEach((a) => (a.style.display = `block`));
+}
+
 let displayExpand = function (Value) {
   if (Value) {
     groupType = `list`;
