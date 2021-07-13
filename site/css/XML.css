@@ -60,8 +60,9 @@
   background-color: transparent;
   display: inline-block;
   height: fit-content;
-  position: relative;
   text-align: justify;
+  position: relative;
+  top: 0;
 }
 
 .center #bottom {
@@ -73,7 +74,7 @@
   display: flex;
   height: 5em;
   width: 100%;
-  top: 425px;
+  top: 475px;
   order: 1;
 }
 

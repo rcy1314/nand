@@ -209,26 +209,16 @@ document.addEventListener('submit', (evt) => {
     } else if (event.target.id == `search`) {
       if (
         document.body.contains(
-          _match.querySelector(`.hover`)
-        ) &&
-        translations.includes(
-          _match.querySelector(`.hover`).getAttribute(`aria-item`)
+          _result.querySelector(`.populate`)
         )
-      ) {
-        stageGroup();
-        category = _match.querySelector(`.hover`).getAttribute(`aria-item`);
-        if (expand) var groupType = `list`;
-        else var groupType = `blocks`;
-        populateCategoryGroup(category);
-        _match.style.display = `none`;
-        displayExpand(expand);
-      } else if (
+      )
+        stageXML();
+      if (
         document.body.contains(
           _match.querySelector(`.hover`)
         )
       ) {
         touchmove = true;
-        stageXML();
         _xml.style.display = `block`;
         _xml.style.zIndex = `1`;
         xmlRequestParsing(
