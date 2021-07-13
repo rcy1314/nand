@@ -326,18 +326,14 @@
       display: none !important;
   }
 
-  #main #option {
-    display: none !important;
-  }
-
   #options {
       display: inline-block;
       position: absolute;
       margin-right: auto;
       margin-left: auto;
-      left: 0;
       top: 115px;
       right: 0;
+      left: 0;
   }
 
   .content {
@@ -409,10 +405,14 @@
     position: absolute;
     min-height: 100%;
     display: block;
+    right: 90px;
     width: 75%;
-    right: 50px;
     z-index: 1;
-    top: 0;
+    top: 60px;
+  }
+
+  .yt .image {
+    padding-bottom: 16.25% !important;
   }
 
 }
