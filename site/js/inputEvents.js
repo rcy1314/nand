@@ -110,6 +110,7 @@ _main.addEventListener('keyup', (evt) => {
   },
   false
 );
+
 document.addEventListener('submit', (evt) => {
   _toggle.style.display = `none`
     if (
@@ -252,14 +253,13 @@ document.addEventListener('submit', (evt) => {
         _show.style.visibility = `visible`;
         _link.style.visibility = `visible`;
         _first.style.display = `none`;
-        topMenuBarDisplay(topBar);
         _xml.style.display = `block`;
         _xml.style.zIndex = `1`;
+        topMenuBarDisplay(topBar);
         xmlRequestParsing(
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_guest.value.length > 0)
-      stageGroup();
       filterInputResponse(_guest.value);
       _visit.style.display = `none`;
       _first.style.display = `none`;
