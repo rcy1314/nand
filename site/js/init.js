@@ -157,14 +157,10 @@ setTimeout(
         },
       250)
     }
-    if (quickFeedsTranslations == true)
-      quickFeedAsset(7);
     else if (_main.clientWidth <= 425)
       quickFeedAsset(24);
     else quickFeedAsset(8);
     quickFeedDisplay(quickFeeds);
-    if (sideBarTranslations == true)
-      appendSideBarLists(`#content`, `cat`, translations);
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
     appendSideBarLists(`.themes`, `theme`, themes);
     sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
@@ -180,6 +176,15 @@ setTimeout(
     content.append(basicFormBuild());
     if (sideBarLock == true) content.append(sideBarThemeBuild(`fa-lock`))
     else if (sideBarLock == false) content.append(sideBarThemeBuild(`fa-unlock`))
+
+    for (
+      var i = 0;
+      i <= translations.length - 1;
+      i++
+    )
+      _under.append(
+        underTranslation(translations[i])
+      );
 
     if (sideBarCenter == true)
       _content.style.position = `absolute`;

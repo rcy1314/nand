@@ -319,19 +319,6 @@ let topBarBackdrop = false;
 let toggleBorders = false;
 
 /*
-    sideBarTranslations [boolean/integer]
-
-      Applications
-        sideBarDisplay, sideBarEvents.js
-
-      Result
-        translations in sideBar
-
-*/
-
-let sideBarTranslations = false;
-
-/*
     quickFeeds [boolean/integer]
 
       Applications
@@ -343,19 +330,6 @@ let sideBarTranslations = false;
 */
 
 let quickFeeds = false;
-
-/*
-    quickFeedsTranslations [boolean/integer]
-
-      Applications
-        mainEvents.js, onload
-
-      Result
-        translations in quick feeds
-
-*/
-
-let quickFeedsTranslations = false;
 
 /*
     scrollIntoView [boolean/integer]

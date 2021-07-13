@@ -278,6 +278,7 @@ let quickFeedDisplay = function (Value) {
     _front.classList.remove(`toggle`);
     _quick.classList.add(`visible`);
     _show.style.visibility=`hidden`;
+    _under.style.display = `none`;
     if (
       _main.clientWidth <= 425
     )
@@ -294,6 +295,7 @@ let quickFeedDisplay = function (Value) {
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
     _front.classList.remove(`toggleHidden`);
+    _under.style.display = `inline-flex`;
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
     _show.style.visibility=`visible`;
@@ -1012,6 +1014,14 @@ let basicFormBuild = function () {
   basic.append(form);
   return basic;
 };
+
+let underTranslation = function (Translation) {
+  let div = document.createElement(`div`);
+  div.setAttribute(`aria-item`, Translation)
+  div.innerHTML = `${Translation}`;
+  div.classList.add(`under`);
+  return div
+}
 
 let sideBarOptionBuild = function (
   name,

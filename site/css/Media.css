@@ -43,7 +43,6 @@
 
 @media screen and (max-width: 426px) {
 
-  #just,
   #toggle,
   .expand .des,
   .btn .flip-front,
@@ -79,6 +78,10 @@
     top: 200px
   }
 
+  #under {
+    top: 250px;
+  }
+
   #main,
   #xml {
     height: 100% !important;
@@ -91,7 +94,7 @@
       position: absolute;
       margin-right: auto;
       margin-left: auto;
-      left: 10px;
+      left: 0;
       top: 115px;
       right: 0;
   }
@@ -327,6 +330,16 @@
     display: none !important;
   }
 
+  #options {
+      display: inline-block;
+      position: absolute;
+      margin-right: auto;
+      margin-left: auto;
+      left: 0;
+      top: 115px;
+      right: 0;
+  }
+
   .content {
     display: none;
   }
@@ -385,13 +398,6 @@
     display: flex;
     height: 50px;
     right: 11px;
-  }
-
-  #options {
-    display: inline-block;
-    position: absolute;
-    right: 50px;
-    top: -40px;
   }
 
   #social {

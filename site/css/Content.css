@@ -126,22 +126,26 @@ html body,
   top: 0;
 }
 
-#just {
+#under {
   background-color: transparent;
-  position: relative !important;
-  border: var(--border-color);
   color: var(--fill-color);
-  display: inline-block;
-  padding-bottom: 2px;
-  border-radius: 12px;
-  padding-right: 20px;
-  padding-left: 20px;
-  letter-spacing: 0;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
   font-size: 10px;
+  height: 15px;
+  width: 100%;
+  left: 0;
+}
+
+.under {
+  margin-left: 10px;
+}
+
+.under:hover {
+  text-decoration: underline var(--fill-color) dashed;
   cursor: pointer;
-  margin: 0 auto;
-  bottom: 150px;
-  left: 160px;
 }
 
 #link {

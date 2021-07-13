@@ -59,19 +59,6 @@ let handleGuide = function () {
 
 let quickFeedAsset = function (feedAssets) {
   let duplicate = [];
-  if (feedAssets == 7)
-    for (
-      var i = 0;
-      i <= translations.length - 1;
-      i++
-    ) {
-      _feed.append(
-        translationBuild(
-          translations[i]
-        )
-      );
-    }
-  else
     for (
       var i = 1;
       i <= menu.length - 1;
