@@ -279,9 +279,12 @@ _container.addEventListener('click', (evt) => {
     }
     if (
       evt.target.classList.contains(`under`)
-    )
-      populateCategoryGroup(evt.target.getAttribute(`aria-item`));
-    else if (
+    ) {
+      stageGroup();
+      if (evt.target.getAttribute(`aria-item`) == `Assets`)
+        populateAssets();
+      else populateCategoryGroup(evt.target.getAttribute(`aria-item`));
+    } else if (
       evt.target.getAttribute(`aria-item`) == `Assets`
     )
       populateAssets();

@@ -359,8 +359,7 @@ let populateAssets = function () {
       media = `<div class='media' style='display:none'>Images</div>`;
     else media = `<div class='blank'></div>`;
       if (
-        id != menu.indexOf(adj[i]) &&
-        adj[i].media
+        id != menu.indexOf(adj[i])
       ) {
         _result.append(
           categoryBuild(
