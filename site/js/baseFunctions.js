@@ -231,8 +231,8 @@ let progressBackDrop = function (done) {
     )
   ) {
     if (
-      scrollIntoView == true &&
-      first == true
+      scrollIntoView &&
+      first
     ) {
       _center.classList.add(`scroll-into-view`)
       setTimeout(
@@ -241,8 +241,8 @@ let progressBackDrop = function (done) {
         }, 1500
       )
     }
-    if (showSplash == true) _check.style.display = `none`;
-    if (fadeIntoView == true) {
+    if (showSplash) _check.style.display = `none`;
+    if (fadeIntoView) {
       (function () {
         function checkPosition() {
           let elements = _channel.querySelectorAll(`.image`);
@@ -315,33 +315,23 @@ let progressBackDrop = function (done) {
         );
       }
   }
-  if (
+  else if (
     document.body.contains(
-      _result.querySelector(`.populate`)
+      _group.querySelector(`.populate`)
     )
   ) {
     if (
       scrollIntoView
     ) {
-      _result.classList.add(`scroll-into-view`)
+      _group.classList.add(`scroll-into-view`)
       if (
-        onlyImages
+        !onlyImages
       )
         setTimeout(
           function() {
             _main.scrollTop = _air.clientHeight;
-            _group.style.top = `-60px`;
           }, 25
         )
-    }
-    if (
-      !onlyImages
-    ) {
-      setTimeout(
-        function() {
-          _main.scrollTop = _air.clientHeight;
-        },
-      25)
     }
   }
   if (showSplash) _check.style.display = `none`;
@@ -455,7 +445,7 @@ let populateCategoryGroup = function (translation) {
           )
         );
       }
-    } else if (onlyImages) {
+    } else if (!onlyImages) {
       if (
         translation == menu[i].category &&
         id != menu.indexOf(menu[i])

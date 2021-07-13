@@ -259,13 +259,9 @@ document.addEventListener('submit', (evt) => {
           _first.querySelector(`.hover`).getAttribute(`aria-item`)
         );
       } else if (_guest.value.length > 0)
-        filterInputResponse(_guest.value);
-      _options.style.visibility = `visible`;
-      _social.style.visibility = `visible`;
-      _label.style.visibility = `visible`;
-      _quick.style.visibility = `visible`;
-      _show.style.visibility = `visible`;
-      _link.style.visibility = `visible`;
+      stageGroup();
+      filterInputResponse(_guest.value);
+      _visit.style.display = `none`;
       _first.style.display = `none`;
     }
     event.preventDefault();
