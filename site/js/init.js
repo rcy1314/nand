@@ -80,7 +80,6 @@ setTimeout(
             if (
               menu.findIndex(
                 (item, i) =>
-                  item.title === id ||
                   cyrb53(item.description) == id ||
                   cyrb53(item.hash) == id ||
                   cyrb53(item.uri) == id ||
@@ -91,7 +90,6 @@ setTimeout(
               i =
               menu.findIndex(
                 (item, i) =>
-                  item.title === id ||
                   cyrb53(item.description) == id ||
                   cyrb53(item.hash) == id ||
                   cyrb53(item.uri) == id ||
