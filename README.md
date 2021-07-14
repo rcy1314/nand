@@ -1,6 +1,4 @@
 <h1>acktic.github.io</h1>
-
-<img src='capture.jpg'>
 <br>
 <div style='display:inline-block'><img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'><br><img src='https://heroku-badge.herokuapp.com/?app=acktic-github-io&style=flat&svg=1'><br><img src='https://img.shields.io/github/license/acktic/acktic.github.io?style=social'></div>
 
