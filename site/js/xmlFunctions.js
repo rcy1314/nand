@@ -1118,6 +1118,10 @@ var xmlAppendPublication = function (id) {
       sideScroll
     )
       displaySideScroll();
+    else if (
+      legacy
+    )
+      displayLegacy();
     if (showSplash) _check.style.display = `none`;
     if (!Reader)
       _channel.append(

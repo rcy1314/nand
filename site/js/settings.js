@@ -70,30 +70,19 @@ let topBar = true;
 let showOption = true;
 
 /*
-    flexBox [boolean/integer]
-
-      Applications
-        baseDocumentObjectModles
-
-      Result
-        convert xml to flex-box (override)
-
-*/
-
-let flexBox = true;
-
-/*
     sideScroll [boolean/integer]
 
       Applications
-        sideBarEvents, xmlAppendPublication
+        mainEvents, xmlAppendPublication
 
       Result
-        vertical / horizontal scrolling
+        `sideScroll`,
+        `flexBox`,
+        `legacy`
 
 */
 
-let sideScroll = false;
+let display = `flexbox`;
 
 /*
     Reader [boolean/integer]
@@ -161,71 +150,6 @@ let sideBarLock = false;
 */
 
 let expand = true;
-
-/*
-    expandVisual [boolean/integer]
-
-      Applications
-        sidebar, onload
-
-      Result
-        Visual expanded
-
-*/
-
-let expandVisual = false;
-
-/*
-    expandFavorites [boolean/integer]
-
-      Applications
-        sidebar, onload
-
-      Result
-        Favorites expanded
-
-*/
-
-let expandFavorites = false;
-
-/*
-    expandFilter [boolean/integer]
-
-      Applications
-        sidebar, onload
-
-      Result
-        Filter expanded
-
-*/
-
-let expandFilter = false;
-
-/*
-    expandSettings [boolean/integer]
-
-      Applications
-        sidebar
-
-      Result
-        Settings expanded
-
-*/
-
-let expandSettings = false;
-
-/*
-    expandBackground [boolean/integer]
-
-      Applications
-        sideBar
-
-      Result
-        Background expanded
-
-*/
-
-let expandBackground = false;
 
 /*
     showSplash [boolean/integer]
@@ -710,11 +634,25 @@ if (expand == true) {
   List = false;
 }
 
-let display = ['legacy', 'flexBox', 'sideScroll']
-let viewport;
-if (!flexBox && !sideScroll) viewport = 0
-if (!flexBox && sideScroll) viewport = 2
-if (flexBox) viewport = 1
+let cycle
+let viewport = ['legacy', 'flexBox', 'sideScroll']
+cycle = viewport.findIndex(
+  (item) => item == display
+)
+if (cycle = 0) {
+  sideScroll = false;
+  flexBox = false;
+  legacy = true;
+} else if (cycle = 1) {
+  sideScroll = false;
+  flexBox = true;
+  legacy = false;
+} else if (cycle = 1) {
+  sideScroll = true;
+  flexBox = false;
+  legacy = false;
+}
+
 let quit; // xmlRequestParsing pub length
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu

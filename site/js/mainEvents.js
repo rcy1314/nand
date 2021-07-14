@@ -287,30 +287,42 @@ _container.addEventListener('click', (evt) => {
     } else if (
       evt.target.classList.contains(`fa-camera-retro`)
     ) {
-      viewport = viewport + 1
+      cycle = cycle + 1
       if (
-        viewport == display.length
+        cycle == viewport.length
       )
-        viewport = 0
+        cycle = 0
       if (
-        viewport == 0
+        cycle == 0
       ) {
+        display = `legacy`;
+        sideScroll = false;
+        flexBox = false;
+        legacy = true;
         let leaveOff = document.querySelector(`.channel`).scrollLeft +
           ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
         displayLegacy();
         _main.scrollTop = leaveOff;
       } else if (
         _main.clientWidth >= 920 &&
-        viewport == 1
+        cycle == 1
       ) {
+        display = `flexBox`;
+        sideScroll = false;
+        flexBox = true;
+        legacy = false;
         let leaveOff = _main.scrollTop -
           ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
         displayFlex();
         _main.scrollTop = leaveOff;
       } else if (
         _main.clientWidth >= 768 &&
-        viewport == 2
+        cycle == 2
       ) {
+        display = `sideScroll`;
+        sideScroll = true;
+        flexBox = false;
+        legacy = false;
         let leaveOff = _main.scrollTop -
           ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
         displaySideScroll();

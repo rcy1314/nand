@@ -45,6 +45,7 @@ let stageXML = function () {
 let displayLegacy = function () {
   _center.style.cssText = `justify-content:center !important`;
   _center.classList.add(`sideChannel`);
+  _center.style.display = `inline-block`;
   _channel.classList.remove(`sideChannel`);
   _channel.style.height = `fit-content`;
   _channel.classList.remove(`flexbox`);
@@ -78,10 +79,7 @@ let displayFlex = function () {
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
     _center.classList.remove(`sideChannel`);
-    _center.style.cssText =
-    `justify-content:center !important;
-     display:flex !important;
-     width:100vw !important`;
+    _center.style.cssText = `justify-content:center;display:flex;width:100vw`;
     _channel.style.height = `${(max + 1000).toString()}px`
     _channel.classList.add(`flexbox`);
     _channel

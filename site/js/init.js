@@ -213,9 +213,7 @@ setTimeout(
     adj = menu.slice();
     randomizeAssets(adj);
 
-    if (_main.clientWidth <= 768) flexBox = false;
-
-    if (flexBox == true) sideScroll = false;
+    if (_main.clientWidth <= 768) display == `legacy`;
 
     if (_main.clientWidth <= 425)
       offset = 500;
