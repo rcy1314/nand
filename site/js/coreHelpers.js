@@ -2,7 +2,7 @@ let init = function () {
   if (loading == `dots`) {
     _progress.style.width = `0%`;
     _dots.style.zIndex = `12`;
-    dots.querySelectorAll(`.fill`)
+    _dots.querySelectorAll(`.fill`)
       .forEach(
         (a) => a.style.zIndex = `12`
       );

@@ -94,7 +94,7 @@ let displayFlex = function () {
         (a) => a.style.marginLeft = `0`
       );
     _display.style.display = `none`;
-    _xml.style.top = `60px`;
+    _main.scrollTop = 0;
 }
 
 let displaySideScroll = function () {

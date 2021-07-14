@@ -10,15 +10,13 @@
 
     const _xml = document.getElementById(`xml`);
 
-    const _dot = document.getElementById(`dots`);
-
     const _min = document.querySelector(`.hide`);
 
     const _html = document.querySelector(`html`);
 
     const _body = document.querySelector(`body`);
 
-    const _dots = document.querySelector(`.fill`);
+    const _dots = document.getElementById(`dots`);
 
     const _link = document.getElementById(`link`);
 
