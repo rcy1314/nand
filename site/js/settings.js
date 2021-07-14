@@ -634,7 +634,7 @@ if (expand == true) {
   List = false;
 }
 
-let cycle // display viewport index
+let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
 let post; //from init.js global timestamp for guide

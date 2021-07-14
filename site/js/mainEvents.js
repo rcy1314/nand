@@ -305,13 +305,13 @@ _container.addEventListener('click', (evt) => {
     } else if (
       evt.target.classList.contains(`fa-camera-retro`)
     ) {
-      cycle = cycle + 1
+      cycleViewport = cycleViewport + 1
       if (
-        cycle == viewport.length
+        cycleViewport == viewport.length
       )
-        cycle = 0
+        cycleViewport = 0
       if (
-        cycle == 0
+        cycleViewport == 0
       ) {
         display = `legacy`;
         sideScroll = false;
@@ -323,7 +323,7 @@ _container.addEventListener('click', (evt) => {
         _main.scrollTop = leaveOff;
       } else if (
         _main.clientWidth >= 920 &&
-        cycle == 1
+        cycleViewport == 1
       ) {
         display = `flexBox`;
         sideScroll = false;
@@ -335,7 +335,7 @@ _container.addEventListener('click', (evt) => {
         _main.scrollTop = leaveOff;
       } else if (
         _main.clientWidth >= 768 &&
-        cycle == 2
+        cycleViewport == 2
       ) {
         display = `sideScroll`;
         sideScroll = true;

@@ -215,19 +215,19 @@ setTimeout(
 
     if (_main.clientWidth <= 768) display = `legacy`;
 
-    cycle = viewport.findIndex(
+    cycleViewport = viewport.findIndex(
       (item) => item == display
     )
     console.log()
-    if (viewport[cycle] == `legacy`) {
+    if (viewport[cycleViewport] == `legacy`) {
       sideScroll = false;
       flexBox = false;
       legacy = true;
-    } else if (viewport[cycle] == `flexBox`) {
+    } else if (viewport[cycleViewport] == `flexBox`) {
       sideScroll = false;
       flexBox = true;
       legacy = false;
-    } else if (viewport[cycle] == `sideScroll`) {
+    } else if (viewport[cycleViewport] == `sideScroll`) {
       sideScroll = true;
       flexBox = false;
       legacy = false;
