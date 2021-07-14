@@ -294,15 +294,28 @@ _container.addEventListener('click', (evt) => {
         viewport = 0
       if (
         viewport == 0
-      ) displayLegacy();
-      if (
+      ) {
+        let leaveOff = document.querySelector(`.channel`).scrollLeft +
+          ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
+        displayLegacy();
+        _main.scrollTop = leaveOff;
+      } else if (
         _main.clientWidth >= 920 &&
         viewport == 1
-      ) displayFlex();
-      if (
+      ) {
+        let leaveOff = _main.scrollTop -
+          ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
+        displayFlex();
+        _main.scrollTop = leaveOff;
+      } else if (
         _main.clientWidth >= 768 &&
         viewport == 2
-      ) displaySideScroll();
+      ) {
+        let leaveOff = _main.scrollTop -
+          ((parseInt(document.querySelectorAll(`.item`).length) * parseInt(100)));
+        displaySideScroll();
+        _channel.scrollLeft = leaveOff;
+      }
     } else if (
       evt.target.getAttribute(`aria-item`) == `Assets`
     )
