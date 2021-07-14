@@ -211,8 +211,9 @@ document.addEventListener('submit', (evt) => {
         document.body.contains(
           _result.querySelector(`.populate`)
         )
-      )
-        stageXML();
+      ) {
+        first = true;
+      }
       if (
         document.body.contains(
           _match.querySelector(`.hover`)
