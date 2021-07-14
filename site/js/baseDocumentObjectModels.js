@@ -81,6 +81,7 @@ let displayFlex = function () {
     _center.classList.remove(`sideChannel`);
     _center.style.cssText = `justify-content:center;display:flex;width:100vw`;
     _channel.style.height = `${(max + 1000).toString()}px`
+    _channel.classList.remove(`sideChannel`);
     _channel.classList.add(`flexbox`);
     _channel
       .querySelectorAll(`.item`)
@@ -93,6 +94,7 @@ let displayFlex = function () {
         (a) => a.style.marginLeft = `0`
       );
     _display.style.display = `none`;
+    _xml.style.top = `60px`;
 }
 
 let displaySideScroll = function () {
