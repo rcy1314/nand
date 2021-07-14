@@ -737,6 +737,10 @@ _container.addEventListener('click', (evt) => {
         _center.querySelector(`#bottom`).remove();
       first = false;
       touchmove = false;
+      while (_status.firstChild)
+        _status.removeChild(_status.lastChild);
+      while (_suggestions.firstChild)
+        _suggestions.removeChild(_suggestions.lastChild);
       xmlRequestParsing(
         evt.target.closest(`.btn`).getAttribute(`aria-item`)
       );
