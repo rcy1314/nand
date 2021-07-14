@@ -300,6 +300,7 @@ _container.addEventListener('click', (evt) => {
         viewport == 1
       ) displayFlex();
       if (
+        _main.clientWidth >= 768 &&
         viewport == 2
       ) displaySideScroll();
     } else if (
