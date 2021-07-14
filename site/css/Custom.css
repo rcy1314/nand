@@ -43,6 +43,10 @@
 
 @media screen and (max-width: 426px) {
 
+  .sideChannel {
+    width: 100vw !important;
+  }
+
   #toggle,
   .expand .des,
   .btn .flip-front,
@@ -364,10 +368,6 @@
     height: 264px !important;
     width: 405px !important;
     top: 0 !important;
-  }
-
-  .sideChannel {
-    width: 100vw !important;
   }
 
   #feed {
