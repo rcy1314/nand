@@ -79,6 +79,12 @@ window.onload = function () {
 
 };
 
+window.addEventListener('resize', (evt) => {
+    if (_main.clientWidth <= 768) displayLegacy();
+  },
+  { passive: true }
+);
+
 _quick.addEventListener('touchstart', (evt) => {
     quickFeedAsset(8);
   },

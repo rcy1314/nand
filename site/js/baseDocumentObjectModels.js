@@ -62,7 +62,7 @@ let displayLegacy = function () {
   _channel
     .querySelectorAll(`.item`)
     .forEach(
-      (a) => a.style.width = `410px`
+      (a) => a.style.width = `425px`
     );
   _xml.style.top = `60px`;
 }

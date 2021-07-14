@@ -210,7 +210,7 @@
   height: fit-content !important;
   overflow-x: auto;
   display: flex;
-  width: 480px !important;
+  width: 425px !important;
 }
 
 .sideChannel::-webkit-scrollbar {

@@ -82,7 +82,7 @@ let showOption = true;
 
 */
 
-let display = `flexbox`;
+let display = `flexBox`;
 
 /*
     Reader [boolean/integer]
@@ -634,25 +634,8 @@ if (expand == true) {
   List = false;
 }
 
-let cycle
+let cycle // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
-cycle = viewport.findIndex(
-  (item) => item == display
-)
-if (cycle = 0) {
-  sideScroll = false;
-  flexBox = false;
-  legacy = true;
-} else if (cycle = 1) {
-  sideScroll = false;
-  flexBox = true;
-  legacy = false;
-} else if (cycle = 1) {
-  sideScroll = true;
-  flexBox = false;
-  legacy = false;
-}
-
 let quit; // xmlRequestParsing pub length
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu

@@ -213,7 +213,25 @@ setTimeout(
     adj = menu.slice();
     randomizeAssets(adj);
 
-    if (_main.clientWidth <= 768) display == `legacy`;
+    if (_main.clientWidth <= 768) display = `legacy`;
+
+    cycle = viewport.findIndex(
+      (item) => item == display
+    )
+    console.log()
+    if (viewport[cycle] == `legacy`) {
+      sideScroll = false;
+      flexBox = false;
+      legacy = true;
+    } else if (viewport[cycle] == `flexBox`) {
+      sideScroll = false;
+      flexBox = true;
+      legacy = false;
+    } else if (viewport[cycle] == `sideScroll`) {
+      sideScroll = true;
+      flexBox = false;
+      legacy = false;
+    }
 
     if (_main.clientWidth <= 425)
       offset = 500;
