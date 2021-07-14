@@ -634,6 +634,10 @@ if (expand == true) {
   List = false;
 }
 
+let expandBackground = false;
+let expandSettings = false;
+let expandVisual = false;
+let expandFilter = false;
 let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
