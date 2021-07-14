@@ -311,7 +311,7 @@ _container.addEventListener('click', (evt) => {
       )
         cycleViewport = 0
       if (
-        cycleViewport == 0
+        viewport[cycleViewport] == `legacy`
       ) {
         display = `legacy`;
         sideScroll = false;
@@ -322,8 +322,8 @@ _container.addEventListener('click', (evt) => {
         displayLegacy();
         _main.scrollTop = leaveOff;
       } else if (
-        _main.clientWidth >= 920 &&
-        cycleViewport == 1
+        viewport[cycleViewport] == `flexBox` &&
+        _main.clientWidth >= 920
       ) {
         display = `flexBox`;
         sideScroll = false;
@@ -334,8 +334,8 @@ _container.addEventListener('click', (evt) => {
         displayFlex();
         _main.scrollTop = leaveOff;
       } else if (
-        _main.clientWidth >= 768 &&
-        cycleViewport == 2
+        viewport[cycleViewport] == `sideScroll`
+        _main.clientWidth >= 768
       ) {
         display = `sideScroll`;
         sideScroll = true;
