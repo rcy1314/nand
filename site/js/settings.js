@@ -710,6 +710,11 @@ if (expand == true) {
   List = false;
 }
 
+let display = ['legacy', 'flexBox', 'sideScroll']
+let viewport;
+if (!flexBox && !sideScroll) viewport = 0
+if (!flexBox && sideScroll) viewport = 2
+if (flexBox) viewport = 1
 let quit; // xmlRequestParsing pub length
 let post; //from init.js global timestamp for guide
 let id = 0; //feed indexOf menu

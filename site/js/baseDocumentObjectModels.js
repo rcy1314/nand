@@ -42,7 +42,31 @@ let stageXML = function () {
   _xml.style.zIndex = `1`;
 }
 
-let displayFlex = function (value) {
+let displayLegacy = function () {
+  _center.style.cssText = `justify-content:center !important`;
+  _center.classList.add(`sideChannel`);
+  _channel.classList.remove(`sideChannel`);
+  _channel.style.height = `fit-content`;
+  _channel.classList.remove(`flexbox`);
+  _channel
+    .querySelectorAll(`.item`)
+    .forEach(
+      (a) => a.classList.remove(`sideItem`)
+    );
+  _channel
+    .querySelectorAll(`.item`)
+    .forEach(
+      (a) => a.classList.remove(`flexbox`)
+    );
+  _channel
+    .querySelectorAll(`.item`)
+    .forEach(
+      (a) => a.style.width = `410px`
+    );
+  _xml.style.top = `60px`;
+}
+
+let displayFlex = function () {
     var height = 0;
     var second = 0;
     var groups = 0;
@@ -53,31 +77,51 @@ let displayFlex = function (value) {
     var column = document.querySelectorAll(`.item:nth-child(3n+3)`);
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
+    _center.classList.remove(`sideChannel`);
     _center.style.cssText =
     `justify-content:center !important;
      display:flex !important;
      width:100vw !important`;
     _channel.style.height = `${(max + 1000).toString()}px`
     _channel.classList.add(`flexbox`);
-    _display.style.display = `none`;
     _channel
       .querySelectorAll(`.item`)
       .forEach(
         (a) => a.classList.add(`flexbox`)
       );
+    _channel
+      .querySelectorAll(`.item`)
+      .forEach(
+        (a) => a.style.marginLeft = `0`
+      );
+    _display.style.display = `none`;
 }
 
 let displaySideScroll = function () {
   scrollIntoView = false;
   _channel.classList.add(`sideChannel`);
+  _center.classList.add(`sideChannel`);
+  _xml.style.justifyContent = `center`;
+  _center.style.width = `35vw`;
+  _xml.style.display = `flex`;
+  _xml.style.top = `0`;
   _center.style.top = `60px`;
-  _xml.style.top = 0;
+  _channel
+    .querySelectorAll(`.item`)
+    .forEach(
+      (a) => a.classList.remove(`flexbox`)
+    );
+  _channel
+    .querySelectorAll(`.item`)
+    .forEach((a) => (a.classList.add(`sideItem`)));
   _channel
     .querySelectorAll(`.item`)
     .forEach((a) => (a.classList.add(`sideItem`)));
   _channel
     .querySelectorAll(`.classic`)
     .forEach((a) => (a.style.display = `block`));
+  _channel.classList.remove(`flexbox`)
+  _display.style.display = `inline-block`;
 }
 
 let displayExpand = function (Value) {

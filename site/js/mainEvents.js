@@ -285,6 +285,24 @@ _container.addEventListener('click', (evt) => {
         populateAssets();
       else populateCategoryGroup(evt.target.getAttribute(`aria-item`));
     } else if (
+      evt.target.classList.contains(`fa-camera-retro`)
+    ) {
+      viewport = viewport + 1
+      if (
+        viewport == display.length
+      )
+        viewport = 0
+      if (
+        viewport == 0
+      ) displayLegacy();
+      if (
+        _main.clientWidth >= 920 &&
+        viewport == 1
+      ) displayFlex();
+      if (
+        viewport == 2
+      ) displaySideScroll();
+    } else if (
       evt.target.getAttribute(`aria-item`) == `Assets`
     )
       populateAssets();

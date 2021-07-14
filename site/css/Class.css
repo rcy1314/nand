@@ -206,8 +206,15 @@
 }
 
 .sideChannel {
+  scrollbar-width: none !important;
+  height: fit-content !important;
   overflow-x: auto;
   display: flex;
+  width: 480px !important;
+}
+
+.sideChannel::-webkit-scrollbar {
+  display: none !important;
 }
 
 .toggle {

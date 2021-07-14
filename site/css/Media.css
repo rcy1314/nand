@@ -577,6 +577,14 @@
 
 }
 
+@media screen and (min-width: 1024px) {
+
+  #xml .content {
+    display: inline-block;
+  }
+
+}
+
 @media screen and (min-width: 1440px) {
 
   .air,

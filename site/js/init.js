@@ -81,20 +81,20 @@ setTimeout(
               menu.findIndex(
                 (item, i) =>
                   cyrb53(item.description) == id ||
+                  cyrb53(i.toString()) == id ||
                   cyrb53(item.hash) == id ||
                   cyrb53(item.uri) == id ||
-                  cyrb53(item.id) == id ||
-                  cyrb53(i.toString()) == id
+                  cyrb53(item.id) == id
               )
             )
               i =
               menu.findIndex(
                 (item, i) =>
                   cyrb53(item.description) == id ||
+                  cyrb53(i.toString()) == id ||
                   cyrb53(item.hash) == id ||
                   cyrb53(item.uri) == id ||
-                  cyrb53(item.id) == id ||
-                  cyrb53(i.toString()) == id
+                  cyrb53(item.id) == id
               )
             console.log(menu[i].id)
             if (i !== -1) xmlRequestParsing(i);
