@@ -25,8 +25,7 @@
 
 ### Settings
 
-<em>Located in</em> `site/js/settings.js` <em> edit everything !</em><br>
-&emsp;-<em>flag flexBox to false for legacy</em>
+<em>Located in</em> `site/js/settings.js` <em> edit everything !</em>
 
 ### Optional
 
