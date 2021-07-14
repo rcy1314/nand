@@ -180,16 +180,26 @@
           )
         if (file === `xmlAssets`)
           script.onload = (function () {
+            let ext = ['id', 'description', 'uri', 'hash']
             let startup = setInterval(function () {
               setTimeout(function () {
                 if (typeof menu === `object`) {
                   for (let i = 0; i <= menu.length - 1; i++) {
-                    menu[i][`title`] = cyrb53(i.toString())
+                    var index = Math.floor(Math.random() * (3 - (-1)) + -1)
+                    if (index === -1)
+                      menu[i][`title`] =
+                      cyrb53(
+                        i.toString()
+                      )
+                    else menu[i][`title`] =
+                      cyrb53(
+                        menu[i][ext[index]]
+                      )
                   }
                   clearInterval(startup);
                 }
-              }, 25);
-            }, 25);
+              }, 300);
+            }, 300);
           })();
       }
       let place = `site/js/themes/`;

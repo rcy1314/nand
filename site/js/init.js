@@ -79,12 +79,26 @@ setTimeout(
           function () {
             if (
               menu.findIndex(
-                (item) => item.title === id
+                (item, i) =>
+                  item.title === id ||
+                  cyrb53(item.description) == id ||
+                  cyrb53(item.hash) == id ||
+                  cyrb53(item.uri) == id ||
+                  cyrb53(item.id) == id ||
+                  cyrb53(i.toString()) == id
               )
             )
-              i = menu.findIndex(
-                (item) => item.title === id
-              );
+              i =
+              menu.findIndex(
+                (item, i) =>
+                  item.title === id ||
+                  cyrb53(item.description) == id ||
+                  cyrb53(item.hash) == id ||
+                  cyrb53(item.uri) == id ||
+                  cyrb53(item.id) == id ||
+                  cyrb53(i.toString()) == id
+              )
+            console.log(menu[i].id)
             if (i !== -1) xmlRequestParsing(i);
             else if (i === -1)
               filterInputResponse(
