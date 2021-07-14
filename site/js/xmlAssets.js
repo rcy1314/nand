@@ -255,6 +255,7 @@ var menu=[
 {id:`Reddit/MacOS`,category:`Reddit`,title:``,description:`MacOs subreddit Home to Apple's Operating System.`,uri:`https://www.reddit.com/r/MacOs/.rss`,image:`MacOs`,hash:`mX`,media:!1},
 {id:`Reddit/Memes`,category:`Reddit`,title:``,description:`Memes! A way of describing cultural information being shared.`,uri:`https://www.reddit.com/r/Memes/.rss`,image:`Memes`,hash:`Mm`,media:!0},
 {id:`Reddit/Microsoft`,category:`Reddit`,title:``,description:`Microsoft subreddit Microsoft's suite of services, products and games which we publish.`,uri:`https://www.reddit.com/r/microsoft/.rss`,image:`Microsoft`,hash:`mi`,media:!1},
+{id:`Reddit/MovieDetails`,category:`Reddit`,title:``,description:`Movie Details subreddit Details in Movies, Movie Details!`,uri:`https://www.reddit.com/r/moviedetails/.rss`,image:`MovieDetails`,hash:`Md`,media:!0},
 {id:`Reddit/Movies`,category:`Reddit`,title:``,description:`Movies subreddit Media and Discussion about Major Motion Pictures.`,uri:`https://www.reddit.com/r/movies/.rss`,image:`Movies`,hash:`mo`,media:!1},
 {id:`Reddit/NetFlix`,category:`Reddit`,title:``,description:`Netflix Subreddit Unofficial Netflix discussion, and all things Netflix related.`,uri:`https://www.reddit.com/r/netflix/.rss`,image:`RNetflix`,hash:`iX`,media:!1},
 {id:`Reddit/News`,category:`Reddit`,title:``,description:`News subreddit articles relating to the United States and the rest of the World.`,uri:`https://www.reddit.com/r/news/.rss`,image:`RNews`,hash:`ns`,media:!1},
