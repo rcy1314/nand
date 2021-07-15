@@ -8,10 +8,7 @@ let sideBarStar = function (Elem, Value) {
   }
 }
 
-let stageGroup = function () {
-  _visit.style.display = `none`;
-  _xml.style.display = `none`;
-  _xml.style.zIndex = `-1`
+let cleanup = function () {
   while (_air.firstChild)
     _air.removeChild(_air.lastChild);
   while (_result.firstChild)
@@ -22,26 +19,24 @@ let stageGroup = function () {
     _status.removeChild(_status.lastChild);
   while (_suggestions.firstChild)
     _suggestions.removeChild(_suggestions.lastChild);
+}
+
+let stageGroup = function () {
   _group.style.display = `block`;
+  _visit.style.display = `none`;
+  _xml.style.display = `none`;
   _group.style.zIndex = `1`;
+  _xml.style.zIndex = `-1`
+  cleanup();
 }
 
 let stageXML = function () {
   _visit.style.display = `none`;
   _group.style.display = `none`;
-  _group.style.zIndex = `-1`
-  while (_air.firstChild)
-    _air.removeChild(_air.lastChild);
-  while (_result.firstChild)
-    _result.removeChild(_result.lastChild);
-  while (_channel.firstChild)
-    _channel.removeChild(_channel.lastChild);
-  while (_status.firstChild)
-    _status.removeChild(_status.lastChild);
-  while (_suggestions.firstChild)
-    _suggestions.removeChild(_suggestions.lastChild);
   _xml.style.display = `block`;
+  _group.style.zIndex = `-1`
   _xml.style.zIndex = `1`;
+  cleanup();
 }
 
 let displayLegacy = function () {
@@ -73,11 +68,11 @@ let displayFlex = function () {
     var height = 0;
     var second = 0;
     var groups = 0;
-    var column = document.querySelectorAll(`.item:nth-child(3n+1)`);
+    var column = _channel.querySelectorAll(`.item:nth-child(3n+1)`);
     for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
-    var column = document.querySelectorAll(`.item:nth-child(3n+2)`);
+    var column = _channel.querySelectorAll(`.item:nth-child(3n+2)`);
     for (i = 0; i < column.length - 1; i++) second += column[i].clientHeight;
-    var column = document.querySelectorAll(`.item:nth-child(3n+3)`);
+    var column = _channel.querySelectorAll(`.item:nth-child(3n+3)`);
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
     _center.classList.remove(`sideChannel`);
@@ -131,15 +126,15 @@ let displayExpand = function (Value) {
     groupType = `list`;
     if (
       document.body.contains(
-        _result.querySelector(`.populate`)
+        _group.querySelector(`.populate`)
       )
     ) {
-      _main
+      _group
         .querySelectorAll(`.populate`)
         .forEach(
           (a) => a.classList.add(`expand`)
         );
-			_main
+			_group
         .querySelectorAll(`.populate`)
         .forEach(
           (a) => a.classList.remove(`block`)
@@ -149,15 +144,15 @@ let displayExpand = function (Value) {
     groupType = `blocks`;
     if (
       document.body.contains(
-        _result.querySelector(`.populate`)
+        _group.querySelector(`.populate`)
       )
     ) {
-			_main
+			_group
         .querySelectorAll(`.populate`)
         .forEach(
           (a) => a.classList.add(`block`)
         );
-      _main
+      _group
         .querySelectorAll(`.populate`)
         .forEach(
           (a) => a.classList.remove(`expand`)
@@ -167,7 +162,7 @@ let displayExpand = function (Value) {
 };
 
 let appendSideBarLists = function (Elem, Class, Arrays) {
-  let list = document.querySelector(Elem);
+  let list = _sidebar.querySelector(Elem);
   for (
     i = 0;
     i <= Arrays.length - 1;
@@ -219,7 +214,7 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
 };
 
 let appendSettings = function (Elem, Class, Arrays) {
-  let list = document.querySelector(Elem);
+  let list = _sidebar.querySelector(Elem);
   for (
     i = 0;
     i <= Arrays.length - 1;
@@ -233,14 +228,14 @@ let appendSettings = function (Elem, Class, Arrays) {
     option.innerHTML = Arrays[i].name;
     list.append(option);
     if (eval(Arrays[i].class) == true) {
-      document
+      _sidebar
         .querySelector(`.` + Arrays[i].class)
         .parentNode.insertBefore(
           sideBarThemeBuild(`fa-splotch`),
           document.querySelector(`.` + Arrays[i].class).nextSibling
         );
     } else {
-      document
+      _sidebar
         .querySelector(`.` + Arrays[i].class)
         .parentNode.insertBefore(
           sideBarThemeBuild(`fa-minus`),
@@ -310,7 +305,7 @@ let topMenuBarDisplay = function (Value) {
 let quickFeedDisplay = function (Value) {
   if (Value) {
     _quick.style.zIndex = `1`;
-    _page
+    _quick
       .querySelectorAll(`.feed`)
       .forEach(
         (a) => a.style.display = `block`
@@ -333,7 +328,7 @@ let quickFeedDisplay = function (Value) {
     _options.classList.remove(`invisible`);
     _social.classList.remove(`invisible`);
     _quick.style.zIndex = `-1`;
-    _page
+    _quick
       .querySelectorAll(`.feed`)
       .forEach(
         (a) => a.style.display = `none`
