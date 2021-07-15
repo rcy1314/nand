@@ -519,12 +519,14 @@ _container.addEventListener('click', (evt) => {
     ) {
       _sb.style.display = `none`;
       stageGroup();
-      setTimeout(function () {
-        populateAssets();
-        topMenuBarDisplay(topBar);
-        displayExpand(expand);
-        unloading();
-      }, 25)
+      if (category == `Assets`)
+        setTimeout(function () {
+          populateAssets();
+          topMenuBarDisplay(topBar);
+          displayExpand(expand);
+          unloading();
+        }, 25)
+      else populateCategoryGroup(category);
     }
     else if (
       evt.target.classList.contains(
