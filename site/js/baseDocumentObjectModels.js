@@ -91,7 +91,7 @@ let displayFlex = function () {
         (a) => a.style.marginLeft = `0`
       );
     _display.style.display = `none`;
-    _main.scrollTop = 0;
+    if (first) _main.scrollTop = 0;
 }
 
 let displaySideScroll = function () {
