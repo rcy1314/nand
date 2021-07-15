@@ -1110,6 +1110,10 @@ var xmlAppendPublication = function (id) {
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
   }
+    if (!Reader)
+      _channel.append(
+        footerBuild(id)
+      );
     if (
       flexBox
     )
@@ -1123,10 +1127,6 @@ var xmlAppendPublication = function (id) {
     )
       displayLegacy();
     if (showSplash) _check.style.display = `none`;
-    if (!Reader)
-      _channel.append(
-        footerBuild(id)
-      );
     contentStatusDisplay(id, recent, oldest, posts);
     topMenuBarDisplay(topBar);
     xmlStatusSuggestions();
@@ -1158,7 +1158,10 @@ var xmlRequestParsing = function (index) {
     !document.body.contains(
       _channel.querySelector(`.item`)
     ) &&
-    first
+    first ||
+      document.body.contains(
+        _channel.querySelector(`[aria-object='${id}']`)
+      )
   ) stageXML();
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
