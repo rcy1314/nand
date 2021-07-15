@@ -1085,6 +1085,13 @@ var xmlAppendPublication = function (id) {
         250
       );
     } else if (
+      !Reader &&
+      first
+    ) {
+      _channel.scrollTop = 0;
+      _center.scrollTop = 0;
+      _main.scrollTop = 0;
+    } else if (
       sideScroll &&
       !Reader &&
       !first
