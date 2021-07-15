@@ -183,9 +183,9 @@ setTimeout(
     document.querySelector(`.exclude`).append(excludeFormBuild());
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
     appendSettings(`.set`, `settings`, settings);
-    content.append(basicFormBuild());
-    if (sideBarLock == true) content.append(sideBarThemeBuild(`fa-lock`))
-    else if (sideBarLock == false) content.append(sideBarThemeBuild(`fa-unlock`))
+    _content.append(basicFormBuild());
+    if (sideBarLock == true) _content.append(sideBarThemeBuild(`fa-lock`))
+    else if (sideBarLock == false) _content.append(sideBarThemeBuild(`fa-unlock`))
 
     for (
       var i = 0;
