@@ -273,7 +273,10 @@ setTimeout(
         );
     }
 
-    if (!uri) {
+    if (
+      !Reader &&
+      !uri
+    ) {
     _container.style.display = `block`;
     _check.style.display = `block`;
     _sb.style.display = `none`;
