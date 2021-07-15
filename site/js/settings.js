@@ -642,7 +642,7 @@ let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
 let post; //from init.js global timestamp for guide
-let id = 0; //feed indexOf menu
+let id; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
 let httpRequest; //uri xml httpRequest
 let random = []; //core.js random feed in category
@@ -695,6 +695,7 @@ const background = [
 
 const repository = `https://github.com/acktic/acktic.github.io`;
 const facebook = `https://www.facebook.com/acktic`;
+const reddit = `https://www.reddit.com/acktic`;
 const twitter = `https://www.twitter.com/acktic`;
 const pinterest = `https://www.pinterest.com/ackt1c`;
 const instagram = `https://www.instagram.com/acktic`;

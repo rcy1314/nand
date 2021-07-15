@@ -300,6 +300,7 @@ _container.addEventListener('click', (evt) => {
       evt.target.classList.contains(`under`)
     ) {
       stageGroup();
+      category = evt.target.getAttribute(`aria-item`);
       if (evt.target.getAttribute(`aria-item`) == `Assets`)
         populateAssets();
       else populateCategoryGroup(evt.target.getAttribute(`aria-item`));
@@ -401,6 +402,12 @@ _container.addEventListener('click', (evt) => {
       )
     )
       amazon.blank();
+    else if (
+      evt.target.classList.contains(
+        `fa-reddit-alien`
+      )
+    )
+      reddit.blank();
     else if (
       evt.target.classList.contains(
         `fa-twitter`
@@ -793,8 +800,7 @@ _container.addEventListener('click', (evt) => {
               evt.target
                 .closest(`.item`)
                 .querySelector(`.img`)
-                .classList.contains(`default`) &&
-              menu[cid].category == `Reddit`
+                .classList.contains(`default`)
             ) {
               count = [];
               let sticky = [];
@@ -843,8 +849,6 @@ _container.addEventListener('click', (evt) => {
                 .querySelector(`.img`)
                 .classList.contains(`default`)
             )
-              evt.target.closest(`.item`).getAttribute(`ext`).blank();
-            else if (category != `Reddit`)
               evt.target.closest(`.item`).getAttribute(`ext`).blank();
           tap = 0;
         }, 350);

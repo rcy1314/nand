@@ -9,6 +9,7 @@ let sideBarStar = function (Elem, Value) {
 }
 
 let stageGroup = function () {
+  _visit.style.display = `none`;
   _xml.style.display = `none`;
   _xml.style.zIndex = `-1`
   while (_air.firstChild)
@@ -26,6 +27,7 @@ let stageGroup = function () {
 }
 
 let stageXML = function () {
+  _visit.style.display = `none`;
   _group.style.display = `none`;
   _group.style.zIndex = `-1`
   while (_air.firstChild)

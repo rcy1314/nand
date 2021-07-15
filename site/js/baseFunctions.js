@@ -333,7 +333,6 @@ let populateAssets = function () {
   if (showSplash) _check.style.display = `block`;
   if (
     id &&
-    id != 0 &&
     !location.href.match(`\\?q=`)
   ) {
     if (menu[id].media)
@@ -351,7 +350,7 @@ let populateAssets = function () {
     );
   }
   for (
-    let i = 1;
+    let i = 0;
     i <= adj.length - 1;
     i++
   ) {
@@ -389,7 +388,6 @@ let populateCategoryGroup = function (translation) {
   stageGroup()
   if (
     id &&
-    id != 0 &&
     !location.href.match(`\\?q=`)
   ) {
     if (menu[id].media)
@@ -407,7 +405,7 @@ let populateCategoryGroup = function (translation) {
     );
   }
   for (
-    let i = 1;
+    let i = 0;
     i <= menu.length - 1;
     i++
   ) {
@@ -469,8 +467,8 @@ let reverseCategoryGroup = function (translation) {
   _air.style.visibility = `hidden`;
   let media;
   for (
-    let i = 1;
-    i < menu.length;
+    let i = 0;
+    i < menu.length - 1;
     i++) {
     if (category == menu[i].category) {
       if (menu[i].media)
