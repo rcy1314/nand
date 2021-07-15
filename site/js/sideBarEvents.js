@@ -114,6 +114,10 @@ document.addEventListener(
         `feed`
       )
     ) {
+      while (_status.firstChild)
+        _status.removeChild(_status.lastChild);
+      while (_suggestions.firstChild)
+        _suggestions.removeChild(_suggestions.lastChild);
       if (event.target.getAttribute(`aria-item`) === -1)
         filterInputResponse(event.target.innerHTML)
       else xmlRequestParsing(event.target.getAttribute(`aria-item`))
