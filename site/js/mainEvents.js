@@ -257,7 +257,7 @@ _container.addEventListener('click', (evt) => {
         _main.scrollTop = leaveOff;
       } else if (
         viewport[cycleViewport] == `flexBox` &&
-        _main.clientWidth >= 930
+        _main.clientWidth >= 768
       ) {
         display = `flexBox`;
         sideScroll = false;
