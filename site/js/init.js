@@ -237,6 +237,8 @@ setTimeout(
       offset = 500;
     else offset = 2500
 
+    document.title = doc;
+
   }, 150
 
 )

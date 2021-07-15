@@ -1,3 +1,7 @@
+// set Home document.title
+let doc = `index.html`
+
+
 // initial theme
 let set = `Night`;
 
@@ -9,6 +13,7 @@ let set = `Night`;
 
       Result
         set background
+        element: container / main
 
 */
 
@@ -641,6 +646,8 @@ let expandFilter = false;
 let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
+if (Reader == false) quit = 30;
+else quit = 16;
 let post; //from init.js global timestamp for guide
 let id; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images
@@ -695,7 +702,7 @@ const background = [
 
 const repository = `https://github.com/acktic/acktic.github.io`;
 const facebook = `https://www.facebook.com/acktic`;
-const reddit = `https://www.reddit.com/acktic`;
+const reddit = `https://www.reddit.com/user/acktic`;
 const twitter = `https://www.twitter.com/acktic`;
 const pinterest = `https://www.pinterest.com/ackt1c`;
 const instagram = `https://www.instagram.com/acktic`;
