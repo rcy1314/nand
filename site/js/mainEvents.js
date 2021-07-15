@@ -566,6 +566,8 @@ _container.addEventListener('click', (evt) => {
       evt.target.classList.contains(`asset`) ||
       evt.target.classList.contains(`query`)
     ) {
+      init();
+      first = true;
       xmlRequestParsing(
         evt.target.closest(`.asset`).getAttribute(`aria-item`)
       );
