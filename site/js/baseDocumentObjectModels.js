@@ -92,6 +92,7 @@ let displayFlex = function () {
       );
     _display.style.display = `none`;
     if (first) _main.scrollTop = 0;
+    _xml.style.top = `60px;`
 }
 
 let displaySideScroll = function () {

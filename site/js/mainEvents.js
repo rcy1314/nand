@@ -22,9 +22,7 @@ window.addEventListener('resize', (evt) => {
       if (_main.clientWidth <= 768) {
         _display.style.display = `none`;
         displayLegacy();
-      } else if (_main.clientWidth >= 769 && _main.clientWidth <= 1200)
-        displaySideScroll()
-      else if (_main.clientWidth >= 1200)
+      } else if (_main.clientWidth >= 769)
         displayFlex()
     }
   },
