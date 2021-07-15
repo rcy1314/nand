@@ -1270,12 +1270,9 @@ var xmlRequestParsing = function (index) {
             });
             html = youtubeHTMLBuild(inline[0]);
           } else {
-            if (!cat) cat = ``;
-
             inline = [];
             inline.push({
               externalURI: parse.externalURI,
-              searchExternal: cat,
               courtesy: courtesy,
               menuObject: index,
               dst: parse.dst,

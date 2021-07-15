@@ -640,6 +640,7 @@ if (expand == true) {
 }
 
 let expandBackground = false;
+let expandFavorites = false;
 let expandSettings = false;
 let expandVisual = false;
 let expandFilter = false;
