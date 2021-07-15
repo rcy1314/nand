@@ -1185,6 +1185,8 @@ var xmlRequestParsing = function (index) {
         if (xhr.getElementsByTagName(`entry`).length > 0) var channel = `entry`;
         else var channel = `item`;
 
+        if (Reader == false) quit = 30;
+        else quit = 16;
         for (
           let i = 2;
           i <= xhr.getElementsByTagName(channel).length - 1;
@@ -1213,7 +1215,12 @@ var xmlRequestParsing = function (index) {
               data
             );
 
-          var uri = trun.toLowerCase().match(/\w+/g).join(`-`);
+          if (
+            trun.match(/\w+/g)
+          )
+            var uri = trun.toLowerCase().match(/\w+/g).join(`-`)
+
+          else var uri = trun.toLowerCase()
 
           let share = menu[index].title;
 
@@ -1226,7 +1233,6 @@ var xmlRequestParsing = function (index) {
           else if (hash == `title`)
             share =
             `${location.href.split(`?`)[0]}?${uri}-${share}`;
-
           let src = xmlImageSource(data);
 
           let courtesy = courtesyBuild(
@@ -1240,6 +1246,9 @@ var xmlRequestParsing = function (index) {
           if (title.length > titleTruncate)
             var more = `<div class='more'>more</div>`;
           else var more = ``;
+
+          if (search == `search`)
+            var cat = `<div class='external'>${parse.externalURI}</div>`;
 
           if (
             src &&
@@ -1270,9 +1279,12 @@ var xmlRequestParsing = function (index) {
             });
             html = youtubeHTMLBuild(inline[0]);
           } else {
+            if (!cat) cat = ``;
+
             inline = [];
             inline.push({
               externalURI: parse.externalURI,
+              searchExternal: cat,
               courtesy: courtesy,
               menuObject: index,
               dst: parse.dst,

@@ -97,8 +97,9 @@ html body,
 #main #check {
   background-color: transparent;
   color: var(--fill-color);
-  margin-left: 10px;
+  margin-bottom: 100px;
   position: absolute;
+  margin-right: 50px;
   font-size: 11px;
   position: fixed;
   display: none;

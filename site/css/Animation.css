@@ -197,7 +197,7 @@
 }
 
 .mainTransition {
-  transition: 300ms;
+  transition: all 300ms;
 }
 
 .notify {

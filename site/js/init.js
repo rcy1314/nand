@@ -134,8 +134,6 @@ setTimeout(
       setTimeout(
         function () {
           if (Reader == false) {
-            _visit.style.display = `flex`;
-            _sb.style.display = `block`;
             guideOnScreen = true;
             _guest.focus();
           } else if (Reader == true) {
@@ -208,7 +206,92 @@ setTimeout(
     }
     if (topBarBackdrop == true)
       _top.style.cssText = `backdrop-filter: blur(10px)`
+
+      if (imageLoader == `double-circle`) {
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach(
+          (a) => a.style.display = `block`
+        );
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+      _main
+        .querySelectorAll(`.animation`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+      } else if (imageLoader == `v-bars`) {
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach(
+          (a) => a.style.display = `block`
+        );
+      _main
+        .querySelectorAll(`.animation`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+     } else if (imageLoader == `ring-circle`) {
+      _main
+        .querySelectorAll(`.animation`)
+        .forEach(
+          (a) => a.style.display = `block`
+        );
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+      _main
+        .querySelectorAll(`.wrapper`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+    } else if (imageLoader == false) {
+      _main
+        .querySelectorAll(`.bars`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+      _main
+        .querySelectorAll(`.loader`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+      _main
+        .querySelectorAll(`.animation`)
+        .forEach(
+          (a) => a.style.display = `none`
+        );
+    }
+
+    if (!uri) {
     _container.style.display = `block`;
+    _check.style.display = `block`;
+    _sb.style.display = `none`;
+    setTimeout(
+      function () {
+        _check.style.opacity = `0`;
+        setTimeout(
+          function () {
+            if (_sidebar.style.left == 0)
+              _sb.style.display = `block`;
+            _check.style.display = `none`;
+            _visit.style.opacity = `1`;
+            _check.style.opacity = `1`;
+          }, 2000
+        )
+      }, 3000
+    )
+  } else _container.style.display = `block`;
 
     adj = menu.slice();
     randomizeAssets(adj);
@@ -218,7 +301,7 @@ setTimeout(
     cycleViewport = viewport.findIndex(
       (item) => item == display
     )
-    console.log()
+
     if (viewport[cycleViewport] == `legacy`) {
       sideScroll = false;
       flexBox = false;

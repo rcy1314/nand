@@ -11,72 +11,6 @@ window.onload = function () {
   _container.style.backgroundSize = `${backgroundImage[0].size}`;
   _main.style.backgroundSize = `${backgroundImage[0].size}`;
 
-    if (imageLoader == `double-circle`) {
-    _main
-      .querySelectorAll(`.loader`)
-      .forEach(
-        (a) => a.style.display = `block`
-      );
-    _main
-      .querySelectorAll(`.bars`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-    _main
-      .querySelectorAll(`.animation`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-    } else if (imageLoader == `v-bars`) {
-    _main
-      .querySelectorAll(`.bars`)
-      .forEach(
-        (a) => a.style.display = `block`
-      );
-    _main
-      .querySelectorAll(`.animation`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-    _main
-      .querySelectorAll(`.loader`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-   } else if (imageLoader == `ring-circle`) {
-    _main
-      .querySelectorAll(`.animation`)
-      .forEach(
-        (a) => a.style.display = `block`
-      );
-    _main
-      .querySelectorAll(`.loader`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-    _main
-      .querySelectorAll(`.wrapper`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-  } else if (imageLoader == false) {
-    _main
-      .querySelectorAll(`.bars`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-    _main
-      .querySelectorAll(`.loader`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-    _main
-      .querySelectorAll(`.animation`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
-  }
-
 };
 
 window.addEventListener('resize', (evt) => {
@@ -545,6 +479,8 @@ _container.addEventListener('click', (evt) => {
     else if (
       evt.target.id == `home`
     ) {
+      stageXML();
+      stageGroup();
       document.title = doc;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (_sidebar.style.left == 0) _sb.style.display = `block`;
@@ -561,8 +497,6 @@ _container.addEventListener('click', (evt) => {
       _first.style.display = `none`;
       _visit.style.display = `flex`;
       _top.style.display = `none`;
-      stageXML();
-      stageGroup();
       quickFeedDisplay(quickFeeds);
       _feed.scrollLeft = 0;
       main.setAttribute(`tabindex`, -1);
