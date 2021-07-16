@@ -179,7 +179,7 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
     if (
       Class == `feed`
     ) option.setAttribute(
-        `aria-item`,
+        `aria-object`,
         menu.findIndex((item) => item.id === Arrays[i])
       )
     if (
@@ -354,7 +354,7 @@ let footerBuild = function (id) {
   let front = document.createElement(`span`);
   let span = document.createElement(`span`);
   object.id = `bottom`;
-  previous.setAttribute(`aria-item`, back(id));
+  previous.setAttribute(`aria-object`, back(id));
   previous.classList.add(`btn`, `back`);
   front.classList.add(`flip-front`);
   span.classList.add(`front`);
@@ -560,7 +560,7 @@ let assetBuild = function (
   let object = document.createElement(`div`);
   let ahref = document.createElement(`a`);
   let img = document.createElement(`img`);
-  object.setAttribute(`aria-item`, assetIndex);
+  object.setAttribute(`aria-object`, assetIndex);
   ahref.setAttribute(`title`, assetId);
   object.classList.add(`asset`);
   ahref.classList.add(`query`);
@@ -642,7 +642,7 @@ let categoryBuild = function (
   let hash = document.createElement(`div`);
   let des = document.createElement(`div`);
   let id = document.createElement(`div`);
-  populate.setAttribute(`aria-item`, objectIndex);
+  populate.setAttribute(`aria-object`, objectIndex);
   populate.classList.add(`populate`);
   display.classList.add(`display`);
   select.classList.add(`select`);
@@ -948,7 +948,7 @@ let listingIndexBuild = function (
   let key = document.createElement(`div`);
   match.innerHTML = match.innerHTML =
     `&emsp;${indexCategory}<br>&emsp;${indexId}`;
-  key.setAttribute(`aria-item`, indexObject);
+  key.setAttribute(`aria-object`, indexObject);
   match.classList.add(`textMatch`);
   detail.classList.add(`detail`);
   buffer.classList.add(`buffer`);

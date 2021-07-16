@@ -538,7 +538,7 @@ _container.addEventListener('click', (evt) => {
       }
       first = true;
       xmlRequestParsing(
-        evt.target.closest(`.populate`).getAttribute(`aria-item`)
+        evt.target.closest(`.populate`).getAttribute(`aria-object`)
       );
     }
     else if (
@@ -569,7 +569,7 @@ _container.addEventListener('click', (evt) => {
       init();
       first = true;
       xmlRequestParsing(
-        evt.target.closest(`.asset`).getAttribute(`aria-item`)
+        evt.target.closest(`.asset`).getAttribute(`aria-object`)
       );
       topMenuBarDisplay(topBar);
       _toggle.style.display = `none`;
@@ -681,14 +681,41 @@ _container.addEventListener('click', (evt) => {
       )
         _center.querySelector(`#bottom`).remove();
       first = false;
-      touchmove = false;
       while (_status.firstChild)
         _status.removeChild(_status.lastChild);
       while (_suggestions.firstChild)
         _suggestions.removeChild(_suggestions.lastChild);
       xmlRequestParsing(
-        evt.target.closest(`.btn`).getAttribute(`aria-item`)
+        evt.target.closest(`.btn`).getAttribute(`aria-object`)
       );
+      if (
+        !sideScroll &&
+        !Reader &&
+        document.body.contains(
+          _channel.querySelector(`.item`)
+        )
+      ) {
+        touchmove = true;
+        scrollToElm(
+          touchmove,
+          _main,
+          _channel.querySelector(`[aria-object='${id}']`),
+          250
+        );
+      } else if (
+        sideScroll &&
+        !Reader &&
+        document.body.contains(
+          _channel.querySelector(`.item`)
+        )
+      ) {
+        touchmove = true;
+        sideScrollToElm(touchmove,
+          _channel,
+          _channel.querySelector(`[aria-object='${id}']`),
+          250
+        );
+      }
     }
     else if (
       evt.target.classList.contains(

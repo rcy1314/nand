@@ -76,7 +76,7 @@ _container.addEventListener('click', (evt) => {
       _xml.style.zIndex = `1`;
       touchmove = true;
       xmlRequestParsing(
-        event.target.closest(`.index`).getAttribute(`aria-item`)
+        event.target.closest(`.index`).getAttribute(`aria-object`)
       );
         _visit.style.display = `none`;
         topMenuBarDisplay(topBar);
@@ -223,7 +223,7 @@ document.addEventListener('submit', (evt) => {
         _xml.style.display = `block`;
         _xml.style.zIndex = `1`;
         xmlRequestParsing(
-          _match.querySelector(`.hover`).getAttribute(`aria-item`)
+          _match.querySelector(`.hover`).getAttribute(`aria-object`)
         )
         _match.style.display = `none`;
       } else if (_view.value.length) {
@@ -248,7 +248,7 @@ document.addEventListener('submit', (evt) => {
         _xml.style.zIndex = `1`;
         topMenuBarDisplay(topBar);
         xmlRequestParsing(
-          _first.querySelector(`.hover`).getAttribute(`aria-item`)
+          _first.querySelector(`.hover`).getAttribute(`aria-object`)
         );
       } else if (_guest.value.length > 0)
       filterInputResponse(_guest.value);

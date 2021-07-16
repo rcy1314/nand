@@ -120,7 +120,7 @@ document.addEventListener(
         _suggestions.removeChild(_suggestions.lastChild);
       if (event.target.getAttribute(`aria-item`) === -1)
         filterInputResponse(event.target.innerHTML)
-      else xmlRequestParsing(event.target.getAttribute(`aria-item`))
+      else xmlRequestParsing(event.target.getAttribute(`aria-object`))
       _toggle.style.display = `none`;
     }
     else if (
