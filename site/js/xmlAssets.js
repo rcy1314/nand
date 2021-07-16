@@ -231,6 +231,7 @@ var menu=[
 {id:`Reddit/Entertainment`,category:`Reddit`,title:``,description:`Entertainment subreddit has News and Discussion of the Entertainment Industry.`,uri:`https://www.reddit.com/r/entertainment/.rss`,image:`Reddit`,hash:`Ne`,media:!1},
 {id:`Reddit/FacePalm`,category:`Reddit`,title:``,description:`Face Palm for you to share the stupidity of people online and IRL.`,uri:`https://www.reddit.com/r/facepalm/.rss`,image:`Facepalm`,hash:`Pf`,media:!0},
 {id:`Reddit/Firefox`,category:`Reddit`,title:``,description:`Firefox subreddit with developments on Firefox and Mozilla, a global non-profit.`,uri:`https://www.reddit.com/r/firefox/.rss`,image:`Firefox`,hash:`fI`,media:!1},
+{id:`Reddit/Fitgirl-Repacks`,category:`Reddit`,title:``,description:`Fitgirl-Repacks one stop shop for ripped games.`,uri:`https://fitgirl-repacks.cc/feed/`,image:`Fitgirl`,hash:`Fl`,media:!0},
 {id:`Reddit/FoodPorn`,category:`Reddit`,title:``,description:`Food subreddit images of food.`,uri:`https://www.reddit.com/r/food/.rss`,image:`Food`,hash:`fD`,media:!0},
 {id:`Reddit/Funny`,category:`Reddit`,title:``,description:`Funny reddit largest humour depository.`,uri:`https://www.reddit.com/r/funny/.rss`,image:`Funny`,hash:`uY`,media:!0},
 {id:`Reddit/Futurology`,category:`Reddit`,title:``,description:`Futurology subreddit devoted to the field of Future Studies and speculation about the development of humanity, technology, and civilization.`,uri:`https://www.reddit.com/r/futurology/.rss`,image:`Futurology`,hash:`fL`,media:!1},
