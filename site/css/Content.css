@@ -99,7 +99,6 @@ html body,
   color: var(--fill-color);
   margin-bottom: 100px;
   position: absolute;
-  margin-right: 50px;
   font-size: 11px;
   position: fixed;
   display: none;

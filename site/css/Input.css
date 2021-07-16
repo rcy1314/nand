@@ -110,7 +110,7 @@ input[type=submit] {
 }
 
 .focus input[type=text] {
-  background-color: var(--hover-background-color) !important;
+  background-color: transparent !important;
   color: var(--fill-color) !important;
   height: 40px !important;
   border: none !important;

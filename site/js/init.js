@@ -283,12 +283,12 @@ setTimeout(
     setTimeout(
       function () {
         _check.style.opacity = `0`;
+        _visit.style.opacity = `1`;
         setTimeout(
           function () {
             if (_sidebar.style.left == 0)
               _sb.style.display = `block`;
             _check.style.display = `none`;
-            _visit.style.opacity = `1`;
             _check.style.opacity = `1`;
           }, 2000
         )
