@@ -479,6 +479,7 @@ _container.addEventListener('click', (evt) => {
     ) {
       stageXML();
       stageGroup();
+      stageVisit();
       document.title = doc;
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       if (_sidebar.style.left == 0) _sb.style.display = `block`;
