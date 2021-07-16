@@ -86,7 +86,7 @@ let displayFlex = function () {
     for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
     var max = Math.max(height, second, groups);
     _center.classList.remove(`sideChannel`);
-    _center.style.cssText = `justify-content:center;display:flex;width:100vw`;
+    _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
     _channel.style.height = `${(max + 1000).toString()}px`
     _channel.classList.remove(`sideChannel`);
     _channel.classList.add(`flexbox`);
@@ -100,7 +100,6 @@ let displayFlex = function () {
       .forEach(
         (a) => a.style.marginLeft = `0`
       );
-    _display.style.display = `none`;
 }
 
 let displaySideScroll = function () {

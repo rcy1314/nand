@@ -24,6 +24,10 @@ window.addEventListener('resize', (evt) => {
         displayLegacy();
       } else if (_main.clientWidth >= 769)
         displayFlex()
+      else if (_main.clientWidth >= 1280) {
+        _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
+        _display.style.cssText = `display:inline-block;`;
+      }
     }
   },
   { passive: true }
