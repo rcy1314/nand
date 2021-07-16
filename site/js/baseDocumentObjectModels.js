@@ -101,6 +101,9 @@ let displayFlex = function () {
       .forEach(
         (a) => a.style.marginLeft = `0`
       );
+    if (_main.clientWidth < 1280) {
+      _display.style.display = `none`;
+    }
 }
 
 let displaySideScroll = function () {
@@ -110,8 +113,9 @@ let displaySideScroll = function () {
   _xml.style.justifyContent = `center`;
   _center.style.width = `35vw`;
   _xml.style.display = `flex`;
-  _xml.style.top = `0`;
   _center.style.top = `60px`;
+  _center.style.left = `0`;
+  _xml.style.top = `0`;
   _channel
     .querySelectorAll(`.item`)
     .forEach(
