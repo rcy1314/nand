@@ -382,7 +382,7 @@ let footerBuild = function (id) {
   let flip = document.createElement(`span`);
   let next = document.createElement(`div`);
   let index = document.createElement(`span`);
-  next.setAttribute(`aria-item`, forward(id));
+  next.setAttribute(`aria-object`, forward(id));
   next.classList.add(`btn`, `next`);
   flip.classList.add(`flip-front`);
   bottom.classList.add(`bottom`);
