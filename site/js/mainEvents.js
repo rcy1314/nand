@@ -27,7 +27,11 @@ window.addEventListener('resize', (evt) => {
       else if (_main.clientWidth >= 1280) {
         _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
         _display.style.cssText = `display:inline-block;`;
-      }
+      } else if (
+        _main.clientWidth < 1280 &&
+        viewport[cycleViewport] == `legacy`
+      )
+        _display.style.display = `none`;
     }
   },
   { passive: true }
@@ -652,6 +656,10 @@ _container.addEventListener('click', (evt) => {
     ) {
       if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
       first = false;
+      while (_status.firstChild)
+        _status.removeChild(_status.lastChild);
+      while (_suggestions.firstChild)
+        _suggestions.removeChild(_suggestions.lastChild);
       xmlRequestParsing(
         evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
