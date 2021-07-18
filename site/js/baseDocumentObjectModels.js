@@ -81,11 +81,11 @@ let displayFlex = function () {
       var height = 0;
       var second = 0;
       var groups = 0;
-      var column = _channel.querySelectorAll(`.item:nth-child(3n+0)`);
-      for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
       var column = _channel.querySelectorAll(`.item:nth-child(3n+1)`);
-      for (i = 0; i < column.length - 1; i++) second += column[i].clientHeight;
+      for (i = 0; i < column.length - 1; i++) height += column[i].clientHeight;
       var column = _channel.querySelectorAll(`.item:nth-child(3n+2)`);
+      for (i = 0; i < column.length - 1; i++) second += column[i].clientHeight;
+      var column = _channel.querySelectorAll(`.item:nth-child(3n+3)`);
       for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
       var max = Math.max(height, second, groups);
       var min = Math.min(height, second, groups);
