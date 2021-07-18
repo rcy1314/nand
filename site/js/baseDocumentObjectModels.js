@@ -89,7 +89,7 @@ let displayFlex = function () {
       for (i = 0; i < column.length - 1; i++) groups += column[i].clientHeight;
       var max = Math.max(height, second, groups);
       var min = Math.min(height, second, groups);
-      if (height == min) var min = 0;
+      if (height == min) var min = none;
       else if (second == min) var min = 1;
       else if (groups == min) var min = 2;
       _channel.querySelector(`#bottom`).style.order = min;
