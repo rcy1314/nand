@@ -519,7 +519,6 @@ let safeSearchScore = `0.06374358385801315`;
 let safeSearchIDs = [
   `Reddit/Celebs`,
   `Reddit/Celebhub`,
-  `Reddit/IRL Girls`,
   `Reddit/Goddesses`,
   `Reddit/Internet Stars`,
   `Reddit/High Res Celebs`,
@@ -593,17 +592,6 @@ const translations = [
   `World`,
   `Youtube`,
 ];
-
-
-const repository = `https://github.com/acktic/acktic.github.io`;
-const facebook = `https://www.facebook.com/acktic`;
-const reddit = `https://www.reddit.com/user/acktic`;
-const twitter = `https://www.twitter.com/acktic`;
-const pinterest = `https://www.pinterest.com/ackt1c`;
-const instagram = `https://www.instagram.com/acktic`;
-const youtube = `https://www.youtube.com/channel/UCwac2_RyHP2UneqETNLM6_Q`;
-const amazon = `https://www.amazon.com/hz/wishlist/ls/3KMRCG63QLYAC`;
-const wordpress = `https://ackti.wordpress.com`;
 
 /* Feel free to edit the above. */
 
@@ -711,3 +699,13 @@ const background = [
   { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
   { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
 ];
+
+const repository = `https://github.com/acktic/acktic.github.io`;
+const facebook = `https://www.facebook.com/acktic`;
+const reddit = `https://www.reddit.com/user/acktic`;
+const twitter = `https://www.twitter.com/acktic`;
+const pinterest = `https://www.pinterest.com/ackt1c`;
+const instagram = `https://www.instagram.com/acktic`;
+const youtube = `https://www.youtube.com/channel/UCwac2_RyHP2UneqETNLM6_Q`;
+const amazon = `https://www.amazon.com/hz/wishlist/ls/3KMRCG63QLYAC`;
+const wordpress = `https://ackti.wordpress.com`;
