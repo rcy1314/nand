@@ -177,25 +177,42 @@
         "build/Translation",
         "build/youtube/Youtube",
         "build/youtube/Attribute",
+        "main/display/Expand",
+        "main/display/Flex",
+        "main/display/Legacy",
+        "main/display/Sidescroll",
+        "main/display/Stage",
+        "main/display/Swipe",
+        "main/display/Topbar",
+        "main/feed/Display",
+        "main/feed/Generate",
+        "main/group/Category",
+        "main/group/Populate",
+        "main/group/Reverse",
+        "main/group/Write",
+        "main/guide/Events",
+        "main/guide/Guide",
+        "main/guide/Sticky",
+        "main/guide/Touch",
+        "main/image/Source",
+        "main/image/Attributes",
+        "main/image/Dimensions",
+        "main/sidebar/Display",
+        "main/sidebar/Events",
+        "main/sidebar/Star",
+        "main/xml/Append",
+        "main/xml/Hash",
+        "main/xml/Request",
+        "main/xml/Suggest",
+        "main/xml/Status",
+        "main/xml/Title",
         "main/Core",
-        "main/Guide",
-        "main/Source",
-        "main/Append",
-        "main/Attributes",
-        "main/Suggest",
-        "main/Sticky",
-        "main/Dimensions",
-        "main/Status",
-        "main/Title",
-        "main/Request",
-        "main/Hash",
+        "main/Events",
+        "main/Filter",
         "main/Helpers",
-        "main/Base",
-        "main/Group",
-        "main/Sidebar",
-        "main/Backdrop",
         "main/Input",
-        "main/Main",
+        "main/Notify",
+        "main/Progress",
         "main/Assets",
         "main/Init"
       ];
@@ -205,7 +222,7 @@
         let script = document.createElement("script");
         script.type = "text/javascript";
         script.src = path;
-        if (file === `coreDocumentObjectModels`)
+        if (file === `main/Core`)
           document.getElementsByTagName("head")[0].appendChild(script);
         else
           setTimeout(
@@ -213,7 +230,7 @@
               document.getElementsByTagName("head")[0].appendChild(script);
             }, 300
           )
-        if (file === `Assets`)
+        if (file === `main/Assets`)
           script.onload = (function () {
             let ext = ['id', 'description', 'uri', 'hash']
             let startup = setInterval(function () {

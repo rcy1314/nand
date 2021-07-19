@@ -1,4 +1,4 @@
-let Backdrop = function (done) {
+let Progress = function (done) {
   let width;
   let length;
   let complete;
