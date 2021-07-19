@@ -150,7 +150,7 @@ document.addEventListener('submit', (evt) => {
           let option = document.createElement(`div`);
           option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
           option.classList.add(`option`);
-          parse.parentNode.insertBefore(
+          _sidebar.querySelector(`.parse`).parentNode.insertBefore(
             option, document.querySelector(`.option`)
           );
         }
