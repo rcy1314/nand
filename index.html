@@ -224,7 +224,7 @@
         let script = document.createElement("script");
         script.type = "text/javascript";
         script.src = path;
-        if (file === `main/Core`)
+        if (file === `main/Core` || file === `main/Assets`)
           document.getElementsByTagName("head")[0].appendChild(script);
         else
           setTimeout(
