@@ -299,7 +299,14 @@ setTimeout(
     adj = menu.slice();
     randomizeAssets(adj);
 
-    if (_main.clientWidth <= 768) display = `legacy`;
+    if (_main.clientWidth <= 425) {
+      display = `legacy`;
+      offset = 500;
+    }
+    else if (display == `flexbox`)
+      offset = 2500
+
+    else offset = 1000
 
     cycleViewport = viewport.findIndex(
       (item) => item == display
@@ -318,10 +325,6 @@ setTimeout(
       flexBox = false;
       legacy = false;
     }
-
-    if (_main.clientWidth <= 425)
-      offset = 500;
-    else offset = 2500
 
     document.title = doc;
 
