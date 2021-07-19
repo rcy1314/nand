@@ -68,26 +68,25 @@ var Append = function (id) {
       );
     }
   }
-  if (
-    document.body.contains(
-      _xml
-    )
-  ) {
     if (
       !sideScroll &&
-      touchmove &&
-      !Reader ||
-      !first ||
+      !Reader &&
+      !first &&
       document.body.contains(
         _channel.querySelector(`.item`)
       )
     ) {
-      scrollToElm(
-        touchmove,
-        _main,
-        _channel.querySelector(`[aria-object='${id}']`),
-        250
-      );
+      setTimeout(
+        function () {
+          touchmove = true
+          scrollToElm(
+            touchmove,
+            _main,
+            _channel.querySelector(`[aria-object='${id}']`),
+            250
+          );
+        }, 250
+      )
     } else if (
       !Reader &&
       first
@@ -101,13 +100,16 @@ var Append = function (id) {
       !first
     ) {
       touchmove = true;
-      sideScrollToElm(touchmove,
-        _channel,
-        _channel.querySelector(`[aria-object='${id}']`),
-        250
-      );
+      setTimeout(
+        function () {
+          sideScrollToElm(touchmove,
+            _channel,
+            _channel.querySelector(`[aria-object='${id}']`),
+            250
+          );
+        }, 250
+      )
     }
-  }
   if (pub.length > 1) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;

@@ -673,6 +673,7 @@ _container.addEventListener('click', (evt) => {
       )
         _center.querySelector(`#bottom`).remove();
       first = false;
+      touchmove = true;
       while (_status.firstChild)
         _status.removeChild(_status.lastChild);
       while (_suggestions.firstChild)
@@ -680,34 +681,6 @@ _container.addEventListener('click', (evt) => {
       Request(
         evt.target.closest(`.btn`).getAttribute(`aria-object`)
       );
-      if (
-        !sideScroll &&
-        !Reader &&
-        document.body.contains(
-          _channel.querySelector(`.item`)
-        )
-      ) {
-        touchmove = true;
-        scrollToElm(
-          touchmove,
-          _main,
-          _channel.querySelector(`[aria-object='${id}']`),
-          250
-        );
-      } else if (
-        sideScroll &&
-        !Reader &&
-        document.body.contains(
-          _channel.querySelector(`.item`)
-        )
-      ) {
-        touchmove = true;
-        sideScrollToElm(touchmove,
-          _channel,
-          _channel.querySelector(`[aria-object='${id}']`),
-          250
-        );
-      }
     }
     else if (
       evt.target.classList.contains(
