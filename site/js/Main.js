@@ -813,7 +813,7 @@ _container.addEventListener('click', (evt) => {
               console.log(sticky[0])
               if (safeSearchIDs.includes(menu[id].id))
                 if (showSplash == true) _check.style.display = `block`;
-              guideDisplay(sticky);
+              Guide(sticky);
             } else if (
               evt.target
                 .closest(`.item`)

@@ -221,7 +221,7 @@ var Request = function (index) {
             publish: title,
             views: views,
           });
-          guideDisplayYoutube(sticky);
+          Guide(sticky);
           document.querySelector(`.sticky`).style.display = `flex`;
           unloading();
         } else if (
@@ -253,7 +253,7 @@ var Request = function (index) {
             menuObject: index,
             pubIndex: local,
           });
-          guideDisplay(sticky);
+          Guide(sticky);
           unloading();
         } else if (
           Array.isArray(pub)
