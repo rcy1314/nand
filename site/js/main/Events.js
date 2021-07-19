@@ -534,7 +534,7 @@ _container.addEventListener('click', (evt) => {
       evt.target.classList.contains(`translation`)
     ) {
       first = true;
-      category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
+      category = evt.target.closest(`.translation`).getAttribute(`aria-object`);
       if (Reader) {
         randomDuplicate = [];
         Request(anyRandomMenuObject());
