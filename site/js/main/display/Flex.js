@@ -14,7 +14,7 @@ let displayFlex = function () {
   else if (second == min) var min = `left:-310px;order:2`;
   else if (groups == min) var min = `left:-310px;order:3`;
   _channel.querySelector(`#bottom`).style.cssText = min;
-  _channel.style.height = `${(max + 1000).toString()}px`
+  _channel.style.height = `${(max + 2000).toString()}px`
   _center.classList.remove(`sideChannel`);
   _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
   _channel.classList.remove(`sideChannel`);

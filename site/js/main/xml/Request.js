@@ -22,7 +22,12 @@ var Request = function (index) {
       document.body.contains(
         _channel.querySelector(`[aria-object='${id}']`)
       )
-  ) stageXML();
+  ) {
+    _channel.scrollTop = 0;
+    _center.scrollTop = 0;
+    _main.scrollTop = 0;
+    stageXML();
+  }
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
   _visit.style.display = `none`;
