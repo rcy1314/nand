@@ -133,7 +133,7 @@ let displayFlex = function () {
   var min = Math.min(height, second, groups);
   if (height == min) var min = `left:-310px;order:1`;
   else if (second == min) var min = `left:-310px;order:2`;
-  else if (groups == min) var min = `left:-310px;:3`;
+  else if (groups == min) var min = `left:-310px;order:3`;
   _channel.querySelector(`#bottom`).style.cssText = min;
   _channel.style.height = `${(max + 1000).toString()}px`
   _center.classList.remove(`sideChannel`);
