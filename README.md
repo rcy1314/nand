@@ -1,4 +1,3 @@
-<h1>acktic.github.io</h1>
 <br>
 <img src='capture.jpg'>
 
