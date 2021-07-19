@@ -26,7 +26,7 @@ Version | Site | NPM | Deployment | Maintained
 
 ### Settings
 
-<em>Located in</em> `site/js/settings.js` <em> edit everything !</em>
+<em>Located in</em> `site/js/Settings.js` <em> edit everything !</em>
 
 ### Optional
 
