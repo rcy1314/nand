@@ -9,7 +9,7 @@ var guideDisplay = function (pubArray) {
       pubArray[0]
     )
   );
-  Guide(
+  Sticky(
     pubArray[0]
   );
   _guide.classList.add(`blur`);
