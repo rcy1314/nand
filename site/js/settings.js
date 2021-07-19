@@ -37,7 +37,6 @@ let themes = [
   { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Informative`, class: `Informative`, icon: `fa-info` },
-  { obFn: `California`, class: `California`, icon: `fa-angle-double-up` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
 ];
 
@@ -649,6 +648,7 @@ let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
 if (Reader == false) quit = 30;
 else quit = 16;
+let newImg; //DOM Image dimensions
 let post; //from init.js global timestamp for guide
 let id; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images

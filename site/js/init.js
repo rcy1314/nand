@@ -55,7 +55,7 @@ setTimeout(
               i = menu.findIndex(
                 (item) => item.hash === id
               );
-              if (i !== -1) xmlRequestParsing(i);
+              if (i !== -1) Request(i);
               else filterInputResponse(uri)
           },
         250);
@@ -97,7 +97,7 @@ setTimeout(
                   cyrb53(item.id) == id
               )
             console.log(menu[i].id)
-            if (i !== -1) xmlRequestParsing(i);
+            if (i !== -1) Request(i);
             else if (i === -1)
               filterInputResponse(
                 location.href.split(`?`)[1]
@@ -138,7 +138,7 @@ setTimeout(
             _guest.focus();
           } else if (Reader == true) {
             onlyImages = true;
-            xmlRequestParsing(anyRandomMenuObject());
+            Request(anyRandomMenuObject());
           }
         },
       250);
@@ -299,7 +299,7 @@ setTimeout(
     adj = menu.slice();
     randomizeAssets(adj);
 
-    if (_main.clientWidth <= 425) {
+    if (_main.clientWidth <= 768) {
       display = `legacy`;
       offset = 500;
     }

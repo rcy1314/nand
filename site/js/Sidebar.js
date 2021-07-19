@@ -120,7 +120,7 @@ document.addEventListener(
         _suggestions.removeChild(_suggestions.lastChild);
       if (event.target.getAttribute(`aria-item`) === -1)
         filterInputResponse(event.target.innerHTML)
-      else xmlRequestParsing(event.target.getAttribute(`aria-object`))
+      else Request(event.target.getAttribute(`aria-object`))
       _toggle.style.display = `none`;
     }
     else if (
@@ -332,7 +332,7 @@ document.addEventListener(
         onScreen = onScreen != true;
         sideBarDisplay(onScreen);
       category = event.target.getAttribute(`aria-item`);
-      if (Reader) xmlRequestParsing(anyRandomMenuObject());
+      if (Reader) Request(anyRandomMenuObject());
       else {
         _toggle.style.display = `none`;
         _visit.style.display = `none`;

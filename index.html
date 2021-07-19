@@ -4,7 +4,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-    <script type='text/javascript' src='site/js/settings.js'></script>
+    <script type='text/javascript' src='site/js/Settings.js'></script>
     <script src="https://kit.fontawesome.com/1a31cd0145.js"></script>
 </head>
 <body>
@@ -133,10 +133,10 @@
         "Guide",
         "Input",
         "Feed",
-        "XML",
+        "Request",
         "Content",
         "Animation",
-        "SideBar",
+        "Sidebar",
         "Class",
         "Custom",
         "Fonts",
@@ -154,17 +154,28 @@
       let directory = "site/js/";
       let extension = ".js";
       let files = [
-        "coreDocumentObjectModels",
-        "xmlFunctions",
-        "coreHelpers",
-        "baseDocumentObjectModels",
-        "baseFunctions",
-        "sideBarEvents",
-        "inputEvents",
         "addons/FileSaver",
-        "mainEvents",
-        "xmlAssets",
-        "init",
+        "Core",
+        "Guide",
+        "Source",
+        "Append",
+        "Attributes",
+        "Suggest",
+        "Sticky",
+        "Dimensions",
+        "Status",
+        "Title",
+        "Request",
+        "Hash",
+        "Helpers",
+        "Base",
+        "Group",
+        "Sidebar",
+        "Backdrop",
+        "Input",
+        "Main",
+        "Assets",
+        "Init",
       ];
 
       for (var file of files) {
@@ -180,7 +191,7 @@
               document.getElementsByTagName("head")[0].appendChild(script);
             }, 300
           )
-        if (file === `xmlAssets`)
+        if (file === `Assets`)
           script.onload = (function () {
             let ext = ['id', 'description', 'uri', 'hash']
             let startup = setInterval(function () {

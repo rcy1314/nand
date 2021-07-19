@@ -75,7 +75,7 @@ _container.addEventListener('click', (evt) => {
       _xml.style.display = `block`;
       _xml.style.zIndex = `1`;
       touchmove = true;
-      xmlRequestParsing(
+      Request(
         event.target.closest(`.index`).getAttribute(`aria-object`)
       );
         _visit.style.display = `none`;
@@ -222,7 +222,7 @@ document.addEventListener('submit', (evt) => {
         touchmove = true;
         _xml.style.display = `block`;
         _xml.style.zIndex = `1`;
-        xmlRequestParsing(
+        Request(
           _match.querySelector(`.hover`).getAttribute(`aria-object`)
         )
         _match.style.display = `none`;
@@ -247,7 +247,7 @@ document.addEventListener('submit', (evt) => {
         _xml.style.display = `block`;
         _xml.style.zIndex = `1`;
         topMenuBarDisplay(topBar);
-        xmlRequestParsing(
+        Request(
           _first.querySelector(`.hover`).getAttribute(`aria-object`)
         );
       } else if (_guest.value.length > 0)

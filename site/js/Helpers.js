@@ -15,7 +15,7 @@ let init = function () {
         (a) => a.style.visibility = `visible`
       );
   } else if (loading == `percent`)
-    progressBackDrop(false);
+    Backdrop(false);
 };
 
 let unloading = function () {
@@ -28,9 +28,9 @@ let unloading = function () {
       .forEach(
         (a) => a.style.visibility = `hidden`
       );
-    progressBackDrop(true);
+    Backdrop(true);
   } else if (loading == `percent`)
-    progressBackDrop(true);
+    Backdrop(true);
 };
 
 const cyrb53 = function(str, seed = 0) {

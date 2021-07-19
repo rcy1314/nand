@@ -115,7 +115,7 @@ _main.addEventListener('scroll', (evt) => {
         stop = true;
         first = false;
         if (showSplash) _check.style.display = `block`;
-        xmlRequestParsing(anyRandomMenuObject());
+        Request(anyRandomMenuObject());
       }
     }
   },
@@ -442,7 +442,7 @@ _container.addEventListener('click', (evt) => {
           .forEach(
             (a) => a.classList.add(`luv`)
           );
-        xmlRequestParsing(anyRandomMenuObject());
+        Request(anyRandomMenuObject());
       }
     }
     else if (
@@ -546,7 +546,7 @@ _container.addEventListener('click', (evt) => {
         return false;
       }
       first = true;
-      xmlRequestParsing(
+      Request(
         evt.target.closest(`.populate`).getAttribute(`aria-object`)
       );
     }
@@ -558,7 +558,7 @@ _container.addEventListener('click', (evt) => {
       category = evt.target.closest(`.translation`).getAttribute(`aria-item`);
       if (Reader) {
         randomDuplicate = [];
-        xmlRequestParsing(anyRandomMenuObject());
+        Request(anyRandomMenuObject());
       } else {
         let target = event;
         populateCategoryGroup(
@@ -577,7 +577,7 @@ _container.addEventListener('click', (evt) => {
     ) {
       init();
       first = true;
-      xmlRequestParsing(
+      Request(
         evt.target.closest(`.asset`).getAttribute(`aria-object`)
       );
       topMenuBarDisplay(topBar);
@@ -593,7 +593,7 @@ _container.addEventListener('click', (evt) => {
       if (
         Array.isArray(pub)
       )
-        xmlAppendPublication(id);
+        Append(id);
         _main.classList.remove(`guide`);
       if (loading == `percent`) _progress.style.width = `100%`;
       while (_guide.lastChild) _guide.removeChild(_guide.lastChild);
@@ -660,7 +660,7 @@ _container.addEventListener('click', (evt) => {
         _status.removeChild(_status.lastChild);
       while (_suggestions.firstChild)
         _suggestions.removeChild(_suggestions.lastChild);
-      xmlRequestParsing(
+      Request(
         evt.target.closest(`.suggest`).getAttribute(`aria-item`)
       );
     }
@@ -669,7 +669,7 @@ _container.addEventListener('click', (evt) => {
         `detail`
       )
     ) {
-      xmlRequestParsing(evt.target.closest(`.hover`)
+      Request(evt.target.closest(`.hover`)
         .getAttribute(`aria-item`));
       _match.style.display = `none`;
     }
@@ -678,7 +678,7 @@ _container.addEventListener('click', (evt) => {
         `asset`
       )
     )
-      xmlRequestParsing(evt.target.getAttribute(`aria-item`));
+      Request(evt.target.getAttribute(`aria-item`));
     else if (
       evt.target.classList.contains(`flip-front`) ||
       evt.target.classList.contains(`flip-back`) ||
@@ -698,7 +698,7 @@ _container.addEventListener('click', (evt) => {
         _status.removeChild(_status.lastChild);
       while (_suggestions.firstChild)
         _suggestions.removeChild(_suggestions.lastChild);
-      xmlRequestParsing(
+      Request(
         evt.target.closest(`.btn`).getAttribute(`aria-object`)
       );
       if (
@@ -812,7 +812,7 @@ _container.addEventListener('click', (evt) => {
               });
               if (safeSearchIDs.includes(menu[id].id))
                 if (showSplash == true) _check.style.display = `block`;
-              guideDisplay(sticky);
+              Sticky(sticky);
             } else if (
               evt.target
                 .closest(`.item`)
