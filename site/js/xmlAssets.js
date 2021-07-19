@@ -6,7 +6,7 @@
 
       > id: unique stripped to plain text [indexed]
 
-      > title: unique nine digit numerica [indexed]
+      > title: generated
 
       > des: plain text [indexed].
 
