@@ -306,7 +306,7 @@ setTimeout(
     else if (display == `flexbox`)
       offset = 2500
 
-    else offset = 1000
+    else offset = 500
 
     cycleViewport = viewport.findIndex(
       (item) => item == display
