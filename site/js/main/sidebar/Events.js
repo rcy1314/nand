@@ -63,14 +63,14 @@ _main.addEventListener("wheel", function(evt) {
       sideBarDisplay(onScreen);
     }, 1250)
   }
+},
 {
   passive: true
 }
-});
+);
 
 
-document.addEventListener(
-  'click', (evt) => {
+_container.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(
         `hide`
