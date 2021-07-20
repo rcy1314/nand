@@ -16,7 +16,8 @@
 ### Use
 
   <em>Navigate index.html in your browser locally</em><br>
-  `node app.js` <em>web server @ localhost:3000</em>
+  `node app.js` <em>web server @ localhost:3000</em>  
+  Add asset edit `site/js/main/Assets.js`
 
 ## Init
 
