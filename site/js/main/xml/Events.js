@@ -347,7 +347,21 @@ _container.addEventListener('click', (evt) => {
         evt.target
           .closest(`.copy`)
           .querySelector(`.attribute`).style.display = `block`;
+      } else if (
+        !_container
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`))
+      ) {
+        _container
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`));
+        var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
+        for (i = 0; i < attribute.length; i++) {
+          attribute[i].classList.remove(`fa-ellipsis-v`);
+          attribute[i].classList.add(`fa-ellipsis-h`);
+        }
       }
+
       evt.stopPropagation();
     }
   },

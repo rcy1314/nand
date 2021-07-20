@@ -629,6 +629,26 @@ document.addEventListener(
           })();
         }
       }
+      else if (
+        evt.target.classList.contains(
+          `bar`
+        )
+      ) {
+        _min.style.display = `block`;
+        onScreen = onScreen != true;
+        sideBarDisplay(onScreen);
+        if (onScreen)
+          _bar.style.display = `none`;
+      }
+      else if (
+        evt.target.classList.contains(
+          `show`
+        )
+      ) {
+        onScreen = true
+        sideBarDisplay(onScreen);
+        _sb.style.display = `none`;
+      }
     }
     event.preventDefault();
   },

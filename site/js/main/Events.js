@@ -1,4 +1,3 @@
-
 _container.addEventListener('touchstart', (evt) => {
     touchmove = false;
     touchstartX = evt.changedTouches[0].screenX;
@@ -31,7 +30,10 @@ _container.addEventListener('touchend', (evt) => {
 );
 
 _container.addEventListener('wheel', (e) => {
-  if (document.body.contains(_channel))
+  if (
+    document.body.contains(_channel) &&
+    sideScroll
+  )
     _channel.scrollLeft += e.deltaY /4;
 })
 
@@ -92,19 +94,6 @@ _container.addEventListener('click', (evt) => {
         _first.style.display = `none`;
         _guest.blur();
         return false;
-      } else if (
-        !_container
-          .querySelectorAll(`.attribute`)
-          .forEach((a) => (a.style.display = `none`))
-      ) {
-        _container
-          .querySelectorAll(`.attribute`)
-          .forEach((a) => (a.style.display = `none`));
-        var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
-        for (i = 0; i < attribute.length; i++) {
-          attribute[i].classList.remove(`fa-ellipsis-v`);
-          attribute[i].classList.add(`fa-ellipsis-h`);
-        }
       }
       evt.stopPropagation();
     }
@@ -177,17 +166,6 @@ _container.addEventListener('click', (evt) => {
     )
       repository.blank();
     else if (
-      evt.target.classList.contains(
-        `bar`
-      )
-    ) {
-      _min.style.display = `block`;
-      onScreen = onScreen != true;
-      sideBarDisplay(onScreen);
-      if (onScreen)
-        _bar.style.display = `none`;
-    }
-    else if (
       evt.target.classList.contains(`fa-sun`) ||
       evt.target.id == `toggle`
     ) {
@@ -198,16 +176,7 @@ _container.addEventListener('click', (evt) => {
       window[set]();
       notifyOption(themes[iteration].obFn, `fa-check-circle`);
     }
-    else if (
-      evt.target.classList.contains(
-        `show`
-      )
-    ) {
-      onScreen = true
-      sideBarDisplay(onScreen);
-      _sb.style.display = `none`;
-    }
-      evt.stopPropagation();
+    evt.stopPropagation();
     evt.preventDefault();
   },
   false
