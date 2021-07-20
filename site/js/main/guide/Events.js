@@ -17,7 +17,7 @@ _guide.addEventListener('touchend', (evt) => {
   }
 );
 
-_guide.addEventListener('touchend', (evt) => {
+_guide.addEventListener('click', (evt) => {
     if (
       event.target.classList.contains(`checkmark__circle`) ||
       event.target.classList.contains(`checkmark__check`) ||

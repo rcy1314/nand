@@ -68,6 +68,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     src.match(/https?:\/\//g) &&
     !src.match(/comments|feeds|fsdn|undefined/g)
   ) {
+    let newImg;
     newImg = new Image();
     newImg.setAttribute(`src`, src);
     newImg.onerror = function () {
@@ -81,8 +82,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       }
     };
     newImg.onload = function () {
-      Width = newImg.naturalWidth
+      let Height;
+      let Width;
       Height = newImg.naturlHeight
+      Width = newImg.naturalWidth
       if (
           src.match(/ytimg/g) &&
           youtubeMedia == false
