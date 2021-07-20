@@ -1,7 +1,3 @@
-if (
-  sideBarMouse &&
-  _main.clientWidth >= 769
-) {
   _sidebar.addEventListener('mousemove', (evt) => {
       onScreen = true;
     },
@@ -47,11 +43,7 @@ if (
       passive: true
     }
   );
-}
 
-if (
-sideBarMousewheel
-) {
 _main.addEventListener("wheel", function(evt) {
   if (
     onScreen == true &&
@@ -75,7 +67,6 @@ _main.addEventListener("wheel", function(evt) {
   passive: true
 }
 });
-}
 
 
 document.addEventListener(
