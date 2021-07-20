@@ -81,6 +81,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       }
     };
     newImg.onload = function () {
+      Width = newImg.naturalWidth
+      Height = newImg.naturlHeight
       if (
           src.match(/ytimg/g) &&
           youtubeMedia == false
@@ -123,8 +125,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       Dimensions(
                         menuObject,
                         pubIndex,
-                        newImg.naturalHeight,
-                        newImg.naturalWidth
+                        Height,
+                        Width
                       )
                       itemImage.setAttribute(`src`, e.target.result);
                       itemFilter.style.transform = `scale(4)`
@@ -148,8 +150,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                     Dimensions(
                       menuObject,
                       pubIndex,
-                      newImg.naturalHeight,
-                      newImg.naturalWidth
+                      Height,
+                      Width
                     )
                     itemFilter.style.transform = `scale(4)`
                     copyDownload.classList.add(`picture`);
@@ -179,8 +181,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   Dimensions(
                     menuObject,
                     pubIndex,
-                    newImg.naturalHeight,
-                    newImg.naturalWidth
+                    Height,
+                    Width
                   )
                   itemImage.setAttribute(`src`, e.target.result);
                   itemPending.style.display = `none`;
@@ -202,8 +204,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                 Dimensions(
                   menuObject,
                   pubIndex,
-                  newImg.naturalHeight,
-                  newImg.naturalWidth
+                  Height,
+                  Width
                 )
                 itemImage.setAttribute(`src`, src);
                 itemPending.style.display = `none`;
@@ -236,8 +238,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             Dimensions(
               menuObject,
               pubIndex,
-              newImg.naturalHeight,
-              newImg.naturalWidth
+              Height,
+              Width
             );
             if (
               !flexBox &&
@@ -265,8 +267,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             Dimensions(
               menuObject,
               pubIndex,
-              newImg.naturalHeight,
-              newImg.naturalWidth
+              Height,
+              Width
             )
             itemImage.setAttribute(`src`, src);
             itemPending.style.display = `none`;
