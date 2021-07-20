@@ -44,30 +44,31 @@
     }
   );
 
-_main.addEventListener("wheel", function(evt) {
-  if (
-    onScreen == true &&
-    _main.clientWidth >= 769 &&
-    Math.sign(evt.deltaY) == 1 &&
-    sideBarLock == false
-  ) {
-    onScreen = false;
-    sideBarDisplay(onScreen);
-  } else if (
-    onScreen == false &&
-    _main.clientWidth >= 769 &&
-    Math.sign(evt.deltaY) == -1
-  ) {
-    setTimeout(function() {
-      onScreen = true;
+if (sideBarMousewheel)
+  _main.addEventListener("wheel", function(evt) {
+    if (
+      onScreen == true &&
+      _main.clientWidth >= 769 &&
+      Math.sign(evt.deltaY) == 1 &&
+      sideBarLock == false
+    ) {
+      onScreen = false;
       sideBarDisplay(onScreen);
-    }, 1250)
+    } else if (
+      onScreen == false &&
+      _main.clientWidth >= 769 &&
+      Math.sign(evt.deltaY) == -1
+    ) {
+      setTimeout(function() {
+        onScreen = true;
+        sideBarDisplay(onScreen);
+      }, 1250)
+    }
+  },
+  {
+    passive: true
   }
-},
-{
-  passive: true
-}
-);
+  );
 
 
 _container.addEventListener('click', (evt) => {
