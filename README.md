@@ -17,9 +17,14 @@
 
   <em>Navigate index.html in your browser locally</em><br>
   `node app.js` <em>web server @ localhost:3000</em>  
-  Add asset edit `site/js/main/Assets.js`
 
-## Init
+### Add
+
+  <em>edit</em> `site/js/main/Assets.js`  
+  <em>save image</em> `site/images/webp`  
+  <em>[convert to webp 100x100](https://redketchup.io/image-resizer)</em>  
+
+### Init
 
   `index.html/?q=[unique-id]`<br>
   `index.html/?q=[category]`<br>
