@@ -176,6 +176,17 @@ _container.addEventListener('click', (evt) => {
       window[set]();
       notifyOption(themes[iteration].obFn, `fa-check-circle`);
     }
+    else if (
+      event.target.classList.contains(
+        `fa-user-cog`
+      )
+    ) {
+      safeSearch = safeSearch != true;
+      if (safeSearch)
+        notifyOption(`Safe Search`, `fa-check-circle`);
+      else if (!safeSearch)
+        notifyOption(`Safe Search`, `fa-times-circle`);
+    }
     evt.stopPropagation();
     evt.preventDefault();
   },
