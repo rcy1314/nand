@@ -1,9 +1,9 @@
 <br>
 <img src='capture.jpg'>
 
-<sub>Release</sub> | <sub>Site</sub> | <sub>NPM</sub> | <sub>Deployment</sub> | <sub>Maintained</sub> |
---- | --- | --- | --- | --- |
-[<b>0.8.192</b>](https://github.com/acktic/acktic.github.io/releases/tag/0.8.192 "0.8.192") | [![Website acktic.github.io](https://img.shields.io/website-up-down-green-red/https/acktic.github.io.svg)](https://acktic.github.io/) | <img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'> | <img src='https://heroku-badge.herokuapp.com/?app=acktic-github-io&style=flat&svg=1'> | [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/acktic/acktic.github.io/graphs/commit-activity) |
+<sub>Release</sub> | <sub>Site</sub> | <sub>NPM</sub> | <sub>Maintained</sub> |
+--- | --- | --- | --- |
+[<b>0.8.192</b>](https://github.com/acktic/acktic.github.io/releases/tag/0.8.192 "0.8.192") | [![Website acktic.github.io](https://img.shields.io/website-up-down-green-red/https/acktic.github.io.svg)](https://acktic.github.io/) | <img src='https://github.com/acktic/acktic.github.io/actions/workflows/node.js.yml/badge.svg'> | [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/acktic/acktic.github.io/graphs/commit-activity) |
 
 ### About
 
