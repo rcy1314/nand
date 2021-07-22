@@ -249,6 +249,19 @@ let topBarBackdrop = false;
 let toggleBorders = false;
 
 /*
+    onlySearch [boolean/integer]
+
+      Applications
+        mainEvents.js, onLoad, clientWidth
+
+      Result
+        only display page visit search bar
+
+*/
+
+let onlySearch = true;
+
+/*
     quickFeeds [boolean/integer]
 
       Applications
