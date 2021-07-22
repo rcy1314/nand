@@ -1,7 +1,7 @@
 let notifyOption = function (String, Icon) {
   _notify.innerHTML =
     `
-    ${String} <div class='fa ${Icon}'></div>
+    ${String} <div class='notifyIcon fa ${Icon}'></div>
     `;
   _notify.classList.add(`notify`);
   _notify.style.display = `flex`;
