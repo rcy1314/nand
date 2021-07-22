@@ -63,7 +63,8 @@ File Issues!
 Copyright Notice
 ----
 
-<em>Images and information retrieved and or displayed in project  are not owned by the developers, and are only non - consent</em>
+<em>Images and information retrieved and or displayed in project   
+are not owned by the developers, and are only non - consent</em>
 
 ### Notice
 
