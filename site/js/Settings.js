@@ -17,7 +17,9 @@ let set = `Night`;
 
 */
 
-// backgroundImage path is being overwritten in themes files
+// backgroundImage path can be
+// overwritten in themes files, see Example.js
+
 let backgroundImage = [
   {
     path: "",
@@ -352,8 +354,7 @@ let titleTruncate = 125;
         quickFeedAsset, topBar
 
       Result
-        Social, News, Entertainment, Sports, Technology, World, Youtube
-        display, read, random
+        Reddit, News, Media, Sports, Tech, World, Youtube
 
 */
 
@@ -423,7 +424,7 @@ let youtubeMedia = false;
 
 */
 
-let suggestionBuffer = 50;
+let suggestionBuffer = 12;
 
 /*
     contentStatusBuffer [integer]
@@ -432,7 +433,7 @@ let suggestionBuffer = 50;
         xmlStatusSuggestions, xmlRequestParsing
 
       Result
-        random generated integer
+        generated suggestions
 
 */
 
@@ -490,7 +491,7 @@ let safeSearch = true;
 
 */
 
-let guideSafeSearch = false;
+let guideSafeSearch = true;
 
 /*
     safeSearchScore [string]

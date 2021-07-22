@@ -30,19 +30,13 @@ var Sticky = function (pubArray) {
                 if (
                   document.body.contains(
                     _guide.querySelector(
-                      `[aria-item='${pubArray.menuObject}']
-                       [aria-object='${pubArray.pubIndex}']
-                       .filterBlur
-                      `
+                      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
                     )
                   )
                 )
                   _guide
                     .querySelector(
-                      `[aria-item='${pubArray.menuObject}']
-                       [aria-object='${pubArray.pubIndex}']
-                       .filterBlur
-                      `
+                      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
                     )
                     .classList.add(`blur`);
               }
