@@ -30,18 +30,12 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
       Class == `feed`
     )
 			option.innerHTML = Arrays[i].space().capitalize();
-    if (Class == `theme`) option.innerHTML = Arrays[i].obFn;
+    if (Class == `theme`) {
+      option.innerHTML = Arrays[i].obFn;
+      option.setAttribute(`aria-object`, Arrays[i].obFn)
+    }
     list.append(option);
     if (
-      translations.includes(
-        Arrays[i]
-      )
-    ) {
-      option.setAttribute(`aria-item`, Arrays[i])
-      option.innerHTML = Arrays[i];
-      list.append(option);
-      list.append(sideBarThemeBuild(`fa-redo`))
-    } if (
       !translations.includes(Arrays[i]) ||
       Class != `option` &&
       Class != `feed`

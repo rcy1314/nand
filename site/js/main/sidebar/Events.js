@@ -77,7 +77,7 @@ _container.addEventListener('click', (evt) => {
         `hide`
       )
     ) {
-      !onScreen;
+      onScreen = false;
       sideBarDisplay(onScreen);
       if (_main.clientWidth <= 768) _sb.style.display = `block`;
       if (_main.clientWidth >= 768) _bar.style.display = `none`;
@@ -610,6 +610,7 @@ _container.addEventListener('click', (evt) => {
           })();
         }
       }
+    }
       else if (
         evt.target.classList.contains(
           `bar`
@@ -630,7 +631,14 @@ _container.addEventListener('click', (evt) => {
         sideBarDisplay(onScreen);
         _sb.style.display = `none`;
       }
-    }
+      else if (
+        evt.target.classList.contains(
+          `theme`
+        )
+      ) {
+        set = evt.target.getAttribute(`aria-object`);
+        window[set]();
+      }
     event.preventDefault();
   },
   false
