@@ -668,6 +668,9 @@ let expandFavorites = false;
 let expandSettings = false;
 let expandVisual = false;
 let expandFilter = false;
+let legacy;
+let flexBox;
+let sideScroll;
 let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length

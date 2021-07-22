@@ -367,7 +367,6 @@ var menu=[
 {id:`Leak Lookup`,category:`Tech`,title:``,description:`Leak Lookup Latest Database Leaks and Records Counting.`,uri:`https://leak-lookup.com/rss`,image:`Leak-Lookup`,hash:`lL`,media:!1},
 {id:`LifeHacker`,category:`Tech`,title:``,description:`Lifehacker is a weblog about life hacks and software that launched on January 31, 2005.`,uri:`https://www.lifehacker.com.au/feed/`,image:`LifeHacker`,hash:`hL`,media:!0},
 {id:`Malware Tech`,category:`Tech`,title:``,description:`Malware Tech research blog malware analysis, threat intelligence, and vulnerability research.`,uri:`https://www.malwaretech.com/feed`,image:`Malware`,hash:`Em`,media:!1},
-{id:`Mirror UK Tech`,category:`Tech`,title:``,description:`Mirror.co.uk Technology Best Stories, Opinion, Pictures and Video.`,uri:`https://www.mirror.co.uk/tech/?service=rss`,image:`Mirror`,hash:`kM`,media:!0},
 {id:`MIT University`,category:`Tech`,title:``,description:`MIT is a Top University, in Science and Engineering, Cognitive Science, Philosophy and Linguistics.`,uri:`http://news.mit.edu/rss/feed`,image:`MIT`,hash:`Tm`,media:!0},
 {id:`NASA`,category:`Tech`,title:``,description:`NASA brings you the Images, Videos and News from America's space agency.`,uri:`https://www.nasa.gov/rss/dyn/breaking_news.rss`,image:`NASA`,hash:`aS`,media:!0},
 {id:`NBC Technology`,category:`Tech`,title:``,description:`NBC News Tech for Latest News on Technology, Businesses and Internet media.`,uri:`http://feeds.nbcnews.com/nbcnews/public/tech`,image:`NBCNews`,hash:`tY`,media:!0},

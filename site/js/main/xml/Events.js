@@ -1,4 +1,4 @@
-_container
+_main
   .addEventListener(
     'ontouchmove', (evt) =>
     {
@@ -38,6 +38,25 @@ _container
           stop = true;
           first = false;
           if (showSplash) _check.style.display = `block`;
+          while (
+            _air.firstChild
+          )
+            _air.removeChild(_air.lastChild);
+
+          while (
+            _result.firstChild
+          )
+            _result.removeChild(_result.lastChild);
+
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(_status.lastChild);
+
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(_suggestions.lastChild);
           Request(anyRandomMenuObject());
         }
       }
@@ -47,7 +66,7 @@ _container
     }
 );
 
-_container
+_main
   .addEventListener(
     'scroll', (evt) =>
     {
@@ -86,6 +105,25 @@ _container
           stop = true;
           first = false;
           if (showSplash) _check.style.display = `block`;
+          while (
+            _air.firstChild
+          )
+            _air.removeChild(_air.lastChild);
+
+          while (
+            _result.firstChild
+          )
+            _result.removeChild(_result.lastChild);
+
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(_status.lastChild);
+
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(_suggestions.lastChild);
           Request(anyRandomMenuObject());
         }
       }
@@ -115,6 +153,10 @@ _container
                 (a) => a.classList.remove(`luv`)
               );
             _channel.append(footerBuild(id));
+            if (
+              flexBox
+            )
+              displayFlex();
           } else if (Reader) {
             if (
               document.body.contains(
@@ -122,6 +164,8 @@ _container
               )
             )
             first = false;
+            else
+              first = true;
             touchmove = true;
             onlyImages = true;
             randomDuplicate = [];
@@ -140,6 +184,7 @@ _container
               .forEach(
                 (a) => a.classList.add(`luv`)
               );
+            cleanup();
             Request(anyRandomMenuObject());
           }
         }

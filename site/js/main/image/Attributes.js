@@ -249,7 +249,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               !youtubeMedia &&
               menu[id].id.match(/Youtube/g)
             )
-              itemContainer.style.paddingBottom = `56.25%`;
+              itemContainer.style.paddingBottom = `16.25%`;
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.style.display = `none`;
             itemImage.style.display = `block`;

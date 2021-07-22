@@ -150,7 +150,6 @@ setTimeout(
       location.search.split(`?q=`)[1]
     ) {
       var uri = location.search.split(`?q=`)[1];
-      var uri = uri.toLowerCase().space();
       _toggle.style.display = `none`;
       guideOnScreen = true;
       setTimeout(
@@ -204,11 +203,12 @@ setTimeout(
       _check.style.visibility = `visible`;
 
     if (
-      window.clientWidth <= 425
+      _main.clientWidth <= 425
     ) {
       setTimeout(
         function () {
           guideOnScreen = onScreen;
+          quickFeedAsset(24);
           onScreen = false;
           expand = false;
           Blocks = true;
@@ -216,10 +216,6 @@ setTimeout(
         },
       250)
     }
-    else if (
-      _main.clientWidth <= 425
-    )
-      quickFeedAsset(24);
     else quickFeedAsset(8);
 
     quickFeedDisplay(quickFeeds);
@@ -367,7 +363,7 @@ setTimeout(
           )
           .style.display =
             `block`
-    }
+      }
 
     if (
       !Reader &&
@@ -395,18 +391,6 @@ setTimeout(
 
     adj = menu.slice();
     randomizeAssets(adj);
-
-    if (
-      _main.clientWidth <= 768
-    ) {
-      display = `legacy`;
-      offset = 500;
-    }
-    else if (
-      display == `flexbox`
-    )
-      offset = 2500
-    else offset = 500
 
     cycleViewport =
       viewport
@@ -436,6 +420,23 @@ setTimeout(
       flexBox = false;
       legacy = false;
     }
+
+
+        if (
+          _main.clientWidth <= 425
+        ) {
+          display = `legacy`;
+          onScreen = false;
+        }
+
+        if (
+          display == `flexBox`
+        )
+          offset = 2500
+        else
+          offset = 550
+
+
 
     if (onlySearch) {
       _options.style.display = `none`;

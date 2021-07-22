@@ -46,8 +46,8 @@ let displayFlex = function () {
   else if (
     groups == min
   ) var min = `left:-310px;order:3`;
+  if (!Reader) _channel.querySelector(`#bottom`).style.cssText = min;
   _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
-  _channel.querySelector(`#bottom`).style.cssText = min;
   _channel.style.height = `${(max + 2000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
@@ -73,7 +73,8 @@ let displayFlex = function () {
     );
   if (
     _main.clientWidth > 1280
-  ) {
+  )
     _display.style.display = `inline-block`;
-  }
+  else
+    _display.style.display = `none`;
 }

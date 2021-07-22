@@ -37,8 +37,6 @@ _container.addEventListener('wheel', (e) => {
     _channel.scrollLeft += e.deltaY /4;
 })
 
-
-
 _container.addEventListener('click', (evt) => {
     if (
       evt.target.classList.contains(`construct`) ||
