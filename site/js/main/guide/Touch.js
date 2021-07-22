@@ -5,23 +5,34 @@ let handleGuide = function () {
     touchendY - 75 > touchstartY ||
     touchendY + 75 < touchstartY
   ) {
+
     if (
       Array.isArray(pub)
     )
       xmlAppendPublication(id);
-    setTimeout(function () {
-      if (complete) _progress.style.width = `100%`;
-      _main.classList.remove(`guide`);
-      while (_guide.lastChild)
-        _guide.removeChild(_guide.lastChild);
-      _guide.style.display = `none`;
-      _check.style.display = `none`;
-      topMenuBarDisplay(topBar);
-      if (sideBarLock)
-        onScreen = true;
-      sideBarDisplay(onScreen);
-      guideOnScreen = true;
-      pub = null;
-    }, 750)
+
+    setTimeout(
+      function () {
+        if (
+          complete
+        )
+          _progress.style.width = `100%`;
+        _main.classList.remove(`guide`);
+
+        while (
+          _guide.lastChild
+        )
+          _guide.removeChild(_guide.lastChild);
+
+        _guide.style.display = `none`;
+        _check.style.display = `none`;
+        if (sideBarLock)
+          onScreen = true;
+        topMenuBarDisplay(topBar);
+        sideBarDisplay(onScreen);
+        guideOnScreen = true;
+        pub = null;
+      }, 750
+    )
   }
 }

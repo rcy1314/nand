@@ -8,7 +8,9 @@ let inputListingIndex = function (
   while (listing.lastChild)
     listing.removeChild(listing.lastChild);
   _main.querySelector(listingWrapper).style.display = `block`;
-  if (inputFilter != ``)
+  if (
+    inputFilter != ``
+  )
     for (
       var i = menu.length - 1;
       i >= 1;
@@ -17,7 +19,11 @@ let inputListingIndex = function (
       if (
         menu[i].description.toString().toLowerCase().match(inputFilter)
       ) {
-        if (suggest.length - 1 === suggestionBuffer) return false;
+        if (
+          suggest.length - 1 === suggestionBuffer
+        )
+        return false;
+
         listing.append(
           listingIndexBuild(
             menu[i].id.match(/[^\/]+$/g),
@@ -37,7 +43,8 @@ let inputListingIndex = function (
         );
       }
     }
-  for (var i = 1;
+  for (
+    let i = 1;
     i <= menu.length - 1;
     i++
   ) {

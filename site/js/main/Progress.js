@@ -2,53 +2,61 @@ let Progress = function (done) {
   let width;
   let length;
   let complete;
-  if (!done && loading == `percent`) {
-    complete = setInterval(function () {
-      if (
-        safeSearchIDs.includes(
-          menu[id].id
-        )
-      )
-        width = _container.clientWidth / (count.length - 1);
-      else if (
-        !width ||
-        width == `Infinity` &&
-        count.length <= 0
-      )
-        width = _container.clientWidth / 12;
-      if (
-        _progress.clientWidth >= _container.clientWidth
-      ) {
-        _progress.style.transition = `0`;
-        _progress.style.width = `100%`;
-        setTimeout(
-          function() {
-            _progress.style.transition = `all 1600ms ease-in-out`;
-            _progress.style.opacity = `0`;
-          },
-        350)
-        setTimeout(
-          function () {
-            _progress.style.transition = `none`;
-            _progress.style.width = `0%`;
-          },
-        1600);
-        clearInterval(complete);
-      } else {
-        _progress.style.width = _progress.clientWidth + width;
-        _progress.style.transition = `all 750ms ease-in-out`;
-        _progress.style.opacity = `1`;
-      }
-    }, 500);
+  if (
+    !done &&
+    loading == `percent`
+  ) {
+    complete =
+      setInterval(
+        function () {
+          if (
+            safeSearchIDs.includes(
+              menu[id].id
+            )
+          )
+            width = _container.clientWidth / (count.length - 1);
+          else if (
+            !width ||
+            width == `Infinity` &&
+            count.length <= 0
+          )
+            width = _container.clientWidth / 12;
+          if (
+            _progress.clientWidth >= _container.clientWidth
+          ) {
+            _progress.style.transition = `0`;
+            _progress.style.width = `100%`;
+            setTimeout(
+              function() {
+                _progress.style.transition = `all 1600ms ease-in-out`;
+                _progress.style.opacity = `0`;
+              },
+            350)
+            setTimeout(
+              function () {
+                _progress.style.transition = `none`;
+                _progress.style.width = `0%`;
+              },
+            1600);
+            clearInterval(complete);
+          } else {
+            _progress.style.width = _progress.clientWidth + width;
+            _progress.style.transition = `all 750ms ease-in-out`;
+            _progress.style.opacity = `1`;
+          }
+        },
+    500);
   }
   if (
     document.body.contains(
-      _channel.querySelector(`.item`)
+      _channel.querySelector(
+        `.item`
+      )
     )
   ) {
     if (
-      scrollIntoView &&
-      first
+      first &&
+      scrollIntoView
     ) {
       _center.classList.add(`scroll-into-view`)
       setTimeout(
@@ -146,7 +154,7 @@ let Progress = function (done) {
         setTimeout(
           function() {
             _main.scrollTop = _air.clientHeight;
-          }, 25
+          }, 75
         )
     }
   }

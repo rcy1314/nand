@@ -11,18 +11,22 @@
 
 */
 
-window.onload = function () {
+window.onload =
+  function ()
+    {
 
-  if (backgroundImage[0].element == `container`)
-    _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
-
-  else if (backgroundImage[0].element == `main`)
-    _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
-
-  _container.style.backgroundPosition = `${backgroundImage[0].position}`;
-  _main.style.backgroundPosition = `${backgroundImage[0].position}`;
-  _container.style.backgroundSize = `${backgroundImage[0].size}`;
-  _main.style.backgroundSize = `${backgroundImage[0].size}`;
+      if (
+        backgroundImage[0].element == `container`
+      )
+        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      else if (
+        backgroundImage[0].element == `main`
+      )
+        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+      _container.style.backgroundPosition = `${backgroundImage[0].position}`;
+      _main.style.backgroundPosition = `${backgroundImage[0].position}`;
+      _container.style.backgroundSize = `${backgroundImage[0].size}`;
+      _main.style.backgroundSize = `${backgroundImage[0].size}`;
 
 };
 
@@ -49,7 +53,10 @@ setTimeout(
         uri.match(
           /^[a-zA-Z0-9]+$/g)
         ) {
-        if (Reader == true) onlyImages = true;
+        if (
+          Reader == true
+        )
+          onlyImages = true;
         id =
           uri.slice(
             0,
@@ -63,14 +70,23 @@ setTimeout(
         setTimeout(
           function () {
             if (
-              menu.findIndex(
-                (item) => item.hash === id
+              menu
+                .findIndex(
+                (item) =>
+                  item.hash ===
+                    id
               )
             )
-              i = menu.findIndex(
-                (item) => item.hash === id
+              i = menu
+                .findIndex(
+                (item) =>
+                  item.hash ===
+                    id
               );
-              if (i !== -1) Request(i);
+              if (
+                i !== -1
+              )
+                Request(i);
               else filterInputResponse(uri)
           },
         250);
@@ -93,27 +109,33 @@ setTimeout(
         setTimeout(
           function () {
             if (
-              menu.findIndex(
-                (item, i) =>
-                  cyrb53(item.description) == id ||
-                  cyrb53(i.toString()) == id ||
-                  cyrb53(item.hash) == id ||
-                  cyrb53(item.uri) == id ||
-                  cyrb53(item.id) == id
-              )
+              menu
+                .findIndex(
+                  (item, i) =>
+                    cyrb53(item.description) == id ||
+                    cyrb53(i.toString()) == id ||
+                    cyrb53(item.hash) == id ||
+                    cyrb53(item.uri) == id ||
+                    cyrb53(item.id) == id
+                )
             )
               i =
-              menu.findIndex(
-                (item, i) =>
-                  cyrb53(item.description) == id ||
-                  cyrb53(i.toString()) == id ||
-                  cyrb53(item.hash) == id ||
-                  cyrb53(item.uri) == id ||
-                  cyrb53(item.id) == id
-              )
-            console.log(menu[i].id)
-            if (i !== -1) Request(i);
-            else if (i === -1)
+              menu
+                .findIndex(
+                  (item, i) =>
+                    cyrb53(item.description) == id ||
+                    cyrb53(i.toString()) == id ||
+                    cyrb53(item.hash) == id ||
+                    cyrb53(item.uri) == id ||
+                    cyrb53(item.id) == id
+                )
+            if (
+              i !== -1
+            )
+              Request(i);
+            else if (
+              i === -1
+            )
               filterInputResponse(
                 location.href.split(`?`)[1]
               );
@@ -133,14 +155,19 @@ setTimeout(
       guideOnScreen = true;
       setTimeout(
         function () {
-          if (showSplash == true) _check.style.visibility = `visible`;
+          if (
+            showSplash
+          )
+            _check.style.visibility = `visible`;
           topMenuBarDisplay(topBar);
           filterInputResponse(uri);
         },
       250);
     } else if (
       isNaN(
-        parseFloat(post)
+        parseFloat(
+          post
+        )
       ) &&
       !isFinite(
         post
@@ -148,10 +175,15 @@ setTimeout(
     ) {
       setTimeout(
         function () {
-          if (Reader == false) {
+          if (
+            !Reader
+          ) {
             guideOnScreen = true;
             _guest.focus();
-          } else if (Reader == true) {
+          }
+          else if (
+            Reader
+          ) {
             onlyImages = true;
             Request(anyRandomMenuObject());
           }
@@ -167,11 +199,13 @@ setTimeout(
       isFinite(
         post
       ) &&
-      showSplash == true
+      showSplash
     )
       _check.style.visibility = `visible`;
 
-    if (window.clientWidth <= 425) {
+    if (
+      window.clientWidth <= 425
+    ) {
       setTimeout(
         function () {
           guideOnScreen = onScreen;
@@ -182,28 +216,45 @@ setTimeout(
         },
       250)
     }
-    else if (_main.clientWidth <= 425)
+    else if (
+      _main.clientWidth <= 425
+    )
       quickFeedAsset(24);
     else quickFeedAsset(8);
+
     quickFeedDisplay(quickFeeds);
+
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
     appendSideBarLists(`.themes`, `theme`, themes);
+
     sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
     appendSideBarLists(`.fav`, `feed`, favorites);
+
     sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
     appendSideBarLists(`.bg`, `background`, background);
+
     document.querySelector(`.bg`).append(urlFormBuild());
     sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
+
     appendSideBarLists(`.exclude`, `option`, exclude);
     document.querySelector(`.exclude`).append(excludeFormBuild());
+
     sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
     appendSettings(`.set`, `settings`, settings);
+
     _content.append(basicFormBuild());
-    if (sideBarLock == true) _content.append(sideBarThemeBuild(`fa-lock`))
-    else if (sideBarLock == false) _content.append(sideBarThemeBuild(`fa-unlock`))
+
+    if (
+      sideBarLock
+    )
+      _content.append(sideBarThemeBuild(`fa-lock`))
+    else if (
+      !sideBarLock
+    )
+      _content.append(sideBarThemeBuild(`fa-unlock`))
 
     for (
-      var i = 0;
+      let i = 0;
       i <= translations.length - 1;
       i++
     )
@@ -211,81 +262,111 @@ setTimeout(
         underTranslation(translations[i])
       );
 
-    if (sideBarCenter == true)
+    if (
+      sideBarCenter
+    )
       _content.style.position = `absolute`;
     else _content.style.position = `relative`;
 
-    if (sideBarBackdrop == true) {
+    if (
+      sideBarBackdrop
+    ) {
       _sidebar.style.cssText =
         `background-color:transparent; backdrop-filter: blur(10px) !important`;
     }
-    if (topBarBackdrop == true)
+    if (
+      topBarBackdrop
+    )
       _top.style.cssText = `backdrop-filter: blur(10px)`
 
-      if (imageLoader == `double-circle`) {
-      _main
-        .querySelectorAll(`.loader`)
-        .forEach(
-          (a) => a.style.display = `block`
-        );
-      _main
-        .querySelectorAll(`.bars`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-      _main
-        .querySelectorAll(`.animation`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-      } else if (imageLoader == `v-bars`) {
-      _main
-        .querySelectorAll(`.bars`)
-        .forEach(
-          (a) => a.style.display = `block`
-        );
-      _main
-        .querySelectorAll(`.animation`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-      _main
-        .querySelectorAll(`.loader`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-     } else if (imageLoader == `ring-circle`) {
-      _main
-        .querySelectorAll(`.animation`)
-        .forEach(
-          (a) => a.style.display = `block`
-        );
-      _main
-        .querySelectorAll(`.loader`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-      _main
-        .querySelectorAll(`.wrapper`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-    } else if (imageLoader == false) {
-      _main
-        .querySelectorAll(`.bars`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-      _main
-        .querySelectorAll(`.loader`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
-      _main
-        .querySelectorAll(`.animation`)
-        .forEach(
-          (a) => a.style.display = `none`
-        );
+      if (
+        imageLoader ==
+          `double-circle`
+      ) {
+        _check
+          .querySelector(
+            `.bars`
+          )
+          .style.display =
+            `none`
+        _check
+          .querySelector(
+            `.animation`
+          )
+          .style.display =
+            `none`
+        _check
+          .querySelector(
+            `.loader`
+          )
+          .style.display =
+            `block`
+      } else if (
+        imageLoader ==
+          `v-bars`
+      ) {
+        _check
+          .querySelector(
+            `.animation`
+          )
+          .style.display =
+            `none`
+        _check
+          .querySelector(
+            `.bars`
+          )
+          .style.display =
+            `block`
+        _check
+          .querySelector(
+            `.loader`
+          )
+          .style.display =
+            `none`
+     } else if (
+       imageLoader ==
+        `ring-circle`
+     ) {
+       _check
+         .querySelector(
+           `.animation`
+         )
+         .style.display =
+           `block`
+       _check
+         .querySelector(
+           `.bars`
+         )
+         .style.display =
+           `none`
+       _check
+         .querySelector(
+           `.loader`
+         )
+         .style.display =
+           `none`
+    } else if (
+      imageLoader ==
+        false
+      ) {
+        _check
+          .querySelector(
+            `.animation`
+          )
+          .style.display =
+            `block`
+        _check
+          .querySelector(
+            `.bars`
+          )
+          .style.display =
+            `none`
+        _check
+          .querySelector(
+            `.loader`
+          )
+          .style.display =
+            `block`
     }
 
     if (
@@ -309,33 +390,48 @@ setTimeout(
         )
       }, 3000
     )
-  } else _container.style.display = `block`;
+  }
+  else _container.style.display = `block`;
 
     adj = menu.slice();
     randomizeAssets(adj);
 
-    if (_main.clientWidth <= 768) {
+    if (
+      _main.clientWidth <= 768
+    ) {
       display = `legacy`;
       offset = 500;
     }
-    else if (display == `flexbox`)
+    else if (
+      display == `flexbox`
+    )
       offset = 2500
-
     else offset = 500
 
-    cycleViewport = viewport.findIndex(
-      (item) => item == display
+    cycleViewport =
+      viewport
+        .findIndex(
+          (item) =>
+            item ==
+              display
     )
 
-    if (viewport[cycleViewport] == `legacy`) {
+    if (
+      viewport[cycleViewport] == `legacy`
+    ) {
       sideScroll = false;
       flexBox = false;
       legacy = true;
-    } else if (viewport[cycleViewport] == `flexBox`) {
+    }
+    else if (
+      viewport[cycleViewport] == `flexBox`
+    ) {
       sideScroll = false;
       flexBox = true;
       legacy = false;
-    } else if (viewport[cycleViewport] == `sideScroll`) {
+    } else if (
+      viewport[cycleViewport] == `sideScroll`
+    ) {
       sideScroll = true;
       flexBox = false;
       legacy = false;

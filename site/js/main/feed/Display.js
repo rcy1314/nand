@@ -1,11 +1,16 @@
 let quickFeedDisplay = function (Value) {
-  if (Value) {
+  if (
+    Value
+  ) {
     _quick.style.zIndex = `1`;
     _quick
-      .querySelectorAll(`.feed`)
-      .forEach(
-        (a) => a.style.display = `block`
-      );
+      .querySelectorAll(
+        `.feed`
+      )
+      .forEach((a) =>
+        a.style.display =
+        `block`
+      )
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
     _quick.classList.remove(`invisible`);
@@ -20,15 +25,21 @@ let quickFeedDisplay = function (Value) {
       _main.clientWidth <= 425
     )
     _sb.style.top = `-10px`;
-  } else if (!Value) {
+  }
+  else if (
+    !Value
+  ) {
     _options.classList.remove(`invisible`);
     _social.classList.remove(`invisible`);
     _quick.style.zIndex = `-1`;
     _quick
-      .querySelectorAll(`.feed`)
-      .forEach(
-        (a) => a.style.display = `none`
-      );
+      .querySelectorAll(
+        `.feed`
+      )
+      .forEach((a) =>
+        a.style.display =
+        `none`
+      )
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
     _front.classList.remove(`toggleHidden`);

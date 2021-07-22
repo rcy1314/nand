@@ -1,38 +1,65 @@
 let displayExpand = function (Value) {
-  if (Value) {
+  if (Value)
+  {
     groupType = `list`;
     if (
       document.body.contains(
-        _group.querySelector(`.populate`)
+        _group.querySelector(
+          `.populate`
+        )
       )
     ) {
       _group
-        .querySelectorAll(`.populate`)
+        .querySelectorAll(
+          `.populate`
+        )
         .forEach(
-          (a) => a.classList.add(`expand`)
+          (a) =>
+            a.classList.add(
+              `expand`
+            )
         );
 			_group
-        .querySelectorAll(`.populate`)
+        .querySelectorAll(
+          `.populate`
+        )
         .forEach(
-          (a) => a.classList.remove(`block`)
+          (a) =>
+            a.classList.remove(
+              `block`
+            )
         );
     }
-  } else if (!Value) {
+  }
+  else if (!Value)
+  {
     groupType = `blocks`;
     if (
       document.body.contains(
-        _group.querySelector(`.populate`)
+        _group.querySelector(
+          `.populate`
+        )
       )
     ) {
 			_group
-        .querySelectorAll(`.populate`)
+        .querySelectorAll(
+          `.populate`
+        )
         .forEach(
-          (a) => a.classList.add(`block`)
+          (a) =>
+            a.classList.add(
+              `block`
+            )
         );
       _group
-        .querySelectorAll(`.populate`)
+        .querySelectorAll(
+          `.populate`
+        )
         .forEach(
-          (a) => a.classList.remove(`expand`)
+          (a) =>
+            a.classList.remove(
+              `expand`
+            )
         );
     }
   }

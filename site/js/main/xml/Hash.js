@@ -1,15 +1,15 @@
-var Hash = function (channel, dateTime) {
+var Hash = function (channel, xhr) {
   let parse = [];
   if (channel == `entry`) {
-    let re = dateTime.getElementsByTagName(`link`)[0].getAttribute(`href`);
-    if (dateTime.getElementsByTagName(`updated`).length == 1) {
-      var dst = dateTime
+    let re = xhr.getElementsByTagName(`link`)[0].getAttribute(`href`);
+    if (xhr.getElementsByTagName(`updated`).length == 1) {
+      var dst = xhr
         .getElementsByTagName(`updated`)[0]
         .childNodes[0].nodeValue.zulu();
       var since = new Date(
-        dateTime.getElementsByTagName(`updated`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`updated`)[0].childNodes[0].nodeValue
       ).getTime();
-      var gen = dateTime
+      var gen = xhr
         .getElementsByTagName(`updated`)[0]
         .childNodes[0].nodeValue.toLocaleString();
       gen = parseInt(
@@ -19,15 +19,15 @@ var Hash = function (channel, dateTime) {
           .replace(/\:/g, ``)
       ).toString(36);
     } else if (
-      dateTime.getElementsByTagName(`pubDate`).length == 1
+      xhr.getElementsByTagName(`pubDate`).length == 1
     ) {
-      var dst = dateTime
+      var dst = xhr
         .getElementsByTagName(`pubDate`)[0]
         .childNodes[0].nodeValue.zulu();
       var since = new Date(
-        dateTime.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
         );
-      var gen = dateTime
+      var gen = xhr
         .getElementsByTagName(`pubDate`)[0]
         .childNodes[0].nodeValue.toLocaleString();
       gen = parseInt(
@@ -40,15 +40,15 @@ var Hash = function (channel, dateTime) {
     parse.push({
       since: since,
       dst: dst[0],
-      cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+      cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
       base36: gen,
       externalURI: re.trim(),
     });
   } else {
-    if (dateTime.getElementsByTagName(`datetime`).length > 0) {
-      let re = dateTime.getElementsByTagName(`link`)[0].childNodes[0].nodeValue;
+    if (xhr.getElementsByTagName(`datetime`).length > 0) {
+      let re = xhr.getElementsByTagName(`link`)[0].childNodes[0].nodeValue;
       let ts = parseInt(
-        dateTime.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
       );
       let ts_ms = ts * 1000;
       let date = new Date(ts_ms);
@@ -62,29 +62,29 @@ var Hash = function (channel, dateTime) {
       let dst = def.zulu();
       let since = new Date(
         parseInt(
-          dateTime.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
+          xhr.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
         )
       );
       let gen = parseInt(
-        dateTime.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`datetime`)[0].childNodes[0].nodeValue
       ).toString(36);
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
-    } else if (dateTime.getElementsByTagName(`pubDate`).length > 0) {
-      let re = dateTime.getElementsByTagName(`link`)[0].childNodes[0].nodeValue;
-      let dst = dateTime
+    } else if (xhr.getElementsByTagName(`pubDate`).length > 0) {
+      let re = xhr.getElementsByTagName(`link`)[0].childNodes[0].nodeValue;
+      let dst = xhr
         .getElementsByTagName(`pubDate`)[0]
         .childNodes[0].nodeValue.zulu();
       let since = new Date(
-        dateTime.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
       );
       let gen = new Date(
-        dateTime.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`pubDate`)[0].childNodes[0].nodeValue
       ).toLocaleString();
       gen = parseInt(
         gen
@@ -95,27 +95,27 @@ var Hash = function (channel, dateTime) {
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });
-    } else if (dateTime.getElementsByTagName(`dc:date`).length > 0) {
-      let re = dateTime.getElementsByTagName(`dc:date`)[0].childNodes[0]
+    } else if (xhr.getElementsByTagName(`dc:date`).length > 0) {
+      let re = xhr.getElementsByTagName(`dc:date`)[0].childNodes[0]
         .nodeValue;
-      let dst = dateTime
+      let dst = xhr
         .getElementsByTagName(`dc:date`)[0]
         .childNodes[0].nodeValue.zulu();
       let since = new Date(
-        dateTime.getElementsByTagName(`dc:date`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`dc:date`)[0].childNodes[0].nodeValue
       );
       let gen = new Date(
-        dateTime.getElementsByTagName(`dc:date`)[0].childNodes[0].nodeValue
+        xhr.getElementsByTagName(`dc:date`)[0].childNodes[0].nodeValue
       ).getTime();
       gen = gen.toString(36);
       parse.push({
         since: since,
         dst: dst[0],
-        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(dateTime.toString())}-${menu[id].title}`,
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
         base36: gen,
         externalURI: re.trim(),
       });

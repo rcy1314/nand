@@ -4,7 +4,6 @@ var Status = function (
   oldestPost,
   postsCount
 ) {
-    let status = _xml.querySelector(`.status`);
     _status.append(
       contentBuild(
         oldestPost,

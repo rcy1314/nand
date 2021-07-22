@@ -1,8 +1,11 @@
 let writeFilterResponse = function (menuObject) {
   let media;
-  if (menu[menuObject].media)
+  if (
+    menu[menuObject].media
+  )
     media = `<div class='media' style='display:none'>Images</div>`;
-  else media = `<div class='blank'></div>`;
+  else
+    media = `<div class='blank'></div>`;
   _result.append(
     categoryBuild(
       menu[menuObject].id.match(/[^\/]+$/g),

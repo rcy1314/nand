@@ -2,34 +2,68 @@ let init = function () {
   if (loading == `dots`) {
     _progress.style.width = `0%`;
     _dots.style.zIndex = `12`;
-    _dots.querySelectorAll(`.fill`)
+    _dots
+      .querySelectorAll(
+        `.fill`
+      )
       .forEach(
-        (a) => a.style.zIndex = `12`
+        (a) =>
+          a.style.zIndex =
+            `12`
       );
-    _dots.querySelectorAll(`.fill`)
+    _dots
+      .querySelectorAll(
+        `.fill`
+      )
       .forEach(
-        (a) => a.classList.add(`dots`)
+        (a) =>
+          a.classList.add(
+            `dots`
+          )
       );
-    _dots.querySelectorAll(`.fill`)
+    _dots
+      .querySelectorAll(
+        `.fill`
+      )
       .forEach(
-        (a) => a.style.visibility = `visible`
+        (a) =>
+          a.style.visibility =
+          `visible`
       );
-  } else if (loading == `percent`)
+  }
+  else if (
+    loading == `percent`
+  )
     Progress(false);
 };
 
 let unloading = function () {
-  if (loading == `dots`) {
-    _dots.querySelectorAll(`.fill`)
+  if (
+    loading == `dots`
+  ) {
+    _dots
+      .querySelectorAll(
+        `.fill`
+      )
       .forEach(
-        (a) => a.classList.remove(`dots`)
+        (a) =>
+        a.classList.remove(
+          `dots`
+        )
       );
-    _dots.querySelectorAll(`.fill`)
+    _dots
+      .querySelectorAll(
+        `.fill`
+      )
       .forEach(
-        (a) => a.style.visibility = `hidden`
+        (a) =>
+          a.style.visibility =
+          `hidden`
       );
     Progress(true);
-  } else if (loading == `percent`)
+  } else if (
+    loading == `percent`
+  )
     Progress(true);
 };
 
@@ -59,10 +93,10 @@ let truncate = function (
   );
 };
 
-let randomizeAssets = function (array) {
+let randomizeAssets = function (Array) {
   let adjusted = [];
   // Fisher-Yates (aka Knuth) Shuffle
-  var currentIndex = array.length,  randomIndex;
+  var currentIndex = Array.length,  randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -72,11 +106,11 @@ let randomizeAssets = function (array) {
     currentIndex--;
 
     // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-    array[randomIndex], array[currentIndex]];
+    [Array[currentIndex], Array[randomIndex]] = [
+    Array[randomIndex], Array[currentIndex]];
 
   }
-  return array;
+  return Array;
 }
 
 let anyRandomMenuObject = function () {
@@ -97,12 +131,6 @@ let anyRandomMenuObject = function () {
           menu[i]
         )
       );
-    else if (
-      menu[i] &&
-      onlyImages &&
-      menu[i].media
-    )
-      random.push(menu.indexOf(menu[i]));
     else if (
       !onlyImages
     )

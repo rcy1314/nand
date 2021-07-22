@@ -1,7 +1,9 @@
 let sideBarDisplay = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
-  if (Value) {
+  if (
+    Value
+  ) {
     setTimeout(
       function () {
         _sidebar.style.left = `0`;
@@ -25,8 +27,12 @@ let sideBarDisplay = function (Value) {
           _sidebar.style.left = `0`;
         }, 300
       );
-  } else if (!Value) {
-    if (_main.clientWidth >= 768) {
+  } else if (
+    !Value
+  ) {
+    if (
+      _main.clientWidth >= 768
+    ) {
       _sidebar.querySelector(`.bg`).style.height = `31px`;
       expandBackground = false;
       _sidebar.querySelector(`.set`).style.height = `31px`;
@@ -41,6 +47,7 @@ let sideBarDisplay = function (Value) {
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
       _sidebar.style.left = `-250px`;
       _sb.style.display = `none`;
-    } else _sidebar.style.left = `-280px`;
+    }
+    else _sidebar.style.left = `-280px`;
   }
 };

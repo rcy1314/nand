@@ -1,7 +1,8 @@
 let quickFeedAsset = function (feedAssets) {
+
   let duplicate = [];
     for (
-      var i = 1;
+      let i = 1;
       i <= menu.length - 1;
       i++
     ) {
@@ -16,8 +17,7 @@ let quickFeedAsset = function (feedAssets) {
       if (
         menu[randomMenuObject] &&
         !duplicate.includes(randomMenuObject) &&
-        menu[randomMenuObject].media == true &&
-        randomMenuObject != 0
+        menu[randomMenuObject].media == true
       ) {
         duplicate.push(randomMenuObject);
         _feed.append(
@@ -27,7 +27,11 @@ let quickFeedAsset = function (feedAssets) {
             menu[randomMenuObject].id
           )
         );
-        if (duplicate.length === feedAssets) return false;
+        if (
+          duplicate.length === feedAssets
+        )
+          return false;
       }
     }
+
 };

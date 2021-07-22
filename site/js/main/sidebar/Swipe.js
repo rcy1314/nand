@@ -5,11 +5,15 @@ let handleSwipe = function () {
   ) {
     onScreen = true;
     sideBarDisplay(onScreen);
-  } else if (
+  }
+  else if (
     touchendX + 75 <
     touchstartX
   ) {
     onScreen = false;
-    if (sideBarLock == false) sideBarDisplay(onScreen);
+    if (
+      !sideBarLock
+    )
+    sideBarDisplay(onScreen);
   }
 }

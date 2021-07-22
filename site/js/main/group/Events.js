@@ -1,32 +1,41 @@
-_container.addEventListener('click', (evt) => {
-    if (
-      evt.target.classList.contains(`under`)
-    ) {
-      stageGroup();
-      category = evt.target.getAttribute(`aria-item`);
-      if (evt.target.getAttribute(`aria-item`) == `Assets`)
-        populateAssets();
-      else populateCategoryGroup(evt.target.getAttribute(`aria-item`));
-  } else if (
-    evt.target.getAttribute(`aria-item`) == `Assets`
-  )
-    populateAssets();
-    else if (
-      evt.target.classList.contains(
-        `fa-expand-alt`
-      )
-    ) {
-      _sb.style.display = `none`;
-      stageGroup();
-      if (category == `Assets`)
-        setTimeout(function () {
+_container
+  .addEventListener(
+    'click', (evt) =>
+    {
+      if (
+        evt.target.classList.contains(`under`)
+      ) {
+        stageGroup();
+        category = evt.target.getAttribute(`aria-object`);
+        if (
+          evt.target.getAttribute(`aria-object`) == `Assets`
+        )
           populateAssets();
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-          unloading();
-        }, 25)
-      else populateCategoryGroup(category);
+        else populateCategoryGroup(evt.target.getAttribute(`aria-object`));
+      } else if (
+      evt.target.getAttribute(`aria-object`) == `Assets`
+      )
+        populateAssets();
+        else if (
+          evt.target.classList.contains(
+            `fa-expand-alt`
+          )
+        ) {
+          _sb.style.display = `none`;
+          stageGroup();
+          if (
+            category == `Assets`
+          )
+            setTimeout(function () {
+              topMenuBarDisplay(topBar);
+              populateAssets();
+              displayExpand(expand);
+              unloading();
+            }, 25)
+          else populateCategoryGroup(category);
+        }
+    },
+    {
+      passive: false
     }
-  },
-  false
 );

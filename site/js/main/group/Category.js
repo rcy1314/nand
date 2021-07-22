@@ -1,9 +1,11 @@
 let populateCategoryGroup = function (translation) {
   let media;
-  _sb.style.display = `none`;
   _toggle.style.display = `none`
-  location.href.split(`?`)[0].state();
-  if (showSplash) _check.style.display = `block`;
+  _sb.style.display = `none`;
+  if (
+    showSplash
+  )
+    _check.style.display = `block`;
   stageGroup()
   if (
     id &&
@@ -28,10 +30,16 @@ let populateCategoryGroup = function (translation) {
     i <= menu.length - 1;
     i++
   ) {
-    if (menu[i].media)
+    if (
+      menu[i].media
+    )
       media = `<div class='media' style='display:none'>Images</div>`;
-    else media = `<div class='blank'></div>`;
-    if (onlyImages) {
+    else
+      media = `<div class='blank'></div>`;
+
+    if (
+      onlyImages
+    ) {
       if (
         translation == menu[i].category &&
         id != menu.indexOf(menu[i]) &&
@@ -48,7 +56,9 @@ let populateCategoryGroup = function (translation) {
           )
         );
       }
-    } else if (!onlyImages) {
+    } else if (
+      !onlyImages
+    ) {
       if (
         translation == menu[i].category &&
         id != menu.indexOf(menu[i])
@@ -68,7 +78,8 @@ let populateCategoryGroup = function (translation) {
   }
   if (
     !onlyImages
-  ) reverseCategoryGroup(translation);
+  )
+    reverseCategoryGroup(translation);
   else if (
     onlyImages
   )
@@ -77,7 +88,7 @@ let populateCategoryGroup = function (translation) {
     _main.clientWidth >= 768
   )
     _bar.style.display = `none`;
-  topMenuBarDisplay(topBar);
   main.setAttribute(`tabindex`, -1);
+  topMenuBarDisplay(topBar);
   main.focus();
 };

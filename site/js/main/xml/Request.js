@@ -16,11 +16,15 @@ var Request = function (index) {
   if (!readPrevious) random = [];
   if (
     !document.body.contains(
-      _channel.querySelector(`.item`)
+      _channel.querySelector(
+        `.item`
+      )
     ) &&
     first ||
       document.body.contains(
-        _channel.querySelector(`[aria-object='${id}']`)
+        _channel.querySelector(
+          `[aria-object='${id}']`
+        )
       )
   ) {
     _channel.scrollTop = 0;
@@ -31,7 +35,9 @@ var Request = function (index) {
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
   _visit.style.display = `none`;
-  if (_main.clientWidth >= 768)
+  if (
+    _main.clientWidth >= 768
+  )
     _bar.style.display = `none`;
   _sb.style.display = `none`;
   if (
@@ -49,11 +55,11 @@ var Request = function (index) {
       if (httpRequest.status == 200 && this.responseXML) {
         // 200 = OK
         let xhr = this.responseXML;
-        console.log(xhr);
+
         if (xhr.getElementsByTagName(`entry`).length > 0) var channel = `entry`;
         else var channel = `item`;
 
-        if (Reader == false) quit = 30;
+        if (!Reader) quit = 30;
         else quit = 16;
         for (
           let i = 2;
@@ -269,7 +275,7 @@ var Request = function (index) {
           pub = null;
         }
       } else {
-        if (showSplash == true) _check.style.display = `none`;
+        if (showSplash) _check.style.display = `none`;
         stageGroup();
         populateCategoryGroup(category);
         topMenuBarDisplay(topBar);

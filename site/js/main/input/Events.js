@@ -1,18 +1,27 @@
-_page.addEventListener('click', (evt) => {
-    if (
-      event.target.classList.contains(`buttonSearch`) ||
-      event.target.classList.contains(`button`)
-    ) {
-      if (_guest.value.length > 0) {
-        filterInputResponse(_guest.value);
-        topMenuBarDisplay(topBar);
+_page
+  .addEventListener(
+    'click', (evt) =>
+    {
+      if (
+        event.target.classList.contains(`buttonSearch`) ||
+        event.target.classList.contains(`button`)
+      ) {
+        if (_guest.value.length > 0) {
+          filterInputResponse(_guest.value);
+          topMenuBarDisplay(topBar);
+        }
       }
+      event.preventDefault();
+    },
+    {
+      passive: false
     }
-    event.preventDefault();
-  },
-  false
 );
-_view.addEventListener('keyup', (evt) => {
+
+_view
+  .addEventListener(
+    'keyup', (evt) =>
+    {
       if (event.target.value.length >= 1 && event.target.value != `Search`)
       return false
       else {
@@ -29,235 +38,316 @@ _view.addEventListener('keyup', (evt) => {
         event.target.value = ``;
       }
     event.preventDefault();
-  },
-  false
-);
-_top.addEventListener('click', (evt) => {
-    if (event.target.id == `view`) {
-      _match.style.display = `none`;
-      while (
-        _match.querySelector(".listing").firstChild
-      ) {
-        _match
-          .querySelector(".listing")
-          .removeChild(_match.querySelector(".listing").lastChild);
-      }
-      _main.querySelector(`#input .icon`).classList.add(`slide`);
-      _view.setAttribute(`placeholder`, `Search`);
-      event.target.style.paddingLeft = `20px`;
-      event.target.style.textAlign = `left`;
-      event.target.value = ``;
+    },
+    {
+      passive: false
     }
-    event.preventDefault();
-  },
-  false
-);
-_container.addEventListener('click', (evt) => {
-    if (event.target.classList.contains(`sideFilter`))
-      event.target.value = ``;
-    if (
-      event.target.classList.contains(`textMatch`) ||
-      event.target.classList.contains(`buffer`) ||
-      event.target.classList.contains(`detail`) ||
-      event.target.classList.contains(`input`) ||
-      event.target.classList.contains(`hover`)
-  ) {
-    if (
-      document.body.contains(
-        _first.querySelector(`.hover`)
-      )
-    )
-      first = true;
-    else if (
-      flexBox == false
-    )
-      first = false;
-      _xml.style.display = `block`;
-      _xml.style.zIndex = `1`;
-      touchmove = true;
-      Request(
-        event.target.closest(`.index`).getAttribute(`aria-object`)
-      );
-        _visit.style.display = `none`;
-        topMenuBarDisplay(topBar);
-      _match.style.display = `none`;
-      _first.style.display = `none`;
-    }
-    event.preventDefault();
-  },
-  false
-);
-_main.addEventListener('mouseout', (evt) => {
-    if (event.target.classList.contains(`detail`))
-      _main
-        .querySelectorAll(`.listing .index, .listing .index`)
-        .forEach(
-          (a) => a.classList.remove(`hover`)
-        );
-  },
-  false
-);
-_main.addEventListener('mouseover', (evt) => {
-    if (event.target.classList.contains(`detail`))
-      event.target.closest(`.index`).classList.add(`hover`);
-  },
-  false
-);
-_main.addEventListener('keyup', (evt) => {
-      if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
-    if (event.target.id == `view`) inputListingKeyup(`#match`, event.keyCode);
-    event.preventDefault();
-  },
-  false
 );
 
-document.addEventListener('submit', (evt) => {
-  _toggle.style.display = `none`
-    if (
-      event.target.classList.contains(`min`)
-    ) {
-      if (
-        _sidebar.querySelector(`.excludeInput`).value.length
-      ) {
-        exclude.push(
-          _sidebar.querySelector(`.excludeInput`).value
-        );
-        const has = exclude.map((a) => a.toLowerCase());
-        if (
-          document.body.contains(
-            _xml
-          )
-        ) {
-          _main.querySelectorAll(`.pub`).forEach(
-            (a) => has.filter(
-              function (obj) {
-                if (
-                  a.innerHTML.toLowerCase().match(obj)
-                )
-                  a.closest(`.item`).remove();
-              }
-            )
-          );
-        }
-        if (
-          !_sidebar.querySelector(`.option`)
-        ) {
-          let option = document.createElement(`div`);
-          option.classList.add(`option`);
-          option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
-          event.target.parentNode.insertBefore(option, event.target);
-        } else {
-          let option = document.createElement(`div`);
-          option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
-          option.classList.add(`option`);
-          _sidebar.querySelector(`.parse`).parentNode.insertBefore(
-            option, document.querySelector(`.option`)
-          );
-        }
-        _sidebar.querySelector(`.excludeInput`).value = ``;
-        _sidebar.querySelector(`.exclude`).style.height =
-        `
-        ${
-          exclude.length * 35 + 70
-        }px`;
-      }
-    } else if (
-      event.target.classList.contains(`url`)
-    ) {
-      if (
-        _sidebar.querySelector(`.imageURL`).value.length
-      ) {
-        if (
-          _sidebar
-            .querySelector(`.imageURL`)
-            .value.match(
-              /\b(?:png|jpe?g|gif|webp)/g
-            )
-        ) {
-          if (backgroundImage[0].element == `container`) {
-            _container.style.backgroundImage =
-            `url(
-              ${
-              _sidebar.querySelector(`.imageURL`).value
-              }
-            )`;
-            _main.style.backgroundImage = `url()`;
-          } else if (backgroundImage[0].element == `main`) {
-            _main.style.backgroundImage = `
-            url(
-              ${
-              _sidebar.querySelector(`.imageURL`).value
-              }
-            )`;
-            _container.style.backgroundImage = `url()`;
-          }
-        }
-      }
-    } else if (
-      event.target.classList.contains(`sideBasic`)
-    ) {
-      if (
-        _sidebar.querySelector(`.sideFilter`).value.length
-      ) {
-        stageGroup();
-        filterInputResponse(
-          _sidebar.querySelector(`.sideFilter`).value.space(),
-        );
-        _toggle.style.display = `none`;
-        topMenuBarDisplay(topBar);
-      }
-    } else if (event.target.id == `search`) {
-      if (
-        document.body.contains(
-          _result.querySelector(`.populate`)
-        )
-      ) {
-        first = true;
-      }
-      if (
-        document.body.contains(
-          _match.querySelector(`.hover`)
-        )
-      ) {
-        touchmove = true;
-        _xml.style.display = `block`;
-        _xml.style.zIndex = `1`;
-        Request(
-          _match.querySelector(`.hover`).getAttribute(`aria-object`)
-        )
+_top
+  .addEventListener(
+    'click', (evt) =>
+    {
+      if (event.target.id == `view`) {
         _match.style.display = `none`;
-      } else if (_view.value.length) {
-        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-        filterInputResponse(_view.value);
+        while (
+          _match.querySelector(".listing").firstChild
+        ) {
+          _match
+            .querySelector(".listing")
+            .removeChild(_match.querySelector(".listing").lastChild);
+        }
+        _main.querySelector(`#input .icon`).classList.add(`slide`);
+        _view.setAttribute(`placeholder`, `Search`);
+        event.target.style.paddingLeft = `20px`;
+        event.target.style.textAlign = `left`;
+        event.target.value = ``;
       }
-      _match.style.display = `none`;
-    } else if (event.target.id == `front`) {
-      if (_guest.value == ``) inputListingIndex(``, `#first`);
+      event.preventDefault();
+    },
+    {
+      passive: false
+    }
+);
+
+_container
+  .addEventListener(
+    'click', (evt) =>
+    {
+      if (event.target.classList.contains(`sideFilter`))
+        event.target.value = ``;
+      if (
+        event.target.classList.contains(`textMatch`) ||
+        event.target.classList.contains(`buffer`) ||
+        event.target.classList.contains(`detail`) ||
+        event.target.classList.contains(`input`) ||
+        event.target.classList.contains(`hover`)
+    ) {
       if (
         document.body.contains(
           _first.querySelector(`.hover`)
         )
-      ) {
+      )
         first = true;
-        _label.style.visibility = `visible`;
-        _quick.style.visibility = `visible`;
-        _show.style.visibility = `visible`;
-        _link.style.visibility = `visible`;
-        _first.style.display = `none`;
+      else if (
+        flexBox == false
+      )
+        first = false;
         _xml.style.display = `block`;
         _xml.style.zIndex = `1`;
-        topMenuBarDisplay(topBar);
+        touchmove = true;
         Request(
-          _first.querySelector(`.hover`).getAttribute(`aria-object`)
+          event.target.closest(`.index`).getAttribute(`aria-object`)
         );
-      } else if (_guest.value.length > 0)
-      filterInputResponse(_guest.value);
-      _visit.style.display = `none`;
-      _first.style.display = `none`;
+          _visit.style.display = `none`;
+          topMenuBarDisplay(topBar);
+        _match.style.display = `none`;
+        _first.style.display = `none`;
+      }
+      event.preventDefault();
+    },
+    {
+      passive: false
     }
-    event.preventDefault();
-  },
-  false
+);
+
+_main
+  .addEventListener(
+    'mouseout', (evt) =>
+    {
+      if (event.target.classList.contains(`detail`))
+        _main
+          .querySelectorAll(`.listing .index, .listing .index`)
+          .forEach(
+            (a) => a.classList.remove(`hover`)
+          );
+    },
+    {
+      passive: false
+    }
+);
+
+_main
+  .addEventListener(
+    'mouseover', (evt) =>
+    {
+      if (event.target.classList.contains(`detail`))
+        event.target.closest(`.index`).classList.add(`hover`);
+    },
+    {
+      passive: false
+    }
+);
+
+_main
+  .addEventListener(
+    'keyup', (evt) =>
+    {
+      if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
+      if (event.target.id == `view`) inputListingKeyup(`#match`, event.keyCode);
+      event.preventDefault();
+    },
+    {
+      passive: false
+    }
+);
+
+document
+  .addEventListener(
+    'submit', (evt) =>
+    {
+      _toggle.style.display = `none`
+      if (
+        event.target.classList.contains(
+          `min`
+        )
+      ) {
+        if (
+          _sidebar.querySelector(
+            `.excludeInput`
+          )
+          .value.length
+        ) {
+          exclude.push(
+            _sidebar.querySelector(
+              `.excludeInput`
+            )
+            .value
+          );
+          const has = exclude.map((a) => a.toLowerCase());
+          if (
+            document.body.contains(
+              _xml
+            )
+          ) {
+            _xml.querySelectorAll(`.pub`).forEach(
+              (a) => has.filter(
+                function (obj) {
+                  if (
+                    a.innerHTML.toLowerCase().match(obj)
+                  )
+                    a.closest(`.item`).remove();
+                }
+              )
+            );
+          }
+          if (
+            !_sidebar.querySelector(
+              `.option`
+            )
+          ) {
+            let option = document.createElement(`div`);
+            option.classList.add(`option`);
+            option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
+            event.target.parentNode.insertBefore(option, event.target);
+          } else {
+            let option = document.createElement(`div`);
+            option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
+            option.classList.add(`option`);
+            _sidebar.querySelector(`.parse`).parentNode.insertBefore(
+              option, document.querySelector(`.option`)
+            );
+          }
+          _sidebar.querySelector(`.excludeInput`).value = ``;
+          _sidebar.querySelector(`.exclude`).style.height =
+          `
+            ${
+              exclude.length * 35 + 70
+            }px
+          `;
+        }
+      } else if (
+        event.target.classList.contains(
+          `url`
+        )
+      ) {
+        if (
+          _sidebar.querySelector(
+            `.imageURL`
+          )
+          .value.length
+        ) {
+          if (
+            _sidebar
+              .querySelector(`.imageURL`)
+              .value.match(
+                /\b(?:png|jpe?g|gif|webp)/g
+              )
+          ) {
+            if (
+              backgroundImage[0].element ==
+              `container`
+            ) {
+              _container.style.backgroundImage =
+              `url(
+                ${
+                _sidebar.querySelector(`.imageURL`).value
+                }
+              )`;
+              _main.style.backgroundImage = `url()`;
+            }
+            else if (
+              backgroundImage[0].element == `main`
+            ) {
+              _main.style.backgroundImage = `
+              url(
+                ${
+                _sidebar.querySelector(`.imageURL`).value
+                }
+              )`;
+              _container.style.backgroundImage = `url()`;
+            }
+          }
+        }
+      } else if (
+        event.target.classList.contains(
+          `sideBasic`
+        )
+      ) {
+        if (
+          _sidebar.querySelector(
+            `.sideFilter`
+          )
+          .value.length
+        ) {
+          stageGroup();
+          filterInputResponse(
+            _sidebar.querySelector(`.sideFilter`).value.space(),
+          );
+          _toggle.style.display = `none`;
+          topMenuBarDisplay(topBar);
+        }
+
+      }
+      else if (
+        event.target.id == `search`
+      ) {
+        if (
+          document.body.contains(
+            _result.querySelector(`.populate`)
+          )
+        ) {
+          first = true;
+        }
+        if (
+          document.body.contains(
+            _match.querySelector(`.hover`)
+          )
+        ) {
+          touchmove = true;
+          _xml.style.display = `block`;
+          _xml.style.zIndex = `1`;
+          Request(
+            _match.querySelector(`.hover`).getAttribute(`aria-object`)
+          )
+          _match.style.display = `none`;
+
+        }
+        else if (
+          _view.value.length
+        ) {
+          if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
+          filterInputResponse(_view.value);
+        }
+        _match.style.display = `none`;
+      }
+      else if (
+        event.target.id == `front`
+      ) {
+        if (_guest.value == ``) inputListingIndex(``, `#first`);
+        if (
+          document.body.contains(
+            _first.querySelector(
+              `.hover`
+            )
+          )
+        ) {
+          first = true;
+          _label.style.visibility = `visible`;
+          _quick.style.visibility = `visible`;
+          _show.style.visibility = `visible`;
+          _link.style.visibility = `visible`;
+          _first.style.display = `none`;
+          _xml.style.display = `block`;
+          _xml.style.zIndex = `1`;
+          topMenuBarDisplay(topBar);
+          Request(
+            _first.querySelector(`.hover`).getAttribute(`aria-object`)
+          );
+        }
+        else if (
+          _guest.value.length >
+            0
+          )
+        filterInputResponse(_guest.value);
+        _visit.style.display = `none`;
+        _first.style.display = `none`;
+      }
+      event.preventDefault();
+    },
+    {
+      passive: false
+    }
 );
 /*
   nextElementSibling and previousElementSibling uses [pg] up, and [pg] down

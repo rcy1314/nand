@@ -1,8 +1,11 @@
 let topMenuBarDisplay = function (Value) {
-  if (Value) {
+  if (
+    Value
+  ) {
     _view.style.display = `block`;
     _top.style.display = `block`;
-  } else if (
+  }
+  else if (
     !Value
   )
     _top.style.display = `none`;
