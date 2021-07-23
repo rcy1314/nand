@@ -32,7 +32,7 @@ let displayLegacy = function () {
     .forEach(
       (a) =>
         a.style.width =
-          `425px`
+          `540px`
     );
   _xml.style.top = `60px`;
 }
