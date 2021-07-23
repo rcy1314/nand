@@ -203,7 +203,7 @@ setTimeout(
       _check.style.visibility = `visible`;
 
     if (
-      _main.clientWidth <= 540
+      _main.clientWidth <= 425
     ) {
       setTimeout(
         function () {
@@ -262,7 +262,7 @@ setTimeout(
     else _content.style.position = `relative`;
 
     if (
-      _main.clientWidth >= 540 &&
+      _main.clientWidth >= 425 &&
       sideBarBackdrop
     ) {
       _sidebar.style.cssText =
@@ -391,7 +391,7 @@ setTimeout(
     randomizeAssets(adj);
 
     if (
-      _main.clientWidth <= 540
+      _main.clientWidth <= 425
     ) {
       display = `legacy`;
       onScreen = false;
