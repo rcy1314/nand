@@ -4,7 +4,6 @@
   .expand .des,
   .btn .flip-front,
   #main #xml .content,
-  #main #top #arm #option,
   #main #xml .center #quick,
   #main #visit #page #quick .left,
   #main #visit #page #quick .right,
@@ -104,6 +103,7 @@
   }
 
   #xml {
+
     width: 320px;
   }
 
@@ -111,6 +111,13 @@
     height: fit-content !important;
     margin-top: 60px !important;
     top: 0 !important;
+  }
+
+  .sideItem {
+    width: 320px !important;
+    display: inline-table;
+    margin-right: 50px;
+    height: 380px;
   }
 
 }
@@ -236,8 +243,8 @@
   .sideItem {
     width: 320px !important;
     display: inline-table;
-      margin-right: 50px;
-      height: 380px;
+    margin-right: 50px;
+    height: 380px;
   }
 
   #bottom {
@@ -400,6 +407,19 @@
 }
 
 @media (min-width: 426px) and (max-width: 767px) {
+
+  .sideChannel {
+    height: fit-content !important;
+    margin-top: 60px !important;
+    top: 0 !important;
+  }
+
+  .sideItem {
+    width: 320px !important;
+    display: inline-table;
+    margin-right: 50px;
+    height: 380px;
+  }
 
   #main #social {
       display: none !important;
