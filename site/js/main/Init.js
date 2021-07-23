@@ -210,9 +210,6 @@ setTimeout(
           guideOnScreen = onScreen;
           quickFeedAsset(24);
           onScreen = false;
-          expand = false;
-          Blocks = true;
-          List = false;
         },
       250)
     }
