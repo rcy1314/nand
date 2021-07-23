@@ -114,10 +114,10 @@
   }
 
   .sideItem {
+    height: 380px !important;
     width: 320px !important;
     display: inline-table;
     margin-right: 50px;
-    height: 380px;
   }
 
 }
@@ -127,6 +127,13 @@
   .sideChannel {
     height: fit-content !important;
     width: 100vw !important;
+  }
+
+  .sideItem {
+    height: 380px !important;
+    width: 320px !important;
+    display: inline-table;
+    margin-right: 50px;
   }
 
   #toggle,
