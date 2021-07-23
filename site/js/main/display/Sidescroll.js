@@ -8,7 +8,6 @@ let displaySideScroll = function () {
   _center.style.right = `130px`;
   _center.style.width = `35vw`;
   _xml.style.display = `flex`;
-  _center.style.top = `60px`;
   _center.style.left = `0`;
   scrollIntoView = false;
   _xml.style.top = `0`;
