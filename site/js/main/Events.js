@@ -96,6 +96,7 @@ _container.addEventListener('click', (evt) => {
       evt.stopPropagation();
     }
     else if (
+      evt.target.id == `mobileHome` ||
       evt.target.id == `home`
     ) {
       stageXML();

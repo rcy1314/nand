@@ -1,13 +1,14 @@
-  _sidebar
-    .addEventListener(
-      'mousemove', (evt) =>
-      {
-        onScreen = true;
-      },
-      {
-        passive: true
-      }
-  );
+_sidebar
+  .addEventListener(
+    'mousemove', (evt) =>
+    {
+      onScreen = true;
+    },
+    {
+      passive: true
+    }
+);
+
 _guide
   .addEventListener(
     'mousemove', (evt) =>
@@ -22,36 +23,43 @@ _guide
       passive: true
     }
   );
-_main
-  .addEventListener(
-    'mousemove', (evt) =>
-    {
-      if (
-        event.pageX <= 100 &&
-        !onScreen
-      ) {
-        onScreen = true;
-        _sb.style.display = `none`;
-        _min.style.display = `block`;
-        setTimeout(function () {
-          sideBarDisplay(onScreen);
-        }, 300)
+
+if (
+  _main.clientWidth <= 425
+)
+  sideBarMouse = false
+
+if (sideBarMouse)
+  _main
+    .addEventListener(
+      'mousemove', (evt) =>
+      {
+        if (
+          event.pageX <= 100 &&
+          !onScreen
+        ) {
+          onScreen = true;
+          _sb.style.display = `none`;
+          _min.style.display = `block`;
+          setTimeout(function () {
+            sideBarDisplay(onScreen);
+          }, 300)
+        }
+        if (
+          event.pageX >= 180 &&
+          !sideBarLock &&
+          onScreen
+        ){
+          onScreen = false;
+          setTimeout(function() {
+            sideBarDisplay(onScreen);
+          }, 750)
+        }
+      },
+      {
+        passive: true
       }
-      if (
-        event.pageX >= 180 &&
-        !sideBarLock &&
-        onScreen
-      ){
-        onScreen = false;
-        setTimeout(function() {
-          sideBarDisplay(onScreen);
-        }, 750)
-      }
-    },
-    {
-      passive: true
-    }
-  );
+    );
 
 if (sideBarMousewheel) {
   _main.addEventListener("wheel", function(evt) {

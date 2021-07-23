@@ -262,6 +262,7 @@ setTimeout(
     else _content.style.position = `relative`;
 
     if (
+      _main.clientWidth >= 425 &&
       sideBarBackdrop
     ) {
       _sidebar.style.cssText =
@@ -389,6 +390,20 @@ setTimeout(
     adj = menu.slice();
     randomizeAssets(adj);
 
+    if (
+      _main.clientWidth <= 425
+    ) {
+      display = `legacy`;
+      onScreen = false;
+    }
+
+    if (
+      display == `flexBox`
+    )
+      offset = 2500
+    else
+      offset = 550
+
     cycleViewport =
       viewport
         .findIndex(
@@ -417,22 +432,6 @@ setTimeout(
       flexBox = false;
       legacy = false;
     }
-
-
-        if (
-          _main.clientWidth <= 425
-        ) {
-          display = `legacy`;
-          onScreen = false;
-        }
-
-        if (
-          display == `flexBox`
-        )
-          offset = 2500
-        else
-          offset = 550
-
 
 
     if (onlySearch) {

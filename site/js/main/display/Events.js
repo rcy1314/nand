@@ -60,6 +60,7 @@ _container
           viewport[cycleViewport] ==
             `legacy`
         ) {
+          notifyOption(viewport[cycleViewport], `fa-times-circle`)
           sideScroll = false;
           display = `legacy`;
           flexBox = false;
@@ -86,6 +87,7 @@ _container
           viewport[cycleViewport] == `flexBox` &&
           _main.clientWidth >= 922
         ) {
+          notifyOption(viewport[cycleViewport], `fa-times-circle`)
           sideScroll = false;
           display = `flexBox`;
           flexBox = true;
@@ -109,6 +111,7 @@ _container
         } else if (
           viewport[cycleViewport] == `sideScroll`
         ) {
+          notifyOption(viewport[cycleViewport], `fa-times-circle`)
           display = `sideScroll`;
           sideScroll = true;
           flexBox = false;
@@ -129,7 +132,6 @@ _container
               )
             );
           displaySideScroll();
-          console.log(leaveOff)
           _channel.scrollLeft = leaveOff;
           if (
             document.body.contains(
