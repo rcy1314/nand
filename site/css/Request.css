@@ -260,14 +260,22 @@
   width: 100%;
 }
 
-#main #xml .center .yt .image,
-#main #xml .center .item .image {
+#main #xml .center .yt .image {
   background-color: transparent;
   justify-content: center;
   align-items: center;
   position: absolute;
   display: flex;
   height: 270px;
+}
+
+#main #xml .center .item .image {
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  position: absolute;
+  display: flex;
 }
 
 #main #xml .center .item .img, {
