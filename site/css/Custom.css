@@ -422,6 +422,10 @@
 
 @media screen and (min-width: 768px) {
 
+  #main .option {
+    display: none;
+  }
+
   .content {
 	  display: none;
     right: 20px;
@@ -466,9 +470,9 @@
 		top: 0;
 	}
 
-  #main #option {
+  #main #top #arm #option {
+    display: inline-block;
     position: absolute;
-    display: none;
     right: -75px;
   }
 

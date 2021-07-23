@@ -84,7 +84,7 @@ _container
           _main.scrollTop = leaveOff;
         } else if (
           viewport[cycleViewport] == `flexBox` &&
-          _main.clientWidth >= 768
+          _main.clientWidth >= 922
         ) {
           sideScroll = false;
           display = `flexBox`;
@@ -113,7 +113,7 @@ _container
           sideScroll = true;
           flexBox = false;
           legacy = false;
-          let leaveOff = _main.scrollTop -
+          let leaveOff = _main.scrollTop +
             (
               (
                 parseInt(
@@ -129,7 +129,18 @@ _container
               )
             );
           displaySideScroll();
+          console.log(leaveOff)
           _channel.scrollLeft = leaveOff;
+          if (
+            document.body.contains(
+              _center.querySelector(`#bottom`)
+            )
+          )
+          _center.querySelector(`#bottom`).remove();
+          if (!Reader)
+            _channel.append(
+              footerBuild(id)
+            );
         }
       }
     },

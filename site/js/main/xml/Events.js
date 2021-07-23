@@ -20,17 +20,68 @@ _main
       	}, 2600);
         if (
           (
-            !sideScroll &&
             _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
             Reader &&
             !stop
-          ) ||
+          )
+        ) {
+          stop = true;
+          first = false;
+          if (showSplash) _check.style.display = `block`;
+          while (
+            _air.firstChild
+          )
+            _air.removeChild(_air.lastChild);
+
+          while (
+            _result.firstChild
+          )
+            _result.removeChild(_result.lastChild);
+
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(_status.lastChild);
+
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(_suggestions.lastChild);
+          Request(anyRandomMenuObject());
+        }
+      }
+    },
+    {
+      passive: true
+    }
+);
+
+_channel
+  .addEventListener(
+    'ontouchmove', (evt) =>
+    {
+      if (
+        evt.target.classList.contains(`channel`) ||
+        evt.target.id == `main`
+      ) {
+        let isScrolling;
+        // Clear our timeout throughout the scroll
+      	window.clearTimeout( isScrolling );
+        touchmove = false;
+
+      	// Set a timeout to run after scrolling ends
+      	isScrolling = setTimeout(function() {
+
+      		// Run the callback
+          touchmove = true;
+
+      	}, 2600);
+        if (
           (
-            sideScroll &&
-            _main.querySelector(`.channel`).scrollWidth -
-            _main.querySelector(`.channel`).scrollLeft -
-            _main.querySelector(`.channel`).clientWidth <=
-            _main.querySelector(`.channel`).clientWidth &&
+            _channel.scrollWidth -
+            _channel.scrollLeft -
+            _channel.clientWidth <=
+            _channel.clientWidth &&
             Reader &&
             !stop
           )
@@ -88,12 +139,62 @@ _main
         if (
           (
             _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
-            !sideScroll &&
             Reader &&
             !stop
-          ) ||
+          )
+        ) {
+          stop = true;
+          first = false;
+          if (showSplash) _check.style.display = `block`;
+          while (
+            _air.firstChild
+          )
+            _air.removeChild(_air.lastChild);
+
+          while (
+            _result.firstChild
+          )
+            _result.removeChild(_result.lastChild);
+
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(_status.lastChild);
+
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(_suggestions.lastChild);
+          Request(anyRandomMenuObject());
+        }
+      }
+    },
+    {
+      passive: true
+    }
+);
+
+_channel
+  .addEventListener(
+    'scroll', (evt) =>
+    {
+      if (
+        evt.target.classList.contains(`channel`) ||
+        evt.target.id == `main`
+      ) {
+        let isScrolling;
+        // Clear our timeout throughout the scroll
+      	window.clearTimeout( isScrolling );
+        touchmove = false;
+      	// Set a timeout to run after scrolling ends
+      	isScrolling = setTimeout(function() {
+
+      		// Run the callback
+          touchmove = true;
+
+      	}, 7500);
+        if (
           (
-            sideScroll &&
             _channel.scrollWidth -
             _channel.scrollLeft -
             _channel.clientWidth <=
@@ -337,33 +438,6 @@ _container
           evt.target.id == `check`
         )
           repository.blank();
-        else if (
-          evt.target.id == `home`
-        ) {
-          stageXML();
-          stageGroup();
-          stageVisit();
-          document.title = doc;
-          if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-          if (_sidebar.style.left == 0) _sb.style.display = `block`;
-          _options.style.visibility = `visible`;
-          if (!quickFeeds)
-            _show.style.visibility = `visible`;
-          _social.style.visibility = `visible`;
-          _under.style.visibility = `visible`;
-          _label.style.visibility = `visible`;
-          _quick.style.visibility = `visible`;
-          _visit.style.visibility = `visible`;
-          _link.style.visibility = `visible`;
-          _toggle.style.display = `block`;
-          _first.style.display = `none`;
-          _visit.style.display = `flex`;
-          _top.style.display = `none`;
-          quickFeedDisplay(quickFeeds);
-          _feed.scrollLeft = 0;
-          main.setAttribute(`tabindex`, -1);
-          main.focus();
-        }
         else if (
           evt.target.classList.contains(
             `construct`

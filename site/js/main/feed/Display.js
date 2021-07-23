@@ -42,8 +42,8 @@ let quickFeedDisplay = function (Value) {
       )
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
+    if (!onlySearch) _under.style.display = `inline-flex`;
     _front.classList.remove(`toggleHidden`);
-    _under.style.display = `inline-flex`;
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
     _show.style.visibility=`visible`;
