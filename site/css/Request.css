@@ -273,9 +273,9 @@
   background-color: transparent;
   justify-content: center;
   align-items: center;
-  height: fit-content;
   position: absolute;
   display: flex;
+  height: 270px;
 }
 
 #main #xml .center .item .img, {

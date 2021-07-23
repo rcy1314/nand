@@ -64,8 +64,8 @@ var Dimensions = function (
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      ) &&
-        cropImages &&
+      ) ||
+        cropImages ||
         menu[id].id.match(/Youtube/g)
     )
     itemContainer.style.height = `160px`;
