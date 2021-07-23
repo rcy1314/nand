@@ -1,5 +1,50 @@
 @media screen and (max-height: 500px) {
 
+  #toggle,
+  .expand .des,
+  .btn .flip-front,
+  #main #xml .content,
+  #main #top #arm #option,
+  #main #xml .center #quick,
+  #main #visit #page #quick .left,
+  #main #visit #page #quick .right,
+  #main #visit #page #options .fa-sun,
+  #main #visit #page #options .fa-heart,
+  #main #visit #page #front .focus .button {
+    display: none !important;
+  }
+
+  .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 210px !important;
+    padding: 0;
+    top: -40px;
+  }
+
+  .focus input[type=text] {
+    border-radius: 8px;
+    padding-left: 35px !important;
+    width: 210px !important;
+    top: 0px;
+  }
+
+  .center {
+    left: 0 !important;
+  }
+
+  .flexbox .item {
+    width: 100% !important;
+  }
+
+  .item {
+    width: 100% !important;
+  }
+
+  #main #option {
+    margin-top: 10px !important;
+  }
+
   .content {
     margin-left: 15px;
     top: 0;
@@ -7,15 +52,6 @@
 
   #feed {
     width: 640px;
-  }
-
-  .focus {
-    border-radius: 8px;
-    margin: 0 auto;
-    width: 300px;
-    left: -30px;
-    padding: 0;
-    top: -10px;
   }
 
   .info {
@@ -35,13 +71,12 @@
   }
 
   #xml {
-    width: 340px;
-    left: 45px;
+    width: 320px;
   }
 
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 425px) {
 
   .sideChannel {
     width: 100vw !important;
