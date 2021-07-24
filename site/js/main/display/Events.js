@@ -84,31 +84,37 @@ _container
           displayLegacy();
           _main.scrollTop = leaveOff;
         } else if (
-          viewport[cycleViewport] == `flexBox` &&
-          _main.clientWidth >= 922
+          viewport[cycleViewport] == `flexBox`
         ) {
-          notifyOption(viewport[cycleViewport], `fa-times-circle`)
-          sideScroll = false;
-          display = `flexBox`;
-          flexBox = true;
-          legacy = false;
-          let leaveOff = _main.scrollTop -
-            (
-              (parseInt(
-                document.querySelectorAll(
-                  `.item`
+          if (
+            _main.clientWidth >= 915
+          ) {
+            notifyOption(viewport[cycleViewport], `fa-times-circle`)
+            sideScroll = false;
+            display = `flexBox`;
+            flexBox = true;
+            legacy = false;
+            let leaveOff = _main.scrollTop -
+              (
+                (parseInt(
+                  document.querySelectorAll(
+                    `.item`
+                  )
+                  .length
                 )
-                .length
+                *
+                parseInt(
+                  100
+                )
               )
-              *
-              parseInt(
-                100
-              )
-            )
-          );
-          displayFlex();
-          _main.scrollTop = leaveOff;
-        } else if (
+            );
+            displayFlex();
+            _main.scrollTop = leaveOff;
+          }
+          else
+            cycleViewport = cycleViewport + 1
+        }
+        if (
           viewport[cycleViewport] == `sideScroll`
         ) {
           notifyOption(viewport[cycleViewport], `fa-times-circle`)
@@ -144,6 +150,7 @@ _container
               footerBuild(id)
             );
         }
+        console.log(viewport[cycleViewport])
       }
     },
   {
