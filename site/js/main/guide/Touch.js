@@ -29,8 +29,8 @@ let handleGuide = function () {
         if (sideBarLock)
           onScreen = true;
         topMenuBarDisplay(topBar);
+        guideOnScreen = false;
         sideBarDisplay(onScreen);
-        guideOnScreen = true;
         pub = null;
       }, 750
     )

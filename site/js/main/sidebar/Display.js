@@ -32,7 +32,7 @@ let sideBarDisplay = function (Value) {
   ) {
     if (
       _guide.style.display != `flex` &&
-      _main.clientWidth >= 768
+      guideOnScreen
     ) {
       _sidebar.querySelector(`.bg`).style.height = `31px`;
       expandBackground = false;

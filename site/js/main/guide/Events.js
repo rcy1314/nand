@@ -56,9 +56,9 @@ _guide
         _guide.style.display = `none`;
         _check.style.display = `none`;
         topMenuBarDisplay(topBar);
-        sideBarDisplay(onScreen);
-        guideOnScreen = true;
         _main.setAttribute(`tabindex`, -1);
+        guideOnScreen = false;
+        sideBarDisplay(onScreen);
         _main.focus();
         pub = null;
       }
