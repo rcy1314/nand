@@ -100,12 +100,20 @@ _container.addEventListener('click', (evt) => {
       ) {
         _container
           .querySelectorAll(`.attribute`)
-          .forEach((a) => (a.style.display = `none`));
+          .forEach((a) => a.style.display = `none`);
         var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
         for (i = 0; i < attribute.length; i++) {
           attribute[i].classList.remove(`fa-ellipsis-v`);
           attribute[i].classList.add(`fa-ellipsis-h`);
         }
+        _container
+          .querySelectorAll(`.fa-ellipsis-v`)
+          .forEach((a) => a.classList.add(`fa-ellipsis-h`)
+        );
+        _container
+          .querySelectorAll(`.fa-ellipsis-v`)
+          .forEach((a) => a.classList.remove(`fa-ellipsis-v`)
+        );
       evt.stopPropagation();
       }
     }

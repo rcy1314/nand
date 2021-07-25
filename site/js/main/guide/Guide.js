@@ -28,4 +28,5 @@ var Guide = function (pubArray) {
   }
   _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;
+  _sb.style.display = `none`;
 };

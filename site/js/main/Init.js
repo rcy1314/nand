@@ -11,30 +11,6 @@
 
 */
 
-window.onload =
-  function ()
-    {
-
-      if (
-        _main.clientWidth <= 768
-      )
-        sideBarMouse = false
-
-      if (
-        backgroundImage[0].element == `container`
-      )
-        _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
-      else if (
-        backgroundImage[0].element == `main`
-      )
-        _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
-      _container.style.backgroundPosition = `${backgroundImage[0].position}`;
-      _main.style.backgroundPosition = `${backgroundImage[0].position}`;
-      _container.style.backgroundSize = `${backgroundImage[0].size}`;
-      _main.style.backgroundSize = `${backgroundImage[0].size}`;
-
-};
-
 setTimeout(
 
   function() {
@@ -147,7 +123,6 @@ setTimeout(
             _toggle.style.display = `none`;
             _visit.style.display = `none`;
             guideOnScreen = onScreen;
-            onScreen = false;
           },
         250);
       }
@@ -156,7 +131,7 @@ setTimeout(
     ) {
       var uri = location.search.split(`?q=`)[1];
       _toggle.style.display = `none`;
-      guideOnScreen = true;
+      guideOnScreen = onScreen;
       setTimeout(
         function () {
           if (
@@ -182,7 +157,6 @@ setTimeout(
           if (
             !Reader
           ) {
-            guideOnScreen = true;
             _guest.focus();
           }
           else if (
@@ -206,19 +180,6 @@ setTimeout(
       showSplash
     )
       _check.style.visibility = `visible`;
-
-    if (
-      _main.clientWidth <= 425
-    ) {
-      setTimeout(
-        function () {
-          guideOnScreen = onScreen;
-          quickFeedAsset(24);
-          onScreen = false;
-        },
-      250)
-    }
-    else quickFeedAsset(8);
 
     quickFeedDisplay(quickFeeds);
 
@@ -266,13 +227,6 @@ setTimeout(
       _content.style.position = `absolute`;
     else _content.style.position = `relative`;
 
-    if (
-      _main.clientWidth >= 425 &&
-      sideBarBackdrop
-    ) {
-      _sidebar.style.cssText =
-        `background-color:transparent; backdrop-filter: blur(10px) !important`;
-    }
     if (
       topBarBackdrop
     )
@@ -438,6 +392,41 @@ setTimeout(
       legacy = false;
     }
 
+    setTimeout(
+      function () {
+        if (
+          backgroundImage[0].element == `container`
+        )
+          _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        else if (
+          backgroundImage[0].element == `main`
+        )
+          _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+        _container.style.backgroundPosition = `${backgroundImage[0].position}`;
+        _main.style.backgroundPosition = `${backgroundImage[0].position}`;
+        _container.style.backgroundSize = `${backgroundImage[0].size}`;
+        _main.style.backgroundSize = `${backgroundImage[0].size}`;
+        if (
+          _main.clientWidth < 768
+        )
+          sideBarMouse = false
+      else if (
+          _main.clientWidth > 768 &&
+          sideBarBackdrop
+        ) {
+          _sidebar.style.cssText =
+            `background-color:transparent; backdrop-filter: blur(10px) !important`;
+        }
+        if (
+          _main.clientWidth < 425
+        ) {
+          guideOnScreen = onScreen;
+          quickFeedAsset(24);
+          onScreen = false;
+        }
+        else quickFeedAsset(8);
+      },
+    250)
 
     if (onlySearch) {
       _options.style.display = `none`;
