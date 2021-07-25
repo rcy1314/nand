@@ -16,6 +16,11 @@ window.onload =
     {
 
       if (
+        _main.clientWidth <= 768
+      )
+        sideBarMouse = false
+
+      if (
         backgroundImage[0].element == `container`
       )
         _container.style.backgroundImage = `url(${backgroundImage[0].path})`;

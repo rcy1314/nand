@@ -24,11 +24,6 @@ _guide
     }
   );
 
-if (
-  _main.clientWidth <= 425
-)
-  sideBarMouse = false
-
 if (sideBarMouse)
   _main
     .addEventListener(
