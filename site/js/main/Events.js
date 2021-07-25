@@ -93,8 +93,21 @@ _container.addEventListener('click', (evt) => {
         _first.style.display = `none`;
         _guest.blur();
         return false;
-      }
+      } else if (
+        !_container
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`))
+      ) {
+        _container
+          .querySelectorAll(`.attribute`)
+          .forEach((a) => (a.style.display = `none`));
+        var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
+        for (i = 0; i < attribute.length; i++) {
+          attribute[i].classList.remove(`fa-ellipsis-v`);
+          attribute[i].classList.add(`fa-ellipsis-h`);
+        }
       evt.stopPropagation();
+      }
     }
     else if (
       evt.target.id == `mobileHome` ||

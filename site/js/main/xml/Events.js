@@ -313,7 +313,7 @@ _container
           );
         }
         else if (
-          evt.target.getAttribute(`aria-item`) != `Assets` &&
+          evt.target.getAttribute(`aria-object`) != `Assets` &&
           evt.target.classList.contains(`translation`)
         ) {
           first = true;
@@ -324,7 +324,7 @@ _container
           } else {
             let target = event;
             populateCategoryGroup(
-              evt.target.closest(`.translation`).getAttribute(`aria-item`)
+              evt.target.closest(`.translation`).getAttribute(`aria-object`)
             );
             _toggle.style.display = `none`;
             _visit.style.display = `none`;
@@ -437,22 +437,66 @@ _container
             evt.target
               .closest(`.copy`)
               .querySelector(`.attribute`).style.display = `block`;
-          } else if (
-            !_container
-              .querySelectorAll(`.attribute`)
-              .forEach((a) => (a.style.display = `none`))
-          ) {
-            _container
-              .querySelectorAll(`.attribute`)
-              .forEach((a) => (a.style.display = `none`));
-            var attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
-            for (i = 0; i < attribute.length; i++) {
-              attribute[i].classList.remove(`fa-ellipsis-v`);
-              attribute[i].classList.add(`fa-ellipsis-h`);
-            }
           }
-
           evt.stopPropagation();
+        }
+        else if (
+          evt.target.classList.contains(
+            `download`
+          )
+        ) {
+          var menuObject = evt.target.closest(`.item`).getAttribute(`aria-object`);
+          var pubIndex = evt.target.closest(`.item`).getAttribute(`aria-item`);
+          var xhr = new XMLHttpRequest();
+          var url =
+          document
+            .querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+            ).value
+          xhr.responseType = "arraybuffer";
+          xhr.open("GET", cors + url, true);
+
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState == xhr.DONE) {
+              var file = new Blob([xhr.response], { type: "image" });
+              saveAs(
+                file,
+                _container
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+                  ).value
+              )
+            }
+          };
+          xhr.send();
+        }
+        else if (
+          evt.target.classList.contains(`fa-at`) ||
+          evt.target.classList.contains(`site`)
+        ) {
+          evt.target.closest(`.item`).querySelector(`.url`).select();
+          document.execCommand(`copy`);
+          evt.stopPropagation();
+        }
+        else if (
+          evt.target.classList.contains(`fa-share`) ||
+          evt.target.classList.contains(`post`)
+        ) {
+          evt.target.closest(`.item`).querySelector(`.share`).select();
+          document.execCommand(`copy`);
+          evt.stopPropagation();
+        }
+        else if (
+          evt.target.classList.contains(`fa-camera`) ||
+          evt.target.classList.contains(`picture`)
+        ) {
+          if (youtubeMedia == true && menu[id].id.match(/Youtube/g)) {
+            evt.target.closest(`.item`).querySelector(`.url`).select();
+            document.execCommand(`copy`);
+          } else {
+            evt.target.closest(`.item`).querySelector(`.source`).select();
+            document.execCommand(`copy`);
+          }
         }
       },
       {
