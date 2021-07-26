@@ -9,7 +9,7 @@ let handleGuide = function () {
     if (
       Array.isArray(pub)
     )
-      xmlAppendPublication(id);
+      Append(id);
 
     setTimeout(
       function () {
@@ -29,8 +29,7 @@ let handleGuide = function () {
         if (sideBarLock)
           onScreen = true;
         topMenuBarDisplay(topBar);
-        guideOnScreen = false;
-        sideBarDisplay(onScreen);
+        guideOnScreen = onScreen;
         pub = null;
       }, 750
     )

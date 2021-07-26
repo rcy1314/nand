@@ -9,21 +9,6 @@ _sidebar
     }
 );
 
-_guide
-  .addEventListener(
-    'mousemove', (evt) =>
-    {
-      guideOnScreen = onScreen;
-      onScreen = false;
-      setTimeout(function() {
-        sideBarDisplay(onScreen);
-      }, 1250)
-    },
-    {
-      passive: true
-    }
-  );
-
 if (sideBarMouse)
   _main
     .addEventListener(
