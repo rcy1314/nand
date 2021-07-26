@@ -3,7 +3,7 @@ let doc = `index.html`
 
 
 // initial theme
-let set = `Night`;
+let set = `Informative`;
 
 /*
     backgroundImage [array]
