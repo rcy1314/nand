@@ -428,7 +428,7 @@ setTimeout(
           }, 3000
         )
       }
-    }, 750
+    }, 1250
   )
 
     if (onlySearch) {

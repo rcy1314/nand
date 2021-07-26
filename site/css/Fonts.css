@@ -95,6 +95,7 @@
   right: 1px;
 }
 
+.fa-users,
 .fa-chart-pie,
 #sidebar #content .fa-home,
 .fa-redo,
@@ -396,6 +397,16 @@
   content: "\f120";
   font-size: 10px;
   font-weight: 50;
+}
+
+.fa-users {
+  font-family: "Font Awesome 5 Pro";
+  padding-left: 5px;
+  content: "\f0c0";
+  font-size: 10px;
+  font-weight: 50;
+  top: 5px;
+  left: 0;
 }
 
 .notifyIcon {

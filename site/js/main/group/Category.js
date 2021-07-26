@@ -1,5 +1,6 @@
 let populateCategoryGroup = function (translation) {
   let media;
+  _container.style.display = `block`;
   _toggle.style.display = `none`
   _sb.style.display = `none`;
   if (

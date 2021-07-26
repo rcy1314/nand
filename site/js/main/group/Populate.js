@@ -1,5 +1,6 @@
 let populateAssets = function () {
   let media;
+  _container.style.display = `block`;
   _toggle.style.display = `none`;
   _visit.style.display = `none`;
   _sb.style.display = `none`;
