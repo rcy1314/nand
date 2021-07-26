@@ -206,7 +206,7 @@ _container
         if (cropImages == true) {
           _main
             .querySelectorAll(`.img`).forEach(
-              (a) => a.closest(`.image`).style.height = `270px`
+              (a) => a.closest(`.image`).style.height = `160px`
             );
         } else if (cropImages == false) {
           _main
