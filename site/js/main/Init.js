@@ -327,51 +327,51 @@ setTimeout(
     adj = menu.slice();
     randomizeAssets(adj);
 
-    if (
-      _main.clientWidth <= 425
-    ) {
-      display = `legacy`;
-      onScreen = false;
-    }
-
-    if (
-      display == `flexBox`
-    )
-      offset = 2500
-    else
-      offset = 550
-
-    cycleViewport =
-      viewport
-        .findIndex(
-          (item) =>
-            item ==
-              display
-    )
-
-    if (
-      viewport[cycleViewport] == `legacy`
-    ) {
-      sideScroll = false;
-      flexBox = false;
-      legacy = true;
-    }
-    else if (
-      viewport[cycleViewport] == `flexBox`
-    ) {
-      sideScroll = false;
-      flexBox = true;
-      legacy = false;
-    } else if (
-      viewport[cycleViewport] == `sideScroll`
-    ) {
-      sideScroll = true;
-      flexBox = false;
-      legacy = false;
-    }
-
     setTimeout(
       function () {
+        if (
+          _main.clientWidth <= 425
+        ) {
+          display = `legacy`;
+          onScreen = false;
+        }
+
+        if (
+          display == `flexBox`
+        )
+          offset = 2500
+        else
+          offset = 550
+
+        cycleViewport =
+          viewport
+            .findIndex(
+              (item) =>
+                item ==
+                  display
+        )
+
+        if (
+          viewport[cycleViewport] == `legacy`
+        ) {
+          sideScroll = false;
+          flexBox = false;
+          legacy = true;
+        }
+        else if (
+          viewport[cycleViewport] == `flexBox`
+        ) {
+          sideScroll = false;
+          flexBox = true;
+          legacy = false;
+        } else if (
+          viewport[cycleViewport] == `sideScroll`
+        ) {
+          sideScroll = true;
+          flexBox = false;
+          legacy = false;
+        }
+
         if (
           backgroundImage[0].element == `container`
         )
@@ -428,7 +428,7 @@ setTimeout(
           }, 3000
         )
       }
-    }, 500
+    }, 750
   )
 
     if (onlySearch) {
