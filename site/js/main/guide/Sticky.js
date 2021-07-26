@@ -60,7 +60,7 @@ var Sticky = function (pubArray) {
           }
         );
     }
-    if (_main.clientWidth <= 425) {
+    if (window.innerWidth <= 425) {
       _main.classList.add(`guide`);
       _guide.querySelector(`.sticky .header`).style.position = `absolute`;
       _guide.querySelector(`.sticky .src`).style.display = `block`;

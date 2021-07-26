@@ -72,7 +72,7 @@ let displayFlex = function () {
         `0`
     );
   if (
-    _main.clientWidth > 1280
+    window.innerWidth > 1280
   )
     _display.style.display = `inline-block`;
   else

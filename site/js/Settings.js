@@ -3,7 +3,7 @@ let doc = `index.html`
 
 
 // initial theme
-let set = `Informative`;
+let set = `Gentoo`;
 
 /*
     backgroundImage [array]
@@ -41,6 +41,7 @@ let themes = [
   { obFn: `Night`, class: `Night`, icon: `fa-code` },
   { obFn: `Informative`, class: `Informative`, icon: `fa-info` },
   { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
+  { obFn: `Gentoo`, class: `Gentoo`, icon: `fa-exclamation` },
 ];
 
 const favorites = [

@@ -22,7 +22,7 @@ let quickFeedDisplay = function (Value) {
     _show.style.visibility=`hidden`;
     _under.style.display = `none`;
     if (
-      _main.clientWidth <= 425
+      window.innerWidth <= 425
     )
     _sb.style.top = `-10px`;
   }
@@ -49,7 +49,7 @@ let quickFeedDisplay = function (Value) {
     _show.style.visibility=`visible`;
     _front.classList.add(`toggle`);
     if (
-      _main.clientWidth <= 425
+      window.innerWidth <= 425
     )
       _sb.style.top = `7px`;
   }

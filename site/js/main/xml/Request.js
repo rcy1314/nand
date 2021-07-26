@@ -37,7 +37,7 @@ var Request = function (index) {
   category = menu[index].category;
   _visit.style.display = `none`;
   if (
-    _main.clientWidth >= 768
+    window.innerWidth >= 768
   )
     _bar.style.display = `none`;
   _sb.style.display = `none`;

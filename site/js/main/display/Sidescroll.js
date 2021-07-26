@@ -3,7 +3,7 @@ let displaySideScroll = function () {
   _xml.style.justifyContent = `center`;
   _center.classList.add(`sideChannel`);
   if (
-    _main.clientWidth >= 768
+    window.innerWidth >= 768
   )
   _center.style.right = `130px`;
   _center.style.width = `35vw`;
@@ -47,7 +47,7 @@ let displaySideScroll = function () {
       a.style.display = `block`
     );
     if (
-      _main.clientWidth >= 768
+      window.innerWidth >= 768
     )
       _display.style.display = `inline-block`;
     else

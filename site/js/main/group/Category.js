@@ -85,7 +85,7 @@ let populateCategoryGroup = function (translation) {
   )
     unloading();
   if (
-    _main.clientWidth >= 768
+    window.innerWidth >= 768
   )
     _bar.style.display = `none`;
   main.setAttribute(`tabindex`, -1);

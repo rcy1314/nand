@@ -330,7 +330,7 @@ setTimeout(
     setTimeout(
       function () {
         if (
-          _main.clientWidth <= 425
+          window.innerWidth <= 425
         ) {
           display = `legacy`;
           onScreen = false;
@@ -385,18 +385,18 @@ setTimeout(
         _container.style.backgroundSize = `${backgroundImage[0].size}`;
         _main.style.backgroundSize = `${backgroundImage[0].size}`;
         if (
-          _main.clientWidth < 768
+          window.innerWidth < 768
         )
           sideBarMouse = false
       else if (
-          _main.clientWidth > 768 &&
+          window.innerWidth > 768 &&
           sideBarBackdrop
         ) {
           _sidebar.style.cssText =
             `background-color:transparent; backdrop-filter: blur(10px) !important`;
         }
         if (
-          _main.clientWidth < 425
+          window.innerWidth < 425
         ) {
           guideOnScreen = onScreen;
           sideBarDisplay(onScreen);

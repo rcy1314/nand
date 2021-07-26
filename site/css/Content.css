@@ -145,7 +145,7 @@ html body,
 #main #check .trademark {
   font-family: 'Work Sans' !important;
   transform: translate(-50%, -50%);
-  color: var(--loader-color);
+  color: var(--fill-color);
   font-style: italic;
   font-weight: 900;
   margin-top: 25px;

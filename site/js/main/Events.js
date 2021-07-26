@@ -8,7 +8,7 @@ _container.addEventListener('touchstart', (evt) => {
 
 _container.addEventListener('touchend', (evt) => {
   touchendX = evt.changedTouches[0].screenX;
-  if (_main.ClientWidth > 425) handleSwipe();
+  if (window.innerWidth > 425) handleSwipe();
   let isScrolling;
   // Clear our timeout throughout the scroll
   window.clearTimeout( isScrolling );

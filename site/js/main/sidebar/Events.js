@@ -45,7 +45,7 @@ if (sideBarMousewheel) {
   _main.addEventListener("wheel", function(evt) {
     if (
       onScreen == true &&
-      _main.clientWidth >= 769 &&
+      window.innerWidth >= 769 &&
       Math.sign(evt.deltaY) == 1 &&
       sideBarLock == false
     ) {
@@ -53,7 +53,7 @@ if (sideBarMousewheel) {
       sideBarDisplay(onScreen);
     } else if (
       onScreen == false &&
-      _main.clientWidth >= 769 &&
+      window.innerWidth >= 769 &&
       Math.sign(evt.deltaY) == -1
     ) {
       setTimeout(function() {
@@ -79,8 +79,8 @@ _container
       ) {
         onScreen = false;
         sideBarDisplay(onScreen);
-        if (_main.clientWidth <= 768) _sb.style.display = `block`;
-        if (_main.clientWidth >= 768) _bar.style.display = `none`;
+        if (window.innerWidth <= 768) _sb.style.display = `block`;
+        if (window.innerWidth >= 768) _bar.style.display = `none`;
       }
       else if (
         event.target.classList.contains(
