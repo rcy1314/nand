@@ -22,6 +22,7 @@ let set = `Night`;
 
 let backgroundImage = [
   {
+    // note: path begins in index.html folder
     path: "",
     element: "container",
     position: "center",
