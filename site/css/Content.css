@@ -35,6 +35,34 @@ video {
     outline:none !important;
 }
 
+::selection {
+    background-color: var(--hover-background-color);
+    color: var(--fill-color);
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color);
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color);
+}
+
+::-ms-selection {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color);
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+  background-color: var(--hover-background-color);
+  color: var(--fill-color);
+}
+
 html,
 #main,
 html body,

@@ -289,11 +289,7 @@ _container
           _match.style.display = `none`;
         }
         else if (
-          evt.target.classList.contains(`flip-front`) ||
-          evt.target.classList.contains(`flip-back`) ||
-          evt.target.classList.contains(`front`) ||
-          evt.target.classList.contains(`next`) ||
-          evt.target.classList.contains(`back`)
+          evt.target.classList.contains(`btn`)
         ) {
           if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
           if (
