@@ -322,29 +322,6 @@ setTimeout(
             `block`
       }
 
-    if (
-      !Reader &&
-      !uri
-    ) {
-    _container.style.display = `block`;
-    _check.style.display = `block`;
-    _sb.style.display = `none`;
-    setTimeout(
-      function () {
-        _check.style.opacity = `0`;
-        _visit.style.opacity = `1`;
-        setTimeout(
-          function () {
-            if (_sidebar.style.left == 0)
-              _sb.style.display = `block`;
-            _check.style.display = `none`;
-            _check.style.opacity = `1`;
-            sideBarDisplay(onScreen);
-          }, 2000
-        )
-      }, 3000
-    )
-  }
   else _container.style.display = `block`;
 
     adj = menu.slice();
@@ -427,8 +404,32 @@ setTimeout(
           onScreen = false;
         }
         else quickFeedAsset(8);
-      },
-    250)
+
+        if (
+          !Reader &&
+          !uri
+        ) {
+        _container.style.display = `block`;
+        _check.style.display = `block`;
+        _sb.style.display = `none`;
+        setTimeout(
+          function () {
+            _check.style.opacity = `0`;
+            _visit.style.opacity = `1`;
+            setTimeout(
+              function () {
+                if (_sidebar.style.left == 0)
+                  _sb.style.display = `block`;
+                _check.style.display = `none`;
+                _check.style.opacity = `1`;
+                sideBarDisplay(onScreen);
+              }, 2000
+            )
+          }, 3000
+        )
+      }
+    }, 500
+  )
 
     if (onlySearch) {
       _options.style.display = `none`;

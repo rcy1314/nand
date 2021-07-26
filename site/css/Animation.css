@@ -26,7 +26,7 @@
 .bars:after {
   -webkit-animation: load1 1s infinite ease-in-out;
   animation: load1 1s infinite ease-in-out;
-  background: var(--fill-color);
+  background: var(--loader-color);
   width: .5em;
   top: 25px;
 }

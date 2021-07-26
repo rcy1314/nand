@@ -68,7 +68,7 @@ var Dimensions = function (
         cropImages ||
         menu[id].id.match(/Youtube/g)
     )
-    itemContainer.style.height = `160px`;
+    itemContainer.style.height = `270px`;
     else if (
       cropImages &&
       document.body.contains(
