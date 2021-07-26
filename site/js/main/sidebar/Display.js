@@ -39,11 +39,9 @@ let sideBarDisplay = function (Value) {
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
       _sidebar.style.left = `-280px`;
       _sb.style.display = `none`;
-  }
-  if (
-    sideBarDock
-  ) {
-    _sidebar.style.left = `-250px`;
-    _sb.style.display = `none`;
+    if (
+      sideBarDock
+    )
+      _sidebar.style.left = `-250px`;
   }
 };
