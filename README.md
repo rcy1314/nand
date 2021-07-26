@@ -1,5 +1,4 @@
-<br>
-<img src='capture.jpg'>
+# n@nd
 
 <sub>Release</sub> | <sub>Site</sub> | <sub>NPM</sub> | <sub>Deployed</sub> | <sub>Maintained</sub> |
 --- | --- | --- | --- | --- |
