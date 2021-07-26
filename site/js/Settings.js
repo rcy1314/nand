@@ -76,10 +76,12 @@ let topBar = true;
 let showOption = true;
 
 /*
-    sideScroll [boolean/integer]
+    display [boolean/integer]
 
       Applications
-        mainEvents, xmlAppendPublication
+        display/Sidescroll
+        display/Legacy
+        display/Flex
 
       Result
         `sideScroll`,
@@ -94,7 +96,8 @@ let display = `flexBox`;
     Reader [boolean/integer]
 
       Applications
-        sideBarDisplay, options
+        main/Events
+        xml/Events
 
       Result
         scroll call anyRandomMenuObject
@@ -104,10 +107,11 @@ let display = `flexBox`;
 let Reader = false;
 
 /*
-    Reader [boolean/integer]
+    readPrevious [boolean/integer]
 
       Applications
-        xmlRequestParsing, sidebar
+        main/Helpers
+        xml/Request
 
       Result
         random array reset category switch
@@ -120,7 +124,9 @@ let readPrevious = true;
     onScreen [boolean/integer]
 
       Applications
-        mainevents.js, onload, hide
+        sideBar/Display
+        xml/Append
+        main/Init
 
       Result
         show sideBar
@@ -131,10 +137,24 @@ let onScreen = false;
 
 
 /*
+    sideBarDock [boolean/integer]
+
+      Applications
+        sideBar/Display
+
+      Result
+        dock sideBar
+
+*/
+
+let sideBarDock = false;
+
+/*
     sideBarLock [boolean/integer]
 
       Applications
-        mainEvents.js mousemove, wheel
+        sideBar/Display
+        sideBar/Events
 
       Result
         lock sideBar onScreen
@@ -147,7 +167,8 @@ let sideBarLock = false;
     expand [boolean/integer]
 
       Applications
-        sideBarDisplay, option, displayExpand
+        css/Class
+        group
 
       Result
         false `blocks`
@@ -161,7 +182,9 @@ let expand = true;
     showSplash [boolean/integer]
 
       Applications
-        init.js, xmlRequestParsing
+        display
+        group
+        xml
 
       Result
         Show Loading Splash.
@@ -174,10 +197,10 @@ let showSplash = false;
     sideBarCenter [boolean/integer]
 
       Applications
-        sideBar, sideBarEvents
+        Init
 
       Result
-        center sidebar (false mobile)
+        center sidebar
 
 */
 
@@ -187,10 +210,10 @@ let sideBarCenter = true;
     sideBarBackdrop [boolean/integer]
 
       Applications
-        sideBar, sideBarEvents
+        Init
 
       Result
-        add backdrop sidebar (jumpy wheel)
+        add backdrop sidebar
 
 */
 
@@ -200,7 +223,7 @@ let sideBarBackdrop = true;
     sideBarMousewheel [boolean/integer]
 
       Applications
-        sideBar, sideBarEvents
+        sidebar/Events
 
       Result
         display sideBar with Mouse.
@@ -213,7 +236,7 @@ let sideBarMouse = true;
     sideBarMousewheel [boolean/integer]
 
       Applications
-        sideBar, sideBarEvents
+        sideBar/Events
 
       Result
         display sideBar with Mousewheel.
@@ -226,7 +249,7 @@ let sideBarMousewheel = false;
     topBarBackdrop [boolean/integer]
 
       Applications
-        sideBarEvents
+        Init
 
       Result
         add backdrop filter to top bar.
@@ -239,7 +262,7 @@ let topBarBackdrop = false;
     toggleBorders [boolean/integer]
 
       Applications
-        xml item
+        build/xmlHTMLBuild
 
       Result
         toggle border.
@@ -252,7 +275,7 @@ let toggleBorders = false;
     onlySearch [boolean/integer]
 
       Applications
-        mainEvents.js, onLoad, clientWidth
+        Init
 
       Result
         only display page visit search bar
@@ -265,7 +288,7 @@ let onlySearch = true;
     quickFeeds [boolean/integer]
 
       Applications
-        mainEvents.js, onLoad, clientWidth
+        Init
 
       Result
         toggle quickFeedDisplay
@@ -278,7 +301,7 @@ let quickFeeds = false;
     scrollIntoView [boolean/integer]
 
       Applications
-        xml, group
+        Progress
 
       Result
         adds padding-top and animates out
@@ -307,7 +330,7 @@ let imageLoader = `ring-circle`;
     cropImages [boolean/integer]
 
       Applications
-        xmlImageDimensions, sidebar
+        image/Dimensions
 
       Result
         crop images to center
@@ -320,7 +343,8 @@ let cropImages = true;
     fadeIntoView [boolean/integer]
 
       Applications
-        xml, progressBackdrop
+        build/xmlHTMLBuild
+        Progress
 
       Result
         fades img in with scaling
@@ -333,12 +357,10 @@ let fadeIntoView = true;
     loading [string]
 
       Applications
-        coreHelpers.js, progressBackdrop
+        Progress
+        Helpers
 
       Result
-        group, xml paddingTop scrolls intoView
-
-      Option
         `dots`
         `percent`
 
@@ -350,7 +372,7 @@ let loading = `percent`;
     titleTruncate [integer]
 
       Applications
-        xmlRequestParsing
+        xml/Request
 
       Result
         trim xhr title
@@ -363,11 +385,10 @@ let titleTruncate = 125;
     category [translations/legacy]
 
       Applications
-        populateCategoryGroup, reverseCategoryGroup, sideBar, reader,
-        quickFeedAsset, topBar
+        none
 
       Result
-        Reddit, News, Media, Sports, Tech, World, Youtube
+        legacy feature
 
 */
 
@@ -390,10 +411,12 @@ let roundedEdge = false;
     onlyImages [boolean/integer]
 
       Applications
-        populateCategoryGroup, reverseCategoryGroup, sideBar, reader
+        helpers
+        group
+        xml
 
       Result
-        toggle feeds with images
+        display only images
 
 */
 
@@ -403,7 +426,7 @@ let onlyImages = false;
     feedImages [boolean/integer]
 
       Applications
-        xmlAppendPublication
+        build/xmlHTMLBuild
 
       Result
         display images
@@ -416,7 +439,8 @@ let feedImages = true;
     youtubeMedia [boolean/integer]
 
       Applications
-        xmlFunctions.js, xmlImageParsing, xmlRequestParsing, xmlImageAttributes
+      image/Attributes
+        xml/Request
 
       Result
         false = Images
@@ -430,7 +454,7 @@ let youtubeMedia = false;
     suggestionBuffer [integer]
 
       Applications
-        inputFilterIndex
+        input/Input
 
       Result
         input response buffered to [integer]
@@ -443,7 +467,7 @@ let suggestionBuffer = 12;
     contentStatusBuffer [integer]
 
       Applications
-        xmlStatusSuggestions, xmlRequestParsing
+        xml/Suggest
 
       Result
         generated suggestions
@@ -456,7 +480,7 @@ let contentStatusBuffer = 7;
     omitGuide [boolean/integer]
 
       Applications
-        xmlRequestParsing
+        xml/Append
 
       Result
         Guide Posts not in feed
@@ -469,7 +493,8 @@ let omitGuide = true;
     hash [boolean/integer]
 
       Applications
-        init.js xmlRequestParsing xmlTimestampParsing
+        xml/Request
+        xml/Hash
 
       Result
         `long`
@@ -484,7 +509,7 @@ let hash = `title`;
     safeSearch [integer]
 
       Applications
-        xmlImageAttributes
+        image/Attributes
 
       Result
         blur filter nsfw
@@ -497,7 +522,7 @@ let safeSearch = true;
     guideSafeSearch [boolean/integer]
 
       Applications
-        xmlImageAttributes
+        image/Attributes
 
       Result
         apply safeSearch to guide
@@ -510,7 +535,7 @@ let guideSafeSearch = true;
     safeSearchScore [string]
 
       Applications
-        xmlImageAttributes
+        image/Attributes
 
       Result
         greater than string filtered
@@ -523,7 +548,7 @@ let safeSearchScore = `0.013473876751959324`;
     safeSearchIDs [array]
 
       Applications
-        xmlImageAttributes
+        image/Attributes
 
       Result
         ids applied searchSearch
@@ -549,7 +574,9 @@ let safeSearchIDs = [
     exclude [array]
 
       Applications
-        sidebar, xmlRequestParsing
+        xml/Request
+        xml/Append
+        init
 
       Result
         filter titles excluded
@@ -562,7 +589,8 @@ let exclude = [`Buy`, `Sale`, `Shop`];
     cors [string]
 
       Applications
-        xmlRequestParsing, httpRequest
+        image/Attributes
+        xml/Request
 
       Result
         ty heroku (cors-anywhere instance)
@@ -575,7 +603,7 @@ const cors = `https://acktic-github-io.herokuapp.com/`;
     api [string]
 
       Applications
-        xmlImageAttributes
+        image/Attributes
 
       Result
         ty heroku (filter nsfw feeds with score)
@@ -587,7 +615,7 @@ const api = `https://acktic-github-io-api.herokuapp.com/?url=`;
 /*  translations [array]
 
       Applications
-        populateCategoryGroup, reverseCategoryGroup, quickFeedAsset, sideBarDisplay
+        build/Build
 
       Result
         menu array filtered and shown

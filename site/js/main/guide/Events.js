@@ -58,6 +58,7 @@ _guide
         _main.setAttribute(`tabindex`, -1);
         topMenuBarDisplay(topBar);
         guideOnScreen = onScreen;
+        sideBarDisplay(onScreen);
         _main.focus();
         pub = null;
       }

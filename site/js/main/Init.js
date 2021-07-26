@@ -339,6 +339,7 @@ setTimeout(
               _sb.style.display = `block`;
             _check.style.display = `none`;
             _check.style.opacity = `1`;
+            sideBarDisplay(onScreen);
           }, 2000
         )
       }, 3000
@@ -421,6 +422,7 @@ setTimeout(
           _main.clientWidth < 425
         ) {
           guideOnScreen = onScreen;
+          sideBarDisplay(onScreen);
           quickFeedAsset(24);
           onScreen = false;
         }

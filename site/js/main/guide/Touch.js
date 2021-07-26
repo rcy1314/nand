@@ -30,6 +30,7 @@ let handleGuide = function () {
           onScreen = true;
         topMenuBarDisplay(topBar);
         guideOnScreen = onScreen;
+        sideBarDisplay(onScreen);
         pub = null;
       }, 750
     )

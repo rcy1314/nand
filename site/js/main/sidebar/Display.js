@@ -10,11 +10,6 @@ let sideBarDisplay = function (Value) {
       }, 300
     );
     if (
-      _main.clientWidth >= 769 &&
-      sideBarMouse == false
-    )
-      _hide.style.display = `none`;
-    else if (
         sideBarMouse == false ||
         _main.clientWidth <= 425 &&
         sideScroll == true
@@ -30,9 +25,6 @@ let sideBarDisplay = function (Value) {
   } else if (
     !Value
   ) {
-    if (
-      _guide.style.display != `flex`
-    ) {
       _sidebar.querySelector(`.bg`).style.height = `31px`;
       expandBackground = false;
       _sidebar.querySelector(`.set`).style.height = `31px`;
@@ -45,9 +37,13 @@ let sideBarDisplay = function (Value) {
       expandFilter = false;
       _sidebar.querySelector(`.sideFilter`).style.visibility = `hidden`;
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
-      _sidebar.style.left = `-250px`;
+      _sidebar.style.left = `-280px`;
       _sb.style.display = `none`;
-    }
-    else _sidebar.style.left = `-280px`;
+  }
+  if (
+    sideBarDock
+  ) {
+    _sidebar.style.left = `-250px`;
+    _sb.style.display = `none`;
   }
 };

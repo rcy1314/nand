@@ -141,6 +141,7 @@ var Append = function (id) {
       displayLegacy();
     if (showSplash) _check.style.display = `none`;
     Status(id, recent, oldest, posts);
+    sideBarDisplay(guideOnScreen);
     topMenuBarDisplay(topBar);
     Suggest();
     local = null;
