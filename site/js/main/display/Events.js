@@ -10,7 +10,7 @@ window
         )
       ) {
         if (
-          _main.clientWidth <=
+          window.innerWidth <=
             768
           ) {
           _display.style.display = `none`;
@@ -18,11 +18,11 @@ window
         }
 
         else if (
-          _main.clientWidth >= 769
+          window.innerWidth >= 769
         )
           displayFlex()
         else if (
-          _main.clientWidth >= 1280
+          window.innerWidth >= 1280
 
         ) {
           _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
@@ -30,7 +30,7 @@ window
 
         } else if (
           viewport[cycleViewport] == `legacy` &&
-          _main.clientWidth < 1280
+          window.innerWidth < 1280
         )
           _display.style.display = `none`;
 
@@ -87,11 +87,11 @@ _container
           viewport[cycleViewport] == `flexBox`
         ) {
           if (
-            _main.clientWidth >= 915
+            window.innerWidth >= 915
           ) {
             notifyOption(viewport[cycleViewport], `fa-times-circle`)
-            sideScroll = false;
             display = `flexBox`;
+            sideScroll = false;
             flexBox = true;
             legacy = false;
             let leaveOff = _main.scrollTop -

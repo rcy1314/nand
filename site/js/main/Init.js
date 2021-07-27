@@ -372,6 +372,8 @@ setTimeout(
           legacy = false;
         }
 
+        display == viewport[cycleViewport]
+
         if (
           backgroundImage[0].element == `container`
         )

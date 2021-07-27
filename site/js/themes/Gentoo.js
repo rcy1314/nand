@@ -1,7 +1,7 @@
 var Gentoo = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `2px 2px 4px rgba(34, 37, 45, .2)`
+    `2px 2px 4px rgba(34, 37, 45, 1)`
   ); //not widely adapted
   document.documentElement.style.setProperty(
     `--loader-color`,
