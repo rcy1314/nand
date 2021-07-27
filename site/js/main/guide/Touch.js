@@ -1,4 +1,5 @@
-let handleGuide = function () {
+let Touch = function () {
+
   if (
     touchendX - 75 > touchstartX ||
     touchendX + 75 < touchstartX ||
@@ -17,21 +18,29 @@ let handleGuide = function () {
           complete
         )
           _progress.style.width = `100%`;
+
         _main.classList.remove(`guide`);
 
         while (
           _guide.lastChild
         )
-          _guide.removeChild(_guide.lastChild);
+          _guide.removeChild(
+            _guide.lastChild
+          );
 
         _guide.style.display = `none`;
         _check.style.display = `none`;
-        if (sideBarLock)
+
+        if (
+          sideBarLock
+        )
           onScreen = true;
+
         topMenuBarDisplay(topBar);
         guideOnScreen = onScreen;
         sideBarDisplay(onScreen);
         pub = null;
+
       }, 750
     )
   }

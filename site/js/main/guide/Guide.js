@@ -16,16 +16,18 @@ var Guide = function (pubArray) {
     Sticky(
       pubArray[0]
     );
-  } else if (
+
+  }
+  else if (
     menu[id].id.match(/Youtube/g) &&
     youtubeMedia
-  ) {
+  )
     _guide.append(
       guideBuildYoutube(
         pubArray[0]
       )
     );
-  }
+
   _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;
   _sb.style.display = `none`;

@@ -6,7 +6,8 @@ _guide
       touchstartY = evt.changedTouches[0].screenY;
     },
     {
-      passive: true
+      passive:
+      true
     }
 );
 
@@ -16,10 +17,11 @@ _guide
     {
       touchendX = evt.changedTouches[0].screenX;
       touchendY = evt.changedTouches[0].screenY;
-      handleGuide();
+      Touch();
     },
     {
-      passive: true
+      passive:
+      true
     }
 );
 
@@ -40,12 +42,15 @@ _guide
 
         if (
           loading == `percent`
-        ) _progress.style.width = `100%`;
+        )
+          _progress.style.width = `100%`;
 
         while (
           _guide.lastChild
         )
-          _guide.removeChild(_guide.lastChild);
+          _guide.removeChild(
+            _guide.lastChild
+          );
 
         if (
           sideBarLock == true
@@ -64,6 +69,7 @@ _guide
       }
     },
     {
-      passive: false
+      passive:
+      false
     }
 );
