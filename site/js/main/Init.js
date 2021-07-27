@@ -392,25 +392,31 @@ setTimeout(
         ) {
         _container.style.display = `block`;
         _check.style.display = `block`;
+        _check.style.opacity = `0`;
         _sb.style.display = `none`;
         setTimeout(
           function () {
-            _check.style.opacity = `0`;
-            _visit.style.opacity = `1`;
+            _check.style.opacity = `1`;
             setTimeout(
               function () {
+                _visit.style.opacity = `1`;
                 _guest.setAttribute(`tabindex`, -1);
-                _check.style.display = `none`;
-                _sb.style.display = `block`;
-                _check.style.opacity = `1`;
+                _check.style.opacity = `0`;
                 sideBarDisplay(onScreen);
+                setTimeout(
+                  function() {
+                    _sb.style.display = `block`;
+                    _check.style.display = `none`;
+                    _check.style.opacity = `1`
+                  }, 2000
+                )
                 _guest.focus();
-              }, 2000
+              }, 5000
             )
-          }, 2000
+          }, 750
         )
       }
-    }, 1000
+    }, 250
   )
 
     if (onlySearch) {
