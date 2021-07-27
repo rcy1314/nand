@@ -1,4 +1,4 @@
-let handleSwipe = function () {
+let Swipe = function () {
   if (
     touchendX - 75 >
     touchstartX

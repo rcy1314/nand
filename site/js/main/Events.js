@@ -18,7 +18,7 @@ _container
       if (
         window.innerWidth > 425
       )
-        handleSwipe();
+        Swipe();
       touchendX = evt.changedTouches[0].screenX;
       let isScrolling;
 
@@ -39,7 +39,7 @@ _container
       _guide.style.display != `flex` &&
       sideScroll == false
     )
-      handleSwipe();
+      Swipe();
   },
   {
     passive:
