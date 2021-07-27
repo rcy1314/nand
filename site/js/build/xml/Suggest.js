@@ -12,7 +12,7 @@ let suggestBuild = function (
   let category = document.createElement(`a`);
   let bold = document.createElement(`b`);
   category.setAttribute(`aria-item`, objectCategory);
-  suggest.setAttribute(`aria-item`, objectIndex);
+  suggest.setAttribute(`aria-object`, objectIndex);
   suggest.classList.add(`suggest`);
   object.classList.add(`combine`);
   circle.classList.add(`circle`);

@@ -6,5 +6,5 @@ let Visit = function () {
   _visit.style.opacity = `1`;
   _visit.style.zIndex = '1';
   _xml.style.zIndex = `-1`;
-  cleanup();
+  Cleanup();
 }

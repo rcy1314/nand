@@ -4,5 +4,5 @@ let Group = function () {
   _xml.style.display = `none`;
   _group.style.zIndex = `1`;
   _xml.style.zIndex = `-1`
-  cleanup();
+  Cleanup();
 }

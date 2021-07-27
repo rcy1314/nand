@@ -1,20 +1,30 @@
 var Append = function (id) {
   if (
-    document.body.contains(
-      _center.querySelector(`#bottom`)
-    )
+    document
+      .body
+        .contains(
+          _center
+            .querySelector(
+              `#bottom`
+            )
+        )
   )
-  _center.querySelector(`#bottom`).remove();
-  const has = exclude.map((a) => a.toLowerCase());
-  for (i = 0; i < pub.length - 1; i++) {
+    _center
+      .querySelector(
+        `#bottom`
+      )
+        .remove();
+  const has =
+    exclude.map((a) => a.toLowerCase());
+    for (i = 0; i < pub.length - 1; i++) {
+      if (
+        has.filter(function (obj) {
+          return pub[i].title.toLowerCase().match(obj);
+        }).length > 0
+      )
+        continue;
     if (
-      has.filter(function (obj) {
-        return pub[i].title.toLowerCase().match(obj);
-      }).length > 0
-    )
-      continue;
-    if (
-      omitGuide == true &&
+      omitGuide &&
       i != local
     ) {
         _channel.append(pub[i].post)
@@ -24,7 +34,9 @@ var Append = function (id) {
             src: pub[i].src
           }
         );
-    } else if (omitGuide == false) {
+    } else if (
+      !omitGuide
+    ) {
         _channel.append(pub[i].post)
         images.push(
           {
@@ -35,8 +47,8 @@ var Append = function (id) {
     }
   }
   if (
-    safeSearch ||
-    safeSearchIDs.includes(menu[id].id)
+    safeSearchIDs.includes(menu[id].id) ||
+    safeSearch
   ) {
     for (
       let i = 0;
@@ -116,38 +128,38 @@ var Append = function (id) {
     if (pub[0]) var recent = pub[0].dst;
   }
   if (
-    pub.length > 1 &&
     !Reader
-  ) {
-    if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
-    if (pub[pub.length - 1]) var posts = pub.length - 1;
-    if (pub[0]) var recent = pub[0].dst;
-  }
-    if (!Reader)
-      _channel.append(
-        footerBuild(id)
-      );
-    if (
-      display == `flexBox`
-    )
-      displayFlex();
-    else if (
-      display == `sideScroll`
-    )
-      displaySideScroll();
-    else if (
-      display == `legacy`
-    )
-      displayLegacy();
-    if (showSplash) _check.style.display = `none`;
-    Status(id, recent, oldest, posts);
-    sideBarDisplay(guideOnScreen);
-    topMenuBarDisplay(topBar);
-    Suggest();
-    local = null;
-    stop = false;
-    images = [];
-    post = null;
-    unloading();
-    first = false;
+  )
+    _channel.append(
+      footerBuild(id)
+    );
+
+  if (
+    display == `flexBox`
+  )
+    displayFlex();
+
+  else if (
+    display == `sideScroll`
+  )
+    displaySideScroll();
+
+  else if (
+    display == `legacy`
+  )
+    displayLegacy();
+  if (
+    showSplash
+  )
+    _check.style.display = `none`;
+  Status(id, recent, oldest, posts);
+  sideBarDisplay(guideOnScreen);
+  topMenuBarDisplay(topBar);
+  Suggest();
+  local = null;
+  stop = false;
+  images = [];
+  post = null;
+  unloading();
+  first = false;
 }

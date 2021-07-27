@@ -37,7 +37,6 @@ let xmlHTMLBuild = function (htmlArray) {
   item.setAttribute(`ext`, htmlArray.externalURI);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
-  wrap.innerHTML += htmlArray.searchExternal;
   pending.classList.add(`blink`, `pending`);
   filterBlur.classList.add(`filterBlur`);
   classic.classList.add(`classic`);

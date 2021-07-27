@@ -7,10 +7,13 @@ _main
     	window.clearTimeout( isScrolling );
       touchmove = false;
       // Set a timeout to run after scrolling ends
-    	isScrolling = setTimeout(function() {
-      // Run the callback
-      touchmove = true;
-      }, 2600);
+    	isScrolling =
+        setTimeout(
+          function() {
+            // Run the callback
+            touchmove = true;
+          }, 2600
+        );
       if (
         (
           _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
@@ -24,24 +27,35 @@ _main
         while (
           _air.firstChild
         )
-          _air.removeChild(_air.lastChild);
+          _air.removeChild(
+            _air.lastChild
+          );
+
         while (
           _result.firstChild
         )
-          _result.removeChild(_result.lastChild);
+          _result.removeChild(
+            _result.lastChild
+          );
+
         while (
           _status.firstChild
         )
-          _status.removeChild(_status.lastChild);
+          _status.removeChild(
+            _status.lastChild
+          );
         while (
           _suggestions.firstChild
         )
-          _suggestions.removeChild(_suggestions.lastChild);
+          _suggestions.removeChild(
+            _suggestions.lastChild
+          );
         Request(anyRandomMenuObject());
       }
     },
   {
-    passive: true
+    passive:
+    true
   }
 );
 
@@ -54,10 +68,13 @@ _channel
     	window.clearTimeout( isScrolling );
       touchmove = false;
       // Set a timeout to run after scrolling ends
-    	isScrolling = setTimeout(function() {
-      // Run the callback
-      touchmove = true;
-      }, 2600);
+    	isScrolling =
+        setTimeout(
+          function() {
+            // Run the callback
+            touchmove = true;
+          }, 2600
+        );
       if (
         (
           _channel.scrollWidth -
@@ -74,19 +91,27 @@ _channel
         while (
           _air.firstChild
         )
-          _air.removeChild(_air.lastChild);
+          _air.removeChild(
+            _air.lastChild
+          );
         while (
           _result.firstChild
         )
-          _result.removeChild(_result.lastChild);
+          _result.removeChild(
+            _result.lastChild
+          );
         while (
           _status.firstChild
         )
-          _status.removeChild(_status.lastChild);
+          _status.removeChild(
+            _status.lastChild
+          );
         while (
           _suggestions.firstChild
         )
-          _suggestions.removeChild(_suggestions.lastChild);
+          _suggestions.removeChild(
+            _suggestions.lastChild
+          );
         Request(anyRandomMenuObject());
       }
     },
@@ -117,28 +142,40 @@ _main
       ) {
         stop = true;
         first = false;
-        if (showSplash) _check.style.display = `block`;
+        if (
+          showSplash
+        )
+          _check.style.display = `block`;
         while (
           _air.firstChild
         )
-          _air.removeChild(_air.lastChild);
+          _air.removeChild(
+            _air.lastChild
+          );
         while (
           _result.firstChild
         )
-          _result.removeChild(_result.lastChild);
+          _result.removeChild(
+            _result.lastChild
+          );
         while (
           _status.firstChild
         )
-          _status.removeChild(_status.lastChild);
+          _status.removeChild(
+            _status.lastChild
+          );
         while (
           _suggestions.firstChild
         )
-          _suggestions.removeChild(_suggestions.lastChild);
+          _suggestions.removeChild(
+            _suggestions.lastChild
+          );
         Request(anyRandomMenuObject());
       }
     },
   {
-    passive: true
+    passive:
+    true
   }
 );
 
@@ -151,10 +188,13 @@ _channel
     	window.clearTimeout( isScrolling );
       touchmove = false;
     	// Set a timeout to run after scrolling ends
-    	isScrolling = setTimeout(function() {
-      // Run the callback
-      touchmove = true;
-      }, 7500);
+    	isScrolling =
+        setTimeout(
+          function() {
+            // Run the callback
+            touchmove = true;
+          }, 7500
+        );
       if (
         (
           _channel.scrollWidth -
@@ -171,24 +211,33 @@ _channel
         while (
           _air.firstChild
         )
-          _air.removeChild(_air.lastChild);
+          _air.removeChild(
+            _air.lastChild
+          );
         while (
           _result.firstChild
         )
-          _result.removeChild(_result.lastChild);
+          _result.removeChild(
+            _result.lastChild
+          );
         while (
           _status.firstChild
         )
-          _status.removeChild(_status.lastChild);
+          _status.removeChild(
+            _status.lastChild
+          );
         while (
           _suggestions.firstChild
         )
-          _suggestions.removeChild(_suggestions.lastChild);
+          _suggestions.removeChild(
+            _suggestions.lastChild
+          );
         Request(anyRandomMenuObject());
       }
     },
   {
-    passive: true
+    passive:
+    true
   }
 );
 
@@ -203,24 +252,36 @@ _container
       ) {
           topMenuBarDisplay(topBar);
           Reader = Reader != true;
-          if (!Reader) {
+          if (
+            !Reader
+          ) {
             onlyImages = onlyImagesBuffer;
             notifyOption(`Reading`, `fa-times-circle`);
             _main
               .querySelectorAll(`.joi`)
-              .forEach(
-                (a) => a.classList.remove(`luv`)
-              );
-            _channel.append(footerBuild(id));
+                .forEach(
+                  (a) => a.classList.remove(`luv`)
+                );
+            _channel.append(
+              footerBuild(id)
+            );
             if (
-              flexBox
+              display == `flexBox`
             )
               displayFlex();
-          } else if (Reader) {
+          }
+          else if (
+            Reader
+          ) {
             if (
-              document.body.contains(
-                _channel.querySelector(`.item`)
-              )
+              document
+                .body
+                  .contains(
+                    _channel
+                      .querySelector(
+                        `.item`
+                      )
+                  )
             )
             first = false;
             else
@@ -229,37 +290,61 @@ _container
             onlyImages = true;
             randomDuplicate = [];
             notifyOption(`Reading`, `fa-check-circle`);
-            if (showSplash) _check.style.display = `Block`;
             if (
-              document.body.contains(
-                _center.querySelector(`#bottom`)
-              )
+              showSplash
             )
-              _center.querySelector(`#bottom`).remove();
-            if (showSplash) _check.style.display = `block`;
+              _check.style.display = `Block`;
             _sb.style.display = `none`;
+            if (
+              document
+                .body
+                  .contains(
+                    _center
+                      .querySelector(
+                        `#bottom`
+                      )
+                  )
+            )
+              _center
+                .querySelector(
+                  `#bottom`
+                )
+                  .remove();
+
             _main
-              .querySelectorAll(`.joi`)
-              .forEach(
-                (a) => a.classList.add(`luv`)
-              );
-            cleanup();
+              .querySelectorAll(
+                `.joi`
+              )
+                .forEach(
+                  (a) => a.classList.add(`luv`)
+                );
+            Cleanup();
             Request(anyRandomMenuObject());
           }
         }
+
         else if (
           evt.target.classList.contains(
             `select`
           )
         ) {
-          if (_match.style.display === `block`) {
+          if (
+            _match.style.display === `block`
+          ) {
             _match.style.display = `none`;
             _view.blur();
             return false;
           }
           first = true;
           Request(
-            evt.target.closest(`.populate`).getAttribute(`aria-object`)
+            evt
+              .target
+                .closest(
+                  `.populate`
+                )
+                  .getAttribute(
+                    `aria-object`
+                  )
           );
         }
         else if (
@@ -269,14 +354,34 @@ _container
           evt.target.classList.contains(`random`) ||
           evt.target.classList.contains(`bold`)
         ) {
-          if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
           first = false;
-          while (_status.firstChild)
-            _status.removeChild(_status.lastChild);
-          while (_suggestions.firstChild)
-            _suggestions.removeChild(_suggestions.lastChild);
+          if (
+            location.href.split(`?`)[0]
+          )
+            location.href.split(`?`)[0].state();
+
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(
+              _status.lastChild
+            );
+
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(
+              _suggestions.lastChild
+            );
           Request(
-            evt.target.closest(`.suggest`).getAttribute(`aria-item`)
+            evt
+              .target
+                .closest(
+                    `.suggest`
+                  )
+                    .getAttribute(
+                      `aria-object`
+                    )
           );
         }
         else if (
@@ -284,28 +389,67 @@ _container
             `detail`
           )
         ) {
-          Request(evt.target.closest(`.hover`)
-            .getAttribute(`aria-item`));
+          Request(
+            evt
+              .target
+                .closest(
+                  `.hover`
+                )
+                  .getAttribute(
+                    `aria-object`
+                  )
+          );
           _match.style.display = `none`;
         }
+
         else if (
           evt.target.classList.contains(`btn`)
         ) {
-          if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
           if (
-            document.body.contains(
-              _center.querySelector(`#bottom`)
-            )
+            location.href.split(`?`)[0]
           )
-            _center.querySelector(`#bottom`).remove();
+            location.href.split(`?`)[0].state();
+          if (
+            document
+              .body
+                .contains(
+                  _center
+                    .querySelector(
+                      `#bottom`
+                    )
+                )
+          )
+            _center
+              .querySelector(
+                `#bottom`
+              )
+                .remove();
           first = false;
           touchmove = true;
-          while (_status.firstChild)
-            _status.removeChild(_status.lastChild);
-          while (_suggestions.firstChild)
-            _suggestions.removeChild(_suggestions.lastChild);
+
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(
+              _status.lastChild
+            );
+
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(
+              _suggestions.lastChild
+            );
+
           Request(
-            evt.target.closest(`.btn`).getAttribute(`aria-object`)
+            evt
+              .target
+                .closest(
+                  `.btn`
+                )
+                  .getAttribute(
+                    `aria-object`
+                  )
           );
         }
         else if (
@@ -313,14 +457,32 @@ _container
           evt.target.classList.contains(`translation`)
         ) {
           first = true;
-          category = evt.target.closest(`.translation`).getAttribute(`aria-object`);
-          if (Reader) {
+          category =
+            evt
+              .target
+                .closest(
+                  `.translation`
+                )
+                  .getAttribute(
+                    `aria-object`
+                  );
+          if (
+            Reader
+          ) {
             randomDuplicate = [];
             Request(anyRandomMenuObject());
+
           } else {
             let target = event;
             populateCategoryGroup(
-              evt.target.closest(`.translation`).getAttribute(`aria-object`)
+              evt
+                .target
+                  .closest(
+                    `.translation`
+                  )
+                    .getAttribute(
+                      `aria-object`
+                    )
             );
             _toggle.style.display = `none`;
             _visit.style.display = `none`;
@@ -328,6 +490,7 @@ _container
             displayExpand(expand);
           }
         }
+
         else if (
           evt.target.classList.contains(`entity`) ||
           evt.target.classList.contains(`asset`) ||
@@ -336,12 +499,20 @@ _container
           init();
           first = true;
           Request(
-            evt.target.closest(`.asset`).getAttribute(`aria-object`)
+            evt
+              .target
+                .closest(
+                  `.asset`
+                )
+                  .getAttribute(
+                    `aria-object`
+                  )
           );
           topMenuBarDisplay(topBar);
           _toggle.style.display = `none`;
           _visit.style.display = `none`;
         }
+
         else if (
           evt.target.classList.contains(`classic`) ||
           evt.target.classList.contains(`wrap`) ||
@@ -349,57 +520,93 @@ _container
           evt.target.classList.contains(`pub`) ||
           evt.target.classList.contains(`ago`)
         ) {
-          evt.target.closest(`.item`).getAttribute(`ext`).blank();
+          evt
+            .target
+              .closest(
+                `.item`
+              )
+                .getAttribute(
+                  `ext`
+                )
+                  .blank();
         }
         else if (
           evt.target.classList.contains(
             `bottom`
           )
         ) {
-          if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-            if (location.href.match(`\\?q=`)) {
+          if (
+            location.href.split(`?`)[0]
+          )
+            location.href.split(`?`)[0].state();
+            if (
+              location.href.match(`\\?q=`)
+            ) {
               var uri = location.search.split(`?q=`)[1].match(/[^&]+/g);
-              let description = menu.filter(function (item) {
-                return item.description.space().toLowerCase()
-                  .match(uri.toString().toLowerCase().space());
-              })
+              let description =
+              menu.filter(
+                function (item) {
+                  return item.description.space().toLowerCase()
+                    .match(uri.toString().toLowerCase().space());
+                }
+              )
               groupBuild();
-              for (i = 0; i <= description.length - 1; i++)
+              for (
+                let i = 0;
+                i <= description.length - 1;
+                i++
+              )
                 writeFilterResponse(menu.indexOf(description[i]));
-              displayExpand(expand);
               populateCategoryGroup(category)
+              displayExpand(expand);
               unloading();
-            } else populateCategoryGroup(category);
+            }
+            else
+              populateCategoryGroup(category);
             displayExpand(expand);
         }
+
         else if (
           evt.target.classList.contains(
             `more`
           )
         ) {
-          evt.target.parentNode.innerHTML = evt.target.parentNode.getAttribute(
-            `text`
-          );
+          evt.target.parentNode.innerHTML =
+            evt.target.parentNode.getAttribute(
+              `text`
+            );
           evt.target.style.display = `none`;
           evt.stopPropagation();
         }
+
         else if (
           evt.target.classList.contains(`exit`) ||
           evt.target.classList.contains(`ext`)
         )
-          evt.target.closest(`.courtesy`).getAttribute(`ext`).blank();
+          evt
+            .target
+              .closest(
+                `.courtesy`
+              )
+                .getAttribute(
+                  `ext`
+                )
+                  .blank();
+
         else if (
           evt.target.id == `check`
         )
           repository.blank();
+
         else if (
           evt.target.classList.contains(
             `construct`
           )
         ) {
-          let url = menu[id].uri.match(
-            /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
-          );
+          let url =
+            menu[id].uri.match(
+              /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
+            );
           url.toString().blank();
         }
         else if (
@@ -407,32 +614,36 @@ _container
           evt.target.classList.contains(`fa-ellipsis-v`) ||
           evt.target.classList.contains(`copy`)
         ) {
-          if (evt.target.closest(`.copy`).querySelector(`.fa-ellipsis-v`)) {
+          if (
+            evt.target.closest(`.copy`).querySelector(`.fa-ellipsis-v`)
+          ) {
             evt.target
               .closest(`.copy`)
-              .querySelector(`.fa-ellipsis-v`)
-              .classList.add(`fa-ellipsis-h`);
+                .querySelector(`.fa-ellipsis-v`)
+                  .classList.add(`fa-ellipsis-h`);
             evt.target
               .closest(`.copy`)
-              .querySelector(`.fa-ellipsis-h`)
-              .classList.remove(`fa-ellipsis-v`);
+                .querySelector(`.fa-ellipsis-h`)
+                  .classList.remove(`fa-ellipsis-v`);
             evt.target
               .closest(`.copy`)
-              .querySelector(`.attribute`).style.display = `none`;
-          } else if (
+                .querySelector(`.attribute`).style.display = `none`;
+          }
+
+          else if (
             evt.target.closest(`.copy`).querySelector(`.fa-ellipsis-h`)
           ) {
             evt.target
               .closest(`.copy`)
-              .querySelector(`.fa-ellipsis-h`)
-              .classList.add(`fa-ellipsis-v`);
+                .querySelector(`.fa-ellipsis-h`)
+                  .classList.add(`fa-ellipsis-v`);
             evt.target
               .closest(`.copy`)
-              .querySelector(`.fa-ellipsis-v`)
-              .classList.remove(`fa-ellipsis-h`);
+                .querySelector(`.fa-ellipsis-v`)
+                  .classList.remove(`fa-ellipsis-h`);
             evt.target
               .closest(`.copy`)
-              .querySelector(`.attribute`).style.display = `block`;
+                .querySelector(`.attribute`).style.display = `block`;
           }
           evt.stopPropagation();
         }
@@ -470,7 +681,15 @@ _container
           evt.target.classList.contains(`fa-at`) ||
           evt.target.classList.contains(`site`)
         ) {
-          evt.target.closest(`.item`).querySelector(`.url`).select();
+          evt
+            .target
+              .closest(
+                `.item`
+              )
+                .querySelector(
+                  `.url`
+                )
+                  .select();
           document.execCommand(`copy`);
           evt.stopPropagation();
         }
@@ -478,7 +697,15 @@ _container
           evt.target.classList.contains(`fa-share`) ||
           evt.target.classList.contains(`post`)
         ) {
-          evt.target.closest(`.item`).querySelector(`.share`).select();
+          evt
+            .target
+              .closest(
+                `.item`
+              )
+                .querySelector(
+                  `.share`
+                )
+                  .select();
           document.execCommand(`copy`);
           evt.stopPropagation();
         }
@@ -486,16 +713,37 @@ _container
           evt.target.classList.contains(`fa-camera`) ||
           evt.target.classList.contains(`picture`)
         ) {
-          if (youtubeMedia == true && menu[id].id.match(/Youtube/g)) {
-            evt.target.closest(`.item`).querySelector(`.url`).select();
+          if (
+            menu[id].id.match(/Youtube/g) &&
+            youtubeMedia == true
+          ) {
+            evt
+              .target
+                .closest(
+                  `.item`
+                )
+                  .querySelector(
+                    `.url`
+                  )
+                    .select();
             document.execCommand(`copy`);
-          } else {
-            evt.target.closest(`.item`).querySelector(`.source`).select();
+          }
+          else {
+            evt
+              .target
+                .closest(
+                  `.item`
+                )
+                  .querySelector(
+                    `.source`
+                  )
+                    .select();
             document.execCommand(`copy`);
           }
         }
       },
       {
-        passive: false
+        passive:
+        false
       }
 );
