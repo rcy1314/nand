@@ -15,6 +15,7 @@ let sideBarDisplay = function (Value) {
         sideScroll == true
       )
       _min.style.cssText = `display: block !important;`
+      _bar.style.display = `none`;
       setTimeout(
         function () {
           _sidebar.querySelector(`.sideFilter`).style.visibility = `visible`;
@@ -38,11 +39,14 @@ let sideBarDisplay = function (Value) {
       _sidebar.querySelector(`.sideFilter`).style.visibility = `hidden`;
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
       _sidebar.style.left = `-280px`;
+      _bar.style.display = `block`;
       _sb.style.display = `block`;
     if (
       sideBarDock
-    )
+    ) {
       _sidebar.style.left = `-250px`;
+      _bar.style.display = `none`;
       _sb.style.display = `none`;
+    }
   }
 };

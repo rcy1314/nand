@@ -2,6 +2,7 @@ let populateCategoryGroup = function (translation) {
   let media;
   _container.style.display = `block`;
   _toggle.style.display = `none`
+  _bar.style.display = `block`;
   _sb.style.display = `none`;
   if (
     showSplash
@@ -77,18 +78,17 @@ let populateCategoryGroup = function (translation) {
       }
     }
   }
+
   if (
     !onlyImages
   )
     reverseCategoryGroup(translation);
+
   else if (
     onlyImages
   )
     unloading();
-  if (
-    window.innerWidth >= 768
-  )
-    _bar.style.display = `none`;
+
   main.setAttribute(`tabindex`, -1);
   topMenuBarDisplay(topBar);
   main.focus();
