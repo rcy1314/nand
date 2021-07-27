@@ -128,15 +128,15 @@ var Append = function (id) {
         footerBuild(id)
       );
     if (
-      flexBox
+      display == `flexBox`
     )
       displayFlex();
     else if (
-      sideScroll
+      display == `sideScroll`
     )
       displaySideScroll();
     else if (
-      legacy
+      display == `legacy`
     )
       displayLegacy();
     if (showSplash) _check.style.display = `none`;

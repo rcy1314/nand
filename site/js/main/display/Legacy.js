@@ -35,4 +35,10 @@ let displayLegacy = function () {
           `425px`
     );
   _xml.style.top = `60px`;
+  if (
+    document.body.contains(
+      _center.querySelector(`.bottom`)
+    )
+  )
+  _center.querySelector(`.bottom`).style.left = `0`;
 }

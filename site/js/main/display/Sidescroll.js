@@ -52,5 +52,11 @@ let displaySideScroll = function () {
       _display.style.display = `inline-block`;
     else
       _display.style.display = `none`;
+    if (
+      document.body.contains(
+        _center.querySelector(`.bottom`)
+      )
+    )
+      _center.querySelector(`.bottom`).style.left = `0`;
   _channel.classList.remove(`flexbox`)
 }
