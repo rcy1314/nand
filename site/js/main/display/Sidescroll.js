@@ -1,4 +1,5 @@
 let displaySideScroll = function () {
+  display == `sideScroll`;
   _channel.classList.add(`sideChannel`);
   _xml.style.justifyContent = `center`;
   _center.classList.add(`sideChannel`);
@@ -20,15 +21,6 @@ let displaySideScroll = function () {
         a.classList.remove(
           `flexbox`
         )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach((a) =>
-      a.classList.add(
-        `sideItem`
-      )
     );
   _channel
     .querySelectorAll(

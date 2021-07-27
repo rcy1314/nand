@@ -1,11 +1,11 @@
 var Solarized = function () {
   document.documentElement.style.setProperty(
     `--box-shadow`,
-    `none`
+    `4px 4px 16px rgba(255, 215, 103, .1)`
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `rgba(63, 73, 99, .3)`
+    `rgb(255, 215, 103)`
   );
   document.documentElement.style.setProperty(
     `--fill-color`,

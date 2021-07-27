@@ -38,10 +38,11 @@ let sideBarDisplay = function (Value) {
       _sidebar.querySelector(`.sideFilter`).style.visibility = `hidden`;
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
       _sidebar.style.left = `-280px`;
-      _sb.style.display = `none`;
+      _sb.style.display = `block`;
     if (
       sideBarDock
     )
       _sidebar.style.left = `-250px`;
+      _sb.style.display = `none`;
   }
 };

@@ -69,7 +69,7 @@ var Append = function (id) {
     }
   }
     if (
-      !sideScroll &&
+      display !== `sideScroll` &&
       !Reader &&
       !first &&
       document.body.contains(
@@ -95,7 +95,7 @@ var Append = function (id) {
       _center.scrollTop = 0;
       _main.scrollTop = 0;
     } else if (
-      sideScroll &&
+      display == `sideScroll` &&
       !Reader &&
       !first
     ) {

@@ -75,7 +75,7 @@ let Progress = function (done) {
             i < elements.length;
             i++) {
             if (
-              !sideScroll &&
+              display !== `sideScroll` &&
               elements[i].querySelector(`.img`) &&
               !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
               elements[i].getBoundingClientRect().top -
@@ -85,7 +85,7 @@ let Progress = function (done) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
             } else if (
-              sideScroll &&
+              display == `sideScroll` &&
               elements[i].querySelector(`.img`) &&
               elements[i].getBoundingClientRect().left -
               _channel.clientWidth
@@ -105,12 +105,15 @@ let Progress = function (done) {
             }
           }
         }
-        if (sideScroll)
+        if (
+          display == `sideScroll`
+        )
           _channel.addEventListener(
             `scroll`,
             checkPosition
           );
-        else if (!sideScroll)
+        else if (
+          display !== `sideScroll`)
           _main.addEventListener(
             `scroll`,
             checkPosition
@@ -125,7 +128,7 @@ let Progress = function (done) {
       })();
     }
     if (
-      sideScroll
+      display == `sideScroll`
     ) {
       _center.classList.remove(`scroll-into-view`);
       _channel.classList.add(`sideChannel`);

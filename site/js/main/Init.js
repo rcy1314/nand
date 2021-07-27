@@ -399,17 +399,18 @@ setTimeout(
             _visit.style.opacity = `1`;
             setTimeout(
               function () {
-                if (_sidebar.style.left == 0)
-                  _sb.style.display = `block`;
+                _guest.setAttribute(`tabindex`, -1);
                 _check.style.display = `none`;
+                _sb.style.display = `block`;
                 _check.style.opacity = `1`;
                 sideBarDisplay(onScreen);
+                _guest.focus();
               }, 2000
             )
-          }, 3000
+          }, 2000
         )
       }
-    }, 1250
+    }, 1000
   )
 
     if (onlySearch) {

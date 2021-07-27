@@ -1,4 +1,5 @@
 let displayFlex = function () {
+  display == `flexBox`;
   var height = 0;
   var second = 0;
   var groups = 0;

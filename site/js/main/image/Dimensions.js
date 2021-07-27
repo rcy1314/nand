@@ -36,9 +36,14 @@ var Dimensions = function (
     )
   ) {
     itemImage.closest(`.classic`).style.alignItems = `center`;
-    if (!sideScroll)
+    if (
+      display !== `sideScroll`
+    )
       itemImage.closest(`.classic`).style.display = `flex`;
-    else if (!flexBox && sideScroll)
+    else if (
+      display !== `sideScroll` &&
+      display !== `flexBox`
+    )
       itemImage.closest(`.classic`).style.display = `block`;
     itemContainer.style.height = `fit-content`;
     itemImage.classList.remove(`hidden`);

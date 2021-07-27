@@ -26,7 +26,14 @@ let xmlHTMLBuild = function (htmlArray) {
   item.setAttribute(`aria-object`, htmlArray.menuObject);
   if (!toggleBorders) item.style.border = `none`
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
-  if (flexBox) item.classList.add(`flexbox`);
+  if (
+    display == `flexBox`
+  )
+    item.classList.add(`flexbox`);
+  if (
+    display == `sideScroll`
+  )
+    item.classList.add(`sideItem`);
   item.setAttribute(`ext`, htmlArray.externalURI);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
