@@ -31,7 +31,7 @@ var Request = function (index) {
     _channel.scrollTop = 0;
     _center.scrollTop = 0;
     _main.scrollTop = 0;
-    stageXML();
+    xml();
   }
   uri = `${cors}${menu[index].uri}`;
   category = menu[index].category;
@@ -277,7 +277,7 @@ var Request = function (index) {
         }
       } else {
         if (showSplash) _check.style.display = `none`;
-        stageGroup();
+        Group();
         populateCategoryGroup(category);
         topMenuBarDisplay(topBar);
         displayExpand(expand);

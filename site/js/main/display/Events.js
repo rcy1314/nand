@@ -3,15 +3,17 @@ window
     'resize', (evt) =>
     {
       if (
-        document.body.contains(
-          _xml.querySelector(
-            `.item`
-          )
-        )
+        document
+          .body
+            .contains(
+              _xml.querySelector(
+                `.item`
+              )
+            )
       ) {
+
         if (
-          window.innerWidth <=
-            768
+          window.innerWidth <= 768
           ) {
           _display.style.display = `none`;
           display = `legacy`;
@@ -23,14 +25,19 @@ window
         ) {
           display = `flexBox`;
           displayFlex()
-        } else if (
+
+        }
+
+        else if (
           window.innerWidth >= 1280
 
         ) {
           _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
           _display.style.cssText = `display:inline-block;`;
 
-        } else if (
+        }
+
+        else if (
           viewport[cycleViewport] == `legacy` &&
           window.innerWidth < 1280
         )
@@ -39,7 +46,8 @@ window
       }
     },
   {
-    passive: true
+    passive:
+    true
   }
 );
 
@@ -47,29 +55,59 @@ _container
   .addEventListener(
     'click', (evt) =>
     {
-    if (
-      evt.target.classList.contains(
-        `fa-camera-retro`
-      )
-    ) {
-        cycleViewport = cycleViewport + 1
-        if (
-          cycleViewport ==
-            viewport.length
-        )
-          cycleViewport = 0
-        if (
-          viewport[cycleViewport] ==
-            `legacy`
-        ) {
-          notifyOption(viewport[cycleViewport], `fa-times-circle`)
-          display = `legacy`;
-          let leaveOff = _channel.scrollLeft +
-            (
+      if (
+        evt
+          .target
+            .classList
+              .contains(
+                `fa-camera-retro`
+              )
+      ) {
+          cycleViewport = cycleViewport + 1
+
+          if (
+            cycleViewport == viewport.length
+          )
+            cycleViewport = 0
+
+          if (
+            viewport[cycleViewport] == `legacy`
+          ) {
+            display = `legacy`;
+            notifyOption(viewport[cycleViewport], `fa-times-circle`)
+            let leaveOff = _channel.scrollLeft +
               (
-                parseInt(
-                  document
-                    .querySelectorAll(
+                (
+                  parseInt(
+                    document
+                      .querySelectorAll(
+                        `.item`
+                      )
+                      .length
+                    )
+                    *
+                    parseInt(
+                      100
+                    )
+                  )
+                );
+            displayLegacy();
+            _main.scrollTop = leaveOff;
+          }
+
+          else if (
+            viewport[cycleViewport] == `flexBox`
+          ) {
+
+            if (
+              window.innerWidth > 915
+            ) {
+              display = `flexBox`;
+              notifyOption(viewport[cycleViewport], `fa-times-circle`)
+              let leaveOff = _main.scrollTop -
+                (
+                  (parseInt(
+                    document.querySelectorAll(
                       `.item`
                     )
                     .length
@@ -80,73 +118,56 @@ _container
                   )
                 )
               );
-          displayLegacy();
-          _main.scrollTop = leaveOff;
-        } else if (
-          viewport[cycleViewport] == `flexBox`
-        ) {
-          if (
-            window.innerWidth >= 915
-          ) {
-            notifyOption(viewport[cycleViewport], `fa-times-circle`)
-            display = `flexBox`;
-            let leaveOff = _main.scrollTop -
-              (
-                (parseInt(
-                  document.querySelectorAll(
-                    `.item`
-                  )
-                  .length
-                )
-                *
-                parseInt(
-                  100
-                )
-              )
-            );
-            displayFlex();
-            _main.scrollTop = leaveOff;
+              displayFlex();
+              _main.scrollTop = leaveOff;
+            }
+            else
+              cycleViewport = cycleViewport + 1
           }
-          else
-            cycleViewport = cycleViewport + 1
-        }
-        if (
-          viewport[cycleViewport] == `sideScroll`
-        ) {
-          notifyOption(viewport[cycleViewport], `fa-times-circle`)
-          display = `sideScroll`;
-          let leaveOff = _main.scrollTop +
-            (
+
+          else if (
+            viewport[cycleViewport] == `sideScroll`
+          ) {
+            display = `sideScroll`;
+            notifyOption(viewport[cycleViewport], `fa-times-circle`)
+            let leaveOff = _main.scrollTop +
               (
-                parseInt(
-                  document.querySelectorAll(
-                    `.item`
+                (
+                  parseInt(
+                    document.querySelectorAll(
+                      `.item`
+                    )
+                    .length
                   )
-                  .length
+                  *
+                  parseInt(
+                    100
+                  )
                 )
-                *
-                parseInt(
-                  100
+              );
+            displaySideScroll();
+            _channel.scrollLeft = leaveOff;
+
+            if (
+              document
+                .body
+                .contains(
+                  _center.querySelector(`#bottom`)
                 )
-              )
-            );
-          displaySideScroll();
-          _channel.scrollLeft = leaveOff;
-          if (
-            document.body.contains(
-              _center.querySelector(`#bottom`)
             )
-          )
-          _center.querySelector(`#bottom`).remove();
-          if (!Reader)
-            _channel.append(
-              footerBuild(id)
-            );
+              _center.querySelector(`#bottom`).remove();
+            if (
+              !Reader
+            )
+              _channel.append(
+                footerBuild(id)
+              );
+          }
+
         }
-        console.log(viewport[cycleViewport])
-      }
-    },
-  {
-    passive: false
-  }
-);
+      },
+    {
+      passive:
+      false
+    }
+  );

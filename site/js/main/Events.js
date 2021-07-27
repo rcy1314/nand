@@ -170,9 +170,9 @@ _container
         evt.target.id === `mobileHome` ||
         evt.target.id === `home`
       ) {
-        stageXML();
-        stageGroup();
-        stageVisit();
+        xml();
+        Group();
+        Visit();
 
         document.title = doc;
 

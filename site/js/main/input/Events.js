@@ -270,7 +270,7 @@ document
           )
           .value.length
         ) {
-          stageGroup();
+          Group();
           filterInputResponse(
             _sidebar.querySelector(`.sideFilter`).value.space(),
           );

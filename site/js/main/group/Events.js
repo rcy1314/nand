@@ -5,7 +5,7 @@ _container
       if (
         evt.target.classList.contains(`under`)
       ) {
-        stageGroup();
+        Group();
         category = evt.target.getAttribute(`aria-object`);
         if (
           evt.target.getAttribute(`aria-object`) == `Assets`
@@ -22,7 +22,7 @@ _container
           )
         ) {
           _sb.style.display = `none`;
-          stageGroup();
+          Group();
           if (
             category == `Assets`
           )

@@ -37,7 +37,7 @@ let filterInputResponse = function (filterURI) {
     exact === -1 &&
     match
   ) {
-    stageGroup();
+    Group();
     for (
       let i = 0;
       i <= description.length - 1;

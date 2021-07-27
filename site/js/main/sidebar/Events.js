@@ -300,7 +300,7 @@ _container
         )
       ) {
         first = true;
-        stageGroup();
+        Group();
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
           onScreen = onScreen != true;
           sideBarDisplay(onScreen);
@@ -409,7 +409,7 @@ _container
           `List`
         )
       ) {
-        stageGroup();
+        Group();
         expand = true;
         groupType = `list`;
         sideBarStar(_sidebar.querySelector(`.Blocks`), false);
@@ -422,7 +422,7 @@ _container
           `Blocks`
         )
       ) {
-        stageGroup();
+        Group();
         expand = false;
         groupType = `blocks`;
         sideBarStar(_sidebar.querySelector(`.List`), false);

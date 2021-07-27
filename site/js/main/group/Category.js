@@ -7,7 +7,7 @@ let populateCategoryGroup = function (translation) {
     showSplash
   )
     _check.style.display = `block`;
-  stageGroup()
+  Group()
   if (
     id &&
     !location.href.match(`\\?q=`)

@@ -46,8 +46,14 @@ let displayFlex = function () {
     var min = `left:-310px;order:2`;
   else if (
     groups == min
-  ) var min = `left:-310px;order:3`;
-  if (!Reader) _channel.querySelector(`#bottom`).style.cssText = min;
+  )
+    var min = `left:-310px;order:3`;
+
+  if (
+    !Reader
+  )
+    _channel.querySelector(`#bottom`).style.cssText = min;
+
   _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
   _channel.style.height = `${(max + 2000).toString()}px`
   _channel.classList.remove(`sideChannel`);
@@ -57,25 +63,27 @@ let displayFlex = function () {
     .querySelectorAll(
       `.item`
     )
-    .forEach(
-      (a) =>
-        a.classList.add(
-          `flexbox`
-        )
-    );
+      .forEach(
+        (a) =>
+          a.classList.add(
+            `flexbox`
+          )
+      );
   _channel
     .querySelectorAll(
       `.item`
     )
-    .forEach(
-      (a) =>
-        a.style.marginLeft =
-        `0`
-    );
+      .forEach(
+        (a) =>
+          a.style.marginLeft =
+          `0`
+      );
+
   if (
     window.innerWidth > 1280
   )
     _display.style.display = `inline-block`;
+
   else
     _display.style.display = `none`;
 }

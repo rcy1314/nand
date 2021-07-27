@@ -10,36 +10,42 @@ let displayLegacy = function () {
     .querySelectorAll(
       `.item`
     )
-    .forEach(
-      (a) =>
-        a.classList.remove(
-          `sideItem`
-        )
-    );
+      .forEach(
+        (a) =>
+          a.classList.remove(
+            `sideItem`
+          )
+      );
   _channel
     .querySelectorAll(
       `.item`
     )
-    .forEach(
-      (a) =>
-        a.classList.remove(
-          `flexbox`
-        )
-    );
+      .forEach(
+        (a) =>
+          a.classList.remove(
+            `flexbox`
+          )
+      );
   _channel
     .querySelectorAll(
       `.item`
     )
-    .forEach(
-      (a) =>
-        a.style.width =
-          `425px`
-    );
+      .forEach(
+        (a) =>
+          a.style.width =
+            `425px`
+      );
   _xml.style.top = `60px`;
+
   if (
-    document.body.contains(
-      _center.querySelector(`.bottom`)
-    )
+    document
+      .body
+        .contains(
+          _center
+            .querySelector(
+              `.bottom`
+            )
+          )
   )
-  _center.querySelector(`.bottom`).style.left = `0`;
+    _center.querySelector(`.bottom`).style.left = `0`;
 }
