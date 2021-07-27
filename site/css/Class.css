@@ -13,7 +13,6 @@
 }
 
 .blur {
-  background-color: var(--hover-background-color) !important;
   -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
 }

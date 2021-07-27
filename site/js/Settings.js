@@ -1,5 +1,5 @@
 // set Home document.title
-let doc = `index.html`
+let doc = `n@nd`
 
 
 // initial theme
