@@ -6,7 +6,7 @@ let filterInputResponse = function (filterURI) {
   ) {
     setTimeout(
       function() {
-        populateCategoryGroup(filterURI.toString().capitalize());
+        Category(filterURI.toString().capitalize());
       }, 200
     )
     unloading();

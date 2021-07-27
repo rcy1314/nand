@@ -1,4 +1,4 @@
-let reverseCategoryGroup = function (translation) {
+let Reverse = function (translation) {
   let media;
   _air.style.visibility = `hidden`;
 

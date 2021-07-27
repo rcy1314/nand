@@ -474,7 +474,7 @@ _container
 
           } else {
             let target = event;
-            populateCategoryGroup(
+            Category(
               evt
                 .target
                   .closest(
@@ -557,12 +557,12 @@ _container
                 i++
               )
                 writeFilterResponse(menu.indexOf(description[i]));
-              populateCategoryGroup(category)
+              Category(category)
               displayExpand(expand);
               unloading();
             }
             else
-              populateCategoryGroup(category);
+              Category(category);
             displayExpand(expand);
         }
 

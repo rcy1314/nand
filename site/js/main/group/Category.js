@@ -1,4 +1,4 @@
-let populateCategoryGroup = function (translation) {
+let Category = function (translation) {
   let media;
   _container.style.display = `block`;
   _toggle.style.display = `none`
@@ -82,7 +82,7 @@ let populateCategoryGroup = function (translation) {
   if (
     !onlyImages
   )
-    reverseCategoryGroup(translation);
+    Reverse(translation);
 
   else if (
     onlyImages

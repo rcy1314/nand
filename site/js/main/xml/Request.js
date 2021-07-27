@@ -386,7 +386,7 @@ var Request = function (index) {
         )
           _check.style.display = `none`;
         Group();
-        populateCategoryGroup(category);
+        Category(category);
         topMenuBarDisplay(topBar);
         displayExpand(expand);
         unloading();

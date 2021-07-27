@@ -310,7 +310,7 @@ _container
           _toggle.style.display = `none`;
           _visit.style.display = `none`;
           location.pathname.state();
-          populateCategoryGroup(
+          Category(
             event.target.getAttribute(`aria-item`)
           );
           topMenuBarDisplay(topBar);
@@ -413,7 +413,7 @@ _container
         expand = true;
         groupType = `list`;
         sideBarStar(_sidebar.querySelector(`.Blocks`), false);
-        populateCategoryGroup(category);
+        Category(category);
         sideBarStar(event.target, List);
         topMenuBarDisplay(topBar);
       }
@@ -427,7 +427,7 @@ _container
         groupType = `blocks`;
         sideBarStar(_sidebar.querySelector(`.List`), false);
         sideBarStar(event.target, true);
-        populateCategoryGroup(category);
+        Category(category);
         topMenuBarDisplay(topBar);
       }
       else if (

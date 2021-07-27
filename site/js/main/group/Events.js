@@ -19,7 +19,7 @@ _container
           populateAssets();
 
         else
-          populateCategoryGroup(evt.target.getAttribute(`aria-object`));
+          Category(evt.target.getAttribute(`aria-object`));
       }
 
       else if (
@@ -48,7 +48,7 @@ _container
             25
           )
         else
-          populateCategoryGroup(category);
+          Category(category);
       }
     },
 
