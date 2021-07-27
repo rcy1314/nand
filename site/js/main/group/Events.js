@@ -16,7 +16,7 @@ _container
         if (
           evt.target.getAttribute(`aria-object`) === `Assets`
         )
-          populateAssets();
+          Assets();
 
         else
           Category(evt.target.getAttribute(`aria-object`));
@@ -25,7 +25,7 @@ _container
       else if (
         evt.target.getAttribute(`aria-object`) === `Assets`
       )
-        populateAssets();
+        Assets();
 
       else if (
         evt.target.classList.contains(
@@ -41,7 +41,7 @@ _container
           setTimeout(
             function () {
               topMenuBarDisplay(topBar);
-              populateAssets();
+              Assets();
               displayExpand(expand);
               unloading();
             },

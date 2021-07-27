@@ -1,4 +1,4 @@
-let populateAssets = function () {
+let Assets = function () {
   let media;
   _container.style.display = `block`;
   _toggle.style.display = `none`;
@@ -57,10 +57,6 @@ let populateAssets = function () {
         );
       }
     }
-  if (
-    !onlyImages
-  )
-    reverseCategoryGroup(category);
   main.setAttribute(`tabindex`, -1);
   topMenuBarDisplay(topBar);
   main.focus();
