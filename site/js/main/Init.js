@@ -351,27 +351,6 @@ setTimeout(
                   display
         )
 
-        if (
-          viewport[cycleViewport] == `legacy`
-        ) {
-          sideScroll = false;
-          flexBox = false;
-          legacy = true;
-        }
-        else if (
-          viewport[cycleViewport] == `flexBox`
-        ) {
-          sideScroll = false;
-          flexBox = true;
-          legacy = false;
-        } else if (
-          viewport[cycleViewport] == `sideScroll`
-        ) {
-          sideScroll = true;
-          flexBox = false;
-          legacy = false;
-        }
-
         display == viewport[cycleViewport]
 
         if (
