@@ -1,5 +1,7 @@
 let init = function () {
-  if (loading == `dots`) {
+  if (
+    loading === `dots`
+  ) {
     _progress.style.width = `0%`;
     _dots.style.zIndex = `12`;
     _dots
@@ -32,14 +34,14 @@ let init = function () {
       );
   }
   else if (
-    loading == `percent`
+    loading === `percent`
   )
     Progress(false);
 };
 
 let unloading = function () {
   if (
-    loading == `dots`
+    loading === `dots`
   ) {
     _dots
       .querySelectorAll(
@@ -61,8 +63,9 @@ let unloading = function () {
           `hidden`
       );
     Progress(true);
-  } else if (
-    loading == `percent`
+  }
+  else if (
+    loading === `percent`
   )
     Progress(true);
 };
@@ -84,7 +87,10 @@ let truncate = function (
   n,
   useWordBoundary
 ) {
-  if (i.length <= n) return i;
+  if (
+    i.length <= n
+  )
+    return i;
   let subString = i.substr(0, n - 1);
   return (
     (useWordBoundary
@@ -94,7 +100,6 @@ let truncate = function (
 };
 
 let randomizeAssets = function (Array) {
-  let adjusted = [];
   // Fisher-Yates (aka Knuth) Shuffle
   var currentIndex = Array.length,  randomIndex;
 
@@ -102,7 +107,11 @@ let randomizeAssets = function (Array) {
   while (0 !== currentIndex) {
 
     // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
+    randomIndex =
+      Math.floor(
+        Math.random() * currentIndex
+      );
+
     currentIndex--;
 
     // And swap it with the current element.
@@ -159,7 +168,7 @@ let scrollToElm = function (
   elm,
   duration
 ){
-  var pos = getRelativePos(elm);
+  let pos = getRelativePos(elm);
   scrollTo(
     touch,
     container,
@@ -174,7 +183,7 @@ let sideScrollToElm = function (
   elm,
   duration
 ){
-  var pos = getRelativePos(elm);
+  let pos = getRelativePos(elm);
   sideScrollTo(
     touch,
     container,
@@ -197,14 +206,16 @@ let getRelativePos = function (elm){
 }
 
 let scrollTo = function (
-  touch,
+  touchmove,
   element,
   to,
   duration,
   onDone
 ) {
-  if (touch) {
-    var start = element.scrollTop,
+  if (
+    touchmove
+  ) {
+    let start = element.scrollTop,
         change = to - start,
         startTime = performance.now(),
         val, now, elapsed, t;
@@ -225,13 +236,15 @@ let scrollTo = function (
 }
 
 let sideScrollTo = function (
-  touch,
+  touchmove,
   element,
   to,
   duration,
   onDone
 ) {
-  if (touch) {
+  if (
+    touchmove
+  ) {
     var start = element.scrollLeft,
         change = to + start,
         startTime = performance.now(),
@@ -266,86 +279,4 @@ let back = function (id) {
   if (menu[back])
     return parseInt(back);
   else return menu.length - 1
-};
-
-
-String.prototype.zulu = function () {
-  var opt = {
-    minute: `numeric`,
-    weekday: `long`,
-    hour: `numeric`,
-    day: `2-digit`,
-    month: `short`,
-    hour12: true,
-  };
-  let dmz = [];
-  let utc = new Date(this);
-  dmz.push(
-    this.moment()
-  );
-  let gmt =
-    utc.toLocaleString(
-      `en-US`,
-      opt
-    );
-  dmz.push(gmt);
-  return dmz;
-};
-
-String.prototype.moment = function () {
-  let age = new Date();
-  let utc = new Date(this);
-  let dis = age.getTime() - utc.getTime();
-  if (dis < 0) dis = -dis;
-  let sec = dis / 1000;
-  if (sec < 60) return `${parseInt(sec)} second${parseInt(sec) > 1 ? `s` : ``}`;
-  let min = sec / 60;
-  if (min < 60) return `${parseInt(min)} minute${parseInt(min) > 1 ? `s` : ``}`;
-  let h = min / 60;
-  if (h < 24) return `${parseInt(h)} hour${parseInt(h) > 1 ? `s` : ``}`;
-  let d = h / 24;
-  if (d < 30) return `${parseInt(d)} day${parseInt(d) > 1 ? `s` : ``}`;
-  let m = d / 30;
-  if (m < 12) return `${parseInt(m)} month${parseInt(m) > 1 ? `s` : ``}`;
-  let y = m / 121;
-
-  return `${parseInt(y)} year ${parseInt(y) > 1 ? `s` : ``}`;
-};
-
-String.prototype.space = function () {
-  return this.replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `);
-};
-
-String.prototype.add = function () {
-  return this.replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, ``);
-};
-
-String.prototype.hyphen = function () {
-  return this.toLowerCase().replace(/%20|\-|\_|\s|\+|\/|\.|\+1/g, `-`);
-};
-
-String.prototype.image = function () {
-  return `site/images/webp/${this}.webp`;
-};
-
-String.prototype.domain = function () {
-  return this.match(/^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g);
-};
-
-String.prototype.capitalize = function () {
-  return this.replace(/(\b[a-z](?!\s))/g, function (string) {
-    return string.toUpperCase();
-  });
-};
-
-String.prototype.state = function () {
-  history.replaceState({}, '', this);
-};
-
-String.prototype.blank = function () {
-  window.open(this, `_blank`, `noreferrer noopener`);
-};
-
-String.prototype.exit = function () {
-  window.location.assign(this);
 };

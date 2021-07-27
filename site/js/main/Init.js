@@ -68,10 +68,12 @@ setTimeout(
                 i !== -1
               )
                 Request(i);
-              else filterInputResponse(uri)
+              else
+                filterInputResponse(uri)
           },
         250);
-      } else if (
+      }
+      else if (
         uri.slice(
           uri.length - 16,
           uri.length
@@ -120,29 +122,29 @@ setTimeout(
               filterInputResponse(
                 location.href.split(`?`)[1]
               );
-            _toggle.style.display = `none`;
             _visit.style.display = `none`;
             guideOnScreen = onScreen;
           },
         250);
       }
-    } else if (
+    }
+    else if (
       location.search.split(`?q=`)[1]
     ) {
-      var uri = location.search.split(`?q=`)[1];
-      _toggle.style.display = `none`;
+      let uri = location.search.split(`?q=`)[1];
       guideOnScreen = onScreen;
       setTimeout(
         function () {
           if (
             showSplash
           )
-            _check.style.visibility = `visible`;
+            _check.style.display = `block`;
           topMenuBarDisplay(topBar);
           filterInputResponse(uri);
-        },
-      250);
-    } else if (
+        }, 250
+      );
+    }
+    else if (
       isNaN(
         parseFloat(
           post
@@ -155,11 +157,6 @@ setTimeout(
       setTimeout(
         function () {
           if (
-            !Reader
-          ) {
-            _guest.focus();
-          }
-          else if (
             Reader
           ) {
             onlyImages = true;
@@ -168,6 +165,7 @@ setTimeout(
         },
       250);
     }
+    else var uri
     if (
       !isNaN(
         parseFloat(
@@ -179,7 +177,7 @@ setTimeout(
       ) &&
       showSplash
     )
-      _check.style.visibility = `visible`;
+      _check.style.display = `block`;
 
     quickFeedDisplay(quickFeeds);
 
@@ -225,7 +223,8 @@ setTimeout(
       sideBarCenter
     )
       _content.style.position = `absolute`;
-    else _content.style.position = `relative`;
+    else
+      _content.style.position = `relative`;
 
     if (
       topBarBackdrop
@@ -307,7 +306,7 @@ setTimeout(
             `.animation`
           )
           .style.display =
-            `block`
+            `none`
         _check
           .querySelector(
             `.bars`
@@ -319,10 +318,8 @@ setTimeout(
             `.loader`
           )
           .style.display =
-            `block`
+            `none`
       }
-
-  else _container.style.display = `block`;
 
     adj = menu.slice();
     randomizeAssets(adj);
@@ -361,21 +358,17 @@ setTimeout(
           backgroundImage[0].element == `main`
         )
           _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+
         _container.style.backgroundPosition = `${backgroundImage[0].position}`;
         _main.style.backgroundPosition = `${backgroundImage[0].position}`;
         _container.style.backgroundSize = `${backgroundImage[0].size}`;
         _main.style.backgroundSize = `${backgroundImage[0].size}`;
+
         if (
           window.innerWidth < 768
         )
           sideBarMouse = false
-      else if (
-          window.innerWidth > 768 &&
-          sideBarBackdrop
-        ) {
-          _sidebar.style.cssText =
-            `background-color:transparent; backdrop-filter: blur(10px) !important`;
-        }
+
         if (
           window.innerWidth < 425
         ) {
@@ -384,6 +377,7 @@ setTimeout(
           quickFeedAsset(24);
           onScreen = false;
         }
+
         else quickFeedAsset(8);
 
         if (
@@ -394,15 +388,18 @@ setTimeout(
         _check.style.display = `block`;
         _check.style.opacity = `0`;
         _sb.style.display = `none`;
+
         setTimeout(
           function () {
             _check.style.opacity = `1`;
+
             setTimeout(
               function () {
                 _visit.style.opacity = `1`;
                 _guest.setAttribute(`tabindex`, -1);
                 _check.style.opacity = `0`;
                 sideBarDisplay(onScreen);
+
                 setTimeout(
                   function() {
                     _sb.style.display = `block`;
@@ -410,16 +407,21 @@ setTimeout(
                     _check.style.opacity = `1`
                   }, 2000
                 )
+
                 _guest.focus();
               }, 5000
             )
+
           }, 750
         )
       }
+
     }, 250
   )
 
-    if (onlySearch) {
+    if (
+      onlySearch
+    ) {
       _options.style.display = `none`;
       _social.style.display = `none`;
       _under.style.display = `none`;
@@ -429,6 +431,6 @@ setTimeout(
 
     document.title = doc;
 
-  }, 150
+  }, 100
 
 )

@@ -65,8 +65,15 @@ let Progress = function (done) {
         }, 1500
       )
     }
-    if (showSplash) _check.style.display = `none`;
-    if (fadeIntoView) {
+
+    if (
+      showSplash
+    )
+      _check.style.display = `none`;
+
+    if (
+      fadeIntoView
+    ) {
       (function () {
         function checkPosition() {
           let elements = _channel.querySelectorAll(`.image`);
@@ -94,7 +101,9 @@ let Progress = function (done) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
             }
-            if (!fadeIntoView) {
+            if (
+              !fadeIntoView
+            ) {
               _channel
                 .querySelectorAll(`.img`)
                 .forEach(
@@ -113,12 +122,15 @@ let Progress = function (done) {
             checkPosition
           );
         else if (
-          display !== `sideScroll`)
+          display !== `sideScroll`
+        )
           _main.addEventListener(
             `scroll`,
             checkPosition
           );
-        if (scrollIntoView)
+        if (
+          scrollIntoView
+        )
           setTimeout(
             function() {
               checkPosition();
@@ -135,17 +147,20 @@ let Progress = function (done) {
       _center.style.top = `60px`;
       _channel
         .querySelectorAll(`.item`)
-        .forEach(
-          (a) => (
-            a.classList.add(`sideItem`)
-          )
-        );
-      }
+          .forEach(
+            (a) => a.classList.add(`sideItem`)
+          );
+    }
   }
   else if (
-    document.body.contains(
-      _group.querySelector(`.populate`)
-    )
+    document
+      .body
+        .contains(
+          _group
+            .querySelector(
+              `.populate`
+            )
+        )
   ) {
     if (
       scrollIntoView
@@ -161,5 +176,8 @@ let Progress = function (done) {
         )
     }
   }
-  if (showSplash) _check.style.display = `none`;
+  if (
+    showSplash
+  )
+    _check.style.display = `none`;
 };
