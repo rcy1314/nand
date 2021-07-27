@@ -670,7 +670,7 @@ _container
           evt.target.id == `show`
         ) {
           quickFeeds = quickFeeds != true;
-          quickFeedDisplay(quickFeeds);
+          Feed(quickFeeds);
         }
       event.preventDefault();
     },

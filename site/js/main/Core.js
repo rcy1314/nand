@@ -30,6 +30,8 @@ const _show = document.getElementById(`show`);
 
 const _page = document.getElementById(`page`);
 
+const _left = document.querySelector(`.left`);
+
 const _visit = document.getElementById(`visit`);
 
 const _group = document.getElementById(`group`);

@@ -2,7 +2,7 @@ _quick
   .addEventListener(
     'touchstart', (evt) =>
     {
-      quickFeedAsset(8);
+      Generate(8);
     },
     {
       passive: true
@@ -18,11 +18,14 @@ _container
         evt.target.classList.contains(`fa-plus`) ||
         evt.target.classList.contains(`right`)
       ) {
-        quickFeedAsset(6);
+        Generate(6);
+
         let leftPos = _feed.scrollLeft;
         _feed.scrollLeft = leftPos + _feed.clientWidth;
-        if (_feed.scrollLeft >= 0)
-          document.querySelector(`.left`).style.display = `block`;
+        if (
+          _feed.scrollLeft >= 0
+        )
+          _left.style.display = `block`;
       }
 
       else if (
@@ -31,8 +34,10 @@ _container
       ) {
         let leftPos = _feed.scrollLeft;
         _feed.scrollLeft = leftPos - _feed.clientWidth;
-        if (_feed.scrollLeft - _feed.clientWidth <= 0)
-          document.querySelector(`.left`).style.display = `none`;
+        if (
+          _feed.scrollLeft - _feed.clientWidth <= 0
+        )
+          _left.style.display = `none`;
       }
 
       else if (

@@ -179,7 +179,7 @@ setTimeout(
     )
       _check.style.display = `block`;
 
-    quickFeedDisplay(quickFeeds);
+    Feed(quickFeeds);
 
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
     appendSideBarLists(`.themes`, `theme`, themes);
@@ -374,11 +374,11 @@ setTimeout(
         ) {
           guideOnScreen = onScreen;
           sideBarDisplay(onScreen);
-          quickFeedAsset(24);
+          Generate(24);
           onScreen = false;
         }
 
-        else quickFeedAsset(8);
+        else Generate(8);
 
         if (
           !Reader &&

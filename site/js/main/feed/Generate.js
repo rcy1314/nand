@@ -1,4 +1,4 @@
-let quickFeedAsset = function (feedAssets) {
+let Generate = function (feedAssets) {
 
   let duplicate = [];
     for (

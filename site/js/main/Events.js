@@ -200,7 +200,7 @@ _container
         _visit.style.display = `flex`;
         _top.style.display = `none`;
         _feed.scrollLeft = 0;
-        quickFeedDisplay(quickFeeds);
+        Feed(quickFeeds);
       }
       else if (
         evt.target.classList.contains(
