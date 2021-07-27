@@ -1,4 +1,4 @@
-let sideBarDisplay = function (Value) {
+let Sidebar = function (Value) {
   sideBarFirst = true;
   let content = document.querySelector(`#content`);
   if (

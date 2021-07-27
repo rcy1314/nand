@@ -4,7 +4,7 @@ let Swipe = function () {
     touchstartX
   ) {
     onScreen = true;
-    sideBarDisplay(onScreen);
+    Sidebar(onScreen);
   }
   else if (
     touchendX + 75 <
@@ -14,6 +14,6 @@ let Swipe = function () {
     if (
       !sideBarLock
     )
-    sideBarDisplay(onScreen);
+    Sidebar(onScreen);
   }
 }

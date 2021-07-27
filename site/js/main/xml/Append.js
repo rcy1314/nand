@@ -153,7 +153,7 @@ var Append = function (id) {
   )
     _check.style.display = `none`;
   Status(id, recent, oldest, posts);
-  sideBarDisplay(guideOnScreen);
+  Sidebar(guideOnScreen);
   topMenuBarDisplay(topBar);
   Suggest();
   local = null;

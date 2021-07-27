@@ -22,7 +22,7 @@ if (sideBarMouse)
           _sb.style.display = `none`;
           _min.style.display = `block`;
           setTimeout(function () {
-            sideBarDisplay(onScreen);
+            Sidebar(onScreen);
           }, 300)
         }
         if (
@@ -32,7 +32,7 @@ if (sideBarMouse)
         ){
           onScreen = false;
           setTimeout(function() {
-            sideBarDisplay(onScreen);
+            Sidebar(onScreen);
           }, 750)
         }
       },
@@ -50,7 +50,7 @@ if (sideBarMousewheel) {
       sideBarLock == false
     ) {
       onScreen = false;
-      sideBarDisplay(onScreen);
+      Sidebar(onScreen);
     } else if (
       onScreen == false &&
       window.innerWidth >= 769 &&
@@ -58,7 +58,7 @@ if (sideBarMousewheel) {
     ) {
       setTimeout(function() {
         onScreen = true;
-        sideBarDisplay(onScreen);
+        Sidebar(onScreen);
       }, 1250)
     }
   },
@@ -78,7 +78,7 @@ _container
         )
       ) {
         onScreen = false;
-        sideBarDisplay(onScreen);
+        Sidebar(onScreen);
         if (window.innerWidth <= 768) _sb.style.display = `block`;
         if (window.innerWidth >= 768) _bar.style.display = `none`;
       }
@@ -303,7 +303,7 @@ _container
         Group();
         if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
           onScreen = onScreen != true;
-          sideBarDisplay(onScreen);
+          Sidebar(onScreen);
         category = event.target.getAttribute(`aria-item`);
         if (Reader) Request(anyRandomMenuObject());
         else {
@@ -618,7 +618,7 @@ _container
         ) {
           _min.style.display = `block`;
           onScreen = onScreen != true;
-          sideBarDisplay(onScreen);
+          Sidebar(onScreen);
           if (onScreen)
             _bar.style.display = `none`;
         }
@@ -628,7 +628,7 @@ _container
           )
         ) {
           onScreen = true
-          sideBarDisplay(onScreen);
+          Sidebar(onScreen);
           _sb.style.display = `none`;
         }
         else if (

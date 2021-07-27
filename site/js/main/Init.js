@@ -373,7 +373,7 @@ setTimeout(
           window.innerWidth < 425
         ) {
           guideOnScreen = onScreen;
-          sideBarDisplay(onScreen);
+          Sidebar(onScreen);
           Generate(24);
           onScreen = false;
         }
@@ -398,7 +398,7 @@ setTimeout(
                 _visit.style.opacity = `1`;
                 _guest.setAttribute(`tabindex`, -1);
                 _check.style.opacity = `0`;
-                sideBarDisplay(onScreen);
+                Sidebar(onScreen);
 
                 setTimeout(
                   function() {

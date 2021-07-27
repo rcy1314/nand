@@ -38,7 +38,7 @@ let Touch = function () {
 
         topMenuBarDisplay(topBar);
         guideOnScreen = onScreen;
-        sideBarDisplay(onScreen);
+        Sidebar(onScreen);
         pub = null;
 
       }, 750
