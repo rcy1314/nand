@@ -15,14 +15,14 @@
 
   #main #visit #page #social {
     margin-left: 70px !important;
-      right: 70 !important;
-      left: 0 !important;
-
+    right: 70px !important;
+    left: 0 !important;
+    top: 170px !important
   }
 
   #under {
-    top: 290px !important;
-    left: -5 !important;
+    top: 240px !important;
+    left: -5px !important;
   }
 
   #quick {
