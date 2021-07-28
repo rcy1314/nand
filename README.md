@@ -63,7 +63,7 @@ are not owned by the developers, and are only non - consent</em>
 ### Notice
 
   This project makes requests to external resources  
-  including a cors-proxy, nsfw api, and any asset(s)
+  including a cors-proxy, nsfw api, and any asset(s).
 
 License
 ----
