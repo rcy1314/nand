@@ -29,6 +29,15 @@ _container
       }
 
       else if (
+        evt.target.classList.contains(`fa-angle-up`) ||
+        evt.target.id == `link` ||
+        evt.target.id == `show`
+      ) {
+        quickFeeds = quickFeeds != true;
+        Feed(quickFeeds);
+      }
+
+      else if (
         evt.target.classList.contains(`fa-minus`) ||
         evt.target.classList.contains(`left`)
       ) {

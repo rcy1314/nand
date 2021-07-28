@@ -165,6 +165,7 @@ setTimeout(
         },
       250);
     }
+    else var uri = null
     if (
       !isNaN(
         parseFloat(
@@ -224,6 +225,12 @@ setTimeout(
       _content.style.position = `absolute`;
     else
       _content.style.position = `relative`;
+
+    if (
+      sideBarBackdrop
+    )
+      _sidebar.style.cssText = `backdrop-filter: blur(10px)`
+
 
     if (
       topBarBackdrop
@@ -380,8 +387,8 @@ setTimeout(
         else Generate(8);
 
         if (
-          !Reader &&
-          !uri
+          !location.href.split(`?`)[0] &&
+          !Reader
         ) {
         _container.style.display = `block`;
         _check.style.display = `block`;
