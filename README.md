@@ -8,8 +8,6 @@
 
   - <em>A Really Simple Syndicate</em>
   - <em>A Enriched Site Summary</em>
-  - [Homepage](https://acktic.github.io "Homepage") Github Pages
-  - [Heroku](https://acktic.herokuapp.com "Heroku") Node.js Instance
 
 ### Use
 
