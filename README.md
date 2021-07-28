@@ -10,7 +10,6 @@
   - <em>A Enriched Site Summary</em>
   - [Homepage](https://acktic.github.io "Homepage") Github Pages
   - [Heroku](https://acktic.herokuapp.com "Heroku") Node.js Instance
-  - [Allowed](http://ack.allowed.org "Allowed") <em>[Freedns domain](https://freedns.afraid.org/)</em>
 
 ### Use
 
