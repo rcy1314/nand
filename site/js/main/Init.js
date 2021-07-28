@@ -69,7 +69,7 @@ setTimeout(
               )
                 Request(i);
               else
-                filterInputResponse(uri)
+                Filter(uri)
           },
         250);
       }
@@ -119,7 +119,7 @@ setTimeout(
             else if (
               i === -1
             )
-              filterInputResponse(
+              Filter(
                 location.href.split(`?`)[1]
               );
             _visit.style.display = `none`;
@@ -140,7 +140,7 @@ setTimeout(
           )
             _check.style.display = `block`;
           topMenuBarDisplay(topBar);
-          filterInputResponse(uri);
+          Filter(uri);
         }, 250
       );
     }
@@ -433,11 +433,15 @@ setTimeout(
         else {
           _container.style.display = `block`;
           _check.style.display = `none`;
+          if (
+            !location.href.split(`?`)[1]
+          )
+            _sb.style.display = `block`;
           _check.style.opacity = `1`;
           _visit.style.opacity = `1`;
         }
 
-    }, 250
+    }, 100
   )
 
     if (
