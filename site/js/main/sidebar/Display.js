@@ -40,7 +40,10 @@ let Sidebar = function (Value) {
       _sidebar.querySelector(`#basic`).style.visibility = `hidden`;
       _sidebar.style.left = `-280px`;
       _bar.style.display = `block`;
-      _sb.style.display = `block`;
+      if (
+        !location.href.split(`?`)[0]
+      )
+        _sb.style.display = `block`;
     if (
       sideBarDock
     ) {

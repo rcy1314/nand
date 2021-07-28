@@ -8,6 +8,7 @@ var Request = function (index) {
   images = [];
   let inline = [];
   imageDuplicate = [];
+  _sb.style.display = `none`;
   console.log(menu[index].id);
   _toggle.style.display = `none`
   _container.style.display = `block`;
@@ -51,7 +52,6 @@ var Request = function (index) {
     window.innerWidth >= 768
   )
     _bar.style.display = `none`;
-  _sb.style.display = `none`;
 
   if (
     first &&
