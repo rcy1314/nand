@@ -32,7 +32,7 @@ let Reverse = function (translation) {
   setTimeout(
     function () {
       _air.style.visibility = `visible`;
-    }, 1350
+    }, 1750
   )
   displayExpand(expand);
   unloading();
