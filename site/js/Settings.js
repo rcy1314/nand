@@ -52,6 +52,19 @@ const favorites = [
 ]
 
 /*
+    bootup [boolean/integer]
+
+      Applications
+        Init.js
+
+      Result
+        pretty bootup
+
+*/
+
+let bootup = false;
+
+/*
     topBar [boolean/integer]
 
       Applications

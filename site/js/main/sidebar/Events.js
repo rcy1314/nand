@@ -1,5 +1,5 @@
 _sidebar
-  .addevtListener(
+  .addEventListener(
     'click', (evt) =>
     {
       if (

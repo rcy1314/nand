@@ -356,18 +356,24 @@ setTimeout(
         display == viewport[cycleViewport]
 
         if (
-          backgroundImage[0].element == `container`
+          backgroundImage[0].element === `container`
         )
-          _container.style.backgroundImage = `url(${backgroundImage[0].path})`;
+          _container.style.backgroundImage =
+            `url(${backgroundImage[0].path})`;
         else if (
-          backgroundImage[0].element == `main`
+          backgroundImage[0].element === `main`
         )
-          _main.style.backgroundImage = `url(${backgroundImage[0].path})`;
+          _main.style.backgroundImage =
+            `url(${backgroundImage[0].path})`;
 
-        _container.style.backgroundPosition = `${backgroundImage[0].position}`;
-        _main.style.backgroundPosition = `${backgroundImage[0].position}`;
-        _container.style.backgroundSize = `${backgroundImage[0].size}`;
-        _main.style.backgroundSize = `${backgroundImage[0].size}`;
+        _container.style.backgroundPosition =
+          `${backgroundImage[0].position}`;
+        _main.style.backgroundPosition =
+          `${backgroundImage[0].position}`;
+        _container.style.backgroundSize =
+          `${backgroundImage[0].size}`;
+        _main.style.backgroundSize =
+          `${backgroundImage[0].size}`;
 
         if (
           window.innerWidth < 768
@@ -379,47 +385,57 @@ setTimeout(
         ) {
           guideOnScreen = onScreen;
           Sidebar(onScreen);
-          Generate(24);
           onScreen = false;
+          Generate(24);
         }
 
         else Generate(8);
 
         if (
-          !location.href.split(`?`)[1] &&
-          !Reader
+          bootup
         ) {
-        _container.style.display = `block`;
-        _check.style.display = `block`;
-        _check.style.opacity = `0`;
-        _sb.style.display = `none`;
+          if (
+            !location.href.split(`?`)[1] &&
+            !Reader
+          ) {
+          _container.style.display = `block`;
+          _check.style.display = `block`;
+          _check.style.opacity = `0`;
+          _sb.style.display = `none`;
 
-        setTimeout(
-          function () {
-            _check.style.opacity = `1`;
+          setTimeout(
+            function () {
+              _check.style.opacity = `1`;
 
-            setTimeout(
-              function () {
-                _visit.style.opacity = `1`;
-                _guest.setAttribute(`tabindex`, -1);
-                _check.style.opacity = `0`;
-                Sidebar(onScreen);
+              setTimeout(
+                function () {
+                  _visit.style.opacity = `1`;
+                  _guest.setAttribute(`tabindex`, -1);
+                  _check.style.opacity = `0`;
+                  Sidebar(onScreen);
 
-                setTimeout(
-                  function() {
-                    _sb.style.display = `block`;
-                    _check.style.display = `none`;
-                    _check.style.opacity = `1`
-                  }, 2000
-                )
+                  setTimeout(
+                    function() {
+                      _sb.style.display = `block`;
+                      _check.style.display = `none`;
+                      _check.style.opacity = `1`
+                    }, 2000
+                  )
 
-                _guest.focus();
-              }, 5000
-            )
+                  _guest.focus();
+                }, 5000
+              )
 
-          }, 750
-        )
+            }, 750
+          )
+        }
       }
+        else {
+          _container.style.display = `block`;
+          _check.style.display = `none`;
+          _check.style.opacity = `1`;
+          _visit.style.opacity = `1`;
+        }
 
     }, 250
   )

@@ -1,25 +1,24 @@
 /*
 
-    ### xmlAssets.js has multiple indices for objects.
+    ### Assets.js has multiple indices for objects.
 
       * These need to be fufilled to add an object.
 
       > id: unique stripped to plain text [indexed]
 
-      > title: generated
+      > title: generated [indexed]
 
-      > des: plain text [indexed].
+      > des: plain text [indexed]
 
-      > cat: translations
+      > category: translations
 
-      > uri: endpoint used in xmlRequestParsing in xmlFunctions.js
+      > uri: endpoint used in Request()
 
-      > hash: unique two char alphanumeric indexed by init.js [indexed]
+      > hash: unique two char alphanumeric [indexed]
 
-      > media: feed contains images boolean indexed by onlyImages.
+      > media: feed contains images boolean [indexed]
 
-
-       [indexed] filtered by response in baseFunctions.js
+       [indexed] Filter() by Init.js
 
        *** Youtube uri
        userName: https://www.youtube.com/feeds/videos.xml?user=
