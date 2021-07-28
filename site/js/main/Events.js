@@ -227,8 +227,8 @@ _container
         )
           iteration = -1;
 
-        notifyOption(themes[iteration].obFn, `fa-check-circle`);
         iteration = iteration + 1;
+        notifyOption(themes[iteration].obFn, `fa-check-circle`);
         set = themes[iteration].obFn;
         window[set]();
       }
