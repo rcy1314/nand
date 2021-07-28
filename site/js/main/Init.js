@@ -433,16 +433,19 @@ setTimeout(
         else {
           _container.style.display = `block`;
           _check.style.display = `none`;
-          if (
-            !location.href.split(`?`)[1]
-          )
-            _sb.style.display = `block`;
           _check.style.opacity = `1`;
           _visit.style.opacity = `1`;
         }
 
-    }, 100
+    }, 300
   )
+
+  if (
+    !location.href.split(`?`)[1]
+  )
+    _sb.style.display = `block`;
+  else
+    _sb.style.display = `none`;
 
     if (
       onlySearch
