@@ -21,7 +21,7 @@ _container
           _status.removeChild(_status.lastChild);
         while (_suggestions.firstChild)
           _suggestions.removeChild(_suggestions.lastChild);
-        if (event.target.getAttribute(`aria-item`) === -1)
+        if (event.target.getAttribute(`aria-object`) === -1)
           filterInputResponse(event.target.innerHTML)
         else Request(event.target.getAttribute(`aria-object`))
         _toggle.style.display = `none`;
@@ -32,29 +32,6 @@ _container
         )
       ) {
         event.target.value = ``;
-      }
-      else if (
-        event.target.classList.contains(
-          `cat`
-        )
-      ) {
-        first = true;
-        Group();
-        if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-          onScreen = onScreen != true;
-          Sidebar(onScreen);
-        category = event.target.getAttribute(`aria-item`);
-        if (Reader) Request(anyRandomMenuObject());
-        else {
-          _toggle.style.display = `none`;
-          _visit.style.display = `none`;
-          location.pathname.state();
-          Category(
-            event.target.getAttribute(`aria-item`)
-          );
-          topMenuBarDisplay(topBar);
-          displayExpand(expand);
-        }
       }
       else if (
         event.target.classList.contains(
