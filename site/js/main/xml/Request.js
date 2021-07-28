@@ -10,7 +10,7 @@ var Request = function (index) {
   imageDuplicate = [];
   _sb.style.display = `none`;
   console.log(menu[index].id);
-  _toggle.style.display = `none`
+  _toggle.style.display = `none`;
   _container.style.display = `block`;
   document.title = menu[index].id.space();
   let state = `?q=${menu[index].id.hyphen()}`

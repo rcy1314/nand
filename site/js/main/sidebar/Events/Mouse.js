@@ -10,7 +10,10 @@ _sidebar
     }
 );
 
-if (sideBarMouse)
+if (
+  window.innerWidth > 768 &&
+  sideBarMouse
+)
   _main
     .addEventListener(
       'mousemove', (evt) =>

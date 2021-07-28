@@ -161,7 +161,7 @@
 }
 
 .scroll-into-view {
-  animation: scroll 1250ms ease-in-out forwards;
+  animation: scroll 1500ms ease-in-out forwards;
 }
 
 .search {
