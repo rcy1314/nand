@@ -1,4 +1,4 @@
-let inputListingIndex = function (
+let Input = function (
   inputFilter,
   listingWrapper
 ) {

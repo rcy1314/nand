@@ -93,7 +93,7 @@ _main
               ===
             `guest`
       )
-        inputListingKeyup(
+        Listing(
           `#first`,
           evt
             .keyCode
@@ -106,7 +106,7 @@ _main
               ===
             `view`
       )
-        inputListingKeyup(
+        Listing(
           `#match`,
           evt
             .keyCode

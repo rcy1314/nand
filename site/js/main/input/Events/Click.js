@@ -9,7 +9,7 @@ _page
         if (
           _guest.value.length > 0
         ) {
-          filterInputResponse(_guest.value);
+          Filter(_guest.value);
           topMenuBarDisplay(topBar);
         }
       }

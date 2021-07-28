@@ -1,4 +1,4 @@
-let filterInputResponse = function (filterURI) {
+let Filter = function (filterURI) {
   if (
     translations.includes(
       filterURI.toString().capitalize()

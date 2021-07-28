@@ -80,7 +80,7 @@ _sidebar
                 ===
               -1
           )
-            filterInputResponse(evt.target.innerHTML)
+            Filter(evt.target.innerHTML)
 
         else
           Request(

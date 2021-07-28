@@ -3,7 +3,7 @@
   I found no other way of checking for errors in the function on these keys
 */
 
-var inputListingKeyup = function (
+var Listing = function (
   Elem,
   keycode
 ) {
@@ -25,7 +25,7 @@ var inputListingKeyup = function (
     keycode !== 38 &&
     keycode !== 27
   )
-    inputListingIndex(
+    Input(
       event.target.value.toLowerCase(),
       Elem
     );
@@ -33,7 +33,7 @@ var inputListingKeyup = function (
     event.target.value.length > 2 &&
     keycode === 8
   )
-    inputListingIndex(
+    Input(
       event.target.value.toLowerCase(),
       Elem
     );

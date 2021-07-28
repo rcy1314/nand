@@ -238,7 +238,7 @@ document
                 .length
         ) {
           Group();
-          filterInputResponse(
+          Filter(
             _sidebar
               .querySelector(
                 `.sideFilter`
@@ -329,7 +329,7 @@ document
                   `?`
                 )[0]
                   .state();
-          filterInputResponse(
+          Filter(
             _view.value
           );
         }
@@ -420,7 +420,7 @@ document
                 >
               0
           )
-        filterInputResponse(_guest.value);
+        Filter(_guest.value);
         _visit
           .style
             .display
