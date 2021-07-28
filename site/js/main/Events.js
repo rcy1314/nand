@@ -176,6 +176,8 @@ _container
 
         document.title = doc;
 
+        _channel.style.height = `0`;
+
         if (
           location.href.split(`?`)[0]
         )

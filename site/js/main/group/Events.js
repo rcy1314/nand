@@ -34,6 +34,7 @@ _container
       ) {
         Group();
         _sb.style.display = `none`;
+        _channel.style.height = `0`;
 
         if (
           category == `Assets`

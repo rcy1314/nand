@@ -557,13 +557,14 @@ _container
                 i++
               )
                 writeFilterResponse(menu.indexOf(description[i]));
-              Category(category)
+              Category(category);
               displayExpand(expand);
               unloading();
             }
             else
               Category(category);
             displayExpand(expand);
+            _channel.style.height = `0`;
         }
 
         else if (

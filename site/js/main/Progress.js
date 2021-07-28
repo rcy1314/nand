@@ -58,10 +58,10 @@ let Progress = function (done) {
       first &&
       scrollIntoView
     ) {
-      _xml.classList.add(`scroll-into-view`)
+      _channel.classList.add(`scroll-into-view`)
       setTimeout(
         function () {
-          _xml.classList.remove(`scroll-into-view`);
+          _channel.classList.remove(`scroll-into-view`);
         }, 1750
       )
     }
