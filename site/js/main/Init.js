@@ -165,7 +165,6 @@ setTimeout(
         },
       250);
     }
-    else var uri = null
     if (
       !isNaN(
         parseFloat(
@@ -387,7 +386,7 @@ setTimeout(
         else Generate(8);
 
         if (
-          !location.href.split(`?`)[0] &&
+          !location.href.split(`?`)[1] &&
           !Reader
         ) {
         _container.style.display = `block`;
