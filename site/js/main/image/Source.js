@@ -63,8 +63,8 @@ let Source =
         xhr.getElementsByTagName(`media:thumbnail`)[0].getAttribute(`url`)
       );
     else if (
-      xhr.getElementsByTagName(`media:content`)[0].attributes[`url`] &&
-      xhr.getElementsByTagName(`media:content`).length > 0
+      xhr.getElementsByTagName(`media:content`).length > 0 &&
+      xhr.getElementsByTagName(`media:content`)[0].attributes[`url`]
     ) {
       if (
         xhr
