@@ -41,14 +41,14 @@ var Dimensions = function (
     )
       itemImage.closest(`.classic`).style.display = `flex`;
     else if (
-      display !== `sideScroll` &&
-      display !== `flexBox`
+      display !== `flexBox` &&
+      display !== `legacy`
     )
       itemImage.closest(`.classic`).style.display = `block`;
     itemContainer.style.height = `fit-content`;
     itemImage.classList.remove(`hidden`);
-    copyPicture.style.display = `none`;
     copyDownload.style.display = `none`;
+    copyPicture.style.display = `none`;
     if (
       document.body.contains(
         _channel.querySelector(
@@ -73,7 +73,7 @@ var Dimensions = function (
         cropImages ||
         menu[id].id.match(/Youtube/g)
     )
-    itemContainer.style.height = `270px`;
+      itemContainer.style.height = `270px`;
     else if (
       cropImages &&
       document.body.contains(
@@ -81,7 +81,8 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && Height <= Width
-    ) itemContainer.style.height = `fit-content`;
+    )
+      itemContainer.style.height = `fit-content`;
     else if (
       !cropImages &&
       document.body.contains(
@@ -89,7 +90,8 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && Height >= Width
-    ) itemContainer.style.height = `auto`;
+    )
+      itemContainer.style.height = `auto`;
     else if (
       !cropImages &&
       document.body.contains(
@@ -97,7 +99,8 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       ) && Height <= Width
-    ) itemContainer.style.height = `fit-content`;
+    )
+      itemContainer.style.height = `fit-content`;
     if (
       document.body.contains(
         _channel.querySelector(

@@ -1,5 +1,7 @@
 let Source = function (xhr) {
-  if (xhr.getElementsByTagName(`content`).length > 0) {
+  if (
+      xhr.getElementsByTagName(`content`).length > 0
+    ) {
     if (
       xhr
         .getElementsByTagName(`content`)[0]
@@ -51,7 +53,8 @@ let Source = function (xhr) {
           )
       );
     else src = null;
-  } else if (
+  }
+  else if (
     youtubeMedia == false &&
     xhr.getElementsByTagName(`media:thumbnail`).length > 0
   )
@@ -87,7 +90,8 @@ let Source = function (xhr) {
             /\b(https?:\/\/\S*?\..+)/g
           )
       );
-  } else if (xhr.getElementsByTagName(`media:thumbnail`).length > 0)
+  }
+  else if (xhr.getElementsByTagName(`media:thumbnail`).length > 0)
     src = String(
       xhr.getElementsByTagName(`media:thumbnail`)[0].getAttribute(`url`)
     );
@@ -117,7 +121,8 @@ let Source = function (xhr) {
             /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
           )
       );
-  } else if (xhr.getElementsByTagName(`image`).length > 0)
+  }
+  else if (xhr.getElementsByTagName(`image`).length > 0)
     src = String(
       xhr
         .getElementsByTagName(`image`)[0]
@@ -125,7 +130,9 @@ let Source = function (xhr) {
           /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
         )
     );
-  else if (xhr.getElementsByTagName(`link`)[0].attributes[`href`])
+  else if (
+    xhr.getElementsByTagName(`link`)[0].attributes[`href`]
+  )
     src = String(xhr.getElementsByTagName(`link`)[0].getAttribute(`href`));
   else if (
     !menu[id].id.match(/4Chan/g) &&
@@ -146,7 +153,8 @@ let Source = function (xhr) {
         )[0];
     }
     else src = null;
-  } else if (
+  }
+  else if (
     typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
     typeof xhr.getElementsByTagName(`description`) !== `object`
   ) {
@@ -170,7 +178,8 @@ let Source = function (xhr) {
           /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
         )[0];
     }
-  } else if (xhr.getElementsByTagName(`link`).length > 0)
+  }
+  else if (xhr.getElementsByTagName(`link`).length > 0)
     src = String(
       xhr
         .getElementsByTagName(`link`)[0]

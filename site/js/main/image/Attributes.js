@@ -31,29 +31,38 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     imageDuplicate.includes(src)
   ) {
     _channel
-      .querySelectorAll(`[aria-object='${menuObject}'][aria-item='${pubIndex}']`)
-      .forEach(
-        (a) => a.remove()
-      );
-  } else if (
+      .querySelectorAll(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      )
+        .forEach(
+          (a) => a.remove()
+        );
+  }
+  else if (
     !src ||
     src == `null` ||
     src.match(/\.webm|\.mp4/g)
   ) {
     if (
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+      document
+        .body
+        .contains(
+          _channel.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+          )
         )
-      )
     ) {
-      if (onlyImages) {
-        _channel.querySelector(
-         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        ).remove();
-      } else {
-        itemContainer.style.height = `0px`;
+      if (
+        onlyImages
+      ) {
+        _channel
+          .querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          ).remove();
+      }
+      else {
         copyDownload.style.display = `none`;
+        itemContainer.style.height = `0px`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
         itemPending.remove();
@@ -71,15 +80,19 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     let newImg;
     newImg = new Image();
     newImg.setAttribute(`src`, src);
-    newImg.onerror = function () {
-      if (onlyImages)
-        _channel.querySelector(
-         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        ).remove();
-      else {
-        itemPending.remove();
-        itemImage.remove();
-      }
+    newImg.onerror = function ()
+      {
+        if (
+          onlyImages
+        )
+          _channel
+            .querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+            ).remove();
+        else {
+          itemPending.remove();
+          itemImage.remove();
+        }
     };
     newImg.onload = function () {
       let Height;
@@ -98,8 +111,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         itemPending.style.display = `none`;
       }
       if (
-        safeSearch &&
-        safeSearchIDs.includes(menu[id].id)
+        safeSearchIDs.includes(menu[id].id) &&
+        safeSearch
       ) {
         fetch(`${cors}${api}${src}`, {
           method: "GET",
