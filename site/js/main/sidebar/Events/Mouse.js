@@ -5,7 +5,8 @@ _sidebar
       onScreen = true;
     },
     {
-      passive: true
+      passive:
+      true
     }
 );
 
@@ -19,11 +20,13 @@ if (sideBarMouse)
           !onScreen
         ) {
           onScreen = true;
-          _sb.style.display = `none`;
           _min.style.display = `block`;
-          setTimeout(function () {
-            Sidebar(onScreen);
-          }, 300)
+          _sb.style.display = `none`;
+          setTimeout(
+            function () {
+              Sidebar(onScreen);
+            }, 300
+          )
         }
         if (
           event.pageX >= 180 &&
@@ -31,9 +34,11 @@ if (sideBarMouse)
           onScreen
         ){
           onScreen = false;
-          setTimeout(function() {
-            Sidebar(onScreen);
-          }, 750)
+          setTimeout(
+            function() {
+              Sidebar(onScreen);
+            }, 750
+          )
         }
       },
       {

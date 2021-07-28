@@ -1,35 +1,63 @@
-_container
+_sidebar
   .addEventListener(
     'click', (evt) =>
     {
       if (
-        event.target.classList.contains(
-          `List`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `List`
+              )
       ) {
         Group();
         expand = true;
         groupType = `list`;
-        sideBarStar(_sidebar.querySelector(`.Blocks`), false);
         Category(category);
-        sideBarStar(event.target, List);
+        sideBarStar(
+          _sidebar
+            .querySelector(
+              `.Blocks`
+            ),
+            false
+          );
+        sideBarStar(
+          evt
+            .target,
+          List
+        );
         topMenuBarDisplay(topBar);
       }
       else if (
-        event.target.classList.contains(
-          `Blocks`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `Blocks`
+              )
       ) {
         Group();
         expand = false;
         groupType = `blocks`;
-        sideBarStar(_sidebar.querySelector(`.List`), false);
-        sideBarStar(event.target, true);
+        sideBarStar(
+          _sidebar
+            .querySelector(
+              `.List`
+            ),
+            false
+          );
+        sideBarStar(
+          evt
+            .target
+          ,
+          true
+        );
         Category(category);
         topMenuBarDisplay(topBar);
       }
     },
     {
-      passive: false
+      passive:
+      false
     }
 );

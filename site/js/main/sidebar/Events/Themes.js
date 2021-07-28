@@ -1,33 +1,64 @@
-_container
+_sidebar
   .addEventListener(
     'click', (evt) =>
     {
       if (
-        evt.target.classList.contains(
-          `theme`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `theme`
+              )
       ) {
-        set = evt.target.getAttribute(`aria-object`);
+        set =
+          evt
+            .target
+              .getAttribute(
+                `aria-object`
+              );
         window[set]();
       }
 
       else if (
-        event.target.classList.contains(
-          `border`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `border`
+              )
       ) {
         expandVisual = expandVisual != true
-        if (!expandVisual) {
-          _sidebar.querySelector(`.themes`).style.height = `31px`;
-        } else if (expandVisual == true) {
-          _sidebar.querySelector(`.themes`).style.height =
-            `${(themes.length + 1) * 36}px`;
+        if (
+          !expandVisual
+        ) {
+          _sidebar
+            .querySelector(
+              `.themes`
+            )
+              .style
+                .height
+                  =
+                `31px`;
+        }
+
+        else if (
+          expandVisual
+        ) {
+          _sidebar
+            .querySelector(
+              `.themes`
+            )
+              .style
+                .height
+                  =
+                `${(themes.length + 1) * 36}px`;
         }
       }
 
-      event.preventDefault();
+      evt.preventDefault();
     },
     {
-      passive: false
+      passive:
+      false
     }
 );
