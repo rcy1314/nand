@@ -219,17 +219,17 @@ _container
         let iteration =
           themes
             .findIndex(
-              (item) => item.obFn === set
+              (item) => item.obFn == set
             );
 
         if (
-          iteration === themes.length - 1
+          iteration == themes.length - 1
         )
           iteration = -1;
 
         notifyOption(themes[iteration].obFn, `fa-check-circle`);
-        set = themes[iteration].obFn;
         iteration = iteration + 1;
+        set = themes[iteration].obFn;
         window[set]();
       }
       else if (

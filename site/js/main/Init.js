@@ -459,6 +459,6 @@ setTimeout(
 
     document.title = doc;
 
-  }, 100
+  }, 250
 
 )
