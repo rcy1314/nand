@@ -57,7 +57,7 @@ _sidebar
         }
       }
 
-      evt.prevtDefault();
+      evt.preventDefault();
     },
     {
       passive:
