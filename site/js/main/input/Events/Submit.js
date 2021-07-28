@@ -4,194 +4,439 @@ document
     {
       _toggle.style.display = `none`
       if (
-        event.target.classList.contains(
-          `min`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `min`
+              )
       ) {
         if (
-          _sidebar.querySelector(
-            `.excludeInput`
-          )
-          .value.length
-        ) {
-          exclude.push(
-            _sidebar.querySelector(
+          _sidebar
+            .querySelector(
               `.excludeInput`
             )
-            .value
+              .value
+                .length
+        ) {
+          exclude
+            .push(
+              _sidebar
+                .querySelector(
+                  `.excludeInput`
+                )
+                  .value
           );
           const has = exclude.map((a) => a.toLowerCase());
           if (
-            document.body.contains(
-              _xml
-            )
+            document
+              .body
+                .contains(
+                  _xml
+                )
           ) {
-            _xml.querySelectorAll(`.pub`).forEach(
-              (a) => has.filter(
-                function (obj) {
-                  if (
-                    a.innerHTML.toLowerCase().match(obj)
-                  )
-                    a.closest(`.item`).remove();
-                }
-              )
-            );
+            _channel
+              .querySelectorAll(
+                  `.pub`
+                )
+                  .forEach(
+                    (a) =>
+                      has.filter(
+                        function (obj) {
+                          if (
+                            a
+                              .innerHTML
+                                .toLowerCase()
+                                  .match(
+                                    obj
+                                  )
+                          )
+                            a
+                              .closest(
+                                `.item`
+                              )
+                                .remove();
+                        }
+                      )
+                  );
           }
           if (
-            !_sidebar.querySelector(
-              `.option`
-            )
+            !_sidebar
+              .querySelector(
+                `.option`
+              )
           ) {
-            let option = document.createElement(`div`);
-            option.classList.add(`option`);
-            option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
-            event.target.parentNode.insertBefore(option, event.target);
-          } else {
-            let option = document.createElement(`div`);
-            option.innerHTML = _sidebar.querySelector(`.excludeInput`).value;
-            option.classList.add(`option`);
-            _sidebar.querySelector(`.parse`).parentNode.insertBefore(
-              option, document.querySelector(`.option`)
-            );
+            let option =
+              document
+                .createElement(
+                  `div`
+                );
+            option
+              .classList
+                .add(
+                  `option`
+                );
+            option
+              .innerHTML
+                =
+              _sidebar
+                .querySelector(
+                  `.excludeInput`
+                )
+                  .value;
+            evt
+              .target
+                .parentNode
+                  .insertBefore(
+                    option,
+                    evt.target
+                  );
           }
-          _sidebar.querySelector(`.excludeInput`).value = ``;
-          _sidebar.querySelector(`.exclude`).style.height =
-          `
-            ${
-              exclude.length * 35 + 70
-            }px
-          `;
-        }
-      } else if (
-        event.target.classList.contains(
-          `url`
-        )
+
+          else {
+            let option
+              =
+            document
+              .createElement(
+                `div`
+              );
+            option
+              .innerHTML
+                =
+              _sidebar
+                .querySelector(
+                  `.excludeInput`
+                )
+                  .value;
+            option
+              .classList
+                .add(
+                  `option`
+                );
+            _sidebar
+              .querySelector(
+                `.parse`
+              )
+                .parentNode
+                  .insertBefore(
+                    option,
+                    _sidebar
+                      .querySelector(
+                        `.option`
+                      )
+                  );
+          }
+          _sidebar
+            .querySelector(
+              `.excludeInput`
+            )
+              .value
+                =
+              ``;
+          _sidebar
+            .querySelector(
+              `.exclude`
+            )
+              .style
+                .height
+                  =
+                `
+                  ${
+                    exclude.length * 35 + 70
+                  }px
+                `;
+          }
+      }
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `url`
+              )
       ) {
         if (
-          _sidebar.querySelector(
-            `.imageURL`
-          )
-          .value.length
+          _sidebar
+            .querySelector(
+              `.imageURL`
+            )
+              .value
+                .length
         ) {
           if (
             _sidebar
-              .querySelector(`.imageURL`)
-              .value.match(
-                /\b(?:png|jpe?g|gif|webp)/g
+              .querySelector(
+                `.imageURL`
               )
+                .value
+                  .match(
+                    /\b(?:png|jpe?g|gif|webp)/g
+                  )
           ) {
             if (
-              backgroundImage[0].element ==
-              `container`
+              backgroundImage[0]
+                .element
+                  ==
+                `container`
             ) {
-              _container.style.backgroundImage =
-              `url(
-                ${
-                _sidebar.querySelector(`.imageURL`).value
-                }
-              )`;
-              _main.style.backgroundImage = `url()`;
+              _container
+                .style
+                  .backgroundImage
+                    =
+                  `url(
+                    ${
+                    _sidebar.querySelector(`.imageURL`).value
+                    }
+                  )`;
+              _main
+                .style
+                  .backgroundImage
+                    =
+                  `url()`;
             }
+
             else if (
-              backgroundImage[0].element == `main`
+              backgroundImage[0]
+                .element
+                  ==
+                `main`
             ) {
-              _main.style.backgroundImage = `
-              url(
-                ${
-                _sidebar.querySelector(`.imageURL`).value
-                }
-              )`;
-              _container.style.backgroundImage = `url()`;
+              _main
+                .style
+                  .backgroundImage
+                    =
+                  `url(
+                    ${
+                    _sidebar.querySelector(`.imageURL`).value
+                    }
+                  )`;
+              _container
+                .style
+                  .backgroundImage
+                    =
+                  `url()`;
             }
           }
         }
-      } else if (
-        event.target.classList.contains(
-          `sideBasic`
-        )
+      }
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `sideBasic`
+              )
       ) {
         if (
-          _sidebar.querySelector(
-            `.sideFilter`
-          )
-          .value.length
+          _sidebar
+            .querySelector(
+              `.sideFilter`
+            )
+              .value
+                .length
         ) {
           Group();
           filterInputResponse(
-            _sidebar.querySelector(`.sideFilter`).value.space(),
+            _sidebar
+              .querySelector(
+                `.sideFilter`
+              )
+                .value
+                  .space(),
           );
-          _toggle.style.display = `none`;
+          _toggle
+            .style
+              .display
+                =
+              `none`;
           topMenuBarDisplay(topBar);
         }
 
       }
       else if (
-        event.target.id == `search`
+        evt
+          .target
+            .id
+              ==
+            `search`
       ) {
         if (
-          document.body.contains(
-            _result.querySelector(`.populate`)
-          )
+          document
+            .body
+              .contains(
+                _result
+                  .querySelector(
+                    `.populate`
+                  )
+              )
         ) {
           first = true;
         }
         if (
-          document.body.contains(
-            _match.querySelector(`.hover`)
-          )
+          document
+            .body
+              .contains(
+                _match
+                  .querySelector(
+                    `.hover`
+                  )
+              )
         ) {
           touchmove = true;
-          _xml.style.display = `block`;
-          _xml.style.zIndex = `1`;
+          _xml
+            .style
+              .display
+                =
+              `block`;
+          _xml
+            .style
+              .zIndex
+                =
+              `1`;
           Request(
-            _match.querySelector(`.hover`).getAttribute(`aria-object`)
+            _match
+              .querySelector(
+                `.hover`
+              )
+                .getAttribute(
+                  `aria-object`
+                )
           )
-          _match.style.display = `none`;
+          _match
+            .style
+              .display
+                =
+              `none`;
+        }
 
-        }
         else if (
-          _view.value.length
+          _view
+            .value
+              .length
         ) {
-          if (location.href.split(`?`)[0]) location.href.split(`?`)[0].state();
-          filterInputResponse(_view.value);
+          if (
+            location
+              .href
+                .split(
+                  `?`
+                )[0]
+          )
+            location
+              .href
+                .split(
+                  `?`
+                )[0]
+                  .state();
+          filterInputResponse(
+            _view.value
+          );
         }
-        _match.style.display = `none`;
+        _match
+          .style
+            .display
+              =
+            `none`;
       }
       else if (
-        event.target.id == `front`
+        evt
+          .target
+            .id
+              ===
+            `front`
       ) {
-        if (_guest.value == ``) inputListingIndex(``, `#first`);
         if (
-          document.body.contains(
-            _first.querySelector(
-              `.hover`
-            )
+          _guest
+            .value
+              ===
+            ``
           )
+            inputListingIndex(
+              ``,
+              `#first`
+            );
+        if (
+          document
+            .body
+              .contains(
+                _first
+                  .querySelector(
+                    `.hover`
+                  )
+              )
         ) {
           first = true;
-          _label.style.visibility = `visible`;
-          _quick.style.visibility = `visible`;
-          _show.style.visibility = `visible`;
-          _link.style.visibility = `visible`;
-          _first.style.display = `none`;
-          _xml.style.display = `block`;
-          _xml.style.zIndex = `1`;
+          _label
+            .style
+              .visibility
+                =
+              `visible`;
+          _quick
+            .style
+              .visibility
+                =
+              `visible`;
+          _show
+            .style
+              .visibility
+                =
+              `visible`;
+          _link
+            .style
+              .visibility
+                =
+              `visible`;
+          _first
+            .style
+              .display
+                =
+              `none`;
+          _xml
+            .style
+              .display
+                =
+              `block`;
+          _xml
+            .style
+              .zIndex
+                =
+              `1`;
           topMenuBarDisplay(topBar);
           Request(
-            _first.querySelector(`.hover`).getAttribute(`aria-object`)
+            _first
+              .querySelector(
+                `.hover`
+              )
+                .getAttribute(
+                  `aria-object`
+                )
           );
         }
         else if (
-          _guest.value.length >
-            0
+          _guest
+            .value
+              .length
+                >
+              0
           )
         filterInputResponse(_guest.value);
-        _visit.style.display = `none`;
-        _first.style.display = `none`;
+        _visit
+          .style
+            .display
+              =
+            `none`;
+        _first
+          .style
+            .display
+              =
+            `none`;
       }
-      event.preventDefault();
+
+      evt.preventDefault();
     },
     {
-      passive: false
+      passive:
+      false
     }
 );

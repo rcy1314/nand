@@ -60,6 +60,8 @@ const _result = document.querySelector(`.result`);
 
 const _center = document.querySelector(`.center`);
 
+const _search = document.getElementById(`search`);
+
 const _toggle = document.getElementById(`toggle`);
 
 const _notify = document.getElementById(`notify`);

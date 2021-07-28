@@ -2,25 +2,83 @@ _view
   .addEventListener(
     'keyup', (evt) =>
     {
-      if (event.target.value.length >= 1 && event.target.value != `Search`)
+      if (
+        evt
+          .target
+            .value
+              .length
+                >=
+              1
+        &&
+        evt
+          .target
+            .value
+              !=
+            `Search`
+      )
       return false
+
       else {
-        _match.style.display = `none`;
-        while (_match.querySelector(".listing").firstChild) {
+        _match
+          .style
+            .display
+              =
+            `none`;
+        while (
           _match
-            .querySelector(".listing")
-            .removeChild(_match.querySelector(".listing").lastChild);
-        }
-        document.querySelector(`#input .icon`).classList.add(`slide`);
-        _view.setAttribute(`placeholder`, `Search`);
-        event.target.style.paddingLeft = `25px`;
-        event.target.style.textAlign = `left`;
-        event.target.value = ``;
+            .querySelector(
+              `.listing`
+            )
+              .firstChild
+        )
+          _match
+            .querySelector(
+              `.listing`
+            )
+            .removeChild(
+              _match
+                .querySelector(
+                  `.listing`
+                )
+                  .lastChild
+            );
+        _search
+          .querySelector(
+            `.icon`
+          )
+            .classList
+              .add(
+                `slide`
+              );
+        _view
+          .setAttribute(
+            `placeholder`,
+            `Search`
+          );
+        evt
+          .target
+            .style
+              .paddingLeft
+                =
+              `25px`;
+        evt
+          .target
+            .style
+              .textAlign
+                =
+              `left`;
+        evt
+          .target
+            .value
+              =
+            ``;
       }
-    event.preventDefault();
+
+    evt.preventDefault();
     },
     {
-      passive: false
+      passive:
+      false
     }
 );
 
@@ -28,11 +86,36 @@ _main
   .addEventListener(
     'keyup', (evt) =>
     {
-      if (event.target.id == `guest`) inputListingKeyup(`#first`, event.keyCode);
-      if (event.target.id == `view`) inputListingKeyup(`#match`, event.keyCode);
-      event.preventDefault();
+      if (
+        evt
+          .target
+            .id
+              ===
+            `guest`
+      )
+        inputListingKeyup(
+          `#first`,
+          evt
+            .keyCode
+        );
+
+      else if (
+        evt
+          .target
+            .id
+              ===
+            `view`
+      )
+        inputListingKeyup(
+          `#match`,
+          evt
+            .keyCode
+        );
+
+      evt.preventDefault();
     },
     {
-      passive: false
+      passive:
+      false
     }
 );
