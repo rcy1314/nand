@@ -125,7 +125,7 @@ setTimeout(
             _visit.style.display = `none`;
             guideOnScreen = onScreen;
           },
-        750);
+        250);
       }
     }
     else if (
