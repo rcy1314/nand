@@ -165,7 +165,7 @@ setTimeout(
         },
       250);
     }
-    else var uri
+    else var uri = -1
     if (
       !isNaN(
         parseFloat(
