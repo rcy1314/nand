@@ -46,11 +46,11 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     if (
       document
         .body
-        .contains(
-          _channel.querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+          .contains(
+            _channel.querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+            )
           )
-        )
     ) {
       if (
         onlyImages
@@ -58,7 +58,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         _channel
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-          ).remove();
+          )
+            .remove();
       }
       else {
         copyDownload.style.display = `none`;
@@ -74,8 +75,15 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
   imageDuplicate.push(src);
   if (
     src &&
-    src.match(/https?:\/\//g) &&
-    !src.match(/comments|feeds|fsdn|undefined/g)
+    src
+      .match(
+        /https?:\/\//g
+      )
+    &&
+    !src
+      .match(
+        /comments|feeds|fsdn|undefined/g
+      )
   ) {
     let newImg;
     newImg = new Image();
@@ -88,7 +96,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           _channel
             .querySelector(
               `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-            ).remove();
+            )
+              .remove();
         else {
           itemPending.remove();
           itemImage.remove();
@@ -107,7 +116,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           .querySelector(
             `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
-          .classList.add(`yt`);
+            .classList
+              .add(
+                `yt`
+              );
         itemPending.style.display = `none`;
       }
       if (
@@ -152,7 +164,9 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                     };
                   }
                   request.onerror = function (e) {
-                    if (onlyImages == true) {
+                    if (
+                      onlyImages
+                    ) {
                       _main.querySelector(
                        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                       ).remove();
@@ -161,7 +175,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemImage.remove();
                     }
                   };
-                  if (!src.match(/4cdn/g)) request.send();
+                  if (
+                    !src.match(/4cdn/g)
+                  )
+                    request.send();
                   else {
                     Dimensions(
                       menuObject,
@@ -215,7 +232,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.remove();
                 };
               }
-              if (!src.match(/4cdn/g)) request.send();
+              if (
+                !src.match(/4cdn/g)
+              )
+                request.send();
               else {
                 Dimensions(
                   menuObject,
@@ -263,16 +283,22 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             }
             }
             request.onerror = function (e) {
-              if (onlyImages)
+              if (
+                onlyImages
+              )
                 _channel.querySelector(
                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                ).remove();
+                )
+                  .remove();
               else {
                 itemPending.remove();
                 itemImage.remove();
               }
             };
-          if (!src.match(/4cdn/g)) request.send();
+          if (
+            !src.match(/4cdn/g)
+          )
+            request.send();
           else {
             Dimensions(
               menuObject,
@@ -287,11 +313,14 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       };
     };
     newImg.onerror = function () {
-      if (onlyImages) {
+      if (
+        onlyImages
+      )
         _channel.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        ).remove();
-      } else {
+        )
+          .remove();
+      else {
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;

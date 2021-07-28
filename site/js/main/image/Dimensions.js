@@ -40,10 +40,7 @@ var Dimensions = function (
       display !== `sideScroll`
     )
       itemImage.closest(`.classic`).style.display = `flex`;
-    else if (
-      display !== `flexBox` &&
-      display !== `legacy`
-    )
+    else
       itemImage.closest(`.classic`).style.display = `block`;
     itemContainer.style.height = `fit-content`;
     itemImage.classList.remove(`hidden`);
@@ -69,36 +66,46 @@ var Dimensions = function (
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      ) ||
-        cropImages ||
-        menu[id].id.match(/Youtube/g)
+      )
+      ||
+      menu[id].id.match(/Youtube/g) ||
+      cropImages
     )
       itemContainer.style.height = `270px`;
     else if (
-      cropImages &&
+      cropImages
+      &&
       document.body.contains(
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      ) && Height <= Width
+      )
+      &&
+      Height <= Width
     )
       itemContainer.style.height = `fit-content`;
     else if (
-      !cropImages &&
+      !cropImages
+      &&
       document.body.contains(
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      ) && Height >= Width
+      )
+      &&
+      Height >= Width
     )
       itemContainer.style.height = `auto`;
     else if (
-      !cropImages &&
+      !cropImages
+      &&
       document.body.contains(
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      ) && Height <= Width
+      )
+      &&
+      Height <= Width
     )
       itemContainer.style.height = `fit-content`;
     if (
