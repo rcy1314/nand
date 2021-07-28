@@ -125,7 +125,7 @@ setTimeout(
             _visit.style.display = `none`;
             guideOnScreen = onScreen;
           },
-        250);
+        750);
       }
     }
     else if (
@@ -459,6 +459,6 @@ setTimeout(
 
     document.title = doc;
 
-  }, 500
+  }, 100
 
 )
