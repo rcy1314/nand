@@ -484,9 +484,9 @@
 }
 
 #xml {
+  min-height: calc(100% - 60px);
   height: fit-content;
   position: absolute;
-  min-height: 100%;
   display: none;
   width: 100%;
   z-index: -1;
