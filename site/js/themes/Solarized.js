@@ -17,7 +17,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(46, 57, 80, 1)`
+    `rgba(46, 57, 80, .3)`
   );
   document.documentElement.style.setProperty(
     `--hover-background-color`,
@@ -29,7 +29,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(63, 92, 136, .4)`
+    `rgba(63, 92, 136, .9)`
   );
   /*
   if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)

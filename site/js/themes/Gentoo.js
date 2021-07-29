@@ -14,7 +14,7 @@ var Gentoo = function () {
   ); // Inputs
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(42, 45, 53, 0)`
+    `rgba(42, 45, 53, .1)`
   ); // SideBar, Sticky
   document.documentElement.style.setProperty(
     `--hover-background-color`,
@@ -26,7 +26,7 @@ var Gentoo = function () {
   ); // Populate, Buttons
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(42, 45, 53, .9)`
+    `rgba(42, 45, 53, .6)`
   ); // Main, TopBar Input, Left Right (feed)
   /*
   if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)

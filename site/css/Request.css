@@ -44,7 +44,7 @@
 }
 
 .attribute {
-  background-color: var(--color-secondary);
+  background-color: var(--borderless-color);
   border: var(--border-color);
   position: absolute;
   display: none;

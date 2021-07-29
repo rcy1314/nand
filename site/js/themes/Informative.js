@@ -26,7 +26,7 @@ var Informative = function () {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(220, 220, 220, .6)`
+    `rgba(220, 220, 220, .9)`
   );
   /*
   if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)
