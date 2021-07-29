@@ -10,7 +10,7 @@ var Gentoo = function () {
   document.documentElement.style.setProperty(`--fill-color`, `rgba(197, 197, 197, 1)`);
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `transparent`
+    `rgba(42, 45, 53, .9)`
   ); // Inputs
   document.documentElement.style.setProperty(
     `--color-secondary`,
