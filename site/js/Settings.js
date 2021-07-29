@@ -706,8 +706,6 @@ if (expand == true) {
   List = false;
 }
 
-let ringloader;
-let circleloader;
 let expandBackground = false;
 let expandFavorites = false;
 let expandSettings = false;
