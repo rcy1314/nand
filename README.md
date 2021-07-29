@@ -1,4 +1,4 @@
-<sub>Release</sub> | <sub>Site</sub> | <sub>Maintained</sub> | <sub>Deployed</sub> | <sub>Packge</sub> |
+<sub>Release</sub> | <sub>Site</sub> | <sub>Maintained</sub> | <sub>Deployed</sub> | <sub>Package</sub> |
 --- | --- | --- | --- | --- |
 [<b>0.8.521</b>](https://github.com/acktic/nand/releases/tag/0.8.521 "0.8.521") | [![Website acktic.herokuapp.com](https://img.shields.io/website-up-down-green-red/https/acktic.herokuapp.com.svg)](https://acktic.herokuapp.com/) | [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/acktic/nand/graphs/commit-activity) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> |
 
