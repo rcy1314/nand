@@ -16,7 +16,7 @@ let appendSettings = function (Elem, Class, Arrays) {
       _sidebar
         .querySelector(`.` + Arrays[i].class)
         .parentNode.insertBefore(
-          sideBarThemeBuild(`fa-splotch`),
+          sideBarThemeBuild(`fa-plus`),
           document.querySelector(`.` + Arrays[i].class).nextSibling
         );
     } else {

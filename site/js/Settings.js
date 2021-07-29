@@ -3,7 +3,7 @@ let doc = `n@nd`
 
 
 // initial theme
-let set = `Informative`;
+let set = `Gentoo`;
 
 /*
     backgroundImage [array]
@@ -62,7 +62,7 @@ const favorites = [
 
 */
 
-let bootup = false;
+let bootup = true;
 
 /*
     topBar [boolean/integer]
@@ -339,7 +339,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `ring-circle`;
+let imageLoader = `false`;
 
 /*
     cropImages [boolean/integer]
@@ -706,6 +706,8 @@ if (expand == true) {
   List = false;
 }
 
+let ringloader;
+let circleloader;
 let expandBackground = false;
 let expandFavorites = false;
 let expandSettings = false;

@@ -14,11 +14,11 @@ var Gentoo = function () {
   ); // Inputs
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(42, 45, 53, .9)`
+    `rgba(42, 45, 53, 0)`
   ); // SideBar, Sticky
   document.documentElement.style.setProperty(
     `--hover-background-color`,
-    `rgba(24, 27, 35, .2)`
+    `rgba(247, 247, 247, .2)`
   ); // Feed Assets, Buttons
   document.documentElement.style.setProperty(
     `--border-color`,

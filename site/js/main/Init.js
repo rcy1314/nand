@@ -228,7 +228,11 @@ setTimeout(
     if (
       sideBarBackdrop
     )
-      _sidebar.style.cssText = `backdrop-filter: blur(10px)`
+    _sidebar
+      .classList
+        .add(
+          `blur`
+        );
 
 
     if (
@@ -304,7 +308,7 @@ setTimeout(
            `none`
     } else if (
       imageLoader ==
-        false
+        `false`
       ) {
         _check
           .querySelector(

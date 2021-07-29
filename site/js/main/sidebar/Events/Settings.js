@@ -104,11 +104,6 @@ _sidebar
               .add(
                 `blur`
               );
-          _sidebar
-            .style
-              .backgroundColor
-                =
-              `transparent`;
         }
 
         else if (
@@ -119,11 +114,6 @@ _sidebar
               .remove(
                 `blur`
               );
-          _sidebar
-            .style
-              .backgroundColor
-                =
-              `var(--color-secondary)`;
         }
         sideBarStar(
           evt
