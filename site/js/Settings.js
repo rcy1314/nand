@@ -756,6 +756,7 @@ const settings = [
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
+  { name: `Sidebar Dock`, class: `sideBarDock` },
 ];
 
 const background = [
