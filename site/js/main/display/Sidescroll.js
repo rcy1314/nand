@@ -14,7 +14,7 @@ let displaySideScroll = function () {
   _center.style.width = `35vw`;
   _xml.style.display = `flex`;
   _center.style.left = `0`;
-  _xml.style.top = `60px`;
+  _xml.style.top = `0`;
 
   _channel
     .querySelectorAll(
