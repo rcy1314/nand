@@ -4,7 +4,7 @@ let Reverse = function (translation) {
 
   for (
     let i = 0;
-    i < menu.length - 1;
+    i <= menu.length - 1;
     i++) {
       if (
         category == menu[i].category
