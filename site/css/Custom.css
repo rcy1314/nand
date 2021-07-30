@@ -1,5 +1,21 @@
 @media screen and (max-height: 500px) {
 
+  html,
+  #main,
+  html body,
+  #container,
+  #main {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    height: calc(100% + 60px);
+    border:none !important;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+
   #toggle,
   .expand .des,
   .btn .flip-front,
@@ -25,17 +41,10 @@
     left: -5px !important;
   }
 
-  #quick {
-    background-color: transparent !important;
-    position: absolute;
-    height: 400px;
-    width: 100%;
-    top: 62px;
-  }
-
   #feed {
-    height: 90%;
-    width: 90%;
+    height: 250px !important;
+    width: 375px !important;
+    left: -15px !important;
   }
 
   .focus {

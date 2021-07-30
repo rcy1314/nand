@@ -49,6 +49,7 @@ let Feed = function (Value) {
 
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
+    _sb.style.top = `10px`;
 
     if (
       !onlySearch

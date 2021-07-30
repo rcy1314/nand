@@ -3,7 +3,7 @@ let doc = `n@nd`
 
 
 // initial theme
-let set = `Gentoo`;
+let set = `Informative`;
 
 /*
     backgroundImage [array]
@@ -62,7 +62,7 @@ const favorites = [
 
 */
 
-let bootup = true;
+let bootup = false;
 
 /*
     topBar [boolean/integer]
