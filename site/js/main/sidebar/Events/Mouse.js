@@ -14,7 +14,7 @@ if (
   window.innerWidth > 768 &&
   sideBarMouse
 )
-  _main
+  container
     .addEventListener(
       'mousemove', (evt) =>
       {
