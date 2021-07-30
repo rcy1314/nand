@@ -6,6 +6,8 @@
 
   - <em>A Really Simple Syndicate</em>
   - <em>A Enriched Site Summary</em>
+  - <em>No Scraping only parsing</em>
+
 
 ### Use
 
@@ -16,7 +18,7 @@
 
   <em>edit</em> `site/js/main/Assets.js`  
   <em>save image</em> `site/images/webp`  
-  <em>[convert to webp 100x100](https://redketchup.io/image-resizer)</em>  
+  <em>[convert to webp 100x100 image](https://redketchup.io/image-resizer)</em>  
 
 ### Init
 
