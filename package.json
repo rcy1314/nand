@@ -1,6 +1,6 @@
 {
-  "name": "acktic.herokuapp.com",
-  "version": "0.8.521",
+  "name": "nand",
+  "version": "0.8.623",
   "description": "Just Read",
   "main": "app.js",
   "scripts": {
