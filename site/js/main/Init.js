@@ -439,6 +439,7 @@ setTimeout(
           _check.style.display = `none`;
           _check.style.opacity = `1`;
           _visit.style.opacity = `1`;
+          _guest.focus();
         }
 
     }, 300
