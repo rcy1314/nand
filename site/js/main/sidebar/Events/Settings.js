@@ -200,6 +200,38 @@ _sidebar
         }
       }
 
+      else if (
+        evt.target.classList.contains(
+          `onlySearch`
+        )
+      ) {
+        onlySearch = onlySearch != true
+        if (
+          onlySearch
+        ) {
+          _options.style.display = `none`;
+          _social.style.display = `none`;
+          _under.style.display = `none`;
+          _show.style.display = `none`;
+          _link.style.display = `none`;
+          sideBarStar(
+            evt
+              .target,
+            onlySearch
+          );
+        } else if (onlySearch == false) {
+          _under.style.display = `inline-flex`;
+          _options.style.display = `block`;
+          _social.style.display = `block`;
+          _show.style.display = `block`;
+          _link.style.display = `block`;
+          sideBarStar(
+            evt
+              .target,
+            onlySearch
+          );
+        }
+      }
       evt.preventDefault();
     },
     {
