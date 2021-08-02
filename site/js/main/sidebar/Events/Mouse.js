@@ -14,7 +14,7 @@ if (
   window.innerWidth > 768 &&
   sideBarMouse
 )
-  container
+  _container
     .addEventListener(
       'mousemove', (evt) =>
       {
@@ -32,7 +32,7 @@ if (
           )
         }
         if (
-          event.pageX >= 180 &&
+          event.pageX >= 280 &&
           !sideBarLock &&
           onScreen
         ){

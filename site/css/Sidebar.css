@@ -51,6 +51,7 @@
   top: 0;
 }
 
+#container #sidebar #content .anim,
 #container #sidebar #content .bg,
 #container #sidebar #content .exclude,
 #container #sidebar #content .fav,
@@ -68,6 +69,7 @@
   width: 95%;
 }
 
+#container #sidebar #content .anim .animations,
 #container #sidebar #content .bg .adjust,
 #container #sidebar #content .themes .border,
 #container #sidebar #content .set .choose,
@@ -83,6 +85,7 @@
   height: 15px;
 }
 
+#container #sidebar #content .anim .animations:hover,
 #container #sidebar #content .bg .adjust:hover,
 #container #sidebar #content .themes .border:hover,
 #container #sidebar #content .set .choose:hover,
@@ -91,6 +94,7 @@
   background-color: var(--hover-background-color) !important;
 }
 
+#container #sidebar #content .anim .animate,
 #container #sidebar #content .bg .background,
 #container #sidebar #content .fav .feed,
 #container #sidebar #content .exclude .option,
@@ -103,6 +107,7 @@
   padding: 5px;
 }
 
+#container #sidebar #content .anim .animate:hover,
 #container #sidebar #content .bg .background:hover:not(#url),
 #container #sidebar #content .fav .feed:hover,
 #container #sidebar #content .exclude .option:hover,

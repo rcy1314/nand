@@ -706,6 +706,7 @@ if (expand == true) {
   List = false;
 }
 
+let expandAnimations = false;
 let expandBackground = false;
 let expandFavorites = false;
 let expandSettings = false;
@@ -743,15 +744,18 @@ let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 
-const settings = [
+const animations = [
   { name: `Ring`, class: `ringloader` },
   { name: `Bars`, class: `verticalbars` },
   { name: `Blink`, class: `loaderfalse` },
   { name: `Circles`, class: `circleloader` },
+  { name: `Percent`, class: `Percent` },
+  { name: `Progress`, class: `Dots` }
+]
+
+const settings = [
   { name: `List`, class: `List` },
   { name: `Blocks`, class: `Blocks` },
-  { name: `Percent`, class: `Percent` },
-  { name: `Progress`, class: `Dots` },
   { name: `Crop Images`, class: `cropImages` },
   { name: `Fade in Images`, class: `fadeIntoView` },
   { name: `Scroll Into View`, class: `scrollIntoView` },

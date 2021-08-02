@@ -34,58 +34,10 @@ _sidebar
               .style
                 .height
                   =
-                `${(settings.length) * 36}px`;
+                `${(settings.length) * 38}px`;
         }
       }
 
-      else if (
-        evt
-          .target
-            .classList
-              .contains(
-                `Dots`
-              )
-      ) {
-        sideBarStar(
-          _sidebar
-            .querySelector(
-              `.Percent`
-            ),
-            false
-          );
-        sideBarStar(
-          evt
-            .target,
-          true
-        );
-        loading = `dots`;
-      }
-
-      else if (
-        evt
-          .target
-            .classList
-              .contains(
-                `Percent`
-              )
-      ) {
-        loading = `percent`;
-        sideBarStar(
-          evt
-            .target,
-          _sidebar
-            .querySelector(
-              `.Percent`
-            )
-          );
-        sideBarStar(
-          _sidebar
-            .querySelector(
-              `.Dots`
-            ),
-            false
-          );
-      }
 
       else if (
         evt
@@ -230,6 +182,83 @@ _sidebar
               .target,
             onlySearch
           );
+        }
+      }
+
+      if (
+        evt.target.classList.contains(
+          `fadeIntoView`
+        )
+      ) {
+        fadeIntoView = fadeIntoView != true;
+        sideBarStar(evt.target, fadeIntoView);
+        if (
+          !fadeIntoView
+        ) {
+          _channel
+            .querySelectorAll(`.img`)
+              .forEach(
+                (a) => a.classList.remove(`hidden`)
+              );
+        }
+
+        else if (
+          fadeIntoView
+        ) {
+          if (
+            document
+              .body
+                .contains(
+                  _channel.querySelector(`.img`)
+                )
+          ) {
+            _channel
+              .querySelectorAll(`.img`)
+                .forEach(
+                  (a) => a.classList.remove(`fade-in-element`)
+                );
+            _channel
+              .querySelectorAll(`.img`)
+                .forEach(
+                  (a) => a.classList.add(`hidden`)
+                );
+            (function () {
+              function startPosition() {
+                let elements = _channel.querySelectorAll(".img");
+                for (var i = 0; i < elements.length - 1; i++) {
+                  if (
+                    elements[i].getBoundingClientRect().top
+                      -
+                    _main.clientHeight <= 0
+                  ) {
+                    if (
+                      fadeIntoView
+                    ) {
+                      elements[i].classList.add("fade-in-element");
+                      elements[i].classList.remove("hidden");
+                    }
+                    if (!fadeIntoView) {
+                      _main
+                        .querySelectorAll(`.img`)
+                          .forEach(
+                            (a) => a.classList.remove(`hidden`)
+                          );
+                      _main.removeEventListener("scroll", startPosition);
+                    }
+                  }
+                }
+              }
+              if (
+                !sideScroll
+              )
+                _main.addEventListener("scroll", startPosition);
+              else if (
+                sideScroll
+              )
+                _channel.addEventListener("scroll", startPosition);
+              startPosition();
+            })();
+          }
         }
       }
       evt.preventDefault();

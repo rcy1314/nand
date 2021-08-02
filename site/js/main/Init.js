@@ -180,6 +180,9 @@ setTimeout(
 
     Feed(quickFeeds);
 
+    sideBarListBuild(`anim`, `animations`, `fa-sync`, `Animations`);
+    appendAnimations(`.anim`, `animate`, animations);
+
     sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
     appendSideBarLists(`.themes`, `theme`, themes);
 
