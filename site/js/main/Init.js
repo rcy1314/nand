@@ -265,6 +265,40 @@ setTimeout(
           )
           .style.display =
             `block`
+        _check
+          .querySelector(
+            `#load`
+          )
+          .style.display =
+            `none`
+        } else if (
+          imageLoader ==
+            `loading`
+        ) {
+          _check
+            .querySelector(
+              `#load`
+            )
+            .style.display =
+              `block`
+          _check
+            .querySelector(
+              `.animation`
+            )
+            .style.display =
+              `none`
+          _check
+            .querySelector(
+              `.bars`
+            )
+            .style.display =
+              `none`
+          _check
+            .querySelector(
+              `.loader`
+            )
+            .style.display =
+              `none`
       } else if (
         imageLoader ==
           `v-bars`
@@ -284,6 +318,12 @@ setTimeout(
         _check
           .querySelector(
             `.loader`
+          )
+          .style.display =
+            `none`
+        _check
+          .querySelector(
+            `#load`
           )
           .style.display =
             `none`
@@ -309,6 +349,12 @@ setTimeout(
          )
          .style.display =
            `none`
+       _check
+         .querySelector(
+           `#load`
+         )
+         .style.display =
+           `none`
     } else if (
       imageLoader ==
         `false`
@@ -328,6 +374,12 @@ setTimeout(
         _check
           .querySelector(
             `.loader`
+          )
+          .style.display =
+            `none`
+        _check
+          .querySelector(
+            `#load`
           )
           .style.display =
             `none`

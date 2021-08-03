@@ -43,7 +43,7 @@ _sidebar
           .target
             .classList
               .contains(
-                `Dots`
+                `Progress`
               )
       ) {
         sideBarStar(
@@ -81,7 +81,7 @@ _sidebar
         sideBarStar(
           _sidebar
             .querySelector(
-              `.Dots`
+              `.Progress`
             ),
             false
           );
@@ -108,9 +108,15 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
+        _main
+          .querySelectorAll(`#load`)
+            .forEach(
+              (a) => a.style.display = `none`
+            );
         sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
         sideBarStar(_sidebar.querySelector(`.circleloader`), false);
         sideBarStar(_sidebar.querySelector(`.ringloader`), false);
+        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
         sideBarStar(evt.target, true);
       }
 
@@ -135,9 +141,15 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
+        _main
+          .querySelectorAll(`#load`)
+            .forEach(
+              (a) => a.style.display = `none`
+            );
         sideBarStar(_sidebar.querySelector(`.circleloader`), false);
         sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
         sideBarStar(_sidebar.querySelector(`.ringloader`), false);
+        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
         sideBarStar(evt.target, true);
       }
 
@@ -162,9 +174,15 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
+        _main
+          .querySelectorAll(`#load`)
+            .forEach(
+              (a) => a.style.display = `none`
+            );
         sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
         sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
         sideBarStar(_sidebar.querySelector(`.ringloader`), false);
+        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
         sideBarStar(evt.target, true);
       }
 
@@ -174,6 +192,11 @@ _sidebar
         )
       ) {
         imageLoader = `ring-circle`;
+        _main
+          .querySelectorAll(`#load`)
+            .forEach(
+              (a) => a.style.display = `none`
+            );
         _main
           .querySelectorAll(`.animation`)
             .forEach(
@@ -192,8 +215,41 @@ _sidebar
         sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
         sideBarStar(_sidebar.querySelector(`.circleloader`), false);
         sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
+        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
         sideBarStar(evt.target, true);
         }
+
+        else if (
+          evt.target.classList.contains(
+            `loadinganim`
+          )
+        ) {
+          imageLoader = `loading`;
+          _main
+            .querySelectorAll(`#load`)
+              .forEach(
+                (a) => a.style.display = `block`
+              );
+          _main
+            .querySelectorAll(`.animation`)
+              .forEach(
+                (a) => a.style.display = `none`
+              );
+          _main
+            .querySelectorAll(`.bars`)
+              .forEach(
+                (a) => a.style.display = `none`
+              );
+          _main
+            .querySelectorAll(`.loader`)
+              .forEach(
+                (a) => a.style.display = `none`
+              );
+          sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
+          sideBarStar(_sidebar.querySelector(`.circleloader`), false);
+          sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
+          sideBarStar(evt.target, true);
+          }
     },
     {
       passive:

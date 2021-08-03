@@ -62,7 +62,7 @@ const favorites = [
 
 */
 
-let bootup = false;
+let bootup = true;
 
 /*
     topBar [boolean/integer]
@@ -339,7 +339,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `ring-circle`;
+let imageLoader = `loading`;
 
 /*
     cropImages [boolean/integer]
@@ -663,10 +663,11 @@ const wordpress = `https://ackti.wordpress.com`;
 
 /* Feel free to edit the above. */
 
-let verticalbars
-let doublecircle
-let loaderfalse
-let ringcircle
+let verticalbars;
+let doublecircle;
+let loaderfalse;
+let loadinganim;
+let ringcircle;
 let Dots;
 let Percent;
 let Blocks;
@@ -676,19 +677,32 @@ if (imageLoader == `v-bars`) {
   circleloader = false;
   ringloader = false;
   verticalbars = true;
+  loadinganim = false;
+  loaderfalse = false;
 } else if (imageLoader == `double-circle`){
   verticalbars = false;
   ringloader = false;
   circleloader = true;
+  loadinganim = false;
+  loaderfalse = false;
 } else if (imageLoader == `ring-circle`){
   circleloader = false;
   verticalbars = false;
   ringloader = true;
+  loadinganim = false;
+  loaderfalse = false;
+} else if (imageLoader == `loading`){
+  circleloader = false;
+  verticalbars = false;
+  loaderfalse = false;
+  ringloader = false;
+  loadinganim = true;
 } else if (imageLoader == false){
   circleloader = false;
   verticalbars = false;
   ringloader = false;
   loaderfalse = true;
+  loadinganim = false;
 }
 
 if (loading == `percent`) {
@@ -748,9 +762,10 @@ const animations = [
   { name: `Ring`, class: `ringloader` },
   { name: `Bars`, class: `verticalbars` },
   { name: `Blink`, class: `loaderfalse` },
+  { name: `Loading`, class: `loadinganim` },
   { name: `Circles`, class: `circleloader` },
   { name: `Percent`, class: `Percent` },
-  { name: `Progress`, class: `Dots` }
+  { name: `Progress`, class: `Progress` }
 ]
 
 const settings = [
