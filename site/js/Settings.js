@@ -334,6 +334,7 @@ let scrollIntoView = true;
       Result
         `double-circle`
         `ring-circle`
+        `loading`
         `v-bars`
         false
 
