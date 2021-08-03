@@ -482,7 +482,7 @@ setTimeout(
                   )
 
                   _guest.focus();
-                }, 5000
+                }, 4000
               )
 
             }, 750
