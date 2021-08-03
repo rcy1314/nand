@@ -35,6 +35,10 @@
   top: 10px;
 }
 
+#container #sidebar .circleloader {
+  border-bottom: .3px solid var(--fill-color);
+}
+
 #container #sidebar #content::-webkit-scrollbar {
   display: none;
 }
