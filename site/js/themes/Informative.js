@@ -5,7 +5,7 @@ var Informative = function () {
   );
   document.documentElement.style.setProperty(
     `--loader-color`,
-    `rgba(90, 105, 126, 1)`
+    `rgba(123, 192, 236, .3)`
   );
   document.documentElement.style.setProperty(`--fill-color`, `#555555`);
   document.documentElement.style.setProperty(
