@@ -76,7 +76,7 @@ _container
             viewport[cycleViewport] == `sideScroll`
           ) {
             display = `sideScroll`;
-            notifyOption(viewport[cycleViewport], `fa-times-circle`)
+            notifyOption(viewport[cycleViewport], `fa-check-circle`)
             let leaveOff = _main.scrollTop +
               (
                 (
@@ -94,7 +94,29 @@ _container
               );
             displaySideScroll();
             _channel.scrollLeft = leaveOff;
-
+            (function () {
+              function checkPosition() {
+                let elements = _channel.querySelectorAll(`.image`);
+                for (
+                  let i = 0;
+                  i < elements.length;
+                  i++) {
+                  if (
+                    elements[i].querySelector(`.img`) &&
+                    elements[i].getBoundingClientRect().left -
+                    _channel.clientWidth
+                    <= _channel.clientWidth - _channel.clientWidth
+                  ) {
+                    elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
+                    elements[i].querySelector(`.img`).classList.remove(`hidden`);
+                  }
+                }
+              }
+              _channel.addEventListener(
+                `scroll`,
+                checkPosition
+              );
+            })();
             if (
               document
                 .body

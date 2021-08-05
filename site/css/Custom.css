@@ -129,6 +129,7 @@
 
   .sideChannel {
     height: fit-content !important;
+    margin-top: 60px !important;
     width: 100vw !important;
   }
 

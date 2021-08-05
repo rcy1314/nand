@@ -101,17 +101,6 @@ let Progress = function (done) {
               elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
               elements[i].querySelector(`.img`).classList.remove(`hidden`);
             }
-            if (
-              !fadeIntoView
-            ) {
-              _channel
-                .querySelectorAll(`.img`)
-                .forEach(
-                  (a) => a.classList.remove(`hidden`)
-                );
-              _main.removeEventListener(`scroll`, checkPosition);
-              _main.removeEventListener(`resize`, init);
-            }
           }
         }
         if (
@@ -138,6 +127,17 @@ let Progress = function (done) {
           1000)
         else checkPosition();
       })();
+    }
+    if (
+      !fadeIntoView
+    ) {
+      _channel
+        .querySelectorAll(`.img`)
+        .forEach(
+          (a) => a.classList.remove(`hidden`)
+        );
+      _main.removeEventListener(`scroll`, checkPosition);
+      _main.removeEventListener(`resize`, init);
     }
     if (
       display == `sideScroll`
