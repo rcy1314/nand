@@ -1,4 +1,4 @@
-let displayFlex = function () {
+let Flex = function () {
   display == `flexBox`;
   var height = 0;
   var second = 0;

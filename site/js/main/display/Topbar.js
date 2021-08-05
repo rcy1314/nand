@@ -1,4 +1,4 @@
-let topMenuBarDisplay = function (Value) {
+let Topbar = function (Value) {
   if (
     Value
   ) {

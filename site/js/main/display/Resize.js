@@ -17,14 +17,14 @@ window
           ) {
           _display.style.display = `none`;
           display = `legacy`;
-          displayLegacy();
+          Legacy();
         }
 
         else if (
           window.innerWidth >= 769
         ) {
           display = `flexBox`;
-          displayFlex()
+          Flex()
 
         }
 

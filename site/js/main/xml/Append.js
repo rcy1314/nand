@@ -137,24 +137,24 @@ var Append = function (id) {
   if (
     display == `flexBox`
   )
-    displayFlex();
+    Flex();
 
   else if (
     display == `sideScroll`
   )
-    displaySideScroll();
+    SideScroll();
 
   else if (
     display == `legacy`
   )
-    displayLegacy();
+    Legacy();
   if (
     showSplash
   )
     _check.style.display = `none`;
   Status(id, recent, oldest, posts);
   Sidebar(guideOnScreen);
-  topMenuBarDisplay(topBar);
+  Topbar(topBar);
   Suggest();
   local = null;
   stop = false;

@@ -46,14 +46,14 @@ _sidebar
                 `Progress`
               )
       ) {
-        sideBarStar(
+        Star(
           _sidebar
             .querySelector(
               `.Percent`
             ),
             false
           );
-        sideBarStar(
+        Star(
           evt
             .target,
           true
@@ -70,7 +70,7 @@ _sidebar
               )
       ) {
         loading = `percent`;
-        sideBarStar(
+        Star(
           evt
             .target,
           _sidebar
@@ -78,7 +78,7 @@ _sidebar
               `.Percent`
             )
           );
-        sideBarStar(
+        Star(
           _sidebar
             .querySelector(
               `.Progress`
@@ -113,11 +113,11 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
-        sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
-        sideBarStar(_sidebar.querySelector(`.circleloader`), false);
-        sideBarStar(_sidebar.querySelector(`.ringloader`), false);
-        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
-        sideBarStar(evt.target, true);
+        Star(_sidebar.querySelector(`.verticalbars`), false);
+        Star(_sidebar.querySelector(`.circleloader`), false);
+        Star(_sidebar.querySelector(`.ringloader`), false);
+        Star(_sidebar.querySelector(`.loadinganim`), false);
+        Star(evt.target, true);
       }
 
       else if (
@@ -146,11 +146,11 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
-        sideBarStar(_sidebar.querySelector(`.circleloader`), false);
-        sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
-        sideBarStar(_sidebar.querySelector(`.ringloader`), false);
-        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
-        sideBarStar(evt.target, true);
+        Star(_sidebar.querySelector(`.circleloader`), false);
+        Star(_sidebar.querySelector(`.loaderfalse`), false);
+        Star(_sidebar.querySelector(`.ringloader`), false);
+        Star(_sidebar.querySelector(`.loadinganim`), false);
+        Star(evt.target, true);
       }
 
       else if (
@@ -179,11 +179,11 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
-        sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
-        sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
-        sideBarStar(_sidebar.querySelector(`.ringloader`), false);
-        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
-        sideBarStar(evt.target, true);
+        Star(_sidebar.querySelector(`.verticalbars`), false);
+        Star(_sidebar.querySelector(`.loaderfalse`), false);
+        Star(_sidebar.querySelector(`.ringloader`), false);
+        Star(_sidebar.querySelector(`.loadinganim`), false);
+        Star(evt.target, true);
       }
 
       else if (
@@ -212,11 +212,11 @@ _sidebar
             .forEach(
               (a) => a.style.display = `none`
             );
-        sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
-        sideBarStar(_sidebar.querySelector(`.circleloader`), false);
-        sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
-        sideBarStar(_sidebar.querySelector(`.loadinganim`), false);
-        sideBarStar(evt.target, true);
+        Star(_sidebar.querySelector(`.verticalbars`), false);
+        Star(_sidebar.querySelector(`.circleloader`), false);
+        Star(_sidebar.querySelector(`.loaderfalse`), false);
+        Star(_sidebar.querySelector(`.loadinganim`), false);
+        Star(evt.target, true);
         }
 
         else if (
@@ -245,10 +245,10 @@ _sidebar
               .forEach(
                 (a) => a.style.display = `none`
               );
-          sideBarStar(_sidebar.querySelector(`.verticalbars`), false);
-          sideBarStar(_sidebar.querySelector(`.circleloader`), false);
-          sideBarStar(_sidebar.querySelector(`.loaderfalse`), false);
-          sideBarStar(evt.target, true);
+          Star(_sidebar.querySelector(`.verticalbars`), false);
+          Star(_sidebar.querySelector(`.circleloader`), false);
+          Star(_sidebar.querySelector(`.loaderfalse`), false);
+          Star(evt.target, true);
           }
     },
     {

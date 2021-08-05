@@ -1,4 +1,4 @@
-let displayLegacy = function () {
+let Legacy = function () {
   display == `legacy`;
   _center.style.cssText = `justify-content:center !important`;
   _channel.classList.remove(`sideChannel`);

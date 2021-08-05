@@ -90,6 +90,6 @@ let Category = function (translation) {
     unloading();
 
   main.setAttribute(`tabindex`, -1);
-  topMenuBarDisplay(topBar);
+  Topbar(topBar);
   main.focus();
 };

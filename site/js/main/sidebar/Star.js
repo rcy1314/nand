@@ -1,4 +1,4 @@
-let sideBarStar = function (Elem, Value) {
+let Star = function (Elem, Value) {
   if (
     Value
   ) {

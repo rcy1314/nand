@@ -43,7 +43,7 @@ let Filter = function (filterURI) {
       i <= description.length - 1;
       i++
     )
-      writeFilterResponse(
+      Write(
         menu.indexOf(
           description[i]
         )

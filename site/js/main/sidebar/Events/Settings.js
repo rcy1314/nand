@@ -67,7 +67,7 @@ _sidebar
                 `blur`
               );
         }
-        sideBarStar(
+        Star(
           evt
             .target,
           sideBarBackdrop
@@ -132,7 +132,7 @@ _sidebar
               display == `flexBox`
         )
           displayFlex();
-        sideBarStar(
+        Star(
           evt
             .target,
           cropImages
@@ -148,13 +148,13 @@ _sidebar
         if (
           sideBarDock
         ) {
-          sideBarStar(
+          Star(
             evt
               .target,
             sideBarDock
           );
         } else if (sideBarDock == false) {
-          sideBarStar(
+          Star(
             evt
               .target,
             sideBarDock
@@ -176,7 +176,7 @@ _sidebar
           _under.style.display = `none`;
           _show.style.display = `none`;
           _link.style.display = `none`;
-          sideBarStar(
+          Star(
             evt
               .target,
             onlySearch
@@ -187,7 +187,7 @@ _sidebar
           _social.style.display = `block`;
           _show.style.display = `block`;
           _link.style.display = `block`;
-          sideBarStar(
+          Star(
             evt
               .target,
             onlySearch
@@ -201,7 +201,7 @@ _sidebar
         )
       ) {
         fadeIntoView = fadeIntoView != true;
-        sideBarStar(evt.target, fadeIntoView);
+        Star(evt.target, fadeIntoView);
         if (
           !fadeIntoView
         ) {

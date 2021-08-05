@@ -38,7 +38,7 @@ _container
                     )
                   )
                 );
-            displayLegacy();
+            Legacy();
             _main.scrollTop = leaveOff;
           }
 
@@ -65,7 +65,7 @@ _container
                   )
                 )
               );
-              displayFlex();
+              Flex();
               _main.scrollTop = leaveOff;
             }
             else
@@ -92,7 +92,7 @@ _container
                   )
                 )
               );
-            displaySideScroll();
+            SideScroll();
             _channel.scrollLeft = leaveOff;
             (function () {
               function checkPosition() {

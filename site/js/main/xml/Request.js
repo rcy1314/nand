@@ -386,8 +386,8 @@ var Request = function (index) {
         )
           _check.style.display = `none`;
         Group();
+        Topbar(topBar);
         Category(category);
-        topMenuBarDisplay(topBar);
         displayExpand(expand);
         unloading();
       }

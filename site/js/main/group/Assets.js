@@ -58,8 +58,8 @@ let Assets = function () {
       }
     }
   main.setAttribute(`tabindex`, -1);
-  topMenuBarDisplay(topBar);
   displayExpand(expand);
+  Topbar(topBar);
   main.focus();
   unloading();
 };

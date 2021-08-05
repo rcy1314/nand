@@ -139,7 +139,7 @@ setTimeout(
             showSplash
           )
             _check.style.display = `block`;
-          topMenuBarDisplay(topBar);
+          Topbar(topBar);
           Filter(uri);
         }, 250
       );
