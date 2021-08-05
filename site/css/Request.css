@@ -440,11 +440,11 @@
 }
 
 .yt .image {
+  margin-bottom: 20px !important;
   position: relative !important;
   overflow: hidden !important;
   height: 170px !important;
   width: 100% !important;
-  margin: 0 !important;
 }
 
 .yt .image img {

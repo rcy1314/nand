@@ -103,6 +103,7 @@ _sidebar
             );
         }
         else if (
+          display != `sideScroll` &&
           !cropImages
         ) {
           _main
@@ -119,9 +120,18 @@ _sidebar
             );
         }
         if (
-          display == `flexBox`
+          document
+            .body
+              .contains(
+                _center
+                  .querySelector(
+                    `.item`
+                  )
+              )
+            &&
+              display == `flexBox`
         )
-          displayFlex(flexBox);
+          displayFlex();
         sideBarStar(
           evt
             .target,

@@ -61,11 +61,6 @@
     top: 0px;
   }
 
-  .center {
-    top: 60px !important;
-    left: 0 !important;
-  }
-
   .flexbox .item {
     width: 100% !important;
   }
@@ -117,12 +112,12 @@
 
   .sideChannel {
     height: fit-content !important;
-    margin-top: 60px !important;
+    margin-top: 50px !important;
     top: 0 !important;
   }
 
   .sideItem {
-    height: 380px !important;
+    height: 260px !important;
     width: 320px !important;
     display: inline-table;
     margin-right: 50px;
@@ -134,14 +129,15 @@
 
   .sideChannel {
     height: fit-content !important;
+    margin-top: 60px !important;
     width: 100vw !important;
   }
 
   .sideItem {
-    height: 380px !important;
-    width: 320px !important;
     display: inline-table;
     margin-right: 50px;
+    height: 260px;
+    width: 320px;
   }
 
   #toggle,
@@ -185,7 +181,6 @@
 
   #main,
   #xml {
-    height: 100% !important;
     width: 100% !important
     right: 0 !important;
   }
