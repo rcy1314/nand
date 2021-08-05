@@ -415,6 +415,11 @@ setTimeout(
         display == viewport[cycleViewport]
 
         if (
+          display == `sideScroll`
+        )
+          cropImages == true;
+
+        if (
           backgroundImage[0].element === `container`
         )
           _container.style.backgroundImage =

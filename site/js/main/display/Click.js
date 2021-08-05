@@ -72,7 +72,7 @@ _container
               cycleViewport = cycleViewport + 1
           }
 
-          else if (
+          if (
             viewport[cycleViewport] == `sideScroll`
           ) {
             display = `sideScroll`;

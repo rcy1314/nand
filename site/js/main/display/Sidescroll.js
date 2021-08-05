@@ -1,7 +1,7 @@
 let displaySideScroll = function () {
   display == `sideScroll`;
   scrollIntoView = false;
-
+  
   _channel.classList.add(`sideChannel`);
   _xml.style.justifyContent = `center`;
   _center.classList.add(`sideChannel`);

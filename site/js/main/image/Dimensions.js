@@ -61,29 +61,17 @@ var Dimensions = function (
     attribute.style.height = `74px`;
   } else {
     if (
-      Height >= Width &&
+      cropImages &&
       document.body.contains(
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
       ||
-      menu[id].id.match(/Youtube/g) ||
-      cropImages
+      menu[id].id.match(/Youtube/g) &&
+      !youtubeMedia
     )
-      itemContainer.style.height = `270px`;
-    else if (
-      cropImages
-      &&
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-        )
-      )
-      &&
-      Height <= Width
-    )
-      itemContainer.style.height = `fit-content`;
+      itemContainer.style.height = `160px`;
     else if (
       !cropImages
       &&
@@ -92,20 +80,6 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
-      &&
-      Height >= Width
-    )
-      itemContainer.style.height = `auto`;
-    else if (
-      !cropImages
-      &&
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-        )
-      )
-      &&
-      Height <= Width
     )
       itemContainer.style.height = `fit-content`;
     if (
