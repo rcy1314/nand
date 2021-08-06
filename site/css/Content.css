@@ -134,11 +134,15 @@ html body,
 #main #check {
   background-color: transparent;
   color: var(--fill-color);
+  transition: all 2000ms;
   margin-bottom: 100px;
   position: absolute;
+  overflow: hidden;
   font-size: 11px;
   position: fixed;
+  height: 200px;
   display: none;
+  width: 300px;
   z-index: 12;
 }
 
@@ -146,10 +150,11 @@ html body,
   font-family: 'Share Tech Mono' !important;
   transform: translate(-50%, -50%);
   color: var(--loader-color);
+  position: absolute;
   font-weight: 900;
   margin-top: 35px;
   font-size: 135px;
-  position: fixed;
+  overflow: hidden;
   left: 50%;
   top: 50%;
 }

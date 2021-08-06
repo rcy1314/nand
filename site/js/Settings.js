@@ -3,7 +3,7 @@ let doc = `n@nd`
 
 
 // initial theme
-let set = `Informative`;
+let set = `Light`;
 
 /*
     backgroundImage [array]
@@ -297,7 +297,7 @@ let toggleBorders = false;
 
 */
 
-let onlySearch = false;
+let onlySearch = true;
 
 /*
     quickFeeds [boolean/integer]
@@ -340,7 +340,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `loading`;
+let imageLoader = false;
 
 /*
     cropImages [boolean/integer]
@@ -572,18 +572,8 @@ let safeSearchScore = `0.013473876751959324`;
 */
 
 let safeSearchIDs = [
-  `Reddit/Celebs`,
-  `Reddit/Celebhub`,
-  `Reddit/IRL Girls`,
-  `Reddit/Goddesses`,
-  `Reddit/Internet Stars`,
-  `Reddit/High Res Celebs`,
-  `Reddit/UHQ Celebs`,
-  `4Chan/Sports`,
-  `4Chan/Technology`,
-  `4Chan/Wallpapers`,
-  `4Chan/High Resolution`,
-  `4Chan/Gif`
+  `Reddit/Pretty Girls`,
+  `Reddit/Selfies`,
 ];
 
 /*
