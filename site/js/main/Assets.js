@@ -234,7 +234,6 @@ var menu=[
 {id:`Reddit/Hacker News`,category:`Reddit`,title:``,description:`Hacker News subreddit A mirror of Hacker News' best submissions.`,uri:`https://www.reddit.com/r/hackernews/.rss`,image:`Reddit`,hash:`nH`,media:!1},
 {id:`Reddit/Hardware`,category:`Reddit`,title:``,description:`Hardware subreddit a place for quality hardware, reviews, and intelligent discussion.`,uri:`https://www.reddit.com/r/hardware/.rss`,image:`Hardware`,hash:`wR`,media:!1},
 {id:`Reddit/Intel`,category:`Reddit`,title:``,description:`Intel subreddit for enthusiasts to discuss Intel products and Intel's competition.`,uri:`https://www.reddit.com/r/intel/.rss`,image:`Intel`,hash:`tN`,media:!1},
-{id:`Reddit/Internet Stars`,category:`Reddit`,title:``,description:`Internet Stars subreddit Instagram women with links so you never need to ask for sources.`,uri:`https://www.reddit.com/r/internetstars/.rss`,image:`InternetStars`,hash:`iS`,media:!0},
 {id:`Reddit/iOS`,category:`Reddit`,title:``,description:`iOS subreddit for everything Apple iOS.`,uri:`https://www.reddit.com/r/ios/.rss`,image:`iOS`,hash:`Si`,media:!1},
 {id:`Reddit/Javascript`,category:`Reddit`,title:``,description:`Javascript subreddit All about the 𝚓𝚊𝚟𝚊𝚜𝚌𝚛𝚒𝚙𝚝 programming language.`,uri:`https://www.reddit.com/r/javascript/.rss`,image:`Javascript`,hash:`Sj`,media:!1},
 {id:`Reddit/Laptops`,category:`Reddit`,title:``,description:`Laptop subreddit place to discuss anything laptop.`,uri:`https://www.reddit.com/r/laptop/.rss`,image:`Reddit`,hash:`lR`,media:!1},
