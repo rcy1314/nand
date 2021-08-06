@@ -573,17 +573,7 @@ let safeSearchScore = `0.013473876751959324`;
 
 let safeSearchIDs = [
   `Reddit/Celebs`,
-  `Reddit/Celebhub`,
-  `Reddit/IRL Girls`,
-  `Reddit/Goddesses`,
-  `Reddit/Internet Stars`,
-  `Reddit/High Res Celebs`,
-  `Reddit/UHQ Celebs`,
-  `4Chan/Sports`,
-  `4Chan/Technology`,
-  `4Chan/Wallpapers`,
-  `4Chan/High Resolution`,
-  `4Chan/Gif`
+  `Reddit/Selfies`,
 ];
 
 /*
