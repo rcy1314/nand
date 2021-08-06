@@ -13,6 +13,8 @@ let Progress = function (done) {
             safeSearchIDs.includes(
               menu[id].id
             )
+              &&
+            safeSearch
           )
             width = _container.clientWidth / (count.length - 1);
           else if (
