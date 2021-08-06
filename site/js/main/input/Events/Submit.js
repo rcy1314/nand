@@ -251,7 +251,7 @@ document
               .display
                 =
               `none`;
-          topMenuBarDisplay(topBar);
+          Topbar(topBar);
         }
 
       }
@@ -402,7 +402,7 @@ document
               .zIndex
                 =
               `1`;
-          topMenuBarDisplay(topBar);
+          Topbar(topBar);
           Request(
             _first
               .querySelector(

@@ -10,7 +10,7 @@ _page
           _guest.value.length > 0
         ) {
           Filter(_guest.value);
-          topMenuBarDisplay(topBar);
+          Topbar(topBar);
         }
       }
       event.preventDefault();
@@ -191,7 +191,7 @@ _container
             .display
               =
             `none`;
-        topMenuBarDisplay(topBar);
+        Topbar(topBar);
       }
       evt.preventDefault();
     },
