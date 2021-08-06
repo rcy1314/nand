@@ -3,7 +3,7 @@ let doc = `n@nd`
 
 
 // initial theme
-let set = `Gentoo`;
+let set = `Light`;
 
 /*
     backgroundImage [array]
@@ -297,7 +297,7 @@ let toggleBorders = false;
 
 */
 
-let onlySearch = false;
+let onlySearch = true;
 
 /*
     quickFeeds [boolean/integer]
