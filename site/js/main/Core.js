@@ -80,6 +80,8 @@ const _channel = document.querySelector(`.channel`);
 
 const _container = document.getElementById(`container`);
 
+const _trademark = document.querySelector(`.trademark`);
+
 const _progress = document.getElementById(`progressBar`);
 
 const _suggestions = document.querySelector(`.suggestions`);

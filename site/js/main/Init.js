@@ -462,38 +462,50 @@ setTimeout(
             !location.href.split(`?`)[1] &&
             !Reader
           ) {
-          _container.style.display = `block`;
-          _check.style.display = `block`;
-          _check.style.opacity = `0`;
-          _sb.style.display = `none`;
+            _container.style.display = `block`;
+            _sb.style.display = `none`;
+            _check.style.display = `block`;
+            _check.style.opacity = `0`;
 
-          setTimeout(
-            function () {
-              _check.style.opacity = `1`;
+            setTimeout(
+              function () {
 
-              setTimeout(
-                function () {
-                  _visit.style.opacity = `1`;
-                  _guest.setAttribute(`tabindex`, -1);
-                  _check.style.opacity = `0`;
-                  Sidebar(onScreen);
+                _check.style.display = `block`;
+                _check.style.opacity = `1`;
 
-                  setTimeout(
-                    function() {
-                      _sb.style.display = `block`;
-                      _check.style.display = `none`;
-                      _check.style.opacity = `1`
-                    }, 2000
-                  )
+                setTimeout(
+                  function () {
+                    _check.style.opacity = `1`;
+                    _check.classList.add(`stroke`);
+                    _trademark.classList.add(`bootup`);
 
-                  _guest.focus();
-                }, 4000
-              )
+                    setTimeout(
+                      function () {
+                        _visit.style.opacity = `1`;
+                        _guest.setAttribute(`tabindex`, -1);
+                        _check.style.opacity = `0`;
+                        Sidebar(onScreen);
 
-            }, 750
-          )
+                        setTimeout(
+                          function() {
+                            _trademark.classList.remove(`bootup`);
+                            _check.classList.remove(`stroke`);
+                            _check.style.display = `none`;
+                            _sb.style.display = `block`;
+                            _check.style.opacity = `1`
+                          }, 2000
+                        )
+
+                        _guest.focus();
+                      }, 4000
+                    )
+
+                  }, 2000
+                )
+              }, 1250
+            )
+          }
         }
-      }
         else {
           _container.style.display = `block`;
           _check.style.display = `none`;

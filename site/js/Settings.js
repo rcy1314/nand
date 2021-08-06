@@ -3,7 +3,7 @@ let doc = `n@nd`
 
 
 // initial theme
-let set = `Informative`;
+let set = `Gentoo`;
 
 /*
     backgroundImage [array]
@@ -340,7 +340,7 @@ let scrollIntoView = true;
 
 */
 
-let imageLoader = `loading`;
+let imageLoader = false;
 
 /*
     cropImages [boolean/integer]
