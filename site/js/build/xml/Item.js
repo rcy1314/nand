@@ -95,6 +95,7 @@ let xmlHTMLBuild = function (htmlArray) {
     loader.style.display = `none`;
   } else if (!imageLoader) {
     original.style.display = `none`;
+    loading.style.display = `none`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   }
