@@ -61,8 +61,7 @@ String.prototype.capitalize = function () {
       .replace(
         /(\b[a-z](?!\s))/g,
           function (string) {
-            return
-              string
+            return string
                 .toUpperCase();
             }
       );
