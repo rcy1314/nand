@@ -251,7 +251,7 @@
 }
 
 .stroke {
-  animation: stroke 1s ease-in-out forwards;
+  animation: margin 1s ease-in-out forwards;
 }
 
 .bootup {
@@ -453,6 +453,12 @@
 }
 
 @keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes margin {
   0% {
     width: 300px;
   }
