@@ -82,15 +82,20 @@ let xmlHTMLBuild = function (htmlArray) {
   item.append(head);
   if (imageLoader == `double-circle`) {
     original.style.display = `none`;
+    loading.style.display = `none`;
+    loader.style.display = `block`;
     bars.style.display = `none`;
   } else if (imageLoader == `loading`) {
     original.style.display = `none`;
+    loading.style.display = `block`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   } else if (imageLoader == `ring-circle`) {
+    loading.style.display = `none`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   } else if (imageLoader == `v-bars`) {
+    loading.style.display = `none`;
     original.style.display = `none`;
     loader.style.display = `none`;
   } else if (!imageLoader) {
