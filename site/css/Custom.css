@@ -136,8 +136,12 @@
   .sideItem {
     display: inline-table;
     margin-right: 50px;
-    height: 260px;
+    height: 380px;
     width: 320px;
+  }
+
+  .sb {
+    top: 7px !important;
   }
 
   #toggle,

@@ -572,7 +572,6 @@ let safeSearchScore = `0.013473876751959324`;
 */
 
 let safeSearchIDs = [
-  `Reddit/Pretty Girls`,
   `Reddit/Selfies`,
 ];
 
