@@ -92,7 +92,7 @@ _container
                   )
                 )
               );
-            SideScroll();
+            Sidescroll();
             _channel.scrollLeft = leaveOff;
             (function () {
               function checkPosition() {
