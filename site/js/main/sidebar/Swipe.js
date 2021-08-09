@@ -1,7 +1,6 @@
 let Swipe = function () {
   if (
     display !== `sideScroll` &&
-    window.innerWidth <= 768 &&
     touchendX - 75 >
     touchstartX
   ) {
