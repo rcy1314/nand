@@ -55,7 +55,7 @@ let Flex = function () {
     _channel.querySelector(`#bottom`).style.cssText = min;
 
   _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
-  _channel.style.height = `${(max + 2000).toString()}px`
+  _channel.style.height = `${(max + 2500).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);
