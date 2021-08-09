@@ -62,10 +62,17 @@ Copyright Notice
 <em>Images and information retrieved and or displayed in project   
 are not owned by the developers, and are only non - consent</em>
 
-### Notice
+Notice
+----
 
   This project makes requests to external resources  
-  including a cors-proxy, nsfw api, and any asset(s).
+  including a cors-proxy, nsfw api, and any asset(s)
+
+Note
+----
+  <em>If the viewport is unstable when  
+  images load turn on cropImages
+
 
 License
 ----
