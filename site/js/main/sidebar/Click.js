@@ -1,4 +1,4 @@
-_sidebar
+_container
   .addEventListener(
     'click', (evt) =>
     {
@@ -17,8 +17,12 @@ _sidebar
         evt.target.classList.contains(
           `show`
         )
+        ||
+        evt.target.classList.contains(
+          `sb`
+        )
       ) {
-        onScreen = true
+        onScreen = true;
         Sidebar(onScreen);
         _sb.style.display = `none`;
       }
