@@ -14,14 +14,14 @@ _sidebar
         expand = true;
         groupType = `list`;
         Category(category);
-        sideBarStar(
+        Star(
           _sidebar
             .querySelector(
               `.Blocks`
             ),
             false
           );
-        sideBarStar(
+        Star(
           evt
             .target,
           List
@@ -39,14 +39,14 @@ _sidebar
         Group();
         expand = false;
         groupType = `blocks`;
-        sideBarStar(
+        Star(
           _sidebar
             .querySelector(
               `.List`
             ),
             false
           );
-        sideBarStar(
+        Star(
           evt
             .target
           ,
