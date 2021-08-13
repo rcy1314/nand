@@ -505,6 +505,11 @@ setTimeout(
               }, 1250
             )
           }
+          else {
+            _container.style.display = `block`;
+            _check.style.display = `none`;
+            _check.style.opacity = `1`;
+          }
         }
         else {
           _container.style.display = `block`;
@@ -514,7 +519,7 @@ setTimeout(
           _guest.focus();
         }
 
-    }, 300
+    }, 100
   )
 
   if (
