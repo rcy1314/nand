@@ -114,8 +114,12 @@ _container
         done = true
         document.title = doc;
         _top.style.display = `none`;
-        _progress.style.transition = `none`;
-        _progress.style.width = `100%`;
+        if (
+          _progress.clientWidth !== 0
+        ) {
+          _progress.style.transition = `none`;
+          _progress.style.width = `100%`;
+        }
 
         _channel.style.height = `0`;
 
