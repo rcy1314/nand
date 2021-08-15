@@ -287,7 +287,7 @@
   align-items: center;
   position: absolute;
   display: flex;
-  height: 170px;
+  height: 160px;
 }
 
 #main #xml .center .item .image {
@@ -296,7 +296,7 @@
   align-items: center;
   position: absolute;
   display: flex;
-  height: 170px;
+  height: 270px;
 }
 
 #main #xml .center .item .img, {
@@ -443,7 +443,7 @@
   margin-bottom: 20px !important;
   position: relative !important;
   overflow: hidden !important;
-  height: 170px !important;
+  height: 160px !important;
   width: 100% !important;
 }
 

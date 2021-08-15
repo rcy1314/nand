@@ -9,6 +9,9 @@ var Dimensions = function (
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
+  let itemPending = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pending`
+  );
   let itemImage = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
   );
@@ -80,8 +83,9 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
-    )
+    ) {
       itemContainer.style.height = `fit-content`;
+    }
     if (
       document.body.contains(
         _channel.querySelector(
