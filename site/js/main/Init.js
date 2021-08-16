@@ -476,7 +476,7 @@ setTimeout(
                 setTimeout(
                   function () {
                     _check.style.opacity = `1`;
-                    _check.classList.add(`stroke`);
+                    _check.classList.add(`margin`);
                     _trademark.classList.add(`bootup`);
 
                     setTimeout(
@@ -489,7 +489,7 @@ setTimeout(
                         setTimeout(
                           function() {
                             _trademark.classList.remove(`bootup`);
-                            _check.classList.remove(`stroke`);
+                            _check.classList.remove(`margin`);
                             _check.style.display = `none`;
                             _sb.style.display = `block`;
                             _check.style.opacity = `1`

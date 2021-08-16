@@ -183,10 +183,10 @@ _sidebar
           );
         } else if (onlySearch == false) {
           _under.style.display = `inline-flex`;
+          _show.style.display = `inline-block`;
+          _link.style.display = `inline-block`;
           _options.style.display = `block`;
           _social.style.display = `block`;
-          _show.style.display = `block`;
-          _link.style.display = `block`;
           Star(
             evt
               .target,

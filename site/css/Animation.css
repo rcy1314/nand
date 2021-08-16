@@ -250,12 +250,12 @@
   transition: .5s;
 }
 
-.stroke {
-  animation: margin 1s ease-in-out forwards;
+.margin {
+  animation: margin 2s ease-in-out forwards;
 }
 
 .bootup {
-  animation: bootup 1s ease-in-out forwards;
+  animation: bootup 2s ease-in-out forwards;
 }
 
 @keyframes circle-inner {
@@ -460,10 +460,10 @@
 
 @keyframes margin {
   0% {
-    width: 300px;
+    width: 360px;
   }
   100% {
-    width: 75px;
+    width: 120px;
   }
 }
 
@@ -473,8 +473,8 @@
     left: 50%;
   }
   100% {
-    left: calc(50% - 40px);
-    margin-left: 80px;
+    left: calc(50% - 50px);
+    margin-left: 90px;
   }
 }
 
