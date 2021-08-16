@@ -128,7 +128,8 @@ _container
         )
           location.href.split(`?`)[0].state();
         if (
-          _sidebar.style.left === 0
+          _sidebar.offsetLeft == `-280` ||
+          _sidebar.offsetLeft == `-250`
         )
           _sb.style.display = `block`;
 
