@@ -71,7 +71,7 @@ input[type=submit] {
   align-items: left;
   margin: 0 auto;
   display: flex;
-  height: 38px;
+  height: 36px;
   width: 640px;
   top: -2px;
 }
