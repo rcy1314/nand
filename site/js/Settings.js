@@ -572,7 +572,7 @@ let safeSearchScore = `0.013473876751959324`;
 */
 
 let safeSearchIDs = [
-  `Reddit/Selfies`,
+  `Reddit/Selfie`,
 ];
 
 /*
@@ -588,7 +588,7 @@ let safeSearchIDs = [
 
 */
 
-let exclude = [`Buy`, `Sale`, `Shop`];
+let exclude = [`Buy`, `Sale`, `Price`, `Shop`];
 
 /*
     cors [string]
