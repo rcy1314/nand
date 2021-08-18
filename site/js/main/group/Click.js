@@ -41,7 +41,7 @@ _container
         )
           setTimeout(
             function () {
-              topMenuBarDisplay(topBar);
+              Topbar(topBar);
               Assets();
               displayExpand(expand);
               unloading();

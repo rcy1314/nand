@@ -363,7 +363,7 @@ _container
         ) {
           let url =
             menu[id].uri.match(
-              /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
+        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
             );
           url.toString().blank();
         }
@@ -410,8 +410,10 @@ _container
             `download`
           )
         ) {
-          var menuObject = evt.target.closest(`.item`).getAttribute(`aria-object`);
-          var pubIndex = evt.target.closest(`.item`).getAttribute(`aria-item`);
+          var menuObject =
+            evt.target.closest(`.item`).getAttribute(`aria-object`);
+          var pubIndex =
+            evt.target.closest(`.item`).getAttribute(`aria-item`);
           var xhr = new XMLHttpRequest();
           var url =
           document
@@ -428,7 +430,7 @@ _container
                 file,
                 _container
                   .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .source`
                   ).value
               )
             }

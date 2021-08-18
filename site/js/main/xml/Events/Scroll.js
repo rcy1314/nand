@@ -13,7 +13,13 @@ _main
       }, 7500);
       if (
         (
-          _main.scrollHeight - _main.scrollTop - _main.clientHeight <= offset &&
+          _main.scrollHeight
+            -
+          _main.scrollTop
+            -
+          _main.clientHeight
+            <=
+          offset &&
           Reader &&
           !stop
         )
@@ -75,10 +81,14 @@ _channel
         );
       if (
         (
-          _channel.scrollWidth -
-          _channel.scrollLeft -
-          _channel.clientWidth <=
-          _channel.clientWidth &&
+          _channel.scrollWidth
+            -
+          _channel.scrollLeft
+            -
+          _channel.clientWidth
+            <=
+          _channel.clientWidth
+            &&
           Reader &&
           !stop
         )

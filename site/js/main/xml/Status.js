@@ -9,6 +9,7 @@ var Status = function (
         oldestPost,
         recentPost,
         postsCount,
-        menuIndex)
-      );
+        menuIndex
+      )
+    );
 };
