@@ -366,6 +366,7 @@ var menu=[
 {id:`Polygon`,category:`Tech`,title:``,description:`Polygon Our culture focused site covers games, their creators, the fans, trending stories and entertainment news.`,uri:`https://www.polygon.com/rss/index.xml`,image:`Polygon`,hash:`pY`,media:!0},
 {id:`Popular Mechanics`,category:`Tech`,title:``,description:`Popular Mechanics is a magazine of Popular Science and Technology.`,uri:`https://www.popularmechanics.com/rss/all.xml`,image:`PopularMechanics`,hash:`mP`,media:!0},
 {id:`Phoronix`,category:`Tech`,title:``,description:`Phoronix Linux Hardware Reviews and Technology.`,uri:`https://www.phoronix.com/rss.php`,image:`Phoronix`,hash:`xP`,media:!1},
+{id:`Review Geek`,category:`Tech`,title:``,description:`Review Geek is a technology and gadget website with a singular focus: saving you time and money.`,uri:`https://www.reviewgeek.com/feed`,image:`ReviewGeek`,hash:`Rk`,media:!0},
 {id:`Security Affairs`,category:`Tech`,title:``,description:`Security Affairs Every security issue is our affair.`,uri:`http://securityaffairs.co/wordpress/feed`,image:`SecurityAffairs`,hash:`iF`,media:!1},
 {id:`Sky News`,category:`Tech`,title:``,description:`Sky News Technology is a British organisation, which operates a TV network.`,uri:`http://feeds.skynews.com/feeds/rss/technology.xml`,image:`SkyNews`,hash:`kS`,media:!0},
 {id:`Slashdot`,category:`Tech`,title:``,description:`Slashdot is a social News website that originally billed itself as News for Nerds.`,uri:`http://rss.slashdot.org/Slashdot/slashdot`,image:`Slashdot`,hash:`lT`,media:!1},
