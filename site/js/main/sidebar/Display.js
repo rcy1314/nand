@@ -12,7 +12,7 @@ let Sidebar = function (Value) {
     if (
         sideBarMouse == false ||
         window.innerWidth <= 425 &&
-        sideScroll == true
+        display == `sideScroll`
       )
       _min.style.cssText = `display: block !important;`
       _bar.style.display = `none`;
