@@ -588,7 +588,7 @@ let safeSearchIDs = [
 
 */
 
-let exclude = [`Buy`, `Sale`, `Price`, `Shop`];
+let exclude = [`Buy`, `Sale`, `Save`, `Price`, `Shop`];
 
 /*
     cors [string]
