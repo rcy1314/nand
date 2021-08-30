@@ -50,6 +50,5 @@ var Title = function (xhr) {
         )[0]
           .childNodes[0]
             .nodeValue;
-
   return title.replace(/<.>/g, ``);
 };

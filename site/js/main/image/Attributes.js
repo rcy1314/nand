@@ -32,7 +32,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
   ) {
     _channel
       .querySelectorAll(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
       )
         .forEach(
           (a) => a.remove()
