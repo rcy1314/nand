@@ -7,7 +7,7 @@ _container
           `joi`
         )
       ) {
-          topMenuBarDisplay(topBar);
+          Topbar(topBar);
           Reader = Reader != true;
           if (
             !Reader
