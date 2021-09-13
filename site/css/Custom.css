@@ -137,7 +137,7 @@
 
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
-    height: fit-content;
+    height: fit-content !important;
     position: relative;
     width: 140px !important;
     left: -150px !important;
@@ -159,9 +159,17 @@
 
   .sideItem {
     display: inline-table;
-    margin-right: 50px;
-    height: 380px;
-    width: 320px;
+    margin-right: 50px !important;
+    height: 380px !important;
+    width: 320px !important;
+  }
+
+  .sideItem .image {
+    width: 320px !important;
+  }
+
+  .item {
+    margin-bottom: 70px !important;
   }
 
   .sb {
@@ -430,6 +438,7 @@
   }
 
   .yt {
+    height: fit-content !important;
     display: block !important;
     width: 100% !important;
   }
