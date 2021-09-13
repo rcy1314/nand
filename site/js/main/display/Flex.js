@@ -56,6 +56,18 @@ let Flex = function () {
   if (
     window.innerWidth <= 425
   ) {
+    if (
+      menu[id].id.match (/Youtube/g)
+    )
+      _channel
+        .querySelectorAll(
+          `.item`
+        )
+          .forEach(
+            (a) =>
+              a.style.height =
+                `80px`
+          );
     _center.style.cssText = `display:inline-flex;width:930px;left:150px`;
   }
   else _center.style.cssText = `display:inline-flex;width:930px;left:320px`;

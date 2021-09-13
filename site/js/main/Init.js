@@ -513,7 +513,7 @@ setTimeout(
           _guest.focus();
         }
 
-    }, 100
+    }, 300
   )
 
   if (

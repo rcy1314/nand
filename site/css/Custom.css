@@ -127,12 +127,28 @@
 
 @media screen and (max-width: 425px) {
 
+  .center #bottom {
+    display: none !important;
+  }
+
+  .flexbox .yt .image {
+    height: 80px !important;
+  }
+
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content;
     position: relative;
     width: 140px !important;
     left: -150px !important;
+  }
+
+  .flexbox .item .header {
+    display: none !important;
+  }
+
+  .flexbox .item .wrap {
+    display: none !important;
   }
 
   .sideChannel {
