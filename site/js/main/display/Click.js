@@ -46,9 +46,6 @@ _container
             viewport[cycleViewport] == `flexBox`
           ) {
 
-            if (
-              window.innerWidth > 915
-            ) {
               display = `flexBox`;
               notifyOption(`Flex Box`, `fa-times-circle`)
               let leaveOff = _main.scrollTop -
@@ -67,9 +64,6 @@ _container
               );
               Flex();
               _main.scrollTop = leaveOff;
-            }
-            else
-              cycleViewport = cycleViewport + 1
           }
 
           if (

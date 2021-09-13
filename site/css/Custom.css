@@ -127,6 +127,14 @@
 
 @media screen and (max-width: 425px) {
 
+  .flexbox .item {
+    margin: 0 2px 2px 0 !important;
+    height: fit-content;
+    position: relative;
+    width: 140px !important;
+    left: -150px !important;
+  }
+
   .sideChannel {
     height: fit-content !important;
     margin-top: 60px !important;

@@ -53,8 +53,12 @@ let Flex = function () {
     !Reader
   )
     _channel.querySelector(`#bottom`).style.cssText = min;
-
-  _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
+  if (
+    window.innerWidth <= 425
+  ) {
+    _center.style.cssText = `display:inline-flex;width:930px;left:150px`;
+  }
+  else _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
   _channel.style.height = `${(max + 2500).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);

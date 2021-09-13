@@ -390,12 +390,6 @@ setTimeout(
 
     setTimeout(
       function () {
-        if (
-          window.innerWidth <= 425
-        ) {
-          display = `legacy`;
-          onScreen = false;
-        }
 
         if (
           display == `flexBox`
