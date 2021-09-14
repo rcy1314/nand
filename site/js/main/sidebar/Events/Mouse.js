@@ -40,6 +40,7 @@ if (
           setTimeout(
             function() {
               Sidebar(onScreen);
+              _sb.style.display = `block`;
             }, 750
           )
         }
