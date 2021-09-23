@@ -28,7 +28,7 @@ var Dimensions = function (
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
   let copyPost = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .post`
+    `[aria-item='${pubIndex}'][aria-item='${pubIndex}'] .post`
   );
   if (
     Width < maximum &&
@@ -70,12 +70,21 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
-      ||
+      &&
       menu[id].id.match(/Youtube/g) &&
       !youtubeMedia
-    )
+    ) {
       itemContainer.style.height = `160px`;
-    else if (
+      itemPending.style.height = `160px`;
+      itemImage.style.height = `160px`;
+    } else if (
+      window.innerWidth < 768 &&
+      cropImages
+    ) {
+      itemContainer.style.height = `80px`;
+      itemPending.style.height = `80px`;
+      itemImage.style.height = `80px`;
+    } else if (
       !cropImages
       &&
       document.body.contains(

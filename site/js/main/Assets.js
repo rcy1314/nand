@@ -412,7 +412,6 @@ var menu=[
 {id:`Yahoo Technology`,category:`Tech`,title:``,description:`Yahoo is a web services provider headquartered in California, and owned by Verizon Media.`,uri:`https://www.yahoo.com/tech/rss`,image:`Yahoo`,hash:`tA`,media:!0},
 {id:`ABC World`,category:`World`,title:``,description:`ABC is an American broadcast television network that is property of Walt Disney.`,uri:`https://abcnews.go.com/abcnews/internationalheadlines`,image:`ABC`,hash:`wA`,media:!0},
 {id:`Al Jazeera`,category:`World`,title:``,description:`Al Jazeera is an Arabic-language television channel from Doha, Qatar.`,uri:`https://www.aljazeera.com/xml/rss/all.xml`,image:`AlJazeera`,hash:`aJ`,media:!1},
-{id:`Axios`,category:`World`,title:``,description:`Axios known for delivering coverage and insight with a distinctive brand of smart brevity.`,uri:`https://api.axios.com/feed`,image:`Axios`,hash:`xS`,media:!0},
 {id:`BBC World`,category:`World`,title:``,description:`BBC is the world’s leading public service broadcaster.`,uri:`http://feeds.bbci.co.uk/news/rss.xml`,image:`BBC`,hash:`cD`,media:!1},
 {id:`Boston Herald`,category:`World`,title:``,description:`Boston Herald is the leading source of breaking, local, sports, politics, and entertainment.`,uri:`https://www.bostonherald.com/feed`,image:`BostonHerald`,hash:`hB`,media:!0},
 {id:`CBS World`,category:`World`,title:``,description:`CBS is a media company that creates and distributes industry-leading content.`,uri:`https://www.cbsnews.com/latest/rss/world`,image:`CBS`,hash:`Lw`,media:!1},
