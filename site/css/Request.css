@@ -296,7 +296,7 @@
   align-items: center;
   position: absolute;
   display: flex;
-  height: 270px;
+  height: 100px;
 }
 
 #main #xml .center .item .img, {
