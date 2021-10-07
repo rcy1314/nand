@@ -166,6 +166,7 @@ _container
               =
             `1`;
         touchmove = true;
+        Cleanup();
         Request(
           evt
             .target

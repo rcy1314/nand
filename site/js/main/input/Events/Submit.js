@@ -295,6 +295,7 @@ document
               .zIndex
                 =
               `1`;
+          Cleanup();
           Request(
             _match
               .querySelector(
@@ -402,6 +403,7 @@ document
               .zIndex
                 =
               `1`;
+          Cleanup();
           Topbar(topBar);
           Request(
             _first
