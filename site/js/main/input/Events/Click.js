@@ -107,35 +107,7 @@ _container
           .target
             .classList
               .contains(
-                `textMatch`
-              )
-        ||
-        evt
-          .target
-            .classList
-              .contains(
-                `buffer`
-              )
-        ||
-        evt
-          .target
-            .classList
-              .contains(
                 `detail`
-              )
-        ||
-        evt
-          .target
-            .classList
-              .contains(
-                `input`
-              )
-        ||
-        evt
-          .target
-            .classList
-              .contains(
-                `hover`
               )
     ) {
       if (
@@ -171,7 +143,7 @@ _container
           evt
             .target
               .closest(
-                `.index`
+                `.hover`
               )
                 .getAttribute(
                   `aria-object`
@@ -194,7 +166,6 @@ _container
             `none`;
         Topbar(topBar);
       }
-      evt.preventDefault();
     },
     {
       passive:
