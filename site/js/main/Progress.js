@@ -10,14 +10,6 @@ let Progress = function (done) {
       setInterval(
         function () {
           if (
-            safeSearchIDs.includes(
-              menu[id].id
-            )
-              &&
-            safeSearch
-          )
-            width = _container.clientWidth / (count.length - 1);
-          else if (
             !width ||
             width == `Infinity` &&
             count.length <= 0

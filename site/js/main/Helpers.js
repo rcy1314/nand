@@ -126,7 +126,7 @@ let anyRandomMenuObject = function () {
   let random = [];
   let randomObject;
   for (
-    i = 1;
+    i = 0;
     i <= menu.length - 1;
     i++
   ) {
@@ -153,6 +153,10 @@ let anyRandomMenuObject = function () {
         Math.random() * random.length - 1
       )
     ];
+  console.log(`
+    ${randomObject}
+    ${menu[randomObject].id}
+  `)
   while (
     !randomDuplicate.includes(randomObject) &&
     menu[randomObject]

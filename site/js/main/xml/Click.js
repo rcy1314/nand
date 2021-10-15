@@ -25,7 +25,8 @@ _container
             if (
               display == `flexBox`
             )
-              displayFlex();
+              Flex();
+            Cleanup();
           }
           else if (
             Reader

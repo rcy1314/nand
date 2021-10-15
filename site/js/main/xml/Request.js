@@ -9,7 +9,6 @@ var Request = function (index) {
   let inline = [];
   imageDuplicate = [];
   _sb.style.display = `none`;
-  console.log(menu[index].id);
   _toggle.style.display = `none`;
   _container.style.display = `block`;
   document.title = menu[index].id.space();

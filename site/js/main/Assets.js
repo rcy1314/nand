@@ -25,6 +25,7 @@
        channel: https://www.youtube.com/feeds/videos.xml?channel_id=
 
 */
+
 var menu=[
 {id:`CBS/Washington DC`,category:`News`,title:``,description:`WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.`,uri:`http://rssfeeds.wusa9.com/wusa-news&x=1`,image:`WUSA9`,hash:`wa`,media:!1},
 {id:`ABC/Fresno`,category:`News`,title:``,description:`KFSN Local Fresno and National News.`,uri:`https://abc30.com/feed`,image:`KFSNTV30`,hash:`fA`,media:!0},
@@ -150,7 +151,6 @@ var menu=[
 {id:`Cheatsheet`,category:`Media`,title:``,description:`Cheatsheet is dedicated to providing audiences the information they want in an approachable, entertaining way.`,uri:`https://www.cheatsheet.com/feed`,image:`CheatSheet`,hash:`Ae`,media:!0},
 {id:`Closer Weekly`,category:`Media`,title:``,description:`Closer Weekly Your ultimate source for breaking celebrity updates — get closer to the stars you love.`,uri:`https://www.closerweekly.com/feed`,image:`CloserWeekly`,hash:`wC`,media:!0},
 {id:`CBS Entertainment`,category:`Media`,title:``,description:`CBS Entertainment Celebrity, Movies, TV shows, and more.`,uri:`https://www.cbsnews.com/latest/rss/entertainment`,image:`CBS`,hash:`iA`,media:!1},
-{id:`Celebrity Insider`,category:`Media`,title:``,description:`Celebrity Insider celebrities in Hollywood, TV, movies, music, fashion, lifestyle, and entertainment.`,uri:`https://celebrityinsider.org/feed`,image:`CelebrityInsider`,hash:`cI`,media:!0},
 {id:`CNN`,category:`Media`,title:``,description:`CNN Entertainment Celebrities, Movies, TV, and Music.`,uri:`http://rss.cnn.com/rss/cnn_showbiz.rss`,image:`CNN`,hash:`mN`,media:!1},
 {id:`ComingSoon`,category:`Media`,title:``,description:`ComingSoon has New Movies, Movie Trailers, TV, Digital, Blu-ray & Video Game Content!`,uri:`https://www.comingsoon.net/feed`,image:`ComingSoon`,hash:`oS`,media:!0},
 {id:`Cosmopolitan`,category:`Media`,title:``,description:`Cosmopolitan the Woman's Magazine for Fashion.`,uri:`https://www.cosmopolitan.com/rss/all.xml`,image:`Cosmopolitan`,hash:`Om`,media:!0},
@@ -349,7 +349,6 @@ var menu=[
 {id:`gHacks`,category:`Tech`,title:``,description:`gHacks the Independent Technology blog.`,uri:`https://www.ghacks.net/feed`,image:`gHacks`,hash:`Ga`,media:!0},
 {id:`HackADay`,category:`Tech`,title:``,description:`HackADay serves up Fresh Hacks Every Day from around the Internet.`,uri:`https://hackaday.com/feed`,image:`HackADay`,hash:`yH`,media:!0},
 {id:`Heavy Technology`,category:`Tech`,title:``,description:`Heavy Technology stories and related articles.`,uri:`https://heavy.com/tech/feed`,image:`Heavy`,hash:`hY`,media:!0},
-{id:`Indeed Jobs`,category:`Tech`,title:``,description:`Indeed.com rss feed for job listings`,uri:`https://rss.indeed.com/rss?q=RSS+Feeds`,image:`Indeed`,hash:`Ed`,media:!1},
 {id:`Independent co uk Tech`,category:`Tech`,title:``,description:`Independent.co.uk for Gadgets and Tech information.`,uri:`http://www.independent.co.uk/life-style/gadgets-and-tech/rss`,image:`TheIndependent`,hash:`iT`,media:!0},
 {id:`InfoWorld`,category:`Tech`,title:``,description:`InfoWorld is an Information Technology Media Business.`,uri:`https://www.infoworld.com/index.rss`,image:`InfoWorld`,hash:`fW`,media:!0},
 {id:`Inverse`,category:`Media`,title:``,description:`Inverse Covers the latest on Science, Innovation, Entertainment, Technology and Culture.`,uri:`https://www.inverse.com/feed/articles/1.rss`,image:`Inverse`,hash:`vS`,media:!0},
@@ -435,7 +434,6 @@ var menu=[
 {id:`Mercury News`,category:`World`,title:``,description:`Mercury News is passionate about serving readers in Silicon Valley and its global technology community.`,uri:`https://www.mercurynews.com/feed`,image:`Mercury`,hash:`cU`,media:!0},
 {id:`MSNBC World`,category:`World`,title:``,description:`MSNBC Breaking and in-depth analysis of the headlines.`,uri:`http://www.msnbc.com/feeds/latest`,image:`MSNBC`,hash:`sM`,media:!0},
 {id:`NBC World News`,category:`World`,title:``,description:`NBC News is a division of the American broadcast television network NBC.`,uri:`http://feeds.nbcnews.com/nbcnews/public/news`,image:`NBCNews`,hash:`ON`,media:!0},
-{id:`Newsweek`,category:`World`,title:``,description:`Newsweek provides the best about international issues, technology, business, culture and politics.`,uri:`https://www.newsweek.com/rss`,image:`Newsweek`,hash:`wK`,media:!1},
 {id:`Newser`,category:`World`,title:``,description:`Newser is an American news aggregation website.`,uri:`http://rss.newser.com/rss/section/1.rss`,image:`Newser`,hash:`nR`,media:!0},
 {id:`Newsone`,category:`World`,title:``,description:`Newsone Breaking News for Black America.`,uri:`https://newsone.com/feed`,image:`Newsone`,hash:`nW`,media:!0},
 {id:`New York Daily News`,category:`World`,title:``,description:`New York Daily coverage, sports, entertainment, gossip, autos, videos and photos.`,uri:`https://www.nydailynews.com/cmlink/NYDN.News.World.rss`,image:`NewYorkDailyNews`,hash:`yY`,media:!0},
