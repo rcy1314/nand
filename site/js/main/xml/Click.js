@@ -141,23 +141,6 @@ _container
                     )
           );
         }
-        else if (
-          evt.target.classList.contains(
-            `detail`
-          )
-        ) {
-          Request(
-            evt
-              .target
-                .closest(
-                  `.hover`
-                )
-                  .getAttribute(
-                    `aria-object`
-                  )
-          );
-          _match.style.display = `none`;
-        }
 
         else if (
           evt.target.classList.contains(`btn`)
