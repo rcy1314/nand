@@ -394,9 +394,9 @@ setTimeout(
         if (
           display == `flexBox`
         )
-          offset = 4000
+          offset = 5000
         else
-          offset = 550
+          offset = 1000
 
         cycleViewport =
           viewport
