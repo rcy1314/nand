@@ -406,12 +406,18 @@ setTimeout(
                   display
         )
 
-        display == viewport[cycleViewport]
+        display = viewport[cycleViewport]
 
         if (
           display == `sideScroll`
         )
           cropImages == true;
+
+        if (
+          display == `flexBox` &&
+          window.innerWidth <= 425
+        )
+          display = `legacy`
 
         if (
           backgroundImage[0].element === `container`
