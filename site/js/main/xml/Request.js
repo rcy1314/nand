@@ -393,6 +393,7 @@ var Request = function (index) {
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
     }
+    else return false
   };
   httpRequest.open(`GET`, uri);
   httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
