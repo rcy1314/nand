@@ -394,7 +394,7 @@ setTimeout(
         if (
           display == `flexBox`
         )
-          offset = 5000
+          offset = 4000
         else
           offset = 1000
 
