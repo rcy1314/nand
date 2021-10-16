@@ -1,6 +1,6 @@
 {
   "name": "nand",
-  "version": "0.9.9130",
+  "version": "1.0.28593",
   "description": "Just Read",
   "main": "app.js",
   "scripts": {
