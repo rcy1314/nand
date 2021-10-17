@@ -408,12 +408,12 @@ setTimeout(
 
         display == viewport[cycleViewport]
 
-        if (
+/*        if (
           window.innerWidth <= 425 &&
           display == `flexBox`
         )
           display == `legacy`
-
+*/
         if (
           display == `sideScroll`
         )
