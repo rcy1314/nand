@@ -127,6 +127,10 @@
 
 @media screen and (max-width: 425px) {
 
+  .center {
+    left: 150px !important;
+  }
+
   .center #bottom {
     display: none !important;
   }
@@ -563,6 +567,10 @@
 }
 
 @media screen and (min-width: 768px) {
+
+  .center {
+    left: 320px !important;
+  }
 
   .sideChannel {
     top: 60px !important;
