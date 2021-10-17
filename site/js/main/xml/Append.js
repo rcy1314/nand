@@ -133,7 +133,7 @@ var Append = function (id) {
     _channel.append(
       footerBuild(id)
     );
-
+/*
   if (
     display == `flexBox`
   )
@@ -148,7 +148,7 @@ var Append = function (id) {
     display == `legacy`
   )
     Legacy();
-  if (
+*/  if (
     showSplash
   )
     _check.style.display = `none`;
