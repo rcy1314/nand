@@ -57,26 +57,6 @@ let Flex = function () {
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-      .forEach(
-        (a) =>
-          a.classList.add(
-            `flexbox`
-          )
-      );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-      .forEach(
-        (a) =>
-          a.style.marginLeft =
-          `0`
-      );
-
   if (
     window.innerWidth > 1280
   )
