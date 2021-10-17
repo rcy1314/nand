@@ -128,7 +128,7 @@
 @media screen and (max-width: 425px) {
 
   .center {
-    left: 150px !important;
+    width: 100% !important;
   }
 
   .center #bottom {
@@ -144,7 +144,6 @@
     height: fit-content !important;
     position: relative;
     width: 140px !important;
-    left: -150px !important;
   }
 
   .flexbox .item .header {
