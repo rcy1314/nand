@@ -396,7 +396,7 @@ setTimeout(
         )
           offset = 4000
         else
-          offset = 1000
+          offset = 550
 
         cycleViewport =
           viewport
@@ -406,18 +406,12 @@ setTimeout(
                   display
         )
 
-        display = viewport[cycleViewport]
+        display == viewport[cycleViewport]
 
         if (
           display == `sideScroll`
         )
           cropImages == true;
-
-        if (
-          display == `flexBox` &&
-          window.innerWidth <= 425
-        )
-          display = `legacy`
 
         if (
           backgroundImage[0].element === `container`
