@@ -94,7 +94,7 @@
   align-content: space-between !important;
   flex-flow: column wrap !important;
   display: flex !important;
-  width: 300px !important;
+  width: 930px !important;
 }
 
 .flexbox::before,
