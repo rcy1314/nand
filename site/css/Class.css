@@ -95,10 +95,12 @@
   flex-flow: column wrap !important;
   display: flex !important;
   width: 300px !important;
+  position: relative !important;
 }
 
 .flexbox:before,
 .flexbox:after {
+  position: absolute !important;
   flex-basis: 100% !important;
   content: "" !important;
   width: 0 !important;
