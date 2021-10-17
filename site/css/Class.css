@@ -103,7 +103,7 @@
   content: "" !important;
   width: 0 !important;
   order: 2 !important;
-  height: 100% !important;
+  position: relative !important;
 }
 
 .flexbox .item {
