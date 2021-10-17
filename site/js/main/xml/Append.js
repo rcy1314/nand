@@ -27,7 +27,7 @@ var Append = function (id) {
       omitGuide &&
       i != local
     ) {
-        _channel.append(pub[i].post)
+        _channel.appendChild(pub[i].post)
         images.push(
           {
             element: pub[i].element,
@@ -37,7 +37,7 @@ var Append = function (id) {
     } else if (
       !omitGuide
     ) {
-        _channel.append(pub[i].post)
+        _channel.appendChild(pub[i].post)
         images.push(
           {
             element: pub[i].element,
