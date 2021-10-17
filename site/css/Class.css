@@ -94,14 +94,12 @@
   align-content: space-between !important;
   flex-flow: column wrap !important;
   display: flex !important;
-  width: 300px !important;
-  position: relative !important;
 }
 
-.flexbox::before,
-.flexbox::after {
+.flexbox:before,
+.flexbox:after {
   flex-basis: 100% !important;
-  content: " " !important;
+  content: "" !important;
   width: 0 !important;
   order: 2 !important;
 }

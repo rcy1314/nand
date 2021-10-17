@@ -52,7 +52,7 @@ let xmlHTMLBuild = function (htmlArray) {
   if (
     display == `flexBox`
   )
-    item.classList.add(`flexbox`);
+    item.classList.add(`flex`);
   if (
     display == `sideScroll`
   )

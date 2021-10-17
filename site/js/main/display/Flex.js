@@ -82,7 +82,7 @@ let Flex = function () {
       .forEach(
         (a) =>
           a.classList.add(
-            `flexbox`
+            `flex`
           )
       );
   _channel
