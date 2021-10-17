@@ -98,9 +98,9 @@
   position: relative !important;
 }
 
-.flexbox:before,
-.flexbox:after {
-  position: absolute !important;
+.flexbox::before,
+.flexbox::after {
+  position: relative !important;
   flex-basis: 100% !important;
   content: "" !important;
   width: 0 !important;
