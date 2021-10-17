@@ -394,7 +394,7 @@ setTimeout(
         if (
           display == `flexBox`
         )
-          offset = 9999999
+          offset = 4000
         else
           offset = 550
 
@@ -408,12 +408,6 @@ setTimeout(
 
         display == viewport[cycleViewport]
 
-/*        if (
-          window.innerWidth <= 425 &&
-          display == `flexBox`
-        )
-          display == `legacy`
-*/
         if (
           display == `sideScroll`
         )

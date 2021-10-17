@@ -83,7 +83,6 @@
 .channel {
   background-color: transparent;
   scrollbar-width: none;
-    height: 9999999px !important;
 }
 
 .content {

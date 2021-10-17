@@ -127,10 +127,6 @@
 
 @media screen and (max-width: 425px) {
 
-  .center {
-    width: 100% !important;
-  }
-
   .center #bottom {
     display: none !important;
   }
@@ -144,6 +140,7 @@
     height: fit-content !important;
     position: relative;
     width: 140px !important;
+    left: -150px !important;
   }
 
   .flexbox .item .header {
@@ -566,10 +563,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
-  .center {
-    left: 320px !important;
-  }
 
   .sideChannel {
     top: 60px !important;

@@ -27,7 +27,7 @@ var Append = function (id) {
       omitGuide &&
       i != local
     ) {
-        _channel.appendChild(pub[i].post)
+        _channel.append(pub[i].post)
         images.push(
           {
             element: pub[i].element,
@@ -37,7 +37,7 @@ var Append = function (id) {
     } else if (
       !omitGuide
     ) {
-        _channel.appendChild(pub[i].post)
+        _channel.append(pub[i].post)
         images.push(
           {
             element: pub[i].element,
@@ -133,7 +133,7 @@ var Append = function (id) {
     _channel.append(
       footerBuild(id)
     );
-/*
+
   if (
     display == `flexBox`
   )
@@ -142,13 +142,13 @@ var Append = function (id) {
   else if (
     display == `sideScroll`
   )
-    Sidescroll();
+    SideScroll();
 
   else if (
     display == `legacy`
   )
     Legacy();
-*/  if (
+  if (
     showSplash
   )
     _check.style.display = `none`;

@@ -323,7 +323,7 @@ let quickFeeds = false;
 
 */
 
-let scrollIntoView = false;
+let scrollIntoView = true;
 
 /*
     imageLoader [boolean/integer]
@@ -353,7 +353,7 @@ let imageLoader = `ring-circle`;
 
 */
 
-let cropImages = true;
+let cropImages = false;
 
 /*
     fadeIntoView [boolean/integer]
@@ -367,7 +367,7 @@ let cropImages = true;
 
 */
 
-let fadeIntoView = false;
+let fadeIntoView = true;
 
 /*
     loading [string]
@@ -719,7 +719,6 @@ let expandFilter = false;
 let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
-let checkPosition // fadeImages function
 if (Reader == false) quit = 30;
 else quit = 16;
 let post; //from init.js global timestamp for guide
