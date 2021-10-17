@@ -97,13 +97,12 @@
   width: 300px !important;
 }
 
-.flexbox::before,
-.flexbox::after {
+.flexbox:before,
+.flexbox:after {
   flex-basis: 100% !important;
   content: "" !important;
   width: 0 !important;
   order: 2 !important;
-  position: relative !important;
 }
 
 .flexbox .item {
