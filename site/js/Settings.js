@@ -323,7 +323,7 @@ let quickFeeds = false;
 
 */
 
-let scrollIntoView = true;
+let scrollIntoView = false;
 
 /*
     imageLoader [boolean/integer]
@@ -353,7 +353,7 @@ let imageLoader = `ring-circle`;
 
 */
 
-let cropImages = false;
+let cropImages = true;
 
 /*
     fadeIntoView [boolean/integer]
@@ -367,7 +367,7 @@ let cropImages = false;
 
 */
 
-let fadeIntoView = true;
+let fadeIntoView = false;
 
 /*
     loading [string]
