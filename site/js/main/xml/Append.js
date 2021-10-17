@@ -47,6 +47,20 @@ var Append = function (id) {
     }
   }
   if (
+    display == `flexBox`
+  )
+    Flex();
+
+  else if (
+    display == `sideScroll`
+  )
+    SideScroll();
+
+  else if (
+    display == `legacy`
+  )
+    Legacy();
+  if (
     safeSearchIDs.includes(menu[id].id) ||
     safeSearch
   ) {
@@ -134,20 +148,6 @@ var Append = function (id) {
       footerBuild(id)
     );
 
-  if (
-    display == `flexBox`
-  )
-    Flex();
-
-  else if (
-    display == `sideScroll`
-  )
-    SideScroll();
-
-  else if (
-    display == `legacy`
-  )
-    Legacy();
   if (
     showSplash
   )
