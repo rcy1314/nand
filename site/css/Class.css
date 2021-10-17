@@ -100,9 +100,8 @@
 
 .flexbox::before,
 .flexbox::after {
-  position: relative !important;
   flex-basis: 100% !important;
-  content: "" !important;
+  content: " " !important;
   width: 0 !important;
   order: 2 !important;
 }
