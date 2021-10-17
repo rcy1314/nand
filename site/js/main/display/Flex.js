@@ -75,7 +75,7 @@ let Flex = function () {
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);
-  _channel
+/*  _channel
     .querySelectorAll(
       `.item`
     )
@@ -85,7 +85,7 @@ let Flex = function () {
             `flexbox`
           )
       );
-  _channel
+*/  _channel
     .querySelectorAll(
       `.item`
     )

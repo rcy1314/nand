@@ -367,7 +367,7 @@ let cropImages = false;
 
 */
 
-let fadeIntoView = false;
+let fadeIntoView = true;
 
 /*
     loading [string]
