@@ -142,7 +142,7 @@ var Append = function (id) {
   else if (
     display == `sideScroll`
   )
-    SideScroll();
+    Sidescroll();
 
   else if (
     display == `legacy`
