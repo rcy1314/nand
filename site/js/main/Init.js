@@ -409,6 +409,12 @@ setTimeout(
         display == viewport[cycleViewport]
 
         if (
+          window.innerWidth <= 425 &&
+          display == `flexBox`
+        )
+          display == `legacy`
+
+        if (
           display == `sideScroll`
         )
           cropImages == true;
