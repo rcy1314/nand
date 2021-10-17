@@ -719,6 +719,7 @@ let expandFilter = false;
 let cycleViewport // display viewport index
 let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
+let checkPosition // fadeImages function
 if (Reader == false) quit = 30;
 else quit = 16;
 let post; //from init.js global timestamp for guide
