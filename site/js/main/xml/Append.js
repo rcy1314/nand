@@ -46,20 +46,24 @@ var Append = function (id) {
         );
     }
   }
-  if (
-    display == `flexBox`
-  )
-    Flex();
+  setTimeout(
+    function() {
+      if (
+        display == `flexBox`
+      )
+        Flex();
 
-  else if (
-    display == `sideScroll`
-  )
-    SideScroll();
+      else if (
+        display == `sideScroll`
+      )
+        SideScroll();
 
-  else if (
-    display == `legacy`
+      else if (
+        display == `legacy`
+      )
+        Legacy();
+    }, 300
   )
-    Legacy();
   if (
     safeSearchIDs.includes(menu[id].id) ||
     safeSearch
