@@ -508,13 +508,6 @@ setTimeout(
                             else
                               _sb.style.display = `none`;
                             _check.style.opacity = `1`
-                            if (
-                              window.innerWidth <= 768
-                            )
-                            _main
-                              .querySelector(
-                                `#option`
-                              ).style.cssText = `display:flex !important`;
                           }, 2500
                         )
 

@@ -226,8 +226,8 @@
       position: absolute;
       margin-right: auto;
       margin-left: auto;
-      left: 0;
       top: 115px;
+      left: 0;
       right: 0;
   }
 
@@ -359,10 +359,11 @@
   }
 
   #option {
-    width: calc(100% - 20px);
-    top: calc(100% - 50px);
+    width: calc(100% - 10px);
+    top: calc(100% - 40px);
     position: fixed;
-    height: 50px;
+    display: flex;
+    height: 40px;
     right: 11px;
   }
 
