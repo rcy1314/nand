@@ -509,7 +509,7 @@ setTimeout(
                               _sb.style.display = `none`;
                             _check.style.opacity = `1`
                             if (
-                              window.innerWidth <= 425
+                              window.innerWidth <= 768
                             )
                             _main
                               .querySelector(
