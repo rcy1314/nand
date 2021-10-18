@@ -721,6 +721,7 @@ let viewport = ['legacy', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
 if (Reader == false) quit = 30;
 else quit = 16;
+let checkPosition // fadeIntoView function
 let post; //from init.js global timestamp for guide
 let id; //feed indexOf menu
 let tap = 0; //used in mainEvents.js for images

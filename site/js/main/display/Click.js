@@ -48,22 +48,8 @@ _container
 
               display = `flexBox`;
               notifyOption(`Flex Box`, `fa-times-circle`)
-              let leaveOff = _main.scrollTop -
-                (
-                  (parseInt(
-                    document.querySelectorAll(
-                      `.item`
-                    )
-                    .length
-                  )
-                  *
-                  parseInt(
-                    100
-                  )
-                )
-              );
               Flex();
-              _main.scrollTop = leaveOff;
+              _main.scrollTop = 0;
           }
 
           if (

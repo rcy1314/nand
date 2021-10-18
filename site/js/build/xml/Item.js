@@ -13,29 +13,6 @@ let xmlHTMLBuild = function (htmlArray) {
   let head = document.createElement(`div`);
   let bars = document.createElement(`div`);
   let ago = document.createElement(`div`);
-  let loading = document.createElement(`div`);
-  let l = document.createElement(`div`);
-  let o = document.createElement(`div`);
-  let a = document.createElement(`div`);
-  let d = document.createElement(`div`);
-  let i = document.createElement(`div`);
-  let n = document.createElement(`div`);
-  let g = document.createElement(`div`);
-  loading.setAttribute(`id`, `load`);
-  l.innerHTML = `L`;
-  o.innerHTML = `O`;
-  a.innerHTML = `A`;
-  d.innerHTML = `D`;
-  i.innerHTML = `I`;
-  n.innerHTML = `N`;
-  g.innerHTML = `G`;
-  loading.append(g);
-  loading.append(n);
-  loading.append(i);
-  loading.append(d);
-  loading.append(a);
-  loading.append(o);
-  loading.append(l);
   circle.classList.add(`circle`);
   original.append(circle.cloneNode(true));
   original.append(circle.cloneNode(true));
@@ -82,30 +59,22 @@ let xmlHTMLBuild = function (htmlArray) {
   item.append(head);
   if (imageLoader == `double-circle`) {
     original.style.display = `none`;
-    loading.style.display = `none`;
     loader.style.display = `block`;
     bars.style.display = `none`;
-  } else if (imageLoader == `loading`) {
-    original.style.display = `none`;
-    loading.style.display = `block`;
-    loader.style.display = `none`;
-    bars.style.display = `none`;
   } else if (imageLoader == `ring-circle`) {
-    loading.style.display = `none`;
+    original.style.display = `block`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   } else if (imageLoader == `v-bars`) {
-    loading.style.display = `none`;
     original.style.display = `none`;
     loader.style.display = `none`;
+    bars.style.display = `block`;
   } else if (!imageLoader) {
     original.style.display = `none`;
-    loading.style.display = `none`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   }
   pending.append(original);
-  pending.append(loading);
   pending.append(loader);
   pending.append(bars)
   image.append(pending);

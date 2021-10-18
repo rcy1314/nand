@@ -485,7 +485,28 @@ setTimeout(
                             _trademark.classList.remove(`bootup`);
                             _check.classList.remove(`margin`);
                             _check.style.display = `none`;
-                            _sb.style.display = `block`;
+                            if (
+                              !document
+                                .body
+                                  .contains(
+                                    _group
+                                      .querySelector(
+                                        `.select`
+                                      )
+                                  )
+                                &&
+                              !document
+                                .body
+                                  .contains(
+                                    _xml
+                                      .querySelector(
+                                        `.item`
+                                      )
+                                  )
+                            )
+                              _sb.style.display = `block`;
+                            else
+                              _sb.style.display = `none`;
                             _check.style.opacity = `1`
                           }, 2000
                         )
@@ -518,6 +539,24 @@ setTimeout(
 
   if (
     !location.href.split(`?`)[1]
+      &&
+    !document
+      .body
+        .contains(
+          _group
+            .querySelector(
+              `.select`
+            )
+        )
+      &&
+    !document
+      .body
+        .contains(
+          _xml
+            .querySelector(
+              `.item`
+            )
+        )
   )
     _sb.style.display = `block`;
   else
