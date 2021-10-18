@@ -384,16 +384,26 @@ var Request = function (index) {
           showSplash
         )
           _check.style.display = `none`;
-        Group();
+        setTimeout(
+          function() {
+            Group();
+          }, 300
+        )
         Topbar(topBar);
+        Reader = false;
         Category(category);
         displayExpand(expand);
+        _main
+          .querySelectorAll(`.joi`)
+            .forEach(
+              (a) => a.classList.remove(`luv`)
+            );
         unloading();
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
     }
-    else return false
+    else return true
   };
   httpRequest.open(`GET`, uri);
   httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);

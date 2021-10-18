@@ -54,7 +54,11 @@ _main
           _suggestions.removeChild(
             _suggestions.lastChild
           );
-        Request(anyRandomMenuObject());
+      setTimeout(
+        function() {
+          Request(anyRandomMenuObject());
+        }, 500
+      )
       }
     },
   {

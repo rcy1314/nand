@@ -171,7 +171,7 @@ let anyRandomMenuObject = function () {
         )
       ];
     if (
-      random.length === randomDuplicate
+      random.length === randomDuplicate.length
     )
     randomDuplicate = [];
   }
