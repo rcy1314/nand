@@ -57,6 +57,7 @@ let Flex = function () {
     window.innerWidth <= 425
   ) {
     if (
+      id &&
       menu[id].id.match (/Youtube/g)
     )
       _channel

@@ -182,30 +182,6 @@ html body,
   top: 0;
 }
 
-#container #greets {
-  border-radius: 5px;
-  position: absolute;
-  box-shadow: none;
-  cursor: pointer;
-  height: 25px;
-  width: 160px;
-  bottom: 15px;
-  z-index: 15;
-  left: 10px;
-}
-
-#container #greetz {
-  border-radius: 50%;
-  position: absolute;
-  box-shadow: none;
-  cursor: pointer;
-  height: 15px;
-  bottom: 15px;
-  width: 160px;
-  z-index: 15;
-  right: -50px;
-}
-
 #under {
   background-color: transparent;
   color: var(--fill-color);
@@ -265,7 +241,10 @@ html body,
 }
 
 #option {
+  background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 80%, rgba(252,176,69,1) 100%);
+  -webkit-text-fill-color: transparent;
   justify-content: space-between;
+  -webkit-background-clip: text;
   background-color: transparent;
   color: var(--fill-color);
   position: absolute;

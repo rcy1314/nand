@@ -362,7 +362,6 @@
     width: calc(100% - 20px);
     top: calc(100% - 50px);
     position: fixed;
-    display: flex;
     height: 50px;
     right: 11px;
   }

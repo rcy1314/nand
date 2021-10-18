@@ -508,7 +508,14 @@ setTimeout(
                             else
                               _sb.style.display = `none`;
                             _check.style.opacity = `1`
-                          }, 2000
+                            if (
+                              window.innerWidth <= 425
+                            )
+                            _main
+                              .querySelector(
+                                `#option`
+                              ).style.cssText = `display:flex !important`;
+                          }, 2500
                         )
 
                         _guest.focus();

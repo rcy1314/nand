@@ -1,8 +1,3 @@
-#main #top #arm #option .fa,
-#main #top #arm #option .fas {
-  font-variant: all-small-caps;
-}
-
 .fa,
 .fab,
 .fas {
@@ -112,6 +107,10 @@
   z-index: -1;
 }
 
+#main #option .fa-camera-retro {
+  font-size: 16px !important;
+}
+
 #main #option .fa-camera-retro,
 #main #option .fa-expand-alt,
 #main #option .fa-heart,
@@ -173,10 +172,12 @@
   font-family: "Font Awesome 5 Pro";
   content: "\f015";
   font-weight: 50;
+  font-size: 16px !important;
 }
 
 .fa-expand-alt {
   font-family: "Font Awesome 5 Pro";
+  font-size: 16px !important;
   content: "\f424";
   font-weight: 50;
 }
@@ -279,6 +280,7 @@
 .fa-heart {
   font-family: "Font Awesome 5 Pro";
   color: lightcoral !important;
+  font-size: 16px !important;
   content: "\f004";
   font-weight: 50;
 }
@@ -306,6 +308,7 @@
 
 .luv {
   font-weight: 600 !important;
+  font-size: 16px !important;
 }
 
 .fa-minus {
@@ -396,6 +399,7 @@
 
 .fa-sun {
   font-family: "Font Awesome 5 Pro";
+  font-size: 16px !important;
   content: "\f185";
   font-weight: 50;
 }
