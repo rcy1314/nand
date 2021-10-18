@@ -56,7 +56,34 @@ _main
           );
       setTimeout(
         function() {
-          Request(anyRandomMenuObject());
+          let index = anyRandomMenuObject();
+          if (
+            menu[index]
+          )
+            Request(index);
+          else {
+            if (
+              showSplash
+            )
+              _check.style.display = `none`;
+            setTimeout(
+              function() {
+                Group();
+              }, 300
+            )
+            Topbar(topBar);
+            Reader = false;
+            Category(category);
+            displayExpand(expand);
+            _main
+              .querySelectorAll(`.joi`)
+                .forEach(
+                  (a) => a.classList.remove(`luv`)
+                );
+            unloading();
+            _main.setAttribute(`tabindex`, -1);
+            _main.focus();
+          }
         }, 500
       )
       }
