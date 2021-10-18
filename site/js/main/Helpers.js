@@ -156,10 +156,28 @@ let anyRandomMenuObject = function () {
   console.log(`
     ${randomObject}
     ${menu[randomObject].id}
+    ${random.length}
+    ${randomDuplicate.length}
   `)
   while (
-    !randomDuplicate.includes(randomObject) &&
-    menu[randomObject]
+    randomDuplicate.includes(
+      randomObject
+    )
+  ) {
+    randomObject =
+      random[
+        Math.floor(
+          Math.random() * random.length - 1
+        )
+      ];
+    if (
+      random.length === randomDuplicate
+    )
+    randomDuplicate = [];
+  }
+  while (
+    menu[randomObject] &&
+    !randomDuplicate.includes(randomObject)
   ) {
     randomDuplicate.push(randomObject);
     return randomObject;

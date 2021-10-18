@@ -70,30 +70,30 @@ let Progress = function (done) {
     ) {
       (function () {
         function checkPosition() {
-          let elements = _channel.querySelectorAll(`.image`);
+          let elements = _channel.querySelectorAll(`.hidden`);
           for (
             let i = 0;
             i < elements.length;
             i++) {
             if (
               display !== `sideScroll` &&
-              elements[i].querySelector(`.img`) &&
-              !elements[i].querySelector(`.img`).classList.contains(`guide`) &&
+              elements[i] &&
+              !elements[i].classList.contains(`guide`) &&
               elements[i].getBoundingClientRect().top -
               _main.clientHeight <=
               0
             ) {
-              elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
-              elements[i].querySelector(`.img`).classList.remove(`hidden`);
+              elements[i].classList.add(`fade-in-element`);
+              elements[i].classList.remove(`hidden`);
             } else if (
               display == `sideScroll` &&
-              elements[i].querySelector(`.img`) &&
+              elements[i] &&
               elements[i].getBoundingClientRect().left -
               _channel.clientWidth
               <= _channel.clientWidth
             ) {
-              elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
-              elements[i].querySelector(`.img`).classList.remove(`hidden`);
+              elements[i].classList.add(`fade-in-element`);
+              elements[i].classList.remove(`hidden`);
             }
           }
         }
