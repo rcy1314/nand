@@ -359,10 +359,10 @@
   }
 
   #option {
+    display: flex !important;
     width: calc(100% - 10px);
     top: calc(100% - 40px);
     position: fixed;
-    display: flex;
     height: 40px;
     right: 11px;
   }
