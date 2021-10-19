@@ -384,6 +384,7 @@ var Request = function (index) {
           showSplash
         )
           _check.style.display = `none`;
+        onlyImages = onlyImagesBuffer;
         setTimeout(
           function() {
             Group();
@@ -393,7 +394,6 @@ var Request = function (index) {
         Reader = false;
         Category(category);
         displayExpand(expand);
-        onlyImages = onlyImagesBuffer;
         _main
           .querySelectorAll(`.joi`)
             .forEach(

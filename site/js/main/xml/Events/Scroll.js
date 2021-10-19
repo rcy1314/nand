@@ -66,6 +66,7 @@ _main
               showSplash
             )
               _check.style.display = `none`;
+            onlyImages = onlyImagesBuffer;
             setTimeout(
               function() {
                 Group();
@@ -75,7 +76,6 @@ _main
             Reader = false;
             Category(category);
             displayExpand(expand);
-            onlyImages = onlyImagesBuffer;
             _main
               .querySelectorAll(`.joi`)
                 .forEach(
