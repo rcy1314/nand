@@ -297,7 +297,7 @@ let toggleBorders = false;
 
 */
 
-let onlySearch = true;
+let onlySearch = false;
 
 /*
     quickFeeds [boolean/integer]
