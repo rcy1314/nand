@@ -193,66 +193,6 @@ _container
         )
           notifyOption(`Safe Search`, `fa-times-circle`);
       }
-      else if (
-        evt.target.classList.contains(
-          `fa-git`
-        )
-      )
-        repository.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-amazon`
-        )
-      )
-        amazon.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-reddit-alien`
-        )
-      )
-        reddit.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-twitter`
-        )
-      )
-        twitter.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-pinterest`
-        )
-      )
-        pinterest.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-instagram`
-        )
-      )
-        instagram.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-facebook-f`
-        )
-      )
-        facebook.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-youtube`
-        )
-      )
-        youtube.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-wordpress`
-        )
-      )
-        wordpress.blank();
-      else if (
-        evt.target.classList.contains(
-          `fa-github`
-        )
-      )
-        repository.blank();
 
       evt.stopPropagation();
       evt.preventDefault();
