@@ -121,7 +121,8 @@
 @media screen and (max-width: 425px) {
 
   .center #bottom {
-    display: none !important;
+    position: relative !important;
+    margin: 0 auto !important;
   }
 
   .flexbox .yt .image {

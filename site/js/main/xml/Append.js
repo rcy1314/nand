@@ -1,19 +1,4 @@
 var Append = function (id) {
-  if (
-    document
-      .body
-        .contains(
-          _center
-            .querySelector(
-              `#bottom`
-            )
-        )
-  )
-    _center
-      .querySelector(
-        `#bottom`
-      )
-        .remove();
   const has =
     exclude.map((a) => a.toLowerCase());
     for (i = 0; i < pub.length - 1; i++) {
