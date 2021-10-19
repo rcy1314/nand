@@ -35,7 +35,6 @@ let Feed = function (Value) {
   ) {
 
     _options.classList.remove(`invisible`);
-    _social.classList.remove(`invisible`);
     _quick.style.zIndex = `-1`;
 
     _quick

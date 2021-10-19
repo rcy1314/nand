@@ -10,7 +10,6 @@ var Listing = function (
   if (keycode === 13) return false;
   if (event.target.value.length >= 0) {
     _options.style.visibility = `hidden`;
-    _social.style.visibility = `hidden`;
     _under.style.visibility = `hidden`;
     _label.style.visibility = `hidden`;
     _quick.style.visibility = `hidden`;
@@ -43,7 +42,6 @@ var Listing = function (
   ) {
     _main.querySelector(Elem).style.display = `none`;
     _options.style.visibility = `visible`;
-    _social.style.visibility = `visible`;
     _under.style.visibility = `visible`;
     _label.style.visibility = `visible`;
     _quick.style.visibility = `visible`;
@@ -273,7 +271,6 @@ var Listing = function (
   } else if (keycode === 27) {
     document.querySelector(Elem).style.display = `none`;
     _options.style.visibility = `visible`;
-    _social.style.visibility = `visible`;
     _label.style.visibility = `visible`;
     _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;

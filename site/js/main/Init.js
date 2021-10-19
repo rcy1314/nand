@@ -573,8 +573,6 @@ setTimeout(
     if (
       onlySearch
     ) {
-      _options.style.display = `none`;
-      _social.style.display = `none`;
       _under.style.display = `none`;
       _show.style.display = `none`;
       _link.style.display = `none`;
