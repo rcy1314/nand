@@ -60,7 +60,11 @@ _main
           if (
             menu[index]
           )
-            Request(index);
+            setTimeout(
+              function() {
+                Request(index);
+              }, 500
+            )
           else {
             if (
               showSplash

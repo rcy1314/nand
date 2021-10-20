@@ -19,6 +19,9 @@ _container
                 .forEach(
                   (a) => a.classList.remove(`luv`)
                 );
+          if (
+            window.innerWidth > 425
+          )
             _channel.append(
               footerBuild(id)
             );
@@ -27,6 +30,13 @@ _container
             )
               Flex();
             Cleanup();
+            Visit();
+            if (
+              !onlySearch
+            ) {
+              _options.style.visibility = `visible`;
+              _under.style.visibility = `visible`;
+            }
           }
           else if (
             Reader
