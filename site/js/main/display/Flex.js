@@ -50,31 +50,13 @@ let Flex = function () {
     var min = `left:-310px;order:3`;
 
   if (
+    window.innerWidth > 425 &&
     !Reader
   )
     _channel.querySelector(`#bottom`).style.cssText = min;
   if (
     window.innerWidth <= 425
   ) {
-    var max =
-      Math.max(
-        height,
-        second,
-        groups
-      );
-      if (
-        height == min
-      )
-        var min = `left:-152px;order:1`;
-      else if (
-        second == min
-      )
-        var min = `left:-292px;order:2`;
-      else if (
-        groups == min
-      )
-        var min = `left:-432px;order:3`;
-    _channel.querySelector(`#bottom`).style.cssText = `left:-432px;order:3`;
     if (
       id &&
       menu[id].id.match (/Youtube/g)

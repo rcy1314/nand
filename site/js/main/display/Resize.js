@@ -11,6 +11,17 @@ window
               )
             )
       ) {
+        if (
+          window.innerWidth <= 425
+          ) {
+          _main
+            .querySelector(
+              `#option`
+            )
+              .style
+                .display = `inline-flex`;
+          Flex();
+        }
 
         if (
           window.innerWidth <= 768
@@ -23,6 +34,12 @@ window
         else if (
           window.innerWidth >= 769
         ) {
+          _main
+            .querySelector(
+              `#option`
+            )
+              .style
+                .display = `none`;
           display = `flexBox`;
           Flex()
 

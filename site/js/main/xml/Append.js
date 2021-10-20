@@ -1,4 +1,19 @@
 var Append = function (id) {
+  if (
+    document
+      .body
+        .contains(
+          _center
+            .querySelector(
+              `#bottom`
+            )
+        )
+  )
+    _center
+      .querySelector(
+        `#bottom`
+      )
+        .remove();
   const has =
     exclude.map((a) => a.toLowerCase());
     for (i = 0; i < pub.length - 1; i++) {
@@ -113,11 +128,11 @@ var Append = function (id) {
     if (pub[0]) var recent = pub[0].dst;
   }
   if (
-    !Reader
+    window.innerWidth > 425
   )
-    _channel.append(
-      footerBuild(id)
-    );
+  _channel.append(
+    footerBuild(id)
+  );
 
   if (
     display == `flexBox`
