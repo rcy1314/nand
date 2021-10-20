@@ -18,7 +18,6 @@ let Feed = function (Value) {
     _quick.classList.remove(`invisible`);
     _front.classList.add(`toggleHidden`);
     _options.classList.add(`invisible`);
-    _social.classList.add(`invisible`);
     _front.classList.remove(`toggle`);
     _quick.classList.add(`visible`);
     _show.style.visibility=`hidden`;
