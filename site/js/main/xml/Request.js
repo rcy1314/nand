@@ -260,7 +260,6 @@ var Request = function (index) {
             );
             html = xmlHTMLBuild(inline[0]);
           }
-
           pub.push({
             enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
             re: parse.externalURI,

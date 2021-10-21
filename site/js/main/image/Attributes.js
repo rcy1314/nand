@@ -139,7 +139,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           .then((response) => {
             response.json().then((jsonResponse) => {
               if (
-                jsonResponse.score >= safeSearchScore
+                jsonResponse.score >= safeSearchScore &&
+                _channel.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                )
                 ) {
                   var request = new XMLHttpRequest();
                   request.open("GET", cors + src, true);
@@ -165,7 +168,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   }
                   request.onerror = function (e) {
                     if (
-                      onlyImages
+                      onlyImages &&
+                      _channel.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                      )
                     ) {
                       _main.querySelector(
                        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
@@ -223,7 +229,12 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                 };
               }
               request.onerror = function (e) {
-                if (onlyImages)
+                if (
+                  onlyImages &&
+                  _channel.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                  )
+                )
                   _channel.querySelector(
                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                   ).remove();
@@ -284,7 +295,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             }
             request.onerror = function (e) {
               if (
-                onlyImages
+                onlyImages &&
+                _channel.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                )
               )
                 _channel.querySelector(
                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`

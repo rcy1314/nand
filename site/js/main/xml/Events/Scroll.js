@@ -64,23 +64,13 @@ _main
           )
             Request(index);
           else {
+            let index = anyRandomMenuObject();
             if (
-              showSplash
+              httpRequest.readyState == 4 &&
+              typeof(index !== undefined) &&
+              random.includes(index)
             )
-              _check.style.display = `none`;
-            onlyImages = onlyImagesBuffer;
-            Reader = false;
-            notifyOption(`Reader`, `fa-times-circle`)
-            _top.style.display = `none`;
-            Visit();
-            _main
-              .querySelectorAll(`.joi`)
-                .forEach(
-                  (a) => a.classList.remove(`luv`)
-                );
-            unloading();
-            _main.setAttribute(`tabindex`, -1);
-            _main.focus();
+              Request(index);
           }
         }, 500
       )

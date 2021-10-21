@@ -9,7 +9,8 @@ _guide
         evt.target.id == `guide`
       ) {
         if (
-          Array.isArray(pub)
+          Array.isArray(pub) &&
+          !Reader
         )
           Append(id);
 
@@ -32,6 +33,9 @@ _guide
 
         _main.classList.remove(`guide`);
         _guide.style.display = `none`;
+        if (
+          showSplash
+        )
         _check.style.display = `none`;
         _main.setAttribute(`tabindex`, -1);
         guideOnScreen = onScreen;
