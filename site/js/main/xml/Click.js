@@ -56,6 +56,7 @@ _container
               first = true;
             touchmove = true;
             onlyImages = true;
+            Random();
             randomDuplicate = [];
             notifyOption(`Reading`, `fa-check-circle`);
             if (

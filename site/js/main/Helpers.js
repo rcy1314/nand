@@ -123,30 +123,7 @@ let randomizeAssets = function (Array) {
 }
 
 let anyRandomMenuObject = function () {
-  let random = [];
   let randomObject;
-  for (
-    i = 0;
-    i <= menu.length - 1;
-    i++
-  ) {
-    if (
-      menu[i] &&
-      onlyImages &&
-      menu[i].media
-    )
-      random.push(
-        menu.indexOf(
-          menu[i]
-        )
-      );
-    else if (
-      !onlyImages
-    )
-      random.push(
-        menu[i]
-      );
-  }
   randomObject =
     random[
       Math.floor(
@@ -155,8 +132,7 @@ let anyRandomMenuObject = function () {
     ];
   console.log(`
     ${randomObject}
-    ${menu[randomObject].id}
-    ${random.length}
+    ${random.length - 1}
     ${randomDuplicate.length}
   `)
   while (
@@ -176,7 +152,7 @@ let anyRandomMenuObject = function () {
     randomDuplicate = [];
   }
   while (
-    menu[randomObject] &&
+    randomObject &&
     !randomDuplicate.includes(randomObject)
   ) {
     randomDuplicate.push(randomObject);

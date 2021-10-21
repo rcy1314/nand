@@ -58,14 +58,10 @@ _main
         function() {
           let index = anyRandomMenuObject();
           if (
-            httpRequest.readyState == 4 &&
+            httpRequest.status == 200 &&
             menu[id].id
           )
-            setTimeout(
-              function() {
-                Request(index);
-              }, 2000
-            )
+            Request(index);
           else {
             if (
               showSplash
