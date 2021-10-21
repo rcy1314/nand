@@ -1,4 +1,5 @@
 let Random = function() {
+  random = [];
   for (
     i = 0;
     i <= menu.length - 1;
