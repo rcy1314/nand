@@ -58,8 +58,8 @@ _main
         function() {
           let index = anyRandomMenuObject();
           if (
-            httpRequest.status == 200 &&
-            menu[id].id
+            httpRequest.readyState == 4 &&
+            random.includes(index)
           )
             Request(index);
           else {
