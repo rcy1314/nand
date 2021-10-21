@@ -58,8 +58,9 @@ _main
         function() {
           let index = anyRandomMenuObject();
           if (
-            httpRequest.status == 200 &&
-            menu[id].id
+            httpRequest.readyState == 4 &&
+            typeof(index !== undefined) &&
+            random.includes(index)
           )
             Request(index);
           else {
@@ -68,15 +69,9 @@ _main
             )
               _check.style.display = `none`;
             onlyImages = onlyImagesBuffer;
-            setTimeout(
-              function() {
-                Group();
-              }, 300
-            )
-            Topbar(topBar);
             Reader = false;
-            Category(category);
-            displayExpand(expand);
+            notifyOption(`Reader`, `fa-times-circle`)
+            Visit();
             _main
               .querySelectorAll(`.joi`)
                 .forEach(

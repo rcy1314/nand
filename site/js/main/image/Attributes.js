@@ -314,7 +314,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     };
     newImg.onerror = function () {
       if (
-        onlyImages
+        onlyImages &&
+        _channel.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        )
       )
         _channel.querySelector(
          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
