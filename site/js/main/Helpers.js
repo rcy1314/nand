@@ -130,11 +130,6 @@ let anyRandomMenuObject = function () {
         Math.random() * random.length - 1
       )
     ];
-  console.log(`
-    ${randomObject}
-    ${random.length - 1}
-    ${randomDuplicate.length}
-  `)
   while (
     randomDuplicate.includes(
       randomObject
