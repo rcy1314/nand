@@ -59,10 +59,7 @@ _main
           let index = anyRandomMenuObject();
           if (
             httpRequest.readyState == 4 &&
-<<<<<<< HEAD
             typeof(index !== undefined) &&
-=======
->>>>>>> dfded4de0ff8a9704e6207e893cb71b2addf706a
             random.includes(index)
           )
             Request(index);
@@ -74,6 +71,7 @@ _main
             onlyImages = onlyImagesBuffer;
             Reader = false;
             notifyOption(`Reader`, `fa-times-circle`)
+            _top.style.display = `none`;
             Visit();
             _main
               .querySelectorAll(`.joi`)
