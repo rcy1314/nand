@@ -165,6 +165,7 @@ _container
               =
             `none`;
         Topbar(topBar);
+        _main.scrollTop = 0;
       }
     },
     {

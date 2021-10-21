@@ -305,6 +305,7 @@ document
                   `aria-object`
                 )
           )
+          _main.scrollTop = 0;
           _match
             .style
               .display

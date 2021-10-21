@@ -58,12 +58,13 @@ _main
         function() {
           let index = anyRandomMenuObject();
           if (
-            menu[index]
+            httpRequest.readyState == 4 &&
+            menu[id].id
           )
             setTimeout(
               function() {
                 Request(index);
-              }, 500
+              }, 2000
             )
           else {
             if (
