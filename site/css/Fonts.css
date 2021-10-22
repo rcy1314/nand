@@ -107,16 +107,29 @@
   z-index: -1;
 }
 
-#main #option .fa-camera-retro,
-#main #option .fa-expand-alt,
-#main #option .fa-heart,
-#main #option .fa-home,
-#main #option .fa-sun:not(#options .fa-sun) {
-  font-size: 20px !important;
+#main #top #option .fa-camera-retro,
+#main #top #option .fa-expand-alt,
+#main #top #option .fa-heart,
+#main #top #option .fa-home,
+#main #top #option .fa-sun:not(#options .fa-sun) {
+  font-size: 12px !important;
+  color: var(--fill-color);
+  padding-right: 11px;
+  padding-left: 20px;
+  padding-top: 18px;
+}
+
+#mobileHome,
+#mobileExpand,
+#mobileJoi,
+#mobileCamera,
+#mobileExpand,
+#mobileVisual {
   color: var(--fill-color);
   padding-right: 11px;
   padding-left: 20px;
   padding-top: 15px;
+  font-size: 24px !important;
 }
 
 .fa-adjust {
@@ -270,11 +283,9 @@
   font-weight: 50;
 }
 
-#main #option .fa-heart,
-.fa-heart {
+#main #top #option .fa-heart {
   font-family: "Font Awesome 5 Pro";
   color: lightcoral !important;
-  font-size: 20px !important;
   content: "\f004";
   font-weight: 50;
 }
