@@ -137,7 +137,6 @@ _container
           _show.style.visibility = `visible`;
 
         _options.style.visibility = `visible`;
-        _social.style.visibility = `visible`;
         _under.style.visibility = `visible`;
         _label.style.visibility = `visible`;
         _quick.style.visibility = `visible`;
