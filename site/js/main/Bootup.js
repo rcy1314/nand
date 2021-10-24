@@ -7,10 +7,11 @@ let Bootup = function() {
       !Reader
     ) {
       _container.style.display = `block`;
-      _sb.style.display = `none`;
+      _visit.style.display = `none`;
+      _visit.style.zIndex = `-1`;
       _check.style.display = `block`;
       _check.style.opacity = `0`;
-
+      _sb.style.display = `none`;
       setTimeout(
         function () {
 
@@ -19,6 +20,7 @@ let Bootup = function() {
 
           setTimeout(
             function () {
+              _visit.style.display = `flex`;
               _check.style.opacity = `1`;
               _check.classList.add(`margin`);
               _trademark.classList.add(`bootup`);
@@ -26,6 +28,7 @@ let Bootup = function() {
               setTimeout(
                 function () {
                   _visit.style.opacity = `1`;
+                  _visit.style.zIndex = `12`;
                   _guest.setAttribute(`tabindex`, -1);
                   _check.style.opacity = `0`;
                   Sidebar(onScreen);
@@ -88,6 +91,7 @@ let Bootup = function() {
   else {
     _container.style.display = `block`;
     _check.style.display = `none`;
+    _visit.style.display = `flex`;
     _check.style.opacity = `1`;
     _visit.style.opacity = `1`;
     _guest.focus();

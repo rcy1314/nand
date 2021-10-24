@@ -41,7 +41,7 @@ if (
             function() {
               Sidebar(onScreen);
               if (
-                _visit.style.display = `flex`
+                _visit.style.display === `flex`
               )
               _sb.style.display = `block`;
             }, 750
