@@ -344,7 +344,7 @@
 
   #option {
     width: calc(100% - 10px);
-    top: calc(100% - 40px);
+    top: calc(100% - 45px);
     position: fixed;
     height: 40px;
     right: 11px;

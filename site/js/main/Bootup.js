@@ -27,8 +27,8 @@ let Bootup = function() {
 
               setTimeout(
                 function () {
+                  _visit.style.zIndex = `1`;
                   _visit.style.opacity = `1`;
-                  _visit.style.zIndex = `12`;
                   _guest.setAttribute(`tabindex`, -1);
                   _check.style.opacity = `0`;
                   Sidebar(onScreen);
