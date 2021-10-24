@@ -1,5 +1,5 @@
 let Visit = function () {
-  _visit.style.display = `block`;
+  _visit.style.display = `flex`;
   _group.style.display = `none`;
   _xml.style.display = `none`;
   _group.style.zIndex = `-1`;
