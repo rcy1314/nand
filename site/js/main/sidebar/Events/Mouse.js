@@ -41,23 +41,7 @@ if (
             function() {
               Sidebar(onScreen);
               if (
-                !document
-                  .body
-                    .contains(
-                      _xml
-                        .querySelector(
-                          `.item`
-                        )
-                    )
-                  &&
-                  !document
-                    .body
-                      .contains(
-                        _group
-                          .querySelector(
-                            `.populate`
-                          )
-                      )
+                _visit.style.display = `flex`
               )
               _sb.style.display = `block`;
             }, 750

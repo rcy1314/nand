@@ -4,5 +4,6 @@ let xml = function () {
   _xml.style.display = `block`;
   _group.style.zIndex = `-1`
   _xml.style.zIndex = `1`;
+  _sb.style.display = `none;`
   Cleanup();
 }
