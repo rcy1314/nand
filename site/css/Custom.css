@@ -278,8 +278,7 @@
   }
 
   #bottom {
-    margin-bottom: 25px !important;
-    margin-top: 25px !important;
+    display: none !important;
   }
 
   #feed {
@@ -438,6 +437,10 @@
 
 @media (min-width: 426px) and (max-width: 767px) {
 
+  #bottom {
+    display: none !important;
+  }
+
   .sideChannel {
     height: fit-content !important;
     margin-top: 60px !important;
@@ -543,8 +546,9 @@
     top: 60px !important;
   }
 
-  #main .option {
-    display: none;
+  #bottom,
+  #main #option {
+    display: none !important;
   }
 
   .content {
