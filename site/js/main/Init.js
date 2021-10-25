@@ -17,11 +17,11 @@ setTimeout(
 
     URI();
 
+    Home();
+
     Feed(quickFeeds);
 
     Check();
-
-    Other();
 
     Options();
 

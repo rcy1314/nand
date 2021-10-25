@@ -1,4 +1,4 @@
-let Other = function() {
+let Home = function() {
 
   for (
     let i = 0;
