@@ -283,7 +283,8 @@
   font-weight: 50;
 }
 
-#main #top #option .fa-heart {
+
+#main #option .fa-heart {
   font-family: "Font Awesome 5 Pro";
   color: lightcoral !important;
   content: "\f004";
