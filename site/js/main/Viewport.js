@@ -17,7 +17,8 @@ let Viewport = function() {
   display == viewport[cycleViewport]
 
   if (
-    window.innerWidth <= 768
+    window.innerWidth <= 768 &&
+    window.innerWidth > 425
   )
     display = `mobile`;
 
