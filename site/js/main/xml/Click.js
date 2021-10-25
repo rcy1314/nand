@@ -12,6 +12,8 @@ _container
           if (
             !Reader
           ) {
+            _sb.style.display = `block`;
+            _top.style.display = `none`;
             onlyImages = onlyImagesBuffer;
             notifyOption(`Reading`, `fa-times-circle`);
             _main
@@ -20,7 +22,7 @@ _container
                   (a) => a.classList.remove(`luv`)
                 );
           if (
-            window.innerWidth > 425
+            window.innerWidth >= 768
           )
             _channel.append(
               footerBuild(id)
