@@ -10,21 +10,6 @@ let Other = function() {
     );
 
   if (
-    topBarBackdrop
-  )
-    _top.style.cssText = `backdrop-filter: blur(10px)`
-
-  setTimeout(
-    function () {
-
-      Display();
-      Background() ;
-      Bootup();
-
-    }, 300
-  )
-
-  if (
     onlySearch
   ) {
     _under.style.display = `none`;

@@ -47,6 +47,11 @@ let Options = function() {
           `blur`
         );
 
+  if (
+    topBarBackdrop
+  )
+    _top.style.cssText = `backdrop-filter: blur(10px)`
+
     if (
       window.innerWidth < 768
     )

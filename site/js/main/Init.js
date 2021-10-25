@@ -21,6 +21,8 @@ setTimeout(
 
     Check();
 
+    Other();
+
     Options();
 
     Viewport();
