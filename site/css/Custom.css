@@ -554,9 +554,12 @@
     display: none;
   }
 
+  .item {
+    width: 360px !important;
+  }
+
   .content {
-	  display: none;
-    right: 20px;
+    right: 0 !important;
   }
 
     .dots {
