@@ -554,8 +554,12 @@
     display: none;
   }
 
-  #xml .item {
+  .item {
     width: 360px !important;
+  }
+
+  #guide .item {
+    width: fit-content !important;
   }
 
   .content {
