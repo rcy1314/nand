@@ -554,7 +554,7 @@
     display: none;
   }
 
-  .item {
+  #xml .item {
     width: 360px !important;
   }
 
