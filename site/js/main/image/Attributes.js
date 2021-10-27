@@ -162,6 +162,18 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        function() {
+                      _channel
+                        .querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                        )
+                          .style
+                            .cssText
+                              =
+                            `height:${itemImage.clientHeight}px !important`
+                          }, 500
+                        )
                     };
                   }
                   request.onerror = function (e) {
@@ -223,6 +235,18 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.setAttribute(`src`, e.target.result);
                   itemPending.style.display = `none`;
                   itemImage.style.display = `block`;
+                  setTimeout(
+                    function() {
+                  _channel
+                    .querySelector(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                    )
+                      .style
+                        .cssText
+                          =
+                        `height:${itemImage.clientHeight}px !important`
+                      }, 500
+                    )
                 };
               }
               request.onerror = function (e) {
@@ -286,7 +310,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.style.display = `none`;
             itemImage.style.display = `block`;
-            console.log(itemImage.clientHeight)
             setTimeout(
               function() {
             _channel
