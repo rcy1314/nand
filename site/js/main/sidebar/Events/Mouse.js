@@ -44,6 +44,12 @@ if (
                 _visit.style.display === `flex`
               )
               _sb.style.display = `block`;
+              if (
+                sideBarDock
+              ) {
+                _bar.style.display = `none`;
+                _sb.style.display = `none`;
+              }
             }, 750
           )
         }

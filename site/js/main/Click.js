@@ -111,6 +111,13 @@ _container
         Group();
         Visit();
 
+        if (
+          sideBarDock
+        ) {
+          _bar.style.display = `none`;
+          _sb.style.display = `none`;
+        }
+
         done = true
         document.title = doc;
         _top.style.display = `none`;
