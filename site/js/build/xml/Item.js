@@ -118,10 +118,10 @@ let xmlHTMLBuild = function (htmlArray) {
   )
     image.append(filterBlur);
   image.append(object);
-  if (feedImages) classic.append(image);
   wrap.append(publish);
   wrap.append(ago);
   classic.append(wrap);
+  if (feedImages) classic.append(image);
   item.append(classic);
   item.append(
     copyInputAttribute(

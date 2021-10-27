@@ -38,7 +38,7 @@ var Dimensions = function (
         )
     )
   ) {
-    itemImage.closest(`.classic`).style.alignItems = `center`;
+    itemImage.closest(`.classic`).style.cssText = `align-items:center;position:relative`;
     if (
       display !== `sideScroll`
     )

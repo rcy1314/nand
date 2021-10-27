@@ -267,23 +267,6 @@ _container
         }
 
         else if (
-          evt.target.classList.contains(`classic`) ||
-          evt.target.classList.contains(`wrap`) ||
-          evt.target.classList.contains(`item`) ||
-          evt.target.classList.contains(`pub`) ||
-          evt.target.classList.contains(`ago`)
-        ) {
-          evt
-            .target
-              .closest(
-                `.item`
-              )
-                .getAttribute(
-                  `ext`
-                )
-                  .blank();
-        }
-        else if (
           evt.target.classList.contains(
             `bottom`
           )

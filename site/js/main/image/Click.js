@@ -3,8 +3,7 @@ _container
     (evt) =>
       {
         if (
-          evt.target.classList.contains(`filterBlur`) ||
-          evt.target.classList.contains(`img`)
+          evt.target.classList.contains(`wrap`)
         ) {
           let cid = evt.target.closest(`.item`).getAttribute(`aria-object`)
           if (

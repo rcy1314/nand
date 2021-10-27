@@ -290,8 +290,20 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.style.display = `none`;
             itemImage.style.display = `block`;
+            setTimeout(
+              function() {
+            _channel
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+              )
+                .style
+                  .height
+                    =
+                  `${itemImage.clientHeight}px`
+                }, 300
+              )
             }
-            }
+          }
             request.onerror = function (e) {
               if (
                 onlyImages &&
@@ -305,7 +317,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   .remove();
               else {
                 itemPending.remove();
-                itemContainer.remove();
               }
             };
           if (
@@ -361,7 +372,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     )
     {
       itemPending.remove();
-      itemContainer.remove();
     };
   }
 }

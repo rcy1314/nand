@@ -30,10 +30,11 @@
   color: var(--fill-color);
   text-transform: uppercase;
   margin-bottom: 10px;
-  position: relative;
+  position: absolute;
   width: fit-content;
   margin-left: 12px;
   font-size: 9px;
+  bottom: 0;
 }
 
 .asset,
@@ -147,6 +148,10 @@
 .btn:active,
 .bottom:active{
   transform: translateY(2px);
+}
+
+#xml .classic {
+  position: relative;
 }
 
 .combine {
@@ -275,10 +280,13 @@
   left: 12px;
 }
 
-.header {
+#xml .header {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   background-color: transparent;
+  position: absolute;
   height: 60px;
   width: 100%;
+  z-index: 12;
 }
 
 #main #xml .center .yt .image {
@@ -374,9 +382,11 @@
   color: var(--fill-color);
   word-break: keep-all;
   margin-bottom: 10px;
+  position: absolute;
   margin-right: 30px;
   margin-top: 20px;
   cursor: default;
+  bottom: 30px;
 }
 
 .random {
@@ -481,6 +491,16 @@
   color: var(--fill-color);
   position: relative;
   margin-left: 12px;
+}
+
+#xml .wrap {
+  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 11;
 }
 
 #xml {
