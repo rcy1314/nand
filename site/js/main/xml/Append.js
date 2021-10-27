@@ -127,9 +127,6 @@ var Append = function (id) {
     if (pub[pub.length - 1]) var posts = pub.length - 1;
     if (pub[0]) var recent = pub[0].dst;
   }
-  if (
-    window.innerWidth > 425
-  )
   _channel.append(
     footerBuild(id)
   );

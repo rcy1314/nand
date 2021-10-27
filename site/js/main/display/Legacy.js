@@ -46,6 +46,8 @@ let Legacy = function () {
               `.bottom`
             )
           )
-  )
+  ) {
+    _center.querySelector(`.bottom`).style.display = `block`;
     _center.querySelector(`.bottom`).style.left = `0`;
+  }
 }

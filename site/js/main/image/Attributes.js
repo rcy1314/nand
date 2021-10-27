@@ -63,11 +63,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       }
       else {
         copyDownload.style.display = `none`;
-        itemContainer.style.height = `0px`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
+        itemContainer.remove();
         itemPending.remove();
-        itemImage.remove();
         count.shift();
       }
     }
@@ -100,7 +99,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               .remove();
         else {
           itemPending.remove();
-          itemImage.remove();
+          itemContainer.remove();
         }
     };
     newImg.onload = function () {
@@ -178,7 +177,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       ).remove();
                     } else {
                       itemPending.remove();
-                      itemImage.remove();
+                      itemContainer.remove();
                     }
                   };
                   if (
@@ -240,7 +239,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   ).remove();
                 else {
                   itemPending.remove();
-                  itemImage.remove();
+                  itemContainer.remove();
                 };
               }
               if (
@@ -306,7 +305,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   .remove();
               else {
                 itemPending.remove();
-                itemImage.remove();
+                itemContainer.remove();
               }
             };
           if (
@@ -355,9 +354,14 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       _channel.querySelector(
        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
       ).remove();
-    else {
+    else if (
+      _channel.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      )
+    )
+    {
       itemPending.remove();
-      itemImage.remove();
+      itemContainer.remove();
     };
   }
 }

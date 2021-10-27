@@ -13,7 +13,7 @@ var Solarized = function () {
   );
   document.documentElement.style.setProperty(
     `--color-primary`,
-    `rgba(36, 47, 70, .2)`
+    `rgba(36, 47, 70, 1)`
   );
   document.documentElement.style.setProperty(
     `--color-secondary`,

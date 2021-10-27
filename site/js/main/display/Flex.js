@@ -66,6 +66,7 @@ let Flex = function () {
   if (
     window.innerWidth <= 425
   ) {
+    _channel.querySelector(`#bottom`).style.cssText = `bottom:0;position:fixed;`;
     if (
       id &&
       menu[id].id.match (/Youtube/g)

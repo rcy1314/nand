@@ -149,8 +149,8 @@
   .sideItem {
     display: inline-table;
     margin-right: 50px !important;
-    height: 380px !important;
-    width: 320px !important;
+    height: 320px !important;
+    width: 280px !important;
   }
 
   .sideItem .image {
@@ -277,14 +277,10 @@
   }
 
   .sideItem {
-    width: 320px !important;
+    width: 280px !important;
     display: inline-table;
     margin-right: 50px;
-    height: 380px;
-  }
-
-  #bottom {
-    display: none !important;
+    height: 320px;
   }
 
   #feed {
@@ -443,10 +439,6 @@
 
 @media (min-width: 426px) and (max-width: 767px) {
 
-  #bottom {
-    display: none !important;
-  }
-
   .sideChannel {
     height: fit-content !important;
     margin-top: 60px !important;
@@ -550,10 +542,6 @@
 
   .sideChannel {
     top: 60px !important;
-  }
-
-  #bottom {
-    display: none !important;
   }
 
   #main #option {

@@ -14,7 +14,7 @@ var Gentoo = function () {
   ); // Inputs
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(42, 45, 53, .1)`
+    `rgba(42, 45, 53, .3)`
   ); // SideBar, Sticky
   document.documentElement.style.setProperty(
     `--hover-background-color`,

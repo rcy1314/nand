@@ -21,9 +21,6 @@ _container
                 .forEach(
                   (a) => a.classList.remove(`luv`)
                 );
-          if (
-            window.innerWidth >= 768
-          )
             _channel.append(
               footerBuild(id)
             );
@@ -52,8 +49,10 @@ _container
                         `.item`
                       )
                   )
-            )
-            first = false;
+            ) {
+              _main.scrollTop = 0;
+              first = false;
+            }
             else
               first = true;
             touchmove = true;
