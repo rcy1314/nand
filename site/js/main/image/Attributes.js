@@ -52,6 +52,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             )
           )
     ) {
+
       if (
         onlyImages
       ) {
@@ -65,7 +66,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
-        itemContainer.remove();
         itemPending.remove();
         count.shift();
       }
@@ -99,7 +99,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               .remove();
         else {
           itemPending.remove();
-          itemContainer.remove();
         }
     };
     newImg.onload = function () {
@@ -177,7 +176,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       ).remove();
                     } else {
                       itemPending.remove();
-                      itemContainer.remove();
                     }
                   };
                   if (
@@ -239,7 +237,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   ).remove();
                 else {
                   itemPending.remove();
-                  itemContainer.remove();
                 };
               }
               if (
@@ -261,8 +258,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             });
           })
           .catch((response) => {
-            itemContainer.remove();
-            itemPending.style.display = `none`;
+            itemPending.remove();
           });
       } else if (
             document.body.contains(
@@ -290,6 +286,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemImage.setAttribute(`src`, e.target.result);
             itemPending.style.display = `none`;
             itemImage.style.display = `block`;
+            console.log(itemImage.clientHeight)
             setTimeout(
               function() {
             _channel
@@ -297,10 +294,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
               )
                 .style
-                  .height
+                  .cssText
                     =
-                  `${itemImage.clientHeight}px`
-                }, 300
+                  `height:${itemImage.clientHeight}px !important`
+                }, 500
               )
             }
           }
@@ -351,7 +348,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
-        itemContainer.remove();
       }
     };
   }
@@ -366,12 +362,38 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
       ).remove();
     else if (
+      !onlyImages &&
       _channel.querySelector(
         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
       )
     )
     {
-      itemPending.remove();
+      setTimeout(
+        function() {
+          if (
+            window.innerWidth <= 425
+          ){
+            _channel
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+              )
+                .style
+                  .cssText
+                    = `height:80px !important`
+          }
+          else
+          {
+            _channel
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+              )
+                .style
+                  .cssText
+                    = `height:169px !important`
+          }
+          itemPending.remove();
+        }, 500
+      )
     };
   }
 }

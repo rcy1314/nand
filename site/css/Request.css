@@ -227,7 +227,6 @@
   height: 50px;
   float: left;
   width: 100%;
-  left: 0;
 }
 
 .courtesy a {
@@ -304,7 +303,7 @@
   align-items: center;
   position: absolute;
   display: flex;
-  height: 100px;
+  height: 120px;
 }
 
 #main #xml .center .item .img, {
@@ -496,11 +495,11 @@
 #xml .wrap {
   background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   position: absolute;
+  z-index: 11;
   bottom: 0;
   right: 0;
   left: 0;
   top: 0;
-  z-index: 11;
 }
 
 #xml {

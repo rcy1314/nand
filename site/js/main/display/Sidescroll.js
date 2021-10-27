@@ -60,4 +60,37 @@ let Sidescroll = function () {
 
   _channel.classList.remove(`flexbox`)
 
+  _channel
+    .querySelectorAll(
+      `.classic`
+    )
+      .forEach(
+        (a) =>
+        a
+          .style
+            .cssText
+          =
+        `height:${
+          a
+          .closest(
+            `.item`
+          )
+            .querySelector(
+              `.img`
+            )
+              .clientHeight
+      }px !important`
+    )
+    _channel
+      .querySelectorAll(
+        `.header`
+      )
+        .forEach(
+          (a) =>
+          a
+            .style
+              .position
+          =
+            `relative`
+        )
 }

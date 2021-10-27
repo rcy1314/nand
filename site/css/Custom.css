@@ -120,6 +120,10 @@
 
 @media screen and (max-width: 425px) {
 
+  #xml .classic {
+    height: 80px !important;
+  }
+
   .flexbox .yt .image {
     height: 80px !important;
   }
@@ -439,6 +443,10 @@
 
 @media (min-width: 426px) and (max-width: 767px) {
 
+  #xml .classic {
+    height: 169px !important;
+  }
+
   .sideChannel {
     height: fit-content !important;
     margin-top: 60px !important;
@@ -449,7 +457,7 @@
     width: 320px !important;
     display: inline-table;
     margin-right: 50px;
-    height: 380px;
+    height: 260px;
   }
 
   #options {
@@ -540,6 +548,10 @@
 
 @media screen and (min-width: 768px) {
 
+  #xml .classic {
+    height: 169px;
+  }
+
   .sideChannel {
     top: 60px !important;
   }
@@ -609,6 +621,10 @@
 }
 
 @media screen and (min-width: 769px) {
+
+  #xml .classic {
+    height: 169px !important;
+  }
 
   .center {
     width: 420px;

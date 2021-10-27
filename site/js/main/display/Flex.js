@@ -114,4 +114,38 @@ let Flex = function () {
 
   else
     _display.style.display = `none`;
+
+    _channel
+      .querySelectorAll(
+        `.classic`
+      )
+        .forEach(
+          (a) =>
+          a
+            .style
+              .cssText
+            =
+          `height:${
+            a
+            .closest(
+              `.item`
+            )
+              .querySelector(
+                `.img`
+              )
+                .clientHeight
+        }px`
+      )
+      _channel
+        .querySelectorAll(
+          `.header`
+        )
+          .forEach(
+            (a) =>
+            a
+              .style
+                .position
+            =
+              `absolute`
+          )
 }
