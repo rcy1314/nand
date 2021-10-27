@@ -32,7 +32,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
   ) {
     _channel
       .querySelectorAll(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
       )
         .forEach(
           (a) => a.remove()
@@ -48,7 +48,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         .body
           .contains(
             _channel.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
             )
           )
     ) {
@@ -82,7 +82,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     &&
     !src
       .match(
-        /comments|feeds|fsdn|undefined/g
+        /comments|feeds|fsdn|undefined|external-preview/g
       )
   ) {
     let newImg;
@@ -344,5 +344,20 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         itemContainer.remove();
       }
     };
-  };
+  }
+  else {
+    if (
+      onlyImages &&
+      _channel.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      )
+    )
+      _channel.querySelector(
+       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      ).remove();
+    else {
+      itemPending.remove();
+      itemImage.remove();
+    };
+  }
 }

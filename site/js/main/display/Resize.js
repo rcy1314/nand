@@ -20,6 +20,7 @@ window
             )
               .style
                 .display = `inline-flex`;
+          display = `flexBox`;
           Flex();
         }
 

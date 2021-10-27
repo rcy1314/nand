@@ -50,6 +50,15 @@ let Flex = function () {
     var min = `left:-310px;order:3`;
 
   if (
+    document
+      .body
+        .contains(
+          _xml
+            .querySelector(
+              `#bottom`
+            )
+          )
+     &&
     window.innerWidth > 425 &&
     !Reader
   )
