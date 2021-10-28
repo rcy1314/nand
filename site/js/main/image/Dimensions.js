@@ -59,8 +59,7 @@ var Dimensions = function (
     itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
     copyPost.style.display = `block`;
-    itemImage.style.width = `180px`;
-    itemImage.style.margin = `12px`;
+    itemImage.style.width = `200px`;
     attribute.style.height = `74px`;
   } else {
     if (

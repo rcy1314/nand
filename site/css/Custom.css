@@ -557,7 +557,7 @@
   }
 
   #main #option {
-    display: none !important;
+    display: none;
   }
 
   .item {
