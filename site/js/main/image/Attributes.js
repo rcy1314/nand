@@ -245,7 +245,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                         .cssText
                           =
                         `height:${itemImage.clientHeight}px !important`
-                      }, 500
+                      }, 300
                     )
                 };
               }

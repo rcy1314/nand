@@ -121,7 +121,8 @@
 @media screen and (max-width: 425px) {
 
   #xml .classic {
-    height: 80px !important;
+    min-height: 80px !important;
+    height: 80px;
   }
 
   .flexbox .yt .image {
@@ -444,7 +445,8 @@
 @media (min-width: 426px) and (max-width: 767px) {
 
   #xml .classic {
-    height: 169px !important;
+    min-height: 169px !important;
+    height: 169px;
   }
 
   .sideChannel {
@@ -549,6 +551,7 @@
 @media screen and (min-width: 768px) {
 
   #xml .classic {
+    min-height: 169px !important;
     height: 169px;
   }
 
@@ -623,7 +626,8 @@
 @media screen and (min-width: 769px) {
 
   #xml .classic {
-    height: 169px !important;
+    min-height: 169px !important;
+    height: 169px;
   }
 
   .center {
