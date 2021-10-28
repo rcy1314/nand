@@ -40,7 +40,7 @@ window
               `#option`
             )
               .style
-                .display = `none`;
+                .cssText = `display:none !important;`;
           display = `flexBox`;
           Flex()
 
@@ -52,7 +52,6 @@ window
         ) {
           _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
           _display.style.cssText = `display:inline-block;`;
-
         }
 
         else if (

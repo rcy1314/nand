@@ -385,7 +385,7 @@
   margin-right: 30px;
   margin-top: 20px;
   cursor: default;
-  bottom: 30px;
+  bottom: 15px;
 }
 
 .random {
@@ -493,7 +493,7 @@
 }
 
 #xml .wrap {
-  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 80%, rgba(0,0,0,0) 100%);
   position: absolute;
   z-index: 11;
   bottom: 0;

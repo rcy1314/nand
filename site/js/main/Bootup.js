@@ -45,7 +45,7 @@ let Bootup = function() {
                           .querySelector(
                             `#option`
                           )
-                            .style.cssText = `display:flex !important`;
+                            .style.cssText = `display:flex`;
                       if (
                         !document
                           .body

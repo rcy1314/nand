@@ -557,7 +557,7 @@
   }
 
   #main #option {
-    display: none;
+    display: none !important;
   }
 
   .item {
@@ -569,7 +569,7 @@
   }
 
   .content {
-    right: 0 !important;
+    right: 0;
   }
 
     .dots {
@@ -747,4 +747,9 @@
     height: 460px;
     top: -22.75%
   }
+
+  .content {
+    left: 75px !important;
+  }
+
 }
