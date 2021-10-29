@@ -52,7 +52,7 @@ let Legacy = function () {
   }
   _channel
     .querySelectorAll(
-      `.classic`
+      `.item, .classic`
     )
       .forEach(
         (a) =>

@@ -5,7 +5,11 @@ var Dimensions = function (
   Width
 ) {
   let k = 5420;
+  let shrunk = 200;
   let maximum = 480;
+  let item = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+  );
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
@@ -30,6 +34,15 @@ var Dimensions = function (
   let copyPost = _channel.querySelector(
     `[aria-item='${pubIndex}'][aria-item='${pubIndex}'] .post`
   );
+  if (
+    itemImage.clientHeight < shrunk
+  ) {
+    setTimeout(
+      function() {
+        item.style.cssText = `height:${itemImage.clientHeight} !important`;
+      }, 300
+    )
+  }
   if (
     Width < maximum &&
     document.body.contains(

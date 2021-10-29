@@ -142,11 +142,11 @@
   }
 
   .flexbox .item .pub {
-    display: none !important;
+    display: none;
   }
 
   .flexbox .item .ago {
-    display: none !important;
+    display: none;
   }
 
   .flexbox .item .wrap {

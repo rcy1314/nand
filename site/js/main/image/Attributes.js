@@ -44,33 +44,32 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     src.match(/\.webm|\.mp4/g)
   ) {
     if (
-      document
-        .body
-          .contains(
-            _channel.querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-            )
-          )
+      itemContainer
     ) {
-
       if (
         onlyImages
+      )
+        itemContainer.remove();
+      else if (
+          window.innerWidth <= 425
       ) {
         _channel
-          .querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          .querySelectorAll(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
           )
-            .remove();
-      }
-      else {
-        copyDownload.style.display = `none`;
-        copyPicture.style.display = `none`;
-        attribute.style.height = `74px`;
-        itemPending.remove();
-        count.shift();
+            .forEach(
+              (a) =>
+                a.style.cssText = `display:block !important`
+            )
+          itemPending.remove();
+          copyDownload.style.display = `none`;
+          copyPicture.style.display = `none`;
+          attribute.style.height = `74px`;
+          count.shift();
+        }
       }
     }
-  }
   imageDuplicate.push(src);
   if (
     src &&
@@ -92,12 +91,19 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         if (
           onlyImages
         )
+          itemContainer.remove();
+        else if (
+            window.innerWidth <= 425
+        ) {
           _channel
-            .querySelector(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+            .querySelectorAll(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+               [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
             )
-              .remove();
-        else {
+              .forEach(
+                (a) =>
+                  a.style.cssText = `display:block !important`
+              )
           itemPending.remove();
         }
     };
@@ -110,15 +116,12 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           src.match(/ytimg/g) &&
           youtubeMedia == false
         ) {
-        _channel
-          .querySelector(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-          )
+          itemContainer
             .classList
               .add(
                 `yt`
               );
-        itemPending.style.display = `none`;
+        itemPending.remove();
       }
       if (
         safeSearchIDs.includes(menu[id].id) &&
@@ -174,17 +177,23 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   }
                   request.onerror = function (e) {
                     if (
-                      onlyImages &&
-                      _channel.querySelector(
-                        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                      )
-                    ) {
-                      _main.querySelector(
-                       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                      ).remove();
-                    } else {
-                      itemPending.remove();
-                    }
+                      onlyImages
+                    )
+                      itemContainer.remove();
+                      else if (
+                          window.innerWidth <= 425
+                      ) {
+                        _channel
+                          .querySelectorAll(
+                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+                             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+                          )
+                            .forEach(
+                              (a) =>
+                                a.style.cssText = `display:block !important`
+                            )
+                        itemPending.remove();
+                      }
                   };
                   if (
                     !src.match(/4cdn/g)
@@ -247,17 +256,23 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               }
               request.onerror = function (e) {
                 if (
-                  onlyImages &&
-                  _channel.querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                  )
+                  onlyImages
                 )
-                  _channel.querySelector(
-                   `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                  ).remove();
-                else {
+                  itemContainer.remove();
+                else if (
+                    window.innerWidth <= 425
+                ) {
+                  _channel
+                    .querySelectorAll(
+                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+                       [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+                    )
+                      .forEach(
+                        (a) =>
+                          a.style.cssText = `display:block !important`
+                      )
                   itemPending.remove();
-                };
+                }
               }
               if (
                 !src.match(/4cdn/g)
@@ -304,34 +319,39 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               Width
             );
             itemImage.setAttribute(`src`, e.target.result);
-            itemPending.style.display = `none`;
             itemImage.style.display = `block`;
+            itemPending.remove();
             setTimeout(
               function() {
-            _channel
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-              )
-                .style
-                  .cssText
+                _channel
+                  .querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                  )
+                    .style
+                      .cssText
                     =
-                  `height:${itemImage.clientHeight}px !important`
+                      `height:${itemImage.clientHeight}px !important`
                 }, 500
               )
             }
           }
             request.onerror = function (e) {
               if (
-                onlyImages &&
-                _channel.querySelector(
-                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                )
+                onlyImages
               )
-                _channel.querySelector(
-                 `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-                )
-                  .remove();
-              else {
+                itemContainer.remove();
+              else if (
+                  window.innerWidth <= 425
+              ) {
+                _channel
+                  .querySelectorAll(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+                     [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+                  )
+                    .forEach(
+                      (a) =>
+                        a.style.cssText = `display:block !important`
+                    )
                 itemPending.remove();
               }
             };
@@ -354,39 +374,47 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     };
     newImg.onerror = function () {
       if (
-        onlyImages &&
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        )
+        onlyImages
       )
-        _channel.querySelector(
-         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        )
-          .remove();
-      else {
+        itemContainer.remove();
+      else if (
+        window.innerWidth <= 425
+      ) {
+        _channel
+          .querySelectorAll(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+          )
+            .forEach(
+              (a) =>
+                a.style.cssText = `display:block !important`
+            )
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
+        itemPending.remove();
       }
     };
   }
   else {
     if (
-      onlyImages &&
-      _channel.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-      )
+      onlyImages
     )
-      _channel.querySelector(
-       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-      ).remove();
-    else if (
-      !onlyImages &&
-      _channel.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-      )
-    )
-    {
+      itemContainer.remove();
+      else if (
+          window.innerWidth <= 425
+      ) {
+        _channel
+          .querySelectorAll(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+          )
+            .forEach(
+              (a) =>
+                a.style.cssText = `display:block !important`
+            )
+        itemPending.remove();
+    }
       setTimeout(
         function() {
           if (
@@ -415,4 +443,3 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       )
     };
   }
-}
