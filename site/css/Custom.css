@@ -141,8 +141,16 @@
     display: none !important;
   }
 
-  .flexbox .item .wrap {
+  .flexbox .item .pub {
     display: none !important;
+  }
+
+  .flexbox .item .ago {
+    display: none !important;
+  }
+
+  .flexbox .item .wrap {
+    background: transparent !important;
   }
 
   .sideChannel {
