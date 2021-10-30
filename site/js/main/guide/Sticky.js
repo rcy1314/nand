@@ -195,12 +195,9 @@ var Sticky = function (pubArray) {
         !youtubeMedia
       ) {
         _guide
-          .querySelectorAll(
-            `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
-          )
-            .forEach(
-              (a) => a.style.height = `270px`
-            );
+          .querySelector(
+            `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
+          ).style.top = `-100px`
       }
     }
     if (

@@ -164,14 +164,14 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.classList.add(`blur`);
                       setTimeout(
                         function() {
-                      _channel
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-                        )
-                          .style
-                            .cssText
-                              =
-                            `height:${itemImage.clientHeight}px !important`
+                          _channel
+                            .querySelector(
+                              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                            )
+                              .style
+                                .cssText
+                                  =
+                                `height:${itemImage.clientHeight}px !important`
                           }, 500
                         )
                     };
@@ -312,6 +312,9 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemImage.style.display = `block`;
             setTimeout(
               function() {
+            if (
+              itemImage.clientHeight > 200
+            )
             _channel
               .querySelector(
                 `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
@@ -384,39 +387,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       _channel.querySelector(
        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
       ).remove();
-    else if (
-      !onlyImages &&
-      _channel.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-      )
-    )
-    {
-      setTimeout(
-        function() {
-          if (
-            window.innerWidth <= 425
-          ){
-            _channel
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-              )
-                .style
-                  .cssText
-                    = `height:80px !important`
-          }
-          else
-          {
-            _channel
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-              )
-                .style
-                  .cssText
-                    = `height:169px !important`
-          }
-          itemPending.remove();
-        }, 500
-      )
-    };
+      copyDownload.style.display = `none`;
+      copyPicture.style.display = `none`;
+      copyPost.style.display = `none`;
+      attribute.style.height = `35px`;
+      itemPending.remove();
   }
 }

@@ -134,7 +134,7 @@ var Append = function (id) {
   if (
     display == `flexBox`
       &&
-    !menu[
+    menu[
       id
     ]
       .media
@@ -149,7 +149,7 @@ var Append = function (id) {
   else if (
     display == `legacy`
       ||
-    menu[
+    !menu[
       id
     ]
       .media

@@ -1,0 +1,55 @@
+@media screen and (min-width: 1024px) {
+
+  .air,
+  .result {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .expand {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  .populate {
+    height: 140px;
+    width: 180px;
+    margin: 2em;
+  }
+
+  #arm {
+    width: 670px;
+  }
+
+  #front {
+    width: 940px;
+  }
+
+  #input {
+    margin: 0 auto;
+  }
+
+  #options {
+    position: absolute;
+    right: 145px;
+  }
+
+  #main #top #arm #option {
+    right: -30px;
+  }
+
+  #quick {
+    position: relative;
+    width: 848px;
+    top: 15px;
+    left: 0;
+  }
+
+}

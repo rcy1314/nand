@@ -61,7 +61,7 @@ const favorites = [
 
 */
 
-let bootup = true;
+let bootup = false;
 
 /*
     topBar [boolean/integer]

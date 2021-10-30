@@ -1,0 +1,73 @@
+@media screen and (min-width: 768px) {
+
+  #xml .classic {
+    height: 169px;
+  }
+
+  .sideChannel {
+    top: 60px !important;
+  }
+
+  #main #option {
+    display: none;
+  }
+
+  .item {
+    width: 360px !important;
+  }
+
+  #guide .item {
+    width: fit-content !important;
+  }
+
+  .content {
+    right: 0 !important;
+  }
+
+    .dots {
+      animation: dots 3s infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(2){
+      animation: dots 3s 150ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(3) {
+      animation: dots 3s 300ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(4) {
+      animation: dots 3s 450ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+    .dots:nth-of-type(5) {
+      animation: dots 3s 600ms infinite cubic-bezier(.1,.9,1,.1) !important;
+    }
+
+  .expand {
+    margin: 0 auto !important;
+    width: 720px !important;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 760px !important;
+  }
+
+  #arm {
+    width: 100%;
+  }
+
+	#page {
+		top: 0;
+	}
+
+  #main #top #arm #option {
+    display: inline-block;
+    position: absolute;
+    right: -75px;
+  }
+
+  #main #visit #page #quick {
+  	width: 720px;
+    top: 15px;
+    right: 0;
+  }
+
+}

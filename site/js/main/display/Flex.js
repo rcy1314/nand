@@ -115,9 +115,14 @@ let Flex = function () {
   else
     _display.style.display = `none`;
 
+  setTimeout(
+    function() {
+    if (
+      !menu[id].id.match(/Youtube/g)
+    )
     _channel
       .querySelectorAll(
-        `.classic`
+        `.item, .classic`
       )
         .forEach(
           (a) =>
@@ -134,7 +139,7 @@ let Flex = function () {
                 `.img`
               )
                 .clientHeight
-        }px`
+        }px !important`
       )
       _channel
         .querySelectorAll(
@@ -148,4 +153,6 @@ let Flex = function () {
             =
               `absolute`
           )
+    }, 300
+  )
 }

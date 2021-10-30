@@ -1,0 +1,104 @@
+@media (min-width: 426px) and (max-width: 767px) {
+
+  #xml .classic {
+    height: 169px !important;
+  }
+
+  .sideChannel {
+    height: fit-content !important;
+    margin-top: 60px !important;
+    top: 0 !important;
+  }
+
+  .sideItem {
+    width: 320px !important;
+    display: inline-table;
+    margin-right: 50px;
+    height: 260px;
+  }
+
+  #options {
+      display: inline-block;
+      position: absolute;
+      margin-right: auto;
+      margin-left: auto;
+      top: 115px;
+      right: 0;
+      left: 0;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .focus {
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 400px;
+    padding: 0;
+    top: -25px;
+    right: 0;
+  }
+
+  .focus input[type=text] {
+    border-radius: 8px;
+    padding-left: 35px;
+    width: 340px;
+    top: -2px;
+  }
+
+  .focus .button {
+    top: -1px;
+  }
+
+  .listing {
+    height: 264px !important;
+    width: 405px !important;
+    top: 0 !important;
+  }
+
+  #feed {
+    width: 480px;
+  }
+
+  #first {
+    background-color: transparent !important;
+    height: 264px;
+    width: 405px;
+    top: 35px;
+  }
+
+  #match {
+    height: 264px;
+    width: 415px;
+    top: 25px;
+  }
+
+  #option {
+    width: calc(100% - 20px);
+    top: calc(100% - 50px);
+    position: fixed;
+    display: flex;
+    height: 50px;
+    right: 11px;
+  }
+
+  #xml {
+    height: fit-content;
+    position: absolute;
+    min-height: 100%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 75%;
+    z-index: 1;
+    top: 60px;
+    right: 0;
+    left: 0;
+  }
+
+  .yt .image {
+    padding-bottom: 16.25% !important;
+  }
+
+}

@@ -88,7 +88,9 @@ let Bootup = function() {
     }
 
   }
-  else {
+  else if (
+    !location.search.split(`?q=`)[1]
+  ){
     _container.style.display = `block`;
     _check.style.display = `none`;
     _visit.style.display = `flex`;
