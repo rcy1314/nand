@@ -41,7 +41,10 @@ var Title = function (xhr) {
         )[0]
           .childNodes[0]
       &&
-      title.length == 7
+      title
+        .length
+        ==
+      7
   )
     var title =
       xhr

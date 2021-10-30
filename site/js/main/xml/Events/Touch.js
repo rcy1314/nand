@@ -4,16 +4,24 @@ _main
     {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window.clearTimeout( isScrolling );
-      touchmove = false;
-      // Set a timeout to run after scrolling ends
-    	isScrolling =
-        setTimeout(
-          function() {
-            // Run the callback
-            touchmove = true;
-          }, 2600
+    	window
+        .clearTimeout(
+          isScrolling
         );
+      touchmove
+        =
+      false;
+      // Set a timeout to run after scrolling ends
+    	isScrolling
+        =
+      setTimeout(
+        function() {
+          // Run the callback
+          touchmove
+            =
+          true;
+        }, 2600
+      );
       if (
         (
           _main.scrollHeight
@@ -22,41 +30,48 @@ _main
             -
           _main.clientHeight
             <=
-          offset &&
-          Reader &&
+          offset
+            &&
+          Reader
+            &&
           !stop
         )
       ) {
-        stop = true;
-        first = false;
-        if (showSplash) _check.style.display = `block`;
-        while (
-          _air.firstChild
+        stop
+          =
+        true;
+        first
+          =
+        false;
+        if (
+          showSplash
         )
-          _air.removeChild(
-            _air.lastChild
-          );
-
-        while (
-          _result.firstChild
-        )
-          _result.removeChild(
-            _result.lastChild
-          );
+          _check
+            .style
+              .display
+            =
+          `block`;
 
         while (
           _status.firstChild
         )
-          _status.removeChild(
-            _status.lastChild
-          );
+          _status
+            .removeChild(
+              _status
+                .lastChild
+              );
         while (
-          _suggestions.firstChild
+          _suggestions
+            .firstChild
         )
-          _suggestions.removeChild(
-            _suggestions.lastChild
-          );
-        Request(anyRandomMenuObject());
+          _suggestions
+            .removeChild(
+              _suggestions
+                .lastChild
+              );
+        Request(
+          anyRandomMenuObject()
+        );
       }
     },
   {
@@ -71,16 +86,23 @@ _channel
     {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window.clearTimeout( isScrolling );
-      touchmove = false;
+    	window.clearTimeout(
+        isScrolling
+      );
+      touchmove
+        =
+      false;
       // Set a timeout to run after scrolling ends
-    	isScrolling =
-        setTimeout(
-          function() {
-            // Run the callback
-            touchmove = true;
-          }, 2600
-        );
+    	isScrolling
+        =
+      setTimeout(
+        function() {
+          // Run the callback
+          touchmove
+            =
+          true;
+        }, 2600
+      );
       if (
         (
           _channel.scrollWidth
@@ -91,38 +113,46 @@ _channel
             <=
           _channel.clientWidth
             &&
-          Reader &&
+          Reader
+            &&
           !stop
         )
       ) {
-        stop = true;
-        first = false;
-        if (showSplash) _check.style.display = `block`;
-        while (
-          _air.firstChild
+        stop
+          =
+        true;
+        first
+          =
+        false;
+        if (
+          showSplash
         )
-          _air.removeChild(
-            _air.lastChild
-          );
+          _check
+            .style
+              .display
+            =
+          `block`;
         while (
-          _result.firstChild
-        )
-          _result.removeChild(
-            _result.lastChild
-          );
+          _status
+            .firstChild
+          )
+          _status
+            .removeChild(
+              _status
+                .lastChild
+              );
         while (
-          _status.firstChild
+          _suggestions
+            .firstChild
         )
-          _status.removeChild(
-            _status.lastChild
-          );
-        while (
-          _suggestions.firstChild
-        )
-          _suggestions.removeChild(
-            _suggestions.lastChild
-          );
-        Request(anyRandomMenuObject());
+          _suggestions
+            .removeChild(
+              _suggestions
+                .lastChild
+              );
+        Request(
+          anyRandomMenuObject()
+        );
       }
     },
   {

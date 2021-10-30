@@ -14,79 +14,151 @@ var Append = function (id) {
         `#bottom`
       )
         .remove();
+
   const has =
-    exclude.map((a) => a.toLowerCase());
-    for (i = 0; i < pub.length - 1; i++) {
+    exclude
+      .map(
+        (a) =>
+          a
+            .toLowerCase()
+          );
+    for (
+      i
+        =
+      0;
+      i
+        <
+      pub
+        .length
+        -
+      1;
+      i++
+    ) {
       if (
-        has.filter(function (obj) {
-          return pub[i].title.toLowerCase().match(obj);
-        }).length > 0
+        has
+          .filter(
+            function (obj) {
+              return pub[i].title.toLowerCase().match(obj);
+            }
+          ).length
+            >
+          0
       )
         continue;
     if (
       omitGuide &&
-      i != local
+      i
+        !=
+      local
     ) {
-        _channel.append(pub[i].post)
-        images.push(
-          {
-            element: pub[i].element,
-            src: pub[i].src
-          }
-        );
-    } else if (
+        _channel
+          .append(
+            pub[i].post
+          )
+        images
+          .push(
+            {
+              element: pub[i].element,
+              src: pub[i].src
+            }
+          );
+    }
+    else if (
       !omitGuide
     ) {
-        _channel.append(pub[i].post)
-        images.push(
-          {
-            element: pub[i].element,
-            src: pub[i].src
-          }
-        );
+        _channel
+          .append(
+            pub[i].post
+          )
+        images
+          .push(
+            {
+              element: pub[i].element,
+              src: pub[i].src
+            }
+          );
     }
   }
   if (
-    safeSearchIDs.includes(menu[id].id) ||
+    safeSearchIDs
+      .includes(
+        menu[id].id
+      )
+      ||
     safeSearch
   ) {
     for (
-      let i = 0;
-      i <= images.length - 1;
+      let i
+        =
+      0;
+      i
+        <=
+      images
+        .length
+        -
+      1;
       i++
     ) {
       Attributes(
         false,
         id,
-        images[i].element,
-        images[i].src
+        images[i]
+          .element,
+        images[i]
+          .src
       );
     }
-  } else if (
-    !safeSearchIDs.includes(
-      menu[id].id
+  }
+
+  else if (
+    !safeSearchIDs
+      .includes(
+        menu[
+          id
+        ]
+          .id
     )
   ) {
+
     for (
-      let i = 0;
-      i <= images.length - 1;
+      let i
+        =
+      0;
+      i
+        <=
+      images
+        .length
+        -
+      1;
       i++
     ) {
       Attributes(
         false,
         id,
-        images[i].element,
-        images[i].src
+        images[i]
+          .element,
+        images[i]
+          .src
       );
     }
   }
     if (
-      display !== `sideScroll` &&
-      !Reader &&
-      !first &&
-      document.body.contains(
-        _channel.querySelector(`.item`)
-      )
+      display
+        !==
+      `sideScroll`
+        &&
+      !Reader
+        &&
+      !first
+        &&
+      document
+        .body
+          .contains(
+            _channel
+              .querySelector(
+                `.item`
+              )
+          )
     ) {
       setTimeout(
         function () {
@@ -99,22 +171,41 @@ var Append = function (id) {
           );
         }, 250
       )
-    } else if (
-      !Reader &&
+    }
+    else if (
+      !Reader
+        &&
       first
     ) {
-      _channel.scrollTop = 0;
-      _center.scrollTop = 0;
-      _main.scrollTop = 0;
-    } else if (
-      display == `sideScroll` &&
-      !Reader &&
+      _channel
+        .scrollTop
+        =
+      0;
+      _center
+        .scrollTop
+        =
+      0;
+      _main
+        .scrollTop
+        =
+      0;
+    }
+    else if (
+      display
+        ==
+      `sideScroll`
+        &&
+      !Reader
+        &&
       !first
     ) {
-      touchmove = true;
+      touchmove
+        =
+      true;
       setTimeout(
         function () {
-          sideScrollToElm(touchmove,
+          sideScrollToElm(
+            touchmove,
             _channel,
             _channel.querySelector(`[aria-object='${id}']`),
             250
@@ -122,42 +213,102 @@ var Append = function (id) {
         }, 250
       )
     }
-  if (pub.length > 1) {
-    if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
-    if (pub[pub.length - 1]) var posts = pub.length - 1;
-    if (pub[0]) var recent = pub[0].dst;
+  if (
+    pub.length > 1
+  ) {
+    if (
+      pub[
+        pub.length
+          -
+        1
+      ]
+        .dst
+    )
+      var oldest
+        =
+      pub[
+        pub.length
+          -
+        1
+      ]
+        .dst;
+    if (
+      pub[
+        pub
+          .length
+          -
+        1
+      ]
+    )
+      var posts
+        =
+      pub
+        .length
+        -
+      1;
+    if (
+      pub[0]
+    )
+      var recent
+        =
+      pub[
+        0
+      ]
+        .dst;
   }
-  _channel.append(
-    footerBuild(id)
-  );
+  _channel
+    .append(
+      footerBuild(id)
+    );
 
   if (
-    display == `flexBox`
+    display
+      ==
+    `flexBox`
   )
     Flex();
 
   else if (
-    display == `sideScroll`
+    display
+      ==
+    `sideScroll`
   )
     Sidescroll();
 
   else if (
-    display == `legacy`
+    display
+      ==
+    `legacy`
   )
     Legacy();
 
-  if (
-    showSplash
-  )
-    _check.style.display = `none`;
-  Status(id, recent, oldest, posts);
-  Sidebar(guideOnScreen);
-  Topbar(topBar);
+  Status(
+    id,
+    recent,
+    oldest,
+    posts
+  );
+  Sidebar(
+    guideOnScreen
+  );
+  Topbar(
+    topBar
+  );
   Suggest();
-  local = null;
-  stop = false;
-  images = [];
-  post = null;
+  local
+    =
+  null;
+  stop
+    =
+  false;
+  images
+    =
+  [];
+  post
+    =
+  null;
   unloading();
-  first = false;
+  first
+    =
+  false;
 }

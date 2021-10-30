@@ -1,4 +1,4 @@
-var Status = function (
+let Status = function (
   menuIndex,
   recentPost,
   oldestPost,

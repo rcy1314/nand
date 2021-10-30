@@ -1,19 +1,50 @@
 var Request = function (index) {
   init();
-  pub = [];
+  pub
+    =
+  [];
   let html;
-  count = [];
-  id = index;
-  stop = true;
-  images = [];
-  let inline = [];
-  imageDuplicate = [];
-  _sb.style.display = `none`;
-  _toggle.style.display = `none`;
-  _container.style.display = `block`;
-  document.title = menu[index].id.space();
-  let state = `?q=${menu[index].id.hyphen()}`
-  state.state();
+  count
+    =
+  [];
+  id
+    =
+  index;
+  stop
+    =
+  true;
+  images
+    =
+  [];
+  let inline
+    =
+  [];
+  imageDuplicate
+    =
+  [];
+  _sb
+    .style
+      .display
+    =
+  `none`;
+  _container
+    .style
+      .display
+    =
+  `block`;
+  document
+    .title
+    =
+  menu[
+    index
+  ]
+    .id
+      .space();
+  let state
+    =
+  `?q=${menu[index].id.hyphen()}`
+  state
+    .state();
   if (
     !readPrevious
   )
@@ -27,8 +58,9 @@ var Request = function (index) {
             `.item`
           )
         )
-    &&
-    first ||
+      &&
+    first
+      ||
       document
         .body
           .contains(
@@ -38,42 +70,94 @@ var Request = function (index) {
               )
           )
   ) {
-    _channel.scrollTop = 0;
-    _center.scrollTop = 0;
-    _main.scrollTop = 0;
+    _channel
+      .scrollTop
+      =
+    0;
+    _center
+      .scrollTop
+      =
+    0;
+    _main
+      .scrollTop
+      =
+    0;
     xml();
   }
-  uri = `${cors}${menu[index].uri}`;
-  category = menu[index].category;
-  _visit.style.display = `none`;
+  uri
+    =
+  `${cors}${menu[index].uri}`;
+  category
+    =
+  menu[
+    index
+  ]
+    .category;
+  _visit
+    .style
+      .display
+    =
+  `none`;
 
   if (
-    window.innerWidth >= 768
+    window
+      .innerWidth
+    >=
+  768
   )
-    _bar.style.display = `none`;
+    _bar
+      .style
+        .display
+      =
+    `none`;
 
   if (
-    first &&
-    showSplash ||
-    !Reader &&
-    first &&
+    first
+      &&
+    showSplash
+      ||
+    !Reader
+      &&
+    first
+      &&
     showSplash
   )
-    _check.style.display = `block`;
+    _check
+      .style
+        .display
+      =
+    `block`;
 
-  httpRequest = new XMLHttpRequest();
-  httpRequest.onreadystatechange = function () {
+  httpRequest
+    =
+  new XMLHttpRequest();
+
+  httpRequest
+    .onreadystatechange
+    =
+  function () {
 
     if (
-      httpRequest.readyState == 4
+      httpRequest
+        .readyState
+        ==
+      4
     ) {
       // 4 = `loaded`
       if (
-        httpRequest.status == 200 &&
-        this.responseXML
+        httpRequest
+          .status
+          ==
+        200
+          &&
+        this
+          .responseXML
       ) {
         // 200 = OK
-        let xhr = this.responseXML;
+        let xhr
+          =
+        this
+          .responseXML;
 
         if (
           xhr
@@ -84,46 +168,81 @@ var Request = function (index) {
                 >
               0
             )
-              var channel = `entry`;
+              var channel
+                =
+              `entry`;
 
         else
-          var channel = `item`;
+          var channel
+            =
+          `item`;
 
         if (
           !Reader
         )
-          quit = 30;
+          quit
+            =
+          30;
 
         else
-          quit = 16;
+          quit
+            =
+          16;
 
         for (
-          let i = 2;
-          i <= xhr.getElementsByTagName(channel).length - 1;
+          let i
+            =
+          0;
+          i
+            <=
+          xhr
+            .getElementsByTagName(
+              channel
+            )
+              .length
+            -
+          1;
           i++
         ) {
           if (
-            i === quit
-          ) break;
+            i
+              ===
+            quit
+          )
+            break;
 
           let data =
             xhr
               .getElementsByTagName(
                 channel
-              )[i];
+              )[
+                i
+              ];
 
           if (
-            data.childNodes.length > 1
+            data
+              .childNodes
+                .length
+              >
+            1
           )
-            var title = Title(data);
+            var title
+              =
+            Title(data);
 
           if (
-            title == postDuplicate ||
-            title == ``
+            title
+              ==
+            postDuplicate
+              ||
+            title
+              == ``
           )
             continue;
 
-          var postDuplicate = title;
+          var postDuplicate
+            =
+          title;
 
           let trun =
             truncate(
@@ -139,7 +258,10 @@ var Request = function (index) {
             );
 
           if (
-            trun.match(/\w+/g)
+            trun
+              .match(
+                /\w+/g
+              )
           )
             var uri =
               trun
@@ -147,53 +269,98 @@ var Request = function (index) {
                   .match(
                     /\w+/g
                   )
-                    .join(`-`)
+                    .join(
+                      `-`
+                    )
 
           else
-            var uri = trun.toLowerCase()
+            var uri
+              =
+            trun
+              .toLowerCase()
 
-          let share = menu[index].title;
+          let share
+            =
+          menu[
+            index
+          ]
+            .title;
 
           if (
-            hash == `long`
+            hash
+              ==
+            `long`
           )
             share =
               `${location.href.split(`?`)[0]}?${parse.cyrb53}`;
 
           else if (
-            hash == `short`
+            hash
+              ==
+            `short`
           )
             share =
               `${location.href.split(`?`)[0]}?${menu[index].hash}${parse.base36}`;
 
           else if (
-            hash == `title`
+            hash
+              ==
+            `title`
           )
             share =
             `${location.href.split(`?`)[0]}?${uri}-${share}`;
 
-          let src = Source(data);
+          let src
+            =
+          Source(data);
 
           let courtesy =
             courtesyBuild(
-              menu[index].id.match(/([^\/]+)$/g),
-              menu[index].image.image(),
-              menu[index].uri.match(
+              menu[index]
+                .id
+                  .match(
+                    /([^\/]+)$/g
+                  ),
+              menu[
+                index
+              ]
+                .image
+                  .image(),
+              menu[
+                index
+              ]
+                .uri
+                  .match(
                 /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
               )
             );
 
           if (
-            title.length > titleTruncate
+            title
+              .length
+              >
+            titleTruncate
           )
-            var more = `<div class='more'>more</div>`;
+            var more
+              =
+            `<div class='more'>more</div>`;
 
-          else var more = ``;
+          else
+            var more
+              =
+            ``;
 
           if (
-            src &&
-            src.match(/youtube\.com/g) &&
-            youtubeMedia == true
+            src
+              &&
+            src
+              .match(
+                /youtube\.com/g
+              )
+              &&
+            youtubeMedia
+              ==
+            true
           ) {
             if (
               data
@@ -209,7 +376,9 @@ var Request = function (index) {
                     data
                       .getElementsByTagName(
                           `media:statistics`
-                      )[0]
+                      )[
+                        0
+                      ]
                         .getAttribute(
                           `views`
                         )
@@ -217,64 +386,82 @@ var Request = function (index) {
                             /\B(?=(\d{3})+(?!\d))/g, `,`)
                       }`;
 
-            else var views = ``;
+            else
+              var views
+                =
+              ``;
 
-            inline = [];
-            inline.push(
-              {
-                id: menu[index].id.match(/([^\/]+)$/g),
-                image: menu[index].image.image(),
-                externalURI: parse.externalURI,
-                courtesy: courtesy,
-                menuObject: index,
-                videoSource: src,
-                dst: parse.dst,
-                truncate: trun,
-                share: share,
-                title: title,
-                views: views,
-                more: more,
-                pubIndex: i,
-                uri: uri
-              }
+            inline
+              =
+            [];
+            inline
+              .push(
+                {
+                  id: menu[index].id.match(/([^\/]+)$/g),
+                  image: menu[index].image.image(),
+                  externalURI: parse.externalURI,
+                  courtesy: courtesy,
+                  menuObject: index,
+                  videoSource: src,
+                  dst: parse.dst,
+                  truncate: trun,
+                  share: share,
+                  title: title,
+                  views: views,
+                  pubIndex: i,
+                  more: more,
+                  uri: uri
+                }
+              );
+            html
+              =
+            youtubeHTMLBuild(
+              inline[0]
             );
-            html = youtubeHTMLBuild(inline[0]);
 
           }
+
           else {
-            inline = [];
-            inline.push(
-              {
-                externalURI: parse.externalURI,
-                courtesy: courtesy,
-                menuObject: index,
-                dst: parse.dst,
-                truncate: trun,
-                title: title,
-                share: share,
-                more: more,
-                src: src,
-                pubIndex: i,
-                uri: uri
-              }
-            );
-            html = xmlHTMLBuild(inline[0]);
+            inline
+              =
+            [];
+            inline
+              .push(
+                {
+                  externalURI: parse.externalURI,
+                  courtesy: courtesy,
+                  menuObject: index,
+                  dst: parse.dst,
+                  truncate: trun,
+                  title: title,
+                  share: share,
+                  pubIndex: i,
+                  more: more,
+                  src: src,
+                  uri: uri
+                }
+              );
+            html
+              =
+            xmlHTMLBuild(inline[0]);
           }
-          pub.push({
-            enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
-            re: parse.externalURI,
-            courtesy: courtesy,
-            since: parse.since,
-            gen: parse.base36,
-            dst: parse.dst,
-            share: share,
-            title: title,
-            more: more,
-            element: i,
-            post: html,
-            src: src,
-            uri: uri
-          });
+          pub.push(
+            {
+              enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
+              re: parse.externalURI,
+              courtesy: courtesy,
+              since: parse.since,
+              gen: parse.base36,
+              dst: parse.dst,
+              share: share,
+              title: title,
+              more: more,
+              element: i,
+              post: html,
+              src: src,
+              uri: uri
+            }
+          );
           pub.sort(
             function (a, b) {
               return b.since - a.since;
@@ -283,54 +470,120 @@ var Request = function (index) {
         }
 
         for (
-          let i = 0;
-          i < pub.length;
-          i++) {
+          let i
+            =
+          0;
+          i
+            <
+          pub.length;
+          i++
+        ) {
           if (
-            pub[i].enc == post &&
-            hash == `long`
+            pub[i]
+              .enc
+              ==
+            post
+              &&
+            hash
+              ==
+            `long`
           )
-            local = i;
+            local
+              =
+            i;
 
           else if (
-            parseInt(pub[i].gen, 36) == post &&
-            hash == `short`
+            parseInt(
+              pub[i].gen,
+              36
+            )
+              ==
+            post
+              &&
+            hash
+              ==
+            `short`
           )
-            local = i;
+            local
+              =
+            i;
 
           else if (
-            pub[i].uri == post &&
-            hash == `title`
+            pub[
+              i
+            ]
+              .uri
+              ==
+            post
+              &&
+            hash
+              ==
+            `title`
           )
-            local = i;
+            local
+              =
+            i;
         }
 
         if (
-          menu[index].id.match(/Youtube/g) &&
-          !isNaN(parseFloat(local)) &&
-          youtubeMedia == true &&
-          isFinite(local)
+          menu[
+            index
+          ]
+            .id
+            .match(
+              /Youtube/g
+            )
+            &&
+          !isNaN(
+            parseFloat(
+              local
+            )
+          )
+            &&
+          youtubeMedia
+            ==
+          true
+            &&
+          isFinite(
+            local
+          )
         ) {
-          _guide.style.display = `flex`;
+          _guide
+            .style
+              .display
+            =
+          `flex`;
 
-          var sticky = [];
-          sticky.push(
-            {
-              title: menu[index].id.match(/([^\/]+)$/g),
-              image: menu[index].image.image(),
-              element: pub[local].element,
-              externalURI: pub[local].re,
-              share: pub[local].share,
-              dst: pub[local].dst,
-              src: pub[local].src,
-              menuObject: index,
-              pubIndex: local,
-              publish: title,
-              views: views,
-            }
+          var sticky
+            =
+          [];
+          sticky
+            .push(
+              {
+                title: menu[index].id.match(/([^\/]+)$/g),
+                image: menu[index].image.image(),
+                element: pub[local].element,
+                externalURI: pub[local].re,
+                share: pub[local].share,
+                dst: pub[local].dst,
+                src: pub[local].src,
+                menuObject: index,
+                pubIndex: local,
+                publish: title,
+                views: views,
+              }
+            );
+          Guide(
+            sticky
           );
-          Guide(sticky);
-          document.querySelector(`.sticky`).style.display = `flex`;
+          document
+            .querySelector(
+              `.sticky`
+            )
+              .style
+                .display
+            =
+          `flex`;
           unloading();
         }
 
@@ -339,76 +592,143 @@ var Request = function (index) {
             parseFloat(
               local
             )
-          ) &&
+          )
+            &&
           isFinite(
             local
           )
         ) {
           if (
-            pub[local].src == null
+            pub[
+              local
+            ]
+              .src
+              ==
+            null
           ) {
-            pub[local].re.exit()
+            pub[
+              local
+            ]
+              .re
+                .exit()
             return false;
           }
-          _guide.style.display = `flex`;
+          _guide
+            .style
+              .display
+            =
+          `flex`;
 
-          var sticky = [];
-          sticky.push(
-            {
-              image: menu[index].image.image(),
-              courtesy: pub[local].courtesy,
-              element: pub[local].element,
-              externalURI: pub[local].re,
-              title: pub[local].title,
-              share: pub[local].share,
-              dst: pub[local].dst,
-              src: pub[local].src,
-              menuObject: index,
-              pubIndex: local,
-            }
+          let sticky
+            =
+          [];
+          sticky
+            .push(
+              {
+                image: menu[index].image.image(),
+                courtesy: pub[local].courtesy,
+                element: pub[local].element,
+                externalURI: pub[local].re,
+                title: pub[local].title,
+                share: pub[local].share,
+                dst: pub[local].dst,
+                src: pub[local].src,
+                menuObject: index,
+                pubIndex: local,
+              }
+            );
+          Guide(
+            sticky
           );
-          Guide(sticky);
           unloading();
         }
         else if (
-          Array.isArray(pub)
+          Array
+            .isArray(
+              pub
+            )
         ) {
-          _guide.style.display = `none`;
-          Append(index);
+          _guide
+            .style
+              .display
+            =
+          `none`;
+          Append(
+            index
+          );
           unloading();
-          pub = null;
+          pub
+            =
+          null;
         }
-      } else {
-        if (
-          showSplash
-        )
-          _check.style.display = `none`;
+      }
+      else {
         onlyImages = onlyImagesBuffer;
         setTimeout(
           function() {
             Group();
           }, 300
         )
-        Topbar(topBar);
         Reader = false;
-        Category(category);
-        Expand(expand);
+        Topbar(
+          topBar
+        );
+        Category(
+          category
+        );
+        Expand(
+          expand
+        );
         _main
-          .querySelectorAll(`.joi`)
+          .querySelectorAll(
+            `.joi`
+          )
             .forEach(
-              (a) => a.classList.remove(`luv`)
+              (a) =>
+                a
+                  .classList
+                    .remove(
+                      `luv`
+                    )
             );
         unloading();
       }
-      _main.setAttribute(`tabindex`, -1);
-      _main.focus();
+      _main
+        .setAttribute(
+          `tabindex`,
+          -1
+        );
+      _main
+        .focus();
     }
-    else return true
+    else
+      return true
   };
-  httpRequest.open(`GET`, uri);
-  httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
-  httpRequest.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
-  httpRequest.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
-  httpRequest.setRequestHeader(`X-Requested-With`, `*`);
-  httpRequest.send();
+  httpRequest
+    .open(
+      `GET`,
+      uri
+    );
+  httpRequest
+    .setRequestHeader(
+      `Content-Type`,
+      `text/html; charset=utf-8`
+    );
+  httpRequest
+    .setRequestHeader(
+      `Accept`,
+      `text/html; charset=utf-8`
+    );
+  httpRequest
+    .setRequestHeader(
+      `Access-Control-Allow-Origin`,
+      `*`
+    );
+  httpRequest
+    .setRequestHeader(
+      `X-Requested-With`,
+      `*`
+    );
+  httpRequest
+    .send();
 };
