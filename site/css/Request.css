@@ -485,6 +485,10 @@
   left: 0;
 }
 
+.yt img {
+  top: -16.25%;
+}
+
 .views {
   text-transform: capitalize;
   color: var(--fill-color);

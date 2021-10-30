@@ -35,6 +35,7 @@ var Dimensions = function (
     `[aria-item='${pubIndex}'][aria-item='${pubIndex}'] .post`
   );
   if (
+    itemImage &&
     itemImage.clientHeight < shrunk &&
     display !== `flexBox`
   ) {
@@ -83,13 +84,26 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
-      &&
+      ||
       menu[id].id.match(/Youtube/g) &&
-      !youtubeMedia
+      !youtubeMedia &&
+      window.innerWidth > 425
     ) {
-      itemContainer.style.height = `160px`;
-      itemPending.style.height = `160px`;
-      itemImage.style.height = `160px`;
+      itemContainer.style.height = `200px`;
+      itemImage.style.height = `340px`;
+      _channel.querySelectorAll(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic,
+        [aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap`
+      )
+        .forEach(
+          (a) =>
+            a
+              .style
+                .height
+                  =
+                `200px`
+        )
+      item.style.height = `200px`;
     } else if (
       window.innerWidth < 768 &&
       cropImages

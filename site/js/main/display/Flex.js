@@ -59,14 +59,13 @@ let Flex = function () {
             )
           )
      &&
-    window.innerWidth > 425 &&
-    !Reader
+    window.innerWidth > 425
   )
     _channel.querySelector(`#bottom`).style.cssText = min;
   if (
     window.innerWidth <= 425
   ) {
-    _channel.querySelector(`#bottom`).style.cssText = `bottom:0;position:fixed;`;
+    _channel.querySelector(`#bottom`).style.cssText = `bottom:0;position:fixed`;
     if (
       id &&
       menu[id].id.match (/Youtube/g)
@@ -114,28 +113,6 @@ let Flex = function () {
 
   else
     _display.style.display = `none`;
-
-    _channel
-      .querySelectorAll(
-        `.classic`
-      )
-        .forEach(
-          (a) =>
-          a
-            .style
-              .cssText
-            =
-          `height:${
-            a
-            .closest(
-              `.item`
-            )
-              .querySelector(
-                `.img`
-              )
-                .clientHeight
-        }px`
-      )
       _channel
         .querySelectorAll(
           `.header`

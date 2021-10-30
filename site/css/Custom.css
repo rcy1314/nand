@@ -126,12 +126,12 @@
   }
 
   .flexbox .yt .image {
-    height: 80px !important;
+    height: 80px;
   }
 
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
-    height: fit-content !important;
+    height: fit-content;
     position: relative;
     width: 140px !important;
     left: -150px !important;
