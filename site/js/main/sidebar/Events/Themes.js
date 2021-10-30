@@ -27,11 +27,7 @@ _sidebar
                 `border`
               )
       ) {
-        expandVisual
-          =
-        expandVisual
-          !=
-        true
+        expandVisual = expandVisual != true
         if (
           !expandVisual
         ) {
@@ -60,8 +56,9 @@ _sidebar
       }
 
       evt.preventDefault();
-  },
-  {
-  passive: false
-  }
+    },
+    {
+      passive:
+      false
+    }
 );

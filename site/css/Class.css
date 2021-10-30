@@ -1,5 +1,5 @@
-.block .des,
-.block .hash{
+.block .hash,
+.block .des {
   display: none !important;
 }
 
@@ -96,8 +96,8 @@
   display: flex !important;
 }
 
-.flexbox:after,
-.flexbox:before {
+.flexbox:before,
+.flexbox:after {
   flex-basis: 100% !important;
   content: "" !important;
   width: 0 !important;
@@ -132,9 +132,23 @@
   display: none;
 }
 
+.invertScrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
 .invisible {
   visibility: hidden;
   opacity: 0;
+}
+
+.invertScrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--fill-color-secondary);
+  border-radius: 2px;
+}
+
+.invertScrollbar {
+  scrollbar-color: #eeeeee transparent;
+  scrollbar-width: thin;
 }
 
 .minimum {
@@ -184,14 +198,6 @@
 }
 
 .sideItem {
-  width: 320px !important;
-  display: inline-table;
-  margin-right: 50px;
-  height: 540px;
-}
-
-.sideItem .header {
-  position: relative !important;
   width: 320px !important;
   display: inline-table;
   margin-right: 50px;

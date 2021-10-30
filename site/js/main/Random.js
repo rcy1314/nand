@@ -1,22 +1,14 @@
 let Random = function() {
   random = [];
   for (
-    i
-      =
-    0;
-    i
-      <=
-    menu
-      .length
-      -
-    1;
+    i = 0;
+    i <= menu.length - 1;
     i++
   ) {
     if (
       menu[i] &&
       onlyImages &&
-      menu[i]
-        .media
+      menu[i].media
     )
       random.push(
         menu.indexOf(
@@ -26,11 +18,8 @@ let Random = function() {
     else if (
       !onlyImages
     )
-      random
-        .push(
-          menu[i]
-        );
-
+      random.push(
+        menu[i]
+      );
   }
-
 }

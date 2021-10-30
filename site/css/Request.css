@@ -280,6 +280,7 @@
 }
 
 #xml .header {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   background-color: transparent;
   position: absolute;
   height: 60px;
@@ -384,7 +385,7 @@
   margin-right: 30px;
   margin-top: 20px;
   cursor: default;
-  bottom: 15px;
+  bottom: 30px;
 }
 
 .random {
@@ -484,10 +485,6 @@
   left: 0;
 }
 
-.yt img {
-  top: -16.25%;
-}
-
 .views {
   text-transform: capitalize;
   color: var(--fill-color);
@@ -496,7 +493,7 @@
 }
 
 #xml .wrap {
-  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 90%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   position: absolute;
   z-index: 11;
   bottom: 0;

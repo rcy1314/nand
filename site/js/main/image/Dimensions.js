@@ -5,11 +5,7 @@ var Dimensions = function (
   Width
 ) {
   let k = 5420;
-  let shrunk = 200;
   let maximum = 480;
-  let item = _channel.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
-  );
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
@@ -34,17 +30,6 @@ var Dimensions = function (
   let copyPost = _channel.querySelector(
     `[aria-item='${pubIndex}'][aria-item='${pubIndex}'] .post`
   );
-  if (
-    itemImage &&
-    itemImage.clientHeight < shrunk &&
-    display !== `flexBox`
-  ) {
-    setTimeout(
-      function() {
-        item.style.cssText = `height:${itemImage.clientHeight} !important`;
-      }, 300
-    )
-  }
   if (
     Width < maximum &&
     document.body.contains(
@@ -74,7 +59,8 @@ var Dimensions = function (
     itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
     copyPost.style.display = `block`;
-    itemImage.style.width = `200px`;
+    itemImage.style.width = `180px`;
+    itemImage.style.margin = `12px`;
     attribute.style.height = `74px`;
   } else {
     if (
@@ -84,26 +70,13 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
-      ||
+      &&
       menu[id].id.match(/Youtube/g) &&
-      !youtubeMedia &&
-      window.innerWidth > 425
+      !youtubeMedia
     ) {
-      itemContainer.style.height = `200px`;
-      itemImage.style.height = `340px`;
-      _channel.querySelectorAll(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic,
-        [aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap`
-      )
-        .forEach(
-          (a) =>
-            a
-              .style
-                .height
-                  =
-                `200px`
-        )
-      item.style.height = `200px`;
+      itemContainer.style.height = `160px`;
+      itemPending.style.height = `160px`;
+      itemImage.style.height = `160px`;
     } else if (
       window.innerWidth < 768 &&
       cropImages

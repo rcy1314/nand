@@ -44,32 +44,33 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     src.match(/\.webm|\.mp4/g)
   ) {
     if (
-      itemContainer
+      document
+        .body
+          .contains(
+            _channel.querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+            )
+          )
     ) {
+
       if (
         onlyImages
-      )
-        itemContainer.remove();
-      else if (
-          window.innerWidth <= 425
       ) {
         _channel
-          .querySelectorAll(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+          .querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
           )
-            .forEach(
-              (a) =>
-                a.style.cssText = `display:block !important`
-            )
-          itemPending.remove();
-          copyDownload.style.display = `none`;
-          copyPicture.style.display = `none`;
-          attribute.style.height = `74px`;
-          count.shift();
-        }
+            .remove();
+      }
+      else {
+        copyDownload.style.display = `none`;
+        copyPicture.style.display = `none`;
+        attribute.style.height = `74px`;
+        itemPending.remove();
+        count.shift();
       }
     }
+  }
   imageDuplicate.push(src);
   if (
     src &&
@@ -91,19 +92,12 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         if (
           onlyImages
         )
-          itemContainer.remove();
-        else if (
-            window.innerWidth <= 425
-        ) {
           _channel
-            .querySelectorAll(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-               [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+            .querySelector(
+              `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
             )
-              .forEach(
-                (a) =>
-                  a.style.cssText = `display:block !important`
-              )
+              .remove();
+        else {
           itemPending.remove();
         }
     };
@@ -116,12 +110,15 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           src.match(/ytimg/g) &&
           youtubeMedia == false
         ) {
-          itemContainer
+        _channel
+          .querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+          )
             .classList
               .add(
                 `yt`
               );
-        itemPending.remove();
+        itemPending.style.display = `none`;
       }
       if (
         safeSearchIDs.includes(menu[id].id) &&
@@ -165,27 +162,33 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        function() {
+                      _channel
+                        .querySelector(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                        )
+                          .style
+                            .cssText
+                              =
+                            `height:${itemImage.clientHeight}px !important`
+                          }, 500
+                        )
                     };
                   }
                   request.onerror = function (e) {
                     if (
-                      onlyImages
-                    )
-                      itemContainer.remove();
-                      else if (
-                          window.innerWidth <= 425
-                      ) {
-                        _channel
-                          .querySelectorAll(
-                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-                             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-                          )
-                            .forEach(
-                              (a) =>
-                                a.style.cssText = `display:block !important`
-                            )
-                        itemPending.remove();
-                      }
+                      onlyImages &&
+                      _channel.querySelector(
+                        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                      )
+                    ) {
+                      _main.querySelector(
+                       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                      ).remove();
+                    } else {
+                      itemPending.remove();
+                    }
                   };
                   if (
                     !src.match(/4cdn/g)
@@ -242,29 +245,23 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                         .cssText
                           =
                         `height:${itemImage.clientHeight}px !important`
-                      }, 300
+                      }, 500
                     )
                 };
               }
               request.onerror = function (e) {
                 if (
-                  onlyImages
+                  onlyImages &&
+                  _channel.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                  )
                 )
-                  itemContainer.remove();
-                else if (
-                    window.innerWidth <= 425
-                ) {
-                  _channel
-                    .querySelectorAll(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-                       [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-                    )
-                      .forEach(
-                        (a) =>
-                          a.style.cssText = `display:block !important`
-                      )
+                  _channel.querySelector(
+                   `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                  ).remove();
+                else {
                   itemPending.remove();
-                }
+                };
               }
               if (
                 !src.match(/4cdn/g)
@@ -311,39 +308,34 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               Width
             );
             itemImage.setAttribute(`src`, e.target.result);
+            itemPending.style.display = `none`;
             itemImage.style.display = `block`;
-            itemPending.remove();
             setTimeout(
               function() {
-                _channel
-                  .querySelector(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-                  )
-                    .style
-                      .cssText
+            _channel
+              .querySelector(
+                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+              )
+                .style
+                  .cssText
                     =
-                      `height:${itemImage.clientHeight}px !important`
+                  `height:${itemImage.clientHeight}px !important`
                 }, 500
               )
             }
           }
             request.onerror = function (e) {
               if (
-                onlyImages
+                onlyImages &&
+                _channel.querySelector(
+                  `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                )
               )
-                itemContainer.remove();
-              else if (
-                  window.innerWidth <= 425
-              ) {
-                _channel
-                  .querySelectorAll(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-                     [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-                  )
-                    .forEach(
-                      (a) =>
-                        a.style.cssText = `display:block !important`
-                    )
+                _channel.querySelector(
+                 `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                )
+                  .remove();
+              else {
                 itemPending.remove();
               }
             };
@@ -366,47 +358,39 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     };
     newImg.onerror = function () {
       if (
-        onlyImages
+        onlyImages &&
+        _channel.querySelector(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        )
       )
-        itemContainer.remove();
-      else if (
-        window.innerWidth <= 425
-      ) {
-        _channel
-          .querySelectorAll(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-          )
-            .forEach(
-              (a) =>
-                a.style.cssText = `display:block !important`
-            )
+        _channel.querySelector(
+         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+        )
+          .remove();
+      else {
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
-        itemPending.remove();
       }
     };
   }
   else {
     if (
-      onlyImages
+      onlyImages &&
+      _channel.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      )
     )
-      itemContainer.remove();
-      else if (
-          window.innerWidth <= 425
-      ) {
-        _channel
-          .querySelectorAll(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-          )
-            .forEach(
-              (a) =>
-                a.style.cssText = `display:block !important`
-            )
-        itemPending.remove();
-    }
+      _channel.querySelector(
+       `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      ).remove();
+    else if (
+      !onlyImages &&
+      _channel.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+      )
+    )
+    {
       setTimeout(
         function() {
           if (
@@ -435,3 +419,4 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       )
     };
   }
+}

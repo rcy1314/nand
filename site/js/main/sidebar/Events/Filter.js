@@ -24,11 +24,7 @@ _sidebar
                 `parse`
               )
       ) {
-        expandFilter
-          =
-        expandFilter
-          !=
-        true
+        expandFilter = expandFilter != true
         if (
           !expandFilter
         ) {
@@ -46,10 +42,7 @@ _sidebar
           expandFilter
         ) {
           if (
-            exclude
-              .length
-              ==
-            0
+            exclude.length == 0
           )
             _sidebar
               .querySelector(
@@ -81,40 +74,27 @@ _sidebar
               )
       ) {
         if (
-          tap
-            ===
-          0
+          tap === 0
         ) {
-          tap
-            =
-          new Date()
-            .getTime();
+          tap = new Date().getTime();
           setTimeout(
             function () {
-              tap
-                =
-              0;
+              tap = 0;
             }, 350
           );
         }
 
         else {
           if (
-            new Date()
-              .getTime()
-                -
-              tap
-                <
-              350
+            new Date().getTime() - tap < 350
           ) {
-            let i
-              =
-            exclude
-              .indexOf(
-                evt
-                  .target
-                    .innerHTML
-                  );
+            let i =
+              exclude
+                .indexOf(
+                  evt
+                    .target
+                      .innerHTML
+                    );
             exclude
               .splice(
                 i,
@@ -124,9 +104,7 @@ _sidebar
               .target
                 .remove();
             if (
-              exclude.length
-                ===
-              0
+              exclude.length === 0
             )
               _sidebar
                 .querySelector(
@@ -145,9 +123,7 @@ _sidebar
                     .height
                       =
                     `${exclude.length * 34.25 + 65}px`;
-            tap
-              =
-            0;
+            tap = 0;
           }
         }
       }

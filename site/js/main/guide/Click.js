@@ -3,118 +3,47 @@ _guide
     'click', (evt) =>
     {
       if (
-        showSplash
-      )
-      _check.style.display = `none`;
-      if (
-        evt
-          .target
-            .classList
-              .contains(
-                `checkmark__circle`
-              )
-          ||
-        evt
-          .target
-            .classList
-              .contains(
-                `checkmark__check`
-              )
-          ||
-        evt
-          .target
-            .classList
-              .contains(
-                `checkmark`
-              )
-          ||
-        evt
-          .target
-            .id
-          ==
-        `guide`
+        event.target.classList.contains(`checkmark__circle`) ||
+        event.target.classList.contains(`checkmark__check`) ||
+        event.target.classList.contains(`checkmark`) ||
+        evt.target.id == `guide`
       ) {
-
         if (
-          showSplash
-        )
-        _check.style.display = `none`;
-
-        if (
-          Array.isArray(
-            pub
-          )
-            &&
+          Array.isArray(pub) &&
           !Reader
         )
           Append(id);
 
         if (
-          loading
-            ==
-          `percent`
+          loading == `percent`
         )
-          _progress
-            .style
-              .width
-            =
-          `100%`;
+          _progress.style.width = `100%`;
 
         while (
-          _guide
-            .lastChild
+          _guide.lastChild
         )
-          _guide
-            .removeChild(
-              _guide
-                .lastChild
-            );
+          _guide.removeChild(
+            _guide.lastChild
+          );
 
         if (
-          sideBarLock
-            ==
-          true
+          sideBarLock == true
         )
           onScreen = true;
 
-        _main
-          .classList
-            .remove(
-              `guide`
-            );
-
-        _guide
-          .style
-            .display
-          =
-        `none`;
-        _main
-          .setAttribute(
-            `tabindex`,
-            -1
-          );
-
-        guideOnScreen
-          =
-        onScreen;
-
-        Sidebar(
-          onScreen
-        );
-
-        Topbar(
-          topBar
-        );
-
-        _main
-          .focus();
-
-        pub
-          =
-        null;
-
+        _main.classList.remove(`guide`);
+        _guide.style.display = `none`;
+        if (
+          showSplash
+        )
+        _check.style.display = `none`;
+        _main.setAttribute(`tabindex`, -1);
+        guideOnScreen = onScreen;
+        Sidebar(onScreen);
+        Topbar(topBar);
+        _main.focus();
+        pub = null;
       }
-
     },
     {
       passive:

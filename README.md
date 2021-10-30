@@ -60,20 +60,18 @@ Copyright Notice
 ----
 
 <em>Images and information retrieved and or displayed in project   
-are not owned by the developers, and are only non - consent.</em>
+are not owned by the developers, and are only non - consent</em>
 
 Notice
 ----
 
   This project makes requests to external resources  
-  including a cors-proxy, nsfw api, and any asset(s).
+  including a cors-proxy, nsfw api, and any asset(s)
 
 Note
 ----
   <em>If the viewport is unstable when  
-  image load try using cropImage</em>
-
-  <em>[<b><em>1.0.51837</em></b>](https://github.com/acktic/nand/releases/tag/1.0.51837 "1.0.51837") Sans bg - gradients
+  images load turn on cropImages
 
 
 License

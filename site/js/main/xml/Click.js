@@ -12,6 +12,8 @@ _container
           if (
             !Reader
           ) {
+            _sb.style.display = `block`;
+            _top.style.display = `none`;
             onlyImages = onlyImagesBuffer;
             notifyOption(`Reading`, `fa-times-circle`);
             _main
@@ -19,6 +21,21 @@ _container
                 .forEach(
                   (a) => a.classList.remove(`luv`)
                 );
+            _channel.append(
+              footerBuild(id)
+            );
+            if (
+              display == `flexBox`
+            )
+              Flex();
+            Cleanup();
+            Visit();
+            if (
+              !onlySearch
+            ) {
+              _options.style.visibility = `visible`;
+              _under.style.visibility = `visible`;
+            }
           }
           else if (
             Reader
@@ -223,7 +240,7 @@ _container
             _toggle.style.display = `none`;
             _visit.style.display = `none`;
             topMenuBarDisplay(topBar);
-            Expand(expand);
+            displayExpand(expand);
           }
         }
 
@@ -277,12 +294,12 @@ _container
               )
                 writeFilterResponse(menu.indexOf(description[i]));
               Category(category);
-              Expand(expand);
+              displayExpand(expand);
               unloading();
             }
             else
               Category(category);
-            Expand(expand);
+            displayExpand(expand);
             _channel.style.height = `0`;
         }
 

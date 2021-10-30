@@ -11,30 +11,22 @@ _sidebar
               )
       ) {
         Group();
-        expand
-          =
-        true;
-        groupType
-          =
-        `list`;
-        Category(
-          category
-        );
+        expand = true;
+        groupType = `list`;
+        Category(category);
         Star(
           _sidebar
             .querySelector(
               `.Blocks`
             ),
-          false
-        );
+            false
+          );
         Star(
           evt
             .target,
           List
         );
-        Topbar(
-          topBar
-        );
+        topMenuBarDisplay(topBar);
       }
       else if (
         evt
@@ -45,31 +37,23 @@ _sidebar
               )
       ) {
         Group();
-        expand
-          =
-        false;
-        groupType
-          =
-        `blocks`;
+        expand = false;
+        groupType = `blocks`;
         Star(
           _sidebar
             .querySelector(
               `.List`
             ),
-          false
-        );
+            false
+          );
         Star(
           evt
             .target
           ,
           true
         );
-        Category(
-          category
-        );
-        Topbar(
-          topBar
-        );
+        Category(category);
+        topMenuBarDisplay(topBar);
       }
       if (
         evt
@@ -79,11 +63,7 @@ _sidebar
                 `choose`
               )
       ) {
-        expandSettings
-          =
-        expandSettings
-          !=
-        true
+        expandSettings = expandSettings != true
         if (
           !expandSettings
         ) {
@@ -120,11 +100,7 @@ _sidebar
                 `sideBarBackdrop`
               )
       ) {
-        sideBarBackdrop
-          =
-        sideBarBackdrop
-          !=
-        true;
+        sideBarBackdrop = sideBarBackdrop != true;
         if (
           sideBarBackdrop
         ) {
@@ -159,11 +135,7 @@ _sidebar
                 `cropImages`
               )
       ) {
-        cropImages
-          =
-        cropImages
-          !=
-        true;
+        cropImages = cropImages != true;
         if (
           cropImages
         ) {
@@ -184,10 +156,7 @@ _sidebar
             );
         }
         else if (
-          display
-            !=
-          `sideScroll`
-            &&
+          display != `sideScroll` &&
           !cropImages
         ) {
           _main
@@ -213,11 +182,9 @@ _sidebar
                   )
               )
             &&
-          display
-            ==
-          `flexBox`
+              display == `flexBox`
         )
-          Flex();
+          displayFlex();
         Star(
           evt
             .target,
@@ -226,18 +193,11 @@ _sidebar
       }
 
       else if (
-        evt
-          .target
-            .classList
-              .contains(
-                `sideBarDock`
-              )
+        evt.target.classList.contains(
+          `sideBarDock`
+        )
       ) {
-        sideBarDock
-          =
-        sideBarDock
-          !=
-        true
+        sideBarDock = sideBarDock != true
         if (
           sideBarDock
         ) {
@@ -246,10 +206,7 @@ _sidebar
               .target,
             sideBarDock
           );
-        }
-        else if (
-          !sideBarDock
-        ) {
+        } else if (sideBarDock == false) {
           Star(
             evt
               .target,
@@ -259,68 +216,30 @@ _sidebar
       }
 
       else if (
-        evt
-          .target
-            .classList
-              .contains(
-                `onlySearch`
-              )
+        evt.target.classList.contains(
+          `onlySearch`
+        )
       ) {
-        onlySearch
-          =
-        onlySearch
-          !=
-        true
+        onlySearch = onlySearch != true
         if (
           onlySearch
         ) {
-          _options
-            .style
-              .display
-            =
-          `none`;
-          _under
-            .style
-              .display
-            =
-          `none`;
-          _show
-            .style
-              .display
-            =
-          `none`;
-          _link
-            .style
-              .display
-            =
-          `none`;
+          _options.style.display = `none`;
+          _social.style.display = `none`;
+          _under.style.display = `none`;
+          _show.style.display = `none`;
+          _link.style.display = `none`;
           Star(
             evt
               .target,
             onlySearch
           );
-        }
-        else {
-          _under
-            .style
-              .display
-            =
-          `inline-flex`;
-          _show
-            .style
-              .display
-            =
-          `inline-block`;
-          _link
-            .style
-              .display
-            =
-          `inline-block`;
-          _options
-            .style
-              .display
-            =
-          `block`;
+        } else if (onlySearch == false) {
+          _under.style.display = `inline-flex`;
+          _show.style.display = `inline-block`;
+          _link.style.display = `inline-block`;
+          _options.style.display = `block`;
+          _social.style.display = `block`;
           Star(
             evt
               .target,
@@ -330,35 +249,19 @@ _sidebar
       }
 
       if (
-        evt
-          .target
-            .classList
-              .contains(
-                `fadeIntoView`
-              )
+        evt.target.classList.contains(
+          `fadeIntoView`
+        )
       ) {
-        fadeIntoView
-          =
-        fadeIntoView
-          !=
-        true;
-        Star(
-          evt
-            .target,
-          fadeIntoView
-        );
+        fadeIntoView = fadeIntoView != true;
+        Star(evt.target, fadeIntoView);
         if (
           !fadeIntoView
         ) {
           _channel
             .querySelectorAll(`.img`)
               .forEach(
-                (a) =>
-                  a
-                    .classList
-                      .remove(
-                        `hidden`
-                      )
+                (a) => a.classList.remove(`hidden`)
               );
         }
 
@@ -369,100 +272,41 @@ _sidebar
             document
               .body
                 .contains(
-                  _channel
-                    .querySelector(
-                      `.img`
-                    )
+                  _channel.querySelector(`.img`)
                 )
           ) {
             _channel
-              .querySelectorAll(
-                `.img`
-              )
+              .querySelectorAll(`.img`)
                 .forEach(
-                  (a) =>
-                    a
-                      .classList
-                        .remove(
-                          `fade-in-element`
-                        )
+                  (a) => a.classList.remove(`fade-in-element`)
                 );
             _channel
-              .querySelectorAll(
-                `.img`
-              )
+              .querySelectorAll(`.img`)
                 .forEach(
-                  (a) =>
-                    a
-                      .classList
-                        .add(
-                          `hidden`
-                        )
+                  (a) => a.classList.add(`hidden`)
                 );
             (function () {
               function startPosition() {
-                let elements
-                  =
-                _channel
-                  .querySelectorAll(
-                    '.img'
-                  );
-                for (
-                  var i
-                    =
-                  0;
-                  i
-                    <
-                  elements
-                    .length
-                    -
-                  1;
-                  i++
-                ) {
+                let elements = _channel.querySelectorAll(".img");
+                for (var i = 0; i < elements.length - 1; i++) {
                   if (
-                    elements[i]
-                      .getBoundingClientRect()
-                        .top
+                    elements[i].getBoundingClientRect().top
                       -
-                    _main
-                      .clientHeight
-                      <=
-                    0
+                    _main.clientHeight <= 0
                   ) {
                     if (
                       fadeIntoView
                     ) {
-                      elements[i]
-                        .classList
-                          .add(
-                            'fade-in-element'
-                          );
-                      elements[i]
-                        .classList
-                          .remove(
-                            'hidden'
-                          );
+                      elements[i].classList.add("fade-in-element");
+                      elements[i].classList.remove("hidden");
                     }
-                    if (
-                      !fadeIntoView
-                    ) {
+                    if (!fadeIntoView) {
                       _main
-                        .querySelectorAll(
-                          `.img`
-                        )
+                        .querySelectorAll(`.img`)
                           .forEach(
-                            (a) =>
-                              a
-                                .classList
-                                  .remove(
-                                    `hidden`
-                                  )
+                            (a) => a.classList.remove(`hidden`)
                           );
-                      _main
-                        .removeEventListener(
-                          'scroll',
-                          startPosition
-                        );
+                      _main.removeEventListener("scroll", startPosition);
                     }
                   }
                 }
@@ -470,28 +314,20 @@ _sidebar
               if (
                 !sideScroll
               )
-                _main
-                  .addEventListener(
-                    'scroll',
-                    startPosition
-                  );
+                _main.addEventListener("scroll", startPosition);
               else if (
                 sideScroll
               )
-                _channel
-                  .addEventListener(
-                    'scroll',
-                    startPosition
-                  );
+                _channel.addEventListener("scroll", startPosition);
               startPosition();
             })();
           }
         }
       }
-      evt
-        .preventDefault();
-  },
-  {
-  passive: false
-  }
+      evt.preventDefault();
+    },
+    {
+      passive:
+      false
+    }
 );

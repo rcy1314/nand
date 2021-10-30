@@ -9,21 +9,15 @@ String.prototype.zulu = function () {
   };
   let dmz = [];
   let utc = new Date(this);
-  dmz
-    .push(
-      this
-        .moment()
-      );
+  dmz.push(
+    this.moment()
+  );
   let gmt =
-    utc
-      .toLocaleString(
-        `en-US`,
-        opt
-      );
-  dmz
-    .push(
-      gmt
+    utc.toLocaleString(
+      `en-US`,
+      opt
     );
+  dmz.push(gmt);
   return dmz;
 };
 

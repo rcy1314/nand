@@ -4,24 +4,13 @@ _main
     {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window
-        .clearTimeout(
-          isScrolling
-        );
-      touchmove
-        =
-      false;
+    	window.clearTimeout( isScrolling );
+      touchmove = false;
     	// Set a timeout to run after scrolling ends
-    	isScrolling
-        =
-      setTimeout(
-        function() {
-          // Run the callback
-          touchmove
-            =
-          true;
-        }, 7500
-      );
+    	isScrolling = setTimeout(function() {
+      // Run the callback
+      touchmove = true;
+      }, 7500);
       if (
         (
           _main.scrollHeight
@@ -30,95 +19,63 @@ _main
             -
           _main.clientHeight
             <=
-          offset
-            &&
-          Reader
-            &&
+          offset &&
+          Reader &&
           !stop
         )
       ) {
-        stop
-          =
-        true;
-        first
-          =
-        false;
+        stop = true;
+        first = false;
         if (
           showSplash
         )
           _check.style.display = `block`;
         while (
-          _status
-            .firstChild
+          _air.firstChild
         )
-          _status
-            .removeChild(
-            _status
-              .lastChild
+          _air.removeChild(
+            _air.lastChild
           );
         while (
-          _suggestions
-            .firstChild
+          _result.firstChild
         )
-          _suggestions
-            .removeChild(
-            _suggestions
-              .lastChild
+          _result.removeChild(
+            _result.lastChild
+          );
+        while (
+          _status.firstChild
+        )
+          _status.removeChild(
+            _status.lastChild
+          );
+        while (
+          _suggestions.firstChild
+        )
+          _suggestions.removeChild(
+            _suggestions.lastChild
           );
       setTimeout(
         function() {
-          let index
-            =
-          anyRandomMenuObject();
+          let index = anyRandomMenuObject();
           if (
-            httpRequest
-              .readyState
-              ==
-            4
-              &&
-            typeof(
-              index
-                !==
-              undefined
-            )
-              &&
-            random
-              .includes(
-                index
-              )
+            httpRequest.readyState == 4 &&
+            typeof(index !== undefined) &&
+            random.includes(index)
           )
-            Request(
-              index
-            );
+            Request(index);
           else {
-            let index
-              =
-            anyRandomMenuObject();
+            let index = anyRandomMenuObject();
             if (
-              httpRequest
-                .readyState
-                ==
-              4
-                &&
-              typeof(
-                index
-                !==
-                undefined
-              )
-                &&
-              random
-                .includes(
-                  index
-                )
+              httpRequest.readyState == 4 &&
+              typeof(index !== undefined) &&
+              random.includes(index)
             )
-              Request(
-                index
-              );
-            }
+              Request(index);
+          }
         }, 500
       )
-    }
-  },
+      }
+    },
   {
     passive:
     true
@@ -131,24 +88,16 @@ _channel
     {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window
-        .clearTimeout(
-          isScrolling
-        );
-      touchmove
-        =
-      false;
+    	window.clearTimeout( isScrolling );
+      touchmove = false;
     	// Set a timeout to run after scrolling ends
-    	isScrolling
-      =
-      setTimeout(
-        function() {
-          // Run the callback
-          touchmove
-            =
-          true;
-        }, 7500
-      );
+    	isScrolling =
+        setTimeout(
+          function() {
+            // Run the callback
+            touchmove = true;
+          }, 7500
+        );
       if (
         (
           _channel.scrollWidth
@@ -159,46 +108,38 @@ _channel
             <=
           _channel.clientWidth
             &&
-          Reader
-            &&
+          Reader &&
           !stop
         )
       ) {
-        stop
-          =
-        true;
-        first
-          =
-        false;
-        if (
-          showSplash
-        )
-          _check
-            .style
-              .display
-            =
-          `block`;
+        stop = true;
+        first = false;
+        if (showSplash) _check.style.display = `block`;
         while (
-          _status
-            .firstChild
+          _air.firstChild
         )
-          _status
-            .removeChild(
-              _status
-                .lastChild
-              );
+          _air.removeChild(
+            _air.lastChild
+          );
         while (
-          _suggestions
-            .firstChild
+          _result.firstChild
         )
-          _suggestions
-            .removeChild(
-              _suggestions
-                .lastChild
-              );
-        Request(
-          anyRandomMenuObject()
-        );
+          _result.removeChild(
+            _result.lastChild
+          );
+        while (
+          _status.firstChild
+        )
+          _status.removeChild(
+            _status.lastChild
+          );
+        while (
+          _suggestions.firstChild
+        )
+          _suggestions.removeChild(
+            _suggestions.lastChild
+          );
+        Request(anyRandomMenuObject());
       }
     },
   {

@@ -43,7 +43,7 @@ _container
             function () {
               Topbar(topBar);
               Assets();
-              Expand(expand);
+              displayExpand(expand);
               unloading();
             },
             25

@@ -19,9 +19,7 @@ setTimeout(
 
     Home();
 
-    Feed(
-      quickFeeds
-    );
+    Feed(quickFeeds);
 
     Check();
 
@@ -29,12 +27,8 @@ setTimeout(
 
     Viewport();
 
-    adj
-      =
-    menu.slice();
-    randomizeAssets(
-      adj
-    );
+    adj = menu.slice();
+    randomizeAssets(adj);
 
     Bootup();
 

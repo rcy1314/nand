@@ -20,6 +20,7 @@ window
             )
               .style
                 .display = `inline-flex`;
+          display = `flexBox`;
           Flex();
         }
 
@@ -27,6 +28,7 @@ window
           window.innerWidth <= 768
           ) {
           _display.style.display = `none`;
+          display = `legacy`;
           Legacy();
         }
 
@@ -38,9 +40,8 @@ window
               `#option`
             )
               .style
-                .cssText
-                  =
-                `display:none !important`;
+                .display = `none`;
+          display = `flexBox`;
           Flex()
 
         }
@@ -49,8 +50,9 @@ window
           window.innerWidth >= 1280
 
         ) {
-          _center.style.cssText = `display:inline-flex;width:930px;left:340px`;
-          _display.style.cssText = `display:inline-block`;
+          _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
+          _display.style.cssText = `display:inline-block;`;
+
         }
 
         else if (

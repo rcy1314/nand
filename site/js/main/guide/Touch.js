@@ -1,107 +1,47 @@
 let Touch = function () {
 
   if (
-    touchendX
-      -
-    75
-      >
-    touchstartX
-      ||
-    touchendX
-      +
-    75
-      <
-    touchstartX
-      ||
-    touchendY
-      -
-    75
-      >
-    touchstartY
-      ||
-    touchendY
-      +
-    75
-      <
-    touchstartY
+    touchendX - 75 > touchstartX ||
+    touchendX + 75 < touchstartX ||
+    touchendY - 75 > touchstartY ||
+    touchendY + 75 < touchstartY
   ) {
 
     if (
-      Array
-        .isArray(
-          pub
-        )
+      Array.isArray(pub)
     )
-      Append(
-        id
-      );
+      Append(id);
 
     setTimeout(
       function () {
-
         if (
           complete
         )
-          _progress
-            .style
-              .width
-            =
-          `100%`;
+          _progress.style.width = `100%`;
 
-        _main
-          .classList
-            .remove(
-              `guide`
-            );
+        _main.classList.remove(`guide`);
 
         while (
-          _guide
-            .lastChild
+          _guide.lastChild
         )
-          _guide
-            .removeChild(
-              _guide
-                .lastChild
-            );
+          _guide.removeChild(
+            _guide.lastChild
+          );
 
-        _guide
-          .style
-            .display
-          =
-        `none`;
-
-        _check
-          .style
-            .display
-              =
-            `none`;
+        _guide.style.display = `none`;
+        _check.style.display = `none`;
 
         if (
           sideBarLock
         )
-          onScreen
-            =
-          true;
+          onScreen = true;
 
-        Topbar(
-          topBar
-        );
-
-        guideOnScreen
-          =
-        onScreen;
-
-        Sidebar(
-          onScreen
-        );
-
-        pub
-          =
-        null;
+        topMenuBarDisplay(topBar);
+        guideOnScreen = onScreen;
+        Sidebar(onScreen);
+        pub = null;
 
       }, 750
     )
-
   }
-
 }

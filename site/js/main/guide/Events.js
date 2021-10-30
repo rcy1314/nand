@@ -2,16 +2,8 @@ _guide
   .addEventListener(
     'touchstart', (evt) =>
     {
-      touchstartX
-        =
-      evt
-        .changedTouches[0]
-          .screenX
-      touchstartY
-        =
-      evt
-        .changedTouches[0]
-          .screenY;
+      touchstartX = evt.changedTouches[0].screenX
+      touchstartY = evt.changedTouches[0].screenY;
     },
     {
       passive:
@@ -23,16 +15,8 @@ _guide
   .addEventListener(
     'touchend', (evt) =>
     {
-      touchendX
-        =
-      evt
-        .changedTouches[0]
-          .screenX;
-      touchendY
-        =
-      evt
-        .changedTouches[0]
-          .screenY;
+      touchendX = evt.changedTouches[0].screenX;
+      touchendY = evt.changedTouches[0].screenY;
       Touch();
     },
     {

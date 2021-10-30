@@ -1,37 +1,23 @@
 let Viewport = function() {
   if (
-    display
-      ==
-    `flexBox`
+    display == `flexBox`
   )
-    offset
-      =
-    10000
-
+    offset = 10000
   else
-    offset
-      =
-    550
+    offset = 550
 
   cycleViewport =
     viewport
       .findIndex(
         (item) =>
-          item
-            ==
-          display
+          item ==
+            display
   )
 
-  display
-    ==
-  viewport[cycleViewport]
+  display == viewport[cycleViewport]
 
   if (
-    display
-      ==
-    `sideScroll`
+    display == `sideScroll`
   )
-    cropImages
-      ==
-    true;
+    cropImages == true;
 }

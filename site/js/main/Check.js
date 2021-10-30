@@ -1,192 +1,143 @@
 let Check = function() {
   if (
-    imageLoader
-      ==
-    `double-circle`
+    imageLoader ==
+      `double-circle`
   ) {
     _check
       .querySelector(
         `.bars`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `.animation`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `.loader`
       )
-      .style
-        .display
-      =
-    `block`
+      .style.display =
+        `block`
     _check
       .querySelector(
         `#load`
       )
-      .style
-        .display
-      =
-    `none`
-    }
-    else if (
-      imageLoader
-        ==
-      `loading`
+      .style.display =
+        `none`
+    } else if (
+      imageLoader ==
+        `loading`
     ) {
       _check
         .querySelector(
           `#load`
         )
-          .style
-            .display
-        =
-      `block`
+        .style.display =
+          `block`
       _check
         .querySelector(
           `.animation`
         )
-        .style
-          .display
-        =
-      `none`
+        .style.display =
+          `none`
       _check
         .querySelector(
           `.bars`
         )
-        .style
-          .display
-        =
-      `none`
+        .style.display =
+          `none`
       _check
         .querySelector(
           `.loader`
         )
-        .style
-          .display
-        =
-      `none`
-  }
-  else if (
-    imageLoader
-      ==
-    `v-bars`
+        .style.display =
+          `none`
+  } else if (
+    imageLoader ==
+      `v-bars`
   ) {
     _check
       .querySelector(
         `.animation`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `.bars`
       )
-      .style
-        .display
-      =
-    `block`
+      .style.display =
+        `block`
     _check
       .querySelector(
         `.loader`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `#load`
       )
-      .style
-        .display
-      =
-    `none`
- }
- else if (
-  imageLoader
-    ==
-  `ring-circle`
+      .style.display =
+        `none`
+ } else if (
+   imageLoader ==
+    `ring-circle`
  ) {
    _check
      .querySelector(
        `.animation`
      )
-     .style
-      .display
-      =
-    `block`
+     .style.display =
+       `block`
    _check
      .querySelector(
        `.bars`
      )
-     .style
-      .display
-      =
-   `none`
+     .style.display =
+       `none`
    _check
      .querySelector(
        `.loader`
      )
-     .style
-      .display
-     =
-   `none`
+     .style.display =
+       `none`
    _check
      .querySelector(
        `#load`
      )
-     .style
-      .display
-      =
-   `none`
-}
-else if (
-  imageLoader
-    ==
-  `false`
+     .style.display =
+       `none`
+} else if (
+  imageLoader ==
+    `false`
   ) {
     _check
       .querySelector(
         `.animation`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `.bars`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `.loader`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
     _check
       .querySelector(
         `#load`
       )
-      .style
-        .display
-      =
-    `none`
+      .style.display =
+        `none`
   }
 }

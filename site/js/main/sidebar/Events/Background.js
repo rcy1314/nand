@@ -10,11 +10,7 @@ _sidebar
                   `adjust`
                 )
         ) {
-          expandBackground
-            =
-          expandBackground
-            !=
-          true
+          expandBackground = expandBackground != true
           if (
             !expandBackground
           ) {
@@ -105,16 +101,15 @@ _sidebar
                   `setBackground`
                 )
         ) {
-          let input
-            =
-          document
-            .createElement(
-              `input`
-            );
+          let input =
+            document
+              .createElement(
+                `input`
+              );
           input
             .type
-            =
-          `file`;
+              =
+            `file`;
           input
             .setAttribute(
               `accept`,
@@ -128,9 +123,8 @@ _sidebar
                   .target
                     .files[0];
               // setting up the reader
-              var reader
-                =
-              new FileReader();
+              var reader =
+                new FileReader();
               reader
                 .readAsDataURL(
                   file
@@ -144,73 +138,27 @@ _sidebar
                       .target
                         .result; // this is the content!
                   if (
-                    typeof backgroundImage[0].path
-                      ===
-                    `string`
-                      &&
-                    backgroundImage[0].element
-                      ===
-                    `container`
-                      &&
-                    Array
-                      .isArray(
-                        backgroundImage
-                      )
+                    typeof backgroundImage[0].path === `string` &&
+                    backgroundImage[0].element === `container` &&
+                    Array.isArray(backgroundImage)
                   ) {
-                    _container
-                      .style
-                        .backgroundImage
-                      =
-                    `url(${content})`;
-                    _main
-                      .style
-                        .backgroundImage
-                      =
-                    `url()`;
-                    backgroundImage[
-                      0
-                    ]
-                      .path
-                      =
-                    content
+                    _container.style.backgroundImage = `url(${content})`;
+                    _main.style.backgroundImage = `url()`;
+                    backgroundImage[0].path = content
                   }
 
                   else if (
-                    typeof backgroundImage[0].path
-                      ==
-                    "string"
-                      &&
-                    backgroundImage[0]
-                      .element
-                      ==
-                    `main`
-                      &&
-                    Array
-                      .isArray(
-                        backgroundImage
-                      )
+                    typeof backgroundImage[0].path == "string" &&
+                    backgroundImage[0].element == `main` &&
+                    Array.isArray(backgroundImage)
                   ) {
-                    _main
-                      .style
-                        .backgroundImage
-                      =
-                    `url(${content})`;
-                    _container
-                      .style
-                        .backgroundImage
-                      =
-                    `url()`;
-                    backgroundImage[
-                      0
-                    ]
-                      .path
-                      =
-                    content
+                    _main.style.backgroundImage = `url(${content})`;
+                    _container.style.backgroundImage = `url()`;
+                    backgroundImage[0].path = content
                   }
               };
           };
-          input
-            .click();
+          input.click();
         }
 
         else if (
@@ -220,7 +168,7 @@ _sidebar
                 .contains(
                   `saveBackground`
                 )
-            &&
+          &&
           _sidebar
             .querySelector(
               `.urlInput`
@@ -247,8 +195,8 @@ _sidebar
 
           xhr
             .responseType
-            =
-          `arraybuffer`;
+              =
+            `arraybuffer`;
           xhr
             .open(
               `GET`,
@@ -259,9 +207,7 @@ _sidebar
           xhr
             .onreadystatechange = function () {
               if (
-                xhr.readyState
-                  ===
-                xhr.DONE
+                xhr.readyState === xhr.DONE
               ) {
                 let file
                   =
@@ -275,13 +221,11 @@ _sidebar
                 saveAs(
                   file,
                   _sidebar
-                    .querySelector(
-                      `.urlInput`
-                    )
-                      .value
-                        .match(
-                          /\b(\/.+\.(?:png|jpe?g|gif|webp))/g
-                        )
+                    .querySelector(`.urlInput`)
+                    .value
+                      .match(
+                        /\b(\/.+\.(?:png|jpe?g|gif|webp))/g
+                      )
                 );
                 if (
                   showSplash
@@ -289,13 +233,12 @@ _sidebar
                   _check
                     .style
                       .display
-                    =
-                  `none`;
+                        =
+                      `none`;
               }
           };
 
-          xhr
-            .send();
+          xhr.send();
         }
 
         else if (
@@ -310,38 +253,38 @@ _sidebar
             _container
               .style
                 .backgroundImage
-              !=
-            ``
+                  !=
+                ``
           ) {
             _main
               .style
                 .backgroundImage
-              =
-            `url(${backgroundImage[0].path})`
+                  =
+                `url(${backgroundImage[0].path})`
             _container
               .style
                 .backgroundImage
-              =
-            ``;
+                  =
+                ``;
           }
 
           else if (
             _main
               .style
                 .backgroundImage
-              !=
-            ``
+                  !=
+                ``
           ) {
             _container
               .style
                 .backgroundImage
-              =
-            `url(${backgroundImage[0].path})`
+                  =
+                `url(${backgroundImage[0].path})`
             _main
               .style
                 .backgroundImage
-              =
-            ``;
+                  =
+                ``;
           }
         }
 
@@ -354,111 +297,38 @@ _sidebar
                 )
         ) {
           if (
-            _container
-              .style
-                .backgroundSize
-              ===
-            `auto 100%`
-              ||
-            _container
-              .style
-                .backgroundSize
-              ===
-            `cover`
-              ||
-            _main
-              .style
-                .backgroundSize
-              ===
-            `auto 100%`
-              ||
-            _main
-              .style
-                .backgroundSize
-              ===
-            `cover`
+            _container.style.backgroundSize === `auto 100%` ||
+            _container.style.backgroundSize === `cover`  ||
+            _main.style.backgroundSize === `auto 100%`||
+            _main.style.backgroundSize === `cover`
           ) {
-            _container
-              .style
-                .backgroundSize
-              =
-            `initial`;
-            _main
-              .style
-                .backgroundSize
-              =
-            `initial`;
-          }
-          else {
-            _container
-              .style
-                .backgroundSize
-              =
-            `cover`;
-            _main
-              .style
-                .backgroundSize
-              =
-            `cover`;
+            _container.style.backgroundSize = `initial`;
+            _main.style.backgroundSize = `initial`;
+          } else {
+            _container.style.backgroundSize = `cover`;
+            _main.style.backgroundSize = `cover`;
           }
         }
 
         else if (
-          evt
-            .target
-              .classList
-                .contains(
-                  `fitBackground`
-                )
+          evt.target.classList.contains(
+            `fitBackground`
+          )
         ) {
           if (
-            _container
-              .style
-                .backgroundSize
-              ===
-            `cover`
-              ||
-            _main
-              .style
-                .backgroundSize
-              ===
-            `cover`
+            _container.style.backgroundSize === `cover` ||
+            _main.style.backgroundSize === `cover`
           ) {
-            _container
-              .style
-                .backgroundSize
-              =
-            `contain`;
-            _main
-              .style
-                .backgroundSize
-              =
-            `contain`;
+            _container.style.backgroundSize = `contain`;
+            _main.style.backgroundSize = `contain`;
           }
 
           else if (
-            _container
-              .style
-                .backgroundSize
-              ===
-            `contain`
-              ||
-            _main
-              .style
-                .backgroundSize
-              ===
-            `contain`
+            _container.style.backgroundSize === `contain` ||
+            _main.style.backgroundSize === `contain`
           ) {
-            _container
-              .style
-                .backgroundSize
-              =
-            `cover`;
-            _main
-              .style
-                .backgroundSize
-              =
-            `cover`;
+            _container.style.backgroundSize = `cover`;
+            _main.style.backgroundSize = `cover`;
           }
         }
         if (
@@ -469,20 +339,11 @@ _sidebar
                   `removeBackground`
                 )
         ) {
-          _container
-            .style
-              .backgroundImage
-            =
-          `none`;
-          _main
-            .style
-              .backgroundImage
-            =
-          `none`;
+          _container.style.backgroundImage = `none`;
+          _main.style.backgroundImage = `none`;
         }
 
-        evt
-          .preventDefault();
+        evt.preventDefault();
       },
       {
         passive:

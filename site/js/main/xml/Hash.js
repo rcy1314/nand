@@ -1,9 +1,7 @@
 var Hash = function (channel, xhr) {
   let parse = [];
   if (
-    channel
-      ==
-    `entry`
+    channel == `entry`
   ) {
     let re =
       xhr
@@ -114,11 +112,11 @@ var Hash = function (channel, xhr) {
 
     parse.push(
       {
-        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
-        externalURI: re.trim(),
         since: since,
         dst: dst[0],
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
         base36: gen,
+        externalURI: re.trim(),
       }
     );
 
@@ -186,11 +184,11 @@ var Hash = function (channel, xhr) {
 
       parse.push(
         {
-          cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
-          externalURI: re.trim(),
           since: since,
           dst: dst[0],
+          cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
           base36: gen,
+          externalURI: re.trim(),
         }
       );
 
@@ -244,26 +242,19 @@ var Hash = function (channel, xhr) {
       gen =
         parseInt(
           gen
-            .match(
-              /([0-9]+\:[0-9]+\:[0-9]+)/g
-            )
+            .match(/([0-9]+\:[0-9]+\:[0-9]+)/g)
             .toString()
-            .replace(
-              /\:/g,
-              ``
-            )
+            .replace(/\:/g, ``)
         )
-          .toString(
-            36
-          );
+          .toString(36);
 
       parse.push(
         {
-          cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
-          externalURI: re.trim(),
           since: since,
           dst: dst[0],
+          cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
           base36: gen,
+          externalURI: re.trim(),
         }
       );
 
@@ -319,21 +310,15 @@ var Hash = function (channel, xhr) {
 
       parse.push(
         {
-          cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
-          externalURI: re.trim(),
           since: since,
           dst: dst[0],
+          cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
           base36: gen,
+          externalURI: re.trim(),
         }
       );
     }
-    else
-      parse
-        .push(
-          ``
-        );
+    else parse.push(``);
   }
-
   return parse[0];
-
 };

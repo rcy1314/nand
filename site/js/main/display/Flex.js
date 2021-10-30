@@ -50,7 +50,6 @@ let Flex = function () {
     var min = `left:-310px;order:3`;
 
   if (
-    window.innerWidth > 425 &&
     document
       .body
         .contains(
@@ -59,13 +58,15 @@ let Flex = function () {
               `#bottom`
             )
           )
+     &&
+    window.innerWidth > 425 &&
+    !Reader
   )
     _channel.querySelector(`#bottom`).style.cssText = min;
-
   if (
     window.innerWidth <= 425
   ) {
-    _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
+    _channel.querySelector(`#bottom`).style.cssText = `bottom:0;position:fixed;`;
     if (
       id &&
       menu[id].id.match (/Youtube/g)
@@ -81,9 +82,7 @@ let Flex = function () {
           );
     _center.style.cssText = `display:inline-flex;width:930px;left:150px`;
   }
-
   else _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
-
   _channel.style.height = `${(max + 2500).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
@@ -104,8 +103,7 @@ let Flex = function () {
     )
       .forEach(
         (a) =>
-          a.style.marginLeft
-            =
+          a.style.marginLeft =
           `0`
       );
 
@@ -117,17 +115,26 @@ let Flex = function () {
   else
     _display.style.display = `none`;
 
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-      .forEach(
-        (a) =>
+    _channel
+      .querySelectorAll(
+        `.classic`
+      )
+        .forEach(
+          (a) =>
           a
             .style
-              .position
+              .cssText
             =
-              `absolute`
+          `height:${
+            a
+            .closest(
+              `.item`
+            )
+              .querySelector(
+                `.img`
+              )
+                .clientHeight
+        }px`
       )
       _channel
         .querySelectorAll(
@@ -135,36 +142,10 @@ let Flex = function () {
         )
           .forEach(
             (a) =>
-              a
-                .style
-                  .bottom
-                =
-                  `75px`
+            a
+              .style
+                .position
+            =
+              `absolute`
           )
-      setTimeout(
-        function() {
-
-          _channel
-            .querySelectorAll(
-              `.classic, .item`
-            )
-              .forEach(
-                (a) =>
-                a
-                  .style
-                    .cssText
-                  =
-                `height:${
-                  a
-                  .closest(
-                    `.item`
-                  )
-                    .querySelector(
-                      `.img`
-                    )
-                      .clientHeight
-              }px !important`
-            )
-          }, 500
-        )
 }

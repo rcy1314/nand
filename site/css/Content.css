@@ -182,6 +182,28 @@ html body,
   top: 0;
 }
 
+#under {
+  background-color: transparent;
+  color: var(--fill-color);
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  font-size: 10px;
+  height: 15px;
+  width: 100%;
+  left: 0;
+}
+
+.under {
+  margin-left: 10px;
+}
+
+.under:hover {
+  text-decoration: underline var(--fill-color) dashed;
+  cursor: pointer;
+}
+
 #link {
   border: var(--borderless-color);
   background-color: transparent;
@@ -199,7 +221,7 @@ html body,
   width: 15px;
 }
 
-#notify {
+#container #notify {
   background-color: var(--hover-background-color);
   color: var(--fill-color);
   justify-content: center;
@@ -276,28 +298,6 @@ html body,
   height: 57px;
   z-index: 7;
   top: 0;
-}
-
-#under {
-  background-color: transparent;
-  color: var(--fill-color);
-  justify-content: center;
-  display: inline-flex;
-  align-items: center;
-  position: absolute;
-  font-size: 10px;
-  height: 15px;
-  width: 100%;
-  left: 0;
-}
-
-.under {
-  margin-left: 10px;
-}
-
-.under:hover {
-  text-decoration: underline var(--fill-color) dashed;
-  cursor: pointer;
 }
 
 #visit {
