@@ -190,6 +190,14 @@
   height: 540px;
 }
 
+.sideItem .header {
+  position: relative !important;
+  width: 320px !important;
+  display: inline-table;
+  margin-right: 50px;
+  height: 540px;
+}
+
 .sideChannel {
   scrollbar-width: none !important;
   height: fit-content !important;

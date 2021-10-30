@@ -392,7 +392,7 @@ var Request = function (index) {
         Topbar(topBar);
         Reader = false;
         Category(category);
-        displayExpand(expand);
+        Expand(expand);
         _main
           .querySelectorAll(`.joi`)
             .forEach(

@@ -75,16 +75,16 @@
 
 @media screen and (min-width: 769px) {
 
+  #arm {
+    width: 100%;
+  }
+
   .center {
     width: 420px;
   }
 
   .content {
 	  display: none;
-  }
-
-  #arm {
-    width: 100%;
   }
 
   #just {

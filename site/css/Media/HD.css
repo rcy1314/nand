@@ -5,6 +5,10 @@
     width: 1080px;
   }
 
+  #arm {
+    width: 940px;
+  }
+
   .center {
     width: 100%;
   }
@@ -15,10 +19,6 @@
 
   .minimum {
     width: 100% !important;
-  }
-
-  #arm {
-    width: 940px;
   }
 
   .yt .image img {

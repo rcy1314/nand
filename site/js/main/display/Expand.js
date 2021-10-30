@@ -1,7 +1,8 @@
-let displayExpand = function (Value) {
+let Expand = function (Value) {
   if (
     Value
   ) {
+
       groupType = `list`;
       if (
         document
@@ -12,6 +13,7 @@ let displayExpand = function (Value) {
               )
             )
       ) {
+
         _group
           .querySelectorAll(
             `.populate`
@@ -32,12 +34,15 @@ let displayExpand = function (Value) {
                   `block`
                 )
             );
+
         }
+
     }
 
     else if (
       !Value
     ) {
+
       groupType = `blocks`;
       if (
         document
@@ -48,6 +53,7 @@ let displayExpand = function (Value) {
               )
             )
       ) {
+
   			_group
           .querySelectorAll(
             `.populate`
@@ -58,6 +64,7 @@ let displayExpand = function (Value) {
                   `block`
                 )
             );
+
         _group
           .querySelectorAll(
             `.populate`
@@ -68,6 +75,9 @@ let displayExpand = function (Value) {
                   `expand`
                 )
             );
+
         }
+
     }
+
 };

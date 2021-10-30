@@ -3,8 +3,7 @@
   html,
   #main,
   html body,
-  #container,
-  #main {
+  #container {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     height: calc(100% + 60px);
     border:none !important;

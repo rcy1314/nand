@@ -20,7 +20,8 @@ _container
           if (
             viewport[cycleViewport] == `legacy`
           ) {
-            display = `legacy`;
+
+            Legacy();
             notifyOption(`Mobile`, `fa-check-circle`)
             let leaveOff = _channel.scrollLeft +
               (
@@ -38,7 +39,6 @@ _container
                     )
                   )
                 );
-            Legacy();
             _main.scrollTop = leaveOff;
           }
 
@@ -46,16 +46,17 @@ _container
             viewport[cycleViewport] == `flexBox`
           ) {
 
-              display = `flexBox`;
-              notifyOption(`Flex Box`, `fa-times-circle`)
-              Flex();
-              _main.scrollTop = 0;
+            Flex();
+            notifyOption(`Flex Box`, `fa-times-circle`)
+            _main.scrollTop = 0;
+
           }
 
           if (
             viewport[cycleViewport] == `sideScroll`
           ) {
-            display = `sideScroll`;
+
+            Sidescroll();
             notifyOption(`Side Scroll`, `fa-check-circle`)
             let leaveOff = _main.scrollTop +
               (
@@ -72,8 +73,8 @@ _container
                   )
                 )
               );
-            Sidescroll();
             _channel.scrollLeft = leaveOff;
+
             (function () {
               function checkPosition() {
                 let elements = _channel.querySelectorAll(`.image`);
@@ -97,6 +98,7 @@ _container
                 checkPosition
               );
             })();
+
             if (
               document
                 .body
@@ -105,12 +107,7 @@ _container
                 )
             )
               _center.querySelector(`#bottom`).remove();
-            if (
-              !Reader
-            )
-              _channel.append(
-                footerBuild(id)
-              );
+
           }
 
         }

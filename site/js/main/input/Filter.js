@@ -49,7 +49,7 @@ let Filter = function (filterURI) {
         )
       );
     Assets();
-    displayExpand(expand);
+    Expand(expand);
     unloading();
   } else if (exact > -1) Request(exact)
   else return false;

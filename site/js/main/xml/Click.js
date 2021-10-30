@@ -223,7 +223,7 @@ _container
             _toggle.style.display = `none`;
             _visit.style.display = `none`;
             topMenuBarDisplay(topBar);
-            displayExpand(expand);
+            Expand(expand);
           }
         }
 
@@ -277,12 +277,12 @@ _container
               )
                 writeFilterResponse(menu.indexOf(description[i]));
               Category(category);
-              displayExpand(expand);
+              Expand(expand);
               unloading();
             }
             else
               Category(category);
-            displayExpand(expand);
+            Expand(expand);
             _channel.style.height = `0`;
         }
 
