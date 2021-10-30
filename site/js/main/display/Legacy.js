@@ -83,7 +83,7 @@ let Legacy = function () {
               .style
                 .position
               =
-              `absolute`
+              `relative`
         )
 
 }

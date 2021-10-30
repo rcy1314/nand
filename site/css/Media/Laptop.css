@@ -34,6 +34,7 @@
   }
 
   .item {
+    min-height: 169px !important;
     width: 360px !important;
   }
 

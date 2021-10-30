@@ -80,7 +80,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     &&
     !src
       .match(
-        /comments|feeds|fsdn|undefined|external-preview/g
+        /comments|feeds|fsdn|undefined|external-preview|discordapp/g
       )
   ) {
     let newImg;
@@ -165,14 +165,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
-                      _channel
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-                        )
-                          .style
-                            .cssText
-                              =
-                            `height:${itemImage.clientHeight}px !important`
                     };
                   }
                   request.onerror = function (e) {

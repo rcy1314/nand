@@ -129,4 +129,42 @@ let Flex = function () {
             =
               `absolute`
       )
+      _channel
+        .querySelectorAll(
+          `.header`
+        )
+          .forEach(
+            (a) =>
+              a
+                .style
+                  .bottom
+                =
+                  `75px`
+          )
+      setTimeout(
+        function() {
+
+          _channel
+            .querySelectorAll(
+              `.classic, .item`
+            )
+              .forEach(
+                (a) =>
+                a
+                  .style
+                    .cssText
+                  =
+                `height:${
+                  a
+                  .closest(
+                    `.item`
+                  )
+                    .querySelector(
+                      `.img`
+                    )
+                      .clientHeight
+              }px !important`
+            )
+          }, 500
+        )
 }

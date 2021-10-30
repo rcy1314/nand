@@ -20,7 +20,7 @@ _container
           if (
             viewport[cycleViewport] == `legacy`
           ) {
-
+            display = `legacy`;
             Legacy();
             notifyOption(`Mobile`, `fa-check-circle`)
             let leaveOff = _channel.scrollLeft +
@@ -45,7 +45,7 @@ _container
           else if (
             viewport[cycleViewport] == `flexBox`
           ) {
-
+            display = `flexBox`;
             Flex();
             notifyOption(`Flex Box`, `fa-times-circle`)
             _main.scrollTop = 0;
@@ -55,7 +55,7 @@ _container
           if (
             viewport[cycleViewport] == `sideScroll`
           ) {
-
+            display = `sideScroll`;
             Sidescroll();
             notifyOption(`Side Scroll`, `fa-check-circle`)
             let leaveOff = _main.scrollTop +

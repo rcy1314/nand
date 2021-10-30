@@ -280,7 +280,6 @@
 }
 
 #xml .header {
-  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   background-color: transparent;
   position: absolute;
   height: 60px;
@@ -497,7 +496,7 @@
 }
 
 #xml .wrap {
-  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 80%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 90%, rgba(0,0,0,0) 100%);
   position: absolute;
   z-index: 11;
   bottom: 0;
