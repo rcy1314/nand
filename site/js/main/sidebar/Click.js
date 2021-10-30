@@ -3,65 +3,156 @@ _container
     'click', (evt) =>
     {
       if (
-        evt.target.classList.contains(
-          `hide`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `hide`
+              )
       ) {
-        onScreen = false;
-        Sidebar(onScreen);
-        if (window.innerWidth <= 768) _sb.style.display = `block`;
-        if (window.innerWidth >= 768) _bar.style.display = `none`;
+        onScreen
+          =
+        false;
+        Sidebar(
+          onScreen
+        );
+        if (
+          window
+            .innerWidth
+            <=
+          768
+        )
+          _sb
+            .style
+              .display
+            =
+          `block`;
+        if (
+          window
+            .innerWidth
+            >=
+          768
+        )
+          _bar
+            .style
+              .display
+            =
+          `none`;
       }
 
       else if (
-        evt.target.classList.contains(
-          `show`
-        )
-        ||
-        evt.target.classList.contains(
-          `sb`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `show`
+              )
+          ||
+        evt
+          .target
+            .classList
+              .contains(
+                `sb`
+              )
       ) {
-        onScreen = true;
-        Sidebar(onScreen);
-        _sb.style.display = `none`;
+        onScreen
+          =
+        true;
+        Sidebar(
+          onScreen
+        );
+        _sb
+          .style
+            .display
+          =
+        `none`;
       }
 
       else if (
-        evt.target.classList.contains(
-          `bar`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `bar`
+              )
       ) {
-        _min.style.display = `block`;
-        onScreen = onScreen != true;
-        Sidebar(onScreen);
+        _min
+          .style
+            .display
+          =
+        `block`;
+        onScreen
+          =
+        onScreen
+          !=
+        true;
+        Sidebar(
+          onScreen
+        );
         if (
           onScreen
         )
-          _bar.style.display = `none`;
+          _bar
+            .style
+              .display
+            =
+          `none`;
       }
 
       else if (
-        evt.target.classList.contains(
-          `fa-unlock`
-        ) ||
-        evt.target.classList.contains(
-          `fa-lock`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `fa-unlock`
+              )
+          ||
+        evt
+          .target
+            .classList
+              .contains(
+                `fa-lock`
+              )
       ) {
-        sideBarLock = sideBarLock != true
+        sideBarLock
+          =
+        sideBarLock
+          !=
+        true
         if (
           sideBarLock
         ) {
-          evt.target.classList.remove(`fa-unlock`);
-          evt.target.classList.add(`fa-lock`);
-        } else if (sideBarLock == false) {
-          evt.target.classList.remove(`fa-lock`);
-          evt.target.classList.add(`fa-unlock`);
+          evt
+            .target
+              .classList
+                .remove(
+                  `fa-unlock`
+                );
+          evt
+            .target
+              .classList
+                .add(
+                  `fa-lock`
+                );
+        }
+        else {
+          evt
+            .target
+              .classList
+                .remove(
+                  `fa-lock`
+                );
+          evt
+            .target
+              .classList
+                .add(
+                  `fa-unlock`
+                );
         }
       }
 
-      evt.preventDefault();
+      evt
+        .preventDefault();
     },
     {
       passive:

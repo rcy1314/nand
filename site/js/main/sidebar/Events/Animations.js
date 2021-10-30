@@ -10,7 +10,11 @@ _sidebar
                 `animations`
               )
       ) {
-        expandAnimations = expandAnimations != true
+        expandAnimations
+          =
+        expandAnimations
+          !=
+        true
         if (
           !expandAnimations
         ) {
@@ -51,14 +55,16 @@ _sidebar
             .querySelector(
               `.Percent`
             ),
-            false
-          );
+          false
+        );
         Star(
           evt
             .target,
           true
         );
-        loading = `dots`;
+        loading
+          =
+        `dots`;
       }
 
       else if (
@@ -69,7 +75,9 @@ _sidebar
                 `Percent`
               )
       ) {
-        loading = `percent`;
+        loading
+          =
+        `percent`;
         Star(
           evt
             .target,
@@ -77,179 +85,478 @@ _sidebar
             .querySelector(
               `.Percent`
             )
-          );
+        );
         Star(
           _sidebar
             .querySelector(
               `.Progress`
             ),
-            false
-          );
+          false
+        );
       }
 
       if (
-        evt.target.classList.contains(
-          `loaderfalse`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `loaderfalse`
+              )
       ) {
-        imageLoader = false;
+        imageLoader
+          =
+        false;
         _main
-          .querySelectorAll(`.bars`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`.animation`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`.loader`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`#load`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        Star(_sidebar.querySelector(`.verticalbars`), false);
-        Star(_sidebar.querySelector(`.circleloader`), false);
-        Star(_sidebar.querySelector(`.ringloader`), false);
-        Star(_sidebar.querySelector(`.loadinganim`), false);
-        Star(evt.target, true);
-      }
-
-      else if (
-        evt.target.classList.contains(
-          `verticalbars`
-        )
-      ) {
-        imageLoader = `v-bars`;
-        _main
-          .querySelectorAll(`.bars`)
-            .forEach(
-              (a) => a.style.display = `block`
-            );
-        _main
-          .querySelectorAll(`.animation`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`.loader`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`#load`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        Star(_sidebar.querySelector(`.circleloader`), false);
-        Star(_sidebar.querySelector(`.loaderfalse`), false);
-        Star(_sidebar.querySelector(`.ringloader`), false);
-        Star(_sidebar.querySelector(`.loadinganim`), false);
-        Star(evt.target, true);
-      }
-
-      else if (
-        evt.target.classList.contains(
-          `circleloader`
-        )
-      ) {
-        imageLoader = `double-circle`;
-        _main
-          .querySelectorAll(`.loader`)
-            .forEach(
-              (a) => a.style.display = `block`
-            );
-        _main
-          .querySelectorAll(`.bars`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`.animation`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`#load`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        Star(_sidebar.querySelector(`.verticalbars`), false);
-        Star(_sidebar.querySelector(`.loaderfalse`), false);
-        Star(_sidebar.querySelector(`.ringloader`), false);
-        Star(_sidebar.querySelector(`.loadinganim`), false);
-        Star(evt.target, true);
-      }
-
-      else if (
-        evt.target.classList.contains(
-          `ringloader`
-        )
-      ) {
-        imageLoader = `ring-circle`;
-        _main
-          .querySelectorAll(`#load`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`.animation`)
-            .forEach(
-              (a) => a.style.display = `block`
-            );
-        _main
-          .querySelectorAll(`.bars`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        _main
-          .querySelectorAll(`.loader`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
-        Star(_sidebar.querySelector(`.verticalbars`), false);
-        Star(_sidebar.querySelector(`.circleloader`), false);
-        Star(_sidebar.querySelector(`.loaderfalse`), false);
-        Star(_sidebar.querySelector(`.loadinganim`), false);
-        Star(evt.target, true);
-        }
-
-        else if (
-          evt.target.classList.contains(
-            `loadinganim`
+          .querySelectorAll(
+            `.bars`
           )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `.animation`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `.loader`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `#load`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        Star(
+          _sidebar
+            .querySelector(
+              `.verticalbars`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.circleloader`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.ringloader`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loadinganim`
+            ),
+          false
+        );
+        Star(
+          evt
+            .target,
+          true
+        );
+      }
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `verticalbars`
+              )
+      ) {
+        imageLoader
+          =
+        `v-bars`;
+        _main
+          .querySelectorAll(
+            `.bars`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `block`
+            );
+        _main
+          .querySelectorAll(
+            `.animation`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `.loader`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `#load`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        Star(
+          _sidebar
+            .querySelector(
+              `.circleloader`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loaderfalse`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.ringloader`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loadinganim`
+            ),
+          false
+        );
+        Star(
+          evt
+            .target,
+          true
+        );
+      }
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `circleloader`
+              )
+      ) {
+        imageLoader
+          =
+        `double-circle`;
+        _main
+          .querySelectorAll(
+            `.loader`
+          )
+            .forEach(
+              (a) =>
+              a
+                .style
+                  .display
+                =
+              `block`
+            );
+        _main
+          .querySelectorAll(
+            `.bars`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `.animation`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `#load`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        Star(
+          _sidebar
+            .querySelector(
+              `.verticalbars`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loaderfalse`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.ringloader`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loadinganim`
+            ),
+          false
+        );
+        Star(
+          evt
+            .target,
+          true
+        );
+      }
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `ringloader`
+              )
+      ) {
+        imageLoader
+          =
+        `ring-circle`;
+        _main
+          .querySelectorAll(
+            `#load`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `.animation`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `block`
+            );
+        _main
+          .querySelectorAll(
+            `.bars`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        _main
+          .querySelectorAll(
+            `.loader`
+          )
+            .forEach(
+              (a) =>
+                a
+                  .style
+                    .display
+                  =
+                `none`
+            );
+        Star(
+          _sidebar
+            .querySelector(
+              `.verticalbars`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.circleloader`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loaderfalse`
+            ),
+          false
+        );
+        Star(
+          _sidebar
+            .querySelector(
+              `.loadinganim`
+            ),
+          false
+        );
+        Star(
+          evt
+            .target,
+          true
+        );
+      }
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `loadinganim`
+              )
         ) {
-          imageLoader = `loading`;
+          imageLoader
+            =
+          `loading`;
           _main
-            .querySelectorAll(`#load`)
+            .querySelectorAll(
+              `#load`
+            )
               .forEach(
-                (a) => a.style.display = `block`
+                (a) =>
+                  a
+                    .style
+                      .display
+                    =
+                  `block`
               );
           _main
-            .querySelectorAll(`.animation`)
+            .querySelectorAll(
+              `.animation`
+            )
               .forEach(
-                (a) => a.style.display = `none`
+                (a) =>
+                  a
+                    .style
+                      .display
+                    =
+                  `none`
               );
           _main
-            .querySelectorAll(`.bars`)
+            .querySelectorAll(
+              `.bars`
+            )
               .forEach(
-                (a) => a.style.display = `none`
+                (a) =>
+                  a
+                    .style
+                      .display
+                    =
+                  `none`
               );
           _main
-            .querySelectorAll(`.loader`)
+            .querySelectorAll(
+              `.loader`
+            )
               .forEach(
-                (a) => a.style.display = `none`
+                (a) =>
+                  a
+                    .style
+                      .display
+                    =
+                  `none`
               );
-          Star(_sidebar.querySelector(`.verticalbars`), false);
-          Star(_sidebar.querySelector(`.circleloader`), false);
-          Star(_sidebar.querySelector(`.loaderfalse`), false);
-          Star(evt.target, true);
-          }
+          Star(
+            _sidebar
+              .querySelector(
+                `.verticalbars`
+              ),
+            false
+          );
+          Star(
+            _sidebar
+              .querySelector(
+                `.circleloader`
+              ),
+            false
+          );
+          Star(
+            _sidebar
+              .querySelector(
+                `.loaderfalse`
+              ),
+            false
+          );
+          Star(
+            evt
+              .target,
+            true
+          );
+        }
     },
     {
       passive:

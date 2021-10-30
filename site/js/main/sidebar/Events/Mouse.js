@@ -2,7 +2,9 @@ _sidebar
   .addEventListener(
     'mousemove', (evt) =>
     {
-      onScreen = true;
+      onScreen
+        =
+      true;
     },
     {
       passive:
@@ -11,7 +13,11 @@ _sidebar
 );
 
 if (
-  window.innerWidth > 768 &&
+  window
+    .innerWidth
+    >
+  768
+    &&
   sideBarMouse
 )
   _container
@@ -19,42 +25,83 @@ if (
       'mousemove', (evt) =>
       {
         if (
-          event.pageX <= 100 &&
+          event
+            .pageX
+            <=
+          100
+            &&
           !onScreen
         ) {
-          onScreen = true;
-          _min.style.display = `block`;
-          _sb.style.display = `none`;
+          onScreen
+            =
+          true;
+          _min
+            .style
+              .display
+            =
+          `block`;
+          _sb
+            .style
+              .display
+            =
+          `none`;
           setTimeout(
             function () {
-              Sidebar(onScreen);
+              Sidebar(
+                onScreen
+              );
             }, 300
           )
         }
         if (
-          event.pageX >= 280 &&
-          !sideBarLock &&
+          event
+            .pageX
+            >=
+          280
+            &&
+          !sideBarLock
+            &&
           onScreen
         ){
-          onScreen = false;
+          onScreen
+            =
+          false;
           setTimeout(
             function() {
-              Sidebar(onScreen);
+              Sidebar(
+                onScreen
+              );
               if (
-                _visit.style.display === `flex`
+                _visit
+                  .style
+                    .display
+                  ===
+                `flex`
               )
-              _sb.style.display = `block`;
+              _sb
+                .style
+                  .display
+                =
+              `block`;
               if (
                 sideBarDock
               ) {
-                _bar.style.display = `none`;
-                _sb.style.display = `none`;
+                _bar
+                  .style
+                    .display
+                  =
+                `none`;
+                _sb
+                  .style
+                    .display
+                  =
+                `none`;
               }
             }, 750
           )
         }
-      },
-      {
-        passive: true
-      }
-    );
+    },
+  {
+  passive: true
+  }
+);

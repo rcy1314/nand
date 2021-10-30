@@ -15,16 +15,25 @@ _sidebar
             .href
               .split(
                 `?`
-              )[0]
+              )[
+                0
+              ]
         )
           location
             .href
               .split(
                 `?`
-              )[0]
+              )[
+                0
+              ]
                 .state();
 
-        expandFavorites = expandFavorites != true
+        expandFavorites
+          =
+        expandFavorites
+          !=
+        true
+
         if (
           !expandFavorites
         )
@@ -52,23 +61,30 @@ _sidebar
       }
 
       else if (
-        evt.target.classList.contains(
-          `feed`
-        )
+        evt
+          .target
+            .classList
+              .contains(
+                `feed`
+              )
       ) {
         while (
-          _status.firstChild
+          _status
+            .firstChild
         )
           _status
             .removeChild(
-              _status.lastChild
+              _status
+                .lastChild
             );
         while (
-          _suggestions.firstChild
+          _suggestions
+            .firstChild
         )
           _suggestions
             .removeChild(
-              _suggestions.lastChild
+              _suggestions
+                .lastChild
             );
 
         if (
@@ -80,7 +96,11 @@ _sidebar
                 ===
               -1
           )
-            Filter(evt.target.innerHTML)
+            Filter(
+              evt
+                .target
+                  .innerHTML
+                )
 
         else
           Request(
@@ -90,9 +110,14 @@ _sidebar
                   `aria-object`
                 )
               )
-        _toggle.style.display = `none`;
+        _toggle
+          .style
+            .display
+          =
+        `none`;
       }
-      evt.preventDefault();
+      evt
+        .preventDefault();
     },
     {
       passive:
