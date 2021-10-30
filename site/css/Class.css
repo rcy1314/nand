@@ -1,5 +1,5 @@
-.block .hash,
-.block .des {
+.block .des,
+.block .hash{
   display: none !important;
 }
 
@@ -96,8 +96,8 @@
   display: flex !important;
 }
 
-.flexbox:before,
-.flexbox:after {
+.flexbox:after,
+.flexbox:before {
   flex-basis: 100% !important;
   content: "" !important;
   width: 0 !important;
@@ -132,23 +132,9 @@
   display: none;
 }
 
-.invertScrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-
 .invisible {
   visibility: hidden;
   opacity: 0;
-}
-
-.invertScrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--fill-color-secondary);
-  border-radius: 2px;
-}
-
-.invertScrollbar {
-  scrollbar-color: #eeeeee transparent;
-  scrollbar-width: thin;
 }
 
 .minimum {

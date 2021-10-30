@@ -1,0 +1,33 @@
+@media screen and (min-width: 1440px) {
+
+  .air,
+  .result {
+    width: 1080px;
+  }
+
+  .center {
+    width: 100%;
+  }
+
+  .expand {
+    width: 100% !important;
+  }
+
+  .minimum {
+    width: 100% !important;
+  }
+
+  #arm {
+    width: 940px;
+  }
+
+  .yt .image img {
+    height: 460px;
+    top: -22.75%
+  }
+
+  .content {
+    left: 75px !important;
+  }
+
+}

@@ -1,0 +1,174 @@
+@media screen and (min-width: 768px) {
+
+  .dots {
+    animation: dots 3s infinite cubic-bezier(.1,.9,1,.1) !important;
+  }
+  .dots:nth-of-type(2){
+    animation: dots 3s 150ms infinite cubic-bezier(.1,.9,1,.1) !important;
+  }
+  .dots:nth-of-type(3) {
+    animation: dots 3s 300ms infinite cubic-bezier(.1,.9,1,.1) !important;
+  }
+  .dots:nth-of-type(4) {
+    animation: dots 3s 450ms infinite cubic-bezier(.1,.9,1,.1) !important;
+  }
+  .dots:nth-of-type(5) {
+    animation: dots 3s 600ms infinite cubic-bezier(.1,.9,1,.1) !important;
+  }
+
+  #arm {
+    width: 100%;
+  }
+
+  .content {
+    right: 0;
+  }
+
+  .expand {
+    margin: 0 auto !important;
+    width: 720px !important;
+  }
+
+  #guide .item {
+    width: fit-content !important;
+  }
+
+  .item {
+    width: 360px !important;
+  }
+
+  #main #option {
+    display: none;
+  }
+
+  #main #top #arm #option {
+    display: inline-block;
+    position: absolute;
+    right: -75px;
+  }
+
+  #main #visit #page #quick {
+  	width: 720px;
+    top: 15px;
+    right: 0;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 760px !important;
+  }
+
+  #page {
+		top: 0;
+	}
+
+  .sideChannel {
+    top: 60px !important;
+  }
+
+  #xml .classic {
+    min-height: 169px !important;
+    height: 169px;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+
+  .center {
+    width: 420px;
+  }
+
+  .content {
+	  display: none;
+  }
+
+  #arm {
+    width: 100%;
+  }
+
+  #just {
+    left: 290px !important;
+  }
+
+  #main #option {
+    display: none;
+  }
+
+  #main #top #arm #option {
+    position: absolute;
+    display: block;
+    right: 0px;
+  }
+
+  #show {
+    left: 7px;
+  }
+
+  #quick {
+	  width: 715px;
+	  left: -15px;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .air,
+  .result {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  #arm {
+    width: 670px;
+  }
+
+  .expand {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  #front {
+    width: 940px;
+  }
+
+  #input {
+    margin: 0 auto;
+  }
+
+  #main #top #arm #option {
+    right: -30px;
+  }
+
+  .minimum {
+    margin: 0 auto !important;
+    width: 990px !important;
+  }
+
+  #options {
+    position: absolute;
+    right: 145px;
+  }
+
+  .populate {
+    height: 140px;
+    width: 180px;
+    margin: 2em;
+  }
+
+  #quick {
+    position: relative;
+    width: 848px;
+    top: 15px;
+    left: 0;
+  }
+
+  #xml .classic {
+    min-height: 169px !important;
+    height: 169px;
+  }
+
+}

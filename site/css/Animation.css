@@ -258,6 +258,17 @@
   animation: bootup 2s ease-in-out forwards;
 }
 
+@keyframes bootup {
+  0% {
+    margin-left: 0;
+    left: 50%;
+  }
+  100% {
+    left: calc(50% - 50px);
+    margin-left: 90px;
+  }
+}
+
 @keyframes circle-inner {
   0% {
     transform: rotate(0);
@@ -296,32 +307,6 @@
   }
 }
 
-@-webkit-keyframes vbars {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 2em;
-  }
-  40% {
-    box-shadow: 0 -2em;
-    height: 3em;
-  }
-}
-
-@keyframes vbars {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 2em;
-  }
-  40% {
-    box-shadow: 0 -2em;
-    height: 3em;
-  }
-}
-
 @keyframes dots {
   0% {
     left: -4px;
@@ -331,6 +316,14 @@
 	}
 }
 
+@keyframes margin {
+  0% {
+    width: 360px;
+  }
+  100% {
+    width: 120px;
+  }
+}
 
 @keyframes move {
   0% {
@@ -468,23 +461,29 @@
   }
 }
 
-@keyframes margin {
-  0% {
-    width: 360px;
-  }
+@-webkit-keyframes vbars {
+  0%,
+  80%,
   100% {
-    width: 120px;
+    box-shadow: 0 0;
+    height: 2em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 3em;
   }
 }
 
-@keyframes bootup {
-  0% {
-    margin-left: 0;
-    left: 50%;
-  }
+@keyframes vbars {
+  0%,
+  80%,
   100% {
-    left: calc(50% - 50px);
-    margin-left: 90px;
+    box-shadow: 0 0;
+    height: 2em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 3em;
   }
 }
 
