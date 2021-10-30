@@ -92,9 +92,9 @@ let Feed = function (Value) {
     _sb
       .style
         .top
-        =
+      =
+    `-10px`;
   }
-  `-10px`;
 
   else if (
     !Value
