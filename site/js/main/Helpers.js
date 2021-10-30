@@ -2,16 +2,27 @@ let init = function () {
   if (
     loading === `dots`
   ) {
-    _progress.style.width = `0%`;
-    _dots.style.zIndex = `12`;
+    _progress
+      .style
+        .width
+      =
+    `0%`;
+    _dots
+      .style
+        .zIndex
+      =
+    `12`;
     _dots
       .querySelectorAll(
         `.fill`
       )
       .forEach(
         (a) =>
-          a.style.zIndex =
-            `12`
+          a
+            .style
+              .zIndex
+            =
+          `12`
       );
     _dots
       .querySelectorAll(
@@ -19,9 +30,11 @@ let init = function () {
       )
       .forEach(
         (a) =>
-          a.classList.add(
-            `dots`
-          )
+          a
+            .classList
+              .add(
+                `dots`
+              )
       );
     _dots
       .querySelectorAll(
@@ -29,19 +42,28 @@ let init = function () {
       )
       .forEach(
         (a) =>
-          a.style.visibility =
+          a
+            .style
+              .visibility
+            =
           `visible`
       );
   }
   else if (
-    loading === `percent`
+    loading
+      ===
+    `percent`
   )
-    Progress(false);
+    Progress(
+      false
+    );
 };
 
 let unloading = function () {
   if (
-    loading === `dots`
+    loading
+      ===
+    `dots`
   ) {
     _dots
       .querySelectorAll(
@@ -49,9 +71,11 @@ let unloading = function () {
       )
       .forEach(
         (a) =>
-        a.classList.remove(
-          `dots`
-        )
+          a
+            .classList
+              .remove(
+                `dots`
+              )
       );
     _dots
       .querySelectorAll(
@@ -59,20 +83,37 @@ let unloading = function () {
       )
       .forEach(
         (a) =>
-          a.style.visibility =
+          a
+            .style
+              .visibility
+            =
           `hidden`
       );
-    Progress(true);
+    Progress(
+      true
+    );
   }
   else if (
-    loading === `percent`
+    loading
+      ===
+    `percent`
   )
-    Progress(true);
+    Progress(
+      true
+    );
 };
 
 const cyrb53 = function(str, seed = 0) {
     let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
-    for (let i = 0, ch; i < str.length; i++) {
+    for (
+      let i = 0,
+      ch;
+      i
+        <
+      str
+        .length;
+      i++
+    ) {
         ch = str.charCodeAt(i);
         h1 = Math.imul(h1 ^ ch, 2654435761);
         h2 = Math.imul(h2 ^ ch, 1597334677);
@@ -88,7 +129,10 @@ let truncate = function (
   useWordBoundary
 ) {
   if (
-    i.length <= n
+    i
+      .length
+      <=
+    n
   )
     return i;
   let subString = i.substr(0, n - 1);
@@ -127,7 +171,12 @@ let anyRandomMenuObject = function () {
   randomObject =
     random[
       Math.floor(
-        Math.random() * random.length - 1
+        Math.random()
+          *
+        random
+          .length
+          -
+        1
       )
     ];
   while (
@@ -138,19 +187,40 @@ let anyRandomMenuObject = function () {
     randomObject =
       random[
         Math.floor(
-          Math.random() * random.length - 1
+          Math.random()
+            *
+          random
+            .length
+            -
+          1
         )
       ];
     if (
-      (random.length - 1) === randomDuplicate.length
+      (
+        random
+          .length
+          -
+        1
+      )
+        ===
+      randomDuplicate
+        .length
     )
-    randomDuplicate = [];
+    randomDuplicate
+      =
+    [];
   }
   while (
     randomObject &&
-    !randomDuplicate.includes(randomObject)
+    !randomDuplicate
+      .includes(
+        randomObject
+      )
   ) {
-    randomDuplicate.push(randomObject);
+    randomDuplicate
+      .push(
+        randomObject
+      );
     return randomObject;
   }
 };
@@ -262,14 +332,20 @@ let easeInOutQuad = function (t) {
 
 let forward = function (id) {
   let next = parseInt(id) + +1
-  if (menu[next])
+  if (
+    menu[next]
+  )
     return parseInt(next);
-  else return 1
+  else
+    return 1
 };
 
 let back = function (id) {
   let back = parseInt(id) - +1
-  if (menu[back])
+  if (
+    menu[back]
+  )
     return parseInt(back);
-  else return menu.length - 1
+  else
+    return menu.length - 1
 };

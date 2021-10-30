@@ -1,42 +1,124 @@
 let Options = function() {
-  sideBarListBuild(`anim`, `animations`, `fa-sync`, `Animations`);
-  appendAnimations(`.anim`, `animate`, animations);
+  sideBarListBuild(
+    `anim`,
+    `animations`,
+    `fa-sync`,
+    `Animations`
+  );
+  appendAnimations(
+    `.anim`,
+    `animate`,
+    animations
+  );
 
-  sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
-  appendSideBarLists(`.themes`, `theme`, themes);
+  sideBarListBuild(
+    `themes`,
+    `border`,
+    `fa-braille`,
+    `Themes`
+  );
+  appendSideBarLists(
+    `.themes`,
+    `theme`,
+    themes
+  );
 
-  sideBarListBuild(`fav`, `favorite`, `fa-hashtag`, `Favorites`);
-  appendSideBarLists(`.fav`, `feed`, favorites);
+  sideBarListBuild(
+    `fav`,
+    `favorite`,
+    `fa-hashtag`,
+    `Favorites`
+  );
+  appendSideBarLists(
+    `.fav`,
+    `feed`,
+    favorites
+  );
 
-  sideBarListBuild(`bg`, `adjust`, `fa-adjust`, `Background`);
-  appendSideBarLists(`.bg`, `background`, background);
+  sideBarListBuild(
+    `bg`,
+    `adjust`,
+    `fa-adjust`,
+    `Background`
+  );
+  appendSideBarLists(
+    `.bg`,
+    `background`,
+    background
+  );
 
-  document.querySelector(`.bg`).append(urlFormBuild());
-  sideBarListBuild(`exclude`, `parse`, `fa-tint`, `Filter`);
+  _sidebar
+    .querySelector(
+      `.bg`
+    )
+      .append(
+        urlFormBuild()
+      );
+  sideBarListBuild(
+    `exclude`,
+    `parse`,
+    `fa-tint`,
+    `Filter`
+  );
 
-  appendSideBarLists(`.exclude`, `option`, exclude);
-  document.querySelector(`.exclude`).append(excludeFormBuild());
+  appendSideBarLists(
+    `.exclude`,
+    `option`,
+    exclude
+  );
+  _sidebar
+    .querySelector(
+      `.exclude`
+    )
+      .append(
+        excludeFormBuild()
+      );
 
-  sideBarListBuild(`set`, `choose`, `fa-cube`, `Settings`);
-  appendSettings(`.set`, `settings`, settings);
+  sideBarListBuild(
+    `set`,
+    `choose`,
+    `fa-cube`,
+    `Settings`
+  );
+  appendSettings(
+    `.set`,
+    `settings`,
+    settings
+  );
 
-  _content.append(basicFormBuild());
+  _content.append(
+    basicFormBuild()
+  );
 
   if (
     sideBarLock
   )
-    _content.append(sideBarThemeBuild(`fa-lock`))
+    _content
+      .append(
+        sideBarThemeBuild(`fa-lock`)
+      )
   else if (
     !sideBarLock
   )
-    _content.append(sideBarThemeBuild(`fa-unlock`))
+    _content
+      .append(
+        sideBarThemeBuild(`fa-unlock`)
+      )
 
     if (
       sideBarCenter
     )
-      _content.style.position = `absolute`;
+      _content
+        .style
+          .position
+        =
+      `absolute`;
     else
-      _content.style.position = `relative`;
+      _content
+        .style
+          .position
+        =
+      `relative`;
 
     if (
       sideBarBackdrop
@@ -50,21 +132,43 @@ let Options = function() {
   if (
     topBarBackdrop
   )
-    _top.style.cssText = `backdrop-filter: blur(10px)`
+    _top
+      .style
+        .cssText
+      =
+    `backdrop-filter: blur(10px)`
 
     if (
-      window.innerWidth < 768
+      window.innerWidth
+        <
+      768
     )
-      sideBarMouse = false
+      sideBarMouse
+        =
+      false
 
     if (
-      window.innerWidth < 425
+      window.innerWidth
+        <
+      425
     ) {
-      guideOnScreen = onScreen;
-      Sidebar(onScreen);
-      onScreen = false;
-      Generate(24);
+      guideOnScreen
+        =
+      onScreen;
+      Sidebar(
+        onScreen
+      );
+      onScreen
+        =
+      false;
+      Generate(
+        24
+      );
     }
 
-    else Generate(8);
+    else
+      Generate(
+        8
+      );
+
 }
