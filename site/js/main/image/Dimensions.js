@@ -35,7 +35,8 @@ var Dimensions = function (
     `[aria-item='${pubIndex}'][aria-item='${pubIndex}'] .post`
   );
   if (
-    itemImage.clientHeight < shrunk
+    itemImage.clientHeight < shrunk &&
+    display !== `flexBox`
   ) {
     setTimeout(
       function() {
