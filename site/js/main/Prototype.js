@@ -82,7 +82,7 @@ String.prototype.add = function () {
 };
 
 String.prototype.image = function () {
-  return `site/images/webp/${this}.webp`;
+  return `${this}.webp`;
 };
 
 String.prototype.blank = function () {

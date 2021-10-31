@@ -18,7 +18,26 @@ let suggestBuild = function (
   circle.classList.add(`circle`);
   define.classList.add(`random`);
   bold.classList.add(`bold`);
-  circle.src = objectImage;
+  var src =
+  `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
+  var request = new XMLHttpRequest();
+  request.open("GET", cors + src, true);
+  request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+  request.setRequestHeader(`X-Requested-With`, `*`);
+  request.responseType = "blob";
+  request.onload = function () {
+      circle.src = src;
+  }
+  request.onloadend = function() {
+    if (request.status == 404){
+      circle.src = `site/images/webp/${objectImage}`
+    }
+  }
+  request.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
+  request.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
+  request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+  request.setRequestHeader(`X-Requested-With`, `*`);
+  request.send();
   suggest.title = objectId;
   bold.innerHTML =
   `

@@ -5,7 +5,7 @@ var Dimensions = function (
   Width
 ) {
   let k = 5420;
-  let shrunk = 200;
+  let shrunk = 100;
   let maximum = 480;
   let item = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
@@ -41,7 +41,7 @@ var Dimensions = function (
   ) {
     setTimeout(
       function() {
-        item.style.cssText = `height:${itemImage.clientHeight} !important`;
+        item.style.cssText = `height:${itemImage.clientHeight}px !important`;
       }, 300
     )
   }

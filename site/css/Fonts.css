@@ -403,7 +403,7 @@
   content: "\f068";
 }
 
-.fa-sun {
+.fa-sun:not(#options .fa-sun) {
   font-family: "Font Awesome 5 Pro";
   font-size: 16px !important;
   content: "\f185";
