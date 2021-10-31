@@ -350,7 +350,6 @@ var menu=[
 {id:`HackADay`,category:`Tech`,title:``,description:`HackADay serves up Fresh Hacks Every Day from around the Internet.`,uri:`https://hackaday.com/feed`,image:`HackADay`,hash:`yH`,media:!0},
 {id:`Heavy Technology`,category:`Tech`,title:``,description:`Heavy Technology stories and related articles.`,uri:`https://heavy.com/tech/feed`,image:`Heavy`,hash:`hY`,media:!0},
 {id:`Independent co uk Tech`,category:`Tech`,title:``,description:`Independent.co.uk for Gadgets and Tech information.`,uri:`http://www.independent.co.uk/life-style/gadgets-and-tech/rss`,image:`TheIndependent`,hash:`iT`,media:!0},
-{id:`InfoWorld`,category:`Tech`,title:``,description:`InfoWorld is an Information Technology Media Business.`,uri:`https://www.infoworld.com/index.rss`,image:`InfoWorld`,hash:`fW`,media:!0},
 {id:`Inverse`,category:`Media`,title:``,description:`Inverse Covers the latest on Science, Innovation, Entertainment, Technology and Culture.`,uri:`https://www.inverse.com/feed/articles/1.rss`,image:`Inverse`,hash:`vS`,media:!0},
 {id:`Leak Lookup`,category:`Tech`,title:``,description:`Leak Lookup Latest Database Leaks and Records Counting.`,uri:`https://leak-lookup.com/rss`,image:`Leak-Lookup`,hash:`lL`,media:!1},
 {id:`LifeHacker`,category:`Tech`,title:``,description:`Lifehacker is a weblog about life hacks and software that launched on January 31, 2005.`,uri:`https://www.lifehacker.com.au/feed/`,image:`LifeHacker`,hash:`hL`,media:!0},

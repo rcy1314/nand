@@ -6,6 +6,10 @@ _container
         evt.target.classList.contains(
           `joi`
         )
+          ||
+        evt.target.classList.contains(
+          `mobileJoi`
+        )
       ) {
           Topbar(topBar);
           Reader = Reader != true;
@@ -20,7 +24,6 @@ _container
                   (a) => a.classList.remove(`luv`)
                 );
 
-            }
           }
           else if (
             Reader
@@ -75,9 +78,8 @@ _container
                 );
             Cleanup();
             Request(anyRandomMenuObject());
-          }
         }
-
+      }
         else if (
           evt.target.classList.contains(
             `select`

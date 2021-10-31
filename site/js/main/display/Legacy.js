@@ -50,37 +50,40 @@ let Legacy = function () {
     _center.querySelector(`.bottom`).style.display = `block`;
     _center.querySelector(`.bottom`).style.left = `0`;
   }
+
   _channel
     .querySelectorAll(
-      `.classic`
+      `.item, .classic`
     )
       .forEach(
         (a) =>
-        a
-          .style
-            .cssText
-          =
-        `height:${
           a
-          .closest(
-            `.item`
-          )
-            .querySelector(
-              `.img`
-            )
-              .clientHeight
-      }px !important`
+            .style
+              .cssText
+            =
+              `height:${
+                a
+                  .closest(
+                    `.item`
+                  )
+                    .querySelector(
+                      `.img`
+                    )
+                      .clientHeight
+              }px !important`
     )
+
     _channel
       .querySelectorAll(
         `.header`
       )
         .forEach(
           (a) =>
-          a
-            .style
-              .cssText
-          =
-            `position:relative !important`
+            a
+              .style
+                .position
+              =
+              `relative`
         )
+
 }

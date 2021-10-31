@@ -4,6 +4,17 @@
     max-height: 80px !important;
   }
 
+  #xml .yt .item {
+    max-height: 80px !important;
+  }
+
+  #xml .item {
+    box-shadow: none !important;
+    min-height: 77px !important;
+    border: none !important;
+    width: 100%;
+  }
+
   .flexbox .yt .image {
     height: 79px !important;
   }
@@ -11,7 +22,6 @@
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
-    max-height: 77px !important;
     width: 140px !important;
     left: -150px !important;
     position: relative;
@@ -100,8 +110,8 @@
       margin-right: auto;
       margin-left: auto;
       top: 115px;
-      left: 0;
       right: 0;
+      left: 0;
   }
 
   .btn .flip-back {
@@ -150,12 +160,6 @@
 
   .populate:hover {
     background-color: none !important;
-  }
-
-  #xml .item {
-    box-shadow: none !important;
-    min-height: 77px !important;
-    width: 100%;
   }
 
   #container #guide .sticky .header {
@@ -235,6 +239,7 @@
     width: calc(100% - 10px);
     top: calc(100% - 45px);
     position: fixed;
+    display: flex;
     height: 40px;
     right: 11px;
   }

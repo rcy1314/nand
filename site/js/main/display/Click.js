@@ -45,7 +45,7 @@ _container
           else if (
             viewport[cycleViewport] == `flexBox`
               &&
-            !menu[
+            menu[
               id
             ]
               .media
