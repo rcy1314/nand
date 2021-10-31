@@ -26,7 +26,7 @@ _sidebar
             .target,
           List
         );
-        topMenuBarDisplay(topBar);
+        Topbar(topBar);
       }
       else if (
         evt
@@ -53,7 +53,7 @@ _sidebar
           true
         );
         Category(category);
-        topMenuBarDisplay(topBar);
+        Topbar(topBar);
       }
       if (
         evt
@@ -91,6 +91,22 @@ _sidebar
         }
       }
 
+
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `onlyImages`
+              )
+      ) {
+        onlyImages = onlyImages != true;
+        Star(
+          evt
+            .target,
+          onlyImages
+        );
+      }
 
       else if (
         evt

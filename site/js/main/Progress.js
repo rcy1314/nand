@@ -166,8 +166,14 @@ let Progress = function (done) {
         setTimeout(
           function() {
             _main.scrollTop = _air.clientHeight;
-          }, 75
+          }, 300
         )
+      setTimeout(
+        function() {
+          _group.classList.remove(`scroll-into-view`)
+          _main.scrollTop = _result.offsetTop;
+        }, 1000
+      )
     }
   }
   if (
