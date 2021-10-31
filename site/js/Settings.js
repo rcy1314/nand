@@ -766,6 +766,7 @@ const settings = [
   { name: `Scroll Into View`, class: `scrollIntoView` },
   { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
   { name: `Sidebar Dock`, class: `sideBarDock` },
+  { name: `Only Images`, class: `onlyImages` },
   { name: `Only Search`, class: `onlySearch` },
 ];
 
