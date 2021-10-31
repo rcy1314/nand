@@ -25,14 +25,6 @@ window
         }
 
         if (
-          window.innerWidth <= 768
-          ) {
-          _display.style.display = `none`;
-          display = `legacy`;
-          Legacy();
-        }
-
-        else if (
           window.innerWidth >= 769
         ) {
           _main
