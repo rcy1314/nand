@@ -401,20 +401,23 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       onlyImages
     )
       itemContainer.remove();
-      else if (
+    else if (
           window.innerWidth <= 425
-      ) {
-        _channel
-          .querySelectorAll(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+    ) {
+      _channel
+        .querySelectorAll(
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
+           [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
+        )
+          .forEach(
+            (a) =>
+              a.style.cssText = `display:block !important`
           )
-            .forEach(
-              (a) =>
-                a.style.cssText = `display:block !important`
-            )
-        itemPending.remove();
     }
-      itemPending.remove();
-    };
-  }
+    copyDownload.style.display = `none`;
+    copyPicture.style.display = `none`;
+    copyPost.style.display = `none`;
+    attribute.style.height = `35px`;
+    itemPending.remove();
+  };
+}
