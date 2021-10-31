@@ -81,9 +81,9 @@ let Legacy = function () {
           (a) =>
             a
               .style
-                .position
+                .cssText
               =
-              `relative`
+              `position: relative !important`
         )
 
 }
