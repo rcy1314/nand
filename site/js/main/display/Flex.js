@@ -138,7 +138,7 @@ let Flex = function () {
                     ).clientHeight
                 }px !important`
         )
-      }, 1000
+      }, 2000
     )
 
   _channel
