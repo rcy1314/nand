@@ -116,7 +116,7 @@
 }
 
 #container #guide .sticky .header {
-  background-color: transparent !important;
+  background-color: var(--color-primary) !important;
   height: 60px;
   width: 290px;
 }

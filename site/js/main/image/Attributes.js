@@ -50,24 +50,11 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         onlyImages
       )
         itemContainer.remove();
-      else if (
-          window.innerWidth <= 425
-      ) {
-        _channel
-          .querySelectorAll(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-          )
-            .forEach(
-              (a) =>
-                a.style.cssText = `display:block !important`
-            )
-          itemPending.remove();
-          copyDownload.style.display = `none`;
-          copyPicture.style.display = `none`;
-          attribute.style.height = `74px`;
-          count.shift();
-        }
+        copyDownload.style.display = `none`;
+        copyPicture.style.display = `none`;
+        attribute.style.height = `74px`;
+        itemPending.remove();
+        count.shift();
       }
     }
   imageDuplicate.push(src);
@@ -92,20 +79,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           onlyImages
         )
           itemContainer.remove();
-        else if (
-            window.innerWidth <= 425
-        ) {
-          _channel
-            .querySelectorAll(
-              `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-               [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-            )
-              .forEach(
-                (a) =>
-                  a.style.cssText = `display:block !important`
-              )
-          itemPending.remove();
-        }
+        itemPending.remove();
     };
     newImg.onload = function () {
       let Height;
@@ -165,6 +139,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        function() {
                       _channel
                         .querySelector(
                           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
@@ -173,6 +149,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                             .cssText
                               =
                             `height:${itemImage.clientHeight}px !important`
+                        }, 1000
+                      )
                     };
                   }
                   request.onerror = function (e) {
@@ -180,20 +158,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       onlyImages
                     )
                       itemContainer.remove();
-                      else if (
-                          window.innerWidth <= 425
-                      ) {
-                        _channel
-                          .querySelectorAll(
-                            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-                             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-                          )
-                            .forEach(
-                              (a) =>
-                                a.style.cssText = `display:block !important`
-                            )
-                        itemPending.remove();
-                      }
+                    itemPending.remove();
                   };
                   if (
                     !src.match(/4cdn/g)
@@ -250,7 +215,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                         .cssText
                           =
                         `height:${itemImage.clientHeight}px !important`
-                      }, 300
+                      }, 1000
                     )
                 };
               }
@@ -259,20 +224,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   onlyImages
                 )
                   itemContainer.remove();
-                else if (
-                    window.innerWidth <= 425
-                ) {
-                  _channel
-                    .querySelectorAll(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-                       [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-                    )
-                      .forEach(
-                        (a) =>
-                          a.style.cssText = `display:block !important`
-                      )
-                  itemPending.remove();
-                }
+                itemPending.remove();
               }
               if (
                 !src.match(/4cdn/g)
@@ -331,7 +283,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       .cssText
                     =
                       `height:${itemImage.clientHeight}px !important`
-                }, 300
+                }, 1000
               )
             }
           }
@@ -340,20 +292,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                 onlyImages
               )
                 itemContainer.remove();
-              else if (
-                  window.innerWidth <= 425
-              ) {
-                _channel
-                  .querySelectorAll(
-                    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-                     [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-                  )
-                    .forEach(
-                      (a) =>
-                        a.style.cssText = `display:block !important`
-                    )
-                itemPending.remove();
-              }
+              itemPending.remove();
             };
           if (
             !src.match(/4cdn/g)
@@ -377,23 +316,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         onlyImages
       )
         itemContainer.remove();
-      else if (
-        window.innerWidth <= 425
-      ) {
-        _channel
-          .querySelectorAll(
-            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-             [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-          )
-            .forEach(
-              (a) =>
-                a.style.cssText = `display:block !important`
-            )
-        copyDownload.style.display = `none`;
-        copyPicture.style.display = `none`;
-        attribute.style.height = `74px`;
-        itemPending.remove();
-      }
+      copyDownload.style.display = `none`;
+      copyPicture.style.display = `none`;
+      attribute.style.height = `74px`;
+      itemPending.remove();
     };
   }
   else {
@@ -401,19 +327,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       onlyImages
     )
       itemContainer.remove();
-    else if (
-          window.innerWidth <= 425
-    ) {
-      _channel
-        .querySelectorAll(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .pub,
-           [aria-object='${menuObject}'][aria-item='${pubIndex}'] .ago`
-        )
-          .forEach(
-            (a) =>
-              a.style.cssText = `display:block !important`
-          )
-    }
     copyDownload.style.display = `none`;
     copyPicture.style.display = `none`;
     copyPost.style.display = `none`;

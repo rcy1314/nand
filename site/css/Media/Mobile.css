@@ -1,9 +1,5 @@
 @media screen and (max-width: 425px) {
 
-  #xml .classic {
-    max-height: 80px !important;
-  }
-
   #xml .yt .item {
     max-height: 80px !important;
   }
@@ -163,7 +159,6 @@
   }
 
   #container #guide .sticky .header {
-    background-color: var(--color-secondary) !important;
     height: 60px;
     width: 290px;
   }

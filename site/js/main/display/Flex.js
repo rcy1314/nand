@@ -125,8 +125,9 @@ let Flex = function () {
         (a) =>
           a
             .style
-              .position
+              .cssText
             =
-              `absolute`
+              `position: absolute !important`
       )
+
 }
