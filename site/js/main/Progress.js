@@ -172,7 +172,7 @@ let Progress = function (done) {
         function() {
           _group.classList.remove(`scroll-into-view`)
           _main.scrollTop = _result.offsetTop;
-        }, 1000
+        }, 1250
       )
     }
   }
