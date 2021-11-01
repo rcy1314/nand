@@ -1,4 +1,4 @@
-let displayExpand = function (Value) {
+let Expand = function (Value) {
   if (
     Value
   ) {

@@ -58,7 +58,7 @@ let Assets = function () {
       }
     }
   main.setAttribute(`tabindex`, -1);
-  displayExpand(expand);
+  Expand(expand);
   Topbar(topBar);
   main.focus();
   unloading();

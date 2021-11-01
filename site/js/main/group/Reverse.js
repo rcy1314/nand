@@ -34,6 +34,6 @@ let Reverse = function (translation) {
       _air.style.visibility = `visible`;
     }, 1750
   )
-  displayExpand(expand);
+  Expand(expand);
   unloading();
 };
