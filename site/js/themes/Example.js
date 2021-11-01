@@ -14,7 +14,7 @@ var Example = function () {
   ); // Inputs
   document.documentElement.style.setProperty(
     `--color-secondary`,
-    `rgba(106, 66, 194, .9)`
+    `rgba(106, 66, 194, .4)`
   ); // SideBar, Sticky
   document.documentElement.style.setProperty(
     `--hover-background-color`,
