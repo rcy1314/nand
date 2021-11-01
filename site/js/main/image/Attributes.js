@@ -134,13 +134,17 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       setTimeout(
                         function() {
                       _channel
-                        .querySelector(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                        .querySelectorAll(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .item
+                           [aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
                         )
-                          .style
+                        .forEach(
+                          (a) =>
+                          a.style
                             .cssText
                               =
                             `height:${itemImage.clientHeight}px !important`
+                          )
                         }, 2000
                       )
                     };
@@ -199,14 +203,18 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.style.display = `block`;
                   setTimeout(
                     function() {
-                  _channel
-                    .querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-                    )
-                      .style
-                        .cssText
-                          =
-                        `height:${itemImage.clientHeight}px !important`
+                      _channel
+                        .querySelectorAll(
+                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .item
+                           [aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+                        )
+                        .forEach(
+                          (a) =>
+                          a.style
+                            .cssText
+                              =
+                            `height:${itemImage.clientHeight}px !important`
+                          )
                     }, 2000
                   )
                 };
