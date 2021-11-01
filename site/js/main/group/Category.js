@@ -79,6 +79,8 @@ let Category = function (translation) {
     }
   }
 
+  Expand(expand);
+
   if (
     !onlyImages
   )

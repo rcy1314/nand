@@ -91,6 +91,21 @@ _sidebar
         }
       }
 
+      else if (
+        evt
+          .target
+            .classList
+              .contains(
+                `scrollIntoView`
+              )
+      ) {
+        scrollIntoView = scrollIntoView != true;
+        Star(
+          evt
+            .target,
+          scrollIntoView
+        );
+      }
 
       else if (
         evt
@@ -241,7 +256,6 @@ _sidebar
           onlySearch
         ) {
           _options.style.display = `none`;
-          _social.style.display = `none`;
           _under.style.display = `none`;
           _show.style.display = `none`;
           _link.style.display = `none`;
@@ -255,7 +269,6 @@ _sidebar
           _show.style.display = `inline-block`;
           _link.style.display = `inline-block`;
           _options.style.display = `block`;
-          _social.style.display = `block`;
           Star(
             evt
               .target,

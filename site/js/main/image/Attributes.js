@@ -1,6 +1,9 @@
 var Attributes = function (empty, menuObject, pubIndex, src) {
   count.push(`null`);
   let jsonResponseScore;
+  let item = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+  );
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
@@ -49,7 +52,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       if (
         onlyImages
       )
-        itemContainer.remove();
+        item.remove();
         copyDownload.style.display = `none`;
         copyPicture.style.display = `none`;
         attribute.style.height = `74px`;
@@ -78,7 +81,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         if (
           onlyImages
         )
-          itemContainer.remove();
+          item.remove();
         itemPending.remove();
     };
     newImg.onload = function () {
@@ -146,7 +149,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                     if (
                       onlyImages
                     )
-                      itemContainer.remove();
+                      item.remove();
                     itemPending.remove();
                   };
                   if (
@@ -212,7 +215,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                 if (
                   onlyImages
                 )
-                  itemContainer.remove();
+                  item.remove();
                 itemPending.remove();
               }
               if (
@@ -280,7 +283,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
               if (
                 onlyImages
               )
-                itemContainer.remove();
+                item.remove();
               itemPending.remove();
             };
           if (
@@ -304,7 +307,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       if (
         onlyImages
       )
-        itemContainer.remove();
+        item.remove();
       copyDownload.style.display = `none`;
       copyPicture.style.display = `none`;
       attribute.style.height = `74px`;
@@ -315,7 +318,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
     if (
       onlyImages
     )
-      itemContainer.remove();
+      item.remove();
     copyDownload.style.display = `none`;
     copyPicture.style.display = `none`;
     copyPost.style.display = `none`;
