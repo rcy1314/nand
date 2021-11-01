@@ -66,31 +66,14 @@ let Source =
       xhr.getElementsByTagName(`media:content`).length > 0 &&
       xhr.getElementsByTagName(`media:content`)[0].attributes[`url`]
     ) {
-      if (
+      src = String(
         xhr
           .getElementsByTagName(`media:content`)[0]
           .getAttribute(`url`)
           .match(
-            /youtube\.com/
+            /\b(https?:\/\/\S*?\..+)/g
           )
-      )
-        src =
-          `https://www.youtube.com/embed/` +
-          xhr
-            .getElementsByTagName(`media:content`)[0]
-            .getAttribute(`url`)
-            .match(
-              /[a-zA-Z0-9\_\-]{11}/g
-            );
-      else
-        src = String(
-          xhr
-            .getElementsByTagName(`media:content`)[0]
-            .getAttribute(`url`)
-            .match(
-              /\b(https?:\/\/\S*?\..+)/g
-            )
-        );
+      );
     }
     else if (
       xhr.getElementsByTagName(`media:thumbnail`).length > 0

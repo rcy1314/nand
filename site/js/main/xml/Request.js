@@ -190,58 +190,6 @@ var Request = function (index) {
 
           else var more = ``;
 
-          if (
-            src &&
-            src.match(/youtube\.com/g) &&
-            youtubeMedia == true
-          ) {
-            if (
-              data
-                .getElementsByTagName(
-                  `media:statistics`
-                )
-                .length
-                  >
-                0
-              )
-              var views =
-                `views ${
-                    data
-                      .getElementsByTagName(
-                          `media:statistics`
-                      )[0]
-                        .getAttribute(
-                          `views`
-                        )
-                          .replace(
-                            /\B(?=(\d{3})+(?!\d))/g, `,`)
-                      }`;
-
-            else var views = ``;
-
-            inline = [];
-            inline.push(
-              {
-                id: menu[index].id.match(/([^\/]+)$/g),
-                image: menu[index].image.image(),
-                externalURI: parse.externalURI,
-                courtesy: courtesy,
-                menuObject: index,
-                videoSource: src,
-                dst: parse.dst,
-                truncate: trun,
-                share: share,
-                title: title,
-                views: views,
-                more: more,
-                pubIndex: i,
-                uri: uri
-              }
-            );
-            html = youtubeHTMLBuild(inline[0]);
-
-          }
-          else {
             inline = [];
             inline.push(
               {
@@ -259,7 +207,7 @@ var Request = function (index) {
               }
             );
             html = xmlHTMLBuild(inline[0]);
-          }
+
           pub.push({
             enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
             re: parse.externalURI,

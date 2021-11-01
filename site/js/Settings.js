@@ -451,21 +451,6 @@ let onlyImages = false;
 let feedImages = true;
 
 /*
-    youtubeMedia [boolean/integer]
-
-      Applications
-      image/Attributes
-        xml/Request
-
-      Result
-        false = Images
-        true = Videos
-
-*/
-
-let youtubeMedia = false;
-
-/*
     suggestionBuffer [integer]
 
       Applications

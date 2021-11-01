@@ -87,17 +87,6 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       Height = newImg.naturlHeight
       Width = newImg.naturalWidth
       if (
-          src.match(/ytimg/g) &&
-          youtubeMedia == false
-        ) {
-          itemContainer
-            .classList
-              .add(
-                `yt`
-              );
-        itemPending.remove();
-      }
-      if (
         safeSearchIDs.includes(menu[id].id) &&
         safeSearch
       ) {

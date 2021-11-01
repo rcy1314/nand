@@ -84,10 +84,6 @@ var Dimensions = function (
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
       )
-      ||
-      menu[id].id.match(/Youtube/g) &&
-      !youtubeMedia &&
-      window.innerWidth > 425
     ) {
       itemContainer.style.height = `200px`;
       itemImage.style.height = `340px`;
