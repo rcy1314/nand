@@ -147,14 +147,6 @@
   margin: 0;
 }
 
-#container #guide .sticky #yt {
-  display: table-cell;
-  box-shadow: none !important;
-  border: none !important;
-  border-radius: 10px;
-  margin: 0;
-}
-
 #container #guide .url,
 #container #guide .share,
 #container #guide .source {
@@ -164,13 +156,6 @@
   width: 10px;
   opacity: 0;
   height: 0;
-}
-
-#container #guide .sticky #yt .views {
-  text-transform: uppercase;
-  position: absolute;
-  font-size: 9px;
-  bottom: 15px;
 }
 
 #container #guide .sticky .wrap {
