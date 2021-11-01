@@ -86,14 +86,6 @@
   scrollbar-width: none;
 }
 
-#xml .classic {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  top: 0;
-}
-
 .content {
   background: transparent;
   display: inline-block;
