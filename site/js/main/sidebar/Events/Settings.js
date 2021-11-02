@@ -140,6 +140,9 @@ _sidebar
               .add(
                 `blur`
               );
+          _sidebar
+            .style
+              .backgroundColor = `var(--color-secondary)`;
         }
 
         else if (
@@ -150,6 +153,9 @@ _sidebar
               .remove(
                 `blur`
               );
+              _sidebar
+                .style
+                  .backgroundColor = `var(--color-primary)`;
         }
         Star(
           evt
@@ -215,7 +221,7 @@ _sidebar
             &&
               display == `flexBox`
         )
-          displayFlex();
+          Flex();
         Star(
           evt
             .target,

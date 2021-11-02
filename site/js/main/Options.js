@@ -40,12 +40,16 @@ let Options = function() {
 
     if (
       sideBarBackdrop
-    )
+    ) {
     _sidebar
       .classList
         .add(
           `blur`
         );
+        _sidebar
+          .style
+            .cssText = `background-color: var(--color-secondary)`
+      }
 
   if (
     topBarBackdrop
