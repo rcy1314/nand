@@ -4,6 +4,9 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
   let item = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
   );
+  let itemClassic = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+  );
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
   );
@@ -131,22 +134,14 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
-                      setTimeout(
-                        function() {
-                      _channel
-                        .querySelectorAll(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .item
-                           [aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-                        )
-                        .forEach(
-                          (a) =>
-                          a.style
+                      item.style
                             .cssText
                               =
                             `height:${itemImage.clientHeight}px !important`
-                          )
-                        }, 2000
-                      )
+                            itemClassic.style
+                                  .cssText
+                                    =
+                                  `height:${itemImage.clientHeight}px !important`
                     };
                   }
                   request.onerror = function (e) {
@@ -201,22 +196,14 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.setAttribute(`src`, e.target.result);
                   itemPending.style.display = `none`;
                   itemImage.style.display = `block`;
-                  setTimeout(
-                    function() {
-                      _channel
-                        .querySelectorAll(
-                          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .item
-                           [aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-                        )
-                        .forEach(
-                          (a) =>
-                          a.style
-                            .cssText
-                              =
-                            `height:${itemImage.clientHeight}px !important`
-                          )
-                    }, 2000
-                  )
+                  item.style
+                        .cssText
+                          =
+                        `height:${itemImage.clientHeight}px !important`
+                        itemClassic.style
+                              .cssText
+                                =
+                              `height:${itemImage.clientHeight}px !important`
                 };
               }
               request.onerror = function (e) {
@@ -273,18 +260,14 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemImage.setAttribute(`src`, e.target.result);
             itemImage.style.display = `block`;
             itemPending.remove();
-            setTimeout(
-              function() {
-            _channel
-              .querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
-              )
-                .style
+            item.style
                   .cssText
                     =
                   `height:${itemImage.clientHeight}px !important`
-              }, 2000
-            )
+                  itemClassic.style
+                        .cssText
+                          =
+                        `height:${itemImage.clientHeight}px !important`
             }
           }
             request.onerror = function (e) {
