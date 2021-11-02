@@ -134,6 +134,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        function() {
                       item.style
                             .cssText
                               =
@@ -142,6 +144,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                                   .cssText
                                     =
                                   `height:${itemImage.clientHeight}px !important`
+                                }, 100
+                              )
                     };
                   }
                   request.onerror = function (e) {
@@ -196,6 +200,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.setAttribute(`src`, e.target.result);
                   itemPending.style.display = `none`;
                   itemImage.style.display = `block`;
+                  setTimeout(
+                    function() {
                   item.style
                         .cssText
                           =
@@ -204,6 +210,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                               .cssText
                                 =
                               `height:${itemImage.clientHeight}px !important`
+                            }, 100
+                          )
                 };
               }
               request.onerror = function (e) {
@@ -260,6 +268,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemImage.setAttribute(`src`, e.target.result);
             itemImage.style.display = `block`;
             itemPending.remove();
+            setTimeout(
+              function() {
             item.style
                   .cssText
                     =
@@ -268,6 +278,8 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                         .cssText
                           =
                         `height:${itemImage.clientHeight}px !important`
+                      }, 100
+                    )
             }
           }
             request.onerror = function (e) {

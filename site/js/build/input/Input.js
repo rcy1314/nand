@@ -24,7 +24,26 @@ let listingIndexBuild = function (
   buffer.innerHTML = contentText;
   object.classList.add(`input`);
   key.classList.add(`index`);
-  object.src = indexImage;
+  var src =
+  `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${indexImage}`
+  var request = new XMLHttpRequest();
+  request.open("GET", cors + src, true);
+  request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+  request.setRequestHeader(`X-Requested-With`, `*`);
+  request.responseType = "blob";
+  request.onload = function () {
+      object.src = src;
+  }
+  request.onloadend = function() {
+    if (request.status == 404){
+      object.src = `site/images/webp/${indexImage}`
+    }
+  }
+  request.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
+  request.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
+  request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+  request.setRequestHeader(`X-Requested-With`, `*`);
+  request.send();
   detail.append(object);
   detail.append(match);
   detail.append(buffer);
