@@ -239,7 +239,7 @@ _container
             );
             _toggle.style.display = `none`;
             _visit.style.display = `none`;
-            topMenuBarDisplay(topBar);
+            Topbar(topBar);
             Expand(expand);
           }
         }
@@ -261,7 +261,7 @@ _container
                     `aria-object`
                   )
           );
-          topMenuBarDisplay(topBar);
+          Topbar(topBar);
           _toggle.style.display = `none`;
           _visit.style.display = `none`;
         }

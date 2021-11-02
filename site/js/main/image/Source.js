@@ -56,8 +56,7 @@ let Source =
       else src = null;
     }
     else if (
-      xhr.getElementsByTagName(`media:thumbnail`).length > 0 &&
-      youtubeMedia == false
+      xhr.getElementsByTagName(`media:thumbnail`).length > 0
     )
       src = String(
         xhr.getElementsByTagName(`media:thumbnail`)[0].getAttribute(`url`)
