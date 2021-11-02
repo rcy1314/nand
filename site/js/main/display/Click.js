@@ -39,6 +39,40 @@ _container
                   )
                 );
             Legacy();
+            _channel
+              .querySelectorAll(
+                `.item, .classic`
+              )
+                .forEach(
+                  (a) =>
+                    a
+                      .style
+                        .cssText
+                      =
+                        `height:${
+                          a
+                            .closest(
+                              `.item`
+                            )
+                              .querySelector(
+                                `.img`
+                              )
+                                .clientHeight
+                        }px !important`
+              )
+
+              _channel
+                .querySelectorAll(
+                  `.header`
+                )
+                  .forEach(
+                    (a) =>
+                      a
+                        .style
+                          .cssText
+                        =
+                        `position: relative !important`
+                  )
             _main.scrollTop = leaveOff;
           }
 
@@ -54,6 +88,40 @@ _container
               display = `flexBox`;
               notifyOption(`Flex Box`, `fa-times-circle`)
               Flex();
+              _channel
+                .querySelectorAll(
+                  `.item, .classic`
+                )
+                  .forEach(
+                    function (a) {
+                      if (a.querySelector(`.img`).clientHeight > 0)
+                      a
+                        .style
+                          .cssText
+                        =
+                          `height:${
+                            a
+                              .closest(
+                                `.item`
+                              ).querySelector(
+                                `.img`
+                              ).clientHeight
+                          }px !important`
+                }
+              )
+
+            _channel
+              .querySelectorAll(
+                `.header`
+              )
+                .forEach(
+                  (a) =>
+                    a
+                      .style
+                        .cssText
+                      =
+                        `position: absolute !important`
+                )
               _main.scrollTop = 0;
           }
           else
@@ -112,6 +180,39 @@ _container
                 )
             )
               _center.querySelector(`#bottom`).remove();
+              _channel
+                .querySelectorAll(
+                  `.classic`
+                )
+                  .forEach(
+                    (a) =>
+                    a
+                      .style
+                        .cssText
+                      =
+                    `height:${
+                      a
+                      .closest(
+                        `.item`
+                      )
+                        .querySelector(
+                          `.img`
+                        )
+                          .clientHeight
+                  }px !important`
+                )
+                _channel
+                  .querySelectorAll(
+                    `.header`
+                  )
+                    .forEach(
+                      (a) =>
+                      a
+                        .style
+                          .position
+                      =
+                        `relative`
+                    )
             if (
               !Reader
             )

@@ -117,39 +117,5 @@ let Flex = function () {
   else
     _display.style.display = `none`;
 
-    _channel
-      .querySelectorAll(
-        `.item, .classic`
-      )
-        .forEach(
-          function (a) {
-            if (a.querySelector(`.img`).clientHeight > 0)
-            a
-              .style
-                .cssText
-              =
-                `height:${
-                  a
-                    .closest(
-                      `.item`
-                    ).querySelector(
-                      `.img`
-                    ).clientHeight
-                }px !important`
-      }
-    )
-
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-      .forEach(
-        (a) =>
-          a
-            .style
-              .cssText
-            =
-              `position: absolute !important`
-      )
 
 }
