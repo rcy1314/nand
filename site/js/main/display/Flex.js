@@ -117,14 +117,13 @@ let Flex = function () {
   else
     _display.style.display = `none`;
 
-  setTimeout(
-    function() {
     _channel
       .querySelectorAll(
         `.item, .classic`
       )
         .forEach(
-          (a) =>
+          function (a) {
+            if (a.querySelector(`.img`).clientHeight > 0)
             a
               .style
                 .cssText
@@ -137,8 +136,7 @@ let Flex = function () {
                       `.img`
                     ).clientHeight
                 }px !important`
-        )
-      }, 2000
+      }
     )
 
   _channel
