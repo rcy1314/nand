@@ -4,29 +4,15 @@ var Guide = function (pubArray) {
     <circle class='checkmark__circle' cx='26' cy='26' r='25' fill='none' />
     <path class='checkmark__check' fill='none' d='M16 16 36 36 M36 16 16 36' />
   `;
-  if (
-    !menu[id].id.match(/Youtube/g) ||
-    !youtubeMedia
-  ) {
-    _guide.append(
-      guideBuild(
-        pubArray[0]
-      )
-    );
-    Sticky(
+  _guide.append(
+    guideBuild(
       pubArray[0]
-    );
+    )
+  );
+  Sticky(
+    pubArray[0]
+  );
 
-  }
-  else if (
-    menu[id].id.match(/Youtube/g) &&
-    youtubeMedia
-  )
-    _guide.append(
-      guideBuildYoutube(
-        pubArray[0]
-      )
-    );
 
   _guide.classList.add(`blur`);
   _guide.style.zIndex = `11`;

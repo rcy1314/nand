@@ -38,13 +38,7 @@ let courtesyBuild = function (
   ahref.append(bold);
   courtesy.append(object);
   courtesy.append(ahref);
-  if (
-    menu[id].id.match(/Youtube/g) && youtubeMedia
-  )
-    courtesy.append(
-      youtubeAttributeBuild()
-    );
-  else courtesy.append(
+  courtesy.append(
     attributeBuild()
   );
   return courtesy;

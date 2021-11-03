@@ -189,16 +189,6 @@ var Sticky = function (pubArray) {
               (a) => a.style.maxWidth = `calc(55vw - 220px)`
             );
       }
-
-      if (
-        menu[id].id.match(/Youtube/g) &&
-        !youtubeMedia
-      ) {
-        _guide
-          .querySelector(
-            `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
-          ).style.top = `-100px`
-      }
     }
     if (
       !safeSearchIDs.includes(menu[id].id) ||
