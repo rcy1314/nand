@@ -473,6 +473,10 @@
   top: 0;
 }
 
+#xml .youtube {
+  transform: scale(1.35);
+}
+
 #xml {
   min-height: calc(100% - 60px);
   height: fit-content;

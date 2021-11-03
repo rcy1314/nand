@@ -254,35 +254,6 @@ var Request = function (index) {
         }
 
         if (
-          menu[index].id.match(/Youtube/g) &&
-          !isNaN(parseFloat(local)) &&
-          youtubeMedia == true &&
-          isFinite(local)
-        ) {
-          _guide.style.display = `flex`;
-
-          var sticky = [];
-          sticky.push(
-            {
-              title: menu[index].id.match(/([^\/]+)$/g),
-              image: menu[index].image.image(),
-              element: pub[local].element,
-              externalURI: pub[local].re,
-              share: pub[local].share,
-              dst: pub[local].dst,
-              src: pub[local].src,
-              menuObject: index,
-              pubIndex: local,
-              publish: title,
-              views: views,
-            }
-          );
-          Guide(sticky);
-          document.querySelector(`.sticky`).style.display = `flex`;
-          unloading();
-        }
-
-        else if (
           !isNaN(
             parseFloat(
               local

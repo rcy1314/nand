@@ -89,7 +89,7 @@ let Bootup = function() {
 
   }
   else if (
-    !location.search.split(`?q=`)[1]
+    !location.search.split(`?`)[1]
   ){
     _container.style.display = `block`;
     _check.style.display = `none`;

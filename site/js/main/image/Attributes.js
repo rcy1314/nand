@@ -259,6 +259,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
           var read = new FileReader();
           read.readAsDataURL(request.response);
           read.onload = function (e) {
+            if (
+              menu[id].id.match(/Youtube/g)
+            )
+            itemImage.classList.add(`youtube`)
             Dimensions(
               menuObject,
               pubIndex,

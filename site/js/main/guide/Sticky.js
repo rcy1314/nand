@@ -202,6 +202,10 @@ var Sticky = function (pubArray) {
             `src`,
             pubArray.src
           );
+      _guide
+        .querySelector(
+          `.img`
+        ).classList.add(`youtube`);
 
       document.querySelector(`.sticky`).style.display = `block`;
       _guide.style.display = `flex`;

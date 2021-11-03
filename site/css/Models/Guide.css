@@ -176,7 +176,7 @@
 }
 
 #container #guide .sticky .wrap .header .courtesy .copy .attribute {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   border: var(--hover-border-color);
   position: absolute;
   display: none;
@@ -206,20 +206,7 @@
   background-color: var(--hover-background-color);
 }
 
-#container #guide .sticky .yt {
-  -webkit-overflow-scrolling: touch;
-  display: table-cell;
-  padding-bottom: 54.25%;
-  position: relative;
-  bottom: 2.5px;
-  width: 100%;
-}
 
-#container #guide .sticky .yt iframe {
-  position: absolute;
-  border: none !important;
-  height: 100%;
-  width: 100% !important;
-  top: 5px;
-  left: 0;
+#guide .youtube {
+  transform: scale(1.35);
 }
