@@ -116,6 +116,17 @@ _sidebar
               )
       ) {
         onlyImages = onlyImages != true;
+        if (
+          document
+            .body
+              .contains(
+                _xml
+                  .querySelector(
+                    `.item`
+                  )
+              )
+        )
+          Request(id);
         Star(
           evt
             .target,

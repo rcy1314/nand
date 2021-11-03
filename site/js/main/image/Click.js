@@ -5,6 +5,7 @@ _container
         if (
           evt.target.classList.contains(`courtesy`) ||
           evt.target.classList.contains(`wrap`) ||
+          evt.target.classList.contains(`item`) ||
           evt.target.classList.contains(`pub`) ||
           evt.target.classList.contains(`ago`)
         ) {
