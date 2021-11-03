@@ -1,4 +1,36 @@
 var Sticky = function (pubArray) {
+  let guide = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
+    );
+  let guideFilter = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
+    );
+  let guideContainer = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .image`
+    );
+  let guideSource = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .src`
+    );
+  let guideImage = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .img`
+    );
+  let guideHeader = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .header`
+    );
+  let guidePub = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .pub`
+    );
+  let guideAgo = _guide
+    .querySelector(
+      `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .ago`
+    );
   let maximum = 480;
   let newImg = new Image();
   newImg.setAttribute(
@@ -36,27 +68,22 @@ var Sticky = function (pubArray) {
                         document
                           .body
                             .contains(
-                              _guide
-                                .querySelector(
-                                  `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
-                                )
-                              )
+                              guideFilter
+                            )
                       )
-                        _guide
-                          .querySelector(
-                            `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}'] .filterBlur`
-                          )
-                            .classList.add(`blur`);
+                        guideFilter.classList.add(`blur`);
                     }
                 }
             );
-          _guide
-            .querySelector(`.img`)
+              guideImage
               .setAttribute(
                 `src`,
                 pubArray.src
               );
-          document.querySelector(`.sticky`).style.display = `block`;
+          _guide
+            .querySelector(
+              `.sticky`
+            ).style.display = `block`;
           if (
             showSplash
           )
@@ -82,66 +109,61 @@ var Sticky = function (pubArray) {
     if (
       window.innerWidth <= 425
     ) {
-      _guide.querySelector(`.sticky .header`).style.position = `absolute`;
-      _guide.querySelector(`.sticky .src`).style.display = `block`;
-      _guide.querySelector(`.sticky .image`).style.margin = `0`;
+      guideHeader.style.position = `absolute`;
+      guideSource.style.display = `block`;
+      guideContainer.style.margin = `0`;
       _main.classList.add(`guide`);
 
       if (
         newImg.naturalWidth >= newImg.naturalHeight
       ) {
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxHeight = `65vh`
-            );
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxWidth = `100vw`
-            );
-        _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
-        _guide.querySelector(`.header`).style.width = `100vw`;
+        guideImage.style.maxHeight = `65vh`
+        guideImage.style.maxWidth = `100vw`
+        guideHeader.style.top = newImg.clientHeight - 60;
+        guideHeader.style.width = `100vw`;
+        if (
+          document
+            .body
+              .contains(
+                guideFilter
+              )
+        ) {
+          guideFilter.style.maxWidth = `100vw`
+          guideFilter.style.maxHeight = `65vh`
+        }
 
         if (
           guideSafeSearch == true
         )
-          _guide.querySelector(`.filterBlur`).style.width = newImg.naturalWidth;
+          guideFilter.style.width = newImg.naturalWidth;
 
       }
 
       else if (newImg.naturalHeight >= newImg.naturalWidth) {
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxHeight = `55vh`
-            );
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxWidth = `100vw`
-            );
+        guideImage.style.maxHeight = `55vh`
+        guideImage.style.maxWidth = `100vw`
+        if (
+          document
+            .body
+              .contains(
+                guideFilter
+              )
+        ) {
+          guideFilter.style.maxHeight = `55vh`
+          guideFilter.style.maxWidth = `100vw`
+        }
       }
-      _guide.querySelector(`.header`).style.top = newImg.clientHeight - 60;
-      _guide.querySelector(`.ago`).style.position = `relative`;
-      _guide.querySelector(`.header`).style.backgroundColor =
-        `var(--color-primary)`
-      _guide.querySelector(`.header`).style.width = `100vw`;
+      guideHeader.style.top = newImg.clientHeight - 60;
+      guideAgo.style.position = `relative`;
+      guideHeader.style.backgroundColor = `var(--color-primary)`
+      guideHeader.style.width = `100vw`;
       _guide.style.paddingTop = `40px`;
 
       if (
         guideSafeSearch == true
       ) {
-        _guide.querySelector(`.filterBlur`).style.height = newImg.naturalHeight;
-        _guide.querySelector(`.filterBlur`).style.top = `0`;
+        guideFilter.style.height = newImg.naturalHeight;
+        guideFilter.style.top = `0`;
       }
 
     }
@@ -151,66 +173,61 @@ var Sticky = function (pubArray) {
       if (
         newImg.naturalWidth <= maximum
       )
-        _guide.querySelector(`.sticky .image`).style.margin = `25px`;
+        guideContainer.style.margin = `25px`;
 
       if (
         newImg.naturalWidth >= newImg.naturalHeight
       ) {
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxHeight = `90vh`
-            );
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxWidth = `calc(80vw - 220px)`
-            );
+        guideImage.style.maxHeight = `90vh`
+        guideImage.style.maxWidth = `calc(80vw - 220px)`
+        if (
+          document
+            .body
+              .contains(
+                guideFilter
+              )
+        ) {
+          guideFilter.style.maxHeight = `90vh`
+          guideFilter.style.maxWidth = `calc(80vw - 220px)`
+        }
       }
       else if (
         newImg.naturalHeight >= newImg.naturalWidth
       ) {
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxHeight = `90vh`
-            );
-        _guide
-          .querySelectorAll(
-            `.img, .filterBlur`
-          )
-            .forEach(
-              (a) => a.style.maxWidth = `calc(55vw - 220px)`
-            );
+        guideImage.style.maxHeight = `90vh`
+        guideImage.style.maxWidth = `calc(55vw - 220px)`
+        if (
+          document
+            .body
+              .contains(
+                guideFilter
+              )
+        ) {
+          guideFilter.style.maxHeight = `90vh`
+          guideFilter.style.maxWidth = `calc(55vw - 220px)`
+        }
       }
     }
     if (
       !safeSearchIDs.includes(menu[id].id) ||
       guideSafeSearch == false
     ) {
-      _guide
-        .querySelector(
-          `.img`
-        )
-          .setAttribute(
+      guideImage
+        .setAttribute(
             `src`,
             pubArray.src
           );
       _guide
         .querySelector(
-          `.img`
-        ).classList.add(`youtube`);
-
-      document.querySelector(`.sticky`).style.display = `block`;
+          `.sticky`
+        ).style.display = `block`;
       _guide.style.display = `flex`;
 
     }
+    if (
+      menu[id].id.match(/Youtube/g)
+    )
+      guideImage.classList.add(`youtube`);
 
     if (
       showSplash
