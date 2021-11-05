@@ -721,6 +721,7 @@ let offset; //touchmove scroll reader
 let adj = []; //menu randomized
 let complete; //progressBar interval
 let images = []; //array of images in request
+let scrollIntoViewBuffer = scrollIntoView // viewports/group
 let onlyImagesBuffer = onlyImages; // used in Reader
 let touchmove = false; // scrollToElements
 let touchendY = 0; // handleSwip, handleGuide

@@ -78,11 +78,6 @@ _container
 
           else if (
             viewport[cycleViewport] == `flexBox`
-              &&
-            menu[
-              id
-            ]
-              .media
           ) {
 
               display = `flexBox`;

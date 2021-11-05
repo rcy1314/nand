@@ -1,5 +1,6 @@
 let Sidescroll = function () {
   display == `sideScroll`;
+  scrollIntoViewBuffer = scrollIntoView;
   scrollIntoView = false;
 
   _channel.classList.add(`sideChannel`);

@@ -1,7 +1,7 @@
 let Category = function (translation) {
   let media;
   _container.style.display = `block`;
-  _toggle.style.display = `none`
+  _toggle.style.display = `none`;
   _sb.style.display = `none`;
   if (
     window.innerWidth >= 768 &&

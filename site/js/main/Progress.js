@@ -146,7 +146,7 @@ let Progress = function (done) {
           );
     }
   }
-  else if (
+  if (
     document
       .body
         .contains(
@@ -156,9 +156,11 @@ let Progress = function (done) {
             )
         )
   ) {
+    scrollIntoView = scrollIntoViewBuffer
     if (
       scrollIntoView
     ) {
+      console.log(_main.scrolltop + ` group ` +  _group.scrollTop + ` result` + _result.scrollTop)
       _group.classList.add(`scroll-into-view`)
       if (
         !onlyImages
@@ -175,6 +177,7 @@ let Progress = function (done) {
         }, 1250
       )
     }
+    else _main.scrollTop = 60;
   }
   if (
     showSplash
