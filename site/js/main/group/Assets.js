@@ -5,10 +5,11 @@ let Assets = function () {
   _visit.style.display = `none`;
   _sb.style.display = `none`;
   if (
-    _sidebar.offsetLeft === 0 ||
-    window.innerWidth >= 768
+    window.innerWidth >= 768 &&
+    !sideBarLock
   )
-    _bar.style.display = `none`;
+    _bar.style.display = `block`;
+  else _bar.style.display = `none`;
   location.href.split(`?`)[0].state();
   if (
     showSplash

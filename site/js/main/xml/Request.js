@@ -48,10 +48,11 @@ var Request = function (index) {
   _visit.style.display = `none`;
 
   if (
-    _sidebar.offsetLeft === 0 ||
-    window.innerWidth >= 768
+    window.innerWidth >= 768 &&
+    !sideBarLock
   )
-    _bar.style.display = `none`;
+    _bar.style.display = `block`;
+  else _bar.style.display = `none`;
 
   if (
     first &&
