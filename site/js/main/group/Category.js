@@ -2,8 +2,12 @@ let Category = function (translation) {
   let media;
   _container.style.display = `block`;
   _toggle.style.display = `none`
-  _bar.style.display = `block`;
   _sb.style.display = `none`;
+  if (
+    _sidebar.offsetLeft === 0 ||
+    window.innerWidth >= 768
+  )
+    _bar.style.display = `none`;
   if (
     showSplash
   )

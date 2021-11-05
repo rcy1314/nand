@@ -3,8 +3,12 @@ let Assets = function () {
   _container.style.display = `block`;
   _toggle.style.display = `none`;
   _visit.style.display = `none`;
-  _bar.style.display = `block`;
   _sb.style.display = `none`;
+  if (
+    _sidebar.offsetLeft === 0 ||
+    window.innerWidth >= 768
+  )
+    _bar.style.display = `none`;
   location.href.split(`?`)[0].state();
   if (
     showSplash

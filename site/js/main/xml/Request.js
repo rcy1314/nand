@@ -48,6 +48,7 @@ var Request = function (index) {
   _visit.style.display = `none`;
 
   if (
+    _sidebar.offsetLeft === 0 ||
     window.innerWidth >= 768
   )
     _bar.style.display = `none`;
