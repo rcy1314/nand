@@ -1,6 +1,7 @@
 let Reverse = function (translation) {
   let media;
   _air.style.visibility = `hidden`;
+  _air.style.paddingBottom = 60;
 
   for (
     let i = 0;

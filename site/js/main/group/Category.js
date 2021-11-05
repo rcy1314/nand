@@ -91,10 +91,10 @@ let Category = function (translation) {
   )
     Reverse(translation);
 
-  else if (
-    onlyImages
-  )
+  else {
+    _air.style.paddingBottom = 0;
     unloading();
+  }
 
   main.setAttribute(`tabindex`, -1);
   Topbar(topBar);
