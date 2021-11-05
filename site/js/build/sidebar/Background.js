@@ -8,7 +8,7 @@ let urlFormBuild = function () {
   );
   object.setAttribute(
     `placeholder`,
-    `path`
+    `tap to paste`
   );
   object.setAttribute(
     `type`,
@@ -18,6 +18,24 @@ let urlFormBuild = function () {
     `action`,
     `#`
   );
+  object
+    .addEventListener(
+      'click', (evt) =>
+        {
+          navigator.clipboard.readText()
+          .then((result) => {
+              object.value = result;
+          })
+          .catch((error) => {
+              //console.log(error);
+          });
+        },
+        {
+          passive:
+          false
+        }
+    );
+
   object.classList.add("urlInput");
   object.classList.add(`imageURL`);
   url.classList.add("background");
