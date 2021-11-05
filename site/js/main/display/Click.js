@@ -182,25 +182,25 @@ _container
               _center.querySelector(`#bottom`).remove();
               _channel
                 .querySelectorAll(
-                  `.classic`
+                  `.item, .classic`
                 )
                   .forEach(
-                    (a) =>
-                    a
-                      .style
-                        .cssText
-                      =
-                    `height:${
+                    function (a) {
+                      if (a.querySelector(`.img`).clientHeight > 0)
                       a
-                      .closest(
-                        `.item`
-                      )
-                        .querySelector(
-                          `.img`
-                        )
-                          .clientHeight
-                  }px !important`
-                )
+                        .style
+                          .cssText
+                        =
+                          `height:${
+                            a
+                              .closest(
+                                `.item`
+                              ).querySelector(
+                                `.img`
+                              ).clientHeight
+                          }px !important`
+                }
+              )
                 _channel
                   .querySelectorAll(
                     `.header`
@@ -209,9 +209,9 @@ _container
                       (a) =>
                       a
                         .style
-                          .position
+                          .cssText
                       =
-                        `relative`
+                        `position:relative !important`
                     )
             if (
               !Reader
