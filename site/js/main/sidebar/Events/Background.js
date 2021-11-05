@@ -317,7 +317,9 @@ _sidebar
         ) {
           if (
             _container.style.backgroundSize === `cover` ||
-            _main.style.backgroundSize === `cover`
+            _container.style.backgroundSize === `initial` ||
+            _main.style.backgroundSize === `cover` ||
+            _main.style.backgroundSize === `initial`
           ) {
             _container.style.backgroundSize = `contain`;
             _main.style.backgroundSize = `contain`;
