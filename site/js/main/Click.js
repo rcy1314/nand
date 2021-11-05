@@ -107,6 +107,14 @@ _container
         evt.target.id === `mobileHome` ||
         evt.target.id === `home`
       ) {
+        Reader = false;
+        onlyImages = onlyImagesBuffer;
+        notifyOption(`Reading`, `fa-times-circle`);
+        _main
+          .querySelectorAll(`.joi`)
+            .forEach(
+              (a) => a.classList.remove(`luv`)
+            );
         xml();
         Group();
         Visit();

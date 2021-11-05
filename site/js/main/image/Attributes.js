@@ -136,6 +136,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                       itemFilter.classList.add(`blur`);
                       setTimeout(
                         function() {
+                      if (
+                        !cropImages
+                      ) {
+
                       item.style
                             .cssText
                               =
@@ -144,8 +148,9 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                                   .cssText
                                     =
                                   `height:${itemImage.clientHeight}px !important`
-                                }, 1
-                              )
+                          }
+                        }, 1
+                      )
                     };
                   }
                   request.onerror = function (e) {
@@ -202,16 +207,21 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   itemImage.style.display = `block`;
                   setTimeout(
                     function() {
-                  item.style
-                        .cssText
-                          =
-                        `height:${itemImage.clientHeight}px !important`
-                        itemClassic.style
-                              .cssText
-                                =
-                              `height:${itemImage.clientHeight}px !important`
-                            }, 1
-                          )
+                      if (
+                        !cropImages
+                      ) {
+
+                      item.style
+                            .cssText
+                              =
+                            `height:${itemImage.clientHeight}px !important`
+                            itemClassic.style
+                                  .cssText
+                                    =
+                                  `height:${itemImage.clientHeight}px !important`
+                          }
+                    }, 1
+                  )
                 };
               }
               request.onerror = function (e) {
@@ -274,14 +284,19 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemPending.remove();
             setTimeout(
               function() {
-            item.style
-                  .cssText
-                    =
-                  `height:${itemImage.clientHeight}px !important`
-                  itemClassic.style
-                        .cssText
-                          =
-                        `height:${itemImage.clientHeight}px !important`
+                if (
+                  !cropImages
+                ) {
+
+                item.style
+                      .cssText
+                        =
+                      `height:${itemImage.clientHeight}px !important`
+                      itemClassic.style
+                            .cssText
+                              =
+                            `height:${itemImage.clientHeight}px !important`
+                    }
                       }, 1
                     )
             }

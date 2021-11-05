@@ -37,12 +37,13 @@ var Dimensions = function (
   if (
     itemImage &&
     itemImage.clientHeight < shrunk &&
-    display !== `flexBox`
+    display !== `flexBox` &&
+    !cropImages
   ) {
     setTimeout(
       function() {
         item.style.cssText = `height:${itemImage.clientHeight}px !important`;
-      }, 300
+      }, 1
     )
   }
   if (
@@ -83,13 +84,15 @@ var Dimensions = function (
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
         )
-      )
+      ) &&
+      window.innerWidth >= 768
     ) {
-      itemContainer.style.height = `200px`;
-      itemImage.style.height = `340px`;
+      itemContainer.style.height = `180px`;
+      itemImage.style.height = `180px`;
       _channel.querySelectorAll(
         `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic,
-        [aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap`
+        [aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap,
+        [aria-object='${menuObject}'][aria-item='${pubIndex}']`
       )
         .forEach(
           (a) =>
@@ -97,9 +100,8 @@ var Dimensions = function (
               .style
                 .height
                   =
-                `300px`
+                `180px`
         )
-      item.style.height = `300px`;
     } else if (
       window.innerWidth < 768 &&
       cropImages

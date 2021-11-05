@@ -2,7 +2,7 @@ let Viewport = function() {
   if (
     display == `flexBox`
   )
-    offset = 10000
+    offset = 2000
   else
     offset = 550
 
