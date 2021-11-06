@@ -7,33 +7,16 @@ _sidebar
           .target
             .classList
               .contains(
-                `theme`
+                `choose`
               )
       ) {
-        set =
-          evt
-            .target
-              .getAttribute(
-                `aria-object`
-              );
-        window[set]();
-      }
-
-      else if (
-        evt
-          .target
-            .classList
-              .contains(
-                `border`
-              )
-      ) {
-        expandVisual = expandVisual != true
+        expandSettings = expandSettings != true
         if (
-          !expandVisual
+          !expandSettings
         ) {
           _sidebar
             .querySelector(
-              `.themes`
+              `.set`
             )
               .style
                 .height
@@ -42,20 +25,19 @@ _sidebar
         }
 
         else if (
-          expandVisual
+          expandSettings
         ) {
           _sidebar
             .querySelector(
-              `.themes`
+              `.set`
             )
               .style
                 .height
                   =
-                `${(themes.length + 1) * 36}px`;
+                `${(settings.length) * 38}px`;
         }
       }
 
-      evt.preventDefault();
     },
     {
       passive:

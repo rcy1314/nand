@@ -25,7 +25,8 @@ window
         }
 
         if (
-          window.innerWidth <= 768
+          window.innerWidth <= 768 &&
+          window.innerWidth > 425
           ) {
           _display.style.display = `none`;
           display = `legacy`;
