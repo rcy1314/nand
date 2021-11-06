@@ -20,7 +20,7 @@ let urlFormBuild = function () {
   );
   object
     .addEventListener(
-      'click', (evt) =>
+      'dblclick', (evt) =>
         {
           navigator.clipboard.readText()
           .then((result) => {
