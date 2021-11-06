@@ -1,4 +1,4 @@
-let Cleanup = function () {
+let Cleanup = function() {
 
   while (
     _air.firstChild

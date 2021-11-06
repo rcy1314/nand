@@ -1,33 +1,30 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `Progress`
-              )
+        .target
+        .classList
+        .contains(
+          `Progress`
+        )
       ) {
         Star(
           _sidebar
-            .querySelector(
-              `.Percent`
-            ),
-            false
-          );
+          .querySelector(
+            `.Percent`
+          ),
+          false
+        );
         Star(
           evt
-            .target,
+          .target,
           true
         );
         loading = `dots`;
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

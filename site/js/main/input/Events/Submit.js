@@ -1,445 +1,400 @@
 document
   .addEventListener(
-    'submit', (evt) =>
-    {
+    'submit', (evt) => {
       _toggle.style.display = `none`
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `min`
-              )
+        .target
+        .classList
+        .contains(
+          `min`
+        )
       ) {
         if (
           _sidebar
-            .querySelector(
-              `.excludeInput`
-            )
-              .value
-                .length
+          .querySelector(
+            `.excludeInput`
+          )
+          .value
+          .length
         ) {
           exclude
             .push(
               _sidebar
-                .querySelector(
-                  `.excludeInput`
-                )
-                  .value
-          );
+              .querySelector(
+                `.excludeInput`
+              )
+              .value
+            );
           const has = exclude.map((a) => a.toLowerCase());
           if (
             document
-              .body
-                .contains(
-                  _xml
-                )
+            .body
+            .contains(
+              _xml
+            )
           ) {
             _channel
               .querySelectorAll(
-                  `.pub`
-                )
-                  .forEach(
-                    (a) =>
-                      has.filter(
-                        function (obj) {
-                          if (
-                            a
-                              .innerHTML
-                                .toLowerCase()
-                                  .match(
-                                    obj
-                                  )
-                          )
-                            a
-                              .closest(
-                                `.item`
-                              )
-                                .remove();
-                        }
+                `.pub`
+              )
+              .forEach(
+                (a) =>
+                has.filter(
+                  function(obj) {
+                    if (
+                      a
+                      .innerHTML
+                      .toLowerCase()
+                      .match(
+                        obj
                       )
-                  );
+                    )
+                      a
+                      .closest(
+                        `.item`
+                      )
+                      .remove();
+                  }
+                )
+              );
           }
           if (
             !_sidebar
-              .querySelector(
-                `.option`
-              )
+            .querySelector(
+              `.option`
+            )
           ) {
             let option =
               document
-                .createElement(
-                  `div`
-                );
-            option
-              .classList
-                .add(
-                  `option`
-                );
-            option
-              .innerHTML
-                =
-              _sidebar
-                .querySelector(
-                  `.excludeInput`
-                )
-                  .value;
-            evt
-              .target
-                .parentNode
-                  .insertBefore(
-                    option,
-                    evt.target
-                  );
-          }
-
-          else {
-            let option
-              =
-            document
               .createElement(
                 `div`
               );
             option
-              .innerHTML
-                =
+              .classList
+              .add(
+                `option`
+              );
+            option
+              .innerHTML =
               _sidebar
-                .querySelector(
-                  `.excludeInput`
-                )
-                  .value;
+              .querySelector(
+                `.excludeInput`
+              )
+              .value;
+            evt
+              .target
+              .parentNode
+              .insertBefore(
+                option,
+                evt.target
+              );
+          } else {
+            let option =
+              document
+              .createElement(
+                `div`
+              );
+            option
+              .innerHTML =
+              _sidebar
+              .querySelector(
+                `.excludeInput`
+              )
+              .value;
             option
               .classList
-                .add(
-                  `option`
-                );
+              .add(
+                `option`
+              );
             _sidebar
               .querySelector(
                 `.parse`
               )
-                .parentNode
-                  .insertBefore(
-                    option,
-                    _sidebar
-                      .querySelector(
-                        `.option`
-                      )
-                  );
+              .parentNode
+              .insertBefore(
+                option,
+                _sidebar
+                .querySelector(
+                  `.option`
+                )
+              );
           }
           _sidebar
             .querySelector(
               `.excludeInput`
             )
-              .value
-                =
-              ``;
+            .value =
+            ``;
           _sidebar
             .querySelector(
               `.exclude`
             )
-              .style
-                .height
-                  =
-                `
+            .style
+            .height =
+            `
                   ${
                     exclude.length * 35 + 70
                   }px
                 `;
-          }
-      }
-
-      else if (
+        }
+      } else if (
         evt
-          .target
-            .classList
-              .contains(
-                `url`
-              )
+        .target
+        .classList
+        .contains(
+          `url`
+        )
       ) {
         if (
           _sidebar
-            .querySelector(
-              `.imageURL`
-            )
-              .value
-                .length
+          .querySelector(
+            `.imageURL`
+          )
+          .value
+          .length
         ) {
           if (
             _sidebar
-              .querySelector(
-                `.imageURL`
-              )
-                .value
-                  .match(
-                    /\b(?:png|jpe?g|gif|webp)/g
-                  )
+            .querySelector(
+              `.imageURL`
+            )
+            .value
+            .match(
+              /\b(?:png|jpe?g|gif|webp)/g
+            )
           ) {
             if (
               backgroundImage[0]
-                .element
-                  ==
-                `container`
+              .element ==
+              `container`
             ) {
               _container
                 .style
-                  .backgroundImage
-                    =
-                  `url(
+                .backgroundImage =
+                `url(
                     ${
                     _sidebar.querySelector(`.imageURL`).value
                     }
                   )`;
               _main
                 .style
-                  .backgroundImage
-                    =
-                  `url()`;
-            }
-
-            else if (
+                .backgroundImage =
+                `url()`;
+            } else if (
               backgroundImage[0]
-                .element
-                  ==
-                `main`
+              .element ==
+              `main`
             ) {
               _main
                 .style
-                  .backgroundImage
-                    =
-                  `url(
+                .backgroundImage =
+                `url(
                     ${
                     _sidebar.querySelector(`.imageURL`).value
                     }
                   )`;
               _container
                 .style
-                  .backgroundImage
-                    =
-                  `url()`;
+                .backgroundImage =
+                `url()`;
             }
           }
         }
-      }
-
-      else if (
+      } else if (
         evt
-          .target
-            .classList
-              .contains(
-                `sideBasic`
-              )
+        .target
+        .classList
+        .contains(
+          `sideBasic`
+        )
       ) {
         if (
           _sidebar
-            .querySelector(
-              `.sideFilter`
-            )
-              .value
-                .length
+          .querySelector(
+            `.sideFilter`
+          )
+          .value
+          .length
         ) {
           Group();
           Filter(
             _sidebar
-              .querySelector(
-                `.sideFilter`
-              )
-                .value
-                  .space(),
+            .querySelector(
+              `.sideFilter`
+            )
+            .value
+            .space(),
           );
           _toggle
             .style
-              .display
-                =
-              `none`;
+            .display =
+            `none`;
           Topbar(topBar);
         }
 
-      }
-      else if (
+      } else if (
         evt
-          .target
-            .id
-              ==
-            `search`
+        .target
+        .id ==
+        `search`
       ) {
         if (
           document
-            .body
-              .contains(
-                _result
-                  .querySelector(
-                    `.populate`
-                  )
-              )
+          .body
+          .contains(
+            _result
+            .querySelector(
+              `.populate`
+            )
+          )
         ) {
           first = true;
         }
         if (
           document
-            .body
-              .contains(
-                _match
-                  .querySelector(
-                    `.hover`
-                  )
-              )
+          .body
+          .contains(
+            _match
+            .querySelector(
+              `.hover`
+            )
+          )
         ) {
           touchmove = true;
           _xml
             .style
-              .display
-                =
-              `block`;
+            .display =
+            `block`;
           _xml
             .style
-              .zIndex
-                =
-              `1`;
+            .zIndex =
+            `1`;
           Cleanup();
           Request(
             _match
-              .querySelector(
-                `.hover`
-              )
-                .getAttribute(
-                  `aria-object`
-                )
+            .querySelector(
+              `.hover`
+            )
+            .getAttribute(
+              `aria-object`
+            )
           )
           _main.scrollTop = 0;
           _match
             .style
-              .display
-                =
-              `none`;
-        }
-
-        else if (
+            .display =
+            `none`;
+        } else if (
           _view
-            .value
-              .length
+          .value
+          .length
         ) {
           if (
             location
-              .href
-                .split(
-                  `?`
-                )[0]
+            .href
+            .split(
+              `?`
+            )[0]
           )
             location
-              .href
-                .split(
-                  `?`
-                )[0]
-                  .state();
+            .href
+            .split(
+              `?`
+            )[0]
+            .state();
           Filter(
             _view.value
           );
         }
         _match
           .style
-            .display
-              =
-            `none`;
-      }
-      else if (
+          .display =
+          `none`;
+      } else if (
         evt
-          .target
-            .id
-              ===
-            `front`
+        .target
+        .id ===
+        `front`
       ) {
         if (
           _guest
-            .value
-              ===
-            ``
-          )
-            inputListingIndex(
-              ``,
-              `#first`
-            );
+          .value ===
+          ``
+        )
+          inputListingIndex(
+            ``,
+            `#first`
+          );
         if (
           document
-            .body
-              .contains(
-                _first
-                  .querySelector(
-                    `.hover`
-                  )
-              )
+          .body
+          .contains(
+            _first
+            .querySelector(
+              `.hover`
+            )
+          )
         ) {
           first = true;
           _label
             .style
-              .visibility
-                =
-              `visible`;
+            .visibility =
+            `visible`;
           _quick
             .style
-              .visibility
-                =
-              `visible`;
+            .visibility =
+            `visible`;
           _show
             .style
-              .visibility
-                =
-              `visible`;
+            .visibility =
+            `visible`;
           _link
             .style
-              .visibility
-                =
-              `visible`;
+            .visibility =
+            `visible`;
           _first
             .style
-              .display
-                =
-              `none`;
+            .display =
+            `none`;
           _xml
             .style
-              .display
-                =
-              `block`;
+            .display =
+            `block`;
           _xml
             .style
-              .zIndex
-                =
-              `1`;
+            .zIndex =
+            `1`;
           Cleanup();
           Topbar(topBar);
           Request(
             _first
-              .querySelector(
-                `.hover`
-              )
-                .getAttribute(
-                  `aria-object`
-                )
+            .querySelector(
+              `.hover`
+            )
+            .getAttribute(
+              `aria-object`
+            )
           );
-        }
-        else if (
+        } else if (
           _guest
-            .value
-              .length
-                >
-              0
-          )
-        Filter(_guest.value);
+          .value
+          .length >
+          0
+        )
+          Filter(_guest.value);
         _visit
           .style
-            .display
-              =
-            `none`;
+          .display =
+          `none`;
         _first
           .style
-            .display
-              =
-            `none`;
+          .display =
+          `none`;
       }
 
       evt.preventDefault();
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

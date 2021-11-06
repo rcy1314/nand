@@ -1,4 +1,4 @@
-let Visit = function () {
+let Visit = function() {
   _visit.style.display = `flex`;
   _group.style.display = `none`;
   _xml.style.display = `none`;

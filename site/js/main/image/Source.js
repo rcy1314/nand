@@ -1,61 +1,60 @@
 let Source =
-  function (xhr) {
+  function(xhr) {
     if (
-        xhr.getElementsByTagName(`content`).length > 0
-      ) {
+      xhr.getElementsByTagName(`content`).length > 0
+    ) {
       if (
         xhr
+        .getElementsByTagName(`content`)[0]
+        .childNodes[0].nodeValue.match(
+          /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
+        )
+      )
+        src = String(
+          xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
           )
-      )
-        src = String(
-          xhr
-            .getElementsByTagName(`content`)[0]
-            .childNodes[0].nodeValue.match(
-              /https:\/\/i\.redd\.it\/.+?(gif|png|jpg)/g
-            )
         );
       else if (
         xhr
+        .getElementsByTagName(`content`)[0]
+        .childNodes[0].nodeValue.match(
+          /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
+        )
+      )
+        src = String(
+          xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
           )
-      )
-        src = String(
-          xhr
-            .getElementsByTagName(`content`)[0]
-            .childNodes[0].nodeValue.match(
-              /https:\/\/.\.thumbs\.redditmedia\.com\/.+?(gif|png|jpg)/g
-            )
         );
       else if (
         xhr
+        .getElementsByTagName(`content`)[0]
+        .childNodes[0].nodeValue.match(
+          /https:\/\/external-preview\.redd.it\/.+?(gif|png|jpg)/g
+        )
+      )
+        src = String(
+          xhr
           .getElementsByTagName(`content`)[0]
           .childNodes[0].nodeValue.match(
             /https:\/\/external-preview\.redd.it\/.+?(gif|png|jpg)/g
           )
-      )
-        src = String(
-          xhr
-            .getElementsByTagName(`content`)[0]
-            .childNodes[0].nodeValue.match(
-              /https:\/\/external-preview\.redd.it\/.+?(gif|png|jpg)/g
-            )
         );
       else if (xhr.getElementsByTagName(`content`))
         src = String(
           xhr
-            .getElementsByTagName(`content`)[0]
-            .childNodes[0].nodeValue.match(
-              /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-            )
+          .getElementsByTagName(`content`)[0]
+          .childNodes[0].nodeValue.match(
+            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+          )
         );
       else src = null;
-    }
-    else if (
+    } else if (
       xhr.getElementsByTagName(`media:thumbnail`).length > 0
     )
       src = String(
@@ -67,14 +66,13 @@ let Source =
     ) {
       src = String(
         xhr
-          .getElementsByTagName(`media:content`)[0]
-          .getAttribute(`url`)
-          .match(
-            /\b(https?:\/\/\S*?\..+)/g
-          )
+        .getElementsByTagName(`media:content`)[0]
+        .getAttribute(`url`)
+        .match(
+          /\b(https?:\/\/\S*?\..+)/g
+        )
       );
-    }
-    else if (
+    } else if (
       xhr.getElementsByTagName(`media:thumbnail`).length > 0
     )
       src = String(
@@ -90,34 +88,33 @@ let Source =
     ) {
       if (
         xhr
-          .getElementsByTagName(`content:encoded`)[0]
-          .innerHTML.match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )
+        .getElementsByTagName(`content:encoded`)[0]
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )
       )
         src = xhr
-          .getElementsByTagName(`content:encoded`)[0]
-          .innerHTML.match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )[0];
+        .getElementsByTagName(`content:encoded`)[0]
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )[0];
       else
         src = String(
           xhr
-            .getElementsByTagName(`content:encoded`)[0]
-            .childNodes[0].nodeValue.match(
-              /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-            )
+          .getElementsByTagName(`content:encoded`)[0]
+          .childNodes[0].nodeValue.match(
+            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+          )
         );
-    }
-    else if (
+    } else if (
       xhr.getElementsByTagName(`image`).length > 0
     )
       src = String(
         xhr
-          .getElementsByTagName(`image`)[0]
-          .childNodes[0].nodeValue.match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )
+        .getElementsByTagName(`image`)[0]
+        .childNodes[0].nodeValue.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )
       );
     else if (
       xhr.getElementsByTagName(`link`)[0].attributes[`href`]
@@ -130,59 +127,53 @@ let Source =
     ) {
       if (
         xhr
-          .getElementsByTagName(`description`)[0]
-          .innerHTML.match(
-            /\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
-          )
+        .getElementsByTagName(`description`)[0]
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
+        )
       ) {
         src = xhr
           .getElementsByTagName(`description`)[0]
           .innerHTML.match(
             /\b(https?:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
           )[0];
-      }
-      else src = null;
-    }
-    else if (
+      } else src = null;
+    } else if (
       typeof xhr.getElementsByTagName(`description`)[0] === `object` ||
       typeof xhr.getElementsByTagName(`description`) !== `object`
     ) {
       if (
         (xhr.getElementsByTagName(`description`)[0]
-          .innerHTML.match(/a.href|src/g)
-        ||
+          .innerHTML.match(/a.href|src/g) ||
           xhr.getElementsByTagName(`author`).length <= 0
-        )
-        ||
+        ) ||
         (
           xhr.getElementsByTagName(`description`)[0].length > 0 &&
-          Array.isArray(xhr.getElementsByTagName(`description`)
+          Array.isArray(xhr.getElementsByTagName(`description`))
         )
-      )
-    ) {
-      if (
-        xhr
+      ) {
+        if (
+          xhr
           .getElementsByTagName(`description`)[0]
           .innerHTML.match(
             /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
           )
-      )
-        src = xhr
+        )
+          src = xhr
           .getElementsByTagName(`description`)[0]
           .innerHTML.match(
             /\b(https?:\/\/\S*?\.(^rss?:png|jpe?g|gif))/g
           )[0];
       }
-    }
-    else if (
+    } else if (
       xhr.getElementsByTagName(`link`).length > 0
     )
       src = String(
         xhr
-          .getElementsByTagName(`link`)[0]
-          .childNodes[0].nodeValue.match(
-            /https:\/\/.+?(gif|png|jpg)/g
-          )
+        .getElementsByTagName(`link`)[0]
+        .childNodes[0].nodeValue.match(
+          /https:\/\/.+?(gif|png|jpg)/g
+        )
       );
     else if (
       xhr.getElementsByTagName(`media:content`).length > 0
@@ -195,20 +186,20 @@ let Source =
     )
       src = String(
         xhr
-          .getElementsByTagName(`figure`)
-          .childNodes[0].nodeValue.match(
-            /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
-          )
+        .getElementsByTagName(`figure`)
+        .childNodes[0].nodeValue.match(
+          /\b(https:\/\/\S*?[a-zA-Z0-9\-\.\/\_\,]+)/g
+        )
       );
     else if (
       xhr.getElementsByTagName(`url`).length > 0
     )
       src = String(
         xhr
-          .getElementsByTagName(`url`)
-          .innerHTML.match(
-            /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
-          )[0]
+        .getElementsByTagName(`url`)
+        .innerHTML.match(
+          /\b(https?:\/\/\S*?\.(?:png|jpe?g|gif))/g
+        )[0]
       );
     else src = null;
     return src;

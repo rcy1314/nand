@@ -1,4 +1,4 @@
-let notifyOption = function (String, Icon) {
+let notifyOption = function(String, Icon) {
   _notify.innerHTML =
     `
     ${String} <div class='notifyIcon fa ${Icon}'></div>

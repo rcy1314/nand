@@ -1,7 +1,6 @@
 _guide
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         event.target.classList.contains(`checkmark__circle`) ||
         event.target.classList.contains(`checkmark__check`) ||
@@ -36,7 +35,7 @@ _guide
         if (
           showSplash
         )
-        _check.style.display = `none`;
+          _check.style.display = `none`;
         _main.setAttribute(`tabindex`, -1);
         guideOnScreen = onScreen;
         Sidebar(onScreen);
@@ -44,9 +43,7 @@ _guide
         _main.focus();
         pub = null;
       }
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

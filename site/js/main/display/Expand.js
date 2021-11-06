@@ -1,73 +1,71 @@
-let Expand = function (Value) {
+let Expand = function(Value) {
   if (
     Value
   ) {
-      groupType = `list`;
-      if (
-        document
-          .body
-            .contains(
-              _group.querySelector(
-                `.populate`
-              )
-            )
-      ) {
-        _group
-          .querySelectorAll(
-            `.populate`
-          )
-            .forEach(
-              (a) =>
-                a.classList.add(
-                  `expand`
-                )
-            );
-  			_group
-          .querySelectorAll(
-            `.populate`
-          )
-            .forEach(
-              (a) =>
-                a.classList.remove(
-                  `block`
-                )
-            );
-        }
-    }
-
-    else if (
-      !Value
+    groupType = `list`;
+    if (
+      document
+      .body
+      .contains(
+        _group.querySelector(
+          `.populate`
+        )
+      )
     ) {
-      groupType = `blocks`;
-      if (
-        document
-          .body
-            .contains(
-              _group.querySelector(
-                `.populate`
-              )
-            )
-      ) {
-  			_group
-          .querySelectorAll(
-            `.populate`
+      _group
+        .querySelectorAll(
+          `.populate`
+        )
+        .forEach(
+          (a) =>
+          a.classList.add(
+            `expand`
           )
-            .forEach(
-              (a) =>
-                a.classList.add(
-                  `block`
-                )
-            );
-        _group
-          .querySelectorAll(
-            `.populate`
+        );
+      _group
+        .querySelectorAll(
+          `.populate`
+        )
+        .forEach(
+          (a) =>
+          a.classList.remove(
+            `block`
           )
-            .forEach(
-              (a) =>
-                a.classList.remove(
-                  `expand`
-                )
-            );
-        }
+        );
     }
+  } else if (
+    !Value
+  ) {
+    groupType = `blocks`;
+    if (
+      document
+      .body
+      .contains(
+        _group.querySelector(
+          `.populate`
+        )
+      )
+    ) {
+      _group
+        .querySelectorAll(
+          `.populate`
+        )
+        .forEach(
+          (a) =>
+          a.classList.add(
+            `block`
+          )
+        );
+      _group
+        .querySelectorAll(
+          `.populate`
+        )
+        .forEach(
+          (a) =>
+          a.classList.remove(
+            `expand`
+          )
+        );
+    }
+  }
 };

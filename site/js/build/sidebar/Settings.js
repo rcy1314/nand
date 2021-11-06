@@ -1,9 +1,7 @@
-let appendSettings = function (Elem, Class, Arrays) {
+let appendSettings = function(Elem, Class, Arrays) {
   let list = _sidebar.querySelector(Elem);
   for (
-    i = 0;
-    i <= Arrays.length - 1;
-    i++
+    i = 0; i <= Arrays.length - 1; i++
   ) {
     let option = document.createElement(`div`);
     option.classList.add(

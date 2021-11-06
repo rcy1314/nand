@@ -1,7 +1,6 @@
 _container
   .addEventListener(
-    'wheel', (e) =>
-    {
+    'wheel', (e) => {
       if (
         document.body.contains(
           _channel

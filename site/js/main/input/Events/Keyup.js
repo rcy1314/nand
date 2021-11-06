@@ -1,55 +1,50 @@
 _view
   .addEventListener(
-    'keyup', (evt) =>
-    {
+    'keyup', (evt) => {
       if (
         evt
-          .target
-            .value
-              .length
-                >=
-              1
-        &&
+        .target
+        .value
+        .length >=
+        1 &&
         evt
-          .target
-            .value
-              !=
-            `Search`
+        .target
+        .value !=
+        `Search`
       )
-      return false
+        return false
 
       else {
         _match
           .style
-            .display
-              =
-            `none`;
+          .display =
+          `none`;
         while (
           _match
-            .querySelector(
-              `.listing`
-            )
-              .firstChild
+          .querySelector(
+            `.listing`
+          )
+          .firstChild
         )
           _match
+          .querySelector(
+            `.listing`
+          )
+          .removeChild(
+            _match
             .querySelector(
               `.listing`
             )
-            .removeChild(
-              _match
-                .querySelector(
-                  `.listing`
-                )
-                  .lastChild
-            );
+            .lastChild
+          );
         _search
           .querySelector(
             `.icon`
           )
-            .classList
-              .add(
-                `slide`
-              );
+          .classList
+          .add(
+            `slide`
+          );
         _view
           .setAttribute(
             `placeholder`,
@@ -57,65 +52,55 @@ _view
           );
         evt
           .target
-            .style
-              .paddingLeft
-                =
-              `25px`;
+          .style
+          .paddingLeft =
+          `25px`;
         evt
           .target
-            .style
-              .textAlign
-                =
-              `left`;
+          .style
+          .textAlign =
+          `left`;
         evt
           .target
-            .value
-              =
-            ``;
+          .value =
+          ``;
       }
 
-    evt.preventDefault();
-    },
-    {
-      passive:
-      false
+      evt.preventDefault();
+    }, {
+      passive: false
     }
-);
+  );
 
 _main
   .addEventListener(
-    'keyup', (evt) =>
-    {
+    'keyup', (evt) => {
       if (
         evt
-          .target
-            .id
-              ===
-            `guest`
+        .target
+        .id ===
+        `guest`
       )
         Listing(
           `#first`,
           evt
-            .keyCode
+          .keyCode
         );
 
       else if (
         evt
-          .target
-            .id
-              ===
-            `view`
+        .target
+        .id ===
+        `view`
       )
         Listing(
           `#match`,
           evt
-            .keyCode
+          .keyCode
         );
 
       evt.preventDefault();
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

@@ -1,4 +1,4 @@
-var Dimensions = function (
+var Dimensions = function(
   menuObject,
   pubIndex,
   Height,
@@ -49,9 +49,9 @@ var Dimensions = function (
   if (
     Width < maximum &&
     document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-        )
+      _channel.querySelector(
+        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
+      )
     )
   ) {
     itemImage.closest(`.classic`).style.cssText = `align-items:center;position:relative`;
@@ -72,7 +72,7 @@ var Dimensions = function (
         )
       )
     )
-    itemFilter.classList.add(`leave`);
+      itemFilter.classList.add(`leave`);
     itemImage.classList.add(`leave`);
     copyPost.style.display = `block`;
     itemImage.style.width = `200px`;
@@ -90,17 +90,16 @@ var Dimensions = function (
       itemContainer.style.height = `180px`;
       itemImage.style.height = `180px`;
       _channel.querySelectorAll(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic,
+          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic,
         [aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap,
         [aria-object='${menuObject}'][aria-item='${pubIndex}']`
-      )
+        )
         .forEach(
           (a) =>
-            a
-              .style
-                .height
-                  =
-                `180px`
+          a
+          .style
+          .height =
+          `180px`
         )
     } else if (
       window.innerWidth < 768 &&
@@ -110,8 +109,7 @@ var Dimensions = function (
       itemPending.style.height = `80px`;
       itemImage.style.height = `80px`;
     } else if (
-      !cropImages
-      &&
+      !cropImages &&
       document.body.contains(
         _channel.querySelector(
           `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
@@ -127,7 +125,7 @@ var Dimensions = function (
         )
       )
     )
-    itemFilter.classList.add(`default`);
+      itemFilter.classList.add(`default`);
     if (
       document.body.contains(
         _channel.querySelector(
@@ -135,6 +133,6 @@ var Dimensions = function (
         )
       )
     )
-    itemImage.classList.add(`default`);
+      itemImage.classList.add(`default`);
   }
 }

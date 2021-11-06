@@ -1,4 +1,4 @@
-var Attributes = function (empty, menuObject, pubIndex, src) {
+var Attributes = function(empty, menuObject, pubIndex, src) {
   count.push(`null`);
   let jsonResponseScore;
   let item = _channel.querySelector(
@@ -40,11 +40,10 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       .querySelectorAll(
         `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
       )
-        .forEach(
-          (a) => a.remove()
-        );
-  }
-  else if (
+      .forEach(
+        (a) => a.remove()
+      );
+  } else if (
     !src ||
     src == `null` ||
     src.match(/\.webm|\.mp4/g)
@@ -56,38 +55,36 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         onlyImages
       )
         item.remove();
-        copyDownload.style.display = `none`;
-        copyPicture.style.display = `none`;
-        attribute.style.height = `74px`;
-        itemPending.remove();
-        count.shift();
-      }
+      copyDownload.style.display = `none`;
+      copyPicture.style.display = `none`;
+      attribute.style.height = `74px`;
+      itemPending.remove();
+      count.shift();
     }
+  }
   imageDuplicate.push(src);
   if (
     src &&
     src
-      .match(
-        /https?:\/\//g
-      )
-    &&
+    .match(
+      /https?:\/\//g
+    ) &&
     !src
-      .match(
-        /comments|feeds|fsdn|undefined|external-preview/g
-      )
+    .match(
+      /comments|feeds|fsdn|undefined|external-preview/g
+    )
   ) {
     let newImg;
     newImg = new Image();
     newImg.setAttribute(`src`, src);
-    newImg.onerror = function ()
-      {
-        if (
-          onlyImages
-        )
-          item.remove();
-        itemPending.remove();
+    newImg.onerror = function() {
+      if (
+        onlyImages
+      )
+        item.remove();
+      itemPending.remove();
     };
-    newImg.onload = function () {
+    newImg.onload = function() {
       let Height;
       let Width;
       Height = newImg.naturlHeight
@@ -97,15 +94,15 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
         safeSearch
       ) {
         fetch(`${cors}${api}${src}`, {
-          method: "GET",
-          headers: {
-            Origin: "*",
-            Accept: "application/json",
-            "X-Requested-With": "*",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-        })
+            method: "GET",
+            headers: {
+              Origin: "*",
+              Accept: "application/json",
+              "X-Requested-With": "*",
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+          })
           .then((response) => {
             response.json().then((jsonResponse) => {
               if (
@@ -113,138 +110,134 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                 _channel.querySelector(
                   `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                 )
-                ) {
-                  var request = new XMLHttpRequest();
-                  request.open("GET", cors + src, true);
-                  request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
-                  request.setRequestHeader(`X-Requested-With`, `*`);
-                  request.responseType = "blob";
-                  request.onload = function () {
-                    var read = new FileReader();
-                    read.readAsDataURL(request.response);
-                    read.onload = function (e) {
-                      Dimensions(
-                        menuObject,
-                        pubIndex,
-                        Height,
-                        Width
-                      )
-                      itemImage.setAttribute(`src`, e.target.result);
-                      itemFilter.style.transform = `scale(4)`
-                      itemPending.style.display = `none`;
-                      itemImage.style.display = `block`;
-                      itemFilter.classList.add(`blur`);
-                      setTimeout(
-                        function() {
-                      if (
-                        !cropImages
-                      ) {
-
-                      item.style
-                            .cssText
-                              =
-                            `height:${itemImage.clientHeight}px !important`
-                            itemClassic.style
-                                  .cssText
-                                    =
-                                  `height:${itemImage.clientHeight}px !important`
-                          }
-                        }, 1
-                      )
-                    };
-                  }
-                  request.onerror = function (e) {
-                    if (
-                      onlyImages
-                    )
-                      item.remove();
-                    itemPending.remove();
-                  };
-                  if (
-                    !src.match(/4cdn/g)
-                  )
-                    request.send();
-                  else {
+              ) {
+                var request = new XMLHttpRequest();
+                request.open("GET", cors + src, true);
+                request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+                request.setRequestHeader(`X-Requested-With`, `*`);
+                request.responseType = "blob";
+                request.onload = function() {
+                  var read = new FileReader();
+                  read.readAsDataURL(request.response);
+                  read.onload = function(e) {
                     Dimensions(
                       menuObject,
                       pubIndex,
                       Height,
                       Width
                     )
+                    itemImage.setAttribute(`src`, e.target.result);
                     itemFilter.style.transform = `scale(4)`
-                    copyDownload.classList.add(`picture`);
-                    copyPicture.classList.add(`download`);
-                    itemImage.setAttribute(`src`, src);
                     itemPending.style.display = `none`;
                     itemImage.style.display = `block`;
                     itemFilter.classList.add(`blur`);
-                  }
-              } else if (
-                jsonResponse.score <= safeSearchScore &&
-                document.body.contains(
-                    _channel.querySelector(
-                      `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+                    setTimeout(
+                      function() {
+                        if (
+                          !cropImages
+                        ) {
+
+                          item.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                          itemClassic.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                        }
+                      }, 1
                     )
+                  };
+                }
+                request.onerror = function(e) {
+                  if (
+                    onlyImages
+                  )
+                    item.remove();
+                  itemPending.remove();
+                };
+                if (
+                  !src.match(/4cdn/g)
                 )
-              ) {
-              var request = new XMLHttpRequest();
-              request.open("GET", cors + src, true);
-              request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
-              request.setRequestHeader(`X-Requested-With`, `*`);
-              request.responseType = "blob";
-              request.onload = function () {
-                var read = new FileReader();
-                read.readAsDataURL(request.response);
-                read.onload = function (e) {
+                  request.send();
+                else {
                   Dimensions(
                     menuObject,
                     pubIndex,
                     Height,
                     Width
                   )
-                  itemImage.setAttribute(`src`, e.target.result);
+                  itemFilter.style.transform = `scale(4)`
+                  copyDownload.classList.add(`picture`);
+                  copyPicture.classList.add(`download`);
+                  itemImage.setAttribute(`src`, src);
                   itemPending.style.display = `none`;
                   itemImage.style.display = `block`;
-                  setTimeout(
-                    function() {
-                      if (
-                        !cropImages
-                      ) {
-
-                      item.style
-                            .cssText
-                              =
-                            `height:${itemImage.clientHeight}px !important`
-                            itemClassic.style
-                                  .cssText
-                                    =
-                                  `height:${itemImage.clientHeight}px !important`
-                          }
-                    }, 1
+                  itemFilter.classList.add(`blur`);
+                }
+              } else if (
+                jsonResponse.score <= safeSearchScore &&
+                document.body.contains(
+                  _channel.querySelector(
+                    `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
                   )
-                };
-              }
-              request.onerror = function (e) {
+                )
+              ) {
+                var request = new XMLHttpRequest();
+                request.open("GET", cors + src, true);
+                request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
+                request.setRequestHeader(`X-Requested-With`, `*`);
+                request.responseType = "blob";
+                request.onload = function() {
+                  var read = new FileReader();
+                  read.readAsDataURL(request.response);
+                  read.onload = function(e) {
+                    Dimensions(
+                      menuObject,
+                      pubIndex,
+                      Height,
+                      Width
+                    )
+                    itemImage.setAttribute(`src`, e.target.result);
+                    itemPending.style.display = `none`;
+                    itemImage.style.display = `block`;
+                    setTimeout(
+                      function() {
+                        if (
+                          !cropImages
+                        ) {
+
+                          item.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                          itemClassic.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                        }
+                      }, 1
+                    )
+                  };
+                }
+                request.onerror = function(e) {
+                  if (
+                    onlyImages
+                  )
+                    item.remove();
+                  itemPending.remove();
+                }
                 if (
-                  onlyImages
+                  !src.match(/4cdn/g)
                 )
-                  item.remove();
-                itemPending.remove();
-              }
-              if (
-                !src.match(/4cdn/g)
-              )
-                request.send();
-              else {
-                Dimensions(
-                  menuObject,
-                  pubIndex,
-                  Height,
-                  Width
-                )
-                itemImage.setAttribute(`src`, src);
-                itemPending.style.display = `none`;
-                itemImage.style.display = `block`;
+                  request.send();
+                else {
+                  Dimensions(
+                    menuObject,
+                    pubIndex,
+                    Height,
+                    Width
+                  )
+                  itemImage.setAttribute(`src`, src);
+                  itemPending.style.display = `none`;
+                  itemImage.style.display = `block`;
                 }
               }
             });
@@ -253,26 +246,25 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
             itemPending.remove();
           });
       } else if (
-            document.body.contains(
-              _channel.querySelector(
-                `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-              )
-            )
+        document.body.contains(
+          _channel.querySelector(
+            `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
           )
-        { //safeSearch false
+        )
+      ) { //safeSearch false
         var request = new XMLHttpRequest();
         request.open("GET", cors + src, true);
         request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
         request.setRequestHeader(`X-Requested-With`, `*`);
         request.responseType = "blob";
-        request.onload = function () {
+        request.onload = function() {
           var read = new FileReader();
           read.readAsDataURL(request.response);
-          read.onload = function (e) {
+          read.onload = function(e) {
             if (
               menu[id].id.match(/Youtube/g)
             )
-            itemImage.classList.add(`youtube`)
+              itemImage.classList.add(`youtube`)
             Dimensions(
               menuObject,
               pubIndex,
@@ -288,44 +280,42 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
                   !cropImages
                 ) {
 
-                item.style
-                      .cssText
-                        =
-                      `height:${itemImage.clientHeight}px !important`
-                      itemClassic.style
-                            .cssText
-                              =
-                            `height:${itemImage.clientHeight}px !important`
-                    }
-                      }, 1
-                    )
-            }
-          }
-            request.onerror = function (e) {
-              if (
-                onlyImages
-              )
-                item.remove();
-              itemPending.remove();
-            };
-          if (
-            !src.match(/4cdn/g)
-          )
-            request.send();
-          else {
-            Dimensions(
-              menuObject,
-              pubIndex,
-              Height,
-              Width
+                  item.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
+                  itemClassic.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
+                }
+              }, 1
             )
-            itemImage.setAttribute(`src`, src);
-            itemPending.style.display = `none`;
-            itemImage.style.display = `block`;
+          }
+        }
+        request.onerror = function(e) {
+          if (
+            onlyImages
+          )
+            item.remove();
+          itemPending.remove();
+        };
+        if (
+          !src.match(/4cdn/g)
+        )
+          request.send();
+        else {
+          Dimensions(
+            menuObject,
+            pubIndex,
+            Height,
+            Width
+          )
+          itemImage.setAttribute(`src`, src);
+          itemPending.style.display = `none`;
+          itemImage.style.display = `block`;
         }
       };
     };
-    newImg.onerror = function () {
+    newImg.onerror = function() {
       if (
         onlyImages
       )
@@ -335,8 +325,7 @@ var Attributes = function (empty, menuObject, pubIndex, src) {
       attribute.style.height = `74px`;
       itemPending.remove();
     };
-  }
-  else {
+  } else {
     if (
       onlyImages
     )

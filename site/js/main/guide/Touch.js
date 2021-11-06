@@ -1,4 +1,4 @@
-let Touch = function () {
+let Touch = function() {
 
   if (
     touchendX - 75 > touchstartX ||
@@ -13,7 +13,7 @@ let Touch = function () {
       Append(id);
 
     setTimeout(
-      function () {
+      function() {
         if (
           complete
         )

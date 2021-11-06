@@ -1,4 +1,4 @@
-var Sticky = function (pubArray) {
+var Sticky = function(pubArray) {
   let guide = _guide
     .querySelector(
       `[aria-item='${pubArray.menuObject}'][aria-object='${pubArray.pubIndex}']`
@@ -37,72 +37,69 @@ var Sticky = function (pubArray) {
     `src`,
     pubArray.src
   );
-  newImg.onload = function () {
+  newImg.onload = function() {
     if (
       safeSearchIDs.includes(menu[id].id) &&
       guideSafeSearch == true
     ) {
       fetch(
-        `${cors}${api}${pubArray.src}`,
-        {
-          method: "GET",
-          headers: {
-            Origin: "*",
-            Accept: "application/json",
-            "X-Requested-With": "*",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-        },
-      })
+          `${cors}${api}${pubArray.src}`, {
+            method: "GET",
+            headers: {
+              Origin: "*",
+              Accept: "application/json",
+              "X-Requested-With": "*",
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+          })
         .then(
           (response) => {
             response
               .json()
-                .then(
-                  (jsonResponse) =>
-                  {
+              .then(
+                (jsonResponse) => {
+                  if (
+                    jsonResponse.score >= safeSearchScore
+                  ) {
                     if (
-                      jsonResponse.score >= safeSearchScore
-                    ) {
-                      if (
-                        document
-                          .body
-                            .contains(
-                              guideFilter
-                            )
+                      document
+                      .body
+                      .contains(
+                        guideFilter
                       )
-                        guideFilter.classList.add(`blur`);
-                    }
+                    )
+                      guideFilter.classList.add(`blur`);
+                  }
                 }
-            );
-              guideImage
+              );
+            guideImage
               .setAttribute(
                 `src`,
                 pubArray.src
               );
-          _guide
-            .querySelector(
-              `.sticky`
-            ).style.display = `block`;
-          if (
-            showSplash
-          )
-            _check.style.display = `none`;
-          _guide.style.display = `flex`;
-        }
-      )
-        .catch(
-          (response) =>
-            {
-              while (
-                _guide.lastChild
-              )
-                _guide.removeChild(_guide.lastChild);
+            _guide
+              .querySelector(
+                `.sticky`
+              ).style.display = `block`;
+            if (
+              showSplash
+            )
               _check.style.display = `none`;
-              _guide.style.display = `none`;
-              local = null;
-              post = null;
-            }
+            _guide.style.display = `flex`;
+          }
+        )
+        .catch(
+          (response) => {
+            while (
+              _guide.lastChild
+            )
+              _guide.removeChild(_guide.lastChild);
+            _check.style.display = `none`;
+            _guide.style.display = `none`;
+            local = null;
+            post = null;
+          }
         );
     }
 
@@ -123,10 +120,10 @@ var Sticky = function (pubArray) {
         guideHeader.style.width = `100vw`;
         if (
           document
-            .body
-              .contains(
-                guideFilter
-              )
+          .body
+          .contains(
+            guideFilter
+          )
         ) {
           guideFilter.style.maxWidth = `100vw`
           guideFilter.style.maxHeight = `65vh`
@@ -137,17 +134,15 @@ var Sticky = function (pubArray) {
         )
           guideFilter.style.width = newImg.naturalWidth;
 
-      }
-
-      else if (newImg.naturalHeight >= newImg.naturalWidth) {
+      } else if (newImg.naturalHeight >= newImg.naturalWidth) {
         guideImage.style.maxHeight = `55vh`
         guideImage.style.maxWidth = `100vw`
         if (
           document
-            .body
-              .contains(
-                guideFilter
-              )
+          .body
+          .contains(
+            guideFilter
+          )
         ) {
           guideFilter.style.maxHeight = `55vh`
           guideFilter.style.maxWidth = `100vw`
@@ -166,8 +161,7 @@ var Sticky = function (pubArray) {
         guideFilter.style.top = `0`;
       }
 
-    }
-    else {
+    } else {
       _main.classList.add(`guide`);
 
       if (
@@ -182,26 +176,25 @@ var Sticky = function (pubArray) {
         guideImage.style.maxWidth = `calc(80vw - 220px)`
         if (
           document
-            .body
-              .contains(
-                guideFilter
-              )
+          .body
+          .contains(
+            guideFilter
+          )
         ) {
           guideFilter.style.maxHeight = `90vh`
           guideFilter.style.maxWidth = `calc(80vw - 220px)`
         }
-      }
-      else if (
+      } else if (
         newImg.naturalHeight >= newImg.naturalWidth
       ) {
         guideImage.style.maxHeight = `90vh`
         guideImage.style.maxWidth = `calc(55vw - 220px)`
         if (
           document
-            .body
-              .contains(
-                guideFilter
-              )
+          .body
+          .contains(
+            guideFilter
+          )
         ) {
           guideFilter.style.maxHeight = `90vh`
           guideFilter.style.maxWidth = `calc(55vw - 220px)`
@@ -214,9 +207,9 @@ var Sticky = function (pubArray) {
     ) {
       guideImage
         .setAttribute(
-            `src`,
-            pubArray.src
-          );
+          `src`,
+          pubArray.src
+        );
       _guide
         .querySelector(
           `.sticky`

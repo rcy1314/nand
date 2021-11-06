@@ -1,4 +1,4 @@
-let Feed = function (Value) {
+let Feed = function(Value) {
   if (
     Value
   ) {
@@ -7,10 +7,10 @@ let Feed = function (Value) {
       .querySelectorAll(
         `.feed`
       )
-        .forEach((a) =>
-          a.style.display =
-          `block`
-        )
+      .forEach((a) =>
+        a.style.display =
+        `block`
+      )
 
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.add(`rotate`);
@@ -20,16 +20,14 @@ let Feed = function (Value) {
     _options.classList.add(`invisible`);
     _front.classList.remove(`toggle`);
     _quick.classList.add(`visible`);
-    _show.style.visibility=`hidden`;
+    _show.style.visibility = `hidden`;
     _under.style.display = `none`;
 
     if (
       window.innerWidth <= 425
     )
-    _sb.style.top = `-10px`;
-  }
-
-  else if (
+      _sb.style.top = `-10px`;
+  } else if (
     !Value
   ) {
 
@@ -40,10 +38,10 @@ let Feed = function (Value) {
       .querySelectorAll(
         `.feed`
       )
-        .forEach((a) =>
-          a.style.display =
-          `none`
-        )
+      .forEach((a) =>
+        a.style.display =
+        `none`
+      )
 
     _link.querySelector(`.fa-angle-up`).classList.add(`rotateReverse`);
     _link.querySelector(`.fa-angle-up`).classList.remove(`rotate`);
@@ -57,7 +55,7 @@ let Feed = function (Value) {
     _front.classList.remove(`toggleHidden`);
     _quick.classList.remove(`visible`);
     _quick.classList.add(`invisible`);
-    _show.style.visibility=`visible`;
+    _show.style.visibility = `visible`;
     _front.classList.add(`toggle`);
 
   }

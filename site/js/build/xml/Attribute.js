@@ -1,4 +1,4 @@
-let attributeBuild = function () {
+let attributeBuild = function() {
   let attribute = document.createElement(`div`);
   let download = document.createElement(`div`);
   let object = document.createElement(`div`);

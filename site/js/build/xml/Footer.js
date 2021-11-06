@@ -1,4 +1,4 @@
-let footerBuild = function (id) {
+let footerBuild = function(id) {
   let backward = document.createElement(`span`);
   let object = document.createElement(`div`);
   object.id = `bottom`;

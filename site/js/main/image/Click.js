@@ -1,40 +1,39 @@
 _container
   .addEventListener('click',
-    (evt) =>
-      {
+    (evt) => {
+      if (
+        evt.target.classList.contains(`courtesy`) ||
+        evt.target.classList.contains(`wrap`) ||
+        evt.target.classList.contains(`item`) ||
+        evt.target.classList.contains(`pub`) ||
+        evt.target.classList.contains(`ago`)
+      ) {
+        let cid = evt.target.closest(`.item`).getAttribute(`aria-object`)
         if (
-          evt.target.classList.contains(`courtesy`) ||
-          evt.target.classList.contains(`wrap`) ||
-          evt.target.classList.contains(`item`) ||
-          evt.target.classList.contains(`pub`) ||
-          evt.target.classList.contains(`ago`)
+          loading == `percent`
+        )
+          _progress.style.width = `100%`;
+        if (
+          tap === 0
         ) {
-          let cid = evt.target.closest(`.item`).getAttribute(`aria-object`)
-          if (
-            loading == `percent`
-          )
-            _progress.style.width = `100%`;
-          if (
-            tap === 0
-          ) {
-            tap = new Date().getTime();
-            setTimeout(
-              function () {
-                if (
-                  new Date().getTime() - tap >= 350 &&
-                  new Date().getTime() - tap < 400
-                )
+          tap = new Date().getTime();
+          setTimeout(
+            function() {
+              if (
+                new Date().getTime() - tap >= 350 &&
+                new Date().getTime() - tap < 400
+              )
                 if (
                   !evt
-                    .target
-                      .closest(`.item`)
-                        .querySelector(`.img`)
-                          .classList.contains(`guide`) &&
+                  .target
+                  .closest(`.item`)
+                  .querySelector(`.img`)
+                  .classList.contains(`guide`) &&
                   evt
-                    .target
-                      .closest(`.item`)
-                        .querySelector(`.img`)
-                          .classList.contains(`default`)
+                  .target
+                  .closest(`.item`)
+                  .querySelector(`.img`)
+                  .classList.contains(`default`)
                 ) {
                   count = [];
                   let sticky = [];
@@ -43,181 +42,165 @@ _container
                   )
                     _check.style.display = `block`;
 
-                  sticky.push(
-                    {
-                      courtesy:
+                  sticky.push({
+                    courtesy: evt
+                      .target
+                      .closest(`.item`)
+                      .querySelector(`.header`)
+                      .innerHTML,
+                    element: evt
+                      .target
+                      .closest(`.item`)
+                      .getAttribute(`aria-item`),
+                    image: menu[
                         evt
-                          .target
-                            .closest(`.item`)
-                              .querySelector(`.header`)
-                                .innerHTML,
-                      element:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .getAttribute(`aria-item`),
-                      image:
-                        menu[
-                          evt
-                            .target
-                              .closest(`.item`)
-                                .getAttribute(`aria-object`)
-                            ]
-                          .image
-                            .image(),
-                      title:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .querySelector(`.pub`)
-                                .getAttribute(`text`),
-                      share:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .querySelector(`.share`)
-                                .value,
-                      dst:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .querySelector(`.ago:last-child`)
-                                .innerHTML,
-                      src:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .querySelector(`.source`)
-                                .value,
-                      externalURI:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .getAttribute(`ext`),
-                      menuObject:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .getAttribute(`aria-object`),
-                      pubIndex:
-                        evt
-                          .target
-                            .closest(`.item`)
-                              .getAttribute(`aria-item`),
-                    }
-                  );
+                        .target
+                        .closest(`.item`)
+                        .getAttribute(`aria-object`)
+                      ]
+                      .image
+                      .image(),
+                    title: evt
+                      .target
+                      .closest(`.item`)
+                      .querySelector(`.pub`)
+                      .getAttribute(`text`),
+                    share: evt
+                      .target
+                      .closest(`.item`)
+                      .querySelector(`.share`)
+                      .value,
+                    dst: evt
+                      .target
+                      .closest(`.item`)
+                      .querySelector(`.ago:last-child`)
+                      .innerHTML,
+                    src: evt
+                      .target
+                      .closest(`.item`)
+                      .querySelector(`.source`)
+                      .value,
+                    externalURI: evt
+                      .target
+                      .closest(`.item`)
+                      .getAttribute(`ext`),
+                    menuObject: evt
+                      .target
+                      .closest(`.item`)
+                      .getAttribute(`aria-object`),
+                    pubIndex: evt
+                      .target
+                      .closest(`.item`)
+                      .getAttribute(`aria-item`),
+                  });
                   if (
                     showSplash
                   )
                     _check.style.display = `block`;
                   Guide(sticky);
                 }
-                else if (
-                  evt
-                    .target
-                      .closest(`.item`)
-                        .querySelector(`.img`)
-                          .classList
-                            .contains(`guide`)
-                )
-                  evt
-                    .target
-                      .closest(`.item`)
-                        .getAttribute(`ext`)
-                          .blank();
-                else if (
-                  !evt
-                    .target
-                      .closest(`.item`)
-                        .querySelector(`.img`)
-                          .classList.contains(`default`)
-                )
-                  evt
-                    .target
-                      .closest(`.item`)
-                        .getAttribute(`ext`)
-                          .blank();
-                tap = 0;
-              }, 350
-            );
-          }
-          else {
-            if (
-              new Date().getTime() - tap < 350
-            ) {
-              if (
+              else if (
                 evt
-                  .target
-                    .classList
-                      .contains(`leave`)
-              ) {
+                .target
+                .closest(`.item`)
+                .querySelector(`.img`)
+                .classList
+                .contains(`guide`)
+              )
                 evt
-                  .target
-                    .closest(`.item`)
-                      .getAttribute(`ext`)
-                        .blank();
-                return false;
-              }
+                .target
+                .closest(`.item`)
+                .getAttribute(`ext`)
+                .blank();
               else if (
                 !evt
-                  .target
-                    .classList
-                      .contains(`blur`)
-              ) {
+                .target
+                .closest(`.item`)
+                .querySelector(`.img`)
+                .classList.contains(`default`)
+              )
                 evt
-                  .target
+                .target
+                .closest(`.item`)
+                .getAttribute(`ext`)
+                .blank();
+              tap = 0;
+            }, 350
+          );
+        } else {
+          if (
+            new Date().getTime() - tap < 350
+          ) {
+            if (
+              evt
+              .target
+              .classList
+              .contains(`leave`)
+            ) {
+              evt
+                .target
+                .closest(`.item`)
+                .getAttribute(`ext`)
+                .blank();
+              return false;
+            } else if (
+              !evt
+              .target
+              .classList
+              .contains(`blur`)
+            ) {
+              evt
+                .target
+                .closest(`.image`)
+                .querySelector(`.fa-heart`)
+                .style
+                .animation =
+                `scale .7s ease-in-out .1s both`;
+              evt
+                .target
+                .closest(`.image`)
+                .querySelector(`.fa-heart`)
+                .style
+                .display =
+                `block`;
+              evt
+                .target
+                .closest(`.image`)
+                .querySelector(`.fa-heart`)
+                .style
+                .zIndex =
+                `12`;
+              setTimeout(
+                function() {
+                  evt
+                    .target
+                    .closest(`.image`)
+                    .querySelector(`.fa-heart`).style
+                    .animation =
+                    `none`;
+                  evt
+                    .target
                     .closest(`.image`)
                     .querySelector(`.fa-heart`)
-                      .style
-                        .animation =
-                          `scale .7s ease-in-out .1s both`;
-                evt
-                  .target
+                    .style
+                    .display =
+                    `none`;
+                  evt
+                    .target
                     .closest(`.image`)
-                      .querySelector(`.fa-heart`)
-                        .style
-                          .display =
-                            `block`;
-                evt
-                  .target
-                    .closest(`.image`)
-                      .querySelector(`.fa-heart`)
-                        .style
-                          .zIndex =
-                            `12`;
-                setTimeout(
-                  function () {
-                    evt
-                      .target
-                        .closest(`.image`)
-                          .querySelector(`.fa-heart`).style
-                            .animation =
-                              `none`;
-                    evt
-                      .target
-                        .closest(`.image`)
-                          .querySelector(`.fa-heart`)
-                            .style
-                              .display =
-                                `none`;
-                    evt
-                      .target
-                        .closest(`.image`)
-                          .querySelector(`.fa-heart`)
-                            .style
-                              .zIndex =
-                                `0`;
-                  }, 1500
-                );
-              }
-              tap = 0;
+                    .querySelector(`.fa-heart`)
+                    .style
+                    .zIndex =
+                    `0`;
+                }, 1500
+              );
             }
+            tap = 0;
           }
-          evt.stopPropagation();
         }
-      },
-      {
-        passive:
-        false
+        evt.stopPropagation();
       }
-);
+    }, {
+      passive: false
+    }
+  );

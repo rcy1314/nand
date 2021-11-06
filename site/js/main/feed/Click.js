@@ -1,7 +1,6 @@
 _container
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
 
       if (
         evt.target.classList.contains(`fa-plus`) ||
@@ -15,18 +14,14 @@ _container
           _feed.scrollLeft >= 0
         )
           _left.style.display = `block`;
-      }
-
-      else if (
+      } else if (
         evt.target.classList.contains(`fa-angle-up`) ||
         evt.target.id == `link` ||
         evt.target.id == `show`
       ) {
         quickFeeds = quickFeeds != true;
         Feed(quickFeeds);
-      }
-
-      else if (
+      } else if (
         evt.target.classList.contains(`fa-minus`) ||
         evt.target.classList.contains(`left`)
       ) {
@@ -36,16 +31,13 @@ _container
           _feed.scrollLeft - _feed.clientWidth <= 0
         )
           _left.style.display = `none`;
-      }
-
-      else if (
+      } else if (
         evt.target.classList.contains(
           `asset`
         )
       )
         Request(evt.target.getAttribute(`aria-object`));
-  },
-  {
-    passive: false
-  }
-);
+    }, {
+      passive: false
+    }
+  );

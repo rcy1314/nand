@@ -1,14 +1,13 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `border`
-              )
+        .target
+        .classList
+        .contains(
+          `border`
+        )
       ) {
         expandVisual = expandVisual != true
         if (
@@ -18,30 +17,24 @@ _sidebar
             .querySelector(
               `.themes`
             )
-              .style
-                .height
-                  =
-                `31px`;
-        }
-
-        else if (
+            .style
+            .height =
+            `31px`;
+        } else if (
           expandVisual
         ) {
           _sidebar
             .querySelector(
               `.themes`
             )
-              .style
-                .height
-                  =
-                `${(themes.length + 1) * 36}px`;
+            .style
+            .height =
+            `${(themes.length + 1) * 36}px`;
         }
       }
 
       evt.preventDefault();
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

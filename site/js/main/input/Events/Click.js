@@ -1,7 +1,6 @@
 _page
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         event.target.classList.contains(`buttonSearch`) ||
         event.target.classList.contains(`button`)
@@ -14,46 +13,44 @@ _page
         }
       }
       event.preventDefault();
-    },
-    {
+    }, {
       passive: false
     }
-);
+  );
 
 
 
 _view
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       _match.style.display = `none`;
       while (
         _match
-          .querySelector(
-            `.listing`
-          )
-            .firstChild
+        .querySelector(
+          `.listing`
+        )
+        .firstChild
       ) {
         _match
           .querySelector(
             `.listing`
           )
-            .removeChild(
-              _match
-                .querySelector(
-                  `.listing`
-                )
-                  .lastChild
-            );
+          .removeChild(
+            _match
+            .querySelector(
+              `.listing`
+            )
+            .lastChild
+          );
       }
       _search
         .querySelector(
           `.icon`
         )
-          .classList
-            .add(
-              `slide`
-            );
+        .classList
+        .add(
+          `slide`
+        );
       _view
         .setAttribute(
           `placeholder`,
@@ -61,115 +58,101 @@ _view
         );
       evt
         .target
-          .style
-            .paddingLeft
-              =
-            `20px`;
+        .style
+        .paddingLeft =
+        `20px`;
       evt
         .target
-          .style
-            .textAlign
-              =
-            `left`;
+        .style
+        .textAlign =
+        `left`;
       evt
         .target
-          .value
-            =
-          ``;
+        .value =
+        ``;
 
       evt.preventDefault();
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );
 
 _container
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `sideFilter`
-              )
+        .target
+        .classList
+        .contains(
+          `sideFilter`
+        )
       )
         evt
-          .target
-            .value
-              =
-            ``;
+        .target
+        .value =
+        ``;
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `detail`
-              )
-    ) {
-      if (
-        document
+        .target
+        .classList
+        .contains(
+          `detail`
+        )
+      ) {
+        if (
+          document
           .body
-            .contains(
-              _first
-                .querySelector(
-                  `.hover`
-                )
+          .contains(
+            _first
+            .querySelector(
+              `.hover`
             )
-      )
-        first = true;
+          )
+        )
+          first = true;
 
-      else if (
-        display !== `flexBox`
-      )
-        first = false;
+        else if (
+          display !== `flexBox`
+        )
+          first = false;
 
         _xml
           .style
-            .display
-              =
-            `block`;
+          .display =
+          `block`;
         _xml
           .style
-            .zIndex
-              =
-            `1`;
+          .zIndex =
+          `1`;
         touchmove = true;
         Cleanup();
         Request(
           evt
-            .target
-              .closest(
-                `.hover`
-              )
-                .getAttribute(
-                  `aria-object`
-                )
+          .target
+          .closest(
+            `.hover`
+          )
+          .getAttribute(
+            `aria-object`
+          )
         );
         _visit
           .style
-              .display
-              =
-            `none`;
+          .display =
+          `none`;
         _match
           .style
-            .display
-              =
-            `none`;
+          .display =
+          `none`;
         _first
           .style
-            .display
-              =
-            `none`;
+          .display =
+          `none`;
         Topbar(topBar);
         _main.scrollTop = 0;
       }
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

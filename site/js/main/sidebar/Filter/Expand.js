@@ -1,14 +1,13 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `parse`
-              )
+        .target
+        .classList
+        .contains(
+          `parse`
+        )
       ) {
         expandFilter = expandFilter != true
         if (
@@ -18,42 +17,35 @@ _sidebar
             .querySelector(
               `.exclude`
             )
-              .style
-                .height
-                  =
-                `31px`;
-        }
-
-        else if (
+            .style
+            .height =
+            `31px`;
+        } else if (
           expandFilter
         ) {
           if (
             exclude.length == 0
           )
             _sidebar
-              .querySelector(
-                `.exclude`
-              )
-                .style
-                  .height
-                    =
-                  `75px`;
+            .querySelector(
+              `.exclude`
+            )
+            .style
+            .height =
+            `75px`;
           else {
             _sidebar
               .querySelector(
                 `.exclude`
               )
-                .style
-                  .height
-                    =
-                  `${exclude.length * 34 + 80}px`;
+              .style
+              .height =
+              `${exclude.length * 34 + 80}px`;
           }
         }
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

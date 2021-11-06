@@ -13,20 +13,20 @@ let Bootup = function() {
       _check.style.opacity = `0`;
       _sb.style.display = `none`;
       setTimeout(
-        function () {
+        function() {
 
           _check.style.display = `block`;
           _check.style.opacity = `1`;
 
           setTimeout(
-            function () {
+            function() {
               _visit.style.display = `flex`;
               _check.style.opacity = `1`;
               _check.classList.add(`margin`);
               _trademark.classList.add(`bootup`);
 
               setTimeout(
-                function () {
+                function() {
                   _visit.style.zIndex = `1`;
                   _visit.style.opacity = `1`;
                   _guest.setAttribute(`tabindex`, -1);
@@ -42,28 +42,27 @@ let Bootup = function() {
                         window.innerWidth <= 425
                       )
                         _main
-                          .querySelector(
-                            `#option`
-                          )
-                            .style.cssText = `display:flex !important`;
+                        .querySelector(
+                          `#option`
+                        )
+                        .style.cssText = `display:flex !important`;
                       if (
                         !document
-                          .body
-                            .contains(
-                              _group
-                                .querySelector(
-                                  `.select`
-                                )
-                            )
-                          &&
+                        .body
+                        .contains(
+                          _group
+                          .querySelector(
+                            `.select`
+                          )
+                        ) &&
                         !document
-                          .body
-                            .contains(
-                              _xml
-                                .querySelector(
-                                  `.item`
-                                )
-                            )
+                        .body
+                        .contains(
+                          _xml
+                          .querySelector(
+                            `.item`
+                          )
+                        )
                       )
                         _sb.style.display = `block`;
                       else
@@ -80,17 +79,15 @@ let Bootup = function() {
           )
         }, 1250
       )
-    }
-    else {
+    } else {
       _container.style.display = `block`;
       _check.style.display = `none`;
       _check.style.opacity = `1`;
     }
 
-  }
-  else if (
+  } else if (
     !location.search.split(`?`)[1]
-  ){
+  ) {
     _container.style.display = `block`;
     _check.style.display = `none`;
     _visit.style.display = `flex`;

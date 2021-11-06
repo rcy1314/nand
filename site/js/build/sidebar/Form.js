@@ -1,4 +1,4 @@
-let basicFormBuild = function () {
+let basicFormBuild = function() {
   let object = document.createElement(`input`);
   object.setAttribute(`placeholder`, `search`);
   object.setAttribute(`autocomplete`, `off`);

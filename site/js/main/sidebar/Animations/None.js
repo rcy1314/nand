@@ -1,7 +1,6 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt.target.classList.contains(
           `loaderfalse`
@@ -10,24 +9,24 @@ _sidebar
         imageLoader = false;
         _main
           .querySelectorAll(`.bars`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
+          .forEach(
+            (a) => a.style.display = `none`
+          );
         _main
           .querySelectorAll(`.animation`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
+          .forEach(
+            (a) => a.style.display = `none`
+          );
         _main
           .querySelectorAll(`.loader`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
+          .forEach(
+            (a) => a.style.display = `none`
+          );
         _main
           .querySelectorAll(`#load`)
-            .forEach(
-              (a) => a.style.display = `none`
-            );
+          .forEach(
+            (a) => a.style.display = `none`
+          );
         Star(_sidebar.querySelector(`.verticalbars`), false);
         Star(_sidebar.querySelector(`.circleloader`), false);
         Star(_sidebar.querySelector(`.ringloader`), false);
@@ -35,9 +34,7 @@ _sidebar
         Star(evt.target, true);
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

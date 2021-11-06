@@ -1,4 +1,4 @@
-let sideBarOptionBuild = function (
+let sideBarOptionBuild = function(
   name,
   classes
 ) {

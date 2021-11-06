@@ -1,4 +1,4 @@
-let Write = function (menuObject) {
+let Write = function(menuObject) {
   let media;
   if (
     menu[menuObject].media

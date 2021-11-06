@@ -1,4 +1,4 @@
-let Filter = function (filterURI) {
+let Filter = function(filterURI) {
   if (
     translations.includes(
       filterURI.toString().capitalize()
@@ -15,21 +15,20 @@ let Filter = function (filterURI) {
   let exact =
     menu.findIndex(
       (item) =>
-        item.id.toLowerCase().space() ===
-          filterURI.toString().toLowerCase().space()
-  );
+      item.id.toLowerCase().space() ===
+      filterURI.toString().toLowerCase().space()
+    );
   let match = menu.findIndex(
     (item) =>
-      item.id.toLowerCase().space().match(
-        filterURI.toString().toLowerCase().space()
-      )
+    item.id.toLowerCase().space().match(
+      filterURI.toString().toLowerCase().space()
+    )
   );
   let description =
     menu.filter(
-      function (item) {
+      function(item) {
         return item.description.space().toLowerCase()
-          .match(filterURI.toString().toLowerCase().space()
-        );
+          .match(filterURI.toString().toLowerCase().space());
       }
     )
   if (
@@ -39,9 +38,7 @@ let Filter = function (filterURI) {
   ) {
     Group();
     for (
-      let i = 0;
-      i <= description.length - 1;
-      i++
+      let i = 0; i <= description.length - 1; i++
     )
       Write(
         menu.indexOf(

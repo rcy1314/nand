@@ -1,24 +1,20 @@
 _main
   .addEventListener(
-    'scroll', (evt) =>
-    {
+    'scroll', (evt) => {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window.clearTimeout( isScrolling );
+      window.clearTimeout(isScrolling);
       touchmove = false;
-    	// Set a timeout to run after scrolling ends
-    	isScrolling = setTimeout(function() {
-      // Run the callback
-      touchmove = true;
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(function() {
+        // Run the callback
+        touchmove = true;
       }, 7500);
       if (
         (
-          _main.scrollHeight
-            -
-          _main.scrollTop
-            -
-          _main.clientHeight
-            <=
+          _main.scrollHeight -
+          _main.scrollTop -
+          _main.clientHeight <=
           offset &&
           Reader &&
           !stop
@@ -54,16 +50,8 @@ _main
           _suggestions.removeChild(
             _suggestions.lastChild
           );
-      setTimeout(
-        function() {
-          let index = anyRandomMenuObject();
-          if (
-            httpRequest.readyState == 4 &&
-            typeof(index !== undefined) &&
-            random.includes(index)
-          )
-            Request(index);
-          else {
+        setTimeout(
+          function() {
             let index = anyRandomMenuObject();
             if (
               httpRequest.readyState == 4 &&
@@ -71,13 +59,19 @@ _main
               random.includes(index)
             )
               Request(index);
-          }
-        }, 500
-      )
+            else {
+              let index = anyRandomMenuObject();
+              if (
+                httpRequest.readyState == 4 &&
+                typeof(index !== undefined) &&
+                random.includes(index)
+              )
+                Request(index);
+            }
+          }, 500
+        )
       }
-    },
-  {
-    passive:
-    true
-  }
-);
+    }, {
+      passive: true
+    }
+  );

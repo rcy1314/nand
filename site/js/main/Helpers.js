@@ -1,4 +1,4 @@
-let init = function () {
+let init = function() {
   if (
     loading === `dots`
   ) {
@@ -10,8 +10,8 @@ let init = function () {
       )
       .forEach(
         (a) =>
-          a.style.zIndex =
-            `12`
+        a.style.zIndex =
+        `12`
       );
     _dots
       .querySelectorAll(
@@ -19,9 +19,9 @@ let init = function () {
       )
       .forEach(
         (a) =>
-          a.classList.add(
-            `dots`
-          )
+        a.classList.add(
+          `dots`
+        )
       );
     _dots
       .querySelectorAll(
@@ -29,17 +29,16 @@ let init = function () {
       )
       .forEach(
         (a) =>
-          a.style.visibility =
-          `visible`
+        a.style.visibility =
+        `visible`
       );
-  }
-  else if (
+  } else if (
     loading === `percent`
   )
     Progress(false);
 };
 
-let unloading = function () {
+let unloading = function() {
   if (
     loading === `dots`
   ) {
@@ -59,30 +58,30 @@ let unloading = function () {
       )
       .forEach(
         (a) =>
-          a.style.visibility =
-          `hidden`
+        a.style.visibility =
+        `hidden`
       );
     Progress(true);
-  }
-  else if (
+  } else if (
     loading === `percent`
   )
     Progress(true);
 };
 
 const cyrb53 = function(str, seed = 0) {
-    let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
-    for (let i = 0, ch; i < str.length; i++) {
-        ch = str.charCodeAt(i);
-        h1 = Math.imul(h1 ^ ch, 2654435761);
-        h2 = Math.imul(h2 ^ ch, 1597334677);
-    }
-    h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
-    h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
-    return (h2>>>0).toString(16).padStart(8,0)+(h1>>>0).toString(16).padStart(8,0);
+  let h1 = 0xdeadbeef ^ seed,
+    h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < str.length; i++) {
+    ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return (h2 >>> 0).toString(16).padStart(8, 0) + (h1 >>> 0).toString(16).padStart(8, 0);
 };
 
-let truncate = function (
+let truncate = function(
   i,
   n,
   useWordBoundary
@@ -93,15 +92,16 @@ let truncate = function (
     return i;
   let subString = i.substr(0, n - 1);
   return (
-    (useWordBoundary
-      ? subString.substr(0, subString.lastIndexOf(` `))
-      : subString)
+    (useWordBoundary ?
+      subString.substr(0, subString.lastIndexOf(` `)) :
+      subString)
   );
 };
 
-let randomizeAssets = function (Array) {
+let randomizeAssets = function(Array) {
   // Fisher-Yates (aka Knuth) Shuffle
-  var currentIndex = Array.length,  randomIndex;
+  var currentIndex = Array.length,
+    randomIndex;
 
   // While there remain elements to shuffle...
   while (0 !== currentIndex) {
@@ -116,13 +116,14 @@ let randomizeAssets = function (Array) {
 
     // And swap it with the current element.
     [Array[currentIndex], Array[randomIndex]] = [
-    Array[randomIndex], Array[currentIndex]];
+      Array[randomIndex], Array[currentIndex]
+    ];
 
   }
   return Array;
 }
 
-let anyRandomMenuObject = function () {
+let anyRandomMenuObject = function() {
   let randomObject;
   randomObject =
     random[
@@ -144,7 +145,7 @@ let anyRandomMenuObject = function () {
     if (
       (random.length - 1) === randomDuplicate.length
     )
-    randomDuplicate = [];
+      randomDuplicate = [];
   }
   while (
     randomObject &&
@@ -155,50 +156,50 @@ let anyRandomMenuObject = function () {
   }
 };
 
-let scrollToElm = function (
+let scrollToElm = function(
   touch,
   container,
   elm,
   duration
-){
+) {
   let pos = getRelativePos(elm);
   scrollTo(
     touch,
     container,
     pos.top,
     10
-  );  // duration in seconds
+  ); // duration in seconds
 }
 
-let sideScrollToElm = function (
+let sideScrollToElm = function(
   touch,
   container,
   elm,
   duration
-){
+) {
   let pos = getRelativePos(elm);
   sideScrollTo(
     touch,
     container,
     pos.left,
-    50);  // duration in seconds
+    50); // duration in seconds
 }
 
-let getRelativePos = function (elm){
+let getRelativePos = function(elm) {
   var pPos = elm.parentNode.getBoundingClientRect(), // parent pos
-      cPos = elm.getBoundingClientRect(), // target pos
-      pos = {};
+    cPos = elm.getBoundingClientRect(), // target pos
+    pos = {};
 
-  pos.top    = cPos.top    - pPos.top + elm.parentNode.scrollTop,
-  pos.right  = cPos.right  - pPos.right,
-  pos.bottom = cPos.bottom - pPos.bottom,
-  pos.left   =
+  pos.top = cPos.top - pPos.top + elm.parentNode.scrollTop,
+    pos.right = cPos.right - pPos.right,
+    pos.bottom = cPos.bottom - pPos.bottom,
+    pos.left =
     elm.scrollLeft - elm.parentNode.scrollLeft + elm.parentNode.clientWidth;
 
   return pos;
 }
 
-let scrollTo = function (
+let scrollTo = function(
   touchmove,
   element,
   to,
@@ -209,26 +210,27 @@ let scrollTo = function (
     touchmove
   ) {
     let start = element.scrollTop,
-        change = to - start,
-        startTime = performance.now(),
-        val, now, elapsed, t;
-    function animateScroll(){
-        now = performance.now();
-        elapsed = (now - startTime)/50;
-        t = (elapsed/duration);
+      change = to - start,
+      startTime = performance.now(),
+      val, now, elapsed, t;
 
-        element.scrollTop = start + change * easeInOutQuad(t);
+    function animateScroll() {
+      now = performance.now();
+      elapsed = (now - startTime) / 50;
+      t = (elapsed / duration);
 
-        if( t < 1 )
-            window.requestAnimationFrame(animateScroll);
-        else
-            onDone && onDone();
+      element.scrollTop = start + change * easeInOutQuad(t);
+
+      if (t < 1)
+        window.requestAnimationFrame(animateScroll);
+      else
+        onDone && onDone();
     };
     animateScroll();
   }
 }
 
-let sideScrollTo = function (
+let sideScrollTo = function(
   touchmove,
   element,
   to,
@@ -239,35 +241,36 @@ let sideScrollTo = function (
     touchmove
   ) {
     var start = element.scrollLeft,
-        change = to + start,
-        startTime = performance.now(),
-        val, now, elapsed, t;
-    function animateScroll(){
-        now = performance.now();
-        elapsed = (now - startTime)/50;
-        t = (elapsed/duration);
-        element.scrollLeft = start + change * easeInOutQuad(t);
-        if( t < 1 )
-            window.requestAnimationFrame(animateScroll);
-        else
-            onDone && onDone();
+      change = to + start,
+      startTime = performance.now(),
+      val, now, elapsed, t;
+
+    function animateScroll() {
+      now = performance.now();
+      elapsed = (now - startTime) / 50;
+      t = (elapsed / duration);
+      element.scrollLeft = start + change * easeInOutQuad(t);
+      if (t < 1)
+        window.requestAnimationFrame(animateScroll);
+      else
+        onDone && onDone();
     };
     animateScroll();
   }
 }
 
-let easeInOutQuad = function (t) {
-  return t<.5 ? 2*t*t : -1+(4-2*t)*t
+let easeInOutQuad = function(t) {
+  return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t
 };
 
-let forward = function (id) {
+let forward = function(id) {
   let next = parseInt(id) + +1
   if (menu[next])
     return parseInt(next);
   else return 1
 };
 
-let back = function (id) {
+let back = function(id) {
   let back = parseInt(id) - +1
   if (menu[back])
     return parseInt(back);

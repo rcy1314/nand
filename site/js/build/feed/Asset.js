@@ -1,4 +1,4 @@
-let assetBuild = function (
+let assetBuild = function(
   assetIndex,
   assetImage,
   assetId
@@ -12,17 +12,17 @@ let assetBuild = function (
   ahref.classList.add(`query`);
   img.classList.add(`entity`);
   var src =
-  `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${assetImage}`
+    `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${assetImage}`
   var request = new XMLHttpRequest();
   request.open("GET", cors + src, true);
   request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
   request.setRequestHeader(`X-Requested-With`, `*`);
   request.responseType = "blob";
-  request.onload = function () {
-      img.src = src;
+  request.onload = function() {
+    img.src = src;
   }
   request.onloadend = function() {
-    if (request.status == 404){
+    if (request.status == 404) {
       img.src = `site/images/webp/${assetImage}`
     }
   }
@@ -32,7 +32,7 @@ let assetBuild = function (
   request.setRequestHeader(`X-Requested-With`, `*`);
   request.send();
   ahref.innerHTML =
-  `${
+    `${
     truncate(
       String(
         assetId.match(/[^\/]+$/g

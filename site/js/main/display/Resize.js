@@ -1,25 +1,24 @@
 window
   .addEventListener(
-    'resize', (evt) =>
-    {
+    'resize', (evt) => {
       if (
         document
-          .body
-            .contains(
-              _xml.querySelector(
-                `.item`
-              )
-            )
+        .body
+        .contains(
+          _xml.querySelector(
+            `.item`
+          )
+        )
       ) {
         if (
           window.innerWidth <= 425
-          ) {
+        ) {
           _main
             .querySelector(
               `#option`
             )
-              .style
-                .display = `inline-flex`;
+            .style
+            .display = `inline-flex`;
           display = `flexBox`;
           Flex();
         }
@@ -27,7 +26,7 @@ window
         if (
           window.innerWidth <= 768 &&
           window.innerWidth > 425
-          ) {
+        ) {
           _display.style.display = `none`;
           display = `legacy`;
           Legacy();
@@ -40,32 +39,26 @@ window
             .querySelector(
               `#option`
             )
-              .style
-                .display = `none`;
+            .style
+            .display = `none`;
           display = `flexBox`;
           Flex()
 
-        }
-
-        else if (
+        } else if (
           window.innerWidth >= 1280
 
         ) {
           _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
           _display.style.cssText = `display:inline-block;`;
 
-        }
-
-        else if (
+        } else if (
           viewport[cycleViewport] == `legacy` &&
           window.innerWidth < 1280
         )
           _display.style.display = `none`;
 
       }
-    },
-  {
-    passive:
-    true
-  }
-);
+    }, {
+      passive: true
+    }
+  );

@@ -1,9 +1,7 @@
-let appendSideBarLists = function (Elem, Class, Arrays) {
+let appendSideBarLists = function(Elem, Class, Arrays) {
   let list = _sidebar.querySelector(Elem);
   for (
-    i = 0;
-    i <= Arrays.length - 1;
-    i++
+    i = 0; i <= Arrays.length - 1; i++
   ) {
     let option = document.createElement(`div`);
     if (
@@ -17,9 +15,9 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
     if (
       Class == `feed`
     ) option.setAttribute(
-        `aria-object`,
-        menu.findIndex((item) => item.id === Arrays[i])
-      )
+      `aria-object`,
+      menu.findIndex((item) => item.id === Arrays[i])
+    )
     if (
       Class == `background` ||
       Class == `sel`
@@ -29,7 +27,7 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
       Class == `option` ||
       Class == `feed`
     )
-			option.innerHTML = Arrays[i].space().capitalize();
+      option.innerHTML = Arrays[i].space().capitalize();
     if (Class == `theme`) {
       option.innerHTML = Arrays[i].obFn;
       option.setAttribute(`aria-object`, Arrays[i].obFn)
@@ -40,6 +38,6 @@ let appendSideBarLists = function (Elem, Class, Arrays) {
       Class != `option` &&
       Class != `feed`
     )
-			list.append(sideBarThemeBuild(Arrays[i].icon));
+      list.append(sideBarThemeBuild(Arrays[i].icon));
   }
 };

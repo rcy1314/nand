@@ -1,51 +1,46 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
-    if (
-      evt
-        .target
-          .classList
-            .contains(
-              `sideBarBackdrop`
-            )
-    ) {
-      sideBarBackdrop = sideBarBackdrop != true;
+    'click', (evt) => {
       if (
-        sideBarBackdrop
+        evt
+        .target
+        .classList
+        .contains(
+          `sideBarBackdrop`
+        )
       ) {
-        _sidebar
-          .classList
+        sideBarBackdrop = sideBarBackdrop != true;
+        if (
+          sideBarBackdrop
+        ) {
+          _sidebar
+            .classList
             .add(
               `blur`
             );
-        _sidebar
-          .style
+          _sidebar
+            .style
             .backgroundColor = `var(--color-secondary)`;
-      }
-
-      else if (
-        !sideBarBackdrop
-      ) {
-        _sidebar
-          .classList
+        } else if (
+          !sideBarBackdrop
+        ) {
+          _sidebar
+            .classList
             .remove(
               `blur`
             );
-            _sidebar
-              .style
-                .backgroundColor = `var(--color-primary)`;
-      }
-      Star(
-        evt
+          _sidebar
+            .style
+            .backgroundColor = `var(--color-primary)`;
+        }
+        Star(
+          evt
           .target,
-        sideBarBackdrop
-      );
-    }
+          sideBarBackdrop
+        );
+      }
 
-  },
-  {
-    passive:
-    false
-  }
-);
+    }, {
+      passive: false
+    }
+  );

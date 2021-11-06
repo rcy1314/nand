@@ -1,4 +1,4 @@
-let excludeFormBuild = function () {
+let excludeFormBuild = function() {
   let object = document.createElement(`input`);
   let form = document.createElement(`form`);
   let min = document.createElement(`div`);

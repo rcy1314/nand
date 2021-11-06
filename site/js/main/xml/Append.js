@@ -1,49 +1,45 @@
-var Append = function (id) {
+var Append = function(id) {
   if (
     document
-      .body
-        .contains(
-          _center
-            .querySelector(
-              `#bottom`
-            )
-        )
-  )
-    _center
+    .body
+    .contains(
+      _center
       .querySelector(
         `#bottom`
       )
-        .remove();
+    )
+  )
+    _center
+    .querySelector(
+      `#bottom`
+    )
+    .remove();
   const has =
     exclude.map((a) => a.toLowerCase());
-    for (i = 0; i < pub.length - 1; i++) {
-      if (
-        has.filter(function (obj) {
-          return pub[i].title.toLowerCase().match(obj);
-        }).length > 0
-      )
-        continue;
+  for (i = 0; i < pub.length - 1; i++) {
+    if (
+      has.filter(function(obj) {
+        return pub[i].title.toLowerCase().match(obj);
+      }).length > 0
+    )
+      continue;
     if (
       omitGuide &&
       i != local
     ) {
-        _channel.append(pub[i].post)
-        images.push(
-          {
-            element: pub[i].element,
-            src: pub[i].src
-          }
-        );
+      _channel.append(pub[i].post)
+      images.push({
+        element: pub[i].element,
+        src: pub[i].src
+      });
     } else if (
       !omitGuide
     ) {
-        _channel.append(pub[i].post)
-        images.push(
-          {
-            element: pub[i].element,
-            src: pub[i].src
-          }
-        );
+      _channel.append(pub[i].post)
+      images.push({
+        element: pub[i].element,
+        src: pub[i].src
+      });
     }
   }
   if (
@@ -51,9 +47,7 @@ var Append = function (id) {
     safeSearch
   ) {
     for (
-      let i = 0;
-      i <= images.length - 1;
-      i++
+      let i = 0; i <= images.length - 1; i++
     ) {
       Attributes(
         false,
@@ -68,9 +62,7 @@ var Append = function (id) {
     )
   ) {
     for (
-      let i = 0;
-      i <= images.length - 1;
-      i++
+      let i = 0; i <= images.length - 1; i++
     ) {
       Attributes(
         false,
@@ -80,48 +72,48 @@ var Append = function (id) {
       );
     }
   }
-    if (
-      display !== `sideScroll` &&
-      !Reader &&
-      !first &&
-      document.body.contains(
-        _channel.querySelector(`.item`)
-      )
-    ) {
-      setTimeout(
-        function () {
-          touchmove = true
-          scrollToElm(
-            touchmove,
-            _main,
-            _channel.querySelector(`[aria-object='${id}']`),
-            250
-          );
-        }, 250
-      )
-    } else if (
-      !Reader &&
-      first
-    ) {
-      _channel.scrollTop = 0;
-      _center.scrollTop = 0;
-      _main.scrollTop = 0;
-    } else if (
-      display == `sideScroll` &&
-      !Reader &&
-      !first
-    ) {
-      touchmove = true;
-      setTimeout(
-        function () {
-          sideScrollToElm(touchmove,
-            _channel,
-            _channel.querySelector(`[aria-object='${id}']`),
-            250
-          );
-        }, 250
-      )
-    }
+  if (
+    display !== `sideScroll` &&
+    !Reader &&
+    !first &&
+    document.body.contains(
+      _channel.querySelector(`.item`)
+    )
+  ) {
+    setTimeout(
+      function() {
+        touchmove = true
+        scrollToElm(
+          touchmove,
+          _main,
+          _channel.querySelector(`[aria-object='${id}']`),
+          250
+        );
+      }, 250
+    )
+  } else if (
+    !Reader &&
+    first
+  ) {
+    _channel.scrollTop = 0;
+    _center.scrollTop = 0;
+    _main.scrollTop = 0;
+  } else if (
+    display == `sideScroll` &&
+    !Reader &&
+    !first
+  ) {
+    touchmove = true;
+    setTimeout(
+      function() {
+        sideScrollToElm(touchmove,
+          _channel,
+          _channel.querySelector(`[aria-object='${id}']`),
+          250
+        );
+      }, 250
+    )
+  }
   if (pub.length > 1) {
     if (pub[pub.length - 1].dst) var oldest = pub[pub.length - 1].dst;
     if (pub[pub.length - 1]) var posts = pub.length - 1;
@@ -132,12 +124,11 @@ var Append = function (id) {
   );
 
   if (
-    display == `flexBox`
-      &&
+    display == `flexBox` &&
     menu[
       id
     ]
-      .media
+    .media
   )
     Flex();
 
@@ -147,12 +138,11 @@ var Append = function (id) {
     Sidescroll();
 
   else if (
-    display == `legacy`
-      ||
+    display == `legacy` ||
     !menu[
       id
     ]
-      .media
+    .media
   )
     Legacy();
 

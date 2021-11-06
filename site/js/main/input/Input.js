@@ -1,4 +1,4 @@
-let Input = function (
+let Input = function(
   inputFilter,
   listingWrapper
 ) {
@@ -12,9 +12,7 @@ let Input = function (
     inputFilter != ``
   )
     for (
-      var i = menu.length - 1;
-      i >= 1;
-      i--
+      var i = menu.length - 1; i >= 1; i--
     ) {
       if (
         menu[i].description.toString().toLowerCase().match(inputFilter)
@@ -22,7 +20,7 @@ let Input = function (
         if (
           suggest.length - 1 === suggestionBuffer
         )
-        return false;
+          return false;
 
         listing.append(
           listingIndexBuild(
@@ -44,18 +42,16 @@ let Input = function (
       }
     }
   for (
-    let i = 1;
-    i <= menu.length - 1;
-    i++
+    let i = 1; i <= menu.length - 1; i++
   ) {
     let randomMenuObject =
-    menu.indexOf(
-      menu[
-        Math.floor(
-          Math.random() * menu.length - 1
-        )
-      ]
-    );
+      menu.indexOf(
+        menu[
+          Math.floor(
+            Math.random() * menu.length - 1
+          )
+        ]
+      );
     if (
       menu[randomMenuObject] &&
       menu[randomMenuObject].media == true &&

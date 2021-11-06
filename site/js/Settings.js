@@ -20,15 +20,13 @@ let set = `Light`;
 // backgroundImage path can be
 // overwritten in themes files, see Example.js
 
-let backgroundImage = [
-  {
-    // note: path begins in index.html folder
-    path: "",
-    element: "container",
-    position: "center",
-    size: "cover",
-  },
-];
+let backgroundImage = [{
+  // note: path begins in index.html folder
+  path: "",
+  element: "container",
+  position: "center",
+  size: "cover",
+}, ];
 
 //  {
 //    obFn: `Object Function (in example file in js/themes)`,
@@ -36,11 +34,26 @@ let backgroundImage = [
 //    icon: https://fontawesome.com/cheatsheet
 //  }
 
-let themes = [
-  { obFn: `Light`, class: `Light`, icon: `fa-terminal` },
-  { obFn: `Night`, class: `Night`, icon: `fa-code` },
-  { obFn: `Solarized`, class: `Solarized`, icon: `fa-digital-tachograph` },
-  { obFn: `Gentoo`, class: `Gentoo`, icon: `fa-users` },
+let themes = [{
+    obFn: `Light`,
+    class: `Light`,
+    icon: `fa-terminal`
+  },
+  {
+    obFn: `Night`,
+    class: `Night`,
+    icon: `fa-code`
+  },
+  {
+    obFn: `Solarized`,
+    class: `Solarized`,
+    icon: `fa-digital-tachograph`
+  },
+  {
+    obFn: `Gentoo`,
+    class: `Gentoo`,
+    icon: `fa-users`
+  },
 ];
 
 const favorites = [
@@ -653,25 +666,25 @@ if (imageLoader == `v-bars`) {
   verticalbars = true;
   loadinganim = false;
   loaderfalse = false;
-} else if (imageLoader == `double-circle`){
+} else if (imageLoader == `double-circle`) {
   verticalbars = false;
   ringloader = false;
   circleloader = true;
   loadinganim = false;
   loaderfalse = false;
-} else if (imageLoader == `ring-circle`){
+} else if (imageLoader == `ring-circle`) {
   circleloader = false;
   verticalbars = false;
   ringloader = true;
   loadinganim = false;
   loaderfalse = false;
-} else if (imageLoader == `loading`){
+} else if (imageLoader == `loading`) {
   circleloader = false;
   verticalbars = false;
   loaderfalse = false;
   ringloader = false;
   loadinganim = true;
-} else if (imageLoader == false){
+} else if (imageLoader == false) {
   circleloader = false;
   verticalbars = false;
   ringloader = false;
@@ -736,34 +749,107 @@ let imageDuplicate = []; //image src duplicate catch
 let randomDuplicate = []; //core.js random duplicate xml
 let guideOnScreen; //temporarly store onScreen for guide
 
-const animations = [
-  { name: `Ring`, class: `ringloader` },
-  { name: `Bars`, class: `verticalbars` },
-  { name: `Blink`, class: `loaderfalse` },
-  { name: `Loading`, class: `loadinganim` },
-  { name: `Circles`, class: `circleloader` },
-  { name: `Percent`, class: `Percent` },
-  { name: `Progress`, class: `Progress` }
+const animations = [{
+    name: `Ring`,
+    class: `ringloader`
+  },
+  {
+    name: `Bars`,
+    class: `verticalbars`
+  },
+  {
+    name: `Blink`,
+    class: `loaderfalse`
+  },
+  {
+    name: `Loading`,
+    class: `loadinganim`
+  },
+  {
+    name: `Circles`,
+    class: `circleloader`
+  },
+  {
+    name: `Percent`,
+    class: `Percent`
+  },
+  {
+    name: `Progress`,
+    class: `Progress`
+  }
 ]
 
-const settings = [
-  { name: `List`, class: `List` },
-  { name: `Blocks`, class: `Blocks` },
-  { name: `Crop Images`, class: `cropImages` },
-  { name: `Fade in Images`, class: `fadeIntoView` },
-  { name: `Scroll Into View`, class: `scrollIntoView` },
-  { name: `Sidebar Backdrop`, class: `sideBarBackdrop` },
-  { name: `Sidebar Dock`, class: `sideBarDock` },
-  { name: `Only Images`, class: `onlyImages` },
-  { name: `Only Search`, class: `onlySearch` },
+const settings = [{
+    name: `List`,
+    class: `List`
+  },
+  {
+    name: `Blocks`,
+    class: `Blocks`
+  },
+  {
+    name: `Crop Images`,
+    class: `cropImages`
+  },
+  {
+    name: `Fade in Images`,
+    class: `fadeIntoView`
+  },
+  {
+    name: `Scroll Into View`,
+    class: `scrollIntoView`
+  },
+  {
+    name: `Sidebar Backdrop`,
+    class: `sideBarBackdrop`
+  },
+  {
+    name: `Sidebar Dock`,
+    class: `sideBarDock`
+  },
+  {
+    name: `Only Images`,
+    class: `onlyImages`
+  },
+  {
+    name: `Only Search`,
+    class: `onlySearch`
+  },
 ];
 
-const background = [
-  { name: `Fit Container`, class: `fitBackground`, icon: `fa-crop-alt` },
-  { name: `Set Background`, class: `setBackground`, icon: `fa-user` },
-  { name: `Save Path`, class: `saveBackground`, icon: `fa-download` },
-  { name: `Layer Group`, class: `containerBackground`, icon: `fa-layer-group` },
-  { name: `Cover Background`, class: `coverBackground`, icon: `fa-expand` },
-  { name: `Reset Path`, class: `resetBackground`, icon: `fa-cloud` },
-  { name: `Remove`, class: `removeBackground`, icon: `fa-certificate` },
+const background = [{
+    name: `Fit Container`,
+    class: `fitBackground`,
+    icon: `fa-crop-alt`
+  },
+  {
+    name: `Set Background`,
+    class: `setBackground`,
+    icon: `fa-user`
+  },
+  {
+    name: `Save Path`,
+    class: `saveBackground`,
+    icon: `fa-download`
+  },
+  {
+    name: `Layer Group`,
+    class: `containerBackground`,
+    icon: `fa-layer-group`
+  },
+  {
+    name: `Cover Background`,
+    class: `coverBackground`,
+    icon: `fa-expand`
+  },
+  {
+    name: `Reset Path`,
+    class: `resetBackground`,
+    icon: `fa-cloud`
+  },
+  {
+    name: `Remove`,
+    class: `removeBackground`,
+    icon: `fa-certificate`
+  },
 ];

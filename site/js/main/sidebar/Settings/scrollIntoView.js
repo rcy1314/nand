@@ -1,26 +1,23 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
 
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `scrollIntoView`
-              )
+        .target
+        .classList
+        .contains(
+          `scrollIntoView`
+        )
       ) {
         scrollIntoView = scrollIntoView != true;
         Star(
           evt
-            .target,
+          .target,
           scrollIntoView
         );
       }
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

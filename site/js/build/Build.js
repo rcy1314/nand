@@ -1,4 +1,4 @@
-let underTranslation = function (Translation) {
+let underTranslation = function(Translation) {
   let div = document.createElement(`div`);
   div.setAttribute(`aria-object`, Translation)
   div.innerHTML = `${Translation}`;

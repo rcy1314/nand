@@ -1,4 +1,4 @@
-let suggestBuild = function (
+let suggestBuild = function(
   objectMedia,
   objectIndex,
   objectImage,
@@ -19,17 +19,17 @@ let suggestBuild = function (
   define.classList.add(`random`);
   bold.classList.add(`bold`);
   var src =
-  `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
+    `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
   var request = new XMLHttpRequest();
   request.open("GET", cors + src, true);
   request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
   request.setRequestHeader(`X-Requested-With`, `*`);
   request.responseType = "blob";
-  request.onload = function () {
-      circle.src = src;
+  request.onload = function() {
+    circle.src = src;
   }
   request.onloadend = function() {
-    if (request.status == 404){
+    if (request.status == 404) {
       circle.src = `site/images/webp/${objectImage}`
     }
   }
@@ -40,7 +40,7 @@ let suggestBuild = function (
   request.send();
   suggest.title = objectId;
   bold.innerHTML =
-  `
+    `
     ${
       String(
         objectId.match(/[^\/]+$/g)

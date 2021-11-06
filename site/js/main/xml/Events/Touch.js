@@ -1,13 +1,12 @@
 _main
   .addEventListener(
-    'ontouchmove', (evt) =>
-    {
+    'ontouchmove', (evt) => {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window.clearTimeout( isScrolling );
+      window.clearTimeout(isScrolling);
       touchmove = false;
       // Set a timeout to run after scrolling ends
-    	isScrolling =
+      isScrolling =
         setTimeout(
           function() {
             // Run the callback
@@ -16,12 +15,9 @@ _main
         );
       if (
         (
-          _main.scrollHeight
-            -
-          _main.scrollTop
-            -
-          _main.clientHeight
-            <=
+          _main.scrollHeight -
+          _main.scrollTop -
+          _main.clientHeight <=
           offset &&
           Reader &&
           !stop
@@ -58,23 +54,20 @@ _main
           );
         Request(anyRandomMenuObject());
       }
-    },
-  {
-    passive:
-    true
-  }
-);
+    }, {
+      passive: true
+    }
+  );
 
 _channel
   .addEventListener(
-    'ontouchmove', (evt) =>
-    {
+    'ontouchmove', (evt) => {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window.clearTimeout( isScrolling );
+      window.clearTimeout(isScrolling);
       touchmove = false;
       // Set a timeout to run after scrolling ends
-    	isScrolling =
+      isScrolling =
         setTimeout(
           function() {
             // Run the callback
@@ -83,14 +76,10 @@ _channel
         );
       if (
         (
-          _channel.scrollWidth
-            -
-          _channel.scrollLeft
-            -
-          _channel.clientWidth
-            <=
-          _channel.clientWidth
-            &&
+          _channel.scrollWidth -
+          _channel.scrollLeft -
+          _channel.clientWidth <=
+          _channel.clientWidth &&
           Reader &&
           !stop
         )
@@ -124,8 +113,7 @@ _channel
           );
         Request(anyRandomMenuObject());
       }
-    },
-  {
-    passive: true
-  }
-);
+    }, {
+      passive: true
+    }
+  );

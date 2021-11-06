@@ -1,4 +1,4 @@
-let translationBuild = function (translation) {
+let translationBuild = function(translation) {
   let object = document.createElement(`div`);
   object.classList.add(`translation`);
   object.setAttribute(`aria-object`, translation);

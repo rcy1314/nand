@@ -1,7 +1,6 @@
 _container
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt.target.classList.contains(`construct`) ||
         evt.target.classList.contains(`download`) ||
@@ -45,8 +44,7 @@ _container
           _view.value = `Search`;
           _view.blur();
           return false;
-        }
-        else if (
+        } else if (
           _first.style.display === `block`
         ) {
           if (!quickFeeds) _show.style.visibility = `visible`;
@@ -58,28 +56,25 @@ _container
           _first.style.display = `none`;
           _guest.blur();
           return false;
-        }
-        else if (
+        } else if (
           !_container
-            .querySelectorAll(
-              `.attribute`
-            )
-              .forEach(
-                (a) => a.style.display = `none`
-              )
+          .querySelectorAll(
+            `.attribute`
+          )
+          .forEach(
+            (a) => a.style.display = `none`
+          )
         ) {
           _container
             .querySelectorAll(
               `.attribute`
             )
-              .forEach(
-                (a) => a.style.display = `none`
-              );
+            .forEach(
+              (a) => a.style.display = `none`
+            );
           let attribute = _main.querySelectorAll(`.fa-ellipsis-v`);
           for (
-            i = 0;
-            i < attribute.length;
-            i++
+            i = 0; i < attribute.length; i++
           ) {
             attribute[i].classList.remove(`fa-ellipsis-v`);
             attribute[i].classList.add(`fa-ellipsis-h`);
@@ -88,21 +83,20 @@ _container
             .querySelectorAll(
               `.fa-ellipsis-v`
             )
-              .forEach(
-                (a) => a.classList.add(`fa-ellipsis-h`)
+            .forEach(
+              (a) => a.classList.add(`fa-ellipsis-h`)
             );
           _container
             .querySelectorAll(
               `.fa-ellipsis-v`
             )
-              .forEach(
-                (a) => a.classList.remove(`fa-ellipsis-v`)
+            .forEach(
+              (a) => a.classList.remove(`fa-ellipsis-v`)
             );
-        evt.stopPropagation();
-        return false;
+          evt.stopPropagation();
+          return false;
         }
-      }
-      else if (
+      } else if (
         evt.target.id === `mobileHome` ||
         evt.target.id === `home`
       ) {
@@ -112,9 +106,9 @@ _container
         scrollIntoView = scrollIntoViewBuffer;
         _main
           .querySelectorAll(`.joi`)
-            .forEach(
-              (a) => a.classList.remove(`luv`)
-            );
+          .forEach(
+            (a) => a.classList.remove(`luv`)
+          );
         xml();
         Group();
         Visit();
@@ -163,24 +157,22 @@ _container
         _top.style.display = `none`;
         _feed.scrollLeft = 0;
         Feed(quickFeeds);
-      }
-      else if (
+      } else if (
         evt.target.classList.contains(
           `notify`
         )
       ) {
         _notify.classList.remove(`notify`);
         _notify.style.display = `none`;
-      }
-      else if (
+      } else if (
         evt.target.classList.contains(`fa-sun`) ||
         evt.target.id == `toggle`
       ) {
         let iteration =
           themes
-            .findIndex(
-              (item) => item.obFn == set
-            );
+          .findIndex(
+            (item) => item.obFn == set
+          );
 
         if (
           iteration == themes.length - 1
@@ -191,8 +183,7 @@ _container
         notifyOption(themes[iteration].obFn, `fa-check-circle`);
         set = themes[iteration].obFn;
         window[set]();
-      }
-      else if (
+      } else if (
         event.target.classList.contains(
           `fa-user-cog`
         )
@@ -211,9 +202,7 @@ _container
       evt.stopPropagation();
       evt.preventDefault();
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
   );

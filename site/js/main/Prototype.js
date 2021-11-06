@@ -1,4 +1,4 @@
-String.prototype.zulu = function () {
+String.prototype.zulu = function() {
   var opt = {
     minute: `numeric`,
     weekday: `long`,
@@ -21,7 +21,7 @@ String.prototype.zulu = function () {
   return dmz;
 };
 
-String.prototype.moment = function () {
+String.prototype.moment = function() {
   let age = new Date();
   let utc = new Date(this);
   let dis = age.getTime() - utc.getTime();
@@ -41,51 +41,51 @@ String.prototype.moment = function () {
   return `${parseInt(y)} year ${parseInt(y) > 1 ? `s` : ``}`;
 };
 
-String.prototype.hyphen = function () {
+String.prototype.hyphen = function() {
   return this
-      .toLowerCase()
-        .replace(
-          /%20|\-|\_|\s|\+|\/|\.|\+1/g, `-`
-        );
+    .toLowerCase()
+    .replace(
+      /%20|\-|\_|\s|\+|\/|\.|\+1/g, `-`
+    );
 };
 
-String.prototype.domain = function () {
+String.prototype.domain = function() {
   return this
-      .match(
-        /^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g
-      );
+    .match(
+      /^(?:http:\/\/|www\.|https:\/\/)([^\/]+)/g
+    );
 };
 
-String.prototype.capitalize = function () {
+String.prototype.capitalize = function() {
   return this
-      .replace(
-        /(\b[a-z](?!\s))/g,
-          function (string) {
-            return string
-                .toUpperCase();
-            }
-      );
+    .replace(
+      /(\b[a-z](?!\s))/g,
+      function(string) {
+        return string
+          .toUpperCase();
+      }
+    );
 };
 
-String.prototype.space = function () {
+String.prototype.space = function() {
   return this
-      .replace(
-        /%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `
-      );
+    .replace(
+      /%20|\-|\_|\s|\+|\/|\.|\+1/g, ` `
+    );
 };
 
-String.prototype.add = function () {
+String.prototype.add = function() {
   return this
-      .replace(
-        /%20|\-|\_|\s|\+|\/|\.|\+1/g, ``
-      );
+    .replace(
+      /%20|\-|\_|\s|\+|\/|\.|\+1/g, ``
+    );
 };
 
-String.prototype.image = function () {
+String.prototype.image = function() {
   return `${this}.webp`;
 };
 
-String.prototype.blank = function () {
+String.prototype.blank = function() {
   window
     .open(
       this,
@@ -94,19 +94,18 @@ String.prototype.blank = function () {
     );
 };
 
-String.prototype.state = function () {
+String.prototype.state = function() {
   history
-    .replaceState(
-      {},
+    .replaceState({},
       '',
       this
     );
 };
 
-String.prototype.exit = function () {
+String.prototype.exit = function() {
   window
     .location
-      .assign(
-        this
-      );
+    .assign(
+      this
+    );
 };

@@ -1,4 +1,4 @@
-let Category = function (translation) {
+let Category = function(translation) {
   let media;
   _container.style.display = `block`;
   _toggle.style.display = `none`;
@@ -33,9 +33,7 @@ let Category = function (translation) {
     );
   }
   for (
-    let i = 0;
-    i <= menu.length - 1;
-    i++
+    let i = 0; i <= menu.length - 1; i++
   ) {
     if (
       menu[i].media

@@ -1,7 +1,6 @@
 _container
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt.target.classList.contains(
           `hide`
@@ -11,13 +10,10 @@ _container
         Sidebar(onScreen);
         if (window.innerWidth <= 768) _sb.style.display = `block`;
         if (window.innerWidth >= 768) _bar.style.display = `none`;
-      }
-
-      else if (
+      } else if (
         evt.target.classList.contains(
           `show`
-        )
-        ||
+        ) ||
         evt.target.classList.contains(
           `sb`
         )
@@ -25,9 +21,7 @@ _container
         onScreen = true;
         Sidebar(onScreen);
         _sb.style.display = `none`;
-      }
-
-      else if (
+      } else if (
         evt.target.classList.contains(
           `bar`
         )
@@ -39,9 +33,7 @@ _container
           onScreen
         )
           _bar.style.display = `none`;
-      }
-
-      else if (
+      } else if (
         evt.target.classList.contains(
           `fa-unlock`
         ) ||
@@ -62,9 +54,7 @@ _container
       }
 
       evt.preventDefault();
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

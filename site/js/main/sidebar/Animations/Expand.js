@@ -1,14 +1,13 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `animations`
-              )
+        .target
+        .classList
+        .contains(
+          `animations`
+        )
       ) {
         expandAnimations = expandAnimations != true
         if (
@@ -18,29 +17,23 @@ _sidebar
             .querySelector(
               `.anim`
             )
-              .style
-                .height
-                  =
-                `31px`;
-        }
-
-        else if (
+            .style
+            .height =
+            `31px`;
+        } else if (
           expandAnimations
         ) {
           _sidebar
             .querySelector(
               `.anim`
             )
-              .style
-                .height
-                  =
-                `${(animations.length) * 40}px`;
+            .style
+            .height =
+            `${(animations.length) * 40}px`;
         }
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

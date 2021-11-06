@@ -1,38 +1,34 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `Blocks`
-              )
+        .target
+        .classList
+        .contains(
+          `Blocks`
+        )
       ) {
         Group();
         expand = false;
         groupType = `blocks`;
         Star(
           _sidebar
-            .querySelector(
-              `.List`
-            ),
-            false
-          );
+          .querySelector(
+            `.List`
+          ),
+          false
+        );
         Star(
           evt
-            .target
-          ,
+          .target,
           true
         );
         Category(category);
         Topbar(topBar);
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

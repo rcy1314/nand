@@ -1,37 +1,34 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `onlyImages`
-              )
+        .target
+        .classList
+        .contains(
+          `onlyImages`
+        )
       ) {
         onlyImages = onlyImages != true;
         if (
           document
-            .body
-              .contains(
-                _xml
-                  .querySelector(
-                    `.item`
-                  )
-              )
+          .body
+          .contains(
+            _xml
+            .querySelector(
+              `.item`
+            )
+          )
         )
           Request(id);
         Star(
           evt
-            .target,
+          .target,
           onlyImages
         );
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

@@ -1,27 +1,21 @@
-let Flex = function () {
+let Flex = function() {
   display == `flexBox`;
   var height = 0;
   var second = 0;
   var groups = 0;
   var column = _channel.querySelectorAll(`.item:nth-child(3n+1)`);
   for (
-    let i = 0;
-    i < column.length - 1;
-    i++
+    let i = 0; i < column.length - 1; i++
   )
     height += column[i].clientHeight;
   var column = _channel.querySelectorAll(`.item:nth-child(3n+2)`);
   for (
-    let i = 0;
-    i < column.length - 1;
-    i++
+    let i = 0; i < column.length - 1; i++
   )
     second += column[i].clientHeight;
   var column = _channel.querySelectorAll(`.item:nth-child(3n+3)`);
   for (
-    let i = 0;
-    i < column.length - 1;
-    i++
+    let i = 0; i < column.length - 1; i++
   )
     groups += column[i].clientHeight;
   var max =
@@ -52,13 +46,13 @@ let Flex = function () {
   if (
     window.innerWidth > 425 &&
     document
-      .body
-        .contains(
-          _xml
-            .querySelector(
-              `#bottom`
-            )
-          )
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    )
   )
     _channel.querySelector(`#bottom`).style.cssText = min;
 
@@ -68,21 +62,19 @@ let Flex = function () {
     _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
     if (
       id &&
-      menu[id].id.match (/Youtube/g)
+      menu[id].id.match(/Youtube/g)
     )
       _channel
-        .querySelectorAll(
-          `.item`
-        )
-          .forEach(
-            (a) =>
-              a.style.height =
-                `80px`
-          );
+      .querySelectorAll(
+        `.item`
+      )
+      .forEach(
+        (a) =>
+        a.style.height =
+        `80px`
+      );
     _center.style.cssText = `display:inline-flex;width:930px;left:150px`;
-  }
-
-  else _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
+  } else _center.style.cssText = `display:inline-flex;width:930px;left:320px`;
 
   _channel.style.height = `${(max + 2500).toString()}px`
   _channel.classList.remove(`sideChannel`);
@@ -92,22 +84,21 @@ let Flex = function () {
     .querySelectorAll(
       `.item`
     )
-      .forEach(
-        (a) =>
-          a.classList.add(
-            `flex`
-          )
-      );
+    .forEach(
+      (a) =>
+      a.classList.add(
+        `flex`
+      )
+    );
   _channel
     .querySelectorAll(
       `.item`
     )
-      .forEach(
-        (a) =>
-          a.style.marginLeft
-            =
-          `0`
-      );
+    .forEach(
+      (a) =>
+      a.style.marginLeft =
+      `0`
+    );
 
   if (
     window.innerWidth > 1280

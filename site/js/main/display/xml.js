@@ -1,4 +1,4 @@
-let xml = function () {
+let xml = function() {
   _visit.style.display = `none`;
   _group.style.display = `none`;
   _xml.style.display = `block`;

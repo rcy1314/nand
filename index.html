@@ -1,131 +1,133 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-    <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
-    <script type='text/javascript' src='site/js/Settings.js'></script>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link id='favicon' rel="icon" type="image/png" href="favicon.ico">
+  <script type='text/javascript' src='site/js/Settings.js'></script>
 </head>
+
 <body>
   <div id='container' style='display:none'>
-      <div id='sidebar' class='mainTransition invertScrollbar'>
-        <div class='fa fa-sliders-h hide' title='Search'></div>
-        <div id='content'></div>
+    <div id='sidebar' class='mainTransition invertScrollbar'>
+      <div class='fa fa-sliders-h hide' title='Search'></div>
+      <div id='content'></div>
+    </div>
+    <div id='guide'></div>
+    <div id='main' class='mainTransition'>
+      <div id='group'>
+        <div class='air'></div>
+        <div class='result'></div>
       </div>
-      <div id='guide'></div>
-      <div id='main' class='mainTransition'>
-        <div id='group'>
-          <div class='air'></div>
-          <div class='result'></div>
+      <div id='xml'>
+        <div class='center'>
+          <div class='channel'></div>
         </div>
-        <div id='xml'>
-          <div class='center'>
-            <div class='channel'></div>
-          </div>
-          <div class='content'>
-            <div class='status'></div>
-            <div class='suggestions'></div>
-          </div>
+        <div class='content'>
+          <div class='status'></div>
+          <div class='suggestions'></div>
         </div>
-        <div id='check'>
-          <div class='trademark'>n@nd</div>
-          <div class='loader double-circle' style='display:none'></div>
-          <div class="animation" style='display:none'>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </div>
-          <div id="load" style='display:none;top:0'>
-            <div>G</div>
-            <div>N</div>
-            <div>I</div>
-            <div>D</div>
-            <div>A</div>
-            <div>O</div>
-            <div>L</div>
-          </div>
-          <div class="bars" style='display:none;'></div>
+      </div>
+      <div id='check'>
+        <div class='trademark'>n@nd</div>
+        <div class='loader double-circle' style='display:none'></div>
+        <div class="animation" style='display:none'>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
-          <div class='fa fa-sliders-h sb' title='Side Bar'></div>
-          <div id='dots'>
-              <div class="fill"></div>
-              <div class="fill"></div>
-              <div class="fill"></div>
-              <div class="fill"></div>
-              <div class="fill"></div>
-          </div>
-          <div id='progressBar'></div>
+        <div id="load" style='display:none;top:0'>
+          <div>G</div>
+          <div>N</div>
+          <div>I</div>
+          <div>D</div>
+          <div>A</div>
+          <div>O</div>
+          <div>L</div>
+        </div>
+        <div class="bars" style='display:none;'></div>
+      </div>
+      <div class='fa fa-sliders-h sb' title='Side Bar'></div>
+      <div id='dots'>
+        <div class="fill"></div>
+        <div class="fill"></div>
+        <div class="fill"></div>
+        <div class="fill"></div>
+        <div class="fill"></div>
+      </div>
+      <div id='progressBar'></div>
+      <div id='option'>
+        <div id='mobileHome' class='fa fa-home' title='Home'></div>
+        <div id='mobileJoi' class='fa fa-heart joi' title='Read'></div>
+        <div id='mobileVisual' class='fa fa-sun' title='Visual'></div>
+        <div id='mobileCamera' class='fa fa-camera-retro' title='View'></div>
+        <div id='mobileExpand' class='fa fa-expand-alt' title='Expand'></div>
+      </div>
+      <div id='top'>
+        <div id='arm'>
+          <div class='fa fa-sliders-h bar' title='Side Bar'></div>
+          <form id='search' class='hold' action='#'>
+            <div id='home'></div>
+            <div id='input'>
+              <div class='icon'>
+                <div class='fa fa-search'></div>
+              </div>
+              <input id='view' type='text' value='Search' style='display:none'>
+            </div>
+            <div id='match'>
+              <div class='listing invertScrollbar'></div>
+            </div>
+          </form>
           <div id='option'>
-              <div id='mobileHome' class='fa fa-home' title='Home'></div>
-              <div id='mobileJoi' class='fa fa-heart joi' title='Read'></div>
-              <div id='mobileVisual' class='fa fa-sun' title='Visual'></div>
-              <div id='mobileCamera' class='fa fa-camera-retro' title='View'></div>
-              <div id='mobileExpand' class='fa fa-expand-alt' title='Expand'></div>
+            <div id='home' class='fa fa-home' title='Home'></div>
+            <div class='fa fa-heart joi' title='Read'></div>
+            <div class='fa fa-sun' title='Visual'></div>
+            <div class='fa fa-camera-retro' title='View'></div>
+            <div class='fa fa-expand-alt' title='Expand'></div>
           </div>
-          <div id='top'>
-              <div id='arm'>
-                <div class='fa fa-sliders-h bar' title='Side Bar'></div>
-                  <form id='search' class='hold' action='#'>
-                      <div id='home'></div>
-                      <div id='input'>
-                          <div class='icon'>
-                              <div class='fa fa-search'></div>
-                          </div>
-                          <input id='view' type='text' value='Search' style='display:none'>
-                      </div>
-                      <div id='match'>
-                          <div class='listing invertScrollbar'></div>
-                      </div>
-                  </form>
-                  <div id='option'>
-                      <div id='home' class='fa fa-home' title='Home'></div>
-                      <div class='fa fa-heart joi' title='Read'></div>
-                      <div class='fa fa-sun' title='Visual'></div>
-                      <div class='fa fa-camera-retro' title='View'></div>
-                      <div class='fa fa-expand-alt' title='Expand'></div>
-                  </div>
-              </div>
-          </div>
-          <div id='visit' style='display:flex;opacity:0;transition:all 10000ms'>
-              <div id='page'>
-                <div id='options' class='mainTransition'>
-                  <div class='fa fa-expand-alt' title='Expand'></div>
-                  <div class='fa fa-camera-retro' title='View'></div>
-                  <div id='toggle' class='fa fa-sun' title='Visual'></div>
-                  <div class='fa fa-heart joi' title='Read'></div>
-                  <div class='fa fa-user-cog' title='Safe Search'></div>
-                </div>
-                  <form id='front' action='#'>
-                      <div class='focus'>
-                          <div class='icon fa fa-search'></div>
-                          <input id='guest' type='text' placeholder='Search'>
-                          <div class='button'>
-                              <div class='buttonSearch fas fa-search'></div>
-                          </div>
-                      </div>
-                      <div id='under'></div>
-                      <div id='label'>
-                          <div id='show'>Quick feeds</div>
-                          <div id='link'>
-                              <div class='fa-angle-up'></div>
-                          </div>
-                      </div>
-                      <div id='first'>
-                          <div class='listing invertScrollbar'></div>
-                      </div>
-                  </form>
-                  <div id='quick' class='invisible'>
-                      <div class='left fa-minus' style='display:none'></div>
-                      <div class='right fa-plus'></div>
-                      <div id='feed'></div>
-                  </div>
-              </div>
-          </div>
+        </div>
       </div>
-      <div id='notify'></div>
-      <script>
+      <div id='visit' style='display:flex;opacity:0;transition:all 10000ms'>
+        <div id='page'>
+          <div id='options' class='mainTransition'>
+            <div class='fa fa-expand-alt' title='Expand'></div>
+            <div class='fa fa-camera-retro' title='View'></div>
+            <div id='toggle' class='fa fa-sun' title='Visual'></div>
+            <div class='fa fa-heart joi' title='Read'></div>
+            <div class='fa fa-user-cog' title='Safe Search'></div>
+          </div>
+          <form id='front' action='#'>
+            <div class='focus'>
+              <div class='icon fa fa-search'></div>
+              <input id='guest' type='text' placeholder='Search'>
+              <div class='button'>
+                <div class='buttonSearch fas fa-search'></div>
+              </div>
+            </div>
+            <div id='under'></div>
+            <div id='label'>
+              <div id='show'>Quick feeds</div>
+              <div id='link'>
+                <div class='fa-angle-up'></div>
+              </div>
+            </div>
+            <div id='first'>
+              <div class='listing invertScrollbar'></div>
+            </div>
+          </form>
+          <div id='quick' class='invisible'>
+            <div class='left fa-minus' style='display:none'></div>
+            <div class='right fa-plus'></div>
+            <div id='feed'></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='notify'></div>
+    <script>
       let dir = "site/css/";
       let ext = ".css";
       let obj = [
@@ -227,6 +229,7 @@
         "main/sidebar/Animations/Progress",
         "main/sidebar/Animations/Ring",
         "main/sidebar/Background/Cover",
+        "main/sidebar/Background/DoubleClick",
         "main/sidebar/Background/Expand",
         "main/sidebar/Background/Fit",
         "main/sidebar/Background/Layer",
@@ -303,10 +306,10 @@
             }, 300
           )
         if (file === `main/Assets`)
-          script.onload = (function () {
+          script.onload = (function() {
             let ext = ['id', 'description', 'uri', 'hash']
-            let startup = setInterval(function () {
-              setTimeout(function () {
+            let startup = setInterval(function() {
+              setTimeout(function() {
                 if (typeof menu === `object`) {
                   for (let i = 0; i <= menu.length - 1; i++) {
                     var index = Math.floor(Math.random() * (3 - (-1)) + -1)
@@ -336,9 +339,9 @@
         script.src = path;
         document.getElementsByTagName(`head`)[0].appendChild(script);
         if (set === theme)
-          script.onload = (function () {
-            let startup = setInterval(function () {
-              setTimeout(function () {
+          script.onload = (function() {
+            let startup = setInterval(function() {
+              setTimeout(function() {
                 if (typeof eval(set) === `function`) {
                   window[set]();
                   clearInterval(startup);
@@ -348,10 +351,10 @@
           })();
       }
       for (i = 0; i <= themes.length - 1; i++) {
-        (function (i) {
+        (function(i) {
           document.addEventListener(
             `click`,
-            function (event) {
+            function(event) {
               if (event.target.classList.contains(themes[i].class)) {
                 window[themes[i].class]();
                 document.querySelector(`.border`).innerHTML = themes[i].class
@@ -367,6 +370,7 @@
       source.href = `https://pro.fontawesome.com/releases/v5.9.0/css/all.css`;
       document.styleSheet = source;
       document.getElementsByTagName("head")[0].appendChild(source);
-      </script>
+    </script>
 </body>
+
 </html>

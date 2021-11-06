@@ -1,7 +1,6 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt.target.classList.contains(
           `onlySearch`
@@ -17,7 +16,7 @@ _sidebar
           _link.style.display = `none`;
           Star(
             evt
-              .target,
+            .target,
             onlySearch
           );
         } else if (onlySearch == false) {
@@ -27,15 +26,13 @@ _sidebar
           _options.style.display = `block`;
           Star(
             evt
-              .target,
+            .target,
             onlySearch
           );
         }
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

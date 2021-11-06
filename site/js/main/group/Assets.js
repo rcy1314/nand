@@ -1,4 +1,4 @@
-let Assets = function () {
+let Assets = function() {
   let media;
   _container.style.display = `block`;
   _toggle.style.display = `none`;
@@ -37,9 +37,7 @@ let Assets = function () {
     );
   }
   for (
-    let i = 0;
-    i <= adj.length - 1;
-    i++
+    let i = 0; i <= adj.length - 1; i++
   ) {
     if (
       adj[i].media
@@ -47,21 +45,21 @@ let Assets = function () {
       media = `<div class='media' style='display:none'>Images</div>`;
     else
       media = `<div class='blank'></div>`;
-      if (
-        id != menu.indexOf(adj[i])
-      ) {
-        _result.append(
-          categoryBuild(
-            adj[i].id.match(/[^\/]+$/g),
-            menu.indexOf(adj[i]),
-            adj[i].image.image(),
-            adj[i].hash,
-            adj[i].description,
-            media
-          )
-        );
-      }
+    if (
+      id != menu.indexOf(adj[i])
+    ) {
+      _result.append(
+        categoryBuild(
+          adj[i].id.match(/[^\/]+$/g),
+          menu.indexOf(adj[i]),
+          adj[i].image.image(),
+          adj[i].hash,
+          adj[i].description,
+          media
+        )
+      );
     }
+  }
   main.setAttribute(`tabindex`, -1);
   Expand(expand);
   Topbar(topBar);

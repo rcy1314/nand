@@ -1,4 +1,4 @@
-let Sidescroll = function () {
+let Sidescroll = function() {
   display == `sideScroll`;
   scrollIntoViewBuffer = scrollIntoView;
   scrollIntoView = false;
@@ -11,7 +11,7 @@ let Sidescroll = function () {
     window.innerWidth >= 768
   )
 
-  _center.style.right = `130px`;
+    _center.style.right = `130px`;
   _center.style.width = `35vw`;
   _xml.style.display = `flex`;
   _center.style.left = `0`;
@@ -21,43 +21,43 @@ let Sidescroll = function () {
     .querySelectorAll(
       `.item`
     )
-      .forEach(
-        (a) =>
-          a.classList.remove(
-            `flexbox`
-          )
-      );
+    .forEach(
+      (a) =>
+      a.classList.remove(
+        `flexbox`
+      )
+    );
   _channel
     .querySelectorAll(
       `.item`
     )
-      .forEach((a) =>
-        a.classList.add(
-          `sideItem`
-        )
-      );
+    .forEach((a) =>
+      a.classList.add(
+        `sideItem`
+      )
+    );
   _channel
     .querySelectorAll(
       `.classic`
     )
-      .forEach((a) =>
-        a.style.display = `block`
-      );
+    .forEach((a) =>
+      a.style.display = `block`
+    );
 
-    if (
-      window.innerWidth >= 768
+  if (
+    window.innerWidth >= 768
+  )
+    _display.style.display = `inline-block`;
+
+  else
+    _display.style.display = `none`;
+
+  if (
+    document.body.contains(
+      _center.querySelector(`.bottom`)
     )
-      _display.style.display = `inline-block`;
-
-    else
-      _display.style.display = `none`;
-
-    if (
-      document.body.contains(
-        _center.querySelector(`.bottom`)
-      )
-    )
-      _center.querySelector(`.bottom`).style.left = `0`;
+  )
+    _center.querySelector(`.bottom`).style.left = `0`;
 
   _channel.classList.remove(`flexbox`)
 

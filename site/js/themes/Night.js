@@ -1,4 +1,4 @@
-var Night = function () {
+var Night = function() {
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `8px 8px 16px rgba(10, 10, 10, 1)`

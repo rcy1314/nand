@@ -1,14 +1,13 @@
 _container
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `under`
-              )
+        .target
+        .classList
+        .contains(
+          `under`
+        )
       ) {
         Group();
         category = evt.target.getAttribute(`aria-object`);
@@ -20,9 +19,7 @@ _container
 
         else
           Category(evt.target.getAttribute(`aria-object`));
-      }
-
-      else if (
+      } else if (
         evt.target.getAttribute(`aria-object`) === `Assets`
       )
         Assets();
@@ -38,9 +35,9 @@ _container
         scrollIntoView = scrollIntoViewBuffer;
         _main
           .querySelectorAll(`.joi`)
-            .forEach(
-              (a) => a.classList.remove(`luv`)
-            );
+          .forEach(
+            (a) => a.classList.remove(`luv`)
+          );
         Group();
         _sb.style.display = `none`;
         _channel.style.height = `0`;
@@ -49,7 +46,7 @@ _container
           category == `Assets`
         )
           setTimeout(
-            function () {
+            function() {
               Topbar(topBar);
               Assets();
               Expand(expand);
@@ -66,4 +63,4 @@ _container
       passive: false
     }
 
-);
+  );

@@ -1,14 +1,13 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `cropImages`
-              )
+        .target
+        .classList
+        .contains(
+          `cropImages`
+        )
       ) {
         cropImages = cropImages != true;
         if (
@@ -18,17 +17,15 @@ _sidebar
             .querySelectorAll(
               `.item, .classic`
             )
-              .forEach(
-                (a) => {
-                  a
-                    .style
-                      .cssText
-                    =
-                      `height:180px !important`
-            }
-          )
-        }
-        else if (
+            .forEach(
+              (a) => {
+                a
+                  .style
+                  .cssText =
+                  `height:180px !important`
+              }
+            )
+        } else if (
           display != `sideScroll` &&
           !cropImages
         ) {
@@ -36,38 +33,34 @@ _sidebar
             .querySelectorAll(
               `.image`
             )
-              .forEach(
-                (a) =>
-                  a
-                    .style
-                      .height
-                        =
-                      `auto`
+            .forEach(
+              (a) =>
+              a
+              .style
+              .height =
+              `auto`
             );
         }
         if (
           document
-            .body
-              .contains(
-                _center
-                  .querySelector(
-                    `.item`
-                  )
-              )
-            &&
-              display == `flexBox`
+          .body
+          .contains(
+            _center
+            .querySelector(
+              `.item`
+            )
+          ) &&
+          display == `flexBox`
         )
           Flex();
         Star(
           evt
-            .target,
+          .target,
           cropImages
         );
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

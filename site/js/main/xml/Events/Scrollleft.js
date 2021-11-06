@@ -1,13 +1,12 @@
 _channel
   .addEventListener(
-    'scroll', (evt) =>
-    {
+    'scroll', (evt) => {
       let isScrolling;
       // Clear our timeout throughout the scroll
-    	window.clearTimeout( isScrolling );
+      window.clearTimeout(isScrolling);
       touchmove = false;
-    	// Set a timeout to run after scrolling ends
-    	isScrolling =
+      // Set a timeout to run after scrolling ends
+      isScrolling =
         setTimeout(
           function() {
             // Run the callback
@@ -16,14 +15,10 @@ _channel
         );
       if (
         (
-          _channel.scrollWidth
-            -
-          _channel.scrollLeft
-            -
-          _channel.clientWidth
-            <=
-          _channel.clientWidth
-            &&
+          _channel.scrollWidth -
+          _channel.scrollLeft -
+          _channel.clientWidth <=
+          _channel.clientWidth &&
           Reader &&
           !stop
         )
@@ -57,9 +52,7 @@ _channel
           );
         Request(anyRandomMenuObject());
       }
-    },
-  {
-    passive:
-    true
-  }
-);
+    }, {
+      passive: true
+    }
+  );

@@ -1,4 +1,4 @@
-let categoryBuild = function (
+let categoryBuild = function(
   objectId,
   objectIndex,
   objectImage,
@@ -27,17 +27,17 @@ let categoryBuild = function (
   media.innerHTML = objectMedia;
   hash.innerHTML = objectHash;
   var src =
-  `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
+    `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
   var request = new XMLHttpRequest();
   request.open("GET", cors + src, true);
   request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
   request.setRequestHeader(`X-Requested-With`, `*`);
   request.responseType = "blob";
-  request.onload = function () {
-      object.src = src;
+  request.onload = function() {
+    object.src = src;
   }
   request.onloadend = function() {
-    if (request.status == 404){
+    if (request.status == 404) {
       object.src = `site/images/webp/${objectImage}`
     }
   }

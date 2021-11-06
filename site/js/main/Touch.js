@@ -1,20 +1,16 @@
 _container
   .addEventListener(
-    'touchstart', (evt) =>
-    {
+    'touchstart', (evt) => {
       touchmove = false;
       touchstartX = evt.changedTouches[0].screenX;
-  },
-  {
-    passive:
-      true
-  }
-);
+    }, {
+      passive: true
+    }
+  );
 
 _container
   .addEventListener(
-    'touchend', (evt) =>
-    {
+    'touchend', (evt) => {
       if (
         window.innerWidth > 425
       )
@@ -23,7 +19,7 @@ _container
       let isScrolling;
 
       // Clear our timeout throughout the scroll
-      window.clearTimeout( isScrolling );
+      window.clearTimeout(isScrolling);
 
       // Set a timeout to run after scrolling ends
       isScrolling =
@@ -34,15 +30,13 @@ _container
             touchmove = true;
 
           },
-        4000);
-    if (
-      _guide.style.display != `flex` &&
-      display !== `sideSroll`
-    )
-      Swipe();
-  },
-  {
-    passive:
-    true
-  }
-);
+          4000);
+      if (
+        _guide.style.display != `flex` &&
+        display !== `sideSroll`
+      )
+        Swipe();
+    }, {
+      passive: true
+    }
+  );

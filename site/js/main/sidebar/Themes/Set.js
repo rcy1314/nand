@@ -1,27 +1,24 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `theme`
-              )
+        .target
+        .classList
+        .contains(
+          `theme`
+        )
       ) {
         set =
           evt
-            .target
-              .getAttribute(
-                `aria-object`
-              );
+          .target
+          .getAttribute(
+            `aria-object`
+          );
         window[set]();
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

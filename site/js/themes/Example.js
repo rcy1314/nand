@@ -1,4 +1,4 @@
-var Example = function () {
+var Example = function() {
   document.documentElement.style.setProperty(
     `--box-shadow`,
     `8px 8px 16px rgba(63, 92, 136, .4)`

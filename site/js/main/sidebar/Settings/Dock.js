@@ -1,7 +1,6 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt.target.classList.contains(
           `sideBarDock`
@@ -13,21 +12,19 @@ _sidebar
         ) {
           Star(
             evt
-              .target,
+            .target,
             sideBarDock
           );
         } else if (sideBarDock == false) {
           Star(
             evt
-              .target,
+            .target,
             sideBarDock
           );
         }
       }
 
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

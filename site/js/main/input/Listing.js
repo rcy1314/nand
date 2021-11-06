@@ -3,7 +3,7 @@
   I found no other way of checking for errors in the function on these keys
 */
 
-var Listing = function (
+var Listing = function(
   Elem,
   keycode
 ) {
@@ -86,64 +86,64 @@ var Listing = function (
       _main.querySelector(
         `${Elem} .listing .hover`
       ) !=
-        _main.querySelector(
-          `${Elem} .listing .index:first-child`
-        ) &&
+      _main.querySelector(
+        `${Elem} .listing .index:first-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .index:first-child`
       ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).previousElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:first-child`
-        ) &&
+      _main.querySelector(
+        `${Elem} .listing .index:first-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).previousElementSibling.previousElementSibling !=
-        document.querySelector(
-          `${Elem} .listing .index:first-child
+      document.querySelector(
+        `${Elem} .listing .index:first-child
           `
-        ) &&
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).previousElementSibling.previousElementSibling.previousElementSibling !=
-        document.querySelector(
-          `${Elem} .listing .index:first-child`
-        ) &&
+      document.querySelector(
+        `${Elem} .listing .index:first-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).previousElementSibling.previousElementSibling.previousElementSibling
-        .previousElementSibling !=
+      .previousElementSibling !=
       _main.querySelector(
         `${Elem} .listing .index:first-child`
       ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).previousElementSibling.previousElementSibling.previousElementSibling
-        .previousElementSibling.previousElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:first-child`
-        )
+      .previousElementSibling.previousElementSibling !=
+      _main.querySelector(
+        `${Elem} .listing .index:first-child`
+      )
     ) {
       _main
         .querySelector(
           `${Elem} .listing .hover`
         )
-          .previousElementSibling.previousElementSibling.previousElementSibling
-          .previousElementSibling.previousElementSibling.previousElementSibling
-          .classList.add(
-            `hover`
-          );
+        .previousElementSibling.previousElementSibling.previousElementSibling
+        .previousElementSibling.previousElementSibling.previousElementSibling
+        .classList.add(
+          `hover`
+        );
       _main
         .querySelector(
           `${Elem} .listing .hover`
         )
-          .nextElementSibling.nextElementSibling.nextElementSibling
-          .nextElementSibling.nextElementSibling.nextElementSibling
-          .classList.remove(
-            `hover`
-          );
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .classList.remove(
+          `hover`
+        );
     } else {
       _main
         .querySelector(
@@ -165,60 +165,60 @@ var Listing = function (
         .querySelector(
           `${Elem} .listing .index`
         )
-          .nextElementSibling.nextElementSibling.nextElementSibling
-          .nextElementSibling.nextElementSibling.nextElementSibling
-          .classList.add(
-            `hover`
-          );
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .classList.add(
+          `hover`
+        );
     } else if (
       _main.querySelector(
         `${Elem} .listing .hover`
       ) !=
-        _main.querySelector(
-          `${Elem} .listing .index:last-child`
-        ) &&
+      _main.querySelector(
+        `${Elem} .listing .index:last-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).nextElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:last-child`
-        ) &&
+      _main.querySelector(
+        `${Elem} .listing .index:last-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).nextElementSibling.nextElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:last-child`
-        ) &&
+      _main.querySelector(
+        `${Elem} .listing .index:last-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).nextElementSibling.nextElementSibling.nextElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:last-child`
-        ) &&
+      _main.querySelector(
+        `${Elem} .listing .index:last-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).nextElementSibling.nextElementSibling.nextElementSibling
-        .nextElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:last-child`
-        ) &&
+      .nextElementSibling !=
+      _main.querySelector(
+        `${Elem} .listing .index:last-child`
+      ) &&
       _main.querySelector(
         `${Elem} .listing .hover`
       ).nextElementSibling.nextElementSibling.nextElementSibling
       .nextElementSibling.nextElementSibling !=
-        _main.querySelector(
-          `${Elem} .listing .index:last-child`
-        )
+      _main.querySelector(
+        `${Elem} .listing .index:last-child`
+      )
     ) {
       _main
         .querySelector(
           `${Elem} .listing .hover`
         )
-          .nextElementSibling.nextElementSibling.nextElementSibling
-          .nextElementSibling.nextElementSibling.nextElementSibling
-          .classList.add(
-            `hover`
-          );
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .nextElementSibling.nextElementSibling.nextElementSibling
+        .classList.add(
+          `hover`
+        );
       _main
         .querySelector(
           `${Elem} .listing .hover

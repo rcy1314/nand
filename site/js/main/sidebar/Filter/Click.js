@@ -1,24 +1,20 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `excludeInput`
-              )
+        .target
+        .classList
+        .contains(
+          `excludeInput`
+        )
       )
         evt
-          .target
-            .value
-              =
-            ``;
+        .target
+        .value =
+        ``;
 
-          },
-          {
-            passive:
-            false
-          }
-      );
+    }, {
+      passive: false
+    }
+  );

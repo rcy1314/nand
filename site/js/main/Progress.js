@@ -1,4 +1,4 @@
-let Progress = function (done) {
+let Progress = function(done) {
   let width;
   let length;
   let complete;
@@ -8,7 +8,7 @@ let Progress = function (done) {
   ) {
     complete =
       setInterval(
-        function () {
+        function() {
           if (
             !width ||
             width == `Infinity` &&
@@ -25,13 +25,13 @@ let Progress = function (done) {
                 _progress.style.transition = `all 1600ms ease-in-out`;
                 _progress.style.opacity = `0`;
               },
-            350)
+              350)
             setTimeout(
-              function () {
+              function() {
                 _progress.style.transition = `none`;
                 _progress.style.width = `0%`;
               },
-            1600);
+              1600);
             clearInterval(complete);
           } else {
             _progress.style.width = _progress.clientWidth + width;
@@ -39,7 +39,7 @@ let Progress = function (done) {
             _progress.style.opacity = `1`;
           }
         },
-    500);
+        500);
   }
   if (
     document.body.contains(
@@ -54,7 +54,7 @@ let Progress = function (done) {
     ) {
       _channel.classList.add(`scroll-into-view`)
       setTimeout(
-        function () {
+        function() {
           _channel.classList.remove(`scroll-into-view`);
         }, 1750
       )
@@ -68,13 +68,11 @@ let Progress = function (done) {
     if (
       fadeIntoView
     ) {
-      (function () {
+      (function() {
         function checkPosition() {
           let elements = _channel.querySelectorAll(`.hidden`);
           for (
-            let i = 0;
-            i < elements.length;
-            i++) {
+            let i = 0; i < elements.length; i++) {
             if (
               display !== `sideScroll` &&
               elements[i] &&
@@ -89,8 +87,8 @@ let Progress = function (done) {
               display == `sideScroll` &&
               elements[i] &&
               elements[i].getBoundingClientRect().left -
+              _channel.clientWidth <=
               _channel.clientWidth
-              <= _channel.clientWidth
             ) {
               elements[i].classList.add(`fade-in-element`);
               elements[i].classList.remove(`hidden`);
@@ -118,7 +116,7 @@ let Progress = function (done) {
             function() {
               checkPosition();
             },
-          1000)
+            1000)
         else checkPosition();
       })();
     }
@@ -141,26 +139,26 @@ let Progress = function (done) {
       _center.style.top = `60px`;
       _channel
         .querySelectorAll(`.item`)
-          .forEach(
-            (a) => a.classList.add(`sideItem`)
-          );
+        .forEach(
+          (a) => a.classList.add(`sideItem`)
+        );
     }
   }
   if (
     document
-      .body
-        .contains(
-          _group
-            .querySelector(
-              `.populate`
-            )
-        )
+    .body
+    .contains(
+      _group
+      .querySelector(
+        `.populate`
+      )
+    )
   ) {
     scrollIntoView = scrollIntoViewBuffer
     if (
       scrollIntoView
     ) {
-      console.log(_main.scrolltop + ` group ` +  _group.scrollTop + ` result` + _result.scrollTop)
+      console.log(_main.scrolltop + ` group ` + _group.scrollTop + ` result` + _result.scrollTop)
       _group.classList.add(`scroll-into-view`)
       if (
         !onlyImages
@@ -176,8 +174,7 @@ let Progress = function (done) {
           _main.scrollTop = _result.offsetTop;
         }, 1250
       )
-    }
-    else _main.scrollTop = 60;
+    } else _main.scrollTop = 60;
   }
   if (
     showSplash

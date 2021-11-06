@@ -17,7 +17,7 @@ let URI = function() {
     if (
       uri.match(
         /^[a-zA-Z0-9]+$/g)
-      ) {
+    ) {
       if (
         Reader == true
       )
@@ -30,34 +30,33 @@ let URI = function() {
       post =
         parseInt(
           uri.slice(2),
-        36
-      );
+          36
+        );
       setTimeout(
-        function () {
+        function() {
           if (
             menu
-              .findIndex(
+            .findIndex(
               (item) =>
-                item.hash ===
-                  id
+              item.hash ===
+              id
             )
           )
             i = menu
-              .findIndex(
+            .findIndex(
               (item) =>
-                item.hash ===
-                  id
+              item.hash ===
+              id
             );
-            if (
-              i !== -1
-            )
-              Request(i);
-            else
-              Filter(uri)
+          if (
+            i !== -1
+          )
+            Request(i);
+          else
+            Filter(uri)
         },
-      250);
-    }
-    else if (
+        250);
+    } else if (
       uri.slice(
         uri.length - 16,
         uri.length
@@ -74,28 +73,28 @@ let URI = function() {
           uri.length - 17
         );
       setTimeout(
-        function () {
+        function() {
           if (
             menu
-              .findIndex(
-                (item, i) =>
-                  cyrb53(item.description) == id ||
-                  cyrb53(i.toString()) == id ||
-                  cyrb53(item.hash) == id ||
-                  cyrb53(item.uri) == id ||
-                  cyrb53(item.id) == id
-              )
+            .findIndex(
+              (item, i) =>
+              cyrb53(item.description) == id ||
+              cyrb53(i.toString()) == id ||
+              cyrb53(item.hash) == id ||
+              cyrb53(item.uri) == id ||
+              cyrb53(item.id) == id
+            )
           )
             i =
             menu
-              .findIndex(
-                (item, i) =>
-                  cyrb53(item.description) == id ||
-                  cyrb53(i.toString()) == id ||
-                  cyrb53(item.hash) == id ||
-                  cyrb53(item.uri) == id ||
-                  cyrb53(item.id) == id
-              )
+            .findIndex(
+              (item, i) =>
+              cyrb53(item.description) == id ||
+              cyrb53(i.toString()) == id ||
+              cyrb53(item.hash) == id ||
+              cyrb53(item.uri) == id ||
+              cyrb53(item.id) == id
+            )
           if (
             i !== -1
           )
@@ -109,16 +108,15 @@ let URI = function() {
           _visit.style.display = `none`;
           guideOnScreen = onScreen;
         },
-      250);
+        250);
     }
-  }
-  else if (
+  } else if (
     location.search.split(`?q=`)[1]
   ) {
     let uri = location.search.split(`?q=`)[1];
     guideOnScreen = onScreen;
     setTimeout(
-      function () {
+      function() {
         if (
           showSplash
         )
@@ -131,12 +129,11 @@ let URI = function() {
       window.innerWidth <= 425
     )
       _main
-        .querySelector(
-          `#option`
-        )
-          .style.cssText = `display:flex !important`;
-  }
-  else if (
+      .querySelector(
+        `#option`
+      )
+      .style.cssText = `display:flex !important`;
+  } else if (
     isNaN(
       parseFloat(
         post
@@ -147,7 +144,7 @@ let URI = function() {
     )
   ) {
     setTimeout(
-      function () {
+      function() {
         if (
           Reader
         ) {
@@ -155,7 +152,7 @@ let URI = function() {
           Request(anyRandomMenuObject());
         }
       },
-    250);
+      250);
   }
   if (
     !isNaN(
@@ -170,28 +167,26 @@ let URI = function() {
   )
     _check.style.display = `block`;
 
-    if (
-      !location.href.split(`?`)[1]
-        &&
-      !document
-        .body
-          .contains(
-            _group
-              .querySelector(
-                `.select`
-              )
-          )
-        &&
-      !document
-        .body
-          .contains(
-            _xml
-              .querySelector(
-                `.item`
-              )
-          )
+  if (
+    !location.href.split(`?`)[1] &&
+    !document
+    .body
+    .contains(
+      _group
+      .querySelector(
+        `.select`
+      )
+    ) &&
+    !document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `.item`
+      )
     )
-      _sb.style.display = `block`;
-    else
-      _sb.style.display = `none`;
+  )
+    _sb.style.display = `block`;
+  else
+    _sb.style.display = `none`;
 }

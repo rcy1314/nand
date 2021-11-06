@@ -1,4 +1,4 @@
-let courtesyBuild = function (
+let courtesyBuild = function(
   objectId,
   objectImage,
   objectExternal
@@ -16,17 +16,17 @@ let courtesyBuild = function (
   ahref.classList.add(`exit`);
   bold.innerHTML = objectId;
   var src =
-  `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
+    `https://raw.githubusercontent.com/acktic/xml-publishers-images/master/${objectImage}`
   var request = new XMLHttpRequest();
   request.open("GET", cors + src, true);
   request.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
   request.setRequestHeader(`X-Requested-With`, `*`);
   request.responseType = "blob";
-  request.onload = function () {
-      object.src = src;
+  request.onload = function() {
+    object.src = src;
   }
   request.onloadend = function() {
-    if (request.status == 404){
+    if (request.status == 404) {
       object.src = `site/images/webp/${objectImage}`
     }
   }
@@ -44,7 +44,7 @@ let courtesyBuild = function (
   return courtesy;
 };
 
-let copyInputAttribute = function (
+let copyInputAttribute = function(
   src,
   share,
   externalURI

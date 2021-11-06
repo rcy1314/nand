@@ -1,4 +1,4 @@
-let guideBuild = function (pubArray) {
+let guideBuild = function(pubArray) {
   let filterBlur = document.createElement(`div`);
   let publish = document.createElement(`div`);
   let sticky = document.createElement(`div`);

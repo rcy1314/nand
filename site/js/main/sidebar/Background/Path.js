@@ -1,22 +1,19 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-      {
-        if (
-          evt
-            .target
-              .classList
-                .contains(
-                  `urlInput`
-                )
+    'click', (evt) => {
+      if (
+        evt
+        .target
+        .classList
+        .contains(
+          `urlInput`
         )
-          evt
-            .target
-              .select();
+      )
+        evt
+        .target
+        .select();
 
-      },
-      {
-        passive:
-        false
-      }
+    }, {
+      passive: false
+    }
   );

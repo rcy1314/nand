@@ -1,4 +1,4 @@
-let Legacy = function () {
+let Legacy = function() {
   display == `legacy`;
   _center.style.cssText = `justify-content:center !important`;
   _channel.classList.remove(`sideChannel`);
@@ -10,42 +10,42 @@ let Legacy = function () {
     .querySelectorAll(
       `.item`
     )
-      .forEach(
-        (a) =>
-          a.classList.remove(
-            `sideItem`
-          )
-      );
+    .forEach(
+      (a) =>
+      a.classList.remove(
+        `sideItem`
+      )
+    );
   _channel
     .querySelectorAll(
       `.item`
     )
-      .forEach(
-        (a) =>
-          a.classList.remove(
-            `flexbox`
-          )
-      );
+    .forEach(
+      (a) =>
+      a.classList.remove(
+        `flexbox`
+      )
+    );
   _channel
     .querySelectorAll(
       `.item`
     )
-      .forEach(
-        (a) =>
-          a.style.width =
-            `425px`
-      );
+    .forEach(
+      (a) =>
+      a.style.width =
+      `425px`
+    );
   _xml.style.top = `60px`;
 
   if (
     document
-      .body
-        .contains(
-          _center
-            .querySelector(
-              `.bottom`
-            )
-          )
+    .body
+    .contains(
+      _center
+      .querySelector(
+        `.bottom`
+      )
+    )
   ) {
     _center.querySelector(`.bottom`).style.display = `block`;
     _center.querySelector(`.bottom`).style.left = `0`;

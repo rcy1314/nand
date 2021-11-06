@@ -1,58 +1,52 @@
 _main
   .addEventListener(
-    'mouseout', (evt) =>
-    {
+    'mouseout', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `detail`
-              )
+        .target
+        .classList
+        .contains(
+          `detail`
+        )
       )
         _main
-          .querySelectorAll(
-            `.listing .index, .listing .index`
+        .querySelectorAll(
+          `.listing .index, .listing .index`
+        )
+        .forEach(
+          (a) =>
+          a
+          .classList
+          .remove(
+            `hover`
           )
-          .forEach(
-            (a) =>
-              a
-                .classList
-                  .remove(
-                    `hover`
-                  )
-          );
-    },
-    {
-      passive:
-      false
+        );
+    }, {
+      passive: false
     }
-);
+  );
 
 _main
   .addEventListener(
-    'mouseover', (evt) =>
-    {
+    'mouseover', (evt) => {
       if (
         evt
-          .target
-            .classList
-              .contains(
-                `detail`
-              )
+        .target
+        .classList
+        .contains(
+          `detail`
+        )
       )
         evt
-          .target
-            .closest(
-              `.index`
-            )
-              .classList
-                .add(
-                  `hover`
-                );
-    },
-    {
-      passive:
-      false
+        .target
+        .closest(
+          `.index`
+        )
+        .classList
+        .add(
+          `hover`
+        );
+    }, {
+      passive: false
     }
-);
+  );

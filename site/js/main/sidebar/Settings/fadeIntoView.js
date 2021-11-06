@@ -1,7 +1,6 @@
 _sidebar
   .addEventListener(
-    'click', (evt) =>
-    {
+    'click', (evt) => {
 
       if (
         evt.target.classList.contains(
@@ -15,38 +14,35 @@ _sidebar
         ) {
           _channel
             .querySelectorAll(`.img`)
-              .forEach(
-                (a) => a.classList.remove(`hidden`)
-              );
-        }
-
-        else if (
+            .forEach(
+              (a) => a.classList.remove(`hidden`)
+            );
+        } else if (
           fadeIntoView
         ) {
           if (
             document
-              .body
-                .contains(
-                  _channel.querySelector(`.img`)
-                )
+            .body
+            .contains(
+              _channel.querySelector(`.img`)
+            )
           ) {
             _channel
               .querySelectorAll(`.img`)
-                .forEach(
-                  (a) => a.classList.remove(`fade-in-element`)
-                );
+              .forEach(
+                (a) => a.classList.remove(`fade-in-element`)
+              );
             _channel
               .querySelectorAll(`.img`)
-                .forEach(
-                  (a) => a.classList.add(`hidden`)
-                );
-            (function () {
+              .forEach(
+                (a) => a.classList.add(`hidden`)
+              );
+            (function() {
               function startPosition() {
                 let elements = _channel.querySelectorAll(".img");
                 for (var i = 0; i < elements.length - 1; i++) {
                   if (
-                    elements[i].getBoundingClientRect().top
-                      -
+                    elements[i].getBoundingClientRect().top -
                     _main.clientHeight <= 0
                   ) {
                     if (
@@ -58,9 +54,9 @@ _sidebar
                     if (!fadeIntoView) {
                       _main
                         .querySelectorAll(`.img`)
-                          .forEach(
-                            (a) => a.classList.remove(`hidden`)
-                          );
+                        .forEach(
+                          (a) => a.classList.remove(`hidden`)
+                        );
                       _main.removeEventListener("scroll", startPosition);
                     }
                   }
@@ -80,9 +76,7 @@ _sidebar
         }
       }
       evt.preventDefault();
-    },
-    {
-      passive:
-      false
+    }, {
+      passive: false
     }
-);
+  );

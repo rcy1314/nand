@@ -1,10 +1,8 @@
 _quick
   .addEventListener(
-    'touchstart', (evt) =>
-    {
+    'touchstart', (evt) => {
       Generate(8);
-    },
-    {
+    }, {
       passive: true
     }
-);
+  );

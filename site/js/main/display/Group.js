@@ -1,4 +1,4 @@
-let Group = function () {
+let Group = function() {
   _group.style.display = `block`;
   _visit.style.display = `none`;
   _xml.style.display = `none`;

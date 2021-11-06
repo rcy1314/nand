@@ -1,4 +1,4 @@
-let sideBarListBuild = function (
+let sideBarListBuild = function(
   Elem,
   Class,
   Icon,
