@@ -187,21 +187,19 @@ _sidebar
         if (
           cropImages
         ) {
-          _main
+          _channel
             .querySelectorAll(
-              `.img`
+              `.item, .classic`
             )
               .forEach(
-                (a) =>
+                (a) => {
                   a
-                    .closest(
-                      `.image`
-                    )
-                      .style
-                        .height
-                          =
-                        `160px`
-            );
+                    .style
+                      .cssText
+                    =
+                      `height:180px !important`
+            }
+          )
         }
         else if (
           display != `sideScroll` &&

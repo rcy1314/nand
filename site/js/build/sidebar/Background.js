@@ -8,7 +8,7 @@ let urlFormBuild = function () {
   );
   object.setAttribute(
     `placeholder`,
-    `tap to paste`
+    `tap paste url`
   );
   object.setAttribute(
     `type`,
