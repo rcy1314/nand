@@ -724,6 +724,7 @@ let images = []; //array of images in request
 let scrollIntoViewBuffer = scrollIntoView // viewports/group
 let cropImagesBuffer = cropImages; // used in Reader
 let onlyImagesBuffer = onlyImages; // used in Reader
+let sideBarLockBuffer = sideBarLock // used in urlInput
 let touchmove = false; // scrollToElements
 let touchendY = 0; // handleSwip, handleGuide
 let touchstartY = 0; // handleSwip, handleGuide

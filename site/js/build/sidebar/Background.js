@@ -83,7 +83,7 @@ let urlFormBuild = function () {
               }
             setTimeout(
               function() {
-                sideBarLock = false;
+                sideBarLock = sideBarLockBuffer;
               }, 7000
             )
           })
