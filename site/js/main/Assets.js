@@ -194,6 +194,8 @@ var menu=[
 {id:`Reddit/AMD`,category:`Reddit`,title:``,description:`AMD subreddit dedicated to Advanced Micro Devices and its products.`,uri:`https://www.reddit.com/r/Amd/.rss`,image:`AMD`,hash:`aD`,media:!0},
 {id:`Reddit/Android`,category:`Reddit`,title:``,description:`Android subreddit Reviews, Tips, and Discussions about Rooting, Tutorials, and Apps.`,uri:`https://www.reddit.com/r/android/.rss`,image:`Android`,hash:`nD`,media:!1},
 {id:`Reddit/Apple`,category:`Reddit`,title:``,description:`Apple subreddit discusses Apple Devices and Software, including News, Rumors, Opinions and Analysis.`,uri:`https://www.reddit.com/r/apple/.rss`,image:`Apple`,hash:`pA`,media:!1},
+{id:`Reddit/One Plus`,category:`Reddit`,title:``,description:`Google oneplus subreddit for discussing OnePlus and their products.`,uri:`https://www.reddit.com/r/oneplus/.rss`,image:`Oneplus`,hash:`oL`,media:!1},
+{id:`Reddit/Samsung`,category:`Reddit`,title:``,description:`Samsung subreddit place to discuss Samsung and Samsung related products.`,uri:`https://www.reddit.com/r/samsung/.rss`,image:`Samsung`,hash:`Sg`,media:!1},
 {id:`Reddit/Art`,category:`Reddit`,title:``,description:`The subreddit about art, drawings, paintings, and computer generated design.`,uri:`https://www.reddit.com/r/art/.rss`,image:`Art`,hash:`at`,media:!0},
 {id:`Reddit/Breath of the Wild`,category:`Reddit`,title:``,description:`All things The Legend of Zelda: Breath of the Wild series!`,uri:`https://www.reddit.com/r/breath_of_the_wild/.rss`,image:`BreathOfTheWild`,hash:`Bw`,media:!0},
 {id:`Arch Linux`,category:`Reddit`,title:``,description:`Arch Linux BBS Forum newest topics, questions, and answers.`,uri:`https://bbs.archlinux.org/extern.php?action=active&type=RSS`,image:`ArchLinux`,hash:`aL`,media:!1},
