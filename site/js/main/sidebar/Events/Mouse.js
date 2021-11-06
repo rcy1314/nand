@@ -19,7 +19,7 @@ if (
       'mousemove', (evt) =>
       {
         if (
-          event.pageX <= 100 &&
+          event.pageX <= 180 &&
           !onScreen
         ) {
           onScreen = true;
