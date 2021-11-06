@@ -32,6 +32,15 @@ _container
           `fa-expand-alt`
         )
       ) {
+        Reader = false;
+        onlyImages = onlyImagesBuffer;
+        cropImages = cropImagesBuffer;
+        scrollIntoView = scrollIntoViewBuffer;
+        _main
+          .querySelectorAll(`.joi`)
+            .forEach(
+              (a) => a.classList.remove(`luv`)
+            );
         Group();
         _sb.style.display = `none`;
         _channel.style.height = `0`;
