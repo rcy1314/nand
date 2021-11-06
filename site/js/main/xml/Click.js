@@ -16,6 +16,7 @@ _container
           if (
             !Reader
           ) {
+            cropImages = cropImagesBuffer;
             onlyImages = onlyImagesBuffer;
             notifyOption(`Reading`, `fa-times-circle`);
             _main
@@ -59,6 +60,7 @@ _container
             }
             touchmove = true;
             onlyImages = true;
+            cropImages = true;
             Random();
             randomDuplicate = [];
             notifyOption(`Reading`, `fa-check-circle`);

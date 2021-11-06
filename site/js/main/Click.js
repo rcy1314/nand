@@ -109,6 +109,8 @@ _container
       ) {
         Reader = false;
         onlyImages = onlyImagesBuffer;
+        cropImages = cropImagesBuffer;
+        scrollIntoView = scrollIntoViewBuffer;
         notifyOption(`Reading`, `fa-times-circle`);
         _main
           .querySelectorAll(`.joi`)
