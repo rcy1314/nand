@@ -300,10 +300,12 @@
 #main #xml .center .item .image {
   background-color: transparent;
   justify-content: center;
+  background-size: cover;
   align-items: center;
   position: absolute;
   display: flex;
-  height: 120px;
+  height: 100%;
+  width: 100%;
 }
 
 #main #xml .center .item .img, {

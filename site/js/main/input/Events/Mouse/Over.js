@@ -21,3 +21,4 @@ _main
     }, {
       passive: false
     }
+  )

@@ -1,11 +1,17 @@
 var Attributes = function(empty, menuObject, pubIndex, src) {
   count.push(`null`);
+  let k = 5420;
+  let shrunk = 100;
+  let maximum = 480;
   let jsonResponseScore;
   let item = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
   );
   let itemClassic = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
+  );
+  let itemWrap = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap`
   );
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
@@ -120,6 +126,17 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
+                    if (
+                      Width < maximum ||
+                      Height < shrunk
+                    ) {
+                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      copyDownload.style.display = `none`;
+                      copyPicture.style.display = `none`;
+                      copyPost.style.display = `block`;
+                      attribute.style.height = `74px`;
+                      itemPending.remove();
+                  } else {
                     Dimensions(
                       menuObject,
                       pubIndex,
@@ -136,8 +153,10 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                         if (
                           !cropImages
                         ) {
-
                           item.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                          itemWrap.style
                             .cssText =
                             `height:${itemImage.clientHeight}px !important`
                           itemClassic.style
@@ -148,6 +167,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     )
                   };
                 }
+              }
                 request.onerror = function(e) {
                   if (
                     onlyImages
@@ -191,6 +211,17 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
+                    if (
+                      Width < maximum ||
+                      Height < shrunk
+                    ) {
+                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      copyDownload.style.display = `none`;
+                      copyPicture.style.display = `none`;
+                      copyPost.style.display = `block`;
+                      attribute.style.height = `74px`;
+                      itemPending.remove();
+                  } else {
                     Dimensions(
                       menuObject,
                       pubIndex,
@@ -209,6 +240,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           item.style
                             .cssText =
                             `height:${itemImage.clientHeight}px !important`
+                          itemWrap.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
                           itemClassic.style
                             .cssText =
                             `height:${itemImage.clientHeight}px !important`
@@ -217,6 +251,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     )
                   };
                 }
+              }
                 request.onerror = function(e) {
                   if (
                     onlyImages
@@ -265,6 +300,17 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               menu[id].id.match(/Youtube/g)
             )
               itemImage.classList.add(`youtube`)
+              if (
+                Width < maximum ||
+                Height < shrunk
+              ) {
+                itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                copyDownload.style.display = `none`;
+                copyPicture.style.display = `none`;
+                copyPost.style.display = `block`;
+                attribute.style.height = `74px`;
+                itemPending.remove();
+            } else {
             Dimensions(
               menuObject,
               pubIndex,
@@ -283,6 +329,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   item.style
                     .cssText =
                     `height:${itemImage.clientHeight}px !important`
+                  itemWrap.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
                   itemClassic.style
                     .cssText =
                     `height:${itemImage.clientHeight}px !important`
@@ -291,6 +340,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
             )
           }
         }
+      }
         request.onerror = function(e) {
           if (
             onlyImages
