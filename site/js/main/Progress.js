@@ -158,7 +158,6 @@ let Progress = function(done) {
     if (
       scrollIntoView
     ) {
-      console.log(_main.scrolltop + ` group ` + _group.scrollTop + ` result` + _result.scrollTop)
       _group.classList.add(`scroll-into-view`)
       if (
         !onlyImages

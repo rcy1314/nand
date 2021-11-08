@@ -322,9 +322,10 @@ document
           .value ===
           ``
         )
-          inputListingIndex(
-            ``,
-            `#first`
+          return false;
+        else
+          Filter(
+            _guest.value
           );
         if (
           document

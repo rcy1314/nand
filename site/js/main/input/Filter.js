@@ -45,8 +45,7 @@ let Filter = function(filterURI) {
           description[i]
         )
       );
-    Assets();
-    displayExpand(expand);
+    Expand(expand);
     unloading();
   } else if (exact > -1) Request(exact)
   else return false;
