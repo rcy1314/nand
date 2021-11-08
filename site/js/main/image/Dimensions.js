@@ -4,11 +4,14 @@ var Dimensions = function(
   Height,
   Width
 ) {
-  let k = 5420;
-  let shrunk = 100;
-  let maximum = 480;
   let item = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}']`
+  );
+  let itemWrap = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap`
+  );
+  let itemClassic = _channel.querySelector(
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic`
   );
   let itemContainer = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
@@ -22,85 +25,21 @@ var Dimensions = function(
   let itemFilter = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
   );
-  let attribute = _channel.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
-  );
-  let copyPicture = _channel.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
-  );
-  let copyDownload = _channel.querySelector(
-    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
-  );
-  let copyPost = _channel.querySelector(
-    `[aria-item='${pubIndex}'][aria-item='${pubIndex}'] .post`
-  );
-  if (
-    itemImage &&
-    itemImage.clientHeight < shrunk &&
-    display !== `flexBox` &&
-    !cropImages
-  ) {
-    setTimeout(
-      function() {
-        item.style.cssText = `height:${itemImage.clientHeight}px !important`;
-      }, 1
-    )
-  }
-  if (
-    Width < maximum &&
-    document.body.contains(
-      _channel.querySelector(
-        `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-      )
-    )
-  ) {
-    itemImage.closest(`.classic`).style.cssText = `align-items:center;position:relative`;
-    if (
-      display !== `sideScroll`
-    )
-      itemImage.closest(`.classic`).style.display = `flex`;
-    else
-      itemImage.closest(`.classic`).style.display = `block`;
-    itemContainer.style.height = `fit-content`;
-    itemImage.classList.remove(`hidden`);
-    copyDownload.style.display = `none`;
-    copyPicture.style.display = `none`;
-    if (
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-        )
-      )
-    )
-      itemFilter.classList.add(`leave`);
-    itemImage.classList.add(`leave`);
-    copyPost.style.display = `block`;
-    itemImage.style.width = `200px`;
-    attribute.style.height = `74px`;
-  } else {
     if (
       cropImages &&
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-        )
-      ) &&
+      document
+        .body
+          .contains(
+            itemContainer
+          )
+        &&
       window.innerWidth >= 768
     ) {
       itemContainer.style.height = `180px`;
       itemImage.style.height = `180px`;
-      _channel.querySelectorAll(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .classic,
-        [aria-object='${menuObject}'][aria-item='${pubIndex}'] .wrap,
-        [aria-object='${menuObject}'][aria-item='${pubIndex}']`
-        )
-        .forEach(
-          (a) =>
-          a
-          .style
-          .height =
-          `180px`
-        )
+      item.style.height = `180px`;
+      itemWrap.style.height = `180px`;
+      itemClassic.style.height = `180px`;
     } else if (
       window.innerWidth < 768 &&
       cropImages
@@ -108,31 +47,35 @@ var Dimensions = function(
       itemContainer.style.height = `80px`;
       itemPending.style.height = `80px`;
       itemImage.style.height = `80px`;
+      item.style.height = `180px`;
+      itemWrap.style.height = `180px`;
+      itemClassic.style.height = `180px`;
     } else if (
       !cropImages &&
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .image`
-        )
-      )
-    ) {
+      document
+        .body
+          .contains(
+            itemContainer
+          )
+    )
       itemContainer.style.height = `fit-content`;
-    }
+
     if (
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .filterBlur`
-        )
-      )
+      document
+        .body
+          .contains(
+            itemFilter
+          )
     )
       itemFilter.classList.add(`default`);
+
     if (
-      document.body.contains(
-        _channel.querySelector(
-          `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .img`
-        )
-      )
+      document
+        .body
+          .contains(
+            itemImage
+          )
     )
       itemImage.classList.add(`default`);
+
   }
-}
