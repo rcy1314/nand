@@ -124,13 +124,14 @@ var Append = function(id) {
   );
 
   if (
-    display == `flexBox` &&
-    menu[
-      id
-    ]
-    .media
+    display == `flexBox`
   )
     Flex();
+
+  else if (
+    display == `duo`
+  )
+    Duo();
 
   else if (
     display == `sideScroll`
@@ -138,11 +139,7 @@ var Append = function(id) {
     Sidescroll();
 
   else if (
-    display == `legacy` ||
-    !menu[
-      id
-    ]
-    .media
+    display == `legacy`
   )
     Legacy();
 
