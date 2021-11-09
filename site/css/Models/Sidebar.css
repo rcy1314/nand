@@ -60,6 +60,7 @@
 #container #sidebar #content .exclude,
 #container #sidebar #content .fav,
 #container #sidebar #content .set,
+#container #sidebar #content .port,
 #container #sidebar #content .themes {
   background-color: transparent !important;
   color: var(--fill-color);
@@ -78,6 +79,7 @@
 #container #sidebar #content .themes .border,
 #container #sidebar #content .set .choose,
 #container #sidebar #content .fav .favorite,
+#container #sidebar #content .port .viewport,
 #container #sidebar #content .exclude .parse {
   background-color: transparent !important;
   color: var(--fill-color);
@@ -94,6 +96,7 @@
 #container #sidebar #content .themes .border:hover,
 #container #sidebar #content .set .choose:hover,
 #container #sidebar #content .fav .favorite:hover,
+#container #sidebar #content .port .viewport:hover,
 #container #sidebar #content .exclude .parse:hover {
   background-color: var(--hover-background-color) !important;
 }
@@ -102,6 +105,7 @@
 #container #sidebar #content .bg .background,
 #container #sidebar #content .fav .feed,
 #container #sidebar #content .exclude .option,
+#container #sidebar #content .port .view,
 #container #sidebar #content .set .settings,
 #container #sidebar #content .themes .theme {
   padding-left: 10px;
@@ -114,6 +118,7 @@
 #container #sidebar #content .anim .animate:hover,
 #container #sidebar #content .bg .background:hover:not(#url),
 #container #sidebar #content .fav .feed:hover,
+#container #sidebar #content .port .view:hover,
 #container #sidebar #content .exclude .option:hover,
 #container #sidebar #content .set .settings:hover,
 #container #sidebar #content .theme:hover {

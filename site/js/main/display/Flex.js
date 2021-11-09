@@ -110,5 +110,4 @@ let Flex = function() {
   else
     _display.style.display = `none`;
 
-
 }

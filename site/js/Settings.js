@@ -692,6 +692,28 @@ if (imageLoader == `v-bars`) {
   loadinganim = false;
 }
 
+if (display == `legacy`) {
+  dual = false;
+  legacy = true;
+  sscroll = false;
+  flex = false;
+} else if (display == `duo`) {
+  dual = true;
+  legacy = false;
+  sscroll = false;
+  flex = false;
+} else if (display == `sideScroll`) {
+  dual = false;
+  legacy = false;
+  sscroll = true;
+  flex = false;
+} else if (display == `flexBox`) {
+  dual = false;
+  legacy = false;
+  sscroll = false;
+  flex = true;
+}
+
 if (loading == `percent`) {
   Dots = false;
   Percent = true;
@@ -776,6 +798,24 @@ const animations = [{
   {
     name: `Progress`,
     class: `Progress`
+  }
+]
+
+const view = [{
+    name: `Duo`,
+    class: `dual`
+  },
+  {
+    name: `Flex Box`,
+    class: `flex`
+  },
+  {
+    name: `Mobile`,
+    class: `legacy`
+  },
+  {
+    name: `Sidescroll`,
+    class: `sscroll`
   }
 ]
 

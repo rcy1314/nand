@@ -2,6 +2,9 @@ let Options = function() {
   sideBarListBuild(`anim`, `animations`, `fa-sync`, `Animations`);
   appendAnimations(`.anim`, `animate`, animations);
 
+  sideBarListBuild(`port`, `viewport`, `fa-columns`, `View`);
+  appendViews(`.port`, `view`, view);
+
   sideBarListBuild(`themes`, `border`, `fa-braille`, `Themes`);
   appendSideBarLists(`.themes`, `theme`, themes);
 

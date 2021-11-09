@@ -46,7 +46,15 @@ let Duo = function() {
     _channel.querySelector(`#bottom`).style.cssText = min;
 
   if (
-    window.innerWidth <= 425
+    window.innerWidth <= 425 &&
+    document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    )
   ) {
     _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
     if (
@@ -109,6 +117,5 @@ let Duo = function() {
 
   else
     _display.style.display = `none`;
-
 
 }
