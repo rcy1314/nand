@@ -470,9 +470,9 @@
   position: absolute;
   z-index: 11;
   bottom: 0;
+  top: 10px;
   right: 0;
   left: 0;
-  top: 0;
 }
 
 #xml .youtube {
