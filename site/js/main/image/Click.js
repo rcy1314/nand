@@ -132,18 +132,6 @@ _container
             new Date().getTime() - tap < 350
           ) {
             if (
-              evt
-              .target
-              .classList
-              .contains(`leave`)
-            ) {
-              evt
-                .target
-                .closest(`.item`)
-                .getAttribute(`ext`)
-                .blank();
-              return false;
-            } else if (
               !evt
               .target
               .classList
@@ -151,22 +139,22 @@ _container
             ) {
               evt
                 .target
-                .closest(`.image`)
-                .querySelector(`.fa-heart`)
+                .closest(`.item`)
+                .querySelector(`.image .fa-heart`)
                 .style
                 .animation =
                 `scale .7s ease-in-out .1s both`;
               evt
                 .target
-                .closest(`.image`)
-                .querySelector(`.fa-heart`)
+                .closest(`.item`)
+                .querySelector(`.image .fa-heart`)
                 .style
                 .display =
                 `block`;
               evt
                 .target
-                .closest(`.image`)
-                .querySelector(`.fa-heart`)
+                .closest(`.item`)
+                .querySelector(`.image .fa-heart`)
                 .style
                 .zIndex =
                 `12`;
@@ -174,21 +162,21 @@ _container
                 function() {
                   evt
                     .target
-                    .closest(`.image`)
-                    .querySelector(`.fa-heart`).style
+                    .closest(`.item`)
+                    .querySelector(`.image .fa-heart`).style
                     .animation =
                     `none`;
                   evt
                     .target
-                    .closest(`.image`)
-                    .querySelector(`.fa-heart`)
+                    .closest(`.item`)
+                    .querySelector(`.image .fa-heart`)
                     .style
                     .display =
                     `none`;
                   evt
                     .target
-                    .closest(`.image`)
-                    .querySelector(`.fa-heart`)
+                    .closest(`.item`)
+                    .querySelector(`.image .fa-heart`)
                     .style
                     .zIndex =
                     `0`;

@@ -83,17 +83,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
     let newImg;
     newImg = new Image();
     newImg.setAttribute(`src`, src);
-    newImg.onerror = function() {
-      itemPending.remove();
-      if (
-        onlyImages
-      )
-        item.remove();
-        copyDownload.style.display = `none`;
-        copyPicture.style.display = `none`;
-        copyPost.style.display = `none`;
-        attribute.style.height = `35px`;
-    };
     newImg.onload = function() {
       let Height;
       let Width;
@@ -137,12 +126,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
                     } else {
-                      Dimensions(
-                        menuObject,
-                        pubIndex,
-                        Height,
-                        Width
-                      )
                       itemImage.setAttribute(`src`, e.target.result);
                       itemFilter.style.transform = `scale(4)`
                       itemPending.style.display = `none`;
@@ -174,10 +157,10 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     onlyImages
                   )
                     item.remove();
-                    copyDownload.style.display = `none`;
-                    copyPicture.style.display = `none`;
-                    copyPost.style.display = `none`;
-                    attribute.style.height = `35px`;
+                  copyDownload.style.display = `none`;
+                  copyPicture.style.display = `none`;
+                  copyPost.style.display = `none`;
+                  attribute.style.height = `35px`;
                 };
                 if (
                   !src.match(/4cdn/g)
@@ -208,12 +191,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemPending.remove();
                     } else {
                       itemPending.remove();
-                      Dimensions(
-                        menuObject,
-                        pubIndex,
-                        Height,
-                        Width
-                      )
                       itemImage.setAttribute(`src`, e.target.result);
                       itemImage.style.display = `block`;
                       setTimeout(
@@ -243,10 +220,10 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     onlyImages
                   )
                     item.remove();
-                    copyDownload.style.display = `none`;
-                    copyPicture.style.display = `none`;
-                    copyPost.style.display = `none`;
-                    attribute.style.height = `35px`;
+                  copyDownload.style.display = `none`;
+                  copyPicture.style.display = `none`;
+                  copyPost.style.display = `none`;
+                  attribute.style.height = `35px`;
                 }
                 if (
                   !src.match(/4cdn/g)
@@ -289,12 +266,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
               itemPending.remove();
             } else {
-              Dimensions(
-                menuObject,
-                pubIndex,
-                Height,
-                Width
-              );
               itemImage.setAttribute(`src`, e.target.result);
               itemImage.style.display = `block`;
               itemPending.remove();
@@ -324,16 +295,59 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
             onlyImages
           )
             item.remove();
-            copyDownload.style.display = `none`;
-            copyPicture.style.display = `none`;
-            copyPost.style.display = `none`;
-            attribute.style.height = `35px`;
+          copyDownload.style.display = `none`;
+          copyPicture.style.display = `none`;
+          copyPost.style.display = `none`;
+          attribute.style.height = `35px`;
         };
         if (
           !src.match(/4cdn/g)
         )
           request.send();
-      };
+      }; //END NEWIMG.ONLOAD
+      if (
+        cropImages &&
+        document
+        .body
+        .contains(
+          itemContainer
+        ) &&
+        window.innerWidth >= 768
+      ) {
+        itemContainer.style.height = `169px`;
+        itemImage.style.height = `169px`;
+        item.style.height = `169px`;
+        itemWrap.style.height = `169px`;
+        itemClassic.style.height = `169px`;
+      } else if (
+        window.innerWidth < 768 &&
+        cropImages
+      ) {
+        itemContainer.style.height = `80px`;
+        itemPending.style.height = `80px`;
+        itemImage.style.height = `80px`;
+        item.style.height = `80px`;
+        itemWrap.style.height = `80px`;
+        itemClassic.style.height = `80px`;
+      }
+
+      if (
+        document
+        .body
+        .contains(
+          itemFilter
+        )
+      )
+        itemFilter.classList.add(`default`);
+
+      if (
+        document
+        .body
+        .contains(
+          itemImage
+        )
+      )
+        itemImage.classList.add(`default`);
     };
     newImg.onerror = function() {
       itemPending.remove();
@@ -346,7 +360,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       copyPost.style.display = `none`;
       attribute.style.height = `35px`;
     };
-  } else {
+  } else { //no src or exempt
     itemPending.remove();
     if (
       onlyImages

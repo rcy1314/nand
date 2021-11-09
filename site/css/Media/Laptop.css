@@ -1,7 +1,11 @@
 @media screen and (min-width: 768px) {
 
+  #xml .item {
+    min-height: 169px !important;
+  }
+
   #xml .classic {
-    min-height: 180px !important;
+    min-height: 169px !important;
   }
 
   .sideChannel {
@@ -10,10 +14,6 @@
 
   #main #option {
     display: none;
-  }
-
-  #xml .item {
-    min-height: 180px !important;
   }
 
   #guide .item {
