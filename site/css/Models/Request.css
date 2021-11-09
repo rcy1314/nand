@@ -336,8 +336,8 @@
 
 .item {
   background-color: var(--color-secondary);
+  border: .3px solid transparent;
   box-shadow: var(--box-shadow);
-  border: var(--border-color);
   margin-bottom: 70px;
 }
 

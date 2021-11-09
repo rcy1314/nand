@@ -37,27 +37,30 @@ _container
               )
             );
           Legacy();
+          setTimeout(
+            function() {
           _channel
             .querySelectorAll(
-              `.item, .classic`
+              `.item, .wrap, .classic`
             )
             .forEach(
-              (a) =>
-              a
-              .style
-              .cssText =
-              `height:${
-                          a
-                            .closest(
-                              `.item`
-                            )
-                              .querySelector(
+              function(a) {
+                if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
+                  a
+                  .style
+                  .cssText =
+                  `height:${
+                            a
+                              .closest(
+                                `.item`
+                              ).querySelector(
                                 `.img`
-                              )
-                                .clientHeight
-                        }px !important`
+                              ).clientHeight
+                          }px !important`
+              }
             )
-
+          }, 1
+        )
           _channel
             .querySelectorAll(
               `.header`
@@ -77,13 +80,15 @@ _container
           display = `flexBox`;
           notifyOption(`Flex Box`, `fa-times-circle`)
           Flex();
+          setTimeout(
+            function() {
           _channel
             .querySelectorAll(
-              `.item, .classic`
+              `.item, .wrap, .classic`
             )
             .forEach(
               function(a) {
-                if (a.querySelector(`.img`).clientHeight > 0)
+                if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
                   a
                   .style
                   .cssText =
@@ -97,7 +102,8 @@ _container
                           }px !important`
               }
             )
-
+          }, 1
+        )
           _channel
             .querySelectorAll(
               `.header`
@@ -163,13 +169,15 @@ _container
             )
           )
             _center.querySelector(`#bottom`).remove();
+          setTimeout(
+            function() {
           _channel
             .querySelectorAll(
-              `.item, .classic`
+              `.item, .wrap, .classic`
             )
             .forEach(
               function(a) {
-                if (a.querySelector(`.img`).clientHeight > 0)
+                if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
                   a
                   .style
                   .cssText =
@@ -183,6 +191,8 @@ _container
                           }px !important`
               }
             )
+          }, 1
+        )
           _channel
             .querySelectorAll(
               `.header`

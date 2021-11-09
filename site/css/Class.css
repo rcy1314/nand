@@ -109,7 +109,6 @@
   height: fit-content;
   position: relative;
   width: 300px !important;
-  left: -310px !important;
 }
 
 .flexbox .item:nth-child(3n+1) {
