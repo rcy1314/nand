@@ -140,9 +140,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             item.style
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
-                            itemWrap.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
                             itemClassic.style
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
@@ -202,9 +199,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           ) {
 
                             item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                            itemWrap.style
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
                             itemClassic.style
@@ -278,9 +272,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     !cropImages
                   ) {
                     item.style
-                      .cssText =
-                      `height:${itemImage.clientHeight}px !important`
-                    itemWrap.style
                       .cssText =
                       `height:${itemImage.clientHeight}px !important`
                     itemClassic.style
