@@ -61,21 +61,42 @@ _container
             )
           }, 1
         )
-          _channel
-            .querySelectorAll(
-              `.header`
-            )
-            .forEach(
-              (a) =>
-              a
-              .style
-              .cssText =
-              `position: relative !important`
-            )
           _main.scrollTop = leaveOff;
         } else if (
+            viewport[cycleViewport] == `duo`
+          ) {
+
+            display = `duo`;
+            notifyOption(`Duo`, `fa-times-circle`)
+            Duo();
+            setTimeout(
+              function() {
+            _channel
+              .querySelectorAll(
+                `.item, .wrap, .classic`
+              )
+              .forEach(
+                function(a) {
+                  if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
+                    a
+                    .style
+                    .cssText =
+                    `height:${
+                              a
+                                .closest(
+                                  `.item`
+                                ).querySelector(
+                                  `.img`
+                                ).clientHeight
+                            }px !important`
+                }
+              )
+            }, 1
+          )
+            _main.scrollTop = 0;
+        } else if (
           viewport[cycleViewport] == `flexBox`
-        ) {
+          ) {
 
           display = `flexBox`;
           notifyOption(`Flex Box`, `fa-times-circle`)
@@ -104,22 +125,8 @@ _container
             )
           }, 1
         )
-          _channel
-            .querySelectorAll(
-              `.header`
-            )
-            .forEach(
-              (a) =>
-              a
-              .style
-              .cssText =
-              `position: absolute !important`
-            )
           _main.scrollTop = 0;
-        } else
-          cycleViewport = 2
-
-        if (
+        } else if (
           viewport[cycleViewport] == `sideScroll`
         ) {
           display = `sideScroll`;
@@ -140,27 +147,6 @@ _container
             );
           Sidescroll();
           _channel.scrollLeft = leaveOff;
-          (function() {
-            function checkPosition() {
-              let elements = _channel.querySelectorAll(`.image`);
-              for (
-                let i = 0; i < elements.length; i++) {
-                if (
-                  elements[i].querySelector(`.img`) &&
-                  elements[i].getBoundingClientRect().left -
-                  _channel.clientWidth <=
-                  _channel.clientWidth - _channel.clientWidth
-                ) {
-                  elements[i].querySelector(`.img`).classList.add(`fade-in-element`);
-                  elements[i].querySelector(`.img`).classList.remove(`hidden`);
-                }
-              }
-            }
-            _channel.addEventListener(
-              `scroll`,
-              checkPosition
-            );
-          })();
           if (
             document
             .body
@@ -193,17 +179,6 @@ _container
             )
           }, 1
         )
-          _channel
-            .querySelectorAll(
-              `.header`
-            )
-            .forEach(
-              (a) =>
-              a
-              .style
-              .cssText =
-              `position:relative !important`
-            )
           if (
             !Reader
           )

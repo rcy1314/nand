@@ -24,7 +24,7 @@ let Sidescroll = function() {
     .forEach(
       (a) =>
       a.classList.remove(
-        `flexbox`
+        `flex`
       )
     );
   _channel
@@ -44,6 +44,18 @@ let Sidescroll = function() {
       a.style.display = `block`
     );
 
+    _channel
+      .querySelectorAll(
+        `.header`
+      )
+      .forEach(
+        (a) =>
+        a
+        .style
+        .cssText =
+        `position:relative !important`
+      )
+
   if (
     window.innerWidth >= 768
   )
@@ -59,6 +71,7 @@ let Sidescroll = function() {
   )
     _center.querySelector(`.bottom`).style.left = `0`;
 
-  _channel.classList.remove(`flexbox`)
+    _channel.classList.remove(`flexbox`)
+    _channel.classList.remove(`duo`)
 
 }

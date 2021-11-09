@@ -1,4 +1,4 @@
-let Flex = function() {
+let Duo = function() {
   display == `flexBox`;
   var height = 0;
   var second = 0;
@@ -13,35 +13,24 @@ let Flex = function() {
     let i = 0; i < column.length - 1; i++
   )
     second += column[i].clientHeight;
-  var column = _channel.querySelectorAll(`.item:nth-child(3n+3)`);
-  for (
-    let i = 0; i < column.length - 1; i++
-  )
-    groups += column[i].clientHeight;
   var max =
     Math.max(
       height,
       second,
-      groups
     );
   var min =
     Math.min(
       height,
       second,
-      groups
     );
   if (
     height == min
   )
-    var min = `order:1`;
+    var min = `order:0`;
   else if (
     second == min
   )
-    var min = `order:2`;
-  else if (
-    groups == min
-  )
-    var min = `order:3`;
+    var min = `order:1`;
 
   if (
     window.innerWidth > 425 &&
@@ -79,7 +68,18 @@ let Flex = function() {
   _channel.style.height = `${(max + 3000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
-  _channel.classList.add(`flexbox`);
+  _channel.classList.remove(`flexbox`);
+  _channel.classList.add(`duo`);
+  _channel
+    .querySelectorAll(
+      `.item`
+    )
+    .forEach(
+      (a) =>
+      a.classList.add(
+        `flex`
+      )
+    );
   _channel
     .querySelectorAll(
       `.item`

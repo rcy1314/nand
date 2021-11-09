@@ -21,9 +21,17 @@
     width: 100%;
   }
 
+  .duo .item {
+    margin: 0 2px 2px 0 !important;
+    height: fit-content !important;
+    width: 212px !important;
+    position: relative;
+  }
+
   .flexbox .yt .image {
     height: 79px !important;
   }
+
 
   .flexbox .item {
     margin: 0 2px 2px 0 !important;

@@ -714,7 +714,7 @@ let expandSettings = false;
 let expandVisual = false;
 let expandFilter = false;
 let cycleViewport // display viewport index
-let viewport = ['legacy', 'flexBox', 'sideScroll']
+let viewport = ['legacy', 'duo', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length
 if (Reader == false) quit = 30;
 else quit = 16;

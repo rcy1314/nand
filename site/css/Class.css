@@ -17,6 +17,32 @@
   backdrop-filter: blur(7px);
 }
 
+.duo {
+  align-content: space-between !important;
+  flex-flow: column wrap !important;
+  display: flex !important;
+}
+
+.duo:before,
+.duo:after {
+  flex-basis: 100% !important;
+  content: "" !important;
+  width: 0 !important;
+  order: 1 !important;
+}
+
+
+.duo .item {
+  margin: 0 2px 2px 0;
+  height: fit-content;
+  position: relative;
+  width: 450px !important;
+}
+
+.duo .item:nth-child(3n) {
+  order: 1;
+}
+
 .expand {
   border-radius: 0 !important;
   font-size: 12px !important;
@@ -103,6 +129,7 @@
   width: 0 !important;
   order: 2 !important;
 }
+
 
 .flexbox .item {
   margin: 0 2px 2px 0;
