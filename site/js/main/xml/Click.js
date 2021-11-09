@@ -56,7 +56,10 @@ _container
           }
           touchmove = true;
           onlyImages = true;
-          cropImages = true;
+          if (
+            window.innerWidth > 425
+          )
+            cropImages = true;
           Random();
           randomDuplicate = [];
           notifyOption(`Reading`, `fa-check-circle`);
