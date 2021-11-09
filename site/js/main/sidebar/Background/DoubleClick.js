@@ -9,11 +9,10 @@ _sidebar
           `urlInput`
         )
       ) {
-
+        onScreen = true;
+        sideBarLock = true;
         navigator.clipboard.readText()
           .then((result) => {
-            onScreen = true;
-            sideBarLock = true;
             _sidebar
               .querySelector(
                 `.urlInput`
