@@ -2,6 +2,8 @@
 --- | --- | --- | --- | --- |
 [<b><em>1.1.1893</em></b>](https://github.com/acktic/nand/releases/tag/1.1.1893 "1.1.1893") | ![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Lines](https://img.shields.io/tokei/lines/github/acktic/nand?color=%2380CD61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> |
 
+<img src='Logo.png'>
+
 ### About
 
   - <em>A Really Simple Syndicate</em>
