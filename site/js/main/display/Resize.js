@@ -36,7 +36,6 @@ window
         )
           _display.style.display = `none`;
 
-      }
     }, {
       passive: true
     }

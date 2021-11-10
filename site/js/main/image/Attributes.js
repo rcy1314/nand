@@ -2,7 +2,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
   count.push(`null`);
   let k = 5420;
   let shrunk = 100;
-  let maximum = 480;
+  let maximum = 280;
   let jsonResponseScore;
   let item = _channel.querySelector(
     `[aria-object='${menuObject}'][aria-item='${pubIndex}']`

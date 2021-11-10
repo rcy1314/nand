@@ -1,10 +1,11 @@
 let Viewport = function() {
   if (
-    display == `flexBox`
+    display == `flexBox` ||
+    display == `duo`
   )
-    offset = 3000
+    offset = 6000
   else
-    offset = 550
+    offset = 5000
 
   cycleViewport =
     viewport
