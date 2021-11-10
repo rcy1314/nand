@@ -61,11 +61,24 @@ _container
             )
           }, 1
         )
+        if (
+          document
+            .body
+              .contains(
+                _channel
+                  .querySelector(
+                    `.item`
+                  )
+              )
+        )
           _main.scrollTop = leaveOff;
+          Star(_sidebar.querySelector(`.dual`), false);
+          Star(_sidebar.querySelector(`.flex`), false);
+          Star(_sidebar.querySelector(`.sscroll`), false);
+          Star(_sidebar.querySelector(`.legacy`), true);
         } else if (
             viewport[cycleViewport] == `duo`
           ) {
-
             display = `duo`;
             notifyOption(`Duo`, `fa-times-circle`)
             Duo();
@@ -93,11 +106,24 @@ _container
               )
             }, 1
           )
+          if (
+            document
+              .body
+                .contains(
+                  _channel
+                    .querySelector(
+                      `.item`
+                    )
+                )
+          )
             _main.scrollTop = 0;
+            Star(_sidebar.querySelector(`.dual`), true);
+            Star(_sidebar.querySelector(`.flex`), false);
+            Star(_sidebar.querySelector(`.sscroll`), false);
+            Star(_sidebar.querySelector(`.legacy`), false);
         } else if (
           viewport[cycleViewport] == `flexBox`
           ) {
-
           display = `flexBox`;
           notifyOption(`Flex Box`, `fa-times-circle`)
           Flex();
@@ -125,28 +151,26 @@ _container
             )
           }, 1
         )
+        if (
+          document
+            .body
+              .contains(
+                _channel
+                  .querySelector(
+                    `.item`
+                  )
+              )
+        )
           _main.scrollTop = 0;
+          Star(_sidebar.querySelector(`.dual`), false);
+          Star(_sidebar.querySelector(`.flex`), true);
+          Star(_sidebar.querySelector(`.sscroll`), false);
+          Star(_sidebar.querySelector(`.legacy`), false);
         } else if (
           viewport[cycleViewport] == `sideScroll`
         ) {
           display = `sideScroll`;
           notifyOption(`Side Scroll`, `fa-check-circle`)
-          let leaveOff = _main.scrollTop +
-            (
-              (
-                parseInt(
-                  document.querySelectorAll(
-                    `.item`
-                  )
-                  .length
-                ) *
-                parseInt(
-                  100
-                )
-              )
-            );
-          Sidescroll();
-          _channel.scrollLeft = leaveOff;
           if (
             document
             .body
@@ -185,8 +209,36 @@ _container
             _channel.append(
               footerBuild(id)
             );
+            let leaveOff = _main.scrollTop +
+              (
+                (
+                  parseInt(
+                    document.querySelectorAll(
+                      `.item`
+                    )
+                    .length
+                  ) *
+                  parseInt(
+                    100
+                  )
+                )
+              );
+            if (
+              document
+                .body
+                  .contains(
+                    _channel
+                      .querySelector(
+                        `.item`
+                      )
+                  )
+            )
+            _channel.scrollLeft = leaveOff;
+            Star(_sidebar.querySelector(`.dual`), false);
+            Star(_sidebar.querySelector(`.flex`), false);
+            Star(_sidebar.querySelector(`.sscroll`), true);
+            Star(_sidebar.querySelector(`.legacy`), false);
         }
-
       }
     }, {
       passive: false

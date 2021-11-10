@@ -34,6 +34,16 @@ _sidebar
           )
         }, 1
       )
+      if (
+        document
+          .body
+            .contains(
+              _channel
+                .querySelector(
+                  `.item`
+                )
+            )
+      )
         _main.scrollTop = 0;
         Star(evt.target, true);
         Star(_sidebar.querySelector(`.flex`), false);
@@ -61,6 +71,16 @@ _sidebar
             )
           );
         Sidescroll();
+        if (
+          document
+            .body
+              .contains(
+                _channel
+                  .querySelector(
+                    `.item`
+                  )
+              )
+        )
         _channel.scrollLeft = leaveOff;
         if (
           document
@@ -151,6 +171,16 @@ _sidebar
           )
         }, 1
       )
+      if (
+        document
+          .body
+            .contains(
+              _channel
+                .querySelector(
+                  `.item`
+                )
+            )
+      )
         _main.scrollTop = leaveOff;
         Star(evt.target, true);
         Star(_sidebar.querySelector(`.flex`), false);
@@ -187,6 +217,16 @@ _sidebar
             }
           )
         }, 1
+      )
+      if (
+        document
+          .body
+            .contains(
+              _channel
+                .querySelector(
+                  `.item`
+                )
+            )
       )
         _main.scrollTop = 0;
         Star(evt.target, true);
