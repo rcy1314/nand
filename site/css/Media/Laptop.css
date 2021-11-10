@@ -8,6 +8,14 @@
     min-height: 169px !important;
   }
 
+  .duo .item {
+    min-height: 340px !important;
+  }
+
+  .duo .classic {
+    min-height: 340px !important;
+  }
+
   .sideChannel {
     top: 60px !important;
   }
