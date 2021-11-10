@@ -95,6 +95,7 @@ let URI = function() {
               cyrb53(item.uri) == id ||
               cyrb53(item.id) == id
             )
+            console.log(i)
           if (
             i !== -1
           )
