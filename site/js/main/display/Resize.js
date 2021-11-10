@@ -23,51 +23,6 @@ window
           Flex();
         }
 
-        if (
-          window.innerWidth <= 768 &&
-          window.innerWidth > 425
-        ) {
-          _display.style.display = `none`;
-          display = `legacy`;
-          Legacy();
-        }
-
-        if (
-          window.innerWidth >= 769
-        ) {
-          _main
-            .querySelector(
-              `#option`
-            )
-            .style
-            .display = `none`;
-          display = `flexBox`;
-          Flex()
-          setTimeout(
-            function() {
-          _channel
-            .querySelectorAll(
-              `.item, .wrap, .classic`
-            )
-            .forEach(
-              function(a) {
-                if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                  a
-                  .style
-                  .cssText =
-                  `height:${
-                            a
-                              .closest(
-                                `.item`
-                              ).querySelector(
-                                `.img`
-                              ).clientHeight
-                          }px !important`
-              }
-            )
-          }, 1
-        )
-        _channel.style.top = `60px`;
         } else if (
           window.innerWidth >= 1280
 
