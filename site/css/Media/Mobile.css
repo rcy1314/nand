@@ -16,14 +16,15 @@
 
   #xml .item {
     box-shadow: none !important;
-    min-height: 77px !important;
     border: none !important;
+    min-height: 77px;
     width: 100%;
   }
 
   .duo .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
+    min-height: 160px !important;
     width: 212px !important;
     position: relative;
   }
@@ -79,7 +80,11 @@
 
   #toggle,
   .expand .des,
+  .duo .item .pub,
+  .duo .item .ago,
+  .duo .item .wrap,
   .btn .flip-front,
+  .duo .item .header,
   #main #xml .content,
   #main #top #arm #option,
   #main #xml .center #quick,
