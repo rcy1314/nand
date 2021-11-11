@@ -39,7 +39,7 @@
   width: 450px !important;
 }
 
-.duo .item:nth-child(3n) {
+.duo .item:nth-child(2n) {
   order: 1;
 }
 
