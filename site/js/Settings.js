@@ -113,7 +113,8 @@ let showOption = true;
       Result
         `sideScroll`,
         `flexBox`,
-        `legacy`
+        `legacy`,
+        `duo`
 
 */
 

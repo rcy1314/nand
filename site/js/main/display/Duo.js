@@ -84,7 +84,7 @@ let Duo = function() {
     )
     .forEach(
       (a) =>
-      a.classList.add(
+      a.classList.remove(
         `flex`
       )
     );
