@@ -7,6 +7,7 @@ var Request = function(index) {
   stop = true;
   images = [];
   let inline = [];
+  console.log(index);
   imageDuplicate = [];
   _sb.style.display = `none`;
   _toggle.style.display = `none`;

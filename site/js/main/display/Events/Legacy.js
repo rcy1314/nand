@@ -77,8 +77,8 @@ _container
           Star(_sidebar.querySelector(`.sscroll`), false);
           Star(_sidebar.querySelector(`.legacy`), true);
         }
-
-      }, {
-        passive: false
       }
-    );
+    }, {
+      passive: false
+    }
+  );

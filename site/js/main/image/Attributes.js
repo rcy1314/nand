@@ -301,12 +301,18 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       }; //END NEWIMG.ONLOAD
       if (
         cropImages &&
-        document
-        .body
-        .contains(
-          itemContainer
-        ) &&
-        window.innerWidth >= 768
+        window.innerWidth >= 768 &&
+        display == `duo`
+      ) {
+        itemContainer.style.height = `300px`;
+        itemImage.style.height = `300px`;
+        item.style.height = `300px`;
+        itemWrap.style.height = `300px`;
+        itemClassic.style.height = `300px`;
+      } else if (
+        cropImages &&
+        window.innerWidth >= 768 &&
+        display == `flexBox`
       ) {
         itemContainer.style.height = `169px`;
         itemImage.style.height = `169px`;
