@@ -304,11 +304,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         window.innerWidth >= 768 &&
         display == `duo`
       ) {
-        itemContainer.style.height = `300px`;
-        itemImage.style.height = `300px`;
-        item.style.height = `300px`;
-        itemWrap.style.height = `300px`;
-        itemClassic.style.height = `300px`;
+        itemContainer.style.height = `340px`;
+        itemImage.style.height = `340px`;
+        item.style.height = `340px`;
+        itemWrap.style.height = `340px`;
+        itemClassic.style.height = `340px`;
       } else if (
         cropImages &&
         window.innerWidth >= 768 &&
