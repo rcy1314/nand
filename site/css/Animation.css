@@ -226,6 +226,10 @@
   animation: notify 4s forwards ease-in-out;
 }
 
+.notifyEnd {
+  animation: notifyEnd 250ms forwards linear;
+}
+
 .rotate {
   animation: rotation .25s ease-in-out 1 forwards;
   transform: rotate(180deg);
@@ -369,6 +373,29 @@
   }
 
   100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes notifyEnd {
+  0% {
+    opacity: 100;
+  }
+
+  25% {
+    opacity: 75;
+  }
+
+  50% {
+    opacity: 50;
+  }
+
+  75% {
+    opacity: 25;
+  }
+
+  100% {
+    bottom: 90px;
     opacity: 0;
   }
 }
