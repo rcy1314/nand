@@ -223,6 +223,8 @@ html body,
 
 #container #notify {
   background-color: var(--hover-background-color);
+  box-shadow: var(--box-shadow) !important;
+  border: var(--border-color);
   color: var(--fill-color);
   justify-content: center;
   border-radius: 10px;
