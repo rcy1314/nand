@@ -17,8 +17,12 @@
   #xml .item {
     box-shadow: none !important;
     border: none !important;
-    min-height: 77px;
+    min-height: 240px;
     width: 100%;
+  }
+
+  #xml .classic {
+    min-height: 240px;
   }
 
   .duo .item {
@@ -37,6 +41,7 @@
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
+    min-height: 77px !important;
     width: 140px !important;
     position: relative;
   }
