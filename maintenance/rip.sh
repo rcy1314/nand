@@ -3,7 +3,7 @@
 #curl -q -s "https://raw.githubusercontent.com/acktic/xml-sites-array/master/head.js" | grep uri | awk '{print $2}' | tr -d ',' | tr -d '"' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Minified
-curl -q -s "https://acktic.github.io/nand/site/js/main/Assets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
+curl -q -s "https://acktic.github.io/xml-sites-array/Assets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
 #{id:`Smashing Magazine`,category:`Tech`,title:``,description:`Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web development.`,uri:`https://www.smashingmagazine.com/feed`,image:`SmashingMagazine`,hash:`zS`,media:!0},
