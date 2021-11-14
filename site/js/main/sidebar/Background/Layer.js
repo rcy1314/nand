@@ -10,6 +10,7 @@ _sidebar
           `containerBackground`
         )
       ) {
+        console.log(_container.style.backgroundImage)
         if (
           _container
           .style
@@ -19,7 +20,7 @@ _sidebar
           _main
             .style
             .backgroundImage =
-            `url(${backgroundImage[0].path})`
+            _container.style.backgroundImage
           _container
             .style
             .backgroundImage =
@@ -33,7 +34,7 @@ _sidebar
           _container
             .style
             .backgroundImage =
-            `url(${backgroundImage[0].path})`
+            _main.style.backgroundImage
           _main
             .style
             .backgroundImage =
