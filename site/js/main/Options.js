@@ -42,6 +42,7 @@ let Options = function() {
     _content.style.position = `relative`;
 
   if (
+    window.innerWidth > 425 &&
     sideBarBackdrop
   ) {
     _sidebar
