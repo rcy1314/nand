@@ -130,22 +130,22 @@
   order: 2 !important;
 }
 
-.flexbox .item {
+.flex {
   margin: 0 2px 2px 0;
   height: fit-content;
   position: relative;
   width: 300px !important;
 }
 
-.flexbox .item:nth-child(3n+1) {
+.flex:nth-child(3n+1) {
   order: 1;
 }
 
-.flexbox .item:nth-child(3n+2) {
+.flex:nth-child(3n+2) {
   order: 2;
 }
 
-.flexbox .item:nth-child(3n) {
+.flex:nth-child(3n) {
   order: 3;
 }
 

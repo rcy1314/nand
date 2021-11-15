@@ -96,7 +96,7 @@ let Flex = function() {
         `80px`
       );
   }
-  
+
   if (
     document
     .body
@@ -117,8 +117,7 @@ let Flex = function() {
     )
     .forEach(
       (a) =>
-      a.style.marginLeft =
-      `0`
+      a.classList.add(`flex`)
     );
 
   _channel
