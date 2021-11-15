@@ -32,7 +32,7 @@ let Duo = function() {
     second == min
   )
     var min = `order:1`;
-    
+
   if (
     window.innerWidth > 425 &&
     document
@@ -71,8 +71,7 @@ let Duo = function() {
         a.style.height =
         `80px`
       );
-    _center.style.cssText = `display:inline-flex;width:930px`;
-  } else _center.style.cssText = `display:inline-flex;width:930px`;
+  }
 
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);

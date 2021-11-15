@@ -96,8 +96,7 @@ let Flex = function() {
         a.style.height =
         `80px`
       );
-    _center.style.cssText = `display:inline-flex;width:930px`;
-  } else _center.style.cssText = `display:inline-flex;width:930px`;
+  }
 
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
