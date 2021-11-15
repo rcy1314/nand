@@ -163,9 +163,10 @@
     width: 100% !important;
   }
 
-  .img,
-  .image,
-  .pending {
+  #xml .img,
+  #xml .image,
+  #xml .pending {
+    width: 100% !important;
     margin: 0 !important;
   }
 
