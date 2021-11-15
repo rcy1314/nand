@@ -142,7 +142,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
                           }
-                        }, 300
+                        }, 1
                       )
                     };
                   }
@@ -201,7 +201,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             .cssText =
                             `height:${itemImage.clientHeight}px !important`
                         }
-                      }, 300
+                      }, 1
                     )
                   }
                 }
@@ -272,7 +272,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     .cssText =
                     `height:${itemImage.clientHeight}px !important`
                 }
-              }, 300
+              }, 1
             )
           }
         }

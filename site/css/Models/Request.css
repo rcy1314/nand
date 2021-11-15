@@ -308,11 +308,6 @@
   width: 100%;
 }
 
-#main #xml .center .item .img, {
-  display: none !important;
-  width: 100%;
-}
-
 #main #xml .center .item .img,
 #main #xml .center .item .image {
   background-color: transparent;
@@ -325,6 +320,11 @@
   display: flex;
   right: 0;
   left: 0;
+}
+
+#main #xml .center .item .img {
+  display: none !important;
+  width: 100%;
 }
 
 .info {
