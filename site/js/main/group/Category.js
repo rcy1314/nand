@@ -84,15 +84,7 @@ let Category = function(translation) {
 
   Expand(expand);
 
-  if (
-    !onlyImages
-  )
-    Reverse(translation);
-
-  else {
-    _air.style.paddingBottom = 0;
-    unloading();
-  }
+  Reverse(translation);
 
   main.setAttribute(`tabindex`, -1);
   Topbar(topBar);
