@@ -135,6 +135,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       setTimeout(
                         function() {
                           if (
+                            window.innerWidth > 425 &&
                             !cropImages
                           ) {
                             item.style
@@ -195,6 +196,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       setTimeout(
                         function() {
                           if (
+                            window.innerWidth > 425 &&
                             !cropImages
                           ) {
 
@@ -269,6 +271,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               setTimeout(
                 function() {
                   if (
+                    window.innerWidth > 425 &&
                     !cropImages
                   ) {
                     item.style
