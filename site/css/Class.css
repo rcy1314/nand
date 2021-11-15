@@ -224,6 +224,7 @@
 }
 
 .sideItem {
+  min-height: 300px !important;
   width: 320px !important;
   display: inline-table;
   margin-right: 50px;
