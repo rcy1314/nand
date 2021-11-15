@@ -1,5 +1,6 @@
 let Sidescroll = function() {
   display == `sideScroll`;
+  offset = 1000;
   scrollIntoViewBuffer = scrollIntoView;
   scrollIntoView = false;
 

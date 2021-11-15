@@ -1,36 +1,6 @@
 let Duo = function() {
   display == `flexBox`;
-  var height = 0;
-  var second = 0;
-  var groups = 0;
-  var column = _channel.querySelectorAll(`.item:nth-child(3n+1)`);
-  for (
-    let i = 0; i < column.length - 1; i++
-  )
-    height += column[i].clientHeight;
-  var column = _channel.querySelectorAll(`.item:nth-child(3n+2)`);
-  for (
-    let i = 0; i < column.length - 1; i++
-  )
-    second += column[i].clientHeight;
-  var max =
-    Math.max(
-      height,
-      second,
-    );
-  var min =
-    Math.min(
-      height,
-      second,
-    );
-  if (
-    height == min
-  )
-    var min = `order:0`;
-  else if (
-    second == min
-  )
-    var min = `order:1`;
+  offset = 999999999;
 
   if (
     window.innerWidth > 425 &&
@@ -73,7 +43,6 @@ let Duo = function() {
     _center.style.cssText = `display:inline-flex;width:930px`;
   } else _center.style.cssText = `display:inline-flex;width:930px`;
 
-  _channel.style.height = `${(max + 5000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);

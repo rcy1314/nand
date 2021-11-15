@@ -21,6 +21,7 @@
   align-content: space-between !important;
   flex-flow: column wrap !important;
   display: flex !important;
+  height: 999999999px !important
 }
 
 .duo:before,
@@ -120,6 +121,7 @@
   align-content: space-between !important;
   flex-flow: column wrap !important;
   display: flex !important;
+  height: 999999999px !important
 }
 
 .flexbox:before,

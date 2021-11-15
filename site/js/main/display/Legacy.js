@@ -1,5 +1,6 @@
 let Legacy = function() {
   display == `legacy`;
+  offset = 1000;
   _center.style.cssText = `justify-content:center !important`;
   _channel.classList.remove(`sideChannel`);
   _center.style.display = `inline-block`;
