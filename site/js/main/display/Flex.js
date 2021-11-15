@@ -42,7 +42,21 @@ let Flex = function() {
     groups == min
   )
     var min = `order:3`;
-
+  if (
+    !document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    )
+      &&
+    !Reader
+  )
+    _channel.append(
+      footerBuild(id)
+    );
   if (
     window.innerWidth > 425 &&
     document
@@ -56,8 +70,16 @@ let Flex = function() {
   )
     _channel.querySelector(`#bottom`).style.cssText = min;
 
-  if (
-    window.innerWidth <= 425
+  else if (
+    window.innerWidth <= 425 &&
+    document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    )
   ) {
     _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
     if (
@@ -86,7 +108,7 @@ let Flex = function() {
       )
     )
   )
-  _channel.style.height = `${(max + 3000).toString()}px`
+    _channel.style.height = `${(max + 3000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);
@@ -100,17 +122,17 @@ let Flex = function() {
       `0`
     );
 
-    _channel
-      .querySelectorAll(
-        `.header`
-      )
-      .forEach(
-        (a) =>
-        a
-        .style
-        .cssText =
-        `position: absolute !important`
-      )
+  _channel
+    .querySelectorAll(
+      `.header`
+    )
+    .forEach(
+      (a) =>
+      a
+      .style
+      .cssText =
+      `position: absolute !important`
+    )
 
   if (
     window.innerWidth > 1280

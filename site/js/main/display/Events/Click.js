@@ -179,6 +179,7 @@ _container
             )
           )
             _center.querySelector(`#bottom`).remove();
+          Sidescroll();
           setTimeout(
             function() {
               _channel
@@ -203,12 +204,6 @@ _container
                 )
             }, 1
           )
-          if (
-            !Reader
-          )
-            _channel.append(
-              footerBuild(id)
-            );
           let leaveOff = _main.scrollTop +
             (
               (
