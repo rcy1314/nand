@@ -138,7 +138,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             !cropImages
                           ) {
                             item.style
-                              .height = `${itemImage.clientHeight}px`
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
                           }
                         }, 1
                       )
@@ -195,7 +196,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           !cropImages
                         ) {
                           item.style
-                            .height = `${itemImage.clientHeight}px`
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
                         }
                       }, 1
                     )
@@ -264,7 +266,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !cropImages
                 ) {
                   item.style
-                    .height = `${itemImage.clientHeight}px`
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
                 }
               }, 1
             )
@@ -288,31 +291,34 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       }; //END NEWIMG.ONLOAD
       if (
         cropImages &&
+        window.innerWidth >= 768 &&
         display == `duo`
       ) {
-        itemContainer.style.height = `340px`;
-        itemImage.style.height = `340px`;
-        item.style.height = `340px`;
-        itemWrap.style.height = `340px`;
-        itemClassic.style.height = `340px`;
+        itemContainer.style.cssText = `height:340px !important`;
+        itemImage.style.cssText = `height:340px !important`;
+        item.style.cssText = `height:340px !important`;
+        itemWrap.style.cssText = `height:340px !important`;
+        itemClassic.style.cssText = `height:340px !important`;
       } else if (
         cropImages &&
+        window.innerWidth >= 768 &&
         display == `flexBox`
       ) {
-        itemContainer.style.height = `169px`;
-        itemImage.style.height = `169px`;
-        item.style.height = `169px`;
-        itemWrap.style.height = `169px`;
-        itemClassic.style.height = `169px`;
+        itemContainer.style.cssText = `height:169px !important`;
+        itemImage.style.cssText = `height:169px !important`;
+        item.style.cssText = `height:169px !important`;
+        itemWrap.style.cssText = `height:169px !important`;
+        itemClassic.style.cssText = `height:169px !important`;
       } else if (
+        window.innerWidth < 768 &&
         cropImages
       ) {
-        itemContainer.style.height = `80px`;
-        itemPending.style.height = `80px`;
-        itemImage.style.height = `80px`;
-        item.style.height = `80px`;
-        itemWrap.style.height = `80px`;
-        itemClassic.style.height = `80px`;
+        itemContainer.style.cssText = `height:80px !important`;
+        itemPending.style.cssText = `height:80px !important`;
+        itemImage.style.cssText = `height:80px !important`;
+        item.style.cssText = `height:80px !important`;
+        itemWrap.style.cssText = `height:80px !important`;
+        itemClassic.style.cssText = `height:80px !important`;
       }
 
       if (
