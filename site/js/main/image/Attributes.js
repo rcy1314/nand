@@ -132,6 +132,20 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        function() {
+                          if (
+                            !cropImages
+                          ) {
+                            item.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                            itemClassic.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                          }
+                        }, 300
+                      )
                     };
                   }
                 }
@@ -179,6 +193,20 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemImage.setAttribute(`src`, e.target.result);
                       itemImage.style.display = `block`;
                     };
+                    setTimeout(
+                      function() {
+                        if (
+                          !cropImages
+                        ) {
+                          item.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                          itemClassic.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                        }
+                      }, 300
+                    )
                   }
                 }
                 request.onerror = function(e) {
@@ -238,6 +266,20 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               itemImage.style.display = `block`;
               itemPending.remove();
             }
+            setTimeout(
+              function() {
+                if (
+                  !cropImages
+                ) {
+                  item.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
+                  itemClassic.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
+                }
+              }, 300
+            )
           }
         }
         request.onerror = function(e) {

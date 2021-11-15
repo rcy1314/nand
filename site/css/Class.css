@@ -20,8 +20,8 @@
 .duo {
   align-content: space-between !important;
   flex-flow: column wrap !important;
+  height: 999999999px !important;
   display: flex !important;
-  height: 999999999px !important
 }
 
 .duo:before,
@@ -120,8 +120,8 @@
 .flexbox {
   align-content: space-between !important;
   flex-flow: column wrap !important;
+  height: 999999999px !important;
   display: flex !important;
-  height: 999999999px !important
 }
 
 .flexbox:before,

@@ -6,6 +6,8 @@
     bottom: 0;
   }
 
+
+
   #load {
     margin-bottom: 10px;
   }
@@ -15,10 +17,14 @@
   }
 
   #xml .item {
+    min-height: 240px !important;
     box-shadow: none !important;
     border: none !important;
-    min-height: 240px;
     width: 100%;
+  }
+
+  #xml .classic {
+    min-height: 240px !important;
   }
 
   .duo .item {

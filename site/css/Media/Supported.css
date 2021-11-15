@@ -1,23 +1,7 @@
 @media screen and (min-width: 769px) {
 
-  #xml .classic {
-    height: 169px !important;
-  }
-
-  .center {
-    width: 420px;
-  }
-
-  .content {
-	  display: none;
-  }
-
   #arm {
     width: 100%;
-  }
-
-  #just {
-    left: 290px !important;
   }
 
   #main #option {
