@@ -137,9 +137,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           if (
                             !cropImages
                           ) {
-                            item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
                             itemClassic.style
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
@@ -197,10 +194,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           if (
                             !cropImages
                           ) {
-
-                            item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
                             itemClassic.style
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
@@ -271,9 +264,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   if (
                     !cropImages
                   ) {
-                    item.style
-                      .cssText =
-                      `height:${itemImage.clientHeight}px !important`
                     itemClassic.style
                       .cssText =
                       `height:${itemImage.clientHeight}px !important`
