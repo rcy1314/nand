@@ -52,7 +52,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
   } else if (
     !src ||
     src == `null` ||
-    src.match(/\.webm|\.mp4/g)
+    src.match(/\.webm|\.mp4|\.gif/g)
   ) {
     if (
       itemContainer
@@ -140,11 +140,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             item.style
                               .cssText =
                               `height:${itemImage.clientHeight}px !important`
-                            itemClassic.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
                           }
-                        }, 300
+                        }, 1
                       )
                     };
                   }
@@ -201,11 +198,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           item.style
                             .cssText =
                             `height:${itemImage.clientHeight}px !important`
-                          itemClassic.style
-                            .cssText =
-                            `height:${itemImage.clientHeight}px !important`
                         }
-                      }, 300
+                      }, 1
                     )
                   }
                 }
@@ -274,11 +268,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   item.style
                     .cssText =
                     `height:${itemImage.clientHeight}px !important`
-                  itemClassic.style
-                    .cssText =
-                    `height:${itemImage.clientHeight}px !important`
                 }
-              }, 300
+              }, 1
             )
           }
         }

@@ -17,7 +17,7 @@
   }
 
   #xml .item {
-    min-height: 240px !important;
+    min-height: 80px !important;
     box-shadow: none !important;
     border: none !important;
     width: 100%;
