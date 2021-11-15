@@ -108,7 +108,6 @@ let Flex = function() {
       )
     )
   )
-    _channel.style.height = `${(_channel.clientHeight + 4000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);
