@@ -323,7 +323,7 @@
 }
 
 #main #xml .center .item .img {
-  visibility: hidden !important;
+  display: flex !important;
   width: 100%;
 }
 
