@@ -6,8 +6,6 @@
     bottom: 0;
   }
 
-
-
   #load {
     margin-bottom: 10px;
   }
@@ -23,7 +21,7 @@
     width: 100%;
   }
 
-  #xml .classic {
+  #xml .classic:not(.flexbox .classic) {
     min-height: 240px !important;
   }
 
@@ -46,6 +44,10 @@
     min-height: 77px !important;
     width: 140px !important;
     position: relative;
+  }
+
+  .flexbox .item .classic {
+    min-height: 77px !important;
   }
 
   .flexbox .item .header {
