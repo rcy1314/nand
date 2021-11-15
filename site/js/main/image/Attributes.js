@@ -132,17 +132,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
-                      setTimeout(
-                        function() {
-                          if (
-                            !cropImages
-                          ) {
-                            item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                          }
-                        }, 1
-                      )
                     };
                   }
                 }
@@ -190,17 +179,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemImage.setAttribute(`src`, e.target.result);
                       itemImage.style.display = `block`;
                     };
-                    setTimeout(
-                      function() {
-                        if (
-                          !cropImages
-                        ) {
-                          item.style
-                            .cssText =
-                            `height:${itemImage.clientHeight}px !important`
-                        }
-                      }, 1
-                    )
                   }
                 }
                 request.onerror = function(e) {
@@ -260,17 +238,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               itemImage.style.display = `block`;
               itemPending.remove();
             }
-            setTimeout(
-              function() {
-                if (
-                  !cropImages
-                ) {
-                  item.style
-                    .cssText =
-                    `height:${itemImage.clientHeight}px !important`
-                }
-              }, 1
-            )
           }
         }
         request.onerror = function(e) {
@@ -291,7 +258,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       }; //END NEWIMG.ONLOAD
       if (
         cropImages &&
-        window.innerWidth >= 768 &&
         display == `duo`
       ) {
         itemContainer.style.cssText = `height:340px !important`;
@@ -301,7 +267,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemClassic.style.cssText = `height:340px !important`;
       } else if (
         cropImages &&
-        window.innerWidth >= 768 &&
         display == `flexBox`
       ) {
         itemContainer.style.cssText = `height:169px !important`;
@@ -310,7 +275,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemWrap.style.cssText = `height:169px !important`;
         itemClassic.style.cssText = `height:169px !important`;
       } else if (
-        window.innerWidth < 768 &&
         cropImages
       ) {
         itemContainer.style.cssText = `height:80px !important`;
