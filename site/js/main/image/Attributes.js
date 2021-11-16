@@ -127,12 +127,25 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.style.display = `none`;
                     } else {
-                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemImage.setAttribute(`src`, e.target.result);
                       itemFilter.style.transform = `scale(4)`
                       itemPending.style.display = `none`;
                       itemImage.style.display = `block`;
                       itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        function() {
+                          if (
+                            !cropImages
+                          ) {
+                            item.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                            itemContainer.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                          }
+                        }, 1
+                      )
                     };
                   }
                 }
@@ -176,11 +189,24 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.style.display = `none`;
                     } else {
-                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                      itemImage.setAttribute(`src`, e.target.result);
                       itemPending.style.display = `none`;
+                      itemImage.setAttribute(`src`, e.target.result);
                       itemImage.style.display = `block`;
                     };
+                    setTimeout(
+                      function() {
+                        if (
+                          !cropImages
+                        ) {
+                          item.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                          itemContainer.style
+                            .cssText =
+                            `height:${itemImage.clientHeight}px !important`
+                        }
+                      }, 1
+                    )
                   }
                 }
                 request.onerror = function(e) {
@@ -236,11 +262,24 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
               itemPending.style.display = `none`;
             } else {
-              itemContainer.style.backgroundImage = `url(${e.target.result})`;
               itemImage.setAttribute(`src`, e.target.result);
               itemImage.style.display = `block`;
               itemPending.style.display = `none`;
             }
+            setTimeout(
+              function() {
+                if (
+                  !cropImages
+                ) {
+                  item.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
+                  itemContainer.style
+                    .cssText =
+                    `height:${itemImage.clientHeight}px !important`
+                }
+              }, 1
+            )
           }
         }
         request.onerror = function(e) {
