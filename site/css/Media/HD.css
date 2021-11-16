@@ -52,4 +52,8 @@
     left: 0;
   }
 
+  .item:not(.flexbox .item):not(.duo .item) {
+    margin-bottom: 70px !important;
+  }
+
 }

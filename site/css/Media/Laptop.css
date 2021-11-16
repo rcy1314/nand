@@ -21,19 +21,27 @@
   }
 
   .duo .item {
-    min-height: 340px !important;
+    min-height: 160px !important;
   }
 
   .duo .classic {
-    min-height: 340px !important;
+    min-height: 160px !important;
   }
 
   .sideChannel {
     top: 60px !important;
   }
 
+  .sideItem {
+    min-height: 170px !important;
+  }
+
   #main #option {
     display: none;
+  }
+
+  #xml .item:not(.flexbox .item) {
+    width: 420px;
   }
 
   #guide .item {

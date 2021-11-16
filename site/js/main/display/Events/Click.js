@@ -26,22 +26,22 @@ _container
             function() {
               _channel
                 .querySelectorAll(
-                  `.item, .wrap, .classic`
+                  `.item, .wrap, .image, .classic`
                 )
                 .forEach(
                   function(a) {
                     if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
                       a
                       .style
-                      .cssText =
-                      `height:${
+                      .height =
+                      `${
                               a
                                 .closest(
                                   `.item`
                                 ).querySelector(
                                   `.img`
                                 ).clientHeight
-                            }px !important`
+                            }px`
                   }
                 )
             }, 1
@@ -71,22 +71,22 @@ _container
             function() {
               _channel
                 .querySelectorAll(
-                  `.item, .wrap, .classic`
+                  `.item, .wrap, .image, .classic`
                 )
                 .forEach(
                   function(a) {
                     if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
                       a
                       .style
-                      .cssText =
-                      `height:${
+                      .height =
+                      `${
                           a
                             .closest(
                               `.item`
                             ).querySelector(
                               `.img`
                             ).clientHeight
-                        }px !important`
+                        }px`
                   }
                 )
             }, 1
@@ -131,22 +131,22 @@ _container
             function() {
               _channel
                 .querySelectorAll(
-                  `.item, .wrap, .classic`
+                  `.item, .wrap, .image, .classic`
                 )
                 .forEach(
                   function(a) {
                     if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
                       a
                       .style
-                      .cssText =
-                      `height:${
+                      .height =
+                      `${
                         a
                           .closest(
                             `.item`
                           ).querySelector(
                             `.img`
                           ).clientHeight
-                      }px !important`
+                      }px`
                   }
                 )
             }, 1
@@ -184,22 +184,22 @@ _container
             function() {
               _channel
                 .querySelectorAll(
-                  `.item, .wrap, .classic`
+                  `.item, .wrap, .image, .classic`
                 )
                 .forEach(
                   function(a) {
                     if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
                       a
                       .style
-                      .cssText =
-                      `height:${
+                      .height =
+                      `${
                       a
                         .closest(
                           `.item`
                         ).querySelector(
                           `.img`
                         ).clientHeight
-                    }px !important`
+                    }px`
                   }
                 )
             }, 1

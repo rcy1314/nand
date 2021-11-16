@@ -39,14 +39,6 @@ let Bootup = function() {
                       _check.classList.remove(`margin`);
                       _check.style.display = `none`;
                       if (
-                        window.innerWidth <= 425
-                      )
-                        _main
-                        .querySelector(
-                          `#option`
-                        )
-                        .style.cssText = `display:flex !important`;
-                      if (
                         !document
                         .body
                         .contains(

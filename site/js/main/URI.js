@@ -126,14 +126,6 @@ let URI = function() {
         Filter(uri);
       }, 250
     );
-    if (
-      window.innerWidth <= 425
-    )
-      _main
-      .querySelector(
-        `#option`
-      )
-      .style.cssText = `display:flex !important`;
   } else if (
     isNaN(
       parseFloat(

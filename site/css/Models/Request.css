@@ -74,7 +74,6 @@
   font-size: 12px;
   display: flex;
   height: 5em;
-  width: 100%;
 }
 
 .channel::-webkit-scrollbar {
@@ -117,6 +116,7 @@
 .btn,
 .bottom {
   display: inline-block;
+  white-space: nowrap;
   outline: 0;
   cursor: pointer;
   transition: box-shadow 0.15s ease,transform 0.15s ease;
@@ -336,7 +336,6 @@
 .item {
   background-color: var(--color-secondary);
   border: .3px solid transparent;
-  box-shadow: var(--box-shadow);
   margin-bottom: 70px;
 }
 
