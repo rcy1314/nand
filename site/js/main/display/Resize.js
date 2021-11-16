@@ -13,24 +13,9 @@ window
         if (
           window.innerWidth <= 425
         ) {
-          _main
-            .querySelector(
-              `#option`
-            )
-            .style
-            .display = `inline-flex`;
           display = `flexBox`;
           Flex();
         }
-
-      } else if (
-        window.innerWidth > 425
-
-      ) {
-        _main
-          .querySelector(
-            `#option`
-          ).style.display = `none`;
 
       } else if (
         window.innerWidth >= 1280

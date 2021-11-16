@@ -1,5 +1,9 @@
 @media (min-width: 426px) and (max-width: 767px) {
 
+  #mobileOption {
+    display: none;
+  }
+
   #xml .classic {
     height: 169px !important;
   }

@@ -241,7 +241,8 @@ html body,
   right: 20px;
 }
 
-#option {
+#option,
+#mobileOption {
   justify-content: space-between;
   background-color: transparent;
   color: var(--fill-color);
