@@ -124,7 +124,24 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk ||
                       Reader
                     ) {
-                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      itemImage.setAttribute(`src`, e.target.result);
+                      setTimeout(
+                        function() {
+                          if (
+                            !cropImages
+                          ) {
+                            item.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                            itemClassic.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                            itemContainer.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                          }
+                        }, 1
+                      )
                       itemPending.remove();
                     } else {
                       itemImage.setAttribute(`src`, e.target.result);
@@ -188,7 +205,24 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk ||
                       Reader
                     ) {
-                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      itemImage.setAttribute(`src`, e.target.result);
+                      setTimeout(
+                        function() {
+                          if (
+                            !cropImages
+                          ) {
+                            item.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                            itemClassic.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                            itemContainer.style
+                              .cssText =
+                              `height:${itemImage.clientHeight}px !important`
+                          }
+                        }, 1
+                      )
                       itemPending.remove();
                     } else {
                       itemPending.remove();
@@ -263,7 +297,24 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               Height < shrunk ||
               Reader
             ) {
-              itemContainer.style.backgroundImage = `url(${e.target.result})`;
+              itemImage.setAttribute(`src`, e.target.result);
+              setTimeout(
+                function() {
+                  if (
+                    !cropImages
+                  ) {
+                    item.style
+                      .cssText =
+                      `height:${itemImage.clientHeight}px !important`
+                    itemClassic.style
+                      .cssText =
+                      `height:${itemImage.clientHeight}px !important`
+                    itemContainer.style
+                      .cssText =
+                      `height:${itemImage.clientHeight}px !important`
+                  }
+                }, 1
+              )
               itemPending.remove();
             } else {
               itemImage.setAttribute(`src`, e.target.result);
