@@ -3,7 +3,7 @@ let Viewport = function() {
     display == `flexBox` ||
     display == `duo`
   )
-    offset = 999999999
+    offset = 6000
   else
     offset = 1000
 

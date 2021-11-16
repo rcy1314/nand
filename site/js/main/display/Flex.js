@@ -1,6 +1,6 @@
 let Flex = function() {
   display == `flexBox`;
-  offset = 999999999;
+  offset = 4000;
   var height = 0;
   var second = 0;
   var groups = 0;
@@ -98,7 +98,7 @@ let Flex = function() {
       );
     _center.style.cssText = `display:inline-flex;width:930px`;
   } else _center.style.cssText = `display:inline-flex;width:930px`;
-
+  _channel.style.height = `${(max + 4000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);

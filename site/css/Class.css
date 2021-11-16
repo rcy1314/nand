@@ -20,7 +20,6 @@
 .duo {
   align-content: space-between !important;
   flex-flow: column wrap !important;
-  height: 999999999px !important;
   display: flex !important;
 }
 
@@ -120,7 +119,6 @@
 .flexbox {
   align-content: space-between !important;
   flex-flow: column wrap !important;
-  height: 999999999px !important;
   display: flex !important;
 }
 
