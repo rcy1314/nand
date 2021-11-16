@@ -1,9 +1,7 @@
 @media screen and (max-width: 425px) {
 
-  .bars,
-  .double-circle,
-  .circle:not(.content .circle) {
-    bottom: 0;
+  .flexbox .pending {
+    margin-top: 5px;
   }
 
   #load {
