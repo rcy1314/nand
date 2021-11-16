@@ -124,24 +124,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk ||
                       Reader
                     ) {
-                      itemImage.setAttribute(`src`, e.target.result);
-                      setTimeout(
-                        function() {
-                          if (
-                            !cropImages
-                          ) {
-                            item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                            itemClassic.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                            itemContainer.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                          }
-                        }, 1
-                      )
+                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
                     } else {
                       itemImage.setAttribute(`src`, e.target.result);
@@ -205,24 +188,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk ||
                       Reader
                     ) {
-                      itemImage.setAttribute(`src`, e.target.result);
-                      setTimeout(
-                        function() {
-                          if (
-                            !cropImages
-                          ) {
-                            item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                            itemClassic.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                            itemContainer.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
-                          }
-                        }, 1
-                      )
+                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
                     } else {
                       itemPending.remove();
@@ -297,7 +263,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               Height < shrunk ||
               Reader
             ) {
+              itemContainer.style.backgroundImage = `url(${e.target.result})`;
+              itemPending.remove();
+            } else {
               itemImage.setAttribute(`src`, e.target.result);
+              itemPending.remove();
               setTimeout(
                 function() {
                   if (
@@ -315,28 +285,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   }
                 }, 1
               )
-              itemPending.remove();
-            } else {
-              itemImage.setAttribute(`src`, e.target.result);
-              itemPending.remove();
             }
-            setTimeout(
-              function() {
-                if (
-                  !cropImages
-                ) {
-                  item.style
-                    .cssText =
-                    `height:${itemImage.clientHeight}px !important`
-                  itemClassic.style
-                    .cssText =
-                    `height:${itemImage.clientHeight}px !important`
-                  itemContainer.style
-                    .cssText =
-                    `height:${itemImage.clientHeight}px !important`
-                }
-              }, 1
-            )
           }
         }
         request.onerror = function(e) {
