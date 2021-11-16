@@ -64,7 +64,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       copyDownload.style.display = `none`;
       copyPicture.style.display = `none`;
       attribute.style.height = `74px`;
-      itemPending.style.display = `none`;
+      itemPending.remove();
       count.shift();
     }
   }
@@ -125,12 +125,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Reader
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                      itemPending.style.display = `none`;
+                      itemPending.remove();
                     } else {
                       itemImage.setAttribute(`src`, e.target.result);
                       itemFilter.style.transform = `scale(4)`
-                      itemPending.style.display = `none`;
-                      itemImage.style.display = `block`;
+                      itemPending.remove();
                       itemFilter.classList.add(`blur`);
                       setTimeout(
                         function() {
@@ -153,7 +152,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   }
                 }
                 request.onerror = function(e) {
-                  itemPending.style.display = `none`;
+                  itemPending.remove();
                   if (
                     onlyImages
                   )
@@ -190,11 +189,10 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Reader
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                      itemPending.style.display = `none`;
+                      itemPending.remove();
                     } else {
-                      itemPending.style.display = `none`;
+                      itemPending.remove();
                       itemImage.setAttribute(`src`, e.target.result);
-                      itemImage.style.display = `block`;
                     };
                     setTimeout(
                       function() {
@@ -216,7 +214,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   }
                 }
                 request.onerror = function(e) {
-                  itemPending.style.display = `none`;
+                  itemPending.remove();
                   if (
                     onlyImages
                   )
@@ -234,7 +232,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
             });
           })
           .catch((response) => {
-            itemPending.style.display = `none`;
+            itemPending.remove();
             if (
               onlyImages
             )
@@ -266,11 +264,10 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               Reader
             ) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
-              itemPending.style.display = `none`;
+              itemPending.remove();
             } else {
               itemImage.setAttribute(`src`, e.target.result);
-              itemImage.style.display = `block`;
-              itemPending.style.display = `none`;
+              itemPending.remove();
             }
             setTimeout(
               function() {
@@ -292,7 +289,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           }
         }
         request.onerror = function(e) {
-          itemPending.style.display = `none`;
+          itemPending.remove();
           if (
             onlyImages
           )
@@ -358,7 +355,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemImage.classList.add(`default`);
     };
     newImg.onerror = function() {
-      itemPending.style.display = `none`;
+      itemPending.remove();
       if (
         onlyImages
       )
@@ -369,7 +366,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       attribute.style.height = `35px`;
     };
   } else { //no src or exempt
-    itemPending.style.display = `none`;
+    itemPending.remove();
     if (
       onlyImages
     )
