@@ -20,7 +20,12 @@ _channel
           _channel.clientWidth <=
           _channel.clientWidth &&
           Reader &&
-          !stop
+          !stop &&
+          !document
+          .body
+          .contains(
+            _channel.querySelector(`.pending`)
+          )
         )
       ) {
         stop = true;

@@ -1,6 +1,6 @@
 let Flex = function() {
   display == `flexBox`;
-  offset = 4000;
+  offset = 4500;
   var height = 0;
   var second = 0;
   var groups = 0;

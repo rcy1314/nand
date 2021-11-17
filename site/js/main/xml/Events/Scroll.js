@@ -17,7 +17,12 @@ _main
           _main.clientHeight <=
           offset &&
           Reader &&
-          !stop
+          !stop &&
+          !document
+          .body
+          .contains(
+            _channel.querySelector(`.pending`)
+          )
         )
       ) {
         stop = true;

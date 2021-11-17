@@ -1,6 +1,6 @@
 let Duo = function() {
   display == `flexBox`;
-  offset = 6000;
+  offset = 6500;
   var height = 0;
   var second = 0;
   var groups = 0;
