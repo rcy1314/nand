@@ -110,7 +110,7 @@ html body,
 }
 
 #main {
-  background-color: var(--color-secondary);
+  background-color: var(--borderless-color);
   background-position: center center;
   background-repeat: no-repeat;
   justify-content: center;

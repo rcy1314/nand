@@ -72,8 +72,7 @@ function whichTransitionEvent() {
       .contains(
         _container.querySelectorAll(`#notify`)[0]
       ) &&
-      _container.querySelectorAll(`#notify`)[0].style[t] !== undefined ||
-      _container.querySelectorAll(`.notifyEnd`)[0].style[t] !== undefined
+      _container.querySelectorAll(`#notify`)[0].style[t] !== undefined
     ) {
       return transitions[t];
     }
