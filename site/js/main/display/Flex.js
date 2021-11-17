@@ -51,6 +51,14 @@ let Flex = function() {
       .querySelector(
         `#bottom`
       )
+    ) &&
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
     )
       &&
     !Reader
@@ -98,7 +106,17 @@ let Flex = function() {
       );
     _center.style.cssText = `display:inline-flex;width:930px`;
   } else _center.style.cssText = `display:inline-flex;width:930px`;
-  _channel.style.height = `${(max + 4000).toString()}px`
+  if (
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  )
+    _channel.style.height = `${(max + 4000).toString()}px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);

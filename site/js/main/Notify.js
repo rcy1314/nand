@@ -14,17 +14,16 @@ let notifyOption = function(String, Icon) {
       _container.querySelector(`#notify`)
     )
   ) {
-    _container.querySelectorAll(`#notify`).forEach((a) => a.classList.add(`notifyEnd`))
+    _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
     _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
 
   }
 
-
-  _container.appendChild(div);
-
+  notifyArray.push(div.innerHTML)
+  if (notifyArray.length === 1)
+    _container.appendChild(div);
   var transitionEvent = whichTransitionEvent();
   transitionEvent && div.addEventListener(transitionEvent, function() {
-    console.log(`transition`);
     if (
       document
       .body
@@ -32,9 +31,27 @@ let notifyOption = function(String, Icon) {
         _container.querySelector(`.notifyEnd`)
       )
     )
-      _container.querySelectorAll(`.notifyEnd`).forEach(
-        (a) => a.remove()
+      _container.querySelectorAll(`.notifyEnd`)[0].remove()
+    if (
+      notifyArray.length > 1
+    ) {
+      div.innerHTML = notifyArray[1]
+      setTimeout(function() {
+        _container.appendChild(div)
+
+      }, 1000)
+    }
+    notifyArray.shift()
+    if (
+      document
+      .body
+      .contains(
+        _container.querySelector(`#notify`)
       )
+    ) {
+      _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
+      _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
+    }
   });
 }
 

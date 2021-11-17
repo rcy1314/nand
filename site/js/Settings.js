@@ -652,90 +652,25 @@ const wordpress = `https://ackti.wordpress.com`;
 /* Feel free to edit the above. */
 
 let verticalbars;
-let doublecircle;
+let circleloader;
 let loaderfalse;
 let loadinganim;
-let ringcircle;
+let ringloader;
 let Dots;
 let Percent;
 let Blocks;
 let List;
-
-if (imageLoader == `v-bars`) {
-  circleloader = false;
-  ringloader = false;
-  verticalbars = true;
-  loadinganim = false;
-  loaderfalse = false;
-} else if (imageLoader == `double-circle`) {
-  verticalbars = false;
-  ringloader = false;
-  circleloader = true;
-  loadinganim = false;
-  loaderfalse = false;
-} else if (imageLoader == `ring-circle`) {
-  circleloader = false;
-  verticalbars = false;
-  ringloader = true;
-  loadinganim = false;
-  loaderfalse = false;
-} else if (imageLoader == `loading`) {
-  circleloader = false;
-  verticalbars = false;
-  loaderfalse = false;
-  ringloader = false;
-  loadinganim = true;
-} else if (imageLoader == false) {
-  circleloader = false;
-  verticalbars = false;
-  ringloader = false;
-  loaderfalse = true;
-  loadinganim = false;
-}
-
-if (display == `legacy`) {
-  dual = false;
-  legacy = true;
-  sscroll = false;
-  flex = false;
-} else if (display == `duo`) {
-  dual = true;
-  legacy = false;
-  sscroll = false;
-  flex = false;
-} else if (display == `sideScroll`) {
-  dual = false;
-  legacy = false;
-  sscroll = true;
-  flex = false;
-} else if (display == `flexBox`) {
-  dual = false;
-  legacy = false;
-  sscroll = false;
-  flex = true;
-}
-
-if (loading == `percent`) {
-  Dots = false;
-  Percent = true;
-} else {
-  Dots = true;
-  Percent = false;
-}
-if (expand == true) {
-  Blocks = false;
-  List = true;
-} else {
-  Blocks = true;
-  List = false;
-}
-
+let dual;
+let legacy;
+let sscroll;
+let flex;
 let expandAnimations = false;
 let expandBackground = false;
 let expandFavorites = false;
 let expandSettings = false;
 let expandVisual = false;
 let expandFilter = false;
+let notifyArray = []; //notifications queue
 let cycleViewport // display viewport index
 let viewport = ['legacy', 'duo', 'flexBox', 'sideScroll']
 let quit; // xmlRequestParsing pub length

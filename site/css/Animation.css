@@ -227,7 +227,7 @@
 }
 
 .notifyEnd {
-  animation: notifyEnd 250ms forwards linear;
+  animation: notifyEnd 1000ms forwards linear;
 }
 
 .rotate {
