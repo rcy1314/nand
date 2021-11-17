@@ -79,5 +79,3 @@ if (expand == true) {
   Blocks = true;
   List = false;
 }
-
-notifyOption(`Site Loaded`, `fa-check-circle`);
