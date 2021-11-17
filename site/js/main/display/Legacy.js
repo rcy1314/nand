@@ -7,6 +7,7 @@ let Legacy = function() {
   _channel.style.height = `fit-content`;
   _center.classList.add(`sideChannel`);
   _channel.classList.remove(`flexbox`);
+  _channel.style.height = `fit-content`;
   _channel
     .querySelectorAll(
       `.item`

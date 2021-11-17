@@ -1,6 +1,6 @@
 let Flex = function() {
   display == `flexBox`;
-  offset = 4500;
+  offset = 999999999;
   var height = 0;
   var second = 0;
   var groups = 0;
@@ -116,7 +116,7 @@ let Flex = function() {
       )
     )
   )
-    _channel.style.height = `${(max + 4000).toString()}px`
+    _channel.style.height = `99999999px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);

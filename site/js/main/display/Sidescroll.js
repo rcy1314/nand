@@ -7,6 +7,7 @@ let Sidescroll = function() {
   _channel.classList.add(`sideChannel`);
   _xml.style.justifyContent = `center`;
   _center.classList.add(`sideChannel`);
+  _channel.style.height = `fit-content`;
 
   if (
     window.innerWidth >= 768
