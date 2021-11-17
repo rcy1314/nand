@@ -1,6 +1,6 @@
 {
   "name": "nand",
-  "version": "1.2.8",
+  "version": "1.2.90192",
   "description": "Just Read",
   "main": "app.js",
   "dependencies": {
@@ -67,10 +67,14 @@
     "type": "git",
     "url": "git+https://github.com/acktic/nand.git"
   },
-  "author": "",
+  "author": "Joey Banks",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/acktic/nand/issues"
   },
-  "homepage": "https://github.com/acktic/nand#readme"
+  "homepage": "https://github.com/acktic/nand#readme",
+  "keywords": [
+    "Just",
+    "Read"
+  ]
 }
