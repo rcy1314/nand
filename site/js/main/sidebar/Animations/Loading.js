@@ -27,6 +27,7 @@ _sidebar
           .forEach(
             (a) => a.style.display = `none`
           );
+        Star(_sidebar.querySelector(`.ringloader`), false);
         Star(_sidebar.querySelector(`.verticalbars`), false);
         Star(_sidebar.querySelector(`.circleloader`), false);
         Star(_sidebar.querySelector(`.loaderfalse`), false);
