@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/xml-sites-array/Assets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`JPost World`,category:`World`,title:``,description:`JPost International World News and Stories.`,uri:`https://www.jpost.com/rss/rssfeedsinternational`,image:`JPost`,hash:`jW`,media:!0},
 #{id:`Smashing Magazine`,category:`Tech`,title:``,description:`Smashing Magazine is one of the world's most popular and highly regarded magazines in the area of web development.`,uri:`https://www.smashingmagazine.com/feed`,image:`SmashingMagazine`,hash:`zS`,media:!0},
 #{id:`9to5Linux`,category:`Tech`,title:``,description:`9 to 5 Linux was founded as a technology blog covering Linux and Open Source.`,uri:`https://9to5linux.com/feed`,image:`9to5Linux`,hash:`tO`,media:!1},
 #{id:`InfoWorld`,category:`Tech`,title:``,description:`InfoWorld is an Information Technology Media Business.`,uri:`https://www.infoworld.com/index.rss`,image:`InfoWorld`,hash:`fW`,media:!0},
