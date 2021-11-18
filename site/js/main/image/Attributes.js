@@ -1,7 +1,7 @@
 var Attributes = function(empty, menuObject, pubIndex, src) {
   count.push(`null`);
   let k = 5420;
-  let shrunk = 100;
+  let shrunk = 200;
   let maximum = 280;
   let jsonResponseScore;
   let item = _channel.querySelector(
@@ -134,17 +134,22 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       setTimeout(
                         function() {
                           if (
-                            !cropImages
+                            !cropImages &&
+                            itemImage.clientHeight > shrunk &&
+                            itemImage.clientWidth > maximum
                           ) {
                             item.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
+                              .height =
+                              `${itemImage.clientHeight}px`
                             itemClassic.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
+                              .height =
+                              `${itemImage.clientHeight}px`
                             itemContainer.style
-                              .cssText =
-                              `height:${itemImage.clientHeight}px !important`
+                              .height =
+                              `${itemImage.clientHeight}px`
+                          } else {
+                            itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                            itemPending.remove();
                           }
                         }, 50
                       )
@@ -197,17 +202,22 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     setTimeout(
                       function() {
                         if (
-                          !cropImages
+                          !cropImages &&
+                          itemImage.clientHeight > shrunk &&
+                          itemImage.clientWidth > maximum
                         ) {
                           item.style
-                            .cssText =
-                            `height:${itemImage.clientHeight}px !important`
+                            .height =
+                            `${itemImage.clientHeight}px`
                           itemClassic.style
-                            .cssText =
-                            `height:${itemImage.clientHeight}px !important`
+                            .height =
+                            `${itemImage.clientHeight}px`
                           itemContainer.style
-                            .cssText =
-                            `height:${itemImage.clientHeight}px !important`
+                            .height =
+                            `${itemImage.clientHeight}px`
+                        } else {
+                          itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                          itemPending.remove();
                         }
                       }, 50
                     )
@@ -270,17 +280,22 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               setTimeout(
                 function() {
                   if (
-                    !cropImages
+                    !cropImages &&
+                    itemImage.clientHeight > shrunk &&
+                    itemImage.clientWidth > maximum
                   ) {
                     item.style
-                      .cssText =
-                      `height:${itemImage.clientHeight}px !important`
+                      .height =
+                      `${itemImage.clientHeight}px`
                     itemClassic.style
-                      .cssText =
-                      `height:${itemImage.clientHeight}px !important`
+                      .height =
+                      `${itemImage.clientHeight}px`
                     itemContainer.style
-                      .cssText =
-                      `height:${itemImage.clientHeight}px !important`
+                      .height =
+                      `${itemImage.clientHeight}px`
+                  } else {
+                    itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                    itemPending.remove();
                   }
                 }, 50
               )
