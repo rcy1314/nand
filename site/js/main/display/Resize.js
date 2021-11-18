@@ -21,7 +21,7 @@ window
         window.innerWidth >= 1280
 
       ) {
-        _center.style.cssText = `display:inline-flex;width:930px;left:340px;`;
+        _center.style.cssText = `display:inline-flex;width:930px`;
         _display.style.cssText = `display:inline-block;`;
 
       } else if (
