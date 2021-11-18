@@ -4,6 +4,10 @@
     margin-top: 5px;
   }
 
+  #guide .pub {
+    width: 100%;
+  }
+
   #load {
     margin-bottom: 10px;
   }
