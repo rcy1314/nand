@@ -16,6 +16,7 @@ _container
         ) {
           cropImages = cropImagesBuffer;
           onlyImages = onlyImagesBuffer;
+          Star(_sidebar.querySelector(`.cropImages`), cropImages);
           notifyOption(`Reading`, `fa-times-circle`);
           _main
             .querySelectorAll(`.joi`)
@@ -58,8 +59,10 @@ _container
           onlyImages = true;
           if (
             window.innerWidth > 425
-          )
+          ) {
             cropImages = true;
+            Star(_sidebar.querySelector(`.cropImages`), true);
+          }
           Random();
           randomDuplicate = [];
           notifyOption(`Reading`, `fa-check-circle`);
