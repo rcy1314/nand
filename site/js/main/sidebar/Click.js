@@ -47,7 +47,7 @@ _container
         ) {
           evt.target.classList.remove(`fa-unlock`);
           evt.target.classList.add(`fa-lock`);
-        } else if (sideBarLock == false) {
+        } else {
           evt.target.classList.remove(`fa-lock`);
           evt.target.classList.add(`fa-unlock`);
         }

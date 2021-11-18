@@ -27,7 +27,7 @@ if (
           }, 300
         )
       }
-      if (
+      else if (
         event.pageX >= 280 &&
         !sideBarLock &&
         onScreen

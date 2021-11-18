@@ -24,7 +24,8 @@ let Sidebar = function(Value) {
       }, 300
     );
   } else if (
-    !Value
+    !Value &&
+    !sideBarLock
   ) {
     _sidebar.querySelector(`.bg`).style.height = `31px`;
     expandBackground = false;
