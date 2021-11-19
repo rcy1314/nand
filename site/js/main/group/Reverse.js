@@ -6,26 +6,51 @@ let Reverse = function(translation) {
   for (
     let i = 0; i <= menu.length - 1; i++) {
     if (
-      category == menu[i].category
+      !onlyImages
     ) {
       if (
+        category == menu[i].category
+      ) {
+        if (
+          menu[i].media
+        )
+          media = `<div class='media' style='display:none'>Images</div>`;
+
+        else
+          media = `<div class='blank'></div>`;
+
+        _air.append(
+          categoryBuild(
+            menu[i].id.match(/[^\/]+$/g),
+            menu.indexOf(menu[i]),
+            menu[i].image.image(),
+            menu[i].hash,
+            menu[i].description,
+            media
+          )
+        );
+      }
+    } else if (
+      onlyImages
+    ) {
+      if (
+        translation == menu[i].category &&
+        id != menu.indexOf(menu[i]) &&
         menu[i].media
-      )
+      ) {
         media = `<div class='media' style='display:none'>Images</div>`;
 
-      else
-        media = `<div class='blank'></div>`;
-
-      _air.append(
-        categoryBuild(
-          menu[i].id.match(/[^\/]+$/g),
-          menu.indexOf(menu[i]),
-          menu[i].image.image(),
-          menu[i].hash,
-          menu[i].description,
-          media
-        )
-      );
+        _air.append(
+          categoryBuild(
+            menu[i].id.match(/[^\/]+$/g),
+            menu.indexOf(menu[i]),
+            menu[i].image.image(),
+            menu[i].hash,
+            menu[i].description,
+            media
+          )
+        );
+      }
     }
   }
   setTimeout(
