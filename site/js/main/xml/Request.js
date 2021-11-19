@@ -297,9 +297,10 @@ var Request = function(index) {
         onlyImages = onlyImagesBuffer;
         setTimeout(
           function() {
-            Group();
+            Category();
           }, 300
         )
+        notifyOption(`Request Failed`, `fa-times-circle`)
         Topbar(topBar);
         Reader = false;
         Category(category);
