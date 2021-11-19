@@ -1,6 +1,6 @@
-<sub>Release</sub> | <sub>Size</sub> | <sub>Lines</sub> | <sub>Deployed</sub> | <sub>Package</sub> |
+<sub>Release</sub> | <sub>Size</sub> | <sub>Lines</sub> | <sub>Deployed</sub> | <sub> Dockeri </sub> | <sub>Package</sub> |
 --- | --- | --- | --- | --- |
-[<b><em>1.3.21748</em></b>](https://github.com/acktic/nand/releases/tag/1.3.21748 "1.3.21748") | ![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Lines](https://img.shields.io/tokei/lines/github/acktic/nand?color=%2380CD61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> |
+[<b><em>1.3.21748</em></b>](https://github.com/acktic/nand/releases/tag/1.3.21748 "1.3.21748") | ![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Lines](https://img.shields.io/tokei/lines/github/acktic/nand?color=%2380CD61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/docker-publish.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> |
 
 ### About
 
