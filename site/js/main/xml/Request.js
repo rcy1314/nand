@@ -289,7 +289,7 @@ var Request = function(index) {
           unloading();
           pub = null;
         }
-      } else {
+      } else {//Failed Status Code
         if (
           showSplash
         )
@@ -303,7 +303,7 @@ var Request = function(index) {
         Topbar(topBar);
         Reader = false;
         Category(category);
-        displayExpand(expand);
+        Expand(expand);
         _main
           .querySelectorAll(`.joi`)
           .forEach(
