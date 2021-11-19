@@ -271,6 +271,7 @@ var Listing = function(
   } else if (keycode === 27) {
     document.querySelector(Elem).style.display = `none`;
     _options.style.visibility = `visible`;
+    _under.style.visibility = `visible`;
     _label.style.visibility = `visible`;
     _quick.style.visibility = `visible`;
     _show.style.visibility = `visible`;
