@@ -1,4 +1,4 @@
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
 
   .air,
   .result {
@@ -17,8 +17,21 @@
     width: 940px;
   }
 
-  .yt .image img {
-    height: 460px;
-    top: -22.75%
+  .content {
+    display: inline-block;
   }
+
+  .center {
+    display: inline-block;
+    width: 930px;
+  }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+  .content {
+    display: none;
+  }
+
 }
