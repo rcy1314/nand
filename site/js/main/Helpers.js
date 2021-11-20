@@ -278,7 +278,17 @@ let forward = function(id) {
         return parseInt(i)
       }
     }
-    if (x === -1) return 1
+    if (x === -1) {
+      for (
+        let i = 0; i <= menu.length - 1; i++) {
+        if (
+          menu[i] &&
+          menu[i].media
+        ) {
+          return parseInt(i)
+        }
+      }
+    }
   } else {
     let next = parseInt(id) + +1
     if (menu[next])
@@ -302,7 +312,17 @@ let back = function(id) {
         return parseInt(i)
       }
     }
-    if (x === -1) return menu.length - 1
+    if (x === -1) {
+      for (
+        let i = menu.length - 1; i >= 0; i--) {
+        if (
+          menu[i] &&
+          menu[i].media
+        ) {
+          return parseInt(i)
+        }
+      }
+    }
   } else {
     let back = parseInt(id) - +1
     if (menu[back])
