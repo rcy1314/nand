@@ -264,15 +264,49 @@ let easeInOutQuad = function(t) {
 };
 
 let forward = function(id) {
-  let next = parseInt(id) + +1
-  if (menu[next])
-    return parseInt(next);
-  else return 1
+  let x = -1;
+  if (
+    onlyImages
+  ) {
+    for (
+      let i = parseInt(id) + 1; i <= menu.length - 1; i++) {
+      if (
+        menu[i] &&
+        menu[i].media
+      ) {
+        x = i
+        return parseInt(i)
+      }
+    }
+    if (x === -1) return 1
+  } else {
+    let next = parseInt(id) + +1
+    if (menu[next])
+      return parseInt(next);
+    else return 1
+  }
 };
 
 let back = function(id) {
-  let back = parseInt(id) - +1
-  if (menu[back])
-    return parseInt(back);
-  else return menu.length - 1
+  let x = -1;
+  if (
+    onlyImages
+  ) {
+    for (
+      let i = parseInt(id) - 1; i >= 0; i--) {
+      if (
+        menu[i] &&
+        menu[i].media
+      ) {
+        x = i
+        return parseInt(i)
+      }
+    }
+    if (x === -1) return menu.length - 1
+  } else {
+    let back = parseInt(id) - +1
+    if (menu[back])
+      return parseInt(back);
+    else return menu.length - 1
+  }
 };
