@@ -195,7 +195,7 @@ html body,
 }
 
 .under {
-  margin-left: 10px;
+  padding: 10px;
 }
 
 .under:hover {

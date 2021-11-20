@@ -15,6 +15,30 @@ window
         ) {
           display = `flexBox`;
           Flex();
+          setTimeout(
+            function() {
+              _channel
+                .querySelectorAll(
+                  `.item, .wrap, .image, .classic`
+                )
+                .forEach(
+                  function(a) {
+                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
+                      a
+                      .style
+                      .height =
+                      `${
+                              a
+                                .closest(
+                                  `.item`
+                                ).querySelector(
+                                  `.img`
+                                ).clientHeight
+                            }px`
+                  }
+                )
+            }, 1
+          )
         }
 
       } else if (

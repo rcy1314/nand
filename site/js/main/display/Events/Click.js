@@ -30,7 +30,8 @@ _container
                 )
                 .forEach(
                   function(a) {
-                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
+                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0 &&
+                    a.closest(`.item`).querySelector(`.image`).style.backgroundImage == ``)
                       a
                       .style
                       .height =
