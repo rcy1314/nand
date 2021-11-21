@@ -24,7 +24,7 @@
   }
 
   #xml .classic:not(.flexbox .classic) {
-    min-height: 240px !important;
+    min-height: 150px !important;
   }
 
   .duo .item {

@@ -40,7 +40,7 @@ window
             }, 1
           )
         }
-
+      }
     }, {
       passive: true
     }
