@@ -2,6 +2,7 @@ _container
   .addEventListener('click',
     (evt) => {
       if (
+        evt.target.classList.contains(`filterBlur`) ||
         evt.target.classList.contains(`courtesy`) ||
         evt.target.classList.contains(`image`) ||
         evt.target.classList.contains(`wrap`) ||

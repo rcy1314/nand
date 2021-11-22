@@ -13,8 +13,8 @@
 }
 
 .blur {
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 .duo {
@@ -110,10 +110,12 @@
 }
 
 .filterBlur {
-  height: calc(100% + 1px);
-  width: calc(100% + 1px);
   position: absolute;
   z-index: 11;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .flexbox {
