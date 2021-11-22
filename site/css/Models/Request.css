@@ -288,15 +288,6 @@
   z-index: 12;
 }
 
-#main #xml .center .yt .image {
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  display: flex;
-  height: 160px;
-}
-
 #main #xml .center .item .image {
   background-color: transparent;
   justify-content: center;

@@ -128,6 +128,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemPending.remove();
                     } else {
                       itemImage.setAttribute(`src`, e.target.result);
+                      itemContainer.style.position = `absolute`;
+                      itemImage.style.position = `absolute`;
                       itemFilter.style.transform = `scale(4)`
                       itemPending.remove();
                       itemFilter.classList.add(`blur`);
