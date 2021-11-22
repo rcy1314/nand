@@ -27,6 +27,8 @@ setTimeout(
 
     Viewport();
 
+    Background();
+
     adj = menu.slice();
     randomizeAssets(adj);
 
