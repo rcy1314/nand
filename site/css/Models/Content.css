@@ -91,6 +91,7 @@ html body,
 html,
 html body,
 #container {
+  background-color: var(--color-primary);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -222,8 +223,8 @@ html body,
 }
 
 #container #notify {
-  background-color: var(--hover-background-color);
   box-shadow: var(--box-shadow) !important;
+  background-color: var(--color-primary);
   border: var(--border-color);
   color: var(--fill-color);
   justify-content: center;

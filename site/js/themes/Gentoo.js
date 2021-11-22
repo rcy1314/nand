@@ -26,7 +26,7 @@ var Gentoo = function() {
   ); // Populate, Buttons
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(42, 45, 53, .6)`
+    `rgba(42, 45, 53, .5)`
   ); // Main, TopBar Input, Left Right (feed)
   /*
   if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)

@@ -26,7 +26,7 @@ var Light = function() {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(255, 255, 255, .9)`
+    `rgba(255, 255, 255, .5)`
   );
   /*
   if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)

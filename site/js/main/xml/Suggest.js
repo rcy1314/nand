@@ -44,34 +44,41 @@ var Suggest = function() {
     }
   else if (
     onlyImages
-  )
-  for (
-    let i = 1; i <= contentStatusBuffer; i++
   ) {
-    let randomMenuObject = menu.indexOf(
-      menu[
-        Math.floor(
-          Math.random() * menu.length - 1
-        )
-      ]
-    );
-    if (
-      !duplicate.includes(randomMenuObject) &&
-      menu[randomMenuObject].media &&
-      menu[randomMenuObject] &&
-      randomMenuObject !== 0
+    let statusBuffer = 0
+    for (
+      let i = 0; i <= menu.length - 1; i++
     ) {
-        var media = `feed contains images`;
-      duplicate.push(randomMenuObject);
-      _suggestions.append(
-        suggestBuild(
-          media,
-          menu.indexOf(menu[randomMenuObject]),
-          menu[randomMenuObject].image.image(),
-          menu[randomMenuObject].id,
-          menu[randomMenuObject].category
-        )
+      let randomMenuObject = menu.indexOf(
+        menu[
+          Math.floor(
+            Math.random() * menu.length - 1
+          )
+        ]
       );
+      if (
+        !duplicate.includes(randomMenuObject) &&
+        menu[randomMenuObject].media &&
+        menu[randomMenuObject] &&
+        randomMenuObject !== 0
+      ) {
+        var media = `feed contains images`;
+        duplicate.push(randomMenuObject);
+        _suggestions.append(
+          suggestBuild(
+            media,
+            menu.indexOf(menu[randomMenuObject]),
+            menu[randomMenuObject].image.image(),
+            menu[randomMenuObject].id,
+            menu[randomMenuObject].category
+          )
+        );
+        statusBuffer++
+      }
+      if (
+        statusBuffer == contentStatusBuffer
+      )
+        break
     }
   }
 };
