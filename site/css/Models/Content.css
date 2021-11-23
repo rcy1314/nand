@@ -222,6 +222,10 @@ html body,
   width: 15px;
 }
 
+#link:hover {
+  background-color: var(--color-secondary);
+}
+
 #container #notify {
   background-color: var(--color-primary);
   box-shadow: var(--box-shadow);
