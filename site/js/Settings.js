@@ -45,11 +45,6 @@ let themes = [{
     icon: `fa-code`
   },
   {
-    obFn: `Solarized`,
-    class: `Solarized`,
-    icon: `fa-digital-tachograph`
-  },
-  {
     obFn: `Gentoo`,
     class: `Gentoo`,
     icon: `fa-users`
