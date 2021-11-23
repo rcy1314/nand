@@ -32,10 +32,6 @@
     top: 60px !important;
   }
 
-  .sideItem {
-    min-height: 170px !important;
-  }
-
   #main #option {
     display: none;
   }

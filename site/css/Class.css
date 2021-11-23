@@ -225,10 +225,14 @@
 }
 
 .sideItem {
-  min-height: 300px !important;
+  min-height: 320px !important;
   width: 320px !important;
   display: inline-table;
   margin-right: 50px;
+}
+
+.sideItem .classic {
+  min-height: 320px !important;
 }
 
 .sideChannel {

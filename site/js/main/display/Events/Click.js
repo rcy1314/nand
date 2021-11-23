@@ -22,31 +22,6 @@ _container
           display = `duo`;
           notifyOption(`Duo`, `fa-times-circle`)
           Duo();
-          setTimeout(
-            function() {
-              _channel
-                .querySelectorAll(
-                  `.item, .wrap, .image, .classic`
-                )
-                .forEach(
-                  function(a) {
-                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0 &&
-                    a.closest(`.item`).querySelector(`.image`).style.backgroundImage == ``)
-                      a
-                      .style
-                      .height =
-                      `${
-                              a
-                                .closest(
-                                  `.item`
-                                ).querySelector(
-                                  `.img`
-                                ).clientHeight
-                            }px`
-                  }
-                )
-            }, 1
-          )
           if (
             document
             .body
@@ -68,30 +43,6 @@ _container
           display = `flexBox`;
           notifyOption(`Flex Box`, `fa-times-circle`)
           Flex();
-          setTimeout(
-            function() {
-              _channel
-                .querySelectorAll(
-                  `.item, .wrap, .image, .classic`
-                )
-                .forEach(
-                  function(a) {
-                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                      a
-                      .style
-                      .height =
-                      `${
-                          a
-                            .closest(
-                              `.item`
-                            ).querySelector(
-                              `.img`
-                            ).clientHeight
-                        }px`
-                  }
-                )
-            }, 1
-          )
           if (
             document
             .body
@@ -128,30 +79,6 @@ _container
               )
             );
           Legacy();
-          setTimeout(
-            function() {
-              _channel
-                .querySelectorAll(
-                  `.item, .wrap, .image, .classic`
-                )
-                .forEach(
-                  function(a) {
-                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                      a
-                      .style
-                      .height =
-                      `${
-                        a
-                          .closest(
-                            `.item`
-                          ).querySelector(
-                            `.img`
-                          ).clientHeight
-                      }px`
-                  }
-                )
-            }, 1
-          )
           if (
             document
             .body
@@ -181,30 +108,6 @@ _container
           )
             _center.querySelector(`#bottom`).remove();
           Sidescroll();
-          setTimeout(
-            function() {
-              _channel
-                .querySelectorAll(
-                  `.item, .wrap, .image, .classic`
-                )
-                .forEach(
-                  function(a) {
-                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                      a
-                      .style
-                      .height =
-                      `${
-                      a
-                        .closest(
-                          `.item`
-                        ).querySelector(
-                          `.img`
-                        ).clientHeight
-                    }px`
-                  }
-                )
-            }, 1
-          )
           let leaveOff = _main.scrollTop +
             (
               (
