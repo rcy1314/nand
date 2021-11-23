@@ -639,7 +639,7 @@ const translations = [
   `Youtube`,
 ];
 
-const repository = `https://github.com/acktic/acktic.github.io`;
+const repository = `https://github.com/acktic/nand`;
 const facebook = `https://www.facebook.com/acktic`;
 const reddit = `https://www.reddit.com/user/acktic`;
 const twitter = `https://www.twitter.com/acktic`;
@@ -647,7 +647,7 @@ const pinterest = `https://www.pinterest.com/ackt1c`;
 const instagram = `https://www.instagram.com/acktic`;
 const youtube = `https://www.youtube.com/channel/UCwac2_RyHP2UneqETNLM6_Q`;
 const amazon = `https://www.amazon.com/hz/wishlist/ls/3KMRCG63QLYAC`;
-const wordpress = `https://ackti.wordpress.com`;
+const wordpress = `https://acktics.wordpress.com`;
 
 /* Feel free to edit the above. */
 
