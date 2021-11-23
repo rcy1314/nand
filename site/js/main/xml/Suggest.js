@@ -58,8 +58,8 @@ var Suggest = function() {
       );
       if (
         !duplicate.includes(randomMenuObject) &&
-        menu[randomMenuObject].media &&
         menu[randomMenuObject] &&
+        menu[randomMenuObject].media &&
         randomMenuObject !== 0
       ) {
         var media = `feed contains images`;
