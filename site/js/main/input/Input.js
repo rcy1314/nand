@@ -12,7 +12,7 @@ let Input = function(
     inputFilter != ``
   )
     for (
-      var i = menu.length - 1; i >= 1; i--
+      var i = menu.length - 1; i >= 0; i--
     ) {
       if (
         menu[i].description.toString().toLowerCase().match(inputFilter)
@@ -42,7 +42,7 @@ let Input = function(
       }
     }
   for (
-    let i = 1; i <= menu.length - 1; i++
+    let i = 0; i <= menu.length - 1; i++
   ) {
     let randomMenuObject =
       menu.indexOf(
