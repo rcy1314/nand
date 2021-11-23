@@ -13,6 +13,7 @@
 
   <em>Navigate index.html in your browser locally</em>  
   `node app.js` <em>web server @ localhost:3000</em>  
+  run docker container <em>`docker-compose up`</em>
 
 ### Add
 
