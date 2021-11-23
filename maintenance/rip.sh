@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/xml-sites-array/Assets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`Washington Post Tech`,category:`Tech`,title:``,description:`Washington Post is a major American daily newspaper published in Washington, D.C.`,uri:`http://feeds.washingtonpost.com/rss/business/technology`,image:`WashingtonPost`,hash:`pW`,media:!0},
 #{id:`JPost Tech`,category:`Tech`,title:``,description:`JPost Innovation and Technology.`,uri:`https://www.jpost.com/rss/rssfeedsjposttech`,image:`JPost`,hash:`jH`,media:!0},
 #{id:`JPost Entertainment`,category:`Media`,title:``,description:`JPost Celebrity Entertainment News and Headlines Spotlight.`,uri:`https://www.jpost.com/rss/rssfeedsj-spot`,image:`JPost`,hash:`jE`,media:!0},
 #{id:`JPost World`,category:`World`,title:``,description:`JPost International World News and Stories.`,uri:`https://www.jpost.com/rss/rssfeedsinternational`,image:`JPost`,hash:`jW`,media:!0},

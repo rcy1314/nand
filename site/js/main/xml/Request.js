@@ -295,11 +295,6 @@ var Request = function(index) {
         )
           _check.style.display = `none`;
         onlyImages = onlyImagesBuffer;
-        setTimeout(
-          function() {
-            Category();
-          }, 300
-        )
         notifyOption(`Request Failed`, `fa-times-circle`)
         Topbar(topBar);
         Reader = false;
