@@ -21,7 +21,7 @@ let set = `Light`;
 // overwritten in themes files, see Example.js
 
 let backgroundImage = [{
-  // note: path begins in index.html folder
+  // note: path begins in index.html folder use ../../ to exit project folder
   path: "",
   element: "container",
   position: "center",
