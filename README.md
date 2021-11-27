@@ -29,7 +29,7 @@
 
 ### Settings
 
-<em>Located in</em> `site/js/Settings.js` <em> edit everything !</em>
+<em>Located in</em> `site/js/Settings.js`
 
 ### Optional
 
