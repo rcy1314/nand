@@ -3,9 +3,9 @@ let Legacy = function() {
   offset = 1000;
   _center.style.cssText = `justify-content:center !important`;
   _channel.classList.remove(`sideChannel`);
+  _center.classList.remove(`sideChannel`);
   _center.style.display = `inline-block`;
   _channel.style.height = `fit-content`;
-  _center.classList.add(`sideChannel`);
   _channel.classList.remove(`flexbox`);
   _channel.style.height = `fit-content`;
   _channel
