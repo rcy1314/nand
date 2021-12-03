@@ -289,23 +289,74 @@ var Request = function(index) {
           unloading();
           pub = null;
         }
-      } else {//Failed Status Code
+      } else { //Failed Status Code
         if (
-          showSplash
-        )
-          _check.style.display = `none`;
-        onlyImages = onlyImagesBuffer;
-        notifyOption(`Request Failed`, `fa-times-circle`)
-        Topbar(topBar);
-        Reader = false;
-        Category(category);
-        Expand(expand);
-        _main
-          .querySelectorAll(`.joi`)
-          .forEach(
-            (a) => a.classList.remove(`luv`)
-          );
-        unloading();
+          Reader
+        ) {
+          menu.splice(index, 1);
+          stop = true;
+          first = false;
+          if (
+            showSplash
+          )
+            _check.style.display = `block`;
+          while (
+            _air.firstChild
+          )
+            _air.removeChild(
+              _air.lastChild
+            );
+          while (
+            _result.firstChild
+          )
+            _result.removeChild(
+              _result.lastChild
+            );
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(
+              _status.lastChild
+            );
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(
+              _suggestions.lastChild
+            );
+          setTimeout(
+            function() {
+              let index = anyRandomMenuObject();
+              if (
+                httpRequest.readyState == 4 &&
+                typeof(index !== undefined) &&
+                random.includes(index)
+              )
+                Request(index);
+              else {
+                onlyImages = onlyImagesBuffer;
+                notifyOption(`Request Failed`, `fa-times-circle`)
+                Topbar(topBar);
+                Reader = false;
+                Category(category);
+                Expand(expand);
+                _main
+                  .querySelectorAll(`.joi`)
+                  .forEach(
+                    (a) => a.classList.remove(`luv`)
+                  );
+                unloading();
+              }
+            }, 3500
+          )
+        } else {
+          onlyImages = onlyImagesBuffer;
+          notifyOption(`Request Failed`, `fa-times-circle`)
+          Topbar(topBar);
+          Category(category);
+          Expand(expand);
+          unloading();
+        }
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();
