@@ -43,30 +43,6 @@ _sidebar
           )
         )
           _center.querySelector(`#bottom`).remove();
-        setTimeout(
-          function() {
-            _channel
-              .querySelectorAll(
-                `.item, .wrap, .classic`
-              )
-              .forEach(
-                function(a) {
-                  if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                    a
-                    .style
-                    .cssText =
-                    `height:${
-                          a
-                            .closest(
-                              `.item`
-                            ).querySelector(
-                              `.img`
-                            ).clientHeight
-                        }px !important`
-                }
-              )
-          }, 1
-        )
         if (
           !Reader
         )

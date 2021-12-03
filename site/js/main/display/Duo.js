@@ -75,28 +75,5 @@ let Duo = function() {
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);
   _channel.classList.add(`duo`);
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-    .forEach(
-      (a) => {
-        setTimeout(
-          () => {
-            a
-              .style
-              .position =
-              `absolute`;
-            a.closest(`.item`)
-              style
-              .marginLeft =
-            `0`;
-            a.closest(`.item`).classList.remove(
-              `flex`
-            );
-          }, 50
-        )
-      }
-    );
 
 }

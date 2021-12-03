@@ -4,10 +4,10 @@ let Sidescroll = function() {
   scrollIntoViewBuffer = scrollIntoView;
   scrollIntoView = false;
 
-  _channel.classList.add(`sideChannel`);
-  _xml.style.justifyContent = `center`;
-  _center.classList.add(`sideChannel`);
   _channel.style.height = `fit-content`;
+  _channel.classList.add(`sideChannel`);
+  _center.classList.add(`sideChannel`);
+  _xml.style.justifyContent = `center`;
 
   if (
     window.innerWidth >= 768
@@ -19,28 +19,6 @@ let Sidescroll = function() {
   _center.style.left = `0`;
   _xml.style.top = `0`;
 
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-    .forEach(
-      (a) => {
-        setTimeout(
-          () => {
-            a
-              .style
-              .position =
-              `relative`
-            a.closest(`.item`).classList.add(
-              `sideItem`
-            );
-            a.closest(`.item`).classList.remove(
-              `flex`
-            );
-          }, 50
-        )
-      }
-    );
   if (
     document.body.contains(
       _center.querySelector(`.bottom`)

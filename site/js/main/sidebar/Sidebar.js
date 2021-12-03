@@ -5,7 +5,7 @@ let Sidebar = function(Value) {
     Value
   ) {
     setTimeout(
-      function() {
+      () => {
         _sidebar.style.left = `0`;
       }, 300
     );
@@ -17,7 +17,7 @@ let Sidebar = function(Value) {
       _min.style.cssText = `display: block !important;`
     _bar.style.display = `none`;
     setTimeout(
-      function() {
+      () => {
         _sidebar.querySelector(`.sideFilter`).style.visibility = `visible`;
         _sidebar.querySelector(`#basic`).style.visibility = `visible`;
         _sidebar.style.left = `0`;

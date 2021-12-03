@@ -21,7 +21,7 @@ _container
         ) {
           tap = new Date().getTime();
           setTimeout(
-            function() {
+            () => {
               if (
                 new Date().getTime() - tap >= 350 &&
                 new Date().getTime() - tap < 400
@@ -162,7 +162,7 @@ _container
                 .zIndex =
                 `12`;
               setTimeout(
-                function() {
+                () => {
                   evt
                     .target
                     .closest(`.item`)

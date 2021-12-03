@@ -134,7 +134,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemPending.remove();
                       itemFilter.classList.add(`blur`);
                       setTimeout(
-                        function() {
+                        () => {
                           if (
                             !cropImages &&
                             itemImage.clientHeight > shrunk &&
@@ -202,7 +202,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemImage.setAttribute(`src`, e.target.result);
                     };
                     setTimeout(
-                      function() {
+                      () => {
                         if (
                           !cropImages &&
                           itemImage.clientHeight > shrunk &&
@@ -280,7 +280,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               itemImage.setAttribute(`src`, e.target.result);
               itemPending.remove();
               setTimeout(
-                function() {
+                () => {
                   if (
                     !cropImages &&
                     itemImage.clientHeight > shrunk &&

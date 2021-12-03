@@ -5,7 +5,7 @@ let Filter = function(filterURI) {
     )
   ) {
     setTimeout(
-      function() {
+      () => {
         Category(filterURI.toString().capitalize());
       }, 200
     )

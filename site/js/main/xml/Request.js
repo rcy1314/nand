@@ -325,7 +325,7 @@ var Request = function(index) {
               _suggestions.lastChild
             );
           setTimeout(
-            function() {
+            () => {
               let index = anyRandomMenuObject();
               if (
                 httpRequest.readyState == 4 &&

@@ -107,25 +107,4 @@ let Flex = function() {
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.add(`flexbox`);
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-    .forEach(
-      (a) => {
-        setTimeout(
-          () => {
-            a
-              .style
-              .marginLeft =
-              `0`;
-            a
-              .style
-              .position =
-            `absolute`;
-          }, 50
-        )
-      }
-    );
-
 }

@@ -46,7 +46,7 @@ _container
           category == `Assets`
         )
           setTimeout(
-            function() {
+            () => {
               Topbar(topBar);
               Assets();
               Expand(expand);

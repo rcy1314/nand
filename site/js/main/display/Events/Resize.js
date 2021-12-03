@@ -16,7 +16,7 @@ window
           display = `flexBox`;
           Flex();
           setTimeout(
-            function() {
+            () => {
               _channel
                 .querySelectorAll(
                   `.item, .wrap, .image, .classic`

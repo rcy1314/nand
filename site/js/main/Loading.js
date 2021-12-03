@@ -1,5 +1,5 @@
 setTimeout(
-  function() {
+  () => {
     if (imageLoader == `v-bars`) {
       notifyOption(`Vertical Bars`, `fa-check-circle`);
       circleloader = false;

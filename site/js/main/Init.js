@@ -13,7 +13,7 @@
 
 setTimeout(
 
-  function() {
+  () => {
 
     URI();
 

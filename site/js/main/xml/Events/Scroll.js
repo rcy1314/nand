@@ -6,10 +6,12 @@ _main
       window.clearTimeout(isScrolling);
       touchmove = false;
       // Set a timeout to run after scrolling ends
-      isScrolling = setTimeout(function() {
-        // Run the callback
-        touchmove = true;
-      }, 7500);
+      isScrolling =
+        setTimeout(
+          () => {
+            // Run the callback
+            touchmove = true;
+          }, 7500);
       if (
         (
           _main.scrollHeight -
@@ -56,7 +58,7 @@ _main
             _suggestions.lastChild
           );
         setTimeout(
-          function() {
+          () => {
             let index = anyRandomMenuObject();
             if (
               httpRequest.readyState == 4 &&

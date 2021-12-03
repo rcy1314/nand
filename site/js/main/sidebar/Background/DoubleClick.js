@@ -64,7 +64,7 @@ _sidebar
               }
             }
             setTimeout(
-              function() {
+              () => {
                 sideBarLock = sideBarLockBuffer;
               }, 7000
             )

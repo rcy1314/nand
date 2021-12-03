@@ -54,7 +54,7 @@ let Reverse = function(translation) {
     }
   }
   setTimeout(
-    function() {
+    () => {
       _air.style.visibility = `visible`;
     }, 1750
   )

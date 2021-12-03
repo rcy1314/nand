@@ -8,7 +8,7 @@ _main
       // Set a timeout to run after scrolling ends
       isScrolling =
         setTimeout(
-          function() {
+          () => {
             // Run the callback
             touchmove = true;
           }, 2600
@@ -69,7 +69,7 @@ _channel
       // Set a timeout to run after scrolling ends
       isScrolling =
         setTimeout(
-          function() {
+          () => {
             // Run the callback
             touchmove = true;
           }, 2600

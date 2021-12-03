@@ -81,7 +81,7 @@ var Append = function(id) {
     )
   ) {
     setTimeout(
-      function() {
+      () => {
         touchmove = true
         scrollToElm(
           touchmove,
@@ -105,7 +105,7 @@ var Append = function(id) {
   ) {
     touchmove = true;
     setTimeout(
-      function() {
+      () => {
         sideScrollToElm(touchmove,
           _channel,
           _channel.querySelector(`[aria-object='${id}']`),

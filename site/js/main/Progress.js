@@ -21,13 +21,13 @@ let Progress = function(done) {
             _progress.style.transition = `0`;
             _progress.style.width = `100%`;
             setTimeout(
-              function() {
+              () => {
                 _progress.style.transition = `all 1600ms ease-in-out`;
                 _progress.style.opacity = `0`;
               },
               350)
             setTimeout(
-              function() {
+              () => {
                 _progress.style.transition = `none`;
                 _progress.style.width = `0%`;
               },
@@ -54,7 +54,7 @@ let Progress = function(done) {
     ) {
       _channel.classList.add(`scroll-into-view`)
       setTimeout(
-        function() {
+        () => {
           _channel.classList.remove(`scroll-into-view`);
         }, 1750
       )
@@ -113,7 +113,7 @@ let Progress = function(done) {
           scrollIntoView
         )
           setTimeout(
-            function() {
+            () => {
               checkPosition();
             },
             1000)
@@ -163,12 +163,12 @@ let Progress = function(done) {
         !onlyImages
       )
         setTimeout(
-          function() {
+          () => {
             _main.scrollTop = _air.clientHeight;
           }, 300
         )
       setTimeout(
-        function() {
+        () => {
           _group.classList.remove(`scroll-into-view`)
           _main.scrollTop = _result.offsetTop;
         }, 1250

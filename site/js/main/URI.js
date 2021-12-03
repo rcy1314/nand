@@ -33,7 +33,7 @@ let URI = function() {
           36
         );
       setTimeout(
-        function() {
+        () => {
           if (
             menu
             .findIndex(
@@ -73,7 +73,7 @@ let URI = function() {
           uri.length - 17
         );
       setTimeout(
-        function() {
+        () => {
           if (
             menu
             .findIndex(
@@ -117,7 +117,7 @@ let URI = function() {
     let uri = location.search.split(`?q=`)[1];
     guideOnScreen = onScreen;
     setTimeout(
-      function() {
+      () => {
         if (
           showSplash
         )
@@ -137,7 +137,7 @@ let URI = function() {
     )
   ) {
     setTimeout(
-      function() {
+      () => {
         if (
           Reader
         ) {

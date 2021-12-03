@@ -13,7 +13,7 @@ let Touch = function() {
       Append(id);
 
     setTimeout(
-      function() {
+      () => {
         if (
           complete
         )

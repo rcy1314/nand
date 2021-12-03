@@ -286,7 +286,7 @@
 #xml .header {
   background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   background-color: transparent;
-  position: absolute;
+  position: relative;
   height: 60px;
   width: 100%;
   z-index: 12;

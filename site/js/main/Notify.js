@@ -36,10 +36,11 @@ let notifyOption = function(String, Icon) {
       notifyArray.length > 1
     ) {
       div.innerHTML = notifyArray[1]
-      setTimeout(function() {
-        _container.appendChild(div)
-
-      }, 1000)
+      setTimeout(
+        () => {
+          _container.appendChild(div)
+        }, 1000
+      )
     }
     notifyArray.shift()
     if (
