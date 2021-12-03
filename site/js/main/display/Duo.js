@@ -80,9 +80,9 @@ let Duo = function() {
       `.header`
     )
     .forEach(
-      function(a) {
+      (a) => {
         setTimeout(
-          function() {
+          () => {
             a
               .style
               .position =

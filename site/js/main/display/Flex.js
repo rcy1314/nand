@@ -112,9 +112,9 @@ let Flex = function() {
       `.header`
     )
     .forEach(
-      function(a) {
+      (a) => {
         setTimeout(
-          function() {
+          () => {
             a
               .style
               .marginLeft =

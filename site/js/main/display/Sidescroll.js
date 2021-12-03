@@ -24,9 +24,9 @@ let Sidescroll = function() {
       `.header`
     )
     .forEach(
-      function(a) {
+      (a) => {
         setTimeout(
-          function() {
+          () => {
             a
               .style
               .position =
