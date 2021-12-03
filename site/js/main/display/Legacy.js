@@ -10,32 +10,29 @@ let Legacy = function() {
   _channel.style.height = `fit-content`;
   _channel
     .querySelectorAll(
-      `.item`
+      `.header`
     )
     .forEach(
-      (a) =>
-      a.classList.remove(
-        `sideItem`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.classList.remove(
-        `flexbox`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.style.width =
-      `425px`
+      function(a) {
+        setTimeout(
+          function() {
+            a
+            .style
+            .position =
+            `relative`;
+            a.closest(`.item`)
+              .style
+              .width =
+              `425px`;
+            a.closest(`.item`).classList.remove(
+              `sideItem`
+            );
+            a.closest(`.item`).classList.remove(
+              `flexbox`
+            );
+          }, 50
+        )
+      }
     );
   _xml.style.top = `60px`;
 
@@ -52,17 +49,5 @@ let Legacy = function() {
     _center.querySelector(`.bottom`).style.display = `block`;
     _center.querySelector(`.bottom`).style.left = `0`;
   }
-
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-    .forEach(
-      (a) =>
-      a
-      .style
-      .cssText =
-      `position: relative !important`
-    )
 
 }

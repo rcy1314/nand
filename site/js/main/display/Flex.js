@@ -91,19 +91,6 @@ let Flex = function() {
     )
   ) {
     _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
-    if (
-      id &&
-      menu[id].id.match(/Youtube/g)
-    )
-      _channel
-      .querySelectorAll(
-        `.item`
-      )
-      .forEach(
-        (a) =>
-        a.style.height =
-        `80px`
-      );
     _center.style.cssText = `display:inline-flex;width:930px`;
   } else _center.style.cssText = `display:inline-flex;width:930px`;
   if (
@@ -122,32 +109,23 @@ let Flex = function() {
   _channel.classList.add(`flexbox`);
   _channel
     .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.style.marginLeft =
-      `0`
-    );
-
-  _channel
-    .querySelectorAll(
       `.header`
     )
     .forEach(
-      (a) =>
-      a
-      .style
-      .cssText =
-      `position: absolute !important`
-    )
-
-  if (
-    window.innerWidth > 1280
-  )
-    _display.style.display = `inline-block`;
-
-  else
-    _display.style.display = `none`;
+      function(a) {
+        setTimeout(
+          function() {
+            a
+              .style
+              .marginLeft =
+              `0`;
+            a
+              .style
+              .position =
+            `absolute`;
+          }, 50
+        )
+      }
+    );
 
 }
