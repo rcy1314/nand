@@ -11,6 +11,36 @@ let Input = function(
   if (
     inputFilter != ``
   )
+  for (
+    var i = 0; i <= menu.length - 1; i++
+  ) {
+    if (
+      menu[i].id.toString().toLowerCase().match(inputFilter)
+    ) {
+      if (
+        suggest.length - 1 === suggestionBuffer
+      )
+        return false;
+
+      listing.append(
+        listingIndexBuild(
+          menu[i].id.match(/[^\/]+$/g),
+          menu.indexOf(menu[i]),
+          menu[i].image.image(),
+          menu[i].category,
+          menu[i].hash,
+          false,
+          false,
+          i
+        )
+      );
+      suggest.push(
+        menu.indexOf(
+          menu[i]
+        )
+      );
+    }
+  }
     for (
       var i = menu.length - 1; i >= 0; i--
     ) {
