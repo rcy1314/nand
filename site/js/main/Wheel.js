@@ -9,4 +9,7 @@ _container
       )
         _channel.scrollLeft += e.deltaY / 4;
     }
+    {
+      passive: true
+    }
   )
