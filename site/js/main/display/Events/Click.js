@@ -9,6 +9,64 @@ _container
           `fa-camera-retro`
         )
       ) {
+        if (
+          document
+            .body
+              .contains(
+                _channel
+                  .querySelector(
+                    `.item`
+                  )
+              )
+          &&
+          _channel
+            .querySelectorAll(
+              `.item`
+            )
+              .length > 100
+          &&
+            Reader
+        ) {
+          Cleanup();
+          stop = true;
+          first = true;
+          if (
+            showSplash
+          )
+            _check.style.display = `block`;
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(
+              _status.lastChild
+            );
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(
+              _suggestions.lastChild
+            );
+          setTimeout(
+            () => {
+              let index = anyRandomMenuObject();
+              if (
+                httpRequest.readyState == 4 &&
+                typeof(index !== undefined) &&
+                random.includes(index)
+              )
+                Request(index);
+              else {
+                let index = anyRandomMenuObject();
+                if (
+                  httpRequest.readyState == 4 &&
+                  typeof(index !== undefined) &&
+                  random.includes(index)
+                )
+                  Request(index);
+              }
+            }, 500
+          )
+        }
         cycleViewport = cycleViewport + 1
 
         if (

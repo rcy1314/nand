@@ -29,4 +29,11 @@ let Sidescroll = function() {
   _channel.classList.remove(`flexbox`)
   _channel.classList.remove(`duo`)
 
+  if (
+    window.innerWidth
+    >
+    768
+  )
+    _display.style.display = `inline-block`;
+
 }

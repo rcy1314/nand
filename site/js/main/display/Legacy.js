@@ -8,32 +8,7 @@ let Legacy = function() {
   _channel.style.height = `fit-content`;
   _channel.classList.remove(`flexbox`);
   _channel.style.height = `fit-content`;
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-    .forEach(
-      (a) => {
-        setTimeout(
-          () => {
-            a
-            .style
-            .position =
-            `relative`;
-            a.closest(`.item`)
-              .style
-              .width =
-              `425px`;
-            a.closest(`.item`).classList.remove(
-              `sideItem`
-            );
-            a.closest(`.item`).classList.remove(
-              `flexbox`
-            );
-          }, 50
-        )
-      }
-    );
+  _center.style.width = `425px`;
   _xml.style.top = `60px`;
 
   if (
@@ -49,5 +24,12 @@ let Legacy = function() {
     _center.querySelector(`.bottom`).style.display = `block`;
     _center.querySelector(`.bottom`).style.left = `0`;
   }
+
+  if (
+    window.innerWidth
+    >
+    768
+  )
+    _display.style.display = `inline-block`;
 
 }

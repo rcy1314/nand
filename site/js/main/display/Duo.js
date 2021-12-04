@@ -70,10 +70,18 @@ let Duo = function() {
       )
     )
   )
-  _channel.style.height = `99999999px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);
+  _channel.style.height = `99999999px`
   _channel.classList.add(`duo`);
+  _center.style.width = `930px`;
+
+  if (
+    window.innerWidth
+    <
+    1280
+  )
+    _display.style.display = `none`;
 
 }
