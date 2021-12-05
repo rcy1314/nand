@@ -330,7 +330,17 @@
 }
 
 .item {
-  white-space: nowrap;
+  background-color: var(--color-secondary);
+  border: .3px solid transparent;
+  margin-bottom: 70px;
+}
+
+.item:hover {
+  background-color: var(--hover-background-color);
+  border: var(--border-color);
+}
+
+.i {
   outline: 0 !important;
   cursor: pointer;
   transition: box-shadow 0.15s ease,transform 0.15s ease !important;
@@ -339,19 +349,14 @@
   font-size: 18px;
   border-radius: 6px;
   transition: box-shadow 0.15s ease,transform 0.15s ease;
-  background-color: var(--color-secondary);
-  border: .3px solid transparent;
-  margin-bottom: 70px;
 }
 
-.item:hover {
+.i:hover {
   box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px var(--loader-color);
   transform: translateY(-1px);
-  background-color: var(--hover-background-color);
-  border: var(--border-color);
 }
 
-.item:active {
+.i:active {
   transform: translateY(1px);
 }
 

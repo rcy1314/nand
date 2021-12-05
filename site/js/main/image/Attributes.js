@@ -119,6 +119,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
+                    item.classList.add(`i`);
                     if (
                       Width < maximum ||
                       Height < shrunk ||
@@ -190,6 +191,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
+                    item.classList.add(`i`);
                     if (
                       Width < maximum ||
                       Height < shrunk ||
@@ -266,6 +268,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           var read = new FileReader();
           read.readAsDataURL(request.response);
           read.onload = function(e) {
+            item.classList.add(`i`);
             if (
               menu[id].id.match(/Youtube/g)
             )
