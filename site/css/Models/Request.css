@@ -332,6 +332,7 @@
 .item {
   background-color: var(--color-secondary);
   border: .3px solid transparent;
+  min-height: 80px !important;
   margin-bottom: 70px;
 }
 
