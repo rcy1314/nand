@@ -8,7 +8,7 @@ _container
         display == `sideScroll`
       )
         _channel.scrollLeft += e.deltaY / 4;
-    }
+    },
     {
       passive: true
     }

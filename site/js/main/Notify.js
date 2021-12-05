@@ -7,6 +7,7 @@ let notifyOption = function(String, Icon) {
     `;
   div.style.display = `flex`;
   div.classList.add(`notify`);
+  /*
   if (
     document
     .body
@@ -18,7 +19,7 @@ let notifyOption = function(String, Icon) {
     _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
 
   }
-
+  */
   notifyArray.push(div.innerHTML)
   if (notifyArray.length === 1)
     _container.appendChild(div);
@@ -43,6 +44,7 @@ let notifyOption = function(String, Icon) {
       )
     }
     notifyArray.shift()
+    /*
     if (
       document
       .body
@@ -53,6 +55,7 @@ let notifyOption = function(String, Icon) {
       _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
       _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
     }
+    */
   });
 }
 
