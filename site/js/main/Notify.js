@@ -16,7 +16,6 @@ let notifyOption = function(String, Icon) {
   ) {
     _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
     _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
-
   }
   notifyArray.push(div.innerHTML)
   if (notifyArray.length === 1)
@@ -35,11 +34,7 @@ let notifyOption = function(String, Icon) {
       notifyArray.length > 1
     ) {
       div.innerHTML = notifyArray[1]
-      setTimeout(
-        () => {
-          _container.appendChild(div)
-        }, 1000
-      )
+      _container.appendChild(div)
     }
     notifyArray.shift()
     if (
@@ -51,6 +46,11 @@ let notifyOption = function(String, Icon) {
     ) {
       _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
       _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
+    }
+    if (notifyArray.length === 1) {
+      _container.appendChild(div);
+      _container.querySelectorAll(`#notify`)[0].classList.remove(`notifyEnd`);
+      _container.querySelectorAll(`#notify`)[0].classList.add(`notify`);
     }
   });
 }
