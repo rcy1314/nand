@@ -206,7 +206,6 @@ html body,
 }
 
 #link {
-  border: var(--borderless-color);
   background-color: transparent;
   transform: rotate(180deg);
   color: var(--fill-color);
@@ -222,8 +221,10 @@ html body,
   width: 15px;
 }
 
+
+
 #link:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--hover-background-color);
 }
 
 #container #notify {

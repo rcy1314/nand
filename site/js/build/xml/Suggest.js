@@ -42,12 +42,14 @@ let suggestBuild = function(
   bold.innerHTML =
     `
     ${
+      truncate(
+
       String(
         objectId.match(/[^\/]+$/g)
-      ).substring(
-        0,
-        19
-      )
+      ),
+      25,
+      true
+    )
     }...<br>
   `;
   category.innerHTML = objectCategory;

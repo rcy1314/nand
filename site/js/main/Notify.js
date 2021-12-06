@@ -48,7 +48,6 @@ let notifyOption = function(String, Icon) {
       _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
     }
     if (notifyArray.length === 1) {
-      _container.appendChild(div);
       _container.querySelectorAll(`#notify`)[0].classList.remove(`notifyEnd`);
       _container.querySelectorAll(`#notify`)[0].classList.add(`notify`);
     }

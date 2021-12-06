@@ -52,5 +52,6 @@ let Sidebar = function(Value) {
       _bar.style.display = `none`;
       _sb.style.display = `none`;
     }
+    _main.focus();
   }
 };
