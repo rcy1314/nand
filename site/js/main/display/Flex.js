@@ -93,9 +93,19 @@ let Flex = function() {
     _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
     _center.style.cssText = `display:inline-flex;width:930px`;
   } else _center.style.cssText = `display:inline-flex;width:930px`;
+  if (
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  )
+  _channel.style.height = `99999999px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
-  _channel.style.height = `99999999px`
   _channel.classList.add(`flexbox`);
   _center.style.width = `930px`;
   if (
