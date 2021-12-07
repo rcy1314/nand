@@ -112,7 +112,7 @@ _container
         xml();
         Group();
         Visit();
-
+        _channel.style.height = `fit-content`;
         if (
           sideBarDock
         ) {
