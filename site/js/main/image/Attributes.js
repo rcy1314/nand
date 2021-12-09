@@ -77,7 +77,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
     ) &&
     !src
     .match(
-      /comments|feeds|fsdn|undefined|external-preview|hqdefault/g
+      /comments|feeds|fsdn|undefined|external-preview/g
     )
   ) {
     let newImg;
