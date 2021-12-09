@@ -37,9 +37,39 @@ _container
             `aria-object`
           )
         );
+        touchmove = true
+        setTimeout(
+          () => {
+            if (
+              display !== `sideScroll` &&
+              document
+              .body
+              .contains(
+                _channel.querySelector(`[aria-object='${evt.target.closest(`.suggest`).getAttribute(`aria-object`)}']`)
+              )
+            )
+              scrollToElm(
+                touchmove,
+                _main,
+                _channel.querySelector(`[aria-object='${evt.target.closest(`.suggest`).getAttribute(`aria-object`)}']`),
+                250
+              );
+            else if (
+              document
+              .body
+              .contains(
+                _channel.querySelector(`[aria-object='${evt.target.closest(`.suggest`).getAttribute(`aria-object`)}']`)
+              )
+            )
+              sideScrollToElm(touchmove,
+                _channel,
+                _channel.querySelector(`[aria-object='${evt.target.closest(`.suggest`).getAttribute(`aria-object`)}']`),
+                250
+              );
+          }, 1000
+        )
       }
 
     }, {
       passive: false
-    }
-  );
+    });
