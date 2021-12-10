@@ -32,6 +32,8 @@ const _page = document.getElementById(`page`);
 
 const _left = document.querySelector(`.left`);
 
+const _hide = document.querySelector(`.hide`);
+
 const _visit = document.getElementById(`visit`);
 
 const _group = document.getElementById(`group`);

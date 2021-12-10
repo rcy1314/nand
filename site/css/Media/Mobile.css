@@ -269,6 +269,7 @@
     top: calc(100% - 45px);
     position: fixed;
     height: 40px;
+    z-index: 12;
     right: 11px;
   }
 

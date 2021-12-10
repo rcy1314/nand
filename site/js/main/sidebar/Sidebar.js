@@ -49,6 +49,7 @@ let Sidebar = function(Value) {
       sideBarDock
     ) {
       _sidebar.style.left = `-250px`;
+      _hide.style.display = `none`;
       _bar.style.display = `none`;
       _sb.style.display = `none`;
     }

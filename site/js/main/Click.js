@@ -116,6 +116,7 @@ _container
         if (
           sideBarDock
         ) {
+          _hide.style.display = `none`;
           _bar.style.display = `none`;
           _sb.style.display = `none`;
         }
@@ -137,8 +138,7 @@ _container
         )
           location.href.split(`?`)[0].state();
         if (
-          _sidebar.offsetLeft == `-280` ||
-          _sidebar.offsetLeft == `-250`
+          !sideBarDock
         )
           _sb.style.display = `block`;
 
