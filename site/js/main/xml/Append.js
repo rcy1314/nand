@@ -166,6 +166,7 @@ var Append = function(id) {
     Suggest();
     Status(id, recent, oldest, posts);
   } else {
+    asset = [];
     while (
       _status.firstChild
     )
