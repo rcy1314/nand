@@ -144,6 +144,20 @@ let Reader = false;
 let readPrevious = true;
 
 /*
+    assetRefresh [boolean/integer]
+
+      Applications
+        xml/Request
+        xml/Append
+
+      Result
+        refresh status/suggestions every number
+
+*/
+
+let assetRefresh = 5;
+
+/*
     onScreen [boolean/integer]
 
       Applications
@@ -659,6 +673,7 @@ let dual;
 let legacy;
 let sscroll;
 let flex;
+let asset = [];
 let expandAnimations = false;
 let expandBackground = false;
 let expandFavorites = false;

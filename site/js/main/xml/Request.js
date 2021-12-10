@@ -20,6 +20,8 @@ var Request = function(index) {
   )
     random = [];
 
+  if (Reader) asset.push(index);
+
   if (
     !document
     .body
@@ -208,21 +210,21 @@ var Request = function(index) {
           if ( //Reader Guide Close
             pub
           )
-          pub.push({
-            enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
-            re: parse.externalURI,
-            courtesy: courtesy,
-            since: parse.since,
-            gen: parse.base36,
-            dst: parse.dst,
-            share: share,
-            title: title,
-            more: more,
-            element: i,
-            post: html,
-            src: src,
-            uri: uri
-          });
+            pub.push({
+              enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
+              re: parse.externalURI,
+              courtesy: courtesy,
+              since: parse.since,
+              gen: parse.base36,
+              dst: parse.dst,
+              share: share,
+              title: title,
+              more: more,
+              element: i,
+              post: html,
+              src: src,
+              uri: uri
+            });
           pub.sort(
             function(a, b) {
               return b.since - a.since;
@@ -303,30 +305,6 @@ var Request = function(index) {
             showSplash
           )
             _check.style.display = `block`;
-          while (
-            _air.firstChild
-          )
-            _air.removeChild(
-              _air.lastChild
-            );
-          while (
-            _result.firstChild
-          )
-            _result.removeChild(
-              _result.lastChild
-            );
-          while (
-            _status.firstChild
-          )
-            _status.removeChild(
-              _status.lastChild
-            );
-          while (
-            _suggestions.firstChild
-          )
-            _suggestions.removeChild(
-              _suggestions.lastChild
-            );
           setTimeout(
             () => {
               let index = anyRandomMenuObject();

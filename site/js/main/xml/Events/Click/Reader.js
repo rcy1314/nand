@@ -27,6 +27,7 @@ _container
         } else if (
           Reader
         ) {
+          asset = [];
           if (
             document
             .body
@@ -57,12 +58,7 @@ _container
           }
           touchmove = true;
           onlyImages = true;
-          if (
-            window.innerWidth > 425
-          ) {
-            cropImages = true;
-            Star(_sidebar.querySelector(`.cropImages`), true);
-          }
+          Star(_sidebar.querySelector(`.cropImages`), true);
           Random();
           randomDuplicate = [];
           notifyOption(`Reading`, `fa-check-circle`);

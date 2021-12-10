@@ -37,30 +37,6 @@ _main
               showSplash
             )
               _check.style.display = `block`;
-            while (
-              _air.firstChild
-            )
-              _air.removeChild(
-                _air.lastChild
-              );
-            while (
-              _result.firstChild
-            )
-              _result.removeChild(
-                _result.lastChild
-              );
-            while (
-              _status.firstChild
-            )
-              _status.removeChild(
-                _status.lastChild
-              );
-            while (
-              _suggestions.firstChild
-            )
-              _suggestions.removeChild(
-                _suggestions.lastChild
-              );
             setTimeout(
               () => {
                 let index = anyRandomMenuObject();

@@ -147,13 +147,46 @@ var Append = function(id) {
     Legacy();
 
   if (
+    Reader &&
+    asset.length === 1 ||
+    asset.length % assetRefresh === 0
+  ) {
+    while (
+      _status.firstChild
+    )
+      _status.removeChild(
+        _status.lastChild
+      );
+    while (
+      _suggestions.firstChild
+    )
+      _suggestions.removeChild(
+        _suggestions.lastChild
+      );
+    Suggest();
+    Status(id, recent, oldest, posts);
+  } else {
+    while (
+      _status.firstChild
+    )
+      _status.removeChild(
+        _status.lastChild
+      );
+    while (
+      _suggestions.firstChild
+    )
+      _suggestions.removeChild(
+        _suggestions.lastChild
+      );
+    Suggest();
+    Status(id, recent, oldest, posts);
+  }
+  if (
     showSplash
   )
     _check.style.display = `none`;
-  Status(id, recent, oldest, posts);
   Sidebar(guideOnScreen);
   Topbar(topBar);
-  Suggest();
   local = null;
   stop = false;
   images = [];
