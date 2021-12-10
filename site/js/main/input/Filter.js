@@ -3,6 +3,8 @@ let Filter = function(filterURI) {
     translations.includes(
       filterURI.toString().capitalize()
     )
+    &&
+    filterURI.toString().capitalize() != `Assets`
   ) {
     setTimeout(
       () => {
@@ -11,7 +13,14 @@ let Filter = function(filterURI) {
     )
     unloading();
     return false;
-  }
+  } else if (
+    filterURI.toString().capitalize() == `Assets`
+  )
+  setTimeout(
+    () => {
+      Assets();
+    }, 200
+  )
   let exact =
     menu.findIndex(
       (item) =>
