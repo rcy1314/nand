@@ -296,19 +296,6 @@ let sideBarMousewheel = false;
 let topBarBackdrop = false;
 
 /*
-    toggleBorders [boolean/integer]
-
-      Applications
-        build/xmlHTMLBuild
-
-      Result
-        toggle border.
-
-*/
-
-let toggleBorders = false;
-
-/*
     onlySearch [boolean/integer]
 
       Applications

@@ -10,49 +10,26 @@ _sidebar
         )
       ) {
         cropImages = cropImages != true;
+        Cleanup();
+        stop = true;
+        first = true;
         if (
-          cropImages
-        ) {
-          _channel
-            .querySelectorAll(
-              `.item, .classic`
-            )
-            .forEach(
-              (a) => {
-                a
-                  .style
-                  .cssText =
-                  `height:180px !important`
-              }
-            )
-        } else if (
-          display != `sideScroll` &&
-          !cropImages
-        ) {
-          _main
-            .querySelectorAll(
-              `.image`
-            )
-            .forEach(
-              (a) =>
-              a
-              .style
-              .height =
-              `auto`
-            );
-        }
-        if (
-          document
-          .body
-          .contains(
-            _center
-            .querySelector(
-              `.item`
-            )
-          ) &&
-          display == `flexBox`
+          showSplash
         )
-          Flex();
+          _check.style.display = `block`;
+        while (
+          _status.firstChild
+        )
+          _status.removeChild(
+            _status.lastChild
+          );
+        while (
+          _suggestions.firstChild
+        )
+          _suggestions.removeChild(
+            _suggestions.lastChild
+          );
+        Request(id);
         Star(
           evt
           .target,

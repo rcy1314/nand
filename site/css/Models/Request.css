@@ -46,7 +46,6 @@
 
 .attribute {
   background-color: var(--color-primary);
-  border: var(--border-color);
   position: absolute;
   display: none;
   height: 155px;
@@ -282,7 +281,6 @@
 }
 
 #xml .header {
-  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   background-color: transparent;
   position: relative;
   height: 60px;
@@ -330,8 +328,8 @@
 }
 
 .item {
+  border: .3px solid transparent !important;
   background-color: var(--color-secondary);
-  border: .3px solid transparent;
   min-height: 80px !important;
   margin-bottom: 70px;
 }

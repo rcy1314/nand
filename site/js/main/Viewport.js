@@ -17,8 +17,17 @@ let Viewport = function() {
 
   display == viewport[cycleViewport]
 
-  if (
-    display == `sideScroll`
+  setTimeout(
+    () => {
+      if (
+        window.innerWidth <= 425
+      )
+        cropImages = true;
+      Star(
+        _sidebar.querySelector(`.cropImages`),
+        cropImages
+      );
+    }, 300
   )
-    cropImages == true;
+
 }

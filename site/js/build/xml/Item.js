@@ -47,8 +47,7 @@ let xmlHTMLBuild = function(htmlArray) {
   if (fadeIntoView) object.classList.add(`hidden`);
   publish.innerHTML = htmlArray.truncate + htmlArray.more;
   item.setAttribute(`aria-object`, htmlArray.menuObject);
-  if (!toggleBorders) item.style.border = `.3px solid transparent`
-  else item.style.border = `var(--border-color)`;
+  item.style.border = `.3px solid transparent`
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   if (
     display == `flexBox`

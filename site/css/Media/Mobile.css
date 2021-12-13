@@ -20,7 +20,7 @@
     min-height: 80px !important;
     box-shadow: none !important;
     border: none !important;
-    width: 100%;
+    width: 425px;
   }
 
   #xml .classic:not(.flexbox .classic) {

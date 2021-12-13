@@ -23,7 +23,7 @@ _container
             .querySelectorAll(
               `.item`
             )
-              .length > 100
+              .length > 40
           &&
             Reader
         ) {
@@ -66,6 +66,45 @@ _container
               }
             }, 500
           )
+        }
+        else if (
+          document
+            .body
+              .contains(
+                _channel
+                  .querySelector(
+                    `.item`
+                  )
+              )
+          &&
+          _channel
+            .querySelectorAll(
+              `.item`
+            )
+              .length > 40
+          &&
+            !Reader
+        ) {
+          Cleanup();
+          stop = true;
+          first = true;
+          if (
+            showSplash
+          )
+            _check.style.display = `block`;
+          while (
+            _status.firstChild
+          )
+            _status.removeChild(
+              _status.lastChild
+            );
+          while (
+            _suggestions.firstChild
+          )
+            _suggestions.removeChild(
+              _suggestions.lastChild
+            );
+          Request(id);
         }
         cycleViewport = cycleViewport + 1
 
@@ -198,6 +237,40 @@ _container
         }
       }
 
+      if (
+        document
+          .body
+            .contains(
+              _channel
+                .querySelector(
+                  `.item`
+                )
+            )
+      )
+      setTimeout(
+        function() {
+          _channel
+            .querySelectorAll(
+              `.item, .wrap, .classic`
+            )
+            .forEach(
+              function(a) {
+                if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
+                  a
+                  .style
+                  .cssText =
+                  `height:${
+                          a
+                            .closest(
+                              `.item`
+                            ).querySelector(
+                              `.img`
+                            ).clientHeight
+                        }px !important`
+              }
+            )
+        }, 25
+      )
     }, {
       passive: false
     }
