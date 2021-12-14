@@ -140,6 +140,7 @@ _container
                 )
               )
               &&
+              window.innerWidth <= 425 &&
               cropImages
             )
             setTimeout(
@@ -179,6 +180,35 @@ _container
             )
           )
             _main.scrollTop = 0;
+            if (
+              document
+              .body
+              .contains(
+                _channel
+                .querySelector(
+                  `.item`
+                )
+              )
+              &&
+              window.innerWidth <= 425 &&
+              cropImages
+            )
+            setTimeout(
+              function() {
+                _channel
+                  .querySelectorAll(
+                    `.item, .img, .wrap, .image, .classic`
+                  )
+                  .forEach(
+                    function(a) {
+                        a
+                        .style
+                        .cssText =
+                        `height:80px`
+                    }
+                  )
+              }, 25
+            )
           Star(_sidebar.querySelector(`.dual`), false);
           Star(_sidebar.querySelector(`.flex`), true);
           Star(_sidebar.querySelector(`.sscroll`), false);
@@ -309,7 +339,7 @@ _container
         function() {
           _channel
             .querySelectorAll(
-              `.item, .wrap, .classic`
+              `.item, .img, .wrap, .image, .classic`
             )
             .forEach(
               function(a) {
@@ -324,7 +354,7 @@ _container
                             ).querySelector(
                               `.img`
                             ).clientHeight
-                        }px !important`
+                        }px`
               }
             )
         }, 25

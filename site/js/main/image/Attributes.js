@@ -120,43 +120,31 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
                     item.classList.add(`i`);
-                    if (
-                      Width < maximum ||
-                      Height < shrunk ||
-                      Reader
-                    ) {
-                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                      itemPending.remove();
-                    } else {
-                      itemImage.setAttribute(`src`, e.target.result);
-                      itemContainer.style.position = `absolute`;
-                      itemImage.style.position = `absolute`;
-                      itemFilter.style.transform = `scale(4)`
-                      itemPending.remove();
-                      itemFilter.classList.add(`blur`);
-                      setTimeout(
-                        () => {
-                          if (
-                            !cropImages &&
-                            itemImage.clientHeight > shrunk &&
-                            itemImage.clientWidth > maximum
-                          ) {
-                            item.style
-                              .height =
-                              `${itemImage.clientHeight + 2}px`
-                            itemClassic.style
-                              .height =
-                              `${itemImage.clientHeight}px`
-                            itemContainer.style
-                              .height =
-                              `${itemImage.clientHeight}px`
-                          } else {
-                            itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                            itemPending.remove();
-                          }
-                        }, 50
-                      )
-                    };
+                    itemImage.setAttribute(`src`, e.target.result);
+                    itemContainer.style.position = `absolute`;
+                    itemImage.style.position = `absolute`;
+                    itemFilter.style.transform = `scale(4)`
+                    itemPending.remove();
+                    itemFilter.classList.add(`blur`);
+                    setTimeout(
+                      () => {
+                        if (
+                          !cropImages &&
+                          itemImage.clientHeight > shrunk &&
+                          itemImage.clientWidth > maximum
+                        ) {
+                          item.style
+                            .height =
+                            `${itemImage.clientHeight + 2}px`
+                          itemClassic.style
+                            .height =
+                            `${itemImage.clientHeight}px`
+                          itemContainer.style
+                            .height =
+                            `${itemImage.clientHeight}px`
+                        }
+                      }, 50
+                    )
                   }
                 }
                 request.onerror = function(e) {
@@ -192,17 +180,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
                     item.classList.add(`i`);
-                    if (
-                      Width < maximum ||
-                      Height < shrunk ||
-                      Reader
-                    ) {
-                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                      itemPending.remove();
-                    } else {
-                      itemPending.remove();
-                      itemImage.setAttribute(`src`, e.target.result);
-                    };
+                    itemPending.remove();
+                    itemImage.setAttribute(`src`, e.target.result);
                     setTimeout(
                       () => {
                         if (
@@ -219,9 +198,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           itemContainer.style
                             .height =
                             `${itemImage.clientHeight}px`
-                        } else {
-                          itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                          itemPending.remove();
                         }
                       }, 50
                     )
@@ -273,38 +249,27 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               menu[id].id.match(/Youtube/g)
             )
               itemImage.classList.add(`youtube`)
-            if (
-              Width < maximum ||
-              Height < shrunk
-            ) {
-              itemContainer.style.backgroundImage = `url(${e.target.result})`;
-              itemPending.remove();
-            } else {
-              itemImage.setAttribute(`src`, e.target.result);
-              itemPending.remove();
-              setTimeout(
-                () => {
-                  if (
-                    !cropImages &&
-                    itemImage.clientHeight > shrunk &&
-                    itemImage.clientWidth > maximum
-                  ) {
-                    item.style
-                      .height =
-                      `${itemImage.clientHeight + 2}px`
-                    itemClassic.style
-                      .height =
-                      `${itemImage.clientHeight}px`
-                    itemContainer.style
-                      .height =
-                      `${itemImage.clientHeight}px`
-                  } else {
-                    itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                    itemPending.remove();
-                  }
-                }, 50
-              )
-            }
+            itemImage.setAttribute(`src`, e.target.result);
+            itemPending.remove();
+            setTimeout(
+              () => {
+                if (
+                  !cropImages &&
+                  itemImage.clientHeight > shrunk &&
+                  itemImage.clientWidth > maximum
+                ) {
+                  item.style
+                    .height =
+                    `${itemImage.clientHeight + 2}px`
+                  itemClassic.style
+                    .height =
+                    `${itemImage.clientHeight}px`
+                  itemContainer.style
+                    .height =
+                    `${itemImage.clientHeight}px`
+                }
+              }, 50
+            )
           }
         }
         request.onerror = function(e) {
@@ -326,7 +291,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       if (
         cropImages &&
         window.innerWidth >= 768 &&
-        display == `duo`
+        display == `duo` ||
+        display == `sideScroll`
       ) {
         itemContainer.style.height = `340px`;
         itemImage.style.height = `340px`;
