@@ -251,6 +251,7 @@
   width: 320px !important;
   display: inline-table;
   margin-right: 50px;
+  margin-left: 20px;
 }
 
 .sideChannel .item .classic {

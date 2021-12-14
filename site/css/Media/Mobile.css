@@ -12,11 +12,11 @@
     max-height: 80px !important;
   }
 
-  #xml .item {
+  #xml .item:not(.flexbox .item):not(.duo .item):not(.sideChannel .item) {
     min-height: 80px !important;
     box-shadow: none !important;
     border: none !important;
-    width: 425px;
+    width: 425px !important;
   }
 
   #xml .classic:not(.flexbox .classic) {
