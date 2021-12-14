@@ -35,7 +35,6 @@ let Reverse = function(translation) {
     ) {
       if (
         translation == menu[i].category &&
-        id != menu.indexOf(menu[i]) &&
         menu[i].media
       ) {
         media = `<div class='media' style='display:none'>Images</div>`;

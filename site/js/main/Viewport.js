@@ -23,6 +23,7 @@ let Viewport = function() {
         window.innerWidth <= 425
       )
         cropImages = true;
+        cropImagesBuffer = true;
       Star(
         _sidebar.querySelector(`.cropImages`),
         cropImages

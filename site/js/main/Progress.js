@@ -159,9 +159,6 @@ let Progress = function(done) {
       scrollIntoView
     ) {
       _group.classList.add(`scroll-into-view`)
-      if (
-        !onlyImages
-      )
         setTimeout(
           () => {
             _main.scrollTop = _air.clientHeight;

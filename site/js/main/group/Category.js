@@ -47,7 +47,6 @@ let Category = function(translation) {
     ) {
       if (
         translation == menu[i].category &&
-        id != menu.indexOf(menu[i]) &&
         menu[i].media
       ) {
         _result.append(
@@ -65,8 +64,7 @@ let Category = function(translation) {
       !onlyImages
     ) {
       if (
-        translation == menu[i].category &&
-        id != menu.indexOf(menu[i])
+        translation == menu[i].category
       ) {
         _result.append(
           categoryBuild(
