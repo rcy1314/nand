@@ -335,8 +335,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemClassic.style.height = `340px`;
       } else if (
         cropImages &&
-        window.innerWidth >= 768 &&
-        display == `flexBox`
+        window.innerWidth >= 768
       ) {
         itemContainer.style.height = `169px`;
         itemImage.style.height = `169px`;

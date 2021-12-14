@@ -23,7 +23,7 @@ _container
             .querySelectorAll(
               `.item`
             )
-              .length > 40
+              .length > 30
           &&
             Reader
         ) {
@@ -81,7 +81,7 @@ _container
             .querySelectorAll(
               `.item`
             )
-              .length > 40
+              .length > 30
           &&
             !Reader
         ) {
@@ -130,6 +130,34 @@ _container
             )
           )
             _main.scrollTop = 0;
+            if (
+              document
+              .body
+              .contains(
+                _channel
+                .querySelector(
+                  `.item`
+                )
+              )
+              &&
+              cropImages
+            )
+            setTimeout(
+              function() {
+                _channel
+                  .querySelectorAll(
+                    `.item, .img, .wrap, .image, .classic`
+                  )
+                  .forEach(
+                    function(a) {
+                        a
+                        .style
+                        .cssText =
+                        `height:169px`
+                    }
+                  )
+              }, 25
+            )
           Star(_sidebar.querySelector(`.dual`), true);
           Star(_sidebar.querySelector(`.flex`), false);
           Star(_sidebar.querySelector(`.sscroll`), false);
@@ -230,6 +258,34 @@ _container
             )
           )
             _channel.scrollLeft = leaveOff;
+            if (
+              document
+              .body
+              .contains(
+                _channel
+                .querySelector(
+                  `.item`
+                )
+              )
+              &&
+              cropImages
+            )
+            setTimeout(
+              function() {
+                _channel
+                  .querySelectorAll(
+                    `.item, .img, .wrap, .image, .classic`
+                  )
+                  .forEach(
+                    function(a) {
+                        a
+                        .style
+                        .cssText =
+                        `height:340px`
+                    }
+                  )
+              }, 25
+            )
           Star(_sidebar.querySelector(`.dual`), false);
           Star(_sidebar.querySelector(`.flex`), false);
           Star(_sidebar.querySelector(`.sscroll`), true);
@@ -246,6 +302,8 @@ _container
                   `.item`
                 )
             )
+        &&
+          display != `sideScroll`
       )
       setTimeout(
         function() {

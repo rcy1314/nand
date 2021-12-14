@@ -1,9 +1,5 @@
 @media screen and (max-width: 425px) {
 
-  .flexbox .pending {
-    margin-top: 5px;
-  }
-
   #guide .pub {
     width: 90% !important;
   }
