@@ -140,8 +140,8 @@
   overflow:visible;
   user-select:none;
   cursor:default;
-  height:270px;
-  width:320px;
+  height: 100%;
+  width: 100%;
   right: 0;
   left: 0;
   top: 0;
