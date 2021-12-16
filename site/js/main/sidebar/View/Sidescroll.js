@@ -8,7 +8,7 @@ _sidebar
         )
       ) {
         display = `sideScroll`;
-        notifyOption(`Side Scroll`, `fa-check-circle`)
+        notifyOption(`Side View`, `fa-check-circle`)
         let leaveOff = _main.scrollTop +
           (
             (

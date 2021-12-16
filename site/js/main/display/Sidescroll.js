@@ -30,6 +30,19 @@ let Sidescroll = function() {
   _channel.classList.remove(`duo`)
 
   if (
+    window.innerWidth <= 425 &&
+    document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    )
+  ) {
+    _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
+  }
+  if (
     window.innerWidth
     >
     768

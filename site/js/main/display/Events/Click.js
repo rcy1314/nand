@@ -246,7 +246,7 @@ _container
           viewport[cycleViewport] == `sideScroll`
         ) {
           display = `sideScroll`;
-          notifyOption(`Side Scroll`, `fa-check-circle`)
+          notifyOption(`Side View`, `fa-check-circle`)
           if (
             document
             .body

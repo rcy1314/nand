@@ -37,6 +37,11 @@
     position: relative;
   }
 
+  .duo .item .img,
+  .duo .item .image {
+    min-height: 160px !important;
+  }
+
   .flexbox .yt .image {
     height: 79px !important;
   }
@@ -72,7 +77,6 @@
 
   .sideChannel {
     height: fit-content !important;
-    margin-top: 60px !important;
     width: 100vw !important;
   }
 
