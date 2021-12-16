@@ -4,10 +4,6 @@
     width: 90% !important;
   }
 
-  #load {
-    margin-bottom: 10px;
-  }
-
   #xml .yt .item {
     max-height: 80px !important;
   }
@@ -169,7 +165,7 @@
   #xml .image,
   #xml .pending {
     width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
 
   .listing {
@@ -207,7 +203,7 @@
     flex-wrap: wrap;
     margin-left: 0%;
     height: 500px;
-    top: -100px;
+    top: -75px;
     right: 0;
     left: 0;
   }

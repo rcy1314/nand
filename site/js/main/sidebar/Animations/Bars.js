@@ -9,6 +9,11 @@ _sidebar
       ) {
         imageLoader = `v-bars`;
         _main
+          .querySelectorAll(`.pending`)
+          .forEach(
+            (a) => a.classList.remove(`blink`)
+          );
+        _main
           .querySelectorAll(`.bars`)
           .forEach(
             (a) => a.style.display = `block`

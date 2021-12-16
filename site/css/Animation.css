@@ -39,11 +39,8 @@
   color: var(--loader-color);
   animation-delay: -0.16s;
   text-indent: -9999em;
-  margin-bottom: auto;
-  margin-right: auto;
-  position: absolute;
-  margin-left: auto;
-  margin-top: auto;
+  position: relative;
+  margin-top: 10px;
   font-size: 11px;
   right: 0;
   left: 0;
@@ -76,6 +73,7 @@
   width: 38px;
   height: 38px;
   opacity: 0;
+  margin-top: 20px;
   transform: rotate(225deg);
   animation-iteration-count: infinite;
   animation-name: orbit;
@@ -132,19 +130,13 @@
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: auto;
   position:absolute;
-  margin-top: auto;
+  margin-top: 50px;
   overflow:visible;
   user-select:none;
   cursor:default;
   height: 100%;
   width: 100%;
-  right: 0;
-  left: 0;
-  top: 0;
 }
 
 #load div {
@@ -207,15 +199,8 @@
 .loader.double-circle {
   height: var(--loader-height, 100px);
   width: var(--loader-width, 100px);
-  margin-bottom: auto;
-  margin-right: auto;
-  position: relative;
+  margin-bottom: 15px;
   position: absolute;
-  margin-left: auto;
-  margin-top: auto;
-  right: 0;
-  left: 0;
-  top: 0;
 }
 
 .mainTransition {

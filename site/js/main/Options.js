@@ -66,11 +66,11 @@ let Options = function() {
     sideBarMouse = false
 
   if (
-    window.innerWidth < 425
+    window.innerWidth <= 425
   ) {
     guideOnScreen = onScreen;
     Sidebar(onScreen);
     onScreen = false;
-    Generate(24);
+    Generate(28);
   } else Generate(8);
 }

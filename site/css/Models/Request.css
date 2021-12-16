@@ -385,6 +385,7 @@
 }
 
 .pending {
+  background-color: var(--color-secondary);
   justify-content: center;
   align-items: center;
   position: absolute;

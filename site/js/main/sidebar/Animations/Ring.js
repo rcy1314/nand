@@ -9,6 +9,11 @@ _sidebar
       ) {
         imageLoader = `ring-circle`;
         _main
+          .querySelectorAll(`.pending`)
+          .forEach(
+            (a) => a.classList.remove(`blink`)
+          );
+        _main
           .querySelectorAll(`#load`)
           .forEach(
             (a) => a.style.display = `none`

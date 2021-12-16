@@ -60,8 +60,8 @@ let xmlHTMLBuild = function(htmlArray) {
   item.setAttribute(`ext`, htmlArray.externalURI);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
-  pending.classList.add(`blink`, `pending`);
   filterBlur.classList.add(`filterBlur`);
+  pending.classList.add(`pending`);
   classic.classList.add(`classic`);
   ago.classList.add(`ago`, `zulu`);
   object.id = htmlArray.pubIndex;
