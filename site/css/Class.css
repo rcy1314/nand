@@ -139,7 +139,7 @@
 }
 
 .flexbox .item {
-  margin: 0 2px 2px 0;
+  margin: 0 2px 2px 0 !important;
   height: fit-content;
   position: relative;
   width: 300px !important;

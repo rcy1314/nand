@@ -134,7 +134,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                         ) {
                           item.style
                             .height =
-                            `${itemImage.clientHeight + 2}px`
+                            `${itemImage.clientHeight}px`
                           itemClassic.style
                             .height =
                             `${itemImage.clientHeight}px`
@@ -259,7 +259,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 ) {
                   item.style
                     .height =
-                    `${itemImage.clientHeight + 2}px`
+                    `${itemImage.clientHeight}px`
                   itemClassic.style
                     .height =
                     `${itemImage.clientHeight}px`

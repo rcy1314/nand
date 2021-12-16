@@ -25,11 +25,6 @@ _guide
             _guide.lastChild
           );
 
-        if (
-          sideBarLock == true
-        )
-          onScreen = true;
-
         _main.classList.remove(`guide`);
         _guide.style.display = `none`;
         if (

@@ -11,21 +11,19 @@ _container
       ) {
         if (
           document
-            .body
-              .contains(
-                _channel
-                  .querySelector(
-                    `.item`
-                  )
-              )
-          &&
-          _channel
-            .querySelectorAll(
+          .body
+          .contains(
+            _channel
+            .querySelector(
               `.item`
             )
-              .length > 30
-          &&
-            Reader
+          ) &&
+          _channel
+          .querySelectorAll(
+            `.item`
+          )
+          .length > 30 &&
+          Reader
         ) {
           Cleanup();
           stop = true;
@@ -66,24 +64,21 @@ _container
               }
             }, 500
           )
-        }
-        else if (
+        } else if (
           document
-            .body
-              .contains(
-                _channel
-                  .querySelector(
-                    `.item`
-                  )
-              )
-          &&
-          _channel
-            .querySelectorAll(
+          .body
+          .contains(
+            _channel
+            .querySelector(
               `.item`
             )
-              .length > 30
-          &&
-            !Reader
+          ) &&
+          _channel
+          .querySelectorAll(
+            `.item`
+          )
+          .length > 30 &&
+          !Reader
         ) {
           Cleanup();
           stop = true;
@@ -130,19 +125,18 @@ _container
             )
           )
             _main.scrollTop = 0;
-            if (
-              document
-              .body
-              .contains(
-                _channel
-                .querySelector(
-                  `.item`
-                )
+          if (
+            document
+            .body
+            .contains(
+              _channel
+              .querySelector(
+                `.item`
               )
-              &&
-              window.innerWidth <= 425 &&
-              cropImages
-            )
+            ) &&
+            window.innerWidth <= 425 &&
+            cropImages
+          )
             setTimeout(
               function() {
                 _channel
@@ -151,7 +145,7 @@ _container
                   )
                   .forEach(
                     function(a) {
-                        a
+                      a
                         .style
                         .cssText =
                         `height:169px`
@@ -180,19 +174,18 @@ _container
             )
           )
             _main.scrollTop = 0;
-            if (
-              document
-              .body
-              .contains(
-                _channel
-                .querySelector(
-                  `.item`
-                )
+          if (
+            document
+            .body
+            .contains(
+              _channel
+              .querySelector(
+                `.item`
               )
-              &&
-              window.innerWidth <= 425 &&
-              cropImages
-            )
+            ) &&
+            window.innerWidth <= 425 &&
+            cropImages
+          )
             setTimeout(
               function() {
                 _channel
@@ -201,7 +194,7 @@ _container
                   )
                   .forEach(
                     function(a) {
-                        a
+                      a
                         .style
                         .cssText =
                         `height:80px`
@@ -288,18 +281,17 @@ _container
             )
           )
             _channel.scrollLeft = leaveOff;
-            if (
-              document
-              .body
-              .contains(
-                _channel
-                .querySelector(
-                  `.item`
-                )
+          if (
+            document
+            .body
+            .contains(
+              _channel
+              .querySelector(
+                `.item`
               )
-              &&
-              cropImages
-            )
+            ) &&
+            cropImages
+          )
             setTimeout(
               function() {
                 _channel
@@ -308,7 +300,7 @@ _container
                   )
                   .forEach(
                     function(a) {
-                        a
+                      a
                         .style
                         .cssText =
                         `height:340px`
@@ -321,33 +313,31 @@ _container
           Star(_sidebar.querySelector(`.sscroll`), true);
           Star(_sidebar.querySelector(`.legacy`), false);
         }
-      }
 
-      if (
-        document
+        if (
+          document
           .body
-            .contains(
-              _channel
-                .querySelector(
-                  `.item`
-                )
+          .contains(
+            _channel
+            .querySelector(
+              `.item`
             )
-        &&
+          ) &&
           display != `sideScroll`
-      )
-      setTimeout(
-        function() {
-          _channel
-            .querySelectorAll(
-              `.item, .img, .wrap, .image, .classic`
-            )
-            .forEach(
-              function(a) {
-                if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                  a
-                  .style
-                  .cssText =
-                  `height:${
+        )
+          setTimeout(
+            function() {
+              _channel
+                .querySelectorAll(
+                  `.item, .img, .wrap, .image, .classic`
+                )
+                .forEach(
+                  function(a) {
+                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
+                      a
+                      .style
+                      .cssText =
+                      `height:${
                           a
                             .closest(
                               `.item`
@@ -355,10 +345,11 @@ _container
                               `.img`
                             ).clientHeight
                         }px`
-              }
-            )
-        }, 25
-      )
+                  }
+                )
+            }, 25
+          )
+      }
     }, {
       passive: false
     }

@@ -304,13 +304,7 @@
 }
 
 #main #xml .center .item .img {
-  height: calc(100% + 6px) !important;
-  width: calc(100% + 6px) !important;
-  margin-right: -2px !important;
-  position: relative !important;
   display: block !important;
-  left: -1px !important;
-  top: -1px !important;
 }
 
 #main #xml .center .item .img,

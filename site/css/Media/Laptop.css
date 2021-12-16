@@ -36,10 +36,6 @@
     width: 420px;
   }
 
-  #guide .item {
-    width: fit-content !important;
-  }
-
   .content {
     right: 0 !important;
   }
