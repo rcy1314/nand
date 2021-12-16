@@ -304,8 +304,13 @@
 }
 
 #main #xml .center .item .img {
+  height: calc(100% + 6px) !important;
+  width: calc(100% + 6px) !important;
+  margin-right: -2px !important;
+  position: relative !important;
   display: block !important;
-  width: 100%;
+  left: -1px !important;
+  top: -1px !important;
 }
 
 #main #xml .center .item .img,
@@ -315,7 +320,6 @@
   align-items: center;
   max-height: 65vh;
   overflow: hidden;
-  max-width: 100%;
   display: flex;
   right: 0;
   left: 0;
@@ -330,7 +334,6 @@
 
 .item {
   border: .3px solid transparent !important;
-  background-color: var(--color-secondary);
   min-height: 80px !important;
   margin-bottom: 70px;
 }
