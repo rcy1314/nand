@@ -270,10 +270,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 itemImage.style.display = `block`;
               }, 50
             )
-            if (display != `Sidescroll`)
-              item.style.display = `flex`;
-            else
-              item.style.display = `inline-flex`;
           }
         }
         request.onerror = function(e) {
