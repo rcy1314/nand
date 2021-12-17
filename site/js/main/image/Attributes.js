@@ -267,10 +267,13 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     .height =
                     `${itemImage.clientHeight}px`
                 }
+                itemImage.style.display = `block`;
               }, 50
             )
-            item.style.display = `flex`;
-            itemImage.style.display = `block`;
+            if (display != `Sidescroll`)
+              item.style.display = `flex`;
+            else
+              item.style.display = `inline-flex`;
           }
         }
         request.onerror = function(e) {
