@@ -4,6 +4,10 @@
     display: none;
   }
 
+  .pending {
+    margin-bottom: 50px;
+  }
+
   .channel {
     width: 0;
   }

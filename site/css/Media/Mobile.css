@@ -1,5 +1,21 @@
 @media screen and (max-width: 425px) {
 
+  .animation {
+    bottom: 25px;
+  }
+
+  .bars {
+    top: 25px;
+  }
+
+  .circle:not(.content .circle) {
+    margin-top: 20px;
+  }
+
+  #load {
+    margin-top: 50px;
+  }
+
   #main #xml .center .item .img {
     height: calc(100% + 5px) !important;
     width: calc(100% + 4px) !important;
