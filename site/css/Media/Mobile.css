@@ -9,7 +9,7 @@
   }
 
   .circle:not(.content .circle) {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   #load {
@@ -66,13 +66,13 @@
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
-    min-height: 77px !important;
+    min-height: 80px !important;
     width: 140px !important;
     position: relative;
   }
 
   .flexbox .item .classic {
-    min-height: 77px !important;
+    min-height: 80px !important;
   }
 
   .flexbox .item .header {
