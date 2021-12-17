@@ -255,6 +255,7 @@ _container
             )
           )
             _center.querySelector(`#bottom`).remove();
+            _center.style.top = `60px`;
           Sidescroll();
           let leaveOff = _main.scrollTop +
             (
