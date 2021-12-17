@@ -29,7 +29,10 @@ _sidebar
           _suggestions.removeChild(
             _suggestions.lastChild
           );
-        Request(id);
+        if (
+          id
+        )
+          Request(id);
         Star(
           evt
           .target,
