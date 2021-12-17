@@ -249,7 +249,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
             )
               itemImage.classList.add(`youtube`)
             itemImage.setAttribute(`src`, e.target.result);
-            itemPending.style.display = `none`;
+            itemPending.remove();
             setTimeout(
               () => {
                 if (
@@ -269,6 +269,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 }
               }, 50
             )
+            item.style.display = `flex`;
           }
         }
         request.onerror = function(e) {
@@ -309,7 +310,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemClassic.style.height = `169px`;
       } else if (
         window.innerWidth < 768 &&
-        display == `flexBox` &&
         cropImages
       ) {
         itemContainer.style.height = `80px`;

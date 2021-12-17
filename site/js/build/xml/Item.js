@@ -130,5 +130,6 @@ let xmlHTMLBuild = function(htmlArray) {
       htmlArray.externalURI
     )
   );
+  item.style.display = `none`
   return item;
 };
