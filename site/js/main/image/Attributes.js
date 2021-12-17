@@ -270,6 +270,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               }, 50
             )
             item.style.display = `flex`;
+            itemImage.style.display = `block`;
           }
         }
         request.onerror = function(e) {
