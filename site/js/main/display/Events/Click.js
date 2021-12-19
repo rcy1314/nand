@@ -134,8 +134,7 @@ _container
                 `.item`
               )
             ) &&
-            window.innerWidth <= 425 &&
-            cropImages
+            window.innerWidth <= 425
           )
             setTimeout(
               function() {
@@ -148,7 +147,7 @@ _container
                       a
                         .style
                         .cssText =
-                        `height:169px`
+                        `height:80px`
                     }
                   )
               }, 25
@@ -183,8 +182,7 @@ _container
                 `.item`
               )
             ) &&
-            window.innerWidth <= 425 &&
-            cropImages
+            window.innerWidth <= 425
           )
             setTimeout(
               function() {
@@ -290,8 +288,7 @@ _container
               .querySelector(
                 `.item`
               )
-            ) &&
-            cropImages
+            )
           )
             setTimeout(
               function() {
