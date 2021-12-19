@@ -14,9 +14,6 @@ _container
         if (
           !Reader
         ) {
-          cropImages = cropImagesBuffer;
-          onlyImages = onlyImagesBuffer;
-          Star(_sidebar.querySelector(`.cropImages`), cropImages);
           notifyOption(`Reading`, `fa-times-circle`);
           _main
             .querySelectorAll(`.joi`)
@@ -58,7 +55,6 @@ _container
           }
           touchmove = true;
           onlyImages = true;
-          Star(_sidebar.querySelector(`.cropImages`), true);
           Random();
           randomDuplicate = [];
           notifyOption(`Reading`, `fa-check-circle`);

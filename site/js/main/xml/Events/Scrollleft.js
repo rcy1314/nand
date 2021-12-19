@@ -25,11 +25,7 @@ _channel
               _channel.clientWidth &&
               Reader &&
               !stop &&
-              !document
-              .body
-              .contains(
-                _channel.querySelector(`.pending`)
-              )
+              _channel.querySelectorAll(`.pending`).length <= 3
             )
           ) {
             stop = true;

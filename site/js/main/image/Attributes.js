@@ -128,7 +128,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     setTimeout(
                       () => {
                         if (
-                          !cropImages &&
                           itemImage.clientHeight > shrunk &&
                           itemImage.clientWidth > maximum
                         ) {
@@ -184,7 +183,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     setTimeout(
                       () => {
                         if (
-                          !cropImages &&
                           itemImage.clientHeight > shrunk &&
                           itemImage.clientWidth > maximum
                         ) {
@@ -253,7 +251,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
             setTimeout(
               () => {
                 if (
-                  !cropImages &&
                   itemImage.clientHeight > shrunk &&
                   itemImage.clientWidth > maximum
                 ) {
@@ -288,38 +285,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         )
           request.send();
       }; //END NEWIMG.ONLOAD
-      if (
-        cropImages &&
-        window.innerWidth >= 768 &&
-        display == `duo` ||
-        display == `sideScroll`
-      ) {
-        itemContainer.style.height = `340px`;
-        itemImage.style.height = `340px`;
-        item.style.height = `340px`;
-        itemWrap.style.height = `340px`;
-        itemClassic.style.height = `340px`;
-      } else if (
-        cropImages &&
-        window.innerWidth >= 768
-      ) {
-        itemContainer.style.height = `169px`;
-        itemImage.style.height = `169px`;
-        item.style.height = `169px`;
-        itemWrap.style.height = `169px`;
-        itemClassic.style.height = `169px`;
-      } else if (
-        window.innerWidth < 768 &&
-        cropImages
-      ) {
-        itemContainer.style.height = `80px`;
-        itemPending.style.height = `80px`;
-        itemImage.style.height = `80px`;
-        item.style.height = `80px`;
-        itemWrap.style.height = `80px`;
-        itemClassic.style.height = `80px`;
-      }
-
       if (
         document
         .body

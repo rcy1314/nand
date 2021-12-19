@@ -311,6 +311,7 @@ var Request = function(index) {
               if (
                 httpRequest.readyState == 4 &&
                 typeof(index !== undefined) &&
+                _channel.querySelectorAll(`.pending`).length <= 3 &&
                 random.includes(index)
               )
                 Request(index);

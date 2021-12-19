@@ -31,7 +31,6 @@ _container
       ) {
         Reader = false;
         onlyImages = onlyImagesBuffer;
-        cropImages = cropImagesBuffer;
         scrollIntoView = scrollIntoViewBuffer;
         _main
           .querySelectorAll(`.joi`)

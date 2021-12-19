@@ -352,19 +352,6 @@ let scrollIntoView = true;
 let imageLoader = `ring-circle`;
 
 /*
-    cropImages [boolean/integer]
-
-      Applications
-        image/Dimensions
-
-      Result
-        crop images to center
-
-*/
-
-let cropImages = false;
-
-/*
     fadeIntoView [boolean/integer]
 
       Applications
@@ -690,7 +677,6 @@ let adj = []; //menu randomized
 let complete; //progressBar interval
 let images = []; //array of images in request
 let scrollIntoViewBuffer = scrollIntoView // viewports/group
-let cropImagesBuffer = cropImages; // used in Reader
 let onlyImagesBuffer = onlyImages; // used in Reader
 let sideBarLockBuffer = sideBarLock // used in urlInput
 let touchmove = false; // scrollToElements
@@ -759,10 +745,6 @@ const settings = [{
   {
     name: `Blocks`,
     class: `Blocks`
-  },
-  {
-    name: `Crop Images`,
-    class: `cropImages`
   },
   {
     name: `Fade in Images`,

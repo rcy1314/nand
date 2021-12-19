@@ -20,7 +20,8 @@ _main
           _main.clientHeight <=
           offset &&
           Reader &&
-          !stop
+          !stop &&
+          _channel.querySelectorAll(`.pending`).length <= 3
         )
       ) {
         stop = true;
@@ -70,7 +71,8 @@ _channel
           _channel.clientWidth <=
           _channel.clientWidth &&
           Reader &&
-          !stop
+          !stop &&
+          _channel.querySelectorAll(`.pending`).length <= 3
         )
       ) {
         stop = true;
