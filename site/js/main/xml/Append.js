@@ -145,11 +145,10 @@ var Append = function(id) {
     display == `legacy`
   )
     Legacy();
-
   if (
     Reader &&
     asset.length === 1 ||
-    asset.length % assetRefresh === 0
+    asset.length / assetRefresh === 1
   ) {
     while (
       _status.firstChild
@@ -165,7 +164,9 @@ var Append = function(id) {
       );
     Suggest();
     Status(id, recent, oldest, posts);
-  } else {
+  } else if (
+    !Reader
+  ){
     while (
       _status.firstChild
     )
