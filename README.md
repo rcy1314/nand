@@ -69,11 +69,6 @@ Notice
   This project makes requests to external resources  
   including a cors-proxy, nsfw api, and any asset(s)
 
-Note
-----
-  <em>If the viewport is unstable when  
-  images load turn on cropImages
-
 
 License
 ----
