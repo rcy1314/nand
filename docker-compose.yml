@@ -1,4 +1,4 @@
-version: '1.4.2022'
+version: '1.4.3'
 
 services:
   app:
