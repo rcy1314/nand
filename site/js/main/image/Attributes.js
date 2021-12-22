@@ -119,30 +119,42 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
-                    item.classList.add(`i`);
-                    itemImage.setAttribute(`src`, e.target.result);
-                    itemContainer.style.position = `absolute`;
-                    itemImage.style.position = `absolute`;
-                    itemPending.remove();
-                    itemFilter.classList.add(`blur`);
-                    setTimeout(
-                      () => {
-                        if (
-                          itemImage.clientHeight > shrunk &&
-                          itemImage.clientWidth > maximum
-                        ) {
-                          item.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                          itemClassic.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                          itemContainer.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                        }
-                      }, 50
-                    )
+                    if (
+                      Width < maximum ||
+                      Height < shrunk ||
+                      Reader
+                    ) {
+                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      itemPending.remove();
+                    } else {
+                      item.classList.add(`i`);
+                      itemImage.setAttribute(`src`, e.target.result);
+                      itemContainer.style.position = `absolute`;
+                      itemImage.style.position = `absolute`;
+                      itemPending.remove();
+                      itemFilter.classList.add(`blur`);
+                      setTimeout(
+                        () => {
+                          if (
+                            itemImage.clientHeight > shrunk &&
+                            itemImage.clientWidth > maximum
+                          ) {
+                            item.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                            itemClassic.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                            itemContainer.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                          } else {
+                            itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                            itemPending.remove();
+                          }
+                        }, 50
+                      )
+                    }
                   }
                 }
                 request.onerror = function(e) {
@@ -177,27 +189,39 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
-                    item.classList.add(`i`);
-                    itemPending.remove();
-                    itemImage.setAttribute(`src`, e.target.result);
-                    setTimeout(
-                      () => {
-                        if (
-                          itemImage.clientHeight > shrunk &&
-                          itemImage.clientWidth > maximum
-                        ) {
-                          item.style
-                            .height =
-                            `${itemImage.clientHeight + 2}px`
-                          itemClassic.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                          itemContainer.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                        }
-                      }, 50
-                    )
+                    if (
+                      Width < maximum ||
+                      Height < shrunk ||
+                      Reader
+                    ) {
+                      itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      itemPending.remove();
+                    } else {
+                      item.classList.add(`i`);
+                      itemPending.remove();
+                      itemImage.setAttribute(`src`, e.target.result);
+                      setTimeout(
+                        () => {
+                          if (
+                            itemImage.clientHeight > shrunk &&
+                            itemImage.clientWidth > maximum
+                          ) {
+                            item.style
+                              .height =
+                              `${itemImage.clientHeight + 2}px`
+                            itemClassic.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                            itemContainer.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                          } else {
+                            itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                            itemPending.remove();
+                          }
+                        }, 50
+                      )
+                    }
                   }
                 }
                 request.onerror = function(e) {
@@ -246,27 +270,38 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               menu[id].id.match(/Youtube/g)
             )
               itemImage.classList.add(`youtube`)
-            itemImage.setAttribute(`src`, e.target.result);
-            itemPending.remove();
-            setTimeout(
-              () => {
-                if (
-                  itemImage.clientHeight > shrunk &&
-                  itemImage.clientWidth > maximum
-                ) {
-                  item.style
-                    .height =
-                    `${itemImage.clientHeight}px`
-                  itemClassic.style
-                    .height =
-                    `${itemImage.clientHeight}px`
-                  itemContainer.style
-                    .height =
-                    `${itemImage.clientHeight}px`
-                }
-                itemImage.style.display = `block`;
-              }, 50
-            )
+            if (
+              Width < maximum ||
+              Height < shrunk ||
+              Reader
+            ) {
+              itemContainer.style.backgroundImage = `url(${e.target.result})`;
+              itemPending.remove();
+            } else {
+              itemImage.setAttribute(`src`, e.target.result);
+              itemPending.remove();
+              setTimeout(
+                () => {
+                  if (
+                    itemImage.clientHeight > shrunk &&
+                    itemImage.clientWidth > maximum
+                  ) {
+                    item.style
+                      .height =
+                      `${itemImage.clientHeight}px`
+                    itemClassic.style
+                      .height =
+                      `${itemImage.clientHeight}px`
+                    itemContainer.style
+                      .height =
+                      `${itemImage.clientHeight}px`
+                  } else {
+                    itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                    itemPending.remove();
+                  }
+                }, 50
+              )
+            }
           }
         }
         request.onerror = function(e) {
