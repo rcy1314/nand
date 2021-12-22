@@ -22,6 +22,7 @@
 
   .duo .item {
     min-height: 160px !important;
+    max-width: 380px !important;
   }
 
   .duo .classic {
