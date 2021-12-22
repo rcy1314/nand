@@ -31,7 +31,10 @@ window
                 )
             }, 25
           )
-        } else {
+        } else if (
+          display == `duo` &&
+          window.innerWidth > 425
+        ) {
           setTimeout(
             function() {
               _channel
@@ -40,18 +43,51 @@ window
                 )
                 .forEach(
                   function(a) {
-                    if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                      a
+                    a
                       .style
                       .cssText =
-                      `height:${
-                          a
-                            .closest(
-                              `.item`
-                            ).querySelector(
-                              `.img`
-                            ).clientHeight
-                        }px`
+                      `height:169px`
+                  }
+                )
+            }, 25
+          )
+        } else if (
+          display == `sideScroll` ||
+          display == `legacy` &&
+          window.innerWidth > 425
+        ) {
+          setTimeout(
+            function() {
+              _channel
+                .querySelectorAll(
+                  `.item, .img, .wrap, .image, .classic`
+                )
+                .forEach(
+                  function(a) {
+                    a
+                      .style
+                      .cssText =
+                      `height:340px`
+                  }
+                )
+            }, 25
+          )
+        } else if (
+          display == `flexBox` &&
+          window.innerWidth > 425
+        ) {
+          setTimeout(
+            function() {
+              _channel
+                .querySelectorAll(
+                  `.item, .img, .wrap, .image, .classic`
+                )
+                .forEach(
+                  function(a) {
+                    a
+                      .style
+                      .cssText =
+                      `height:160px`
                   }
                 )
             }, 25
@@ -60,5 +96,4 @@ window
       }
     }, {
       passive: true
-    }
-  );
+    });
