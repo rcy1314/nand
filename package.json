@@ -1,6 +1,6 @@
 {
   "name": "nand",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Just Read",
   "main": "app.js",
   "dependencies": {
