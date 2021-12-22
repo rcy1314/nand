@@ -100,6 +100,36 @@ _container
         evt.target.id === `mobileHome` ||
         evt.target.id === `home`
       ) {
+        if (
+          Array.isArray(pub) &&
+          !Reader
+        )
+          Append(id);
+
+        if (
+          loading == `percent`
+        )
+          _progress.style.width = `100%`;
+
+        while (
+          _guide.lastChild
+        )
+          _guide.removeChild(
+            _guide.lastChild
+          );
+
+        _main.classList.remove(`guide`);
+        _guide.style.display = `none`;
+        if (
+          showSplash
+        )
+          _check.style.display = `none`;
+        _main.setAttribute(`tabindex`, -1);
+        guideOnScreen = onScreen;
+        Sidebar(onScreen);
+        Topbar(topBar);
+        _main.focus();
+        pub = null;
         Reader = false;
         onlyImages = onlyImagesBuffer;
         scrollIntoView = scrollIntoViewBuffer;
@@ -119,7 +149,11 @@ _container
           _bar.style.display = `none`;
           _sb.style.display = `none`;
         }
-
+        if (
+          window.innerWidth <= 425
+        ) {
+          _top.style.display = `none`;
+        }
         done = true
         document.title = doc;
         _top.style.display = `none`;
