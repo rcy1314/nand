@@ -25,7 +25,7 @@ _channel
               _channel.clientWidth &&
               Reader &&
               !stop &&
-              !_channel.querySelectorAll(`.pending`).length
+              _channel.querySelectorAll(`.pending`).length <= 3
             )
           ) {
             stop = true;
