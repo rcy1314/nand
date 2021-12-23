@@ -46,31 +46,23 @@ var Append = function(id) {
     safeSearchIDs.includes(menu[id].id) ||
     safeSearch
   ) {
-    for (
-      let i = 0; i <= images.length - 1; i++
-    ) {
       Attributes(
         false,
         id,
-        images[i].element,
-        images[i].src
+        images[0].element,
+        images[0].src
       );
-    }
   } else if (
     !safeSearchIDs.includes(
       menu[id].id
     )
   ) {
-    for (
-      let i = 0; i <= images.length - 1; i++
-    ) {
       Attributes(
         false,
         id,
-        images[i].element,
-        images[i].src
+        images[0].element,
+        images[0].src
       );
-    }
   }
   if (
     display !== `sideScroll` &&
@@ -190,7 +182,6 @@ var Append = function(id) {
   Topbar(topBar);
   local = null;
   stop = false;
-  images = [];
   post = null;
   unloading();
   first = false;
