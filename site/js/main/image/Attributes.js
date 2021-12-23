@@ -1,5 +1,4 @@
 var Attributes = function(empty, menuObject, pubIndex, src) {
-  console.log(images)
   count.push(`null`);
   let k = 5420;
   let shrunk = 200;
@@ -50,16 +49,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       .forEach(
         (a) => a.remove()
       );
-      images.shift();
-      if (
-        images.length
-      )
-      Attributes(
-        false,
-        images[0].id,
-        images[0].element,
-        images[0].src
-      );
   } else if (
     !src ||
     src == `null` ||
@@ -77,16 +66,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       attribute.style.height = `74px`;
       itemPending.remove();
       count.shift();
-      images.shift();
-      if (
-        images.length
-      )
-      Attributes(
-        false,
-        images[0].id,
-        images[0].element,
-        images[0].src
-      );
     }
   }
   imageDuplicate.push(src);
@@ -176,16 +155,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                         }, 50
                       )
                     }
-                    images.shift();
-                    if (
-                      images.length
-                    )
-                    Attributes(
-                      false,
-                      images[0].id,
-                      images[0].element,
-                      images[0].src
-                    );
                   }
                 }
                 request.onerror = function(e) {
@@ -253,16 +222,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                         }, 50
                       )
                     }
-                    images.shift();
-                    if (
-                      images.length
-                    )
-                    Attributes(
-                      false,
-                      images[0].id,
-                      images[0].element,
-                      images[0].src
-                    );
                   }
                 }
                 request.onerror = function(e) {
@@ -343,16 +302,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 }, 50
               )
             }
-            images.shift();
-            if (
-              images.length
-            )
-            Attributes(
-              false,
-              images[0].id,
-              images[0].element,
-              images[0].src
-            );
           }
         }
         request.onerror = function(e) {
@@ -410,15 +359,5 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
     copyPicture.style.display = `none`;
     copyPost.style.display = `none`;
     attribute.style.height = `35px`;
-    images.shift();
-    if (
-      images.length
-    )
-    Attributes(
-      false,
-      images[0].id,
-      images[0].element,
-      images[0].src
-    );
   };
 }

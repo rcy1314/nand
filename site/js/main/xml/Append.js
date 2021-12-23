@@ -30,8 +30,7 @@ var Append = function(id) {
       _channel.append(pub[i].post)
       images.push({
         element: pub[i].element,
-        src: pub[i].src,
-        id: id
+        src: pub[i].src
       });
     } else if (
       !omitGuide
@@ -39,8 +38,7 @@ var Append = function(id) {
       _channel.append(pub[i].post)
       images.push({
         element: pub[i].element,
-        src: pub[i].src,
-        id: id
+        src: pub[i].src
       });
     }
   }
@@ -48,23 +46,31 @@ var Append = function(id) {
     safeSearchIDs.includes(menu[id].id) ||
     safeSearch
   ) {
+    for (
+      let i = 0; i <= images.length - 1; i++
+    ) {
       Attributes(
         false,
         id,
-        images[0].element,
-        images[0].src
+        images[i].element,
+        images[i].src
       );
+    }
   } else if (
     !safeSearchIDs.includes(
       menu[id].id
     )
   ) {
+    for (
+      let i = 0; i <= images.length - 1; i++
+    ) {
       Attributes(
         false,
         id,
-        images[0].element,
-        images[0].src
+        images[i].element,
+        images[i].src
       );
+    }
   }
   if (
     display !== `sideScroll` &&
@@ -184,6 +190,7 @@ var Append = function(id) {
   Topbar(topBar);
   local = null;
   stop = false;
+  images = [];
   post = null;
   unloading();
   first = false;

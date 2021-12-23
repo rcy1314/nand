@@ -24,7 +24,7 @@ _main
               offset &&
               Reader &&
               !stop &&
-              _channel.querySelectorAll(`.pending`).length <= 3
+                _channel.querySelectorAll(`.pending`).length <= 3
             )
           ) {
             stop = true;

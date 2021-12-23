@@ -5,6 +5,7 @@ var Request = function(index) {
   count = [];
   id = index;
   stop = true;
+  images = [];
   let inline = [];
   console.log(index);
   imageDuplicate = [];
