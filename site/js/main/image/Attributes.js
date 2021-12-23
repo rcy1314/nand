@@ -56,7 +56,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       )
       Attributes(
         false,
-        id,
+        images[0].id,
         images[0].element,
         images[0].src
       );
@@ -83,7 +83,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
       )
       Attributes(
         false,
-        id,
+        images[0].id,
         images[0].element,
         images[0].src
       );
@@ -182,7 +182,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     )
                     Attributes(
                       false,
-                      id,
+                      images[0].id,
                       images[0].element,
                       images[0].src
                     );
@@ -259,7 +259,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     )
                     Attributes(
                       false,
-                      id,
+                      images[0].id,
                       images[0].element,
                       images[0].src
                     );
@@ -349,7 +349,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
             )
             Attributes(
               false,
-              id,
+              images[0].id,
               images[0].element,
               images[0].src
             );
@@ -416,7 +416,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
     )
     Attributes(
       false,
-      id,
+      images[0].id,
       images[0].element,
       images[0].src
     );

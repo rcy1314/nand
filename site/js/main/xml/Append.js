@@ -30,7 +30,8 @@ var Append = function(id) {
       _channel.append(pub[i].post)
       images.push({
         element: pub[i].element,
-        src: pub[i].src
+        src: pub[i].src,
+        id: id
       });
     } else if (
       !omitGuide
@@ -38,7 +39,8 @@ var Append = function(id) {
       _channel.append(pub[i].post)
       images.push({
         element: pub[i].element,
-        src: pub[i].src
+        src: pub[i].src,
+        id: id
       });
     }
   }
