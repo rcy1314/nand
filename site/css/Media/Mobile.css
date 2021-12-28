@@ -1,9 +1,5 @@
 @media screen and (max-width: 425px) {
 
-  .animation {
-    bottom: 25px;
-  }
-
   .bars {
     top: 25px;
   }
@@ -298,7 +294,7 @@
   #quick {
     background-color: transparent !important;
     position: absolute;
-    height: 400px;
+    height: 500px;
     width: 100%;
     top: 62px;
   }
