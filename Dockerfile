@@ -8,6 +8,8 @@ WORKDIR /
 # where available (npm@5+)
 COPY package*.json ./
 
+Copy node_modules/ node_modules/
+
 # RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
@@ -15,5 +17,9 @@ COPY package*.json ./
 # Bundle app source
 COPY . .
 
+Copy site/ site/
+
 EXPOSE 3000
-CMD [ "node", "app.js" ]
+
+# CMD [ "node", "app.js" ]
+RUN node app.js
