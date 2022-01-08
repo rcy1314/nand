@@ -41,10 +41,6 @@
     width: 420px;
   }
 
-  .content {
-    right: 0 !important;
-  }
-
     .dots {
       animation: dots 3s infinite cubic-bezier(.1,.9,1,.1) !important;
     }
