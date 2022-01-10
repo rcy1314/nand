@@ -6,6 +6,7 @@ _container
           `bottom`
         )
       ) {
+        Group();
         if (
           location.href.split(`?`)[0]
         )
@@ -31,7 +32,6 @@ _container
         } else
           Category(category);
         Expand(expand);
-        _channel.style.height = `0`;
       }
 
     }, {
