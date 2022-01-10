@@ -43,12 +43,7 @@ let themes = [{
     obFn: `Night`,
     class: `Night`,
     icon: `fa-code`
-  },
-  {
-    obFn: `Gentoo`,
-    class: `Gentoo`,
-    icon: `fa-users`
-  },
+  }
 ];
 
 const favorites = [
@@ -569,7 +564,7 @@ let safeSearchIDs = [
 
 */
 
-let exclude = [`Buy`, `Sale`, `Save`, `Price`, `Shop`];
+let exclude = [`Buy`, `Sale`, `Save`, `Best`, `Price`, `Shop`];
 
 /*
     cors [string]

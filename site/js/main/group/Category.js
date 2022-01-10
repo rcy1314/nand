@@ -13,7 +13,6 @@ let Category = function(translation) {
     showSplash
   )
     _check.style.display = `block`;
-  Group()
   for (
     let i = 0; i <= menu.length - 1; i++
   ) {

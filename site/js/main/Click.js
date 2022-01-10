@@ -102,7 +102,8 @@ _container
       ) {
         if (
           Array.isArray(pub) &&
-          !Reader
+          !Reader &&
+          id
         )
           Append(id);
 

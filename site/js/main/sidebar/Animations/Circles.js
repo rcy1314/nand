@@ -15,7 +15,7 @@ _sidebar
         _main
           .querySelectorAll(`.loader`)
           .forEach(
-            (a) => a.style.display = `block`
+            (a) => a.style.display = `flex`
           );
         _main
           .querySelectorAll(`.bars`)

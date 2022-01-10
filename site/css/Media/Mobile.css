@@ -1,16 +1,4 @@
-@media screen and (max-width: 425px) {
-
-  .bars {
-    top: 25px;
-  }
-
-  .circle:not(.content .circle) {
-    margin-top: 10px;
-  }
-
-  #load {
-    margin-top: 50px;
-  }
+@media screen and (max-width: 426px) {
 
   #main #xml .center .item .img {
     height: calc(100% + 5px) !important;
@@ -228,7 +216,7 @@
     margin-right: 0%;
     flex-wrap: wrap;
     margin-left: 0%;
-    height: 500px;
+    height: 520px;
     top: -75px;
     right: 0;
     left: 0;

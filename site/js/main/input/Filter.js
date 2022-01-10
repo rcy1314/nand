@@ -54,7 +54,7 @@ let Filter = function(filterURI) {
           description[i]
         )
       );
-    Category();
+    Category(category);
     Expand(expand);
     unloading();
   } else if (exact > -1) Request(exact)

@@ -1,13 +1,8 @@
 .animation {
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: auto;
-  right: 0;
-  left: 0;
-  top: 0;
-  display: block;
+  display: flex;
   width: 40px;
 }
 
@@ -27,8 +22,10 @@
   -webkit-animation: vbars 1s infinite ease-in-out;
   animation: vbars 1s infinite ease-in-out;
   background: var(--loader-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
   width: .5em;
-  top: 25px;
 }
 
 .bars {
@@ -39,12 +36,8 @@
   color: var(--loader-color);
   animation-delay: -0.16s;
   text-indent: -9999em;
-  position: relative;
-  margin-top: 10px;
+  margin-top: 25px;
   font-size: 11px;
-  right: 0;
-  left: 0;
-  top: 0;
 }
 
 .bars:before,
@@ -127,12 +120,16 @@
 
 #load {
   -webkit-user-select:none;
+  justify-content:center;
   -moz-user-select:none;
   -ms-user-select:none;
+  align-items:center;
   position:absolute;
   overflow:visible;
   user-select:none;
+  margin-top:25px;
   cursor:default;
+  display:flex;
   height: 100%;
   width: 100%;
 }
@@ -197,7 +194,6 @@
 .loader.double-circle {
   height: var(--loader-height, 100px);
   width: var(--loader-width, 100px);
-  margin-bottom: 15px;
   position: absolute;
 }
 

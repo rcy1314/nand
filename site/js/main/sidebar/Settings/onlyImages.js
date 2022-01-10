@@ -11,6 +11,11 @@ _sidebar
       ) {
         onlyImages = onlyImages != true;
         if (
+          !onlyImages &&
+          window.innerWidth <= 425
+        )
+          display = `legacy`
+        if (
           document
           .body
           .contains(

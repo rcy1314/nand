@@ -83,15 +83,15 @@ let xmlHTMLBuild = function(htmlArray) {
   if (imageLoader == `double-circle`) {
     original.style.display = `none`;
     loading.style.display = `none`;
-    loader.style.display = `block`;
+    loader.style.display = `flex`;
     bars.style.display = `none`;
   } else if (imageLoader == `loading`) {
     original.style.display = `none`;
-    loading.style.display = `block`;
+    loading.style.display = `flex`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   } else if (imageLoader == `ring-circle`) {
-    original.style.display = `block`;
+    original.style.display = `flex`;
     loading.style.display = `none`;
     loader.style.display = `none`;
     bars.style.display = `none`;
@@ -99,7 +99,7 @@ let xmlHTMLBuild = function(htmlArray) {
     original.style.display = `none`;
     loading.style.display = `none`;
     loader.style.display = `none`;
-    bars.style.display = `block`;
+    bars.style.display = `flex`;
   } else if (!imageLoader) {
     original.style.display = `none`;
     loading.style.display = `none`;

@@ -121,8 +121,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   read.onload = function(e) {
                     if (
                       Width < maximum ||
-                      Height < shrunk ||
-                      Reader
+                      Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
@@ -191,8 +190,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   read.onload = function(e) {
                     if (
                       Width < maximum ||
-                      Height < shrunk ||
-                      Reader
+                      Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
@@ -272,8 +270,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               itemImage.classList.add(`youtube`)
             if (
               Width < maximum ||
-              Height < shrunk ||
-              Reader
+              Height < shrunk
             ) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
               itemPending.remove();

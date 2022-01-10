@@ -1,7 +1,7 @@
 /*
   to use this file uncomment menu and add objects
   save image `site/images/webp`
-  [convert to webp 100x100 image] https://redketchup.io/image-resizer 
+  [convert to webp 100x100 image] https://redketchup.io/image-resizer
 
   >https://raw.githubusercontent.com/acktic/xml-sites-array/master/Assets.js
 

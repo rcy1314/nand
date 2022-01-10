@@ -18,7 +18,6 @@ document
           .value
           .length
         ) {
-          Group();
           Filter(
             _sidebar
             .querySelector(

@@ -22,7 +22,7 @@ _container
           .querySelectorAll(
             `.item`
           )
-          .length > 30 &&
+          .length > 150 &&
           Reader
         ) {
           Cleanup();
@@ -77,7 +77,7 @@ _container
           .querySelectorAll(
             `.item`
           )
-          .length > 30 &&
+          .length > 150 &&
           !Reader
         ) {
           Cleanup();
