@@ -720,16 +720,16 @@ const view = [{
     class: `dual`
   },
   {
-    name: `Flex Box`,
+    name: `Flex`,
     class: `flex`
+  },
+  {
+    name: `Side`,
+    class: `sscroll`
   },
   {
     name: `Mobile`,
     class: `legacy`
-  },
-  {
-    name: `Sidescroll`,
-    class: `sscroll`
   }
 ]
 
