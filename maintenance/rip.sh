@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/xml-sites-array/Assets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`Youtube/TechCrunch`,category:`Youtube`,title:``,description:`TechCrunch Youtube startups, Internet products, and breaking technology information.`,uri:`https://www.youtube.com/feeds/videos.xml?user=techcrunch`,image:`TechCrunch`,hash:`tH`,media:!0},
 #{id:`Goal`,category:`Sports`,title:``,description:`Goal Soccer Live Scores, Results, Rumours, and Transfers.`,uri:`https://www.goal.com/feeds/en/news`,image:`Goal`,hash:`gA`,media:!0},
 #{id:`Mediaite`,category:`World`,title:``,description:`Mediaite is a news website focusing on politics and the media it is part of the Abrams Media Network.`,uri:`https://www.mediaite.com/feed/`,image:`Mediaite`,hash:`Mi`,media:!0},
 #{id:`Washington Post Tech`,category:`Tech`,title:``,description:`Washington Post is a major American daily newspaper published in Washington, D.C.`,uri:`http://feeds.washingtonpost.com/rss/business/technology`,image:`WashingtonPost`,hash:`pW`,media:!0},
