@@ -17,8 +17,10 @@ var Request = function(index) {
   state.state();
   if (
     !readPrevious
-  )
+  ) {
     random = [];
+    Random();
+  }
 
   if (Reader) asset.push(index);
 
@@ -117,7 +119,7 @@ var Request = function(index) {
             data.childNodes.length > 1
           )
             var title = Title(data);
-
+          console.log(title);
           if (
             title == postDuplicate ||
             title == ``
@@ -138,7 +140,7 @@ var Request = function(index) {
               channel,
               data
             );
-
+          console.log(parse);
           if (
             trun.match(/\w+/g)
           )
@@ -152,7 +154,7 @@ var Request = function(index) {
 
           else
             var uri = trun.toLowerCase()
-
+          console.log(uri);
           let share = menu[index].title;
 
           if (
@@ -206,7 +208,6 @@ var Request = function(index) {
             uri: uri
           });
           html = xmlHTMLBuild(inline[0]);
-
           if ( //Reader Guide Close
             pub
           )
