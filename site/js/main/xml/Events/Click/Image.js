@@ -23,8 +23,8 @@ _container
           setTimeout(
             () => {
               if (
-                new Date().getTime() - tap >= 350 &&
-                new Date().getTime() - tap < 400
+                new Date().getTime() - tap >= 1000 &&
+                new Date().getTime() - tap < 1050
               )
                 if (
                   !evt
@@ -128,11 +128,11 @@ _container
                 .getAttribute(`ext`)
                 .blank();
               tap = 0;
-            }, 350
+            }, 1000
           );
         } else {
           if (
-            new Date().getTime() - tap < 350
+            new Date().getTime() - tap < 1000
           ) {
             if (
               !evt
