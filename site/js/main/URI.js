@@ -123,6 +123,7 @@ let URI = function() {
         )
           _check.style.display = `block`;
         Topbar(topBar);
+        Group();
         Filter(uri);
       }, 250
     );

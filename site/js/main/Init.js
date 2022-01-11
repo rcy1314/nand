@@ -15,8 +15,6 @@ setTimeout(
 
   () => {
 
-    URI();
-
     Home();
 
     Feed(quickFeeds);
@@ -33,6 +31,8 @@ setTimeout(
     randomizeAssets(adj);
 
     Bootup();
+
+    URI();
 
     document.title = doc;
 
