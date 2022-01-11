@@ -21,5 +21,7 @@ COPY . .
 
 EXPOSE 3000
 
+# This is second-run built command
 CMD [ "node", "app.js" ]
+# This is initial building command
 RUN node app.js
