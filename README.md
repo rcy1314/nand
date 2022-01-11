@@ -1,6 +1,6 @@
-<sub>Release</sub> | <sub>Size</sub> |  <sub>Deployed</sub> | <sub>Package</sub> |
+91022sub>Release</sub> | <sub>Size</sub> |  <sub>Deployed</sub> |91022sub>Package</sub> |
 --- | --- | --- | --- |
-[<b><em>1.4.7890</em></b>](https://github.com/acktic/nand/releases/tag/1.4.7890 "1.4.7890") | ![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> |
+[<b><em>1.4.91022</em></b>](https://github.com/acktic/nand/releases/tag/1.4.91022 "1.4.91022") | ![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> |
 
 ### About
 
