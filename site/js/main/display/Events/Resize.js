@@ -14,7 +14,7 @@ window
         .querySelectorAll(
           `.item`
         )
-        .length > 100 &&
+        .length > 150 &&
         Reader
       ) {
         Cleanup();
@@ -53,6 +53,7 @@ window
                 random.includes(index)
               )
                 Request(index);
+              _main.scrollTop = 0;
             }
           }, 500
         )
@@ -69,7 +70,7 @@ window
         .querySelectorAll(
           `.item`
         )
-        .length > 100 &&
+        .length > 150 &&
         !Reader
       ) {
         Cleanup();
@@ -92,6 +93,7 @@ window
             _suggestions.lastChild
           );
         Request(id);
+        _main.scrollTop = 0;
       } else if (
         document
         .body

@@ -61,6 +61,7 @@ _container
                   random.includes(index)
                 )
                   Request(index);
+                _main.scrollTop = 0;
               }
             }, 500
           )
@@ -100,6 +101,7 @@ _container
               _suggestions.lastChild
             );
           Request(id);
+          _main.scrollTop = 0;
         }
         cycleViewport = cycleViewport + 1
 
