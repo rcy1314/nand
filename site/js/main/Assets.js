@@ -29,11 +29,14 @@
        userName: https://www.youtube.com/feeds/videos.xml?user=
        channel: https://www.youtube.com/feeds/videos.xml?channel_id=
 
+       {id:`Test`,category:`Reddit`,title:``,description:`Reddit`,uri:`https//`,image:`Reddit`,hash:`QW`,media:!0},
+       */
 
-menu.unshift(
+menu.push(
 
-{id:`Test`,category:`Reddit`,title:``,description:`Reddit`,uri:`https//`,image:`Reddit`,hash:`QW`,media:!0},
+  {id:`4Chan/SP`,category:`Reddit`,title:``,description:`4Chan Sports`,uri:`https://boards.4channel.org/sp/index.rss`,image:`4chan`,hash:`4S`,media:!0},
+  {id:`4Chan/Gif`,category:`Reddit`,title:``,description:`4Chan Gif`,uri:`https://boards.4channel.org/gif/index.rss`,image:`4chan`,hash:`4G`,media:!1},
+  {id:`4Chan/HR`,category:`Reddit`,title:``,description:`4Chan High Resolution`,uri:`https://boards.4channel.org/hr/index.rss`,image:`4chan`,hash:`4H`,media:!0},
+  {id:`4Chan/G`,category:`Reddit`,title:``,description:`4Chan Technology`,uri:`https://boards.4channel.org/g/index.rss`,image:`4chan`,hash:`4T`,media:!0},
 
 );
-
-*/
