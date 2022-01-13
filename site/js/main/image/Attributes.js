@@ -174,6 +174,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 else
                   itemImage.setAttribute(`src`, src);
                 itemFilter.classList.add(`blur`);
+                itemPending.remove();
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
@@ -242,6 +243,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   request.send();
                 else
                   itemImage.setAttribute(`src`, src);
+                itemPending.remove();
               }
             });
           })
@@ -323,6 +325,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           request.send();
         else
           itemImage.setAttribute(`src`, src);
+        itemPending.remove();
       }; //END NEWIMG.ONLOAD
       if (
         document
