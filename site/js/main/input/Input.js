@@ -45,7 +45,8 @@ let Input = function(
       var i = menu.length - 1; i >= 0; i--
     ) {
       if (
-        menu[i].description.toString().toLowerCase().match(inputFilter)
+        menu[i].description.toString().toLowerCase().match(inputFilter) &&
+        !menu[i].id.toString().toLowerCase().match(inputFilter)
       ) {
         if (
           suggest.length - 1 === suggestionBuffer
