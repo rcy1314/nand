@@ -52,7 +52,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
   } else if (
     !src ||
     src == `null` ||
-    src.match(/\.webm|\.mp4|\.gif/g)
+    src.match(/\.webm|\.mp4/g)
   ) {
     if (
       itemContainer
@@ -171,6 +171,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !src.match(/4cdn/g)
                 )
                   request.send();
+                else
+                  itemImage.setAttribute(`src`, src);
+                itemFilter.classList.add(`blur`);
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
@@ -237,6 +240,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !src.match(/4cdn/g)
                 )
                   request.send();
+                else
+                  itemImage.setAttribute(`src`, src);
               }
             });
           })
@@ -316,6 +321,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           !src.match(/4cdn/g)
         )
           request.send();
+        else
+          itemImage.setAttribute(`src`, src);
       }; //END NEWIMG.ONLOAD
       if (
         document
