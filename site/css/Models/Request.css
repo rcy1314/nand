@@ -149,6 +149,7 @@
 
 #xml .classic {
   position: relative;
+  min-height: 80px;
   bottom: 0;
   right: 0;
   left: 0;
@@ -294,6 +295,7 @@
   justify-content: center;
   background-size: cover;
   align-items: center;
+  min-height: 80px;
   display: flex;
   height: 100%;
   width: 100%;
@@ -483,6 +485,7 @@
 #xml .wrap {
   background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 90%, rgba(0,0,0,0) 100%);
   position: absolute;
+  min-height: 80px;
   z-index: 11;
   bottom: 0;
   right: 0;
