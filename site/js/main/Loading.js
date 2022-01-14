@@ -81,9 +81,11 @@ setTimeout(
       Blocks = true;
       List = false;
     }
+    /*
     notifyOption(`${settings.length} Settings`, `fa-check-circle`);
     notifyOption(`${exclude.length} Filters`, `fa-check-circle`);
     notifyOption(`${view.length} Views`, `fa-check-circle`);
     notifyOption(`${themes.length} Themes`, `fa-check-circle`);
+    */
   }, 500
 )
