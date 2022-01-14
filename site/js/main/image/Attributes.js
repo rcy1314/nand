@@ -119,6 +119,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
+                    item.classList.add(`i`);
                     if (
                       Width < maximum ||
                       Height < shrunk
@@ -126,7 +127,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
                     } else {
-                      item.classList.add(`i`);
                       itemImage.setAttribute(`src`, e.target.result);
                       itemContainer.style.position = `absolute`;
                       itemImage.style.position = `absolute`;
@@ -195,6 +195,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
+                    item.classList.add(`i`);
                     if (
                       Width < maximum ||
                       Height < shrunk
@@ -202,7 +203,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
                       itemPending.remove();
                     } else {
-                      item.classList.add(`i`);
                       itemPending.remove();
                       itemImage.setAttribute(`src`, e.target.result);
                       setTimeout(
