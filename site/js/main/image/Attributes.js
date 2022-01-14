@@ -138,6 +138,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             itemImage.clientHeight > shrunk &&
                             itemImage.clientWidth > maximum
                           ) {
+                            if (
+                              display !== `legacy`
+                            )
                             item.style
                               .height =
                               `${itemImage.clientHeight}px`
@@ -208,6 +211,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             itemImage.clientHeight > shrunk &&
                             itemImage.clientWidth > maximum
                           ) {
+                            if (
+                              display !== `legacy`
+                            )
                             item.style
                               .height =
                               `${itemImage.clientHeight + 2}px`
@@ -290,6 +296,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     itemImage.clientHeight > shrunk &&
                     itemImage.clientWidth > maximum
                   ) {
+                    if (
+                      display !== `legacy`
+                    )
                     item.style
                       .height =
                       `${itemImage.clientHeight}px`
