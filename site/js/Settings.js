@@ -548,7 +548,7 @@ let safeSearchScore = `0.013473876751959324`;
 */
 
 let safeSearchIDs = [
-  `4Chan/HR`,
+  `4Chan/High Resolution`,
   `Reddit/Selfie`,
 ];
 
