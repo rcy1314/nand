@@ -1,3 +1,40 @@
+_container
+  .addEventListener(
+    'click', (evt) => {
+      if (
+        evt.target.classList.contains(`notify`) ||
+        evt.target.classList.contains(`notifyEnd`)
+      ) {
+        notifyArray = [];
+        if (
+          document
+          .body
+          .contains(
+            _channel
+            .querySelector(
+              `.notify`
+            )
+          )
+        )
+          _container.querySelector(`.notify`).remove();
+        if (
+          document
+          .body
+          .contains(
+            _channel
+            .querySelector(
+              `.notifyEnd`
+            )
+          )
+        )
+          _container.querySelector(`.notifyEnd`).remove();
+      }
+
+    }, {
+      passive: false
+    }
+  );
+
 let notifyOption = function(String, Icon) {
   let div = document.createElement(`div`);
   div.setAttribute(`id`, 'notify');
