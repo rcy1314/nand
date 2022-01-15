@@ -87,7 +87,8 @@
     width: 280px !important;
   }
 
-  .sideItem .image {
+  .sideItem .image,
+  .sideItem .classic {
     width: 320px !important;
   }
 
