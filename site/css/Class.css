@@ -256,6 +256,7 @@
 
 .sideChannel .item .classic {
   min-height: 320px !important;
+  width: 320px !important;
 }
 .sideChannel .item .header {
   position: relative;
