@@ -277,7 +277,7 @@ html body,
 
 #progressBar {
   background-color: var(--loader-color);
-  position: absolute;
+  position: fixed;
   height: 4px;
   z-index: 12;
   width: 0;
