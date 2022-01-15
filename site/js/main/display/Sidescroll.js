@@ -20,6 +20,29 @@ let Sidescroll = function() {
   _xml.style.top = `0`;
 
   if (
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  ) {
+    _channel
+    .querySelectorAll(
+      `.item`
+    ).forEach(
+      (a) => {
+        a.classList.add(
+          `sideItem`
+        )
+      }
+    )
+
+  }
+
+  if (
     document.body.contains(
       _center.querySelector(`.bottom`)
     )
