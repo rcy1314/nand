@@ -20,51 +20,17 @@ let Sidescroll = function() {
   _xml.style.top = `0`;
 
   if (
-    document
-    .body
-    .contains(
-      _channel
-      .querySelector(
-        `.item`
-      )
-    )
-  ) {
-    _channel
-    .querySelectorAll(
-      `.item`
-    ).forEach(
-      (a) => {
-        a.classList.add(
-          `sideItem`
-        )
-      }
-    )
-
-  }
-
-  if (
     document.body.contains(
       _center.querySelector(`.bottom`)
     )
-  )
+  ) {
     _center.querySelector(`.bottom`).style.left = `0`;
+    _center.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
 
+  }
   _channel.classList.remove(`flexbox`)
   _channel.classList.remove(`duo`)
 
-  if (
-    window.innerWidth <= 425 &&
-    document
-    .body
-    .contains(
-      _xml
-      .querySelector(
-        `#bottom`
-      )
-    )
-  ) {
-    _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
-  }
   if (
     window.innerWidth
     >
