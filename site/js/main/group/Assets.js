@@ -15,27 +15,6 @@ let Assets = function() {
     showSplash
   )
     _check.style.display = `block`;
-  if (
-    id &&
-    !location.href.match(`\\?q=`)
-  ) {
-    if (
-      menu[id].media
-    )
-      media = `<div class='media' style='display:none'>Images</div>`;
-    else
-      media = `<div class='blank'></div>`;
-    _result.append(
-      categoryBuild(
-        menu[id].id.match(/[^\/]+$/g),
-        menu.indexOf(menu[id]),
-        menu[id].image.image(),
-        menu[id].hash,
-        menu[id].description,
-        media
-      )
-    );
-  }
   for (
     let i = 0; i <= adj.length - 1; i++
   ) {
