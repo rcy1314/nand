@@ -32,7 +32,7 @@
   .duo .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
-    min-height: 160px !important;
+    min-height: 158px !important;
     width: 212px !important;
     position: relative;
   }
@@ -51,7 +51,7 @@
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
     min-height: 80px !important;
-    width: 140px !important;
+    width: 138px !important;
     position: relative;
   }
 
@@ -80,15 +80,15 @@
     width: 100vw !important;
   }
 
-  .sideItem {
+  .sideChannel .item {
     display: inline-table;
     margin-right: 50px !important;
     height: 320px !important;
     width: 280px !important;
   }
 
-  .sideItem .image,
-  .sideItem .classic {
+  .sideChannel .item .image,
+  .sideChannel .item .classic {
     width: 320px !important;
   }
 
