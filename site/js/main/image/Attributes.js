@@ -130,8 +130,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       itemImage.setAttribute(`src`, e.target.result);
                       itemContainer.style.position = `absolute`;
                       itemImage.style.position = `absolute`;
-                      itemPending.remove();
                       itemFilter.classList.add(`blur`);
+                      itemPending.remove();
                       setTimeout(
                         () => {
                           if (
@@ -177,11 +177,12 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !src.match(/4cdn/g)
                 )
                   request.send();
-                else
+                else {
                   itemImage.setAttribute(`src`, src);
+                  item.classList.add(`i`);
+                  itemPending.remove();
+                }
                 itemFilter.classList.add(`blur`);
-                item.classList.add(`i`);
-                itemPending.remove();
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
@@ -254,10 +255,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !src.match(/4cdn/g)
                 )
                   request.send();
-                else
+                else {
                   itemImage.setAttribute(`src`, src);
-                item.classList.add(`i`);
-                itemPending.remove();
+                  item.classList.add(`i`);
+                  itemPending.remove();
+                }
               }
             });
           })
@@ -343,10 +345,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           !src.match(/4cdn/g)
         )
           request.send();
-        else
+        else {
           itemImage.setAttribute(`src`, src);
-        item.classList.add(`i`);
-        itemPending.remove();
+          item.classList.add(`i`);
+          itemPending.remove();
+        }
       }; //END NEWIMG.ONLOAD
       if (
         document
