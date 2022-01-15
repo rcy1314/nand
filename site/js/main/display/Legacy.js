@@ -15,6 +15,29 @@ let Legacy = function() {
     document
     .body
     .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  ) {
+    _channel
+    .querySelectorAll(
+      `.item`
+    ).forEach(
+      (a) => {
+        a.classList.remove(
+          `sideItem`
+        )
+      }
+    )
+
+  }
+
+  if (
+    document
+    .body
+    .contains(
       _center
       .querySelector(
         `.bottom`
