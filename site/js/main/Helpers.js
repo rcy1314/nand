@@ -193,8 +193,7 @@ let getRelativePos = function(elm) {
   pos.top = cPos.top - pPos.top + elm.parentNode.scrollTop,
     pos.right = cPos.right - pPos.right,
     pos.bottom = cPos.bottom - pPos.bottom,
-    pos.left =
-    elm.scrollLeft - elm.parentNode.scrollLeft + elm.parentNode.clientWidth;
+    pos.left = cPos.left - pPos.left;
 
   return pos;
 }
