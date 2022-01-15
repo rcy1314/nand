@@ -144,6 +144,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             item.style
                               .height =
                               `${itemImage.clientHeight}px`
+                            itemWrap.style
+                              .height =
+                              `${itemImage.clientHeight + 5}px`
                             itemClassic.style
                               .height =
                               `${itemImage.clientHeight}px`
@@ -217,6 +220,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             item.style
                               .height =
                               `${itemImage.clientHeight + 2}px`
+                            itemWrap.style
+                              .height =
+                              `${itemImage.clientHeight + 5}px`
                             itemClassic.style
                               .height =
                               `${itemImage.clientHeight}px`
@@ -302,6 +308,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     item.style
                       .height =
                       `${itemImage.clientHeight}px`
+                    itemWrap.style
+                      .height =
+                      `${itemImage.clientHeight + 5}px`
                     itemClassic.style
                       .height =
                       `${itemImage.clientHeight}px`
