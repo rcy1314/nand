@@ -180,6 +180,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 else
                   itemImage.setAttribute(`src`, src);
                 itemFilter.classList.add(`blur`);
+                item.classList.add(`i`);
                 itemPending.remove();
               } else if (
                 jsonResponse.score <= safeSearchScore &&
@@ -255,6 +256,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   request.send();
                 else
                   itemImage.setAttribute(`src`, src);
+                item.classList.add(`i`);
                 itemPending.remove();
               }
             });
@@ -343,6 +345,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           request.send();
         else
           itemImage.setAttribute(`src`, src);
+        item.classList.add(`i`);
         itemPending.remove();
       }; //END NEWIMG.ONLOAD
       if (
