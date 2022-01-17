@@ -74,6 +74,7 @@ var Append = function(id) {
   }
   if (
     display !== `sideScroll` &&
+    !Reader &&
     !first &&
     document.body.contains(
       _channel.querySelector(`.item`)
