@@ -257,31 +257,6 @@ _container
             _center.querySelector(`#bottom`).remove();
             _center.style.top = `60px`;
           Sidescroll();
-          let leaveOff = _main.scrollTop +
-            (
-              (
-                parseInt(
-                  document.querySelectorAll(
-                    `.item`
-                  )
-                  .length
-                ) *
-                parseInt(
-                  100
-                )
-              )
-            );
-          if (
-            document
-            .body
-            .contains(
-              _channel
-              .querySelector(
-                `.item`
-              )
-            )
-          )
-            _channel.scrollLeft = leaveOff;
           if (
             document
             .body
