@@ -42,4 +42,25 @@ let Sidescroll = function() {
   )
     _display.style.display = `inline-block`;
 
+  if (
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  )
+    setTimeout(
+      () => {
+        touchmove = true;
+        sideScrollToElm(touchmove,
+          _channel,
+          _channel.querySelectorAll(`[aria-object='${id}']`)[0],
+          250
+        );
+      }, 250
+    )
+
 }
