@@ -60,6 +60,8 @@ let Flex = function() {
         `.item`
       )
     )
+    &&
+    !Reader
   )
     _channel.append(
       footerBuild(id)
