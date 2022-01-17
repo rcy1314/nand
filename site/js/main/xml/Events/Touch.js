@@ -19,7 +19,6 @@ _main
           _main.scrollTop -
           _main.clientHeight <=
           offset &&
-          touchmove == true &&
           Reader &&
           !stop &&
           _channel.querySelectorAll(`.pending`).length <= 3
