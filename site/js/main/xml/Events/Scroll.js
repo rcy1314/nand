@@ -21,6 +21,7 @@ _main
               _main.scrollHeight -
               _main.scrollTop -
               _main.clientHeight <=
+              touchmove == true &&
               offset &&
               Reader &&
               !stop &&
