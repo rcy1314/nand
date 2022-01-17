@@ -23,7 +23,6 @@ _channel
               _channel.scrollLeft -
               _channel.clientWidth <=
               _channel.clientWidth &&
-              touchmove == true &&
               Reader &&
               !stop &&
               _channel.querySelectorAll(`.pending`).length <= 3
