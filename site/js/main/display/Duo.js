@@ -34,6 +34,28 @@ let Duo = function() {
     var min = `order:1`;
 
   if (
+    !document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    ) &&
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  )
+    _channel.append(
+      footerBuild(id)
+    );
+
+  if (
     window.innerWidth > 425 &&
     document
     .body
@@ -70,7 +92,7 @@ let Duo = function() {
       )
     )
   )
-  _channel.style.height = `99999999px`
+    _channel.style.height = `99999999px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);
@@ -78,8 +100,7 @@ let Duo = function() {
   _center.style.width = `930px`;
 
   if (
-    window.innerWidth
-    <
+    window.innerWidth <
     1280
   )
     _display.style.display = `none`;
