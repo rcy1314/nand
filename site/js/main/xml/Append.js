@@ -74,7 +74,6 @@ var Append = function(id) {
   }
   if (
     display !== `sideScroll` &&
-    !Reader &&
     !first &&
     document.body.contains(
       _channel.querySelector(`.item`)
@@ -86,7 +85,7 @@ var Append = function(id) {
         scrollToElm(
           touchmove,
           _main,
-          _channel.querySelector(`[aria-object='${id}']`),
+          _channel.querySelectorAll(`[aria-object='${id}']`)[0],
           250
         );
       }, 250
@@ -100,15 +99,14 @@ var Append = function(id) {
     _main.scrollTop = 0;
   } else if (
     display == `sideScroll` &&
-    !Reader &&
     !first
   ) {
-    touchmove = true;
     setTimeout(
       () => {
+        touchmove = true;
         sideScrollToElm(touchmove,
           _channel,
-          _channel.querySelector(`[aria-object='${id}']`),
+          _channel.querySelectorAll(`[aria-object='${id}']`)[0],
           250
         );
       }, 250
