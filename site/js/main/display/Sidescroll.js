@@ -1,8 +1,6 @@
 let Sidescroll = function() {
   display == `sideScroll`;
   offset = 1000;
-  scrollIntoViewBuffer = scrollIntoView;
-  scrollIntoView = false;
 
   _channel.style.height = `fit-content`;
   _channel.classList.add(`sideChannel`);
