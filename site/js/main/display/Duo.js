@@ -49,7 +49,8 @@ let Duo = function() {
       .querySelector(
         `.item`
       )
-    )
+    ) &&
+    !Reader
   )
     _channel.append(
       footerBuild(id)
