@@ -48,12 +48,11 @@
   background-color: var(--color-primary);
   position: absolute;
   display: none;
-  height: 155px;
+  height: 147px;
   width: 200px;
   padding: 1px;
   right: 0px;
   z-index: 12;
-  top: 59px;
 }
 
 .center {
@@ -226,7 +225,7 @@
   margin-top: 5px;
   font-size: 10px;
   display: flex;
-  height: 50px;
+  height: 25px;
   float: left;
   width: 100%;
 }
