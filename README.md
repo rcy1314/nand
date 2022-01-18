@@ -1,6 +1,6 @@
-<sub>Size</sub> |  <sub>Web App</sub> | <sub>Package</sub> | <sub>Dockerfile</sub> |
---- | --- | --- | --- |
-![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/docker-publish.yml/badge.svg'> |
+<sub>Size</sub> |  <sub>Web App</sub> | <sub>Package</sub> | <sub>Dockerfile</sub> | <sub>Go</sub> |
+--- | --- | --- | --- | --- |
+![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/docker-publish.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/go.yml/badge.svg'> |
 
 ### About
 
