@@ -29,13 +29,13 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
   let copyPicture = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .picture`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
   );
   let copyDownload = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .download`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
   let copyPost = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .post`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .post`
   );
   if (
     src &&
@@ -61,10 +61,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         onlyImages
       )
         item.remove();
-      copyDownload.style.display = `none`;
-      copyPicture.style.display = `none`;
-      attribute.style.height = `74px`;
-      itemPending.remove();
       count.shift();
     }
   }
@@ -125,6 +121,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      attribute.style.height = `74px`;
+                      copyDownload.remove();
+                      copyPicture.remove();
                       itemPending.remove();
                     } else {
                       itemImage.setAttribute(`src`, e.target.result);
@@ -206,6 +205,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      attribute.style.height = `74px`;
+                      copyDownload.remove();
+                      copyPicture.remove();
                       itemPending.remove();
                     } else {
                       itemPending.remove();
@@ -296,6 +298,9 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               Height < shrunk
             ) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
+              attribute.style.height = `74px`;
+              copyDownload.remove();
+              copyPicture.remove();
               itemPending.remove();
             } else {
               itemImage.setAttribute(`src`, e.target.result);
