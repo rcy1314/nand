@@ -110,6 +110,8 @@
   #main #visit #page #quick .right,
   #main #visit #page #options .fa-sun,
   #main #visit #page #options .fa-heart,
+  #main #visit #page #options .fa-expand-alt,
+  #main #visit #page #options .fa-camera-retro,
   #main #visit #page #front .focus .button {
     display: none !important;
   }
