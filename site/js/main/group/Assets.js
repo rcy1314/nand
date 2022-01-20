@@ -22,17 +22,16 @@ let Assets = function() {
       onlyImages
     ) {
       if (
-        id != menu.indexOf(adj[i]) &&
         adj[i].media
       ) {
         media = `<div class='media' style='display:none'>Images</div>`;
         _result.append(
           categoryBuild(
-            menu[i].id.match(/[^\/]+$/g),
-            menu.indexOf(menu[i]),
-            menu[i].image.image(),
-            menu[i].hash,
-            menu[i].description,
+            adj[i].id.match(/[^\/]+$/g),
+            adj.indexOf(adj[i]),
+            adj[i].image.image(),
+            adj[i].hash,
+            adj[i].description,
             media
           )
         );
@@ -46,20 +45,16 @@ let Assets = function() {
         media = `<div class='media' style='display:none'>Images</div>`;
       else
         media = `<div class='blank'></div>`;
-      if (
-        id != menu.indexOf(adj[i])
-      ) {
-        _result.append(
-          categoryBuild(
-            adj[i].id.match(/[^\/]+$/g),
-            menu.indexOf(adj[i]),
-            adj[i].image.image(),
-            adj[i].hash,
-            adj[i].description,
-            media
-          )
-        );
-      }
+      _result.append(
+        categoryBuild(
+          adj[i].id.match(/[^\/]+$/g),
+          menu.indexOf(adj[i]),
+          adj[i].image.image(),
+          adj[i].hash,
+          adj[i].description,
+          media
+        )
+      );
     }
   }
   main.setAttribute(`tabindex`, -1);
