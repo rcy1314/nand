@@ -25,7 +25,11 @@
     width: 425px !important;
   }
 
-  #xml .classic:not(.flexbox .classic) {
+  #xml .classic:not(.flexbox .classic):not(.duo .classic):not(.sideChannel .classic) {
+    min-height: 150px !important;
+  }
+
+  #xml .wrap:not(.flexbox .wrap):not(.duo .wrap):not(.sideChannel .wrap) {
     min-height: 150px !important;
   }
 
