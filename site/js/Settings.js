@@ -150,7 +150,20 @@ let readPrevious = true;
 
 */
 
-let assetRefresh = 9;
+let assetRefresh = 5;
+
+/*
+    assetVisibility [boolean/integer]
+
+      Applications
+        xml/Append
+
+      Result
+        greater then hidden
+
+*/
+
+let assetVisibility = 5;
 
 /*
     onScreen [boolean/integer]
@@ -644,6 +657,7 @@ let legacy;
 let sscroll;
 let flex;
 let asset = [];
+let assets = [];
 let expandAnimations = false;
 let expandBackground = false;
 let expandFavorites = false;
