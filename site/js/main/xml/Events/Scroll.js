@@ -16,17 +16,34 @@ _main
       setTimeout(
         () => {
           if (
-              scrollTop > _main.scrollTop
-          )
-          {
-            _channel.querySelectorAll(
-              `.item`
-            )
-            .forEach(
-              (a) => {
-                a.style.visibility = `visible`;
+            scrollTop < _main.scrollTop
+          ) {
+            for (
+              let y = assets.indexOf(id); y > 0; y--) {
+              let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
+              for (
+                let i = 0; i < elements.length; i++) {
+                if (
+                  elements[i].getBoundingClientRect().top
+                   <
+                   0
+                ) {
+                  elements[i].style.visibility = `hidden`;
+                }
               }
-            )
+            }
+          }
+          if (
+            scrollTop > _main.scrollTop
+          ) {
+            _channel.querySelectorAll(
+                `.item`
+              )
+              .forEach(
+                (a) => {
+                  a.style.visibility = `visible`;
+                }
+              )
           }
           if (
             (
@@ -37,7 +54,7 @@ _main
               offset &&
               Reader &&
               !stop &&
-                _channel.querySelectorAll(`.pending`).length <= 3
+              _channel.querySelectorAll(`.pending`).length <= 3
             )
           ) {
             stop = true;
