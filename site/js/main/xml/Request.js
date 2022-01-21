@@ -21,7 +21,10 @@ var Request = function(index) {
     Random();
   }
 
-  if (Reader) asset.push(index);
+  if (Reader) {
+    assets.push(index);
+    asset.push(index);
+  }
 
   if (
     !document
