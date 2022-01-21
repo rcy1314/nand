@@ -2,6 +2,7 @@ _main
   .addEventListener(
     'ontouchmove', (evt) => {
       let isScrolling;
+      let scrollTop = _main.scrollTop
       // Clear our timeout throughout the scroll
       window.clearTimeout(isScrolling);
       touchmove = false;
@@ -13,6 +14,19 @@ _main
             touchmove = true;
           }, 2600
         );
+        if (
+            scrollTop > _main.scrollTop
+        )
+        {
+          _channel.querySelectorAll(
+            `.item`
+          )
+          .forEach(
+            (a) => {
+              a.style.visibility = `visible`;
+            }
+          )
+        }
       if (
         (
           _main.scrollHeight -
