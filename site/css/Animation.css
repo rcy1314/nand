@@ -61,6 +61,15 @@
   animation: pulse 1s infinite alternate;
 }
 
+#check .animation {
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  width: 40px;
+  right: 0;
+  left: 0;
+}
+
 .circle:not(.content .circle) {
   position: absolute;
   width: 38px;
