@@ -150,7 +150,7 @@ let readPrevious = true;
 
 */
 
-let assetRefresh = 5;
+let assetRefresh = 9;
 
 /*
     onScreen [boolean/integer]
