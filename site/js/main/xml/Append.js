@@ -147,7 +147,7 @@ var Append = function(id) {
 
   if (
     Reader &&
-    asset.length > assetRefresh
+    assets.length > assetVisibility
   ) {
     _channel.querySelectorAll(
       `[aria-object='${asset[0]}']`
