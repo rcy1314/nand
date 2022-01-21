@@ -26,7 +26,7 @@ _main
                 if (
                   elements[i].getBoundingClientRect().top
                    <
-                   0
+                   -768
                 ) {
                   elements[i].style.visibility = `hidden`;
                 }
