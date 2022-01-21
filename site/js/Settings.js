@@ -236,7 +236,7 @@ let expand = true;
 
 */
 
-let showSplash = false;
+let showSplash = true;
 
 /*
     sideBarCenter [boolean/integer]
@@ -440,7 +440,7 @@ let roundedEdge = false;
 
 */
 
-let onlyImages = true;
+let onlyImages = false;
 
 /*
     feedImages [boolean/integer]
