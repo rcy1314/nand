@@ -159,7 +159,7 @@
 }
 
 #container #guide .sticky .wrap {
-  background-color: transparent;
+  background-color: var(--color-primary);
   display: table-cell;
   vertical-align: top;
   width: 100%;
