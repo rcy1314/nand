@@ -98,12 +98,12 @@ let Duo = function() {
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);
   _channel.classList.add(`duo`);
-  _center.style.width = `930px`;
+  _center.style.width = `760px`;
 
   if (
-    window.innerWidth <
-    1280
+    window.innerWidth >
+    768
   )
-    _display.style.display = `none`;
+    _display.style.display = `inline-block`;
 
 }
