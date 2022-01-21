@@ -27,7 +27,7 @@ _channel
                 if (
                   elements[i].getBoundingClientRect().left
                    <
-                   0
+                   -625
                 ) {
                   elements[i].style.visibility = `hidden`;
                 }
