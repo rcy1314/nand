@@ -7,7 +7,6 @@ var Request = function(index) {
   stop = true;
   images = [];
   let inline = [];
-  console.log(index);
   imageDuplicate = [];
   _sb.style.display = `none`;
   _toggle.style.display = `none`;
@@ -119,7 +118,6 @@ var Request = function(index) {
             data.childNodes.length > 1
           )
             var title = Title(data);
-          console.log(title);
           if (
             title == postDuplicate ||
             title == ``
@@ -140,7 +138,6 @@ var Request = function(index) {
               channel,
               data
             );
-          console.log(parse);
           if (
             trun.match(/\w+/g)
           )
@@ -154,7 +151,6 @@ var Request = function(index) {
 
           else
             var uri = trun.toLowerCase()
-          console.log(uri);
           let share = menu[index].title;
 
           if (
