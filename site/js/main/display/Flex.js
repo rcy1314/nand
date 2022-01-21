@@ -110,9 +110,9 @@ let Flex = function() {
   _center.style.width = `930px`;
   if (
     window.innerWidth
-    <
-    1280
+    >
+    768
   )
-    _display.style.display = `none`;
+    _display.style.display = `inline-block`;
 
 }
