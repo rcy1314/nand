@@ -17,6 +17,19 @@ _channel
       setTimeout(
         () => {
           if (
+              scrollLeft > _main.scrollTop
+          )
+          {
+            _channel.querySelectorAll(
+              `.item`
+            )
+            .forEach(
+              (a) => {
+                a.style.visibility = `visible`;
+              }
+            )
+          }
+          if (
             (
               scrollLeft < _channel.scrollLeft &&
               _channel.scrollWidth -
