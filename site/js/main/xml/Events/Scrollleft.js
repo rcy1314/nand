@@ -17,6 +17,24 @@ _channel
       setTimeout(
         () => {
           if (
+            scrollLeft < _main.scrollTop
+          ) {
+            for (
+              let y = assets.indexOf(id); y > 0; y--) {
+              let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
+              for (
+                let i = 0; i < elements.length; i++) {
+                if (
+                  elements[i].getBoundingClientRect().left
+                   <
+                   0
+                ) {
+                  elements[i].style.visibility = `hidden`;
+                }
+              }
+            }
+          }
+          if (
               scrollLeft > _main.scrollTop
           )
           {
