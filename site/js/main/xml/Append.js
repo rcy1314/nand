@@ -157,7 +157,6 @@ var Append = function(id) {
         a.style.visibility = `hidden`;
       }
     )
-    asset.shift();
   }
   if (
     Reader &&
