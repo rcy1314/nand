@@ -109,8 +109,22 @@ _container
 
         if (
           loading == `percent`
-        )
+        ) {
           _progress.style.width = `100%`;
+          setTimeout(
+            () => {
+              _progress.style.transition = `all 1600ms ease-in-out`;
+              _progress.style.opacity = `0`;
+            },
+            350)
+          setTimeout(
+            () => {
+              _progress.style.transition = `none`;
+              _progress.style.opacity = `1`;
+              _progress.style.width = `0%`;
+            },
+            1600);
+        }
 
         while (
           _guide.lastChild
@@ -132,8 +146,6 @@ _container
         _main.focus();
         pub = null;
         Reader = false;
-        onlyImages = onlyImagesBuffer;
-        scrollIntoView = scrollIntoViewBuffer;
         _main
           .querySelectorAll(`.joi`)
           .forEach(
@@ -158,12 +170,7 @@ _container
         done = true
         document.title = doc;
         _top.style.display = `none`;
-        if (
-          _progress.clientWidth !== 0
-        ) {
-          _progress.style.transition = `none`;
-          _progress.style.width = `100%`;
-        }
+
 
         _channel.style.height = `0`;
 
