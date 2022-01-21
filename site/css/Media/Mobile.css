@@ -87,12 +87,14 @@
   .sideChannel .item {
     display: inline-table;
     margin-right: 50px !important;
-    height: 320px !important;
-    width: 280px !important;
+    height: 340px !important;
+    width: 320px !important;
   }
 
+  .sideChannel .item .wrap,
   .sideChannel .item .image,
   .sideChannel .item .classic {
+    height: 340px !important;
     width: 320px !important;
   }
 
