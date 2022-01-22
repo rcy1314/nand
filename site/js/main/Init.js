@@ -15,6 +15,17 @@ setTimeout(
 
   () => {
 
+    if (
+      window.innerWidth <= 425 &&
+      !onlyImages
+    ) {
+      display = `legacy`;
+      sscroll = false;
+      legacy = true;
+      dual = false;
+      flex = false;
+    }
+
     Home();
 
     Feed(quickFeeds);
@@ -29,6 +40,8 @@ setTimeout(
 
     adj = menu.slice();
     randomizeAssets(adj);
+
+    Loading();
 
     Bootup();
 
