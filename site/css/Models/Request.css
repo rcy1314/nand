@@ -396,9 +396,9 @@
 
 .pub {
   color: var(--fill-color);
-  word-break: break-all;
+  word-break: break-word;
   margin-bottom: 10px;
-  position: absolute;
+  position: relative;
   margin-right: 30px;
   margin-top: 35px;
   cursor: default;
