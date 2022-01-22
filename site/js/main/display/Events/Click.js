@@ -111,6 +111,34 @@ _container
           cycleViewport = 0
 
         if (
+          window.innerWidth <= 425 &&
+          display == `legacy` &&
+          !onlyImages
+        ){
+          display = `sideScroll`
+          cycleViewport =
+            viewport
+            .findIndex(
+              (item) =>
+              item ==
+              display
+            )
+        } else if (
+          window.innerWidth <= 425 &&
+          display == `sideScroll` &&
+          !onlyImages
+        ) {
+          display = `legacy`
+          cycleViewport =
+            viewport
+            .findIndex(
+              (item) =>
+              item ==
+              display
+            )
+        }
+
+        if (
           viewport[cycleViewport] == `duo`
         ) {
           display = `duo`;
@@ -255,7 +283,7 @@ _container
             )
           )
             _center.querySelector(`#bottom`).remove();
-            _center.style.top = `60px`;
+          _center.style.top = `60px`;
           Sidescroll();
           if (
             document
