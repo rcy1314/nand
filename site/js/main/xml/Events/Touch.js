@@ -14,6 +14,7 @@ _main
             touchmove = true;
           }, 2600
         );
+/* Experimental visibility/removal of items not in viewport
         if (
           scrollTop < _main.scrollTop
         ) {
@@ -46,6 +47,7 @@ _main
             }
           )
         }
+*/
       if (
         (
           _main.scrollHeight -
