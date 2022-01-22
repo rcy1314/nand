@@ -17,9 +17,14 @@ let Sidescroll = function() {
   _center.style.left = `0`;
   _xml.style.top = `0`;
 
-      _channel.append(
-        footerBuild(id)
-      );
+  if (
+    !document.body.contains(
+      _center.querySelector(`.bottom`)
+    )
+  )
+    _channel.append(
+      footerBuild(id)
+    );
 
   if (
     document.body.contains(
@@ -34,8 +39,7 @@ let Sidescroll = function() {
   _channel.classList.remove(`duo`)
 
   if (
-    window.innerWidth
-    >
+    window.innerWidth >
     768
   )
     _display.style.display = `inline-block`;
