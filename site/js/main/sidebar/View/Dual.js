@@ -5,7 +5,14 @@ _sidebar
       if (
         evt.target.classList.contains(
           `dual`
-        )
+        ) &&
+        window.innerWidth > 425
+          ||
+          evt.target.classList.contains(
+            `dual`
+          ) &&
+        window.innerWidth <= 425 &&
+        onlyImages
       ) {
         display = `duo`;
         notifyOption(`Duo`, `fa-times-circle`)
