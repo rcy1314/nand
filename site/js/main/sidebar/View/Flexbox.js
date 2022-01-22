@@ -5,7 +5,14 @@ _sidebar
       if (
         evt.target.classList.contains(
           `flex`
-        )
+        ) &&
+        window.innerWidth > 425
+          ||
+          evt.target.classList.contains(
+            `flex`
+          ) &&
+        window.innerWidth <= 425 &&
+        onlyImages
       ) {
         display = `flexBox`;
         notifyOption(`Flex Box`, `fa-times-circle`)
