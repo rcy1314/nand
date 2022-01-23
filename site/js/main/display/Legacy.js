@@ -8,6 +8,7 @@ let Legacy = function() {
   _channel.style.height = `fit-content`;
   _channel.classList.remove(`flexbox`);
   _channel.style.height = `fit-content`;
+  _channel.classList.remove(`duo`);
   _center.style.width = `425px`;
   _xml.style.top = `60px`;
 
