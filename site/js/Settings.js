@@ -440,7 +440,7 @@ let roundedEdge = false;
 
 */
 
-let onlyImages = false;
+let onlyImages = true;
 
 /*
     feedImages [boolean/integer]
