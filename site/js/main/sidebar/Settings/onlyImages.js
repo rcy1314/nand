@@ -11,6 +11,16 @@ _sidebar
       ) {
         onlyImages = onlyImages != true;
         if (
+          window.innerWidth <= 425 &&
+          !onlyImages
+        ) {
+          display = `legacy`
+          Star(_sidebar.querySelector(`.legacy`), true);
+          Star(_sidebar.querySelector(`.flex`), false);
+          Star(_sidebar.querySelector(`.sscroll`), false);
+          Star(_sidebar.querySelector(`.dual`), false);
+        }
+        if (
           document
           .body
           .contains(
