@@ -17,4 +17,25 @@ let Viewport = function() {
 
   display == viewport[cycleViewport]
 
+  if (
+    window.innerWidth <= 425 &&
+    !onlyImages
+  ) {
+    display = defaultText;
+    if (
+      defaultText == `sideScroll`
+    )
+      sscroll = true;
+    else
+      sscroll = false;
+    if (
+      defaultText == `legacy`
+    )
+      legacy = true;
+    else
+      legacy = false;
+    dual = false;
+    flex = false;
+  }
+  
 }
