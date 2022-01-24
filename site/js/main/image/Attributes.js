@@ -61,6 +61,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         onlyImages
       )
         item.remove();
+      else
+        itemWrap.style.background = `transparent`
       count.shift();
     }
   }
@@ -140,7 +142,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             if (
                               display !== `legacy`
                             )
-                            item.style
+                              item.style
                               .height =
                               `${itemImage.clientHeight}px`
                             itemWrap.style
@@ -162,6 +164,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   }
                 }
                 request.onerror = function(e) {
+                  itemWrap.style.background = `transparent`
                   itemPending.remove();
                   if (
                     onlyImages
@@ -221,7 +224,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                             if (
                               display !== `legacy`
                             )
-                            item.style
+                              item.style
                               .height =
                               `${itemImage.clientHeight + 2}px`
                             itemWrap.style
@@ -243,6 +246,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   }
                 }
                 request.onerror = function(e) {
+                  itemWrap.style.background = `transparent`
                   itemPending.remove();
                   if (
                     onlyImages
@@ -314,7 +318,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     if (
                       display !== `legacy`
                     )
-                    item.style
+                      item.style
                       .height =
                       `${itemImage.clientHeight}px`
                     itemWrap.style
@@ -336,6 +340,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           }
         }
         request.onerror = function(e) {
+          itemWrap.style.background = `transparent`
           itemPending.remove();
           if (
             onlyImages
@@ -375,6 +380,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemImage.classList.add(`default`);
     };
     newImg.onerror = function() {
+      itemWrap.style.background = `transparent`
       itemPending.remove();
       if (
         onlyImages
