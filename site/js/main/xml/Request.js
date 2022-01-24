@@ -15,6 +15,14 @@ var Request = function(index) {
   let state = `?q=${menu[index].id.hyphen()}`
   state.state();
   if (
+    window.innerWidth <= 425 &&
+    !menu[index].media &&
+    onlyImages
+  ) {
+    display = `legacy`;
+    onlyImages = false;
+  }
+  if (
     !readPrevious
   ) {
     random = [];
