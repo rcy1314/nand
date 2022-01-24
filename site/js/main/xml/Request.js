@@ -19,7 +19,7 @@ var Request = function(index) {
     !menu[index].media &&
     onlyImages
   ) {
-    display = `legacy`;
+    display = defaultText;
     onlyImages = false;
   }
   if (
