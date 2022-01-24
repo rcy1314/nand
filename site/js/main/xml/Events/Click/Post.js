@@ -31,22 +31,20 @@ _container
               `.share`
             )
             .select();
-            evt
-              .target
-              .closest(
-                `.item`
-              )
-              .querySelector(
-                `.share`
-              )
+          evt
+            .target
+            .closest(
+              `.item`
+            )
+            .querySelector(
+              `.share`
+            )
             .setSelectionRange(0, 99999);
           document.execCommand(`copy`);
           // Here's where you put the fallback code for older browsers.
         }
       }
       evt.stopPropagation();
-    }
-
-  }, {
-    passive: false
-  });
+    }, {
+      passive: false
+    });
