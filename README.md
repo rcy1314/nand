@@ -1,6 +1,6 @@
-<sub>Size</sub> |  <sub>Web App</sub> | <sub>Package</sub> | <sub>Dockerfile</sub> | <sub>GoLang</sub> |
---- | --- | --- | --- | --- |
-![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/docker-publish.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/go.yml/badge.svg'> |
+<sub>Size</sub> |  <sub>Lines</sub> |  <sub>Heroku</sub> | <sub>NodeJS</sub> | <sub>Dockerfile</sub> | <sub>GoLang</sub> |
+--- | --- | --- | --- | --- | --- |
+![Size](https://img.shields.io/github/languages/code-size/acktic/nand?color=%237FCB61&style=plastic) | ![Lines](https://img.shields.io/tokei/lines/github/acktic/nand?color=%2380CD61&style=plastic) | ![Heroku](https://pyheroku-badge.herokuapp.com/?app=acktic&style=plastic) | <img src='https://github.com/acktic/nand/actions/workflows/node.js.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/docker-publish.yml/badge.svg'> | <img src='https://github.com/acktic/nand/actions/workflows/go.yml/badge.svg'> |
 
 ### About
 
