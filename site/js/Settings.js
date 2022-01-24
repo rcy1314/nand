@@ -111,6 +111,21 @@ let showOption = true;
 let display = `flexBox`;
 
 /*
+    display [boolean/integer]
+
+      Applications
+        xml/Request.js
+        init.js
+
+      Result
+        `sideScroll`,
+        `legacy`,
+
+*/
+
+let defaultText = `legacy`;
+
+/*
     Reader [boolean/integer]
 
       Applications
