@@ -22,6 +22,9 @@
   <em>save image</em> `site/images/webp`  
   <em>[convert to webp 100x100 image](https://redketchup.io/image-resizer)</em>  
 
+    Publisher image repository
+    https://github.com/acktic/xml-publishers-images
+
 ### Init
 
   `index.html/?q=[unique-id]`  
@@ -70,6 +73,8 @@ Notice
   This project makes requests to external resources  
   including a cors-proxy, nsfw api, and any asset(s)
 
+    Assets `menu` located at...
+    https://raw.githubusercontent.com/acktic/xml-sites-array/master/Assets.js  
 
 License
 ----
