@@ -14,40 +14,25 @@ _main
             touchmove = true;
           }, 2600
         );
-/* Experimental visibility/removal of items not in viewport
-        if (
-          scrollTop < _main.scrollTop
-        ) {
+      // Experimental visibility/removal of items not in viewport
+      if (
+        scrollTop < _main.scrollTop
+      ) {
+        for (
+          let y = assets.indexOf(id); y > -1; y--) {
+          let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
           for (
-            let y = assets.indexOf(id); y > 0; y--) {
-            let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
-            for (
-              let i = 0; i < elements.length; i++) {
-              if (
-                elements[i].getBoundingClientRect().top
-                 <
-                 -768
-              ) {
-                console.log(y + ` ` + elements[i])
-                elements[i].style.visibility = `hidden`;
-              }
+            let i = 0; i < elements.length; i++) {
+            if (
+              elements[i].getBoundingClientRect().top <
+              -768
+            ) {
+              elements[i].querySelector(`.img`).setAttribute(`src`, ``);
+              elements[i].querySelector(`.image`).style.backgroundImage = ``;
             }
           }
         }
-        if (
-            scrollTop > _main.scrollTop
-        )
-        {
-          _channel.querySelectorAll(
-            `.item`
-          )
-          .forEach(
-            (a) => {
-              a.style.visibility = `visible`;
-            }
-          )
-        }
-*/
+      }
       if (
         (
           _main.scrollHeight -
