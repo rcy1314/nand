@@ -15,7 +15,7 @@ _main
           }, 7500);
       setTimeout(
         () => {
-// Experimental visibility/removal of items not in viewport
+/* Experimental visibility/removal of items not in viewport
           if (
             scrollTop < _main.scrollTop
           ) {
@@ -35,11 +35,7 @@ _main
               }
             }
           }
-<<<<<<< HEAD
 */
-=======
-
->>>>>>> 4f97790c8f1be5de04e31cb8de107bddb2ef29a9
           if (
             (
               scrollTop < _main.scrollTop &&
