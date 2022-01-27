@@ -19,7 +19,7 @@ _main
         scrollTop < _main.scrollTop
       ) {
         for (
-          let y = assets.indexOf(id); y > -1; y--) {
+          let y = assets.indexOf(id); y >= 0; y--) {
           let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
           for (
             let i = 0; i < elements.length; i++) {
