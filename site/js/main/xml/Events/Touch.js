@@ -14,12 +14,12 @@ _main
             touchmove = true;
           }, 2600
         );
-      // Experimental visibility/removal of items not in viewport
+/* Experimental visibility/removal of items not in viewport
       if (
         scrollTop < _main.scrollTop
       ) {
         for (
-          let y = assets.indexOf(id); y > -1; y--) {
+          let y = assets.indexOf(id); y >= 0; y--) {
           let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
           for (
             let i = 0; i < elements.length; i++) {
@@ -33,6 +33,7 @@ _main
           }
         }
       }
+*/
       if (
         (
           _main.scrollHeight -
