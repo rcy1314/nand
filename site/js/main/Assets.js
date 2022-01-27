@@ -36,11 +36,11 @@
 
 menu.unshift(
 
-  {id:`4Chan/Wallpapers General`,category:`Reddit`,title:``,description:`4Chan Wallpapers General`,uri:`https://boards.4channel.org/wg/index.rss`,image:`4chan`,hash:`4P`,media:!0},
-  {id:`4Chan/Sports`,category:`Reddit`,title:``,description:`4Chan Sports`,uri:`https://boards.4channel.org/sp/index.rss`,image:`4chan`,hash:`4S`,media:!0},
+  {id:`4Chan/Wallpapers General`,category:`Reddit`,title:``,description:`4Chan Wallpapers General`,uri:`https://boards.4channel.org/wg/index.rss`,image:`4chan`,hash:`4P`,media:!1},
+  {id:`4Chan/Sports`,category:`Reddit`,title:``,description:`4Chan Sports`,uri:`https://boards.4channel.org/sp/index.rss`,image:`4chan`,hash:`4S`,media:!1},
   {id:`4Chan/Gifs`,category:`Reddit`,title:``,description:`4Chan Gif`,uri:`https://boards.4channel.org/gif/index.rss`,image:`4chan`,hash:`4G`,media:!1},
-  {id:`4Chan/High Resolution`,category:`Reddit`,title:``,description:`4Chan High Resolution`,uri:`https://boards.4channel.org/hr/index.rss`,image:`4chan`,hash:`4H`,media:!0},
-  {id:`4Chan/Technology`,category:`Reddit`,title:``,description:`4Chan Technology`,uri:`https://boards.4channel.org/g/index.rss`,image:`4chan`,hash:`4T`,media:!0},
-  {id:`4Chan/Pol`,category:`Reddit`,title:``,description:`4Chan Politics`,uri:`https://boards.4channel.org/pol/index.rss`,image:`4chan`,hash:`4L`,media:!0},
+  {id:`4Chan/High Resolution`,category:`Reddit`,title:``,description:`4Chan High Resolution`,uri:`https://boards.4channel.org/hr/index.rss`,image:`4chan`,hash:`4H`,media:!1},
+  {id:`4Chan/Technology`,category:`Reddit`,title:``,description:`4Chan Technology`,uri:`https://boards.4channel.org/g/index.rss`,image:`4chan`,hash:`4T`,media:!1},
+  {id:`4Chan/Pol`,category:`Reddit`,title:``,description:`4Chan Politics`,uri:`https://boards.4channel.org/pol/index.rss`,image:`4chan`,hash:`4L`,media:!1},
 
 );
