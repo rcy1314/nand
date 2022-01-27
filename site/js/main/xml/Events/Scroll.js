@@ -20,7 +20,7 @@ _main
             scrollTop < _main.scrollTop
           ) {
             for (
-              let y = assets.indexOf(id); y > 0; y--) {
+              let y = assets.indexOf(id); y >= 0; y--) {
               let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
               for (
                 let i = 0; i < elements.length; i++) {
@@ -29,22 +29,11 @@ _main
                    <
                    -768
                 ) {
-                  elements[i].style.visibility = `hidden`;
+                elements[i].querySelector(`.img`).setAttribute(`src`, ``);
+                elements[i].querySelector(`.image`).style.backgroundImage = ``;
                 }
               }
             }
-          }
-          if (
-            scrollTop > _main.scrollTop
-          ) {
-            _channel.querySelectorAll(
-                `.item`
-              )
-              .forEach(
-                (a) => {
-                  a.style.visibility = `visible`;
-                }
-              )
           }
 */
           if (
