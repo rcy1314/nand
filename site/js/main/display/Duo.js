@@ -93,7 +93,7 @@ let Duo = function() {
       )
     )
   )
-    _channel.style.height = `99999999px`
+    _channel.style.height = `9999999px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);
