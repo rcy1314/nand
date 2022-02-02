@@ -87,7 +87,7 @@ input[type=submit] {
 }
 
 .focus .button {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary) !important;
   background: var(--color-secondary);
   display: inline-block;
   position: relative;

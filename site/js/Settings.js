@@ -3,7 +3,7 @@ let doc = `n@nd`
 
 
 // initial theme
-let set = `Light`;
+let set = `Night`;
 
 /*
     backgroundImage [array]
@@ -22,8 +22,8 @@ let set = `Light`;
 
 let backgroundImage = [{
   // note: path begins in index.html folder use ../../ to exit project folder
-  path: "",
-  element: "container",
+  path: "n@nd.jpg",
+  element: "main",
   position: "center",
   size: "cover",
 }, ];
@@ -329,7 +329,7 @@ let topBarBackdrop = false;
 
 */
 
-let onlySearch = false;
+let onlySearch = true;
 
 /*
     quickFeeds [boolean/integer]
