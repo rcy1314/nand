@@ -111,6 +111,7 @@
 
 .btn,
 .bottom {
+  background-color: var(--color-primary);
   white-space: nowrap;
   outline: 0;
   cursor: pointer;
