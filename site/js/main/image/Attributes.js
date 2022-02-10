@@ -117,7 +117,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
-                    item.classList.add(`i`);
                     if (
                       Width < maximum ||
                       Height < shrunk
@@ -181,7 +180,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   request.send();
                 else {
                   itemImage.setAttribute(`src`, src);
-                  item.classList.add(`i`);
                   itemPending.remove();
                 }
                 itemFilter.classList.add(`blur`);
@@ -202,7 +200,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   var read = new FileReader();
                   read.readAsDataURL(request.response);
                   read.onload = function(e) {
-                    item.classList.add(`i`);
                     if (
                       Width < maximum ||
                       Height < shrunk
@@ -263,7 +260,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   request.send();
                 else {
                   itemImage.setAttribute(`src`, src);
-                  item.classList.add(`i`);
                   itemPending.remove();
                 }
               }
@@ -292,7 +288,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           var read = new FileReader();
           read.readAsDataURL(request.response);
           read.onload = function(e) {
-            item.classList.add(`i`);
             if (
               menu[id].id.match(/Youtube/g)
             )
@@ -357,7 +352,6 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           request.send();
         else {
           itemImage.setAttribute(`src`, src);
-          item.classList.add(`i`);
           itemPending.remove();
         }
       }; //END NEWIMG.ONLOAD
