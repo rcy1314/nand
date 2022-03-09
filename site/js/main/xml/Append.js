@@ -80,6 +80,7 @@ var Append = function(id) {
       _channel.querySelector(`.item`)
     )
   ) {
+    if (scrollIntoView)
     setTimeout(
       () => {
         touchmove = true
@@ -102,6 +103,7 @@ var Append = function(id) {
     display == `sideScroll` &&
     !first
   ) {
+    if (scrollIntoView)
     setTimeout(
       () => {
         touchmove = true;
