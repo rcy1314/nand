@@ -6,15 +6,6 @@ _container
           `select`
         )
       ) {
-  if (
-    category != `Assets`
-    ) {
-      category = menu[index].category;
-    }
-    else {
-      category = adj[index].category;
-    }
-        console.log(`category`);
         if (
           _match.style.display === `block`
         ) {
