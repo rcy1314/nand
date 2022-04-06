@@ -2,6 +2,7 @@ var Request = function(index) {
   init();
   pub = [];
   let html;
+  let state;
   count = [];
   id = index;
   stop = true;
@@ -17,13 +18,13 @@ var Request = function(index) {
       uri = `${cors}${menu[index].uri}`;
       category = menu[index].category;
       document.title = menu[index].id.space();
-      let state = `?q=${menu[index].id.hyphen()}`
+      state = `?q=${menu[index].id.hyphen()}`
     }
     else {
       uri = `${cors}${adj[index].uri}`;
       category = adj[index].category;
       document.title = adj[index].id.space();
-      let state = `?q=${adj[index].id.hyphen()}`
+      state = `?q=${adj[index].id.hyphen()}`
     }
   state.state();
   if (
