@@ -11,8 +11,20 @@ var Request = function(index) {
   _sb.style.display = `none`;
   _toggle.style.display = `none`;
   _container.style.display = `block`;
-  document.title = menu[index].id.space();
-  let state = `?q=${menu[index].id.hyphen()}`
+  if (
+    category != `Assets`
+    ) {
+      uri = `${cors}${menu[index].uri}`;
+      category = menu[index].category;
+      document.title = menu[index].id.space();
+      let state = `?q=${menu[index].id.hyphen()}`
+    }
+    else {
+      uri = `${cors}${adj[index].uri}`;
+      category = adj[index].category;
+      document.title = adj[index].id.space();
+      let state = `?q=${adj[index].id.hyphen()}`
+    }
   state.state();
   if (
     window.innerWidth <= 425 &&
@@ -57,16 +69,6 @@ var Request = function(index) {
     _main.scrollTop = 0;
     xml();
   }
-  if (
-    category != `Assets`
-    ) {
-      uri = `${cors}${menu[index].uri}`;
-      category = menu[index].category;
-    }
-    else {
-      uri = `${cors}${adj[index].uri}`;
-      category = adj[index].category;
-    }
     _visit.style.display = `none`;
 
   if (
