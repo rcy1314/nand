@@ -57,9 +57,17 @@ var Request = function(index) {
     _main.scrollTop = 0;
     xml();
   }
-  uri = `${cors}${menu[index].uri}`;
-  category = menu[index].category;
-  _visit.style.display = `none`;
+  if (
+    category != `Assets`
+    ) {
+      uri = `${cors}${menu[index].uri}`;
+      category = menu[index].category;
+    }
+    else {
+      uri = `${cors}${adj[index].uri}`;
+      category = adj[index].category;
+    }
+    _visit.style.display = `none`;
 
   if (
     window.innerWidth >= 768 &&
