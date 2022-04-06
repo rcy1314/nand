@@ -18,13 +18,11 @@ var Request = function(index) {
     category != `Assets`
     ) {
       uri = `${cors}${menu[index].uri}`;
-      category = menu[index].category;
       document.title = menu[index].id.space();
       state = `?q=${menu[index].id.hyphen()}`
     }
     else {
       uri = `${cors}${adj[index].uri}`;
-      category = adj[index].category;
       document.title = adj[index].id.space();
       state = `?q=${adj[index].id.hyphen()}`
     }
