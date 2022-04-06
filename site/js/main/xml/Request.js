@@ -7,6 +7,7 @@ var Request = function(index) {
   id = index;
   stop = true;
   images = [];
+  let courtesy;
   let inline = [];
   imageDuplicate = [];
   _sb.style.display = `none`;
@@ -196,7 +197,10 @@ var Request = function(index) {
 
           let src = Source(data);
 
-          let courtesy =
+          if (
+            category != `Assets`
+            ) {
+          courtesy =
             courtesyBuild(
               menu[index].id.match(/([^\/]+)$/g),
               menu[index].image.image(),
@@ -204,6 +208,17 @@ var Request = function(index) {
                 /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
               )
             );
+          }
+            else {
+          courtesy =
+            courtesyBuild(
+              adj[index].id.match(/([^\/]+)$/g),
+              adj[index].image.image(),
+              adj[index].uri.match(
+                /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
+              )
+            );
+          }
 
           if (
             title.length > titleTruncate
