@@ -12,6 +12,7 @@ var Request = function(index) {
   _sb.style.display = `none`;
   _toggle.style.display = `none`;
   _container.style.display = `block`;
+  console.log(category);
   if (
     category != `Assets`
     ) {
