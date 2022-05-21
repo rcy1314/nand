@@ -67,6 +67,19 @@ const favorites = [
 let bootup = false;
 
 /*
+    pretty [boolean/integer]
+
+      Applications
+        pretty.js
+
+      Result
+        pretty wallpaper
+
+*/
+
+let pretty = false;
+
+/*
     topBar [boolean/integer]
 
       Applications
