@@ -15,6 +15,8 @@ setTimeout(
 
   () => {
 
+    if (pretty) Pretty();
+   
     Home();
 
     Feed(quickFeeds);
