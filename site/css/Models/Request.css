@@ -497,7 +497,9 @@
 
 #xml {
   background-color: var(--color-secondary);
+  -webkit-backdrop-filter: blur(20px);
   min-height: calc(100% - 60px);
+  backdrop-filter: blur(20px);
   height: fit-content;
   position: absolute;
   display: none;
