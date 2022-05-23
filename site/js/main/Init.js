@@ -14,8 +14,6 @@
 setTimeout(
 
   () => {
-
-    if (pretty) Pretty();
    
     Home();
 

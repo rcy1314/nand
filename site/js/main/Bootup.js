@@ -35,6 +35,7 @@ let Bootup = function() {
 
                   setTimeout(
                     () => {
+			    if (pretty) Pretty();
                       _trademark.classList.remove(`bootup`);
                       _check.classList.remove(`margin`);
                       _check.style.display = `none`;
