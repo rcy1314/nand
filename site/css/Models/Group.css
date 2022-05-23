@@ -1,5 +1,7 @@
 #main #group {
-  background-color: transparent;
+  background-color: var(--color-primary);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   height: fit-content;
   position: absolute;
   padding-top: 57px;
