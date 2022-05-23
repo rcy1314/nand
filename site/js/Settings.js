@@ -808,6 +808,10 @@ const settings = [{
     name: `Only Search`,
     class: `onlySearch`
   },
+  {
+    name: `Wallpaper`,
+    class: `pretty`
+  }
 ];
 
 const background = [{
