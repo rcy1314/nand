@@ -496,6 +496,7 @@
 }
 
 #xml {
+  background-color: var(--color-primary);
   min-height: calc(100% - 60px);
   height: fit-content;
   position: absolute;
