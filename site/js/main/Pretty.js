@@ -12,7 +12,6 @@ let Pretty = function() {
                 httpRequest.status == 200 &&
                 this.responseXML
             ) {
-                console.log(`ok`)
                     // 200 = OK
                 let xhr = this.responseXML;
                 if (
@@ -41,14 +40,11 @@ let Pretty = function() {
                         src: src,
                     });
                 }
-                console.log(pub);
                 if (
                     Array.isArray(pub)
                 )
                     for (i = 0; i < pub.length - 1; i++) {
-                        console.log(i);
                         if (!pub[i].src.match(/external/g)) {
-                            console.log(pub[i].src)
                             let newImg;
                             newImg = new Image();
                             newImg.setAttribute(`src`, pub[i].src);
@@ -57,7 +53,7 @@ let Pretty = function() {
                                     newImg.naturalWidth > 3400
                                 ) {
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
-                                    console.log(newImg.naturalWidth)
+                                    return false
                                 }
                             }
                         }
