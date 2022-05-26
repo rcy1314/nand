@@ -50,10 +50,10 @@ let Pretty = function() {
                             newImg.setAttribute(`src`, pub[i].src);
                             newImg.onload = function() {
                                 if (
-                                    newImg.naturalWidth > 1080
+                                    newImg.naturalWidth > 400
                                 ) {
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
-                                    return false
+                                    break
                                 }
                             }
                         }
