@@ -54,7 +54,6 @@ let Pretty = function() {
                                 ) {
                                     if (!pub[i].src.match(/external/g))
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
-                                    break
                                     return false
                                 }
                             }
