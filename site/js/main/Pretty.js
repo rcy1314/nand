@@ -52,7 +52,7 @@ let Pretty = function() {
                                 if (
                                     newImg.naturalWidth > 3400
                                 ) {
-                                    _container.style.backgroundImage = `url(${cors + pub[i].src})`;
+                                    _container.style.backgroundImage = `url(${pub[i].src})`;
                                     return false
                                 }
                             }
