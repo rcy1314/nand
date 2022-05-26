@@ -45,15 +45,23 @@ let Pretty = function() {
                 )
                     for (i = 0; i < pub.length - 1; i++) {
                         if (pub[i].src.match(/i\.redd\.it/g)) {
-
+                            let newImg;
+                            newImg = new Image();
+                            newImg.setAttribute(`src`, pub[i].src);
+                            newImg.onload = function() {
+                                if (
+                                    newImg.naturalWidth > 400
+                                ) {
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
                                     break
+                                }
+                            }
                         }
                     }
             }
         }
     }
-    httpRequest.open(`GET`, `https://acktic-github-io.herokuapp.com/https://reddit.com/r/natureisfuckinglit/.rss`);
+    httpRequest.open(`GET`, `https://acktic-github-io.herokuapp.com/https://reddit.com/r/earthporn/.rss`);
     httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
     httpRequest.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
     httpRequest.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
