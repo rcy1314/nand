@@ -44,16 +44,16 @@ let Pretty = function() {
                     Array.isArray(pub)
                 )
                     for (i = 0; i < pub.length - 1; i++) {
-                        if (pub[i].src.match(/i\.redd\.it/g)) {
+                        if (!pub[i].src.match(/external/g)) {
                             let newImg;
                             newImg = new Image();
                             newImg.setAttribute(`src`, pub[i].src);
                             newImg.onload = function() {
                                 if (
-                                    newImg.naturalWidth > 400
+                                    newImg.naturalWidth > 3400
                                 ) {
                                     _container.style.backgroundImage = `url(${cors + pub[i].src})`;
-                                    break
+                                    return false
                                 }
                             }
                         }
