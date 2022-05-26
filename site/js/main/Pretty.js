@@ -53,7 +53,6 @@ let Pretty = function() {
                                     newImg.naturalWidth > 3400
                                 ) {
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
-                                    return false
                                 }
                             }
                         }
@@ -61,7 +60,7 @@ let Pretty = function() {
             }
         }
     }
-    httpRequest.open(`GET`, `https://acktic-github-io.herokuapp.com/https://reddit.com/r/cityporn/.rss`);
+    httpRequest.open(`GET`, `https://acktic-github-io.herokuapp.com/https://reddit.com/r/wallpaper/.rss`);
     httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
     httpRequest.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
     httpRequest.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
