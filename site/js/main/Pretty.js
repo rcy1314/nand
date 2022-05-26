@@ -45,17 +45,9 @@ let Pretty = function() {
                 )
                     for (i = 0; i < pub.length - 1; i++) {
                         if (pub[i].src.match(/i\.redd\.it/g)) {
-                            let newImg;
-                            newImg = new Image();
-                            newImg.setAttribute(`src`, pub[i].src);
-                            newImg.onload = function() {
-                                if (
-                                    newImg.naturalWidth > 400
-                                ) {
+
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
                                     break
-                                }
-                            }
                         }
                     }
             }
