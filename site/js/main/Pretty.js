@@ -44,7 +44,7 @@ let Pretty = function() {
                     Array.isArray(pub)
                 )
                     for (i = 0; i < pub.length - 1; i++) {
-                        if (!pub[i].src.match(/external/g)) {
+                        if (pub[i].src.match(/i\.redd\.it/g)) {
                             let newImg;
                             newImg = new Image();
                             newImg.setAttribute(`src`, pub[i].src);
@@ -53,6 +53,7 @@ let Pretty = function() {
                                     newImg.naturalWidth > 1080
                                 ) {
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
+                                    return false
                                 }
                             }
                         }
