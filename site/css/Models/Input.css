@@ -29,6 +29,7 @@ input[type=submit] {
 }
 
 #first .listing {
+  background-color: var(--color-primary);
   overflow-x: hidden;
   position: absolute;
   overflow-y: auto;
