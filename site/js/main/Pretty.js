@@ -50,7 +50,7 @@ let Pretty = function() {
                             newImg.setAttribute(`src`, pub[i].src);
                             newImg.onload = function() {
                                 if (
-                                    newImg.naturalWidth > 3400
+                                    newImg.naturalWidth > 1080
                                 ) {
                                     _container.style.backgroundImage = `url(${pub[i].src})`;
                                 }
@@ -60,7 +60,7 @@ let Pretty = function() {
             }
         }
     }
-    httpRequest.open(`GET`, `https://acktic-github-io.herokuapp.com/https://reddit.com/r/wallpaper/.rss`);
+    httpRequest.open(`GET`, `https://acktic-github-io.herokuapp.com/https://reddit.com/r/earthporn/.rss`);
     httpRequest.setRequestHeader(`Content-Type`, `text/html; charset=utf-8`);
     httpRequest.setRequestHeader(`Accept`, `text/html; charset=utf-8`);
     httpRequest.setRequestHeader(`Access-Control-Allow-Origin`, `*`);
