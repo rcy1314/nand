@@ -122,11 +122,14 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      item.Classlist.remove(`blur`);
                       attribute.style.height = `74px`;
                       copyDownload.remove();
                       copyPicture.remove();
                       itemPending.remove();
+                      item.Classlist.remove(`blink`);
                     } else {
+                      item.Classlist.remove(`blink`);
                       itemImage.setAttribute(`src`, e.target.result);
                       itemContainer.style.position = `absolute`;
                       itemImage.style.position = `absolute`;
@@ -135,8 +138,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       setTimeout(
                         () => {
                           if (
-                            itemImage.clientHeight > shrunk &&
-                            itemImage.clientWidth > maximum
+                            itemImage.clientHeight &&
+                            itemImage.clientWidth
                           ) {
                             if (
                               display !== `legacy`
@@ -155,7 +158,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                               `${itemImage.clientHeight}px`
                           } else {
                             itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                            itemPending.remove();
+                             item.Classlist.remove(`blink`);
+                             itemPending.remove();
                           }
                         }, 50
                       )
@@ -181,6 +185,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 else {
                   itemImage.setAttribute(`src`, src);
                   itemPending.remove();
+                  item.Classlist.remove(`blink`);
                 }
                 itemFilter.classList.add(`blur`);
               } else if (
@@ -205,6 +210,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      item.Classlist.remove(`blink`);
                       attribute.style.height = `74px`;
                       copyDownload.remove();
                       copyPicture.remove();
@@ -212,6 +218,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                     } else {
                       itemPending.remove();
                       itemImage.setAttribute(`src`, e.target.result);
+                      item.Classlist.remove(`blink`);
                       setTimeout(
                         () => {
                           if (
@@ -236,7 +243,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                           } else {
                             itemContainer.style.backgroundImage = `url(${e.target.result})`;
                             itemPending.remove();
-                          }
+                            item.Classlist.remove(`blink`);
+                           }
                         }, 50
                       )
                     }
@@ -261,6 +269,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                 else {
                   itemImage.setAttribute(`src`, src);
                   itemPending.remove();
+                  item.Classlist.remove(`blink`);
                 }
               }
             });
@@ -297,12 +306,14 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               Height < shrunk
             ) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
+              item.Classlist.remove(`blink`);
               attribute.style.height = `74px`;
               copyDownload.remove();
               copyPicture.remove();
               itemPending.remove();
             } else {
               itemImage.setAttribute(`src`, e.target.result);
+              item.Classlist.remove(`blink`);
               itemPending.remove();
               setTimeout(
                 () => {
@@ -327,6 +338,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                       `${itemImage.clientHeight}px`
                   } else {
                     itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                    item.Classlist.remove(`blink`);
                     itemPending.remove();
                   }
                 }, 50
@@ -352,6 +364,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           request.send();
         else {
           itemImage.setAttribute(`src`, src);
+          item.Classlist.remove(`blink`);
           itemPending.remove();
         }
       }; //END NEWIMG.ONLOAD
