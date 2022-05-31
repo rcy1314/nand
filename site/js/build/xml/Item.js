@@ -101,7 +101,7 @@ let xmlHTMLBuild = function(htmlArray) {
     loader.style.display = `none`;
     bars.style.display = `flex`;
   } else if (!imageLoader) {
-    item.classList.add(`blink`);
+    pending.classList.add(`blink`);
     original.style.display = `none`;
     loading.style.display = `none`;
     loader.style.display = `none`;
