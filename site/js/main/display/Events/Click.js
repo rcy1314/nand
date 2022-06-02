@@ -142,7 +142,7 @@ _container
           viewport[cycleViewport] == `duo`
         ) {
           display = `duo`;
-          notifyOption(`Duo`, `fa-times-circle`)
+          notifyOption(`Duo`, `fa-check-circle`)
           Duo();
           if (
             document
@@ -190,7 +190,7 @@ _container
           viewport[cycleViewport] == `flexBox`
         ) {
           display = `flexBox`;
-          notifyOption(`Flex Box`, `fa-times-circle`)
+          notifyOption(`Flex Box`, `fa-check-circle`)
           Flex();
           if (
             document
