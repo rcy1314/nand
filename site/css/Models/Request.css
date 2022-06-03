@@ -491,6 +491,10 @@
   top: 0;
 }
 
+#xml .wrap:hover {
+  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
+}
+
 #xml .youtube {
   transform: scale(1.82);
 }
