@@ -34,7 +34,18 @@ _container
       } else if (
         evt.target.classList.contains(
           `asset`
-        )
+        ) &&
+	  menu[
+          evt
+          .target
+          .closest(
+            `.asset`
+          )
+          .getAttribute(
+            `aria-object`
+          )].category
+		!==
+		`Streams`
       )
         Request(evt.target.getAttribute(`aria-object`));
     }, {
