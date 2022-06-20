@@ -4,7 +4,45 @@ _container
       if (
         evt.target.classList.contains(`entity`) ||
         evt.target.classList.contains(`asset`) ||
-        evt.target.classList.contains(`query`)
+        evt.target.classList.contains(`query`) &&
+	  menu[
+          evt
+          .target
+          .closest(
+            `.asset`
+          )
+          .getAttribute(
+            `aria-object`
+          )].category
+		==
+		`Streams`
+      ) {
+	  menu[
+          evt
+          .target
+          .closest(
+            `.asset`
+          )
+          .getAttribute(
+            `aria-object`
+          )].uri.blank();
+	  return false
+	}
+      else if (
+        evt.target.classList.contains(`entity`) ||
+        evt.target.classList.contains(`asset`) ||
+        evt.target.classList.contains(`query`) &&
+	  menu[
+          evt
+          .target
+          .closest(
+            `.asset`
+          )
+          .getAttribute(
+            `aria-object`
+          )].category
+		!==
+		`Streams`
       ) {
         init();
         first = true;
