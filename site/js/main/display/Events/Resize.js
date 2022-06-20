@@ -14,7 +14,7 @@ window
         .querySelectorAll(
           `.item`
         )
-        .length > 150 &&
+        .length > 5000 &&
         Reader
       ) {
         Cleanup();
@@ -70,7 +70,7 @@ window
         .querySelectorAll(
           `.item`
         )
-        .length > 150 &&
+        .length > 5000 &&
         !Reader
       ) {
         Cleanup();
