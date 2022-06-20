@@ -654,6 +654,7 @@ const translations = [
   `News`,
   `Media`,
   `Sports`,
+  `Streams`,
   `Tech`,
   `World`,
   `Youtube`,
