@@ -1,10 +1,7 @@
-_container
+_feed
   .addEventListener(
     'click', (evt) => {
       if (
-        evt.target.classList.contains(`entity`) ||
-        evt.target.classList.contains(`asset`) ||
-        evt.target.classList.contains(`query`) &&
 	  menu[
           evt
           .target
@@ -14,7 +11,7 @@ _container
           .getAttribute(
             `aria-object`
           )].category
-		==
+		===
 		`Streams`
       ) {
 	  menu[
@@ -28,22 +25,7 @@ _container
           )].uri.blank();
 	  return false
 	}
-      else if (
-        evt.target.classList.contains(`entity`) ||
-        evt.target.classList.contains(`asset`) ||
-        evt.target.classList.contains(`query`) &&
-	  menu[
-          evt
-          .target
-          .closest(
-            `.asset`
-          )
-          .getAttribute(
-            `aria-object`
-          )].category
-		!==
-		`Streams`
-      ) {
+      else {
         init();
         first = true;
         Request(
