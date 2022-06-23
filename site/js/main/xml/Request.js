@@ -28,14 +28,6 @@ var Request = function(index) {
     }
   state.state();
   if (
-    window.innerWidth <= 425 &&
-    !menu[index].media &&
-    onlyImages
-  ) {
-    display = defaultText;
-    onlyImages = false;
-  }
-  if (
     !readPrevious
   ) {
     random = [];
