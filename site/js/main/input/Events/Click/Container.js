@@ -1,6 +1,7 @@
 _container
   .addEventListener(
     'click', (evt) => {
+
       if (
         evt
         .target
@@ -13,6 +14,13 @@ _container
         .target
         .value =
         ``;
+
+if (
+	menu[evt.target.closest(`.index`).getAttribute(`aria-object`)].category == `Streams`
+) {
+menu[evt.target.closest(`.index`).getAttribute(`aria-object`)].uri.blank();
+return false
+}
       if (
         evt
         .target
