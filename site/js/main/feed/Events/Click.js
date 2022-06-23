@@ -31,23 +31,7 @@ _container
           _feed.scrollLeft - _feed.clientWidth <= 0
         )
           _left.style.display = `none`;
-      } else if (
-        evt.target.classList.contains(
-          `asset`
-        ) &&
-	  menu[
-          evt
-          .target
-          .closest(
-            `.asset`
-          )
-          .getAttribute(
-            `aria-object`
-          )].category
-		!==
-		`Streams`
-      )
-        Request(evt.target.getAttribute(`aria-object`));
+      }
     }, {
       passive: false
     }
