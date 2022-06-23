@@ -15,8 +15,7 @@ let Input = function(
     var i = 0; i <= menu.length - 1; i++
   ) {
     if (
-      menu[i].id.toString().toLowerCase().match(inputFilter) &&
-	menu[i].category !== `Streams`
+      menu[i].id.toString().toLowerCase().match(inputFilter)
     ) {
       if (
         suggest.length - 1 === suggestionBuffer
@@ -47,8 +46,7 @@ let Input = function(
     ) {
       if (
         menu[i].description.toString().toLowerCase().match(inputFilter) &&
-        !menu[i].id.toString().toLowerCase().match(inputFilter) &&
-	  menu[i].category !== `Streams`
+        !menu[i].id.toString().toLowerCase().match(inputFilter)
       ) {
         if (
           suggest.length - 1 === suggestionBuffer
@@ -88,8 +86,7 @@ let Input = function(
     if (
       menu[randomMenuObject] &&
       menu[randomMenuObject].media == true &&
-      !matches.includes(randomMenuObject) &&
-	menu[randomMenuObject].category !== `Streams`
+      !matches.includes(randomMenuObject)
     ) {
       matches.push(randomMenuObject);
       if (
