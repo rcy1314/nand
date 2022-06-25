@@ -8,6 +8,7 @@ let Filter = function(filterURI) {
   ) {
     setTimeout(
       () => {
+	  Group();
         Category(filterURI.toString().capitalize());
       }, 200
     )
