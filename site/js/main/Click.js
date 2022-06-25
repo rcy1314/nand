@@ -125,7 +125,7 @@ _container
             },
             1600);
         }
-
+	  Cleanup();
         while (
           _guide.lastChild
         )
