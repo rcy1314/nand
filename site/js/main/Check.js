@@ -57,7 +57,7 @@ let Check = function() {
       `none`
   } else if (
     imageLoader ==
-    `v-bars`
+    `bars`
   ) {
     _check
       .querySelector(
@@ -70,7 +70,7 @@ let Check = function() {
         `.bars`
       )
       .style.display =
-      `block`
+      `flex`
     _check
       .querySelector(
         `.loader`
