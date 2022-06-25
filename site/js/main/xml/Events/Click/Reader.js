@@ -20,7 +20,11 @@ _container
             .forEach(
               (a) => a.classList.remove(`luv`)
             );
-
+	    Cleanup();
+	    Group();
+	    Category(category);
+	    Expand(expand);    
+	    unloading();
         } else if (
           Reader
         ) {
