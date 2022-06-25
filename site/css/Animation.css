@@ -38,6 +38,10 @@
   text-indent: -9999em;
   margin-top: 25px;
   font-size: 11px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bars:before,
