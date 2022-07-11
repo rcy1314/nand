@@ -73,6 +73,7 @@ let Bootup = function() {
         }, 1250
       )
     } else {
+			    if (pretty) Pretty();
       _container.style.display = `block`;
       _check.style.display = `none`;
       _check.style.opacity = `1`;
@@ -81,6 +82,7 @@ let Bootup = function() {
   } else if (
     !location.search.split(`?`)[1]
   ) {
+			    if (pretty) Pretty();
     _container.style.display = `block`;
     _check.style.display = `none`;
     _visit.style.display = `flex`;
