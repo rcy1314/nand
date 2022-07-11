@@ -64,7 +64,7 @@ const favorites = [
 
 */
 
-let bootup = true;
+let bootup = false;
 
 /*
     pretty [boolean/integer]
