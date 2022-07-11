@@ -79,9 +79,7 @@ let Bootup = function() {
       _check.style.opacity = `1`;
     }
 
-  } else if (
-    !location.search.split(`?`)[1]
-  ) {
+  } else {
 			    if (pretty) Pretty();
     _container.style.display = `block`;
     _check.style.display = `none`;
