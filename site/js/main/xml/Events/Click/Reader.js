@@ -59,6 +59,7 @@ _container
           }
           touchmove = true;
           onlyImages = true;
+	  Star(_sidebar.querySelector(`.onlyImages`), true);
           Random();
           randomDuplicate = [];
           notifyOption(`Reading`, `fa-check-circle`);
