@@ -6,6 +6,7 @@
 curl -q -s "https://acktic.github.io/xml-sites-array/Assets.js" | grep -oP 'uri:`.*' | sed 's/uri://g' | cut -f1 -d, | tr -d '`' | grep http | xargs -n1 -P 10 -I {} bash -c 'curl --connect-timeout 10 -q -s -q -k "{}" -I | grep -e rss -e text -e xml -e html -e json >/dev/null && echo "Feed is live: {}" || echo "Feed is dead: {}"' | gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }'
 
 #Unused for now => rewrite unique ID, add missing hashes and media if you would like to add one and remove ext.
+#{id:`MTV`,category:`Media`,title:``,description:`MTV The ultimate source for music, celebrity, entertainment, movies, and current events.`,uri:`http://www.mtv.com/news/feed`,image:`MTV`,hash:`Vm`,media:!0},
 #{id:`MovieWeb`,category:`Media`,title:``,description:`MovieWeb is the Fastest, Most Complete Movie & TV Coverage on the Planet.`,uri:`https://movieweb.com/rss/all-news`,image:`MovieWeb`,hash:`eW`,media:!0},
 #{id:`Youtube/Google`,category:`Youtube`,title:``,description:`Google Youtube our products, technology, company happenings and more.`,uri:`https://www.youtube.com/feeds/videos.xml?user=google`,image:`Google`,hash:`eL`,media:!0},
 #{id:`Mirror UK World News`,category:`World`,title:``,description:`Mirror.co.uk World headlines, pictures, analysis, opinion and video.`,uri:`https://www.mirror.co.uk/news/us-news/?service=rss`,image:`Mirror`,hash:`iW`,media:!0},
