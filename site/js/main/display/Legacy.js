@@ -3,41 +3,37 @@ let Legacy = function() {
   offset = 1000;
   _center.style.cssText = `justify-content:center !important`;
   _channel.classList.remove(`sideChannel`);
+  _center.classList.remove(`sideChannel`);
   _center.style.display = `inline-block`;
   _channel.style.height = `fit-content`;
-  _center.classList.add(`sideChannel`);
   _channel.classList.remove(`flexbox`);
   _channel.style.height = `fit-content`;
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.classList.remove(
-        `sideItem`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.classList.remove(
-        `flexbox`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.style.width =
-      `425px`
-    );
+  _channel.classList.remove(`duo`);
+  _center.style.width = `425px`;
   _xml.style.top = `60px`;
+
+  if (
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  ) {
+    _channel
+    .querySelectorAll(
+      `.item`
+    ).forEach(
+      (a) => {
+        a.classList.remove(
+          `sideItem`
+        )
+      }
+    )
+
+  }
 
   if (
     document
@@ -53,16 +49,11 @@ let Legacy = function() {
     _center.querySelector(`.bottom`).style.left = `0`;
   }
 
-  _channel
-    .querySelectorAll(
-      `.header`
-    )
-    .forEach(
-      (a) =>
-      a
-      .style
-      .cssText =
-      `position: relative !important`
-    )
+  if (
+    window.innerWidth
+    >
+    768
+  )
+    _display.style.display = `inline-block`;
 
 }

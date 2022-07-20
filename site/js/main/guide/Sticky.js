@@ -173,7 +173,7 @@ var Sticky = function(pubArray) {
         newImg.naturalWidth >= newImg.naturalHeight
       ) {
         guideImage.style.maxHeight = `90vh`
-        guideImage.style.maxWidth = `calc(80vw - 220px)`
+        guideImage.style.maxWidth = `calc(80vw - 300px)`
         if (
           document
           .body
@@ -182,13 +182,13 @@ var Sticky = function(pubArray) {
           )
         ) {
           guideFilter.style.maxHeight = `90vh`
-          guideFilter.style.maxWidth = `calc(80vw - 220px)`
+          guideFilter.style.maxWidth = `calc(80vw - 300px)`
         }
       } else if (
         newImg.naturalHeight >= newImg.naturalWidth
       ) {
         guideImage.style.maxHeight = `90vh`
-        guideImage.style.maxWidth = `calc(55vw - 220px)`
+        guideImage.style.maxWidth = `calc(55vw - 300px)`
         if (
           document
           .body
@@ -197,7 +197,7 @@ var Sticky = function(pubArray) {
           )
         ) {
           guideFilter.style.maxHeight = `90vh`
-          guideFilter.style.maxWidth = `calc(55vw - 220px)`
+          guideFilter.style.maxWidth = `calc(55vw - 300px)`
         }
       }
     }

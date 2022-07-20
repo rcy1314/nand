@@ -18,6 +18,10 @@ let urlFormBuild = function() {
     `action`,
     `#`
   );
+  object.setAttribute(
+    `onkeyup`,
+    `Change()`
+  )
   object.classList.add("urlInput");
   object.classList.add(`imageURL`);
   url.classList.add("background");

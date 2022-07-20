@@ -8,6 +8,11 @@ _sidebar
       ) {
         imageLoader = false;
         _main
+          .querySelectorAll(`.pending`)
+          .forEach(
+            (a) => a.classList.add(`blink`)
+          );
+        _main
           .querySelectorAll(`.bars`)
           .forEach(
             (a) => a.style.display = `none`

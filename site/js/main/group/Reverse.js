@@ -35,7 +35,6 @@ let Reverse = function(translation) {
     ) {
       if (
         translation == menu[i].category &&
-        id != menu.indexOf(menu[i]) &&
         menu[i].media
       ) {
         media = `<div class='media' style='display:none'>Images</div>`;
@@ -54,7 +53,7 @@ let Reverse = function(translation) {
     }
   }
   setTimeout(
-    function() {
+    () => {
       _air.style.visibility = `visible`;
     }, 1750
   )

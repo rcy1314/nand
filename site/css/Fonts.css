@@ -75,7 +75,7 @@
 .fa-info,
 .fa-layer-group,
 .fa-paint-brush,
-.fa-plus,
+.fa-plus:not(.right),
 .fa-terminal,
 .fa-user {
   margin-top: -18px !important;
@@ -328,7 +328,7 @@
   font-size: 16px !important;
 }
 
-.fa-minus {
+.fa-minus:not(.left) {
   margin-top: -18px !important;
   color: var(--fill-color);
   position: relative;
@@ -353,7 +353,6 @@
   content: "\f067";
   font-size: 11px;
   font-weight: 50;
-  left: -2px;
 }
 
 .fa-tint {

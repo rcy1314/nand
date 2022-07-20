@@ -1,16 +1,11 @@
 .animation {
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: auto;
-  right: 0;
-  left: 0;
-  top: 0;
-  display: block;
-  bottom: 25px;
+  display: flex;
   width: 40px;
 }
+
 
 .animation .circle:after {
   content: '';
@@ -27,8 +22,10 @@
   -webkit-animation: vbars 1s infinite ease-in-out;
   animation: vbars 1s infinite ease-in-out;
   background: var(--loader-color);
+  justify-content: center;
+  align-items: center;
+  display: flex;
   width: .5em;
-  top: 25px;
 }
 
 .bars {
@@ -39,15 +36,12 @@
   color: var(--loader-color);
   animation-delay: -0.16s;
   text-indent: -9999em;
-  margin-bottom: auto;
-  margin-right: auto;
-  position: absolute;
-  margin-left: auto;
-  margin-top: auto;
+  margin-top: 25px;
   font-size: 11px;
-  right: 0;
   left: 0;
-  top: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bars:before,
@@ -69,6 +63,15 @@
 
 .blink {
   animation: pulse 1s infinite alternate;
+}
+
+#check .animation {
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  width: 40px;
+  right: 0;
+  left: 0;
 }
 
 .circle:not(.content .circle) {
@@ -130,21 +133,18 @@
 
 #load {
   -webkit-user-select:none;
+  justify-content:center;
   -moz-user-select:none;
   -ms-user-select:none;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: auto;
+  align-items:center;
   position:absolute;
-  margin-top: auto;
   overflow:visible;
   user-select:none;
+  margin-top:25px;
   cursor:default;
-  height:270px;
-  width:320px;
-  right: 0;
-  left: 0;
-  top: 0;
+  display:flex;
+  height: 100%;
+  width: 100%;
 }
 
 #load div {
@@ -207,15 +207,7 @@
 .loader.double-circle {
   height: var(--loader-height, 100px);
   width: var(--loader-width, 100px);
-  margin-bottom: auto;
-  margin-right: auto;
-  position: relative;
   position: absolute;
-  margin-left: auto;
-  margin-top: auto;
-  right: 0;
-  left: 0;
-  top: 0;
 }
 
 .mainTransition {

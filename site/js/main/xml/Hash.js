@@ -175,7 +175,6 @@ var Hash = function(channel, xhr) {
           .nodeValue
         )
         .toString(36);
-
       parse.push({
         since: since,
         dst: dst[0],
@@ -237,7 +236,6 @@ var Hash = function(channel, xhr) {
           .replace(/\:/g, ``)
         )
         .toString(36);
-
       parse.push({
         since: since,
         dst: dst[0],
@@ -293,6 +291,27 @@ var Hash = function(channel, xhr) {
         .getTime();
 
       gen = gen.toString(36);
+      parse.push({
+        since: since,
+        dst: dst[0],
+        cyrb53: `${cyrb53(gen.toString())}-${cyrb53(channel.toString())}-${cyrb53(xhr.toString())}-${menu[id].title}`,
+        base36: gen,
+        externalURI: re.trim(),
+      });
+    } else {
+      let re =
+        xhr
+        .getElementsByTagName(
+          `link`
+        )[0]
+        .childNodes[0]
+        .nodeValue;
+
+      let gen = new Date();
+
+      let dst = new Date();
+
+      let since = new Date();
 
       parse.push({
         since: since,
@@ -301,7 +320,8 @@ var Hash = function(channel, xhr) {
         base36: gen,
         externalURI: re.trim(),
       });
-    } else parse.push(``);
+      parse.push(``);
+    }
   }
   return parse[0];
 };

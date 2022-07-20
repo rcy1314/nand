@@ -2,17 +2,38 @@ _main
   .addEventListener(
     'ontouchmove', (evt) => {
       let isScrolling;
+      let scrollTop = _main.scrollTop
       // Clear our timeout throughout the scroll
       window.clearTimeout(isScrolling);
       touchmove = false;
       // Set a timeout to run after scrolling ends
       isScrolling =
         setTimeout(
-          function() {
+          () => {
             // Run the callback
             touchmove = true;
           }, 2600
         );
+/* Experimental visibility/removal of items not in viewport
+      if (
+        scrollTop < _main.scrollTop
+      ) {
+        for (
+          let y = assets.indexOf(id); y >= 0; y--) {
+          let elements = _channel.querySelectorAll(`[aria-object='${assets[y]}']`);
+          for (
+            let i = 0; i < elements.length; i++) {
+            if (
+              elements[i].getBoundingClientRect().top <
+              -768
+            ) {
+              elements[i].querySelector(`.img`).setAttribute(`src`, ``);
+              elements[i].querySelector(`.image`).style.backgroundImage = ``;
+            }
+          }
+        }
+      }
+*/
       if (
         (
           _main.scrollHeight -
@@ -20,39 +41,29 @@ _main
           _main.clientHeight <=
           offset &&
           Reader &&
-          !stop
+          !stop &&
+          _channel.querySelectorAll(`.pending`).length <= 3
         )
       ) {
         stop = true;
         first = false;
         if (showSplash) _check.style.display = `block`;
-        while (
-          _air.firstChild
+        let index = anyRandomMenuObject();
+        if (
+          httpRequest.readyState == 4 &&
+          typeof(index !== undefined) &&
+          random.includes(index)
         )
-          _air.removeChild(
-            _air.lastChild
-          );
-
-        while (
-          _result.firstChild
-        )
-          _result.removeChild(
-            _result.lastChild
-          );
-
-        while (
-          _status.firstChild
-        )
-          _status.removeChild(
-            _status.lastChild
-          );
-        while (
-          _suggestions.firstChild
-        )
-          _suggestions.removeChild(
-            _suggestions.lastChild
-          );
-        Request(anyRandomMenuObject());
+          Request(index);
+        else {
+          let index = anyRandomMenuObject();
+          if (
+            httpRequest.readyState == 4 &&
+            typeof(index !== undefined) &&
+            random.includes(index)
+          )
+            Request(index);
+        }
       }
     }, {
       passive: true
@@ -69,7 +80,7 @@ _channel
       // Set a timeout to run after scrolling ends
       isScrolling =
         setTimeout(
-          function() {
+          () => {
             // Run the callback
             touchmove = true;
           }, 2600
@@ -81,7 +92,8 @@ _channel
           _channel.clientWidth <=
           _channel.clientWidth &&
           Reader &&
-          !stop
+          !stop &&
+          _channel.querySelectorAll(`.pending`).length <= 3
         )
       ) {
         stop = true;

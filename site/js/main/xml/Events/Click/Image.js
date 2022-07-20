@@ -2,6 +2,7 @@ _container
   .addEventListener('click',
     (evt) => {
       if (
+        evt.target.classList.contains(`filterBlur`) ||
         evt.target.classList.contains(`courtesy`) ||
         evt.target.classList.contains(`image`) ||
         evt.target.classList.contains(`wrap`) ||
@@ -20,10 +21,10 @@ _container
         ) {
           tap = new Date().getTime();
           setTimeout(
-            function() {
+            () => {
               if (
-                new Date().getTime() - tap >= 350 &&
-                new Date().getTime() - tap < 400
+                new Date().getTime() - tap >= 700 &&
+                new Date().getTime() - tap < 750
               )
                 if (
                   !evt
@@ -127,11 +128,11 @@ _container
                 .getAttribute(`ext`)
                 .blank();
               tap = 0;
-            }, 350
+            }, 700
           );
         } else {
           if (
-            new Date().getTime() - tap < 350
+            new Date().getTime() - tap < 700
           ) {
             if (
               !evt
@@ -161,7 +162,7 @@ _container
                 .zIndex =
                 `12`;
               setTimeout(
-                function() {
+                () => {
                   evt
                     .target
                     .closest(`.item`)

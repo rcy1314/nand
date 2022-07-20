@@ -80,13 +80,14 @@ var Append = function(id) {
       _channel.querySelector(`.item`)
     )
   ) {
+    if (scrollIntoView)
     setTimeout(
-      function() {
+      () => {
         touchmove = true
         scrollToElm(
           touchmove,
           _main,
-          _channel.querySelector(`[aria-object='${id}']`),
+          _channel.querySelectorAll(`[aria-object='${id}']`)[0],
           250
         );
       }, 250
@@ -100,15 +101,15 @@ var Append = function(id) {
     _main.scrollTop = 0;
   } else if (
     display == `sideScroll` &&
-    !Reader &&
     !first
   ) {
-    touchmove = true;
+    if (scrollIntoView)
     setTimeout(
-      function() {
+      () => {
+        touchmove = true;
         sideScrollToElm(touchmove,
           _channel,
-          _channel.querySelector(`[aria-object='${id}']`),
+          _channel.querySelectorAll(`[aria-object='${id}']`)[0],
           250
         );
       }, 250
@@ -147,13 +148,61 @@ var Append = function(id) {
     Legacy();
 
   if (
+    Reader &&
+    assets.length > assetVisibility
+  ) {
+    _channel.querySelectorAll(
+      `[aria-object='${asset[0]}']`
+    )
+    .forEach(
+      (a) => {
+        a.style.visibility = `hidden`;
+      }
+    )
+  }
+  if (
+    Reader &&
+    asset.length === 1 ||
+    asset.length % assetRefresh === 0
+  ) {
+    while (
+      _status.firstChild
+    )
+      _status.removeChild(
+        _status.lastChild
+      );
+    while (
+      _suggestions.firstChild
+    )
+      _suggestions.removeChild(
+        _suggestions.lastChild
+      );
+    Suggest();
+    Status(id, recent, oldest, posts);
+  } else if (
+    !Reader
+  ) {
+    while (
+      _status.firstChild
+    )
+      _status.removeChild(
+        _status.lastChild
+      );
+    while (
+      _suggestions.firstChild
+    )
+      _suggestions.removeChild(
+        _suggestions.lastChild
+      );
+    Suggest();
+    Status(id, recent, oldest, posts);
+  }
+  if (
     showSplash
   )
     _check.style.display = `none`;
-  Status(id, recent, oldest, posts);
   Sidebar(guideOnScreen);
   Topbar(topBar);
-  Suggest();
   local = null;
   stop = false;
   images = [];

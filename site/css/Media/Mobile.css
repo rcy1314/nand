@@ -1,38 +1,49 @@
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
 
-  .flexbox .pending {
-    margin-top: 5px;
+  #main #xml .center .item .img {
+    height: calc(100% + 5px) !important;
+    width: calc(100% + 4px) !important;
+    margin-right: -2px !important;
+    position: relative !important;
+    display: block !important;
+    left: -1px !important;
+    top: -1px !important;
   }
 
   #guide .pub {
     width: 90% !important;
   }
 
-  #load {
-    margin-bottom: 10px;
-  }
-
   #xml .yt .item {
     max-height: 80px !important;
   }
 
-  #xml .item {
+  #xml .item:not(.flexbox .item):not(.duo .item):not(.sideChannel .item) {
     min-height: 80px !important;
     box-shadow: none !important;
     border: none !important;
-    width: 100%;
+    width: 425px !important;
   }
 
-  #xml .classic:not(.flexbox .classic) {
+  #xml .classic:not(.flexbox .classic):not(.duo .classic):not(.sideChannel .classic) {
+    min-height: 150px !important;
+  }
+
+  #xml .wrap:not(.flexbox .wrap):not(.duo .wrap):not(.sideChannel .wrap) {
     min-height: 150px !important;
   }
 
   .duo .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
-    min-height: 160px !important;
+    min-height: 158px !important;
     width: 212px !important;
     position: relative;
+  }
+
+  .duo .item .img,
+  .duo .item .image {
+    min-height: 160px !important;
   }
 
   .flexbox .yt .image {
@@ -43,13 +54,13 @@
   .flexbox .item {
     margin: 0 2px 2px 0 !important;
     height: fit-content !important;
-    min-height: 77px !important;
-    width: 140px !important;
+    min-height: 80px !important;
+    width: 138px !important;
     position: relative;
   }
 
   .flexbox .item .classic {
-    min-height: 77px !important;
+    min-height: 80px !important;
   }
 
   .flexbox .item .header {
@@ -70,18 +81,20 @@
 
   .sideChannel {
     height: fit-content !important;
-    margin-top: 60px !important;
     width: 100vw !important;
   }
 
-  .sideItem {
+  .sideChannel .item {
     display: inline-table;
     margin-right: 50px !important;
-    height: 320px !important;
-    width: 280px !important;
+    height: 340px !important;
+    width: 320px !important;
   }
 
-  .sideItem .image {
+  .sideChannel .item .wrap,
+  .sideChannel .item .image,
+  .sideChannel .item .classic {
+    height: 340px !important;
     width: 320px !important;
   }
 
@@ -103,6 +116,8 @@
   #main #visit #page #quick .right,
   #main #visit #page #options .fa-sun,
   #main #visit #page #options .fa-heart,
+  #main #visit #page #options .fa-expand-alt,
+  #main #visit #page #options .fa-camera-retro,
   #main #visit #page #front .focus .button {
     display: none !important;
   }
@@ -173,7 +188,7 @@
   #xml .image,
   #xml .pending {
     width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
 
   .listing {
@@ -210,8 +225,8 @@
     margin-right: 0%;
     flex-wrap: wrap;
     margin-left: 0%;
-    height: 500px;
-    top: -100px;
+    height: 520px;
+    top: -75px;
     right: 0;
     left: 0;
   }
@@ -269,13 +284,14 @@
     top: calc(100% - 45px);
     position: fixed;
     height: 40px;
+    z-index: 12;
     right: 11px;
   }
 
   #quick {
     background-color: transparent !important;
     position: absolute;
-    height: 400px;
+    height: 500px;
     width: 100%;
     top: 62px;
   }

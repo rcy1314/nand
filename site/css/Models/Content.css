@@ -91,6 +91,7 @@ html body,
 html,
 html body,
 #container {
+  background-color: var(--color-primary);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -196,7 +197,7 @@ html body,
 
 .under {
   font-weight: 600;
-  padding: 10px;
+  padding: 4px;
 }
 
 .under:hover {
@@ -205,7 +206,6 @@ html body,
 }
 
 #link {
-  border: var(--borderless-color);
   background-color: transparent;
   transform: rotate(180deg);
   color: var(--fill-color);
@@ -221,17 +221,22 @@ html body,
   width: 15px;
 }
 
-#container #notify {
+
+
+#link:hover {
   background-color: var(--hover-background-color);
-  box-shadow: var(--box-shadow) !important;
+}
+
+#container #notify {
+  background-color: var(--color-primary);
+  box-shadow: var(--box-shadow);
   border: var(--border-color);
   color: var(--fill-color);
   justify-content: center;
   border-radius: 10px;
   align-items: center;
   position: absolute;
-  box-shadow: none;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   font-size: 11px;
   display: none;
@@ -272,7 +277,7 @@ html body,
 
 #progressBar {
   background-color: var(--loader-color);
-  position: absolute;
+  position: fixed;
   height: 4px;
   z-index: 12;
   width: 0;

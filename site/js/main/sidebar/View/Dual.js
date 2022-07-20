@@ -5,35 +5,18 @@ _sidebar
       if (
         evt.target.classList.contains(
           `dual`
-        )
+        ) &&
+        window.innerWidth > 425
+          ||
+          evt.target.classList.contains(
+            `dual`
+          ) &&
+        window.innerWidth <= 425 &&
+        onlyImages
       ) {
         display = `duo`;
         notifyOption(`Duo`, `fa-times-circle`)
         Duo();
-        setTimeout(
-          function() {
-            _channel
-              .querySelectorAll(
-                `.item, .wrap, .classic`
-              )
-              .forEach(
-                function(a) {
-                  if (a.closest(`.item`).querySelector(`.img`).clientHeight > 0)
-                    a
-                    .style
-                    .cssText =
-                    `height:${
-                          a
-                            .closest(
-                              `.item`
-                            ).querySelector(
-                              `.img`
-                            ).clientHeight
-                        }px !important`
-                }
-              )
-          }, 1
-        )
         if (
           document
           .body

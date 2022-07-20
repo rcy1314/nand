@@ -5,7 +5,7 @@ let Sidebar = function(Value) {
     Value
   ) {
     setTimeout(
-      function() {
+      () => {
         _sidebar.style.left = `0`;
       }, 300
     );
@@ -17,7 +17,7 @@ let Sidebar = function(Value) {
       _min.style.cssText = `display: block !important;`
     _bar.style.display = `none`;
     setTimeout(
-      function() {
+      () => {
         _sidebar.querySelector(`.sideFilter`).style.visibility = `visible`;
         _sidebar.querySelector(`#basic`).style.visibility = `visible`;
         _sidebar.style.left = `0`;
@@ -49,8 +49,10 @@ let Sidebar = function(Value) {
       sideBarDock
     ) {
       _sidebar.style.left = `-250px`;
+      _hide.style.display = `none`;
       _bar.style.display = `none`;
       _sb.style.display = `none`;
     }
+    _main.focus();
   }
 };

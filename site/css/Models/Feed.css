@@ -34,7 +34,7 @@
   flex-shrink: 0;
   padding: 15px;
   height: 60px;
-  width: 60px;
+  width: 75px;
 }
 
 .asset:not(:hover),
@@ -64,11 +64,11 @@
   width: 15px;
   left: -20px;
   z-index: 7;
-  top: 50px;
+  top: 25px;
 }
 
 .right {
-  background-color: transparent;
+  background-color: var(--hover-background-color);
   color: var(--fill-color);
   justify-content: center;
   align-items: center;
@@ -81,7 +81,7 @@
   height: 24px;
   width: 24px;
   z-index: 2;
-  top: 28px;
+  top: 20px;
 }
 
 .status img,

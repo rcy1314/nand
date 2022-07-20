@@ -1,5 +1,8 @@
 /*
-  to use this file uncomment menu and remove Assets script src in index.html
+  to use this file uncomment menu and add objects
+  save image `site/images/webp`
+  [convert to webp 100x100 image] https://redketchup.io/image-resizer
+
   >https://raw.githubusercontent.com/acktic/xml-sites-array/master/Assets.js
 
     ### Assets.js has multiple indices for objects.
@@ -10,7 +13,7 @@
 
       > title: generated [indexed]
 
-      > des: plain text [indexed]
+      > des: plain text [indexed by input]
 
       > category: translations
 
@@ -26,17 +29,18 @@
        userName: https://www.youtube.com/feeds/videos.xml?user=
        channel: https://www.youtube.com/feeds/videos.xml?channel_id=
 
+       *** Example
+       {id:`Test`,category:`Reddit`,title:``,description:`Reddit`,uri:`https//`,image:`Reddit`,hash:`QW`,media:!0},
 
-var menu=[
-{id:`CBS/Washington DC`,category:`News`,title:``,description:`WUSA Washington D.C. licensed to the Capital City of Washington, District of Columbia.`,uri:`http://rssfeeds.wusa9.com/wusa-news&x=1`,image:`WUSA9`,hash:`wa`,media:!1},
-{id:`ABC/Fresno`,category:`News`,title:``,description:`KFSN Local Fresno and National News.`,uri:`https://abc30.com/feed`,image:`KFSNTV30`,hash:`fA`,media:!0},
-{id:`NBC/Fresno`,category:`News`,title:``,description:`KSEE YourCentralValley in Fresno, California.`,uri:`https://yourcentralvalley.com/feed`,image:`KSEE24`,hash:`oF`,media:!0},
-{id:`AOL`,category:`Media`,title:``,description:`AOL Headlines in Business, Entertainment, Politics, and Video.`,uri:`https://www.aol.com/rss`,image:`AOL`,hash:`mA`,media:!0},
-{id:`Reddit/Hacker News`,category:`Reddit`,title:``,description:`Hacker News subreddit A mirror of Hacker News' best submissions.`,uri:`https://www.reddit.com/r/hackernews/.rss`,image:`Reddit`,hash:`nH`,media:!1},
-{id:`Yahoo Sports`,category:`Sports`,title:``,description:`Yahoo Sports has Comprehensive Scores, Standings, Fantasy Games, Rumors, and more.`,uri:`https://sports.yahoo.com/rss`,image:`Yahoo`,hash:`oY`,media:!1},
-{id:`WIRED`,category:`Tech`,title:``,description:`WIRED is where tomorrow is realized. It is the essential source of information.`,uri:`https://www.wired.com/feed/rss`,image:`WIRED`,hash:`wD`,media:!0},
-{id:`Vox US`,category:`World`,title:``,description:`Vox is an American opinion website owned by Vox Media.`,uri:`https://www.vox.com/rss/index.xml`,image:`Vox`,hash:`xV`},
-{id:`Youtube/The Verge`,category:`Youtube`,title:``,description:`The Verge Youtube videos, reviews, opinion, and technology.`,uri:`https://www.youtube.com/feeds/videos.xml?user=theverge`,image:`TheVerge`,hash:`vH`,media:!0},
-];
+       */
 
-*/
+menu.unshift(
+
+  {id:`4Chan/Wallpapers General`,category:`Reddit`,title:``,description:`4Chan Wallpapers General`,uri:`https://boards.4channel.org/wg/index.rss`,image:`4chan`,hash:`4P`,media:!1},
+  {id:`4Chan/Sports`,category:`Reddit`,title:``,description:`4Chan Sports`,uri:`https://boards.4channel.org/sp/index.rss`,image:`4chan`,hash:`4S`,media:!1},
+  {id:`4Chan/Gifs`,category:`Reddit`,title:``,description:`4Chan Gif`,uri:`https://boards.4channel.org/gif/index.rss`,image:`4chan`,hash:`4G`,media:!1},
+  {id:`4Chan/High Resolution`,category:`Reddit`,title:``,description:`4Chan High Resolution`,uri:`https://boards.4channel.org/hr/index.rss`,image:`4chan`,hash:`4H`,media:!1},
+  {id:`4Chan/Technology`,category:`Reddit`,title:``,description:`4Chan Technology`,uri:`https://boards.4channel.org/g/index.rss`,image:`4chan`,hash:`4T`,media:!1},
+  {id:`4Chan/Pol`,category:`Reddit`,title:``,description:`4Chan Politics`,uri:`https://boards.4channel.org/pol/index.rss`,image:`4chan`,hash:`4L`,media:!1},
+
+);

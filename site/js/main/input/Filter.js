@@ -3,15 +3,25 @@ let Filter = function(filterURI) {
     translations.includes(
       filterURI.toString().capitalize()
     )
+    &&
+    filterURI.toString().capitalize() != `Assets`
   ) {
     setTimeout(
-      function() {
+      () => {
+	  Group();
         Category(filterURI.toString().capitalize());
       }, 200
     )
     unloading();
     return false;
-  }
+  } else if (
+    filterURI.toString().capitalize() == `Assets`
+  )
+  setTimeout(
+    () => {
+      Assets();
+    }, 200
+  )
   let exact =
     menu.findIndex(
       (item) =>
@@ -45,7 +55,7 @@ let Filter = function(filterURI) {
           description[i]
         )
       );
-    Category();
+    Category(category);
     Expand(expand);
     unloading();
   } else if (exact > -1) Request(exact)

@@ -20,7 +20,7 @@ _sidebar
           .removeChild(
             _suggestions.lastChild
           );
-
+        xml();
         if (
           evt
           .target

@@ -11,11 +11,42 @@ let Input = function(
   if (
     inputFilter != ``
   )
-    for (
-      var i = menu.length - 1; i >= 1; i--
+  for (
+    var i = 0; i <= menu.length - 1; i++
+  ) {
+    if (
+      menu[i].id.toString().toLowerCase().match(inputFilter)
     ) {
       if (
-        menu[i].description.toString().toLowerCase().match(inputFilter)
+        suggest.length - 1 === suggestionBuffer
+      )
+        return false;
+
+      listing.append(
+        listingIndexBuild(
+          menu[i].id.match(/[^\/]+$/g),
+          menu.indexOf(menu[i]),
+          menu[i].image.image(),
+          menu[i].category,
+          menu[i].hash,
+          false,
+          false,
+          i
+        )
+      );
+      suggest.push(
+        menu.indexOf(
+          menu[i]
+        )
+      );
+    }
+  }
+    for (
+      var i = menu.length - 1; i >= 0; i--
+    ) {
+      if (
+        menu[i].description.toString().toLowerCase().match(inputFilter) &&
+        !menu[i].id.toString().toLowerCase().match(inputFilter)
       ) {
         if (
           suggest.length - 1 === suggestionBuffer
@@ -42,7 +73,7 @@ let Input = function(
       }
     }
   for (
-    let i = 1; i <= menu.length - 1; i++
+    let i = 0; i <= menu.length - 1; i++
   ) {
     let randomMenuObject =
       menu.indexOf(

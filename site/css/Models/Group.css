@@ -1,5 +1,4 @@
 #main #group {
-  background-color: transparent;
   height: fit-content;
   position: absolute;
   padding-top: 57px;
@@ -12,7 +11,9 @@
 
 #main #group .air,
 #main #group .result {
-  background-color: transparent;
+  background-color: var(--color-secondary);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   justify-content: center;
   padding-bottom: 60px;
   flex-wrap: wrap;

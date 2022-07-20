@@ -22,7 +22,7 @@ if (
         _min.style.display = `block`;
         _sb.style.display = `none`;
         setTimeout(
-          function() {
+          () => {
             Sidebar(onScreen);
           }, 300
         )
@@ -34,7 +34,7 @@ if (
       ) {
         onScreen = false;
         setTimeout(
-          function() {
+          () => {
             Sidebar(onScreen);
             if (
               _visit.style.display === `flex`

@@ -39,7 +39,7 @@ let assetBuild = function(
         )
       ),
       12,
-      false
+      true
     )
   }`;
   object.append(img);

@@ -15,7 +15,7 @@ _sidebar
         ) {
           tap = new Date().getTime();
           setTimeout(
-            function() {
+            () => {
               tap = 0;
             }, 350
           );

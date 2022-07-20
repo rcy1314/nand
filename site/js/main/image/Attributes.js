@@ -29,13 +29,13 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
     `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .attribute`
   );
   let copyPicture = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .picture`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .picture`
   );
   let copyDownload = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .download`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .download`
   );
   let copyPost = _channel.querySelector(
-    `[aria-item='${pubIndex}'] .post`
+    `[aria-object='${menuObject}'][aria-item='${pubIndex}'] .post`
   );
   if (
     src &&
@@ -61,10 +61,8 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         onlyImages
       )
         item.remove();
-      copyDownload.style.display = `none`;
-      copyPicture.style.display = `none`;
-      attribute.style.height = `74px`;
-      itemPending.remove();
+      else
+        itemWrap.style.background = `transparent`
       count.shift();
     }
   }
@@ -121,26 +119,35 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   read.onload = function(e) {
                     if (
                       Width < maximum ||
-                      Height < shrunk ||
-                      Reader
+                      Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      item.Classlist.remove(`blur`);
+                      attribute.style.height = `74px`;
+                      copyDownload.remove();
+                      copyPicture.remove();
                       itemPending.remove();
                     } else {
                       itemImage.setAttribute(`src`, e.target.result);
-                      itemFilter.style.transform = `scale(4)`
-                      itemPending.remove();
+                      itemContainer.style.position = `absolute`;
+                      itemImage.style.position = `absolute`;
                       itemFilter.classList.add(`blur`);
+                      itemPending.remove();
                       setTimeout(
-                        function() {
+                        () => {
                           if (
-                            !cropImages &&
-                            itemImage.clientHeight > shrunk &&
-                            itemImage.clientWidth > maximum
+                            itemImage.clientHeight &&
+                            itemImage.clientWidth
                           ) {
-                            item.style
+                            if (
+                              display !== `legacy`
+                            )
+                              item.style
                               .height =
                               `${itemImage.clientHeight}px`
+                            itemWrap.style
+                              .height =
+                              `${itemImage.clientHeight + 5}px`
                             itemClassic.style
                               .height =
                               `${itemImage.clientHeight}px`
@@ -148,15 +155,16 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                               .height =
                               `${itemImage.clientHeight}px`
                           } else {
-                            itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                            itemPending.remove();
+                             itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                             itemPending.remove();
                           }
                         }, 50
                       )
-                    };
+                    }
                   }
                 }
                 request.onerror = function(e) {
+                  itemWrap.style.background = `transparent`
                   itemPending.remove();
                   if (
                     onlyImages
@@ -171,6 +179,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !src.match(/4cdn/g)
                 )
                   request.send();
+                else {
+                  itemImage.setAttribute(`src`, src);
+                  itemPending.remove();
+                }
+                itemFilter.classList.add(`blur`);
               } else if (
                 jsonResponse.score <= safeSearchScore &&
                 document.body.contains(
@@ -190,40 +203,48 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   read.onload = function(e) {
                     if (
                       Width < maximum ||
-                      Height < shrunk ||
-                      Reader
+                      Height < shrunk
                     ) {
                       itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                      attribute.style.height = `74px`;
+                      copyDownload.remove();
+                      copyPicture.remove();
                       itemPending.remove();
                     } else {
                       itemPending.remove();
                       itemImage.setAttribute(`src`, e.target.result);
-                    };
-                    setTimeout(
-                      function() {
-                        if (
-                          !cropImages &&
-                          itemImage.clientHeight > shrunk &&
-                          itemImage.clientWidth > maximum
-                        ) {
-                          item.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                          itemClassic.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                          itemContainer.style
-                            .height =
-                            `${itemImage.clientHeight}px`
-                        } else {
-                          itemContainer.style.backgroundImage = `url(${e.target.result})`;
-                          itemPending.remove();
-                        }
-                      }, 50
-                    )
+                      setTimeout(
+                        () => {
+                          if (
+                            itemImage.clientHeight > shrunk &&
+                            itemImage.clientWidth > maximum
+                          ) {
+                            if (
+                              display !== `legacy`
+                            )
+                              item.style
+                              .height =
+                              `${itemImage.clientHeight + 2}px`
+                            itemWrap.style
+                              .height =
+                              `${itemImage.clientHeight + 5}px`
+                            itemClassic.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                            itemContainer.style
+                              .height =
+                              `${itemImage.clientHeight}px`
+                          } else {
+                            itemContainer.style.backgroundImage = `url(${e.target.result})`;
+                            itemPending.remove();
+                           }
+                        }, 50
+                      )
+                    }
                   }
                 }
                 request.onerror = function(e) {
+                  itemWrap.style.background = `transparent`
                   itemPending.remove();
                   if (
                     onlyImages
@@ -238,6 +259,10 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
                   !src.match(/4cdn/g)
                 )
                   request.send();
+                else {
+                  itemImage.setAttribute(`src`, src);
+                  itemPending.remove();
+                }
               }
             });
           })
@@ -273,20 +298,28 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
               Height < shrunk
             ) {
               itemContainer.style.backgroundImage = `url(${e.target.result})`;
+              attribute.style.height = `74px`;
+              copyDownload.remove();
+              copyPicture.remove();
               itemPending.remove();
             } else {
               itemImage.setAttribute(`src`, e.target.result);
               itemPending.remove();
               setTimeout(
-                function() {
+                () => {
                   if (
-                    !cropImages &&
                     itemImage.clientHeight > shrunk &&
                     itemImage.clientWidth > maximum
                   ) {
-                    item.style
+                    if (
+                      display !== `legacy`
+                    )
+                      item.style
                       .height =
                       `${itemImage.clientHeight}px`
+                    itemWrap.style
+                      .height =
+                      `${itemImage.clientHeight + 5}px`
                     itemClassic.style
                       .height =
                       `${itemImage.clientHeight}px`
@@ -303,6 +336,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           }
         }
         request.onerror = function(e) {
+          itemWrap.style.background = `transparent`
           itemPending.remove();
           if (
             onlyImages
@@ -317,39 +351,11 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
           !src.match(/4cdn/g)
         )
           request.send();
+        else {
+          itemImage.setAttribute(`src`, src);
+          itemPending.remove();
+        }
       }; //END NEWIMG.ONLOAD
-      if (
-        cropImages &&
-        window.innerWidth >= 768 &&
-        display == `duo`
-      ) {
-        itemContainer.style.height = `340px`;
-        itemImage.style.height = `340px`;
-        item.style.height = `340px`;
-        itemWrap.style.height = `340px`;
-        itemClassic.style.height = `340px`;
-      } else if (
-        cropImages &&
-        window.innerWidth >= 768 &&
-        display == `flexBox`
-      ) {
-        itemContainer.style.height = `169px`;
-        itemImage.style.height = `169px`;
-        item.style.height = `169px`;
-        itemWrap.style.height = `169px`;
-        itemClassic.style.height = `169px`;
-      } else if (
-        window.innerWidth < 768 &&
-        cropImages
-      ) {
-        itemContainer.style.height = `80px`;
-        itemPending.style.height = `80px`;
-        itemImage.style.height = `80px`;
-        item.style.height = `80px`;
-        itemWrap.style.height = `80px`;
-        itemClassic.style.height = `80px`;
-      }
-
       if (
         document
         .body
@@ -369,6 +375,7 @@ var Attributes = function(empty, menuObject, pubIndex, src) {
         itemImage.classList.add(`default`);
     };
     newImg.onerror = function() {
+      itemWrap.style.background = `transparent`
       itemPending.remove();
       if (
         onlyImages

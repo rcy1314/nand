@@ -31,12 +31,7 @@ _container
           _feed.scrollLeft - _feed.clientWidth <= 0
         )
           _left.style.display = `none`;
-      } else if (
-        evt.target.classList.contains(
-          `asset`
-        )
-      )
-        Request(evt.target.getAttribute(`aria-object`));
+      }
     }, {
       passive: false
     }

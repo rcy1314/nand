@@ -16,7 +16,7 @@ if (sideBarMousewheel)
         !onScreen
       ) {
         setTimeout(
-          function() {
+          () => {
             onScreen = true;
             Sidebar(onScreen);
           }, 1250

@@ -13,10 +13,8 @@
 
 setTimeout(
 
-  function() {
-
-    URI();
-
+  () => {
+   
     Home();
 
     Feed(quickFeeds);
@@ -27,10 +25,16 @@ setTimeout(
 
     Viewport();
 
+    Background();
+
     adj = menu.slice();
     randomizeAssets(adj);
 
+    Loading();
+
     Bootup();
+
+    URI();
 
     document.title = doc;
 

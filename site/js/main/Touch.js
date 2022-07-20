@@ -24,7 +24,7 @@ _container
       // Set a timeout to run after scrolling ends
       isScrolling =
         setTimeout(
-          function() {
+          () => {
 
             // Run the callback
             touchmove = true;

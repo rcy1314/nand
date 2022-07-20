@@ -169,6 +169,7 @@ let scrollToElm = function(
     pos.top,
     10
   ); // duration in seconds
+  touchmove = false;
 }
 
 let sideScrollToElm = function(
@@ -183,6 +184,7 @@ let sideScrollToElm = function(
     container,
     pos.left,
     50); // duration in seconds
+    touchmove = false;
 }
 
 let getRelativePos = function(elm) {
@@ -193,8 +195,7 @@ let getRelativePos = function(elm) {
   pos.top = cPos.top - pPos.top + elm.parentNode.scrollTop,
     pos.right = cPos.right - pPos.right,
     pos.bottom = cPos.bottom - pPos.bottom,
-    pos.left =
-    elm.scrollLeft - elm.parentNode.scrollLeft + elm.parentNode.clientWidth;
+    pos.left = (cPos.left - pPos.left) - (elm.parentNode.scrollLeft + (elm.parentNode.clientWidth * .15));
 
   return pos;
 }

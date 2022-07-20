@@ -100,10 +100,52 @@ _container
         evt.target.id === `mobileHome` ||
         evt.target.id === `home`
       ) {
+        if (
+          Array.isArray(pub) &&
+          !Reader &&
+          id
+        )
+          Append(id);
+
+        if (
+          loading == `percent`
+        ) {
+          _progress.style.width = `100%`;
+          setTimeout(
+            () => {
+              _progress.style.transition = `all 1600ms ease-in-out`;
+              _progress.style.opacity = `0`;
+            },
+            350)
+          setTimeout(
+            () => {
+              _progress.style.transition = `none`;
+              _progress.style.opacity = `1`;
+              _progress.style.width = `0%`;
+            },
+            1600);
+        }
+	  Cleanup();
+        while (
+          _guide.lastChild
+        )
+          _guide.removeChild(
+            _guide.lastChild
+          );
+
+        _main.classList.remove(`guide`);
+        _guide.style.display = `none`;
+        if (
+          showSplash
+        )
+          _check.style.display = `none`;
+        _main.setAttribute(`tabindex`, -1);
+        guideOnScreen = onScreen;
+        Sidebar(onScreen);
+        Topbar(topBar);
+        _main.focus();
+        pub = null;
         Reader = false;
-        onlyImages = onlyImagesBuffer;
-        cropImages = cropImagesBuffer;
-        scrollIntoView = scrollIntoViewBuffer;
         _main
           .querySelectorAll(`.joi`)
           .forEach(
@@ -112,23 +154,23 @@ _container
         xml();
         Group();
         Visit();
-
+        _channel.style.height = `fit-content`;
         if (
           sideBarDock
         ) {
+          _hide.style.display = `none`;
           _bar.style.display = `none`;
           _sb.style.display = `none`;
         }
-
+        if (
+          window.innerWidth <= 425
+        ) {
+          _top.style.display = `none`;
+        }
         done = true
         document.title = doc;
         _top.style.display = `none`;
-        if (
-          _progress.clientWidth !== 0
-        ) {
-          _progress.style.transition = `none`;
-          _progress.style.width = `100%`;
-        }
+
 
         _channel.style.height = `0`;
 
@@ -137,8 +179,7 @@ _container
         )
           location.href.split(`?`)[0].state();
         if (
-          _sidebar.offsetLeft == `-280` ||
-          _sidebar.offsetLeft == `-250`
+          !sideBarDock
         )
           _sb.style.display = `block`;
 

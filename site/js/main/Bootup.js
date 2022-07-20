@@ -13,20 +13,20 @@ let Bootup = function() {
       _check.style.opacity = `0`;
       _sb.style.display = `none`;
       setTimeout(
-        function() {
+        () => {
 
           _check.style.display = `block`;
           _check.style.opacity = `1`;
 
           setTimeout(
-            function() {
+            () => {
               _visit.style.display = `flex`;
               _check.style.opacity = `1`;
               _check.classList.add(`margin`);
               _trademark.classList.add(`bootup`);
 
               setTimeout(
-                function() {
+                () => {
                   _visit.style.zIndex = `1`;
                   _visit.style.opacity = `1`;
                   _guest.setAttribute(`tabindex`, -1);
@@ -34,7 +34,8 @@ let Bootup = function() {
                   Sidebar(onScreen);
 
                   setTimeout(
-                    function() {
+                    () => {
+			    if (pretty) Pretty();
                       _trademark.classList.remove(`bootup`);
                       _check.classList.remove(`margin`);
                       _check.style.display = `none`;
@@ -72,14 +73,14 @@ let Bootup = function() {
         }, 1250
       )
     } else {
+			    if (pretty) Pretty();
       _container.style.display = `block`;
       _check.style.display = `none`;
       _check.style.opacity = `1`;
     }
 
-  } else if (
-    !location.search.split(`?`)[1]
-  ) {
+  } else {
+			    if (pretty) Pretty();
     _container.style.display = `block`;
     _check.style.display = `none`;
     _visit.style.display = `flex`;

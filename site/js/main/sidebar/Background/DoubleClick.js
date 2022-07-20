@@ -64,13 +64,19 @@ _sidebar
               }
             }
             setTimeout(
-              function() {
+              () => {
                 sideBarLock = sideBarLockBuffer;
+                Sidebar(onScreen);
               }, 7000
             )
           })
           .catch((error) => {
-            //console.log(error);
+            setTimeout(
+              () => {
+                sideBarLock = sideBarLockBuffer;
+                Sidebar(onScreen);
+              }, 7000
+            )
           });
       }
     }, {

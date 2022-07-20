@@ -13,25 +13,6 @@ let Category = function(translation) {
     showSplash
   )
     _check.style.display = `block`;
-  Group()
-  if (
-    id &&
-    !location.href.match(`\\?q=`)
-  ) {
-    if (menu[id].media)
-      media = `<div class='media' style='display:none'>Images</div>`;
-    else media = `<div class='blank'></div>`;
-    _result.append(
-      categoryBuild(
-        menu[id].id.match(/[^\/]+$/g),
-        menu.indexOf(menu[id]),
-        menu[id].image.image(),
-        menu[id].hash,
-        menu[id].description,
-        media
-      )
-    );
-  }
   for (
     let i = 0; i <= menu.length - 1; i++
   ) {
@@ -47,7 +28,6 @@ let Category = function(translation) {
     ) {
       if (
         translation == menu[i].category &&
-        id != menu.indexOf(menu[i]) &&
         menu[i].media
       ) {
         _result.append(
@@ -65,8 +45,7 @@ let Category = function(translation) {
       !onlyImages
     ) {
       if (
-        translation == menu[i].category &&
-        id != menu.indexOf(menu[i])
+        translation == menu[i].category
       ) {
         _result.append(
           categoryBuild(

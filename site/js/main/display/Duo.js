@@ -34,6 +34,29 @@ let Duo = function() {
     var min = `order:1`;
 
   if (
+    !document
+    .body
+    .contains(
+      _xml
+      .querySelector(
+        `#bottom`
+      )
+    ) &&
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    ) &&
+    !Reader
+  )
+    _channel.append(
+      footerBuild(id)
+    );
+
+  if (
     window.innerWidth > 425 &&
     document
     .body
@@ -58,19 +81,6 @@ let Duo = function() {
     )
   ) {
     _channel.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
-    if (
-      id &&
-      menu[id].id.match(/Youtube/g)
-    )
-      _channel
-      .querySelectorAll(
-        `.item`
-      )
-      .forEach(
-        (a) =>
-        a.style.height =
-        `80px`
-      );
     _center.style.cssText = `display:inline-flex;width:930px`;
   } else _center.style.cssText = `display:inline-flex;width:930px`;
   if (
@@ -83,49 +93,17 @@ let Duo = function() {
       )
     )
   )
-  _channel.style.height = `99999999px`
+    _channel.style.height = `9999999px`
   _channel.classList.remove(`sideChannel`);
   _center.classList.remove(`sideChannel`);
   _channel.classList.remove(`flexbox`);
   _channel.classList.add(`duo`);
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.classList.remove(
-        `flex`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.style.marginLeft =
-      `0`
-    );
-
-    _channel
-      .querySelectorAll(
-        `.header`
-      )
-      .forEach(
-        (a) =>
-        a
-        .style
-        .cssText =
-        `position: absolute !important`
-      )
+  _center.style.width = `760px`;
 
   if (
-    window.innerWidth > 1280
+    window.innerWidth >
+    768
   )
     _display.style.display = `inline-block`;
-
-  else
-    _display.style.display = `none`;
 
 }

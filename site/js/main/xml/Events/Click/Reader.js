@@ -14,19 +14,21 @@ _container
         if (
           !Reader
         ) {
-          cropImages = cropImagesBuffer;
-          onlyImages = onlyImagesBuffer;
-          Star(_sidebar.querySelector(`.cropImages`), cropImages);
           notifyOption(`Reading`, `fa-times-circle`);
           _main
             .querySelectorAll(`.joi`)
             .forEach(
               (a) => a.classList.remove(`luv`)
             );
-
+	    Cleanup();
+	    Group();
+	    Category(category);
+	    Expand(expand);    
+	    unloading();
         } else if (
           Reader
         ) {
+          asset = [];
           if (
             document
             .body
@@ -57,12 +59,7 @@ _container
           }
           touchmove = true;
           onlyImages = true;
-          if (
-            window.innerWidth > 425
-          ) {
-            cropImages = true;
-            Star(_sidebar.querySelector(`.cropImages`), true);
-          }
+	  Star(_sidebar.querySelector(`.onlyImages`), true);
           Random();
           randomDuplicate = [];
           notifyOption(`Reading`, `fa-check-circle`);

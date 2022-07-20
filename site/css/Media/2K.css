@@ -18,12 +18,12 @@
   }
 
   .content {
-    display: inline-block;
+    display: inline-block !important;
   }
 
   .center {
     display: inline-block;
-    width: 930px;
+    width: 760px;
   }
 
 }

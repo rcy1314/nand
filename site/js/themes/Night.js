@@ -26,7 +26,7 @@ var Night = function() {
   );
   document.documentElement.style.setProperty(
     `--borderless-color`,
-    `rgba(7,7,7,.9)`
+    `rgba(7,7,7,.5)`
   );
   /*
   if (backgroundImage[0].path != `https://raw.githubusercontent.com/acktic/.dotfiles/main/d453ae624e3d5e58b9890a998ec441b9.jpg`)

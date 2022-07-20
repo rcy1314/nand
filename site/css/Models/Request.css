@@ -18,9 +18,8 @@
   background-color: transparent;
   max-width: 100% !important;
   justify-content: left;
-  margin-left: 10px;
+  margin-left: 35px;
   font-weight: 550;
-  margin-top: 5px;
   font-size: 11px;
   left: 0;
 }
@@ -32,7 +31,7 @@
   margin-bottom: 10px;
   position: absolute;
   width: fit-content;
-  margin-left: 12px;
+  margin-left: 35px;
   font-size: 9px;
   bottom: 0;
 }
@@ -46,15 +45,13 @@
 
 .attribute {
   background-color: var(--color-primary);
-  border: var(--border-color);
   position: absolute;
   display: none;
-  height: 155px;
+  height: 147px;
   width: 200px;
   padding: 1px;
   right: 0px;
   z-index: 12;
-  top: 59px;
 }
 
 .center {
@@ -92,7 +89,6 @@
   height: fit-content;
   vertical-align: top;
   text-align: center;
-  margin-left: 15px;
   position: sticky;
   font-size: 10px;
   width: 300px;
@@ -115,7 +111,7 @@
 
 .btn,
 .bottom {
-  display: inline-block;
+  background-color: var(--color-primary);
   white-space: nowrap;
   outline: 0;
   cursor: pointer;
@@ -134,7 +130,6 @@
   padding-top: 10px;
   letter-spacing: 0;
   font-size: 10px;
-  cursor: pointer;
   height: 25px;
   bottom: 3px;
 }
@@ -152,6 +147,11 @@
 
 #xml .classic {
   position: relative;
+  min-height: 160px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 .combine {
@@ -224,7 +224,7 @@
   margin-top: 5px;
   font-size: 10px;
   display: flex;
-  height: 50px;
+  height: 25px;
   float: left;
   width: 100%;
 }
@@ -267,6 +267,7 @@
 .ext {
   position: absolute;
   margin: 0 auto;
+  margin-left: -6px;
 }
 
 .external {
@@ -280,7 +281,6 @@
 }
 
 #xml .header {
-  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
   background-color: transparent;
   position: absolute;
   height: 60px;
@@ -288,28 +288,23 @@
   z-index: 12;
 }
 
-#main #xml .center .yt .image {
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  display: flex;
-  height: 160px;
-}
-
 #main #xml .center .item .image {
   background-color: transparent;
   justify-content: center;
   background-size: cover;
   align-items: center;
+  min-height: 160px;
   display: flex;
   height: 100%;
   width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 
 #main #xml .center .item .img {
   display: block !important;
-  width: 100%;
 }
 
 #main #xml .center .item .img,
@@ -319,7 +314,6 @@
   align-items: center;
   max-height: 65vh;
   overflow: hidden;
-  max-width: 100%;
   display: flex;
   right: 0;
   left: 0;
@@ -333,14 +327,34 @@
 }
 
 .item {
-  background-color: var(--color-secondary);
-  border: .3px solid transparent;
+  border: .3px solid transparent !important;
+  min-height: 160px !important;
   margin-bottom: 70px;
 }
 
 .item:hover {
   background-color: var(--hover-background-color);
   border: var(--border-color);
+}
+
+.i {
+  outline: 0 !important;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease,transform 0.15s ease !important;
+  will-change: box-shadow,transform;
+  box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px var(--loader-color);
+  font-size: 18px;
+  border-radius: 6px;
+  transition: box-shadow 0.15s ease,transform 0.15s ease;
+}
+
+.i:hover {
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px var(--loader-color);
+  transform: translateY(-1px);
+}
+
+.i:active {
+  transform: translateY(1px);
 }
 
 .loader,
@@ -368,8 +382,12 @@
 }
 
 .pending {
+  background-color: var(--color-secondary);
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 100%;
+  display: flex;
+  height: 100%;
 }
 
 .previous {
@@ -378,7 +396,7 @@
 
 .pub {
   color: var(--fill-color);
-  word-break: keep-all;
+  word-break: break-word;
   margin-bottom: 10px;
   position: absolute;
   margin-right: 30px;
@@ -449,8 +467,8 @@
 
 .yt .image {
   position: relative !important;
+  min-height: 160px !important;
   overflow: hidden !important;
-  height: 160px !important;
   width: 100% !important;
 }
 
@@ -465,6 +483,7 @@
 #xml .wrap {
   background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 90%, rgba(0,0,0,0) 100%);
   position: absolute;
+  min-height: 80px;
   z-index: 11;
   bottom: 0;
   right: 0;
@@ -472,12 +491,19 @@
   top: 0;
 }
 
+#xml .wrap:hover {
+  background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-secondary) 40%, rgba(0,0,0,0) 100%);
+}
+
 #xml .youtube {
   transform: scale(1.82);
 }
 
 #xml {
+  background-color: var(--color-secondary);
+  -webkit-backdrop-filter: blur(20px);
   min-height: calc(100% - 60px);
+  backdrop-filter: blur(20px);
   height: fit-content;
   position: absolute;
   display: none;

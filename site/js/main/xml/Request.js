@@ -2,23 +2,42 @@ var Request = function(index) {
   init();
   pub = [];
   let html;
+  let state;
   count = [];
   id = index;
   stop = true;
   images = [];
+  let courtesy;
   let inline = [];
-  console.log(index);
   imageDuplicate = [];
   _sb.style.display = `none`;
   _toggle.style.display = `none`;
   _container.style.display = `block`;
-  document.title = menu[index].id.space();
-  let state = `?q=${menu[index].id.hyphen()}`
+  console.log(category);
+  if (
+    category != `Assets`
+    ) {
+      uri = `${cors}${menu[index].uri}`;
+      document.title = menu[index].id.space();
+      state = `?q=${menu[index].id.hyphen()}`
+    }
+    else {
+      uri = `${cors}${adj[index].uri}`;
+      document.title = adj[index].id.space();
+      state = `?q=${adj[index].id.hyphen()}`
+    }
   state.state();
   if (
     !readPrevious
-  )
+  ) {
     random = [];
+    Random();
+  }
+
+  if (Reader) {
+    assets.push(index);
+    asset.push(index);
+  }
 
   if (
     !document
@@ -43,9 +62,7 @@ var Request = function(index) {
     _main.scrollTop = 0;
     xml();
   }
-  uri = `${cors}${menu[index].uri}`;
-  category = menu[index].category;
-  _visit.style.display = `none`;
+    _visit.style.display = `none`;
 
   if (
     window.innerWidth >= 768 &&
@@ -115,7 +132,6 @@ var Request = function(index) {
             data.childNodes.length > 1
           )
             var title = Title(data);
-
           if (
             title == postDuplicate ||
             title == ``
@@ -136,7 +152,6 @@ var Request = function(index) {
               channel,
               data
             );
-
           if (
             trun.match(/\w+/g)
           )
@@ -150,7 +165,6 @@ var Request = function(index) {
 
           else
             var uri = trun.toLowerCase()
-
           let share = menu[index].title;
 
           if (
@@ -173,7 +187,10 @@ var Request = function(index) {
 
           let src = Source(data);
 
-          let courtesy =
+          if (
+            category != `Assets`
+            ) {
+          courtesy =
             courtesyBuild(
               menu[index].id.match(/([^\/]+)$/g),
               menu[index].image.image(),
@@ -181,6 +198,17 @@ var Request = function(index) {
                 /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
               )
             );
+          }
+            else {
+          courtesy =
+            courtesyBuild(
+              adj[index].id.match(/([^\/]+)$/g),
+              adj[index].image.image(),
+              adj[index].uri.match(
+                /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.([a-z]{2,6}){1}/g
+              )
+            );
+          }
 
           if (
             title.length > titleTruncate
@@ -204,22 +232,24 @@ var Request = function(index) {
             uri: uri
           });
           html = xmlHTMLBuild(inline[0]);
-
-          pub.push({
-            enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
-            re: parse.externalURI,
-            courtesy: courtesy,
-            since: parse.since,
-            gen: parse.base36,
-            dst: parse.dst,
-            share: share,
-            title: title,
-            more: more,
-            element: i,
-            post: html,
-            src: src,
-            uri: uri
-          });
+          if ( //Reader Guide Close
+            pub
+          )
+            pub.push({
+              enc: parse.cyrb53.slice(0, parse.cyrb53.length - 17),
+              re: parse.externalURI,
+              courtesy: courtesy,
+              since: parse.since,
+              gen: parse.base36,
+              dst: parse.dst,
+              share: share,
+              title: title,
+              more: more,
+              element: i,
+              post: html,
+              src: src,
+              uri: uri
+            });
           pub.sort(
             function(a, b) {
               return b.since - a.since;
@@ -289,28 +319,52 @@ var Request = function(index) {
           unloading();
           pub = null;
         }
-      } else {//Failed Status Code
+      } else { //Failed Status Code
         if (
-          showSplash
-        )
-          _check.style.display = `none`;
-        onlyImages = onlyImagesBuffer;
-        setTimeout(
-          function() {
-            Category();
-          }, 300
-        )
-        notifyOption(`Request Failed`, `fa-times-circle`)
-        Topbar(topBar);
-        Reader = false;
-        Category(category);
-        Expand(expand);
-        _main
-          .querySelectorAll(`.joi`)
-          .forEach(
-            (a) => a.classList.remove(`luv`)
-          );
-        unloading();
+          Reader
+        ) {
+          //throws off quick feeds
+          //menu.splice(index, 1);
+          stop = true;
+          first = false;
+          if (
+            showSplash
+          )
+            _check.style.display = `block`;
+          setTimeout(
+            () => {
+              let index = anyRandomMenuObject();
+              if (
+                httpRequest.readyState == 4 &&
+                typeof(index !== undefined) &&
+                _channel.querySelectorAll(`.pending`).length <= 3 &&
+                random.includes(index)
+              )
+                Request(index);
+              else {
+                onlyImages = onlyImagesBuffer;
+                notifyOption(`Request Failed`, `fa-times-circle`)
+                Topbar(topBar);
+                Reader = false;
+                Category(category);
+                Expand(expand);
+                _main
+                  .querySelectorAll(`.joi`)
+                  .forEach(
+                    (a) => a.classList.remove(`luv`)
+                  );
+                unloading();
+              }
+            }, 3500
+          )
+        } else {
+          onlyImages = onlyImagesBuffer;
+          notifyOption(`Request Failed`, `fa-times-circle`)
+          Topbar(topBar);
+          Category(category);
+          Expand(expand);
+          unloading();
+        }
       }
       _main.setAttribute(`tabindex`, -1);
       _main.focus();

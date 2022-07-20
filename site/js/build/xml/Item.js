@@ -47,7 +47,7 @@ let xmlHTMLBuild = function(htmlArray) {
   if (fadeIntoView) object.classList.add(`hidden`);
   publish.innerHTML = htmlArray.truncate + htmlArray.more;
   item.setAttribute(`aria-object`, htmlArray.menuObject);
-  if (!toggleBorders) item.style.border = `none`
+  item.style.border = `.3px solid transparent`
   item.setAttribute(`aria-item`, htmlArray.pubIndex);
   if (
     display == `flexBox`
@@ -60,8 +60,8 @@ let xmlHTMLBuild = function(htmlArray) {
   item.setAttribute(`ext`, htmlArray.externalURI);
   loader.classList.add(`loader`, `double-circle`);
   publish.setAttribute(`text`, htmlArray.title);
-  pending.classList.add(`blink`, `pending`);
   filterBlur.classList.add(`filterBlur`);
+  pending.classList.add(`pending`);
   classic.classList.add(`classic`);
   ago.classList.add(`ago`, `zulu`);
   object.id = htmlArray.pubIndex;
@@ -83,15 +83,15 @@ let xmlHTMLBuild = function(htmlArray) {
   if (imageLoader == `double-circle`) {
     original.style.display = `none`;
     loading.style.display = `none`;
-    loader.style.display = `block`;
+    loader.style.display = `flex`;
     bars.style.display = `none`;
   } else if (imageLoader == `loading`) {
     original.style.display = `none`;
-    loading.style.display = `block`;
+    loading.style.display = `flex`;
     loader.style.display = `none`;
     bars.style.display = `none`;
   } else if (imageLoader == `ring-circle`) {
-    original.style.display = `block`;
+    original.style.display = `flex`;
     loading.style.display = `none`;
     loader.style.display = `none`;
     bars.style.display = `none`;
@@ -99,8 +99,9 @@ let xmlHTMLBuild = function(htmlArray) {
     original.style.display = `none`;
     loading.style.display = `none`;
     loader.style.display = `none`;
-    bars.style.display = `block`;
+    bars.style.display = `flex`;
   } else if (!imageLoader) {
+    pending.classList.add(`blink`);
     original.style.display = `none`;
     loading.style.display = `none`;
     loader.style.display = `none`;

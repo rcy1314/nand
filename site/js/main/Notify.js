@@ -1,3 +1,40 @@
+_container
+  .addEventListener(
+    'click', (evt) => {
+      if (
+        evt.target.classList.contains(`notify`) ||
+        evt.target.classList.contains(`notifyEnd`)
+      ) {
+        notifyArray = [];
+        if (
+          document
+          .body
+          .contains(
+            _channel
+            .querySelector(
+              `.notify`
+            )
+          )
+        )
+          _container.querySelector(`.notify`).remove();
+        if (
+          document
+          .body
+          .contains(
+            _channel
+            .querySelector(
+              `.notifyEnd`
+            )
+          )
+        )
+          _container.querySelector(`.notifyEnd`).remove();
+      }
+
+    }, {
+      passive: false
+    }
+  );
+
 let notifyOption = function(String, Icon) {
   let div = document.createElement(`div`);
   div.setAttribute(`id`, 'notify');
@@ -16,9 +53,7 @@ let notifyOption = function(String, Icon) {
   ) {
     _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
     _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
-
   }
-
   notifyArray.push(div.innerHTML)
   if (notifyArray.length === 1)
     _container.appendChild(div);
@@ -36,10 +71,7 @@ let notifyOption = function(String, Icon) {
       notifyArray.length > 1
     ) {
       div.innerHTML = notifyArray[1]
-      setTimeout(function() {
-        _container.appendChild(div)
-
-      }, 1000)
+      _container.appendChild(div)
     }
     notifyArray.shift()
     if (
@@ -51,6 +83,10 @@ let notifyOption = function(String, Icon) {
     ) {
       _container.querySelectorAll(`#notify`)[0].classList.add(`notifyEnd`);
       _container.querySelectorAll(`#notify`)[0].classList.remove(`notify`);
+    }
+    if (notifyArray.length === 1) {
+      _container.querySelectorAll(`#notify`)[0].classList.remove(`notifyEnd`);
+      _container.querySelectorAll(`#notify`)[0].classList.add(`notify`);
     }
   });
 }

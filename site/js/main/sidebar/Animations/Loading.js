@@ -8,9 +8,14 @@ _sidebar
       ) {
         imageLoader = `loading`;
         _main
+          .querySelectorAll(`.pending`)
+          .forEach(
+            (a) => a.classList.remove(`blink`)
+          );
+        _main
           .querySelectorAll(`#load`)
           .forEach(
-            (a) => a.style.display = `block`
+            (a) => a.style.display = `flex`
           );
         _main
           .querySelectorAll(`.animation`)

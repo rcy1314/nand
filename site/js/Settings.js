@@ -21,7 +21,7 @@ let set = `Light`;
 // overwritten in themes files, see Example.js
 
 let backgroundImage = [{
-  // note: path begins in index.html folder
+  // note: path begins in index.html folder use ../../ to exit project folder
   path: "",
   element: "container",
   position: "center",
@@ -43,17 +43,7 @@ let themes = [{
     obFn: `Night`,
     class: `Night`,
     icon: `fa-code`
-  },
-  {
-    obFn: `Solarized`,
-    class: `Solarized`,
-    icon: `fa-digital-tachograph`
-  },
-  {
-    obFn: `Gentoo`,
-    class: `Gentoo`,
-    icon: `fa-users`
-  },
+  }
 ];
 
 const favorites = [
@@ -75,6 +65,19 @@ const favorites = [
 */
 
 let bootup = false;
+
+/*
+    pretty [boolean/integer]
+
+      Applications
+        pretty.js
+
+      Result
+        pretty wallpaper
+
+*/
+
+let pretty = true;
 
 /*
     topBar [boolean/integer]
@@ -121,6 +124,21 @@ let showOption = true;
 let display = `flexBox`;
 
 /*
+    display [boolean/integer]
+
+      Applications
+        xml/Request.js
+        init.js
+
+      Result
+        `sideScroll`,
+        `legacy`,
+
+*/
+
+let defaultText = `legacy`;
+
+/*
     Reader [boolean/integer]
 
       Applications
@@ -147,6 +165,33 @@ let Reader = false;
 */
 
 let readPrevious = true;
+
+/*
+    assetRefresh [boolean/integer]
+
+      Applications
+        xml/Request
+        xml/Append
+
+      Result
+        refresh status/suggestions every number
+
+*/
+
+let assetRefresh = 5;
+
+/*
+    assetVisibility [boolean/integer]
+
+      Applications
+        xml/Append
+
+      Result
+        greater then hidden
+
+*/
+
+let assetVisibility = 5;
 
 /*
     onScreen [boolean/integer]
@@ -219,7 +264,7 @@ let expand = true;
 
 */
 
-let showSplash = false;
+let showSplash = true;
 
 /*
     sideBarCenter [boolean/integer]
@@ -287,19 +332,6 @@ let sideBarMousewheel = false;
 let topBarBackdrop = false;
 
 /*
-    toggleBorders [boolean/integer]
-
-      Applications
-        build/xmlHTMLBuild
-
-      Result
-        toggle border.
-
-*/
-
-let toggleBorders = false;
-
-/*
     onlySearch [boolean/integer]
 
       Applications
@@ -354,19 +386,6 @@ let scrollIntoView = true;
 */
 
 let imageLoader = `ring-circle`;
-
-/*
-    cropImages [boolean/integer]
-
-      Applications
-        image/Dimensions
-
-      Result
-        crop images to center
-
-*/
-
-let cropImages = false;
 
 /*
     fadeIntoView [boolean/integer]
@@ -570,6 +589,7 @@ let safeSearchScore = `0.013473876751959324`;
 */
 
 let safeSearchIDs = [
+  `4Chan/High Resolution`,
   `Reddit/Selfie`,
 ];
 
@@ -586,7 +606,7 @@ let safeSearchIDs = [
 
 */
 
-let exclude = [`Buy`, `Sale`, `Save`, `Price`, `Shop`];
+let exclude = [`Buy`, `Sale`, `Save`, `Best`, `Price`, `Shop`];
 
 /*
     cors [string]
@@ -634,12 +654,13 @@ const translations = [
   `News`,
   `Media`,
   `Sports`,
+  `Streams`,
   `Tech`,
   `World`,
   `Youtube`,
 ];
 
-const repository = `https://github.com/acktic/acktic.github.io`;
+const repository = `https://github.com/acktic/nand`;
 const facebook = `https://www.facebook.com/acktic`;
 const reddit = `https://www.reddit.com/user/acktic`;
 const twitter = `https://www.twitter.com/acktic`;
@@ -647,7 +668,7 @@ const pinterest = `https://www.pinterest.com/ackt1c`;
 const instagram = `https://www.instagram.com/acktic`;
 const youtube = `https://www.youtube.com/channel/UCwac2_RyHP2UneqETNLM6_Q`;
 const amazon = `https://www.amazon.com/hz/wishlist/ls/3KMRCG63QLYAC`;
-const wordpress = `https://ackti.wordpress.com`;
+const wordpress = `https://acktics.wordpress.com`;
 
 /* Feel free to edit the above. */
 
@@ -664,6 +685,8 @@ let dual;
 let legacy;
 let sscroll;
 let flex;
+let asset = [];
+let assets = [];
 let expandAnimations = false;
 let expandBackground = false;
 let expandFavorites = false;
@@ -693,7 +716,6 @@ let adj = []; //menu randomized
 let complete; //progressBar interval
 let images = []; //array of images in request
 let scrollIntoViewBuffer = scrollIntoView // viewports/group
-let cropImagesBuffer = cropImages; // used in Reader
 let onlyImagesBuffer = onlyImages; // used in Reader
 let sideBarLockBuffer = sideBarLock // used in urlInput
 let touchmove = false; // scrollToElements
@@ -742,16 +764,16 @@ const view = [{
     class: `dual`
   },
   {
-    name: `Flex Box`,
+    name: `Flex`,
     class: `flex`
+  },
+  {
+    name: `Side`,
+    class: `sscroll`
   },
   {
     name: `Mobile`,
     class: `legacy`
-  },
-  {
-    name: `Sidescroll`,
-    class: `sscroll`
   }
 ]
 
@@ -762,10 +784,6 @@ const settings = [{
   {
     name: `Blocks`,
     class: `Blocks`
-  },
-  {
-    name: `Crop Images`,
-    class: `cropImages`
   },
   {
     name: `Fade in Images`,
@@ -791,6 +809,10 @@ const settings = [{
     name: `Only Search`,
     class: `onlySearch`
   },
+  {
+    name: `Wallpaper`,
+    class: `pretty`
+  }
 ];
 
 const background = [{

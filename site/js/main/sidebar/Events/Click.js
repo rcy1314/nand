@@ -8,7 +8,7 @@ _container
       ) {
         onScreen = false;
         Sidebar(onScreen);
-        if (window.innerWidth <= 768) _sb.style.display = `block`;
+        if (window.innerWidth <= 768) _sb.style.display = `none`;
         if (window.innerWidth >= 768) _bar.style.display = `none`;
       } else if (
         evt.target.classList.contains(

@@ -1,13 +1,11 @@
 let Sidescroll = function() {
   display == `sideScroll`;
   offset = 1000;
-  scrollIntoViewBuffer = scrollIntoView;
-  scrollIntoView = false;
 
-  _channel.classList.add(`sideChannel`);
-  _xml.style.justifyContent = `center`;
-  _center.classList.add(`sideChannel`);
   _channel.style.height = `fit-content`;
+  _channel.classList.add(`sideChannel`);
+  _center.classList.add(`sideChannel`);
+  _xml.style.justifyContent = `center`;
 
   if (
     window.innerWidth >= 768
@@ -19,61 +17,52 @@ let Sidescroll = function() {
   _center.style.left = `0`;
   _xml.style.top = `0`;
 
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach(
-      (a) =>
-      a.classList.remove(
-        `flex`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.item`
-    )
-    .forEach((a) =>
-      a.classList.add(
-        `sideItem`
-      )
-    );
-  _channel
-    .querySelectorAll(
-      `.classic`
-    )
-    .forEach((a) =>
-      a.style.display = `block`
-    );
-
-    _channel
-      .querySelectorAll(
-        `.header`
-      )
-      .forEach(
-        (a) =>
-        a
-        .style
-        .cssText =
-        `position:relative !important`
-      )
-
   if (
-    window.innerWidth >= 768
+    !document.body.contains(
+      _center.querySelector(`.bottom`)
+    )
   )
-    _display.style.display = `inline-block`;
-
-  else
-    _display.style.display = `none`;
+    _channel.append(
+      footerBuild(id)
+    );
 
   if (
     document.body.contains(
       _center.querySelector(`.bottom`)
     )
-  )
+  ) {
     _center.querySelector(`.bottom`).style.left = `0`;
+    _center.querySelector(`#bottom`).style.cssText = `position:fixed;bottom:0`;
 
-    _channel.classList.remove(`flexbox`)
-    _channel.classList.remove(`duo`)
+  }
+  _channel.classList.remove(`flexbox`)
+  _channel.classList.remove(`duo`)
+
+  if (
+    window.innerWidth >
+    768
+  )
+    _display.style.display = `inline-block`;
+
+  if (
+    document
+    .body
+    .contains(
+      _channel
+      .querySelector(
+        `.item`
+      )
+    )
+  )
+    setTimeout(
+      () => {
+        touchmove = true;
+        sideScrollToElm(touchmove,
+          _channel,
+          _channel.querySelectorAll(`[aria-object='${id}']`)[0],
+          250
+        );
+      }, 250
+    )
 
 }

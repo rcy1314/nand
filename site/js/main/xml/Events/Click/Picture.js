@@ -7,15 +7,14 @@ _container
       ) {
         if (navigator.clipboard) {
           var myText =
-          evt
+            evt
             .target
             .closest(
               `.item`
             )
             .querySelector(
               `.source`
-            ).value
-          ;
+            ).value;
           navigator.clipboard.writeText(myText).then(function() {
             notifyOption(`Copied`, `fa-check-circle`);
           }).catch(function() {
@@ -32,9 +31,20 @@ _container
               `.source`
             )
             .select();
+          evt
+            .target
+            .closest(
+              `.item`
+            )
+            .querySelector(
+              `.source`
+            )
+            .setSelectionRange(0, 99999);
           document.execCommand(`copy`);
           // Here's where you put the fallback code for older browsers.
-        }      }
+        }
+      }
+      evt.stopPropagation();
     }, {
       passive: false
     }

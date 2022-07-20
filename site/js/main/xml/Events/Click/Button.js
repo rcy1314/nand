@@ -40,6 +40,19 @@ _container
             _suggestions.lastChild
           );
 
+          while (
+            _air.firstChild
+          )
+            _air.removeChild(
+              _air.lastChild
+            );
+
+          while (
+            _result.firstChild
+          )
+            _result.removeChild(
+              _result.lastChild
+            );
         Request(
           evt
           .target
