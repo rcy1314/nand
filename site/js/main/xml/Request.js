@@ -323,7 +323,8 @@ var Request = function(index) {
         if (
           Reader
         ) {
-          menu.splice(index, 1);
+          //throws off quick feeds
+          //menu.splice(index, 1);
           stop = true;
           first = false;
           if (
